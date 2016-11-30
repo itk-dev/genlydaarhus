@@ -2,18 +2,18 @@
 
 // Plugin to handle parameters.
 var argv = require('yargs')
-  .alias('s', 'sync')
-  .alias('t', 'theme')
-  .alias('d', 'domain')
-  .default('sync', false)
-  .default('theme', ['devteam'])
-  .default('domain', 'localhost:8080')
+.alias('s', 'sync')
+.alias('t', 'theme')
+.alias('d', 'domain')
+.default('sync', false)
+.default('theme', ['devteam'])
+.default('domain', 'localhost:8080')
   .argv;
 
 // Gulp basic.
 var chalk = require('chalk');
 var gulp = require('gulp-help')(require('gulp'), {
-  'afterPrintCallback' : function() {
+  'afterPrintCallback': function () {
     var args = [];
     console.log(chalk.underline('Global parameters'));
 
@@ -62,7 +62,8 @@ var configuration = {
       "dest": './js'
     },
     "sass": {
-      "paths": './source/*.scss',
+      "paths": ['./source/**/*.scss'],
+      "srcs": ['./source/*.scss'],
       'dest': './source/css'
     },
     "twig": {
@@ -92,14 +93,14 @@ function sassTask(theme, config) {
       autoprefixer({browsers: ['last 2 versions']})
     ];
 
-    var pipe = gulp.src(config.sass.paths)
-      .pipe(sourcemaps.init())
-      .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-      .pipe(postcss(processors))
-      .pipe(sourcemaps.write())
-      .pipe(gulp.dest(config.sass.dest));
+    var pipe = gulp.src(config.sass.srcs)
+    .pipe(sourcemaps.init())
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+    .pipe(postcss(processors))
+    .pipe(sourcemaps.write())
+    .pipe(gulp.dest(config.sass.dest));
 
-    // It's unknow why gulp-if don't work with browser-sync, so this if
+    // It's unknown why gulp-if don't work with browser-sync, so this if
     // statement is as little hack.
     if (argv.sync) {
       pipe.pipe(browserSync.stream());
@@ -127,11 +128,11 @@ function stylelintTask(theme, config) {
 
   gulp.task(taskName, false, function lintCssTask() {
     return gulp.src(config.sass.paths)
-      .pipe(stylelint({
-        reporters: [
-          {formatter: 'string', console: true}
-        ]
-      }));
+    .pipe(stylelint({
+      reporters: [
+        {formatter: 'string', console: true}
+      ]
+    }));
   });
 
   return taskName;
@@ -151,9 +152,9 @@ function stylelintTask(theme, config) {
 function watchTasks(theme, config) {
   var taskName = 'watch_' + theme;
 
-  gulp.task(taskName, false, function() {
+  gulp.task(taskName, false, function () {
     gulp.watch(config.sass.paths, ['sass']);
-    gulp.watch(config.sass.paths, ['stylelint']);
+    // gulp.watch(config.sass.paths, ['stylelint']);
 
     if (config.hasOwnProperty('js')) {
       gulp.watch(config.js.paths, ['eslint']);
@@ -183,14 +184,14 @@ function watchTasks(theme, config) {
 function ESLintTasks(theme, config) {
   var taskName = 'eslint_' + theme;
 
-  gulp.task(taskName, false, function(done) {
+  gulp.task(taskName, false, function (done) {
     globby(config.js.paths).then(
-      function(paths) {
+      function (paths) {
         // Additional CLI options can be added here.
         var code = eslint.execute(paths.join(' '));
         done();
       },
-      function(err) {
+      function (err) {
         // Unexpected failure, include stack.
         done(err);
       }
@@ -216,11 +217,11 @@ function minifyJSTasks(theme, config) {
 
   gulp.task(taskName, false, function () {
       gulp.src(config.js.paths)
-        .pipe(sourcemaps.init())
-        .pipe(uglify())
-        .pipe(sourcemaps.write('/maps'))
-        .pipe(rename({extname: ".min.js"}))
-        .pipe(gulp.dest(config.js.dest));
+      .pipe(sourcemaps.init())
+      .pipe(uglify())
+      .pipe(sourcemaps.write('/maps'))
+      .pipe(rename({extname: ".min.js"}))
+      .pipe(gulp.dest(config.js.dest));
     }
   );
 
@@ -253,7 +254,7 @@ function setupTasks(themes) {
 
   // Ensure themes is an array and if not convert it.
   if (Object.prototype.toString.call(themes) !== '[object Array]') {
-    themes = [ themes ];
+    themes = [themes];
   }
 
   // Loop over the selected themes.
