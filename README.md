@@ -1,6 +1,6 @@
 # Genlyd Styleguide
 
-Styleguide for the Devteam website using [Pattern Lab](http://patternlab.io/).
+Styleguide for the Genlyd Aarhus website using [Pattern Lab](http://patternlab.io/).
 
 #### Installation
 
