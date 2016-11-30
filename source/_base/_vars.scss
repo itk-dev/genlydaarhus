@@ -7,22 +7,6 @@
  */
 
 
-/* Breakpoints
-   ================================================================================================================== */
-
-$breakpoint-lap:              481px;
-$breakpoint-tablet:           720px;
-$breakpoint-desk:             1024px;
-$breakpoint-largedesk:        1350px;
-$breakpoint-bigscreen:        2000px;
-$breakpoint-threshold:        60px;
-
-
-/* Z-index (inspired by https://www.smashingmagazine.com/2014/06/sassy-z-index-management-for-complex-layouts/)
-   ================================================================================================================== */
-
-$z-index-elements: map, header-overlay, header, content, nav, logo, overlay, hamburger-menu, nav-toggle;
-
 
 /* Layout
    ================================================================================================================== */
@@ -33,25 +17,6 @@ $layout-spacing:        20px;
 $layout-spacing-medium: 40px;
 $layout-spacing-large:  60px;
 
-
-/* Colors
-   ================================================================================================================== */
-
-$theme-color:      #bad455;
-
-$black:            #1a1919;
-$white:            #fff;
-
-$gray-lightest:    lighten($black, 85%);
-$gray-lighter:     lighten($black, 80%);
-$gray-light:       lighten($black, 70%);
-$gray:             lighten($black, 60%);
-$gray-dark:        lighten($black, 50%);
-$gray-darker:      lighten($black, 40%);
-$gray-darkest:     lighten($black, 30%);
-
-$link-color:       blue;
-$link-color-hover: darken($link-color, 25%);
 
 
 
