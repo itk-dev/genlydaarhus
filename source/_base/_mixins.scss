@@ -1,0 +1,93 @@
+/**
+ *
+ * Global mixins used across multiple modules.
+ *
+ */
+
+
+/* Strip all link styles default color of links to inherit
+================================================================================================================== */
+
+@mixin strip-link-styles($color:inherit, $decoration: none) {
+  &:link {
+    color: $color;
+    text-decoration: $decoration;
+  }
+
+  &:visited {
+    color: $color;
+    text-decoration: $decoration;
+  }
+
+  &:hover {
+    color: $color;
+    text-decoration: $decoration;
+  }
+
+  &:focus {
+    color: $color;
+    text-decoration: $decoration;
+  }
+}
+
+
+/* Breakpoint
+================================================================================================================== */
+
+@mixin breakpoint($breakpoint) {
+  @media only screen and (min-width: $breakpoint) { @content; }
+}
+
+
+/* Word wrap and ellipsis
+ *
+ * https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+================================================================================================================== */
+
+@mixin word-wrap() {
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+  -ms-word-break: break-all;
+  word-break: break-word;
+  word-wrap: break-word;
+}
+
+/* Box arrow
+*
+* Lets you add and triangled arrow to a box
+================================================================================================================== */
+
+@mixin box-arrow($color, $direction) {
+
+  &:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  @if $direction == "left" {
+    &:after {
+      border-bottom: 20px solid transparent;
+      border-right: 20px solid $color;
+      border-top: 20px solid transparent;
+      left: -20px;
+    }
+  } @else if $direction == "right" {
+    &:after {
+      border-bottom: 20px solid transparent;
+      border-left: 20px solid $color;
+      border-top: 20px solid transparent;
+      right: -20px;
+    }
+    
+  }
+}
+
+@mixin headline-border($color) {
+  border-bottom: $header-underline $color;
+  padding-bottom: 5px;
+}
