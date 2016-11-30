@@ -1,0 +1,1 @@
+Scalable responsive logo in svg format.

@@ -1,0 +1,82 @@
+/**
+ *
+ * Base
+ *
+ * Contains styling and reset of basic elements
+ *
+ */
+
+html {
+  height: 100%;
+}
+
+body {
+  background-color: $white;
+  color: $black;
+  font: $font;
+  height: 100%;
+  margin: 0;
+  /* For absolute positioned hamburger menu to have 100 height */
+  position: relative;
+  width: 100%;
+}
+
+html,
+body {
+  &.is-locked {
+    overflow: hidden;
+    position: fixed;
+  }
+}
+
+
+strong {
+  font-weight: bold;
+}
+
+
+em {
+  font-style: italic;
+
+  strong {
+    font-weight: bold;
+  }
+}
+
+fieldset {
+  border-color: $gray-lighter;
+  border-radius: .85em;
+}
+
+fieldset + fieldset {
+  margin-top: 3em;
+}
+
+legend {
+  color: $gray-dark;
+  font-size: 1.25em;
+  font-weight: 600;
+  padding-left: .5em;
+  padding-right: .5em;
+}
+
+
+/* Paragraph
+   ================================================================================================================== */
+
+p {
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+
+/* Image
+   ================================================================================================================== */
+
+img {
+  display: inline;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+  width: 100%;
+}

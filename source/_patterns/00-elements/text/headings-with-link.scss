@@ -1,0 +1,30 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  a {
+    color: $black;
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+
+    &:link {
+      color: $black;
+    }
+
+    &:visited {
+      color: darken($black, 5%);
+    }
+
+    &:hover,
+    &:focus {
+      color: darken($black, 10%);
+    }
+  }
+}
