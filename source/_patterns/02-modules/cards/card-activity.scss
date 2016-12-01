@@ -1,0 +1,27 @@
+.card-activity {
+  background-color: $color-gray-lighter;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $layout-spacing-small;
+  margin-top: $layout-spacing-small;
+  padding: $layout-spacing-small;
+
+  &:first-of-type {
+    margin-top: $layout-spacing;
+  }
+
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &--image {
+    height: auto;
+    width: 100%;
+    vertical-align: bottom;
+  }
+
+  &--text {
+    margin-bottom: $layout-spacing-small;
+    margin-top: $layout-spacing-small;
+  }
+}
