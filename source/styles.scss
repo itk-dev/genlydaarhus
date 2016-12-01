@@ -19,6 +19,9 @@
 /* Modules */
 
 /* Components */
-@import "_patterns/components/01-header";
+@import "_patterns/components/01-global/01-header";
+@import "_patterns/components/01-global/02-footer";
+@import "_patterns/components/02-sections/hero";
+@import "_patterns/components/02-sections/activities";
 
 /* Templates */
