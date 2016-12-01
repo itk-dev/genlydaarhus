@@ -1,0 +1,13 @@
+.hero {
+  align-items: center;
+  background-color: $color-gray-light;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-bottom: 100px;
+  padding-top: 100px;
+
+  p {
+    text-align: center;
+  }
+}
