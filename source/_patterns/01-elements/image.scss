@@ -1,0 +1,11 @@
+img {
+  display: inline;
+  height: auto;
+  max-width: 100%;
+  vertical-align: bottom;
+
+  &.has-margin {
+    margin-top: $layout-spacing;
+    margin-bottom: $layout-spacing;
+  }
+}
