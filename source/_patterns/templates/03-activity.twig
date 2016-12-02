@@ -1,4 +1,22 @@
-<h1>
-  Activity
-</h1>
-<p>work in progress</p>
+{% extends "templates-site" %}
+{% block content %}
+  <h1>Titel på aktivitet</h1>
+  {% include "modules-categories" %}
+  {% include "elements-image" with {'class': 'has-margin'} %}
+  {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
+  {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
+  {% include "elements-activity-meta" with {'text': 'pris'} %}
+  {% include "elements-activity-meta" with {'text': 'bruger'} %}
+  {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
+  <p>
+    Her skal stå en beskrivelse af en aktiviteten og alt hvad der er relevant for denne aktivitet. 
+  <p>
+  <h4>Vigtig information:</h4>
+  <ul>
+    <li>tilmeldingspligt</li>
+    <li>niveau</li>
+    <li>hjælp</li>
+  </ul>
+  {% include "modules-social-share" %}
+  {% include "elements-button" with {'class': 'is-cta', 'title': 'Tilmeld'} %}
+{% endblock %}

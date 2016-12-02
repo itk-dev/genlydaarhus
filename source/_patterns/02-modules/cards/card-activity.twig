@@ -2,9 +2,9 @@
   <h4>Titel på aktivitet</h4>
   {% include "elements-image" %}
   <div class="card-activity--text">
-    <p><span>dato: </span> 1. Dec. 2016</p>
-    <p><span>antal tilmeldte: </span>20</p>
-    <p><span>Pris: </span>200</p>
+    {% include "elements-activity-meta" with {'text': 'dato'} %}
+    {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
+    {% include "elements-activity-meta" with {'text': 'pris'} %}
   </div>
   <a href="#">Se mere</a>
   <a href="#">Tilmeld</a>

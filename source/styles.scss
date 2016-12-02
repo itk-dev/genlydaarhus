@@ -15,10 +15,15 @@
 /* Global */
 
 /* Elements */
+@import "_patterns/01-elements/activity-meta";
+@import "_patterns/01-elements/button";
+@import "_patterns/01-elements/category";
 @import "_patterns/01-elements/image";
 
 /* Modules */
 @import "_patterns/02-modules/cards/card-activity";
+@import "_patterns/02-modules/categories";
+@import "_patterns/02-modules/social-share";
 
 /* Components */
 @import "_patterns/03-components/01-global/01-header";

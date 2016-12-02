@@ -1,0 +1,14 @@
+.button {
+  display: inline-block;
+  padding-bottom: $layout-spacing-small;
+  padding-left: $layout-spacing;
+  padding-right: $layout-spacing;
+  padding-top: $layout-spacing-small;
+  margin-bottom: $layout-spacing;
+  margin-top: $layout-spacing;
+
+  &.is-cta {
+    background-color: $color-black;
+    color: $color-white;
+  }
+}
