@@ -1,11 +1,8 @@
 .card-activity {
   background-color: $color-gray-lighter;
-  display: flex;
-  flex-direction: column;
   margin-bottom: $layout-spacing-small;
   margin-top: $layout-spacing-small;
   padding: $layout-spacing-small;
-  width: 100%;
 
   &:first-of-type {
     margin-top: $layout-spacing;
