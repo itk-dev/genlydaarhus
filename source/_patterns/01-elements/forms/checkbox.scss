@@ -1,0 +1,8 @@
+.checkbox {
+  align-items: center;
+  display: flex;
+
+  &--label {
+    margin-left: $layout-spacing-small;
+  }
+}
