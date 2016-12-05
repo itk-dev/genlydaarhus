@@ -1,11 +1,17 @@
 <article class="card-activity">
   <h4>Titel på aktivitet</h4>
-  {% include "elements-image" %}
+  {% include "elements-image" with {'src': 'http://placehold.it/500x500'} %}
   <div class="card-activity--text">
     {% include "elements-activity-meta" with {'text': 'dato'} %}
     {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
     {% include "elements-activity-meta" with {'text': 'pris'} %}
   </div>
-  <a href="#">Se mere</a>
-  <a href="#">Tilmeld</a>
+  {% if userActions %}
+    <a href="#">Se mere</a>
+    <a href="#">Tilmeld</a>
+  {% endif %}
+  {% if profileActions  %}
+    <a href="#">Slet</a>
+    <a href="#">Aktiver</a>
+  {% endif %}
 </article>
