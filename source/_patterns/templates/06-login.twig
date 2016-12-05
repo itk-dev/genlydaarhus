@@ -1,4 +1,16 @@
-<h1>
-  Login
-</h1>
-<p>work in progress</p>
+{% extends "templates-site" %}
+{% block content %}
+  <h1>Login</h1>
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Log ind med Facebook'} %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Log ind med Google'} %}
+  <h3>eller</h3>
+  <form>
+    {% include "elements-text-field" with {'type': 'text', 'name': 'username', 'label': 'Brugernavn', 'placeholder': 'Skriv dit brugernavn' } %}
+    {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'label': 'Adgangskode', 'placeholder': 'Skriv din adgangskode' } %}
+    {% include "elements-checkbox" with { 'name': 'remember-me', 'label': 'Husk mig' } %}
+    <p><a href="#">Glemt adgangskode?</a></p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Log ind'} %}
+  </form>
+  <h3>Jeg har ikke en konto</h3>
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld'} %}
+{% endblock %}
