@@ -7,6 +7,10 @@
   margin-bottom: $layout-spacing;
   margin-top: $layout-spacing;
 
+  &.is-primary {
+    background-color: $color-gray-light;
+  }
+  
   &.is-cta {
     background-color: $color-black;
     color: $color-white;
