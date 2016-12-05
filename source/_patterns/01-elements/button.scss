@@ -4,8 +4,8 @@
   padding-left: $layout-spacing;
   padding-right: $layout-spacing;
   padding-top: $layout-spacing-small;
-  margin-bottom: $layout-spacing;
-  margin-top: $layout-spacing;
+  margin-bottom: $layout-spacing-small;
+  margin-top: $layout-spacing-small;
 
   &.is-primary {
     background-color: $color-gray-light;
