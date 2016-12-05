@@ -1,0 +1,13 @@
+{% extends "templates-site" %}
+{% block content %}
+  <h1>Mine opslag</h1>
+  <p>Her kan du se alle dine opslag, som du har lavet gennem tiden. Det gælder både aktive opslag og ikke aktive opslag.
+  <h2>Mine aktive opslag</h2>
+  {% include "modules-card-activity" with {editAction: true } %}
+  {% include "modules-card-activity" with {editAction: true } %}
+  {% include "modules-card-activity" with {editAction: true } %}
+  <h2>Ikke aktive opslag</h2>
+  {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
+  {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
+  {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
+{% endblock %}
