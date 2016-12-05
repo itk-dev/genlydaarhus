@@ -5,7 +5,10 @@
 {% block content %}
   <h2>Aktiviteter i nærheden af dig (Aarhus)</h2>
   <a href="#">Er det ikke i nærheden a dig?</a>
-  {% include "components-activities" %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  
   <a class="button is-primary" href="#">Se alle aktiviteter</a>
   {% include "components-guidelines" %}
 {% endblock %}

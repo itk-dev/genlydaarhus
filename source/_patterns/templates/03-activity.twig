@@ -2,7 +2,7 @@
 {% block content %}
   <h1>Titel på aktivitet</h1>
   {% include "modules-categories" %}
-  {% include "elements-image" with {'class': 'has-margin'} %}
+  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
   {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
   {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
   {% include "elements-activity-meta" with {'text': 'pris'} %}
@@ -20,7 +20,11 @@
   {% include "elements-button" with {'class': 'is-cta', 'title': 'Tilmeld'} %}
   {% include "modules-social-share" %}
   <h2>Lignende aktiviteter</h2>
-  {% include "components-activities" %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
   <h2>Andre muligheder</h2>
-  {% include "components-activities" %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
 {% endblock %}
