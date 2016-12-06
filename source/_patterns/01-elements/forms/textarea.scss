@@ -1,0 +1,14 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $layout-spacing;
+
+  &--label {
+    margin-bottom: $layout-spacing-small;
+  }
+
+  &--input {
+    border-color: $color-gray-light;
+    padding: 10px;
+  }
+}
