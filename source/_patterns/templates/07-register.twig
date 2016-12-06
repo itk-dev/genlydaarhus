@@ -1,4 +1,18 @@
-<h1>
-  Register
-</h1>
-<p>work in progress</p>
+{% extends "templates-site" %}
+{% block content %}
+  <h1>Tilmeld</h1>
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld med Facebook'} %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld med Google'} %}
+  <h3>eller</h3>
+  <form>
+    {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'label': 'Fornavn', 'placeholder': 'Skriv dit fornavn' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'label': 'Efternavn', 'placeholder': 'Skriv dit efternavn' } %}
+    {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'label': 'Email', 'placeholder': 'Skriv din email' } %}
+    {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'label': 'Adgangskode', 'placeholder': 'Skriv ønsket adgangskode' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'postalcode', 'label': 'Postnummer', 'placeholder': 'Skriv dit postnummer' } %}
+    <p>Jeg har læst <a href="#">betingelserne</a></p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld'} %}
+  </form>
+  <h3>Jeg har allerede en konto</h3>
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Login'} %}
+{% endblock %}
