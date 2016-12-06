@@ -1,0 +1,8 @@
+  <div class="selectbox">
+    <label class="selectbox--label" for="{{ name }}">{{ label }}</label>
+    <select class="selectbox--select" name="{{ name }}" id="{{ name }}">
+      {% for option in options %}
+        <option class="select--option" value="{{ option.value }}">{{ option }}</option>
+      {% endfor %}
+    </select>
+  </div>

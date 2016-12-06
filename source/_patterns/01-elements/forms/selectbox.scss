@@ -1,0 +1,13 @@
+.selectbox {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: $layout-spacing;
+
+  &--label {
+    margin-bottom: $layout-spacing-small;
+  }
+
+  &--select {
+    border-color: $color-gray-light;
+  }
+}
