@@ -34,5 +34,5 @@
     {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'value': 'eksempel@mail.dk', 'label': 'Email', 'placeholder': 'Indtast email' } %}
     {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'value': '50', 'label': 'Eventuelt pris', 'placeholder': 'Indtast pris' } %}
   </form>
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Gem'} %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Gem', 'href': attribute(link, 'templates-activity')} %}
 {% endblock %}

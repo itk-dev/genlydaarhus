@@ -16,5 +16,5 @@
   <h3>Seneste opslag</h3>
   {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
   {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
-  <p><a href="#">Se alle dine opslag</a></p>
+  <p><a href="{{ attribute(link, 'templates-profile-activities-overview') }}">Se alle dine opslag</a></p>
 {% endblock %}

@@ -12,5 +12,5 @@
     {% include "elements-button" with {'class': 'is-primary', 'title': 'Log ind'} %}
   </form>
   <h3>Jeg har ikke en konto</h3>
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld'} %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Tilmeld', 'href': attribute(link, 'templates-register') } %}
 {% endblock %}

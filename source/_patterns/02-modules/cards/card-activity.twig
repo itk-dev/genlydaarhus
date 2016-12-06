@@ -7,7 +7,7 @@
     {% include "elements-activity-meta" with {'text': 'pris'} %}
   </div>
   {% if userActions %}
-    <a href="#">Se mere</a>
+    <a href="{{ attribute(link, 'templates-activity') }}">Se mere</a>
     <a href="#">Tilmeld</a>
   {% endif %}
   {% if profileActions  %}
@@ -15,6 +15,6 @@
     <a href="#">Aktiver</a>
   {% endif %}
   {% if editAction  %}
-    <a href="#">Ret opslag</a>
+    <a href="{{ attribute(link, 'templates-profile-activities-edit') }}">Ret opslag</a>
   {% endif %}
 </article>

@@ -9,6 +9,6 @@
   {% include "modules-card-activity" with {userActions: true } %}
   {% include "modules-card-activity" with {userActions: true } %}
   
-  <a class="button is-primary" href="#">Se alle aktiviteter</a>
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Se alle aktiviteter', 'href': attribute(link, 'templates-activities')} %}
   {% include "components-guidelines" %}
 {% endblock %}
