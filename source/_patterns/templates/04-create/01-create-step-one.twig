@@ -1,0 +1,11 @@
+{% extends "templates-site" %}
+{% block content %}
+  <p>1 af 6</p>
+  <h2>Hej Navn</h2>
+  <p>Lad os få oprettet en aktivitet</p>
+  <h2>Vælg en overskrift og tekst</h2>
+  {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'label': 'Overskrift', 'placeholder': 'Skriv en overskrift' } %}
+  {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', 'placeholder': 'Skriv beskrivelse her', 'cols': '40', 'rows': '8' } %}
+  {% include "elements-checkbox" with {'name': 'registration-required', 'label': 'Tilmeldingspligt' } %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-two')} %}
+{% endblock %}

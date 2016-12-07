@@ -1,0 +1,19 @@
+{% extends "templates-site" %}
+{% block content %}
+  <p>3 af 6</p>
+  <h2>Kategori og emner</h2>
+  <h3>Tilføj kategorier</h3>
+  {% include "elements-checkbox" with {'name': 'category-sport', 'label': 'Sport og fritid' } %}
+  {% include "elements-checkbox" with {'name': 'category-fundraising', 'label': 'Indsamling' } %}
+  {% include "elements-checkbox" with {'name': 'category-childcare', 'label': 'Pasning' } %}
+  <a href="#">Skriv forslag til nye kategorier</a>
+  <h3>Tilføj emner</h3>
+  {% include "elements-checkbox" with {'name': 'subject-sedantary', 'label': 'Stillesidende' } %}
+  {% include "elements-checkbox" with {'name': 'subject-green-fingers', 'label': 'Grønne fingre' } %}
+  {% include "elements-checkbox" with {'name': 'subject-loud', 'label': 'Højtråbende' } %}
+  <a href="#">Skriv forslag til nye emner</a>
+  <p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-two')} %}
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-four')} %}
+  </p>
+{% endblock %}

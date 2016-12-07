@@ -1,0 +1,11 @@
+{% extends "templates-site" %}
+{% block content %}
+  <p>4 af 6</p>
+  <h3>Billede</h3>
+  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+  <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload billede'} %}</p>
+  <p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-three')} %}
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-five')} %}
+  </p>
+{% endblock %}
