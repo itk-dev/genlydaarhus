@@ -1,0 +1,9 @@
+<p>{{ introduction.step }}</p>
+{% if introduction.heading %}
+  <h2> {{introduction.heading}}</h2>
+{% endif %}
+{% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+<p>{{ introduction.text }}</p>
+{% for button in introduction.buttons %}
+  <p>{% include "elements-button" %}</p>
+{% endfor %}
