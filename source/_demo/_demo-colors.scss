@@ -1,0 +1,77 @@
+$demo-colors: (
+  "black-light":        $color-black-light,
+  "green-dark":         $color-green-dark,
+  "green-light":        $color-green-light,
+  "blue":               $color-blue,
+  "yellow":             $color-yellow,
+  "red":                $color-red,
+  "white":              $color-white,
+  "black":              $color-black,
+);
+
+@function demo-color($demo-color-key) {
+  $demo-color: map-get($demo-colors, $demo-color-key);
+
+  @if $demo-color {
+    @return $demo-color;
+  }
+
+  @warn "Key `#{$demo-color-key}` not found in $colors.";
+
+  @return null;
+}
+
+.demo-colors {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  li {
+    flex: auto;
+    padding: 0.3em;
+    margin: 0 0.5em 0.5em 0;
+    min-width: 5em;
+    max-width: 14em;
+    border: 1px solid $color-gray-light;
+    border-radius: 8px;
+  }
+
+  &--swatch {
+    display: block;
+    height: 4em;
+    border-radius: 5px;
+  }
+
+  &--label {
+    font-size: 90%;
+    line-height: 1;
+
+    &:before,
+    &:after {
+      display: block;
+      margin-top: 10px;
+    }
+  }
+
+  @each $color-key, $color-value in $demo-colors {
+    &--swatch {
+      &.is-#{$color-key} {
+        background-color: demo-color(#{$color-key});
+      }
+    }
+
+    &--label {
+      &.is-#{$color-key} {
+        &:before {
+          content: "$color-#{$color-key}";
+        }
+
+        &:after {
+          content: "#{demo-color($color-key)}";
+        }
+      }
+    }
+  }
+}

@@ -8,16 +8,14 @@
 /* Base */
 @import "_base/vars";
 @import "_base/colors";
-@import "_base/text";
 @import "_base/normalize";
 @import "_base/base";
 
 /* Layouts */
 @import "_layouts/layouts";
 
-/* Global */
-
 /* Elements */
+@import "_patterns/01-elements/02-text/inline-elements";
 @import "_patterns/01-elements/activity-meta";
 @import "_patterns/01-elements/buttons/00-button";
 @import "_patterns/01-elements/category";
@@ -38,5 +36,3 @@
 @import "_patterns/03-components/01-global/01-header";
 @import "_patterns/03-components/01-global/02-footer";
 @import "_patterns/03-components/02-sections/01-guidelines";
-
-/* Templates */
