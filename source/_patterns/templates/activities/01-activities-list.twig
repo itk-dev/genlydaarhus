@@ -1,6 +1,25 @@
 {% extends "templates-activities" %}
 {% block search %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
+  <div class="grid">
+    <div class="grid--inner">
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+      <div class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </div>
+    </div>
+  </div>
 {% endblock %}

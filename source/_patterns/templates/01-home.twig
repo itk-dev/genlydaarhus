@@ -1,14 +1,30 @@
-{% extends "templates-site" %}
+{% extends "templates-page-with-container" %}
 {% block hero %}
   {% include "modules-hero" %}
 {% endblock %}
-{% block content %}
+{% block main %}
   <h2>Aktiviteter i nærheden af dig (Aarhus)</h2>
   <a href="#">Er det ikke i nærheden a dig?</a>
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  
+  <div class="grid">
+    <div class="grid--inner">
+      <article class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </article>
+      <article class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </article>
+      <article class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </article>
+      <article class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </article>
+      <article class="grid--item">
+        {% include "modules-card-activity" with {userActions: true } %}
+      </article>
+    </div>
+  </div>
+
   {% include "elements-button" with {'class': 'is-primary', 'title': 'Se alle aktiviteter', 'href': attribute(link, 'templates-activities')} %}
   {% include "components-guidelines" %}
 {% endblock %}

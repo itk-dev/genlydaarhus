@@ -1,5 +1,5 @@
-{% extends "templates-site" %}
-{% block content %}
+{% extends "templates-page-with-container" %}
+{% block main %}
   <p>2 af 6</p>
   <h2>Vælg de vigtigste egenskaber</h2>
   {% include "elements-selectbox" with {'name': 'participation-level', 'label': 'Hvilket niveau kræver det at deltage?', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}

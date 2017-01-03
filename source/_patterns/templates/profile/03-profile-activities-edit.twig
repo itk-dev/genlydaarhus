@@ -1,5 +1,5 @@
-{% extends "templates-site" %}
-{% block content %}
+{% extends "templates-page-with-container" %}
+{% block main %}
   <form>
     <h2>Overskrift og tekst</h2>
     {% include "elements-text-field" with {'type': 'text', 'name': 'headline', value: 'Eksempel overskrift', 'label': 'Overskrift', 'placeholder': 'Skriv en overskrift' } %}

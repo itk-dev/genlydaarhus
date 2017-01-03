@@ -1,5 +1,5 @@
-{% extends "templates-site" %}
-{% block content %}
+{% extends "templates-page-with-container" %}
+{% block main %}
   <h2>Aktiviteter</h2>
   <p>Her kan du se en liste og et kort over aktiviter</p>
   {% include "elements-selectbox" with {'name': 'physical-level', 'label': 'Søg på interesse', options: [ 'Sport og fritid', 'Indsamling', 'Pasning' ] } %}
