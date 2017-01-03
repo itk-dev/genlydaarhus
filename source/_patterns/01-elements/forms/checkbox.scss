@@ -1,9 +1,9 @@
 .checkbox {
   align-items: center;
   display: flex;
-  margin-bottom: $layout-spacing;
+  margin-bottom: $spacing-pixel-medium;
 
   &--label {
-    margin-left: $layout-spacing-small;
+    margin-left: $spacing-pixel-small;
   }
 }

@@ -1,11 +1,11 @@
 .button {
   display: inline-block;
-  padding-bottom: $layout-spacing-small;
-  padding-left: $layout-spacing;
-  padding-right: $layout-spacing;
-  padding-top: $layout-spacing-small;
-  margin-bottom: $layout-spacing-small;
-  margin-top: $layout-spacing-small;
+  padding-bottom: $spacing-pixel-small;
+  padding-left: $spacing-pixel-small;
+  padding-right: $spacing-pixel-small;
+  padding-top: $spacing-pixel-small;
+  margin-bottom: $spacing-pixel-small;
+  margin-top: $spacing-pixel-small;
 
   &.is-primary {
     background-color: $color-gray-light;

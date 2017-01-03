@@ -1,11 +1,12 @@
 .card-activity {
   background-color: $color-gray-lighter;
-  margin-bottom: $layout-spacing-small;
-  margin-top: $layout-spacing-small;
-  padding: $layout-spacing-small;
+  margin-bottom: $spacing-pixel-small;
+  margin-top: $spacing-pixel-small;
+  padding: $spacing-pixel-small;
+  width: 100%;
 
   &:first-of-type {
-    margin-top: $layout-spacing;
+    margin-top: $spacing-pixel-medium;
   }
 
   &:last-of-type {
@@ -13,7 +14,7 @@
   }
 
   &--text {
-    margin-bottom: $layout-spacing-small;
-    margin-top: $layout-spacing-small;
+    margin-bottom: $spacing-pixel-small;
+    margin-top: $spacing-pixel-small;
   }
 }
