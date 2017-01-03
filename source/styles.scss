@@ -7,12 +7,15 @@
 
 /* Base */
 @import "_base/vars";
+@import "_base/spacing";
 @import "_base/colors";
 @import "_base/normalize";
 @import "_base/base";
 
 /* Layouts */
-@import "_layouts/layouts";
+@import "_layouts/breakpoints";
+@import "_layouts/layout";
+@import "_layouts/grid";
 
 /* Elements */
 @import "_patterns/01-elements/02-text/inline-elements";
