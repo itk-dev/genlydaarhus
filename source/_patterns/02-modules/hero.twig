@@ -1,6 +1,13 @@
-<section class="hero">
-    <h1>Genlyd Aarhus</h1>
-    <p>Her skal stå en tekst omkring Genlyd Aarhus</p>
-    <a href="{{ attribute(link, 'templates-activities') }}">Find aktivitet</a>
-    <a href="{{ attribute(link, 'templates-create') }}">Opret aktivitet</a>
+<section class="hero" style="background-image: url('/assets/images/styleguide/placeholder-hero.png')">
+    <div class="hero--content">
+      <h1>Velkommen til Genlyd</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+      <div class="hero--buttons">
+        {% for button in heroButtons %}
+          <div class="hero--button">
+            {% include "elements-button" %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
 </section>

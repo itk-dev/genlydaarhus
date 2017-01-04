@@ -1,0 +1,14 @@
+{
+  "heroButtons" : [
+    {  
+      "class": "is-cta",
+      "href": "#",
+      "title": "Se aktiviteter"
+    },
+    { 
+      "class": "is-secondary is-light",
+      "href": "#",
+      "title": "Opret aktivitet"
+    }
+  ]
+}

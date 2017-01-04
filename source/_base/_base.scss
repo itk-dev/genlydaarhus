@@ -3,11 +3,14 @@ html {
 }
 
 body {
-  background-color: $color-blue-light;
   color: $color-black-light;
   font: $font;
   height: 100%;
   margin: 0;
   position: relative;
   width: 100%;
+}
+
+.main {
+  background-color: $color-blue-light;
 }

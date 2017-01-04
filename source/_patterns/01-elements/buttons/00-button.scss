@@ -1,18 +1,64 @@
+@mixin buttonHover($buttonColor, $buttonType: 'primary') {
+  @if $buttonType == 'secondary-dark' {
+    &:hover {
+      box-shadow:inset 0px 0px 0px 3px $color-green-dark;
+      color: $color-green-dark;
+    }
+  } @else if $buttonType == 'secondary-light' {
+    &:hover {
+      box-shadow:inset 0px 0px 0px 3px darken($buttonColor, 5%);
+      color: darken($buttonColor, 5%);
+    }
+  } @else {
+    &:hover {
+      background-color: darken($buttonColor, 5%);
+    }
+  }
+}
+
 .button {
   display: inline-block;
-  padding-bottom: $spacing-pixel-small;
+  padding-bottom: $spacing-pixel-xxsmall;
   padding-left: $spacing-pixel-small;
   padding-right: $spacing-pixel-small;
-  padding-top: $spacing-pixel-small;
-  margin-bottom: $spacing-pixel-small;
-  margin-top: $spacing-pixel-small;
+  padding-top: $spacing-pixel-xxsmall;
+  margin-bottom: $spacing-pixel-xsmall;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 700;
+  transition: all .4s;
+  width: auto;
 
   &.is-primary {
-    background-color: $color-gray-light;
+    @include buttonHover($color-blue);
+
+    background-color: $color-blue;
+    color: $color-black-light;
+  }
+
+  &.is-secondary {
+    background-color: transparent;
+    border-width: 3px;
+
+    &.is-dark {
+      @include buttonHover($color-black-light, 'secondary-dark');
+
+      box-shadow:inset 0px 0px 0px 3px $color-black-light;
+      color: $color-black-light;
+    }
+
+    &.is-light {
+      @include buttonHover($color-white, 'secondary-light');
+
+      box-shadow:inset 0px 0px 0px 3px $color-white;
+      color: $color-white;
+    }
   }
   
   &.is-cta {
-    background-color: $color-black;
-    color: $color-white;
+    @include buttonHover($color-yellow);
+
+    background-color: $color-yellow;
+    color: $color-black-light;
   }
 }
