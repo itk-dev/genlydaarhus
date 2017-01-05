@@ -1,10 +1,12 @@
-@mixin layout-wrapper($breakpoint, $margin: $spacing-percent-xlarge) {
-  margin-left: $margin;
-  margin-right: $margin;
+@mixin layout-wrapper($breakpoint, $spacing: $spacing-percent-xlarge) {
+  margin-left: $spacing;
+  margin-right: $spacing;
 
   @include breakpoint($breakpoint) {
     margin-left: auto;
     margin-right: auto;
+    padding-left: $spacing;
+    padding-right: $spacing;
     max-width: $breakpoint;
   }
 }

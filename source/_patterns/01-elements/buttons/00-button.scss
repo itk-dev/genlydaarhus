@@ -1,17 +1,15 @@
 @mixin buttonHover($buttonColor, $buttonType: 'primary') {
   @if $buttonType == 'secondary-dark' {
     &:hover {
-      box-shadow:inset 0px 0px 0px 3px $color-green-dark;
-      color: $color-green-dark;
+      background-color: rgba(0, 0, 0, 0.1);
     }
   } @else if $buttonType == 'secondary-light' {
     &:hover {
-      box-shadow:inset 0px 0px 0px 3px darken($buttonColor, 5%);
-      color: darken($buttonColor, 5%);
+      background-color: rgba(255, 255, 255, 0.1);
     }
   } @else {
     &:hover {
-      background-color: darken($buttonColor, 5%);
+      background-color: darken($buttonColor, 10%);
     }
   }
 }
@@ -22,12 +20,12 @@
   padding-left: $spacing-pixel-small;
   padding-right: $spacing-pixel-small;
   padding-top: $spacing-pixel-xxsmall;
-  margin-bottom: $spacing-pixel-xsmall;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 700;
   transition: all .4s;
-  width: auto;
+  width: 100%;
+  text-align: center;
 
   &.is-primary {
     @include buttonHover($color-blue);
@@ -38,19 +36,18 @@
 
   &.is-secondary {
     background-color: transparent;
-    border-width: 3px;
 
     &.is-dark {
       @include buttonHover($color-black-light, 'secondary-dark');
 
-      box-shadow:inset 0px 0px 0px 3px $color-black-light;
+      box-shadow:inset 0px 0px 0px 2px $color-black-light;
       color: $color-black-light;
     }
 
     &.is-light {
       @include buttonHover($color-white, 'secondary-light');
 
-      box-shadow:inset 0px 0px 0px 3px $color-white;
+      box-shadow:inset 0px 0px 0px 2px $color-white;
       color: $color-white;
     }
   }
@@ -60,5 +57,13 @@
 
     background-color: $color-yellow;
     color: $color-black-light;
+  }
+
+  &.is-small {
+    font-size: $font-size-small;
+    padding-bottom: $spacing-pixel-xxxsmall;
+    padding-left: $spacing-pixel-xsmall;
+    padding-right: $spacing-pixel-xsmall;
+    padding-top: $spacing-pixel-xxxsmall;
   }
 }

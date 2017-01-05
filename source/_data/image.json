@@ -1,4 +1,6 @@
-{
-  "class": "",
-  "src": "/assets/images/styleguide/placeholder-500x500.png"
+{ 
+  "image": {
+    "class": "",
+    "src": "/assets/images/styleguide/placeholder-1000x750.png"
+  }
 }

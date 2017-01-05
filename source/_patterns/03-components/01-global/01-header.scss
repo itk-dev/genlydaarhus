@@ -5,6 +5,32 @@
   height: 80px;
   width: 100%;
   z-index: 9999;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  &--inner {
+    border-bottom: $color-white;
+    display: flex;
+    width: 100%;
+  }
+
+  &--logo {
+    display: flex;
+    align-items: center;
+  }
+
+  &--logo-inner {
+    width: 120px;
+
+    @include breakpoint($breakpoint-lap) {
+      width: 140px;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      width: 150px;
+    }
+  }
 
   &.is-fixed {
     position: fixed;

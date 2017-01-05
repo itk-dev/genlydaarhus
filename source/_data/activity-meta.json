@@ -1,3 +1,6 @@
 {
-  "text": "Eksempel på tekst"
+  "activityMeta": {
+    "label": "Label",
+    "text": "Tekst"
+  }
 }

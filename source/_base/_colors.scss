@@ -15,3 +15,6 @@ $color-gray-dark:       #9c9c9c;
 $color-gray-darker:     #6f6f6f;
 $color-gray-darkest:    #3a3a3a;
 $color-black:           #181715;
+
+$color-light-alpha:     transparentize($color-white, .50);
+$color-dark-alpha:      transparentize($color-black-light, .3);

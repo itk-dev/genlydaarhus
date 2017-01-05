@@ -1,0 +1,29 @@
+@mixin content-separator($width: 8%, $color: $color-blue, $spacing: 20px, $align: false) {
+  text-align: $align;
+  display: block;
+  margin-bottom: $spacing;
+  padding-bottom: $spacing;
+  position: relative;
+
+  &:after {
+    @if $align == "center" {
+      left: 50%;
+      margin-left: -$width/2;
+      right: auto;
+    }
+    @else if $align == "right" {
+      left: auto;
+      right: 0;
+    } @else {
+      left: 0;
+      right: auto;
+    }
+
+    border-bottom: 5px solid $color;
+    content: "";
+    height: 5px;
+    position: absolute;
+    bottom: 0;
+    width: $width;
+  }
+}

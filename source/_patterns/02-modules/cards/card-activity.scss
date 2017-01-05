@@ -1,20 +1,52 @@
 .card-activity {
+  display: flex;
+  flex-direction: column;
+  color: $color-white;
   background-color: $color-gray-lighter;
-  margin-bottom: $spacing-pixel-small;
-  margin-top: $spacing-pixel-small;
-  padding: $spacing-pixel-small;
   width: 100%;
 
-  &:first-of-type {
-    margin-top: $spacing-pixel-medium;
+  &--top {
+    position: relative;
   }
 
-  &:last-of-type {
-    margin-bottom: 0;
+  &--bottom {
+    background-color: $color-black-light;
+    padding: $spacing-pixel-small;
+  }
+
+  &--title {
+    margin: 0;
+    font-size: $font-size-large;
+    position: absolute;
+    background-color: $color-dark-alpha;
+    bottom: 0;
+    width: 100%;
+    padding: $spacing-pixel-small;
   }
 
   &--text {
     margin-bottom: $spacing-pixel-small;
-    margin-top: $spacing-pixel-small;
+  }
+
+  &--metas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--meta {
+    width: 50%;
+
+    &:nth-child(-n+2) {
+      margin-bottom: $spacing-pixel-small;
+    }
+  }
+
+  &--buttons {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &--button {
+    width: 48%;
   }
 }
