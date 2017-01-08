@@ -1,0 +1,48 @@
+.activity-search {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-top: $spacing-pixel-medium;
+  margin-bottom: $spacing-pixel-medium;
+  padding-bottom: $spacing-pixel-medium;
+  text-align: center;
+  border-bottom: 1px solid transparentize($color-black-light, .9);
+
+  @include breakpoint($breakpoint-lap) {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+    margin-top: $spacing-pixel-xlarge;
+  }
+
+
+  &--title {
+    font-size: $font-size-xlarge;
+    margin-bottom: $spacing-pixel-small;
+    margin-top: 0;
+
+    @include breakpoint($breakpoint-lap) {
+      margin-bottom: 0;
+      margin-right: $spacing-pixel-small;
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+      font-size: $font-size-xxlarge;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      font-size: $font-size-xxxlarge;
+    }
+  } 
+
+  &--subtitle {
+    font-weight: 700;
+    width: 100%;
+    margin-top: 0;
+    margin-bottom: $spacing-pixel-tiny;
+    font-size: $font-size-small;
+    color: $color-dark-alpha;
+  }
+}

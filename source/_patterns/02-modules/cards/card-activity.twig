@@ -7,7 +7,7 @@
   <div class="card-activity--bottom">
     <div class="card-activity--text">
       <div class="card-activity--metas">
-        {% for activityMeta in cardActivityMetas %}
+        {% for activityMeta in cardActivity.activityMetas %}
         <div class="card-activity--meta">
           {% include "elements-activity-meta" %}
         </div>
@@ -15,7 +15,7 @@
     </div>
     </div>
     <div class="card-activity--buttons">
-      {% for button in cardActivityButtons %}
+      {% for button in cardActivity.buttons %}
         <div class="card-activity--button">
           {% include "elements-button" %}
         </div>

@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   color: $color-white;
-  background-color: $color-gray-lighter;
   width: 100%;
 
   &--top {
@@ -21,7 +20,10 @@
     background-color: $color-dark-alpha;
     bottom: 0;
     width: 100%;
-    padding: $spacing-pixel-small;
+    padding-left: $spacing-pixel-small;
+    padding-right: $spacing-pixel-small;
+    padding-top: $spacing-pixel-xsmall;
+    padding-bottom: $spacing-pixel-xsmall;
   }
 
   &--text {
@@ -37,7 +39,7 @@
     width: 50%;
 
     &:nth-child(-n+2) {
-      margin-bottom: $spacing-pixel-small;
+      margin-bottom: $spacing-pixel-xxsmall;
     }
   }
 

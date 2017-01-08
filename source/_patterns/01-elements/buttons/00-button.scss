@@ -22,7 +22,7 @@
   padding-top: $spacing-pixel-xxsmall;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 600;
   transition: all .4s;
   width: 100%;
   text-align: center;
@@ -65,5 +65,21 @@
     padding-left: $spacing-pixel-xsmall;
     padding-right: $spacing-pixel-xsmall;
     padding-top: $spacing-pixel-xxxsmall;
+  }
+
+  &.is-xsmall {
+    font-size: $font-size-small;
+    padding-bottom: $spacing-pixel-tiny;
+    padding-left: $spacing-pixel-xxsmall;
+    padding-right: $spacing-pixel-xxsmall;
+    padding-top: $spacing-pixel-tiny;
+  }
+
+  &.is-tiny {
+    font-size: $font-size-xsmall;
+    padding-bottom: $spacing-pixel-tiny;
+    padding-left: $spacing-pixel-xxsmall;
+    padding-right: $spacing-pixel-xxsmall;
+    padding-top: $spacing-pixel-tiny;
   }
 }

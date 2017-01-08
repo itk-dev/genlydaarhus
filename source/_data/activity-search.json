@@ -1,0 +1,11 @@
+{
+  "activitySearch": {
+    "title": "Titel",
+    "subtitle": "Undertitel",
+    "button": {  
+      "class": "is-secondary is-dark is-xsmall",
+      "href": "#",
+      "title": "Skift område"
+    }
+  }
+}
