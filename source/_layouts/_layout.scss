@@ -13,4 +13,57 @@
 
 .container {
   @include layout-wrapper($breakpoint-bigscreen);
+
+  &.has-spacing {
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-medium;
+
+    @include breakpoint($breakpoint-lap) {
+      padding-bottom: $spacing-pixel-xxlarge;
+      padding-top: $spacing-pixel-xxlarge;
+    }
+  }
+}
+
+/* Helpers
+   ========================================================================== */
+
+.flex {
+  display: flex;
+}
+
+.center {
+  justify-content: center;
+}
+
+/* Layouts
+   ========================================================================== */
+
+$two-col-max-width: 1200px;
+
+.l-two-col {
+  display: flex;
+  flex-direction: column;
+  max-width: $two-col-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($breakpoint-tablet) {
+    flex-direction: row;
+  }
+
+
+  &--left-col {
+    @include breakpoint($breakpoint-tablet) {
+      width: 30%;
+      margin-right: $spacing-pixel-medium;
+    }
+  }
+
+  &--right-col {
+    @include breakpoint($breakpoint-tablet) {
+      width: 70%;
+    }
+  }
+
 }

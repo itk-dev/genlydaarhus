@@ -19,10 +19,12 @@
 /* Layouts */
 @import "_layouts/breakpoints";
 @import "_layouts/layout";
+@import "_layouts/helpers";
 @import "_layouts/grid";
 
 /* Elements */
 @import "_patterns/01-elements/02-text/inline-elements";
+@import "_patterns/01-elements/helpers/section";
 @import "_patterns/01-elements/activity-meta";
 @import "_patterns/01-elements/buttons/00-button";
 @import "_patterns/01-elements/category";
@@ -31,6 +33,7 @@
 @import "_patterns/01-elements/forms/checkbox";
 @import "_patterns/01-elements/forms/textarea";
 @import "_patterns/01-elements/forms/selectbox";
+@import "_patterns/01-elements/headings/heading-meta";
 
 /* Modules */
 @import "_patterns/02-modules/cards/card-activity";

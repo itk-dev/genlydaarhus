@@ -18,3 +18,5 @@ $color-black:           #181715;
 
 $color-light-alpha:     transparentize($color-white, .50);
 $color-dark-alpha:      transparentize($color-black-light, .3);
+
+$color-border: transparentize($color-black-light, .9);

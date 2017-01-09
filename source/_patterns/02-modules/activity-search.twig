@@ -1,7 +1,5 @@
   <div class="activity-search">
-    <div class="activity-search--subtitle">
-      {{ activitySearch.subtitle }}
-    </div>
+    {% include "elements-heading-meta" %}
     <h2 class="activity-search--title">{{ activitySearch.title }}</h2>
     <div class="activity-search--button">
       {% set button = activitySearch.button %}

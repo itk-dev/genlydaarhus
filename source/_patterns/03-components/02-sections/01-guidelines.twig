@@ -1,12 +1,34 @@
 <section class="guidelines">
-  <h2>Hvordan laver du det bedste aktivitetsopslag?</h2>
-  <p>Denne sektion skal indeholde en information omkring hvordan du laver et godt aktivitetsopslag. Strukturen på sektionen er endnu ikke fastlagt, da indholdet i denne sektion ikke er fastlagt. Strukturen er derfor midlertidig og bliver omstruktureret når indholdet er fastlagt.</p>
-  <p>Sektionen kan eventuelt indeholde punklister.</p>
-  <ul>
-    <li>Dette er det første punkt i listen</li>
-    <li>Dette er det andet punkt i listen</li>
-    <li>Dette er det tredje punkt i listen</li>
-  </ul>
-  <p>Der kan også være en guideline til, hvordan man skal bruge billeder.</p>
-  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+  {% include 'elements-heading-meta' with { headingMeta: guidelines.headingMeta } %}
+  <h1 class="guidelines--title">Hvordan laver du det bedste aktivitetsopslag?</h1>
+  <div class="guidelines--items">
+    <div class="l-two-col guidelines--item">
+      <div class="l-two-col--left-col">
+        <h3>Hvad er en god overskrift?</h3>
+      </div>
+      <div class="l-two-col--right-col">
+        <p>En god overskrift er mange ting. Den kan være kort og tydelig (fx Vinsmagning i Dokk1). Den kan gøre en nysgerrig (fx Løgn og latin i sognegården) eller bruge ordspil (Luther og lagkage). Den kan love noget (Lær at binde din egen flue) eller være inviterende (Drop-ind tennis)</p>
+      </div>
+    </div>
+    <div class="l-two-col guidelines--item">
+      <div class="l-two-col--left-col">
+        <h3>Hvad er en god beskrivelse?</h3>
+      </div>
+      <div class="l-two-col--right-col">
+        <p>En god beskrivelse fortæller lidt mere om emnet eller temaet, og hvad i skal sammen. Fx:</p>
+        <ul>
+          <li>Vi lærer om de gode råvarer fra middelhavet og laver alle retter fra bunden.</li>
+          <li>Tag på en frisk cykeltur ved Moesgård med en flok motionister, der nyder den friske</li>
+          <li>luft og det gode humør. Vi cykler 5 km hver gang.</li>
+        </ul>
+        <p>Hvis det er et foredrag, kan man også skrive lidt om personen, der holder foredraget. Detaljer som, hvor og hvornår det foregår, kommer vi til senere. Det samme med hvor øvet, man skal være for at kunne deltage.</p>
+      </div>
+    </div>
+  </div>
+  <p class="guidelines--call-to-action-text center-text">
+    Har du lyst til at biddrage til fælleskabet i Aarhus og omegn?
+  </p>
+  <div class="guidelines--button flex center">
+    {% include 'elements-button' with { button: guidelines.button } %}
+  </div>
 </section>

@@ -1,4 +1,4 @@
-@mixin content-separator($width: 8%, $color: $color-blue, $spacing: 20px, $align: false) {
+@mixin content-separator($width: 30px, $color: $color-blue, $spacing: 20px, $align: false) {
   text-align: $align;
   display: block;
   margin-bottom: $spacing;
@@ -19,9 +19,9 @@
       right: auto;
     }
 
-    border-bottom: 3px solid $color;
+    border-bottom: 4px solid $color;
     content: "";
-    height: 3px;
+    height: 4px;
     position: absolute;
     bottom: 0;
     width: $width;

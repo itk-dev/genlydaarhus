@@ -1,29 +1,30 @@
-{% extends "templates-page-with-container" %}
+{% extends "templates-page" %}
 {% block hero %}
   {% include "modules-hero" %}
 {% endblock %}
 {% block main %}
-  {% include "modules-activity-search" %}
-  <div class="grid">
-    <div class="grid--inner">
-      <article class="grid--item">
-        {% include "modules-card-activity" %}
-      </article>
-      <article class="grid--item">
-        {% include "modules-card-activity" %}
-      </article>
-      <article class="grid--item">
-        {% include "modules-card-activity" %}
-      </article>
-      <article class="grid--item">
-        {% include "modules-card-activity" %}
-      </article>
-      <article class="grid--item">
-        {% include "modules-card-activity" %}
-      </article>
+  <div class="container has-spacing">
+    {% include "modules-activity-search" with { activitySearch: home.activitySearch, headingMeta: home.activitySearch.headingMeta } %}
+    
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in 1..7 %}
+          <article class="grid--item">
+            {% include "modules-card-activity" %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="flex center">
+      {% include "elements-button" with { button: home.seeAllButton } %}
+    </div>
+
+  </div>
+  
+  <div class="section is-blue">
+    <div class="container has-spacing">
+      {% include "components-guidelines" %}
     </div>
   </div>
-
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Se alle aktiviteter', 'href': attribute(link, 'templates-activities')} %}
-  {% include "components-guidelines" %}
 {% endblock %}

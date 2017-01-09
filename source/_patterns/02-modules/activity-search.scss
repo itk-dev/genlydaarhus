@@ -4,17 +4,15 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  margin-top: $spacing-pixel-medium;
   margin-bottom: $spacing-pixel-medium;
   padding-bottom: $spacing-pixel-medium;
   text-align: center;
-  border-bottom: 1px solid transparentize($color-black-light, .9);
+  border-bottom: 1px solid $color-border;
 
   @include breakpoint($breakpoint-lap) {
     flex-direction: row;
     justify-content: flex-start;
     text-align: left;
-    margin-top: $spacing-pixel-xlarge;
   }
 
 
@@ -35,14 +33,5 @@
     @include breakpoint($breakpoint-desk) {
       font-size: $font-size-xxxlarge;
     }
-  } 
-
-  &--subtitle {
-    font-weight: 700;
-    width: 100%;
-    margin-top: 0;
-    margin-bottom: $spacing-pixel-tiny;
-    font-size: $font-size-small;
-    color: $color-dark-alpha;
   }
 }

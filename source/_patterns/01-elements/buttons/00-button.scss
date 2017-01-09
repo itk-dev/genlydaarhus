@@ -15,7 +15,6 @@
 }
 
 .button {
-  display: inline-block;
   padding-bottom: $spacing-pixel-xxsmall;
   padding-left: $spacing-pixel-small;
   padding-right: $spacing-pixel-small;
@@ -24,7 +23,6 @@
   text-transform: uppercase;
   font-weight: 600;
   transition: all .4s;
-  width: 100%;
   text-align: center;
 
   &.is-primary {
@@ -81,5 +79,10 @@
     padding-left: $spacing-pixel-xxsmall;
     padding-right: $spacing-pixel-xxsmall;
     padding-top: $spacing-pixel-tiny;
+  }
+
+  &.is-full-width {
+    display: inline-block;
+    width: 100%;
   }
 }

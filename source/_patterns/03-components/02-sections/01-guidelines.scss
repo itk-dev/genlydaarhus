@@ -1,0 +1,28 @@
+.guidelines {
+  &--items {
+    margin-bottom: $spacing-pixel-medium;
+  }
+  
+  &--item {
+    border-bottom: 1px solid $color-border;
+    margin-top: $spacing-pixel-large;
+    padding-bottom: $spacing-pixel-large;
+
+    &:first-child {
+      border-top: 1px solid $color-border;
+      padding-top: $spacing-pixel-large;
+    }
+  }
+
+  &--title {
+    color: $color-black-light;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  &--call-to-action-text {
+    font-size: $font-size-large;
+    font-style: italic;
+    margin-bottom: $spacing-pixel-small;
+  }
+}

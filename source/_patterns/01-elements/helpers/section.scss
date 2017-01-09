@@ -1,0 +1,18 @@
+.section {
+  &.is-blue {
+    background-color: $color-blue;
+  }
+
+  &.is-green-dark {
+    background-color: $color-green-dark;
+    color: $color-white;
+  }
+
+  &.is-green-light {
+    background-color: $color-green-light;
+  }
+
+  &.is-white {
+    background-color: $color-white;
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "home": {
+    "activitySearch": {
+      "title": "Aktiviteter i Højbjerg",
+      "headingMeta": {
+        "text": "Aktiviteter i nærheden"
+      },
+      "button": {  
+        "class": "is-cta is-dark is-xsmall",
+        "href": "#",
+        "title": "Skift område"
+      }
+    },
+    "seeAllButton": {
+      "class": "is-secondary is-dark",
+      "href": "#",
+      "title": "Se alle aktiviteter"
+    }
+  }
+}

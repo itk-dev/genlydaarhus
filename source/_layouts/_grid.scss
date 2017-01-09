@@ -40,11 +40,11 @@ $grid-spacing-percent-large:  $spacing-percent-large;
     align-items: stretch;
     display: flex;
     margin-bottom: $grid-spacing-pixel-medium;
-    margin-left: $grid-spacing-percent-medium;
-    margin-right: $grid-spacing-percent-medium;
 
     @include breakpoint($breakpoint-tablet) {
       margin-bottom: $grid-spacing-percent-large;
+      margin-left: $grid-spacing-percent-medium;
+      margin-right: $grid-spacing-percent-medium;
 
       // Set margins for 2 columns.
       &:nth-of-type(2n) {
