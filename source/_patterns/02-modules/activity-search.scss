@@ -7,12 +7,13 @@
   margin-bottom: $spacing-pixel-medium;
   padding-bottom: $spacing-pixel-medium;
   text-align: center;
-  border-bottom: 1px solid $color-border;
+  border-bottom: 1px solid $color-border-dark;
 
-  @include breakpoint($breakpoint-lap) {
+  @include breakpoint($breakpoint-tablet) {
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-between;
     text-align: left;
+    padding-bottom: $spacing-pixel-small;
   }
 
 
@@ -21,17 +22,46 @@
     margin-bottom: $spacing-pixel-small;
     margin-top: 0;
 
-    @include breakpoint($breakpoint-lap) {
-      margin-bottom: 0;
-      margin-right: $spacing-pixel-small;
-    }
-
     @include breakpoint($breakpoint-tablet) {
-      font-size: $font-size-xxlarge;
+      margin-bottom: $spacing-pixel-tiny;
+      font-size: $font-size-xlarge;
     }
 
     @include breakpoint($breakpoint-desk) {
-      font-size: $font-size-xxxlarge;
+      font-size: $font-size-xlarge;
+    }
+  }
+
+  &--subtitle {
+    font-weight: 400;
+    color: $color-dark-alpha;
+    margin-top: 0;
+    display: none;
+
+    @include breakpoint($breakpoint-tablet) {
+      display: block;
+    }
+  }
+
+  &--location {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include breakpoint($breakpoint-lap) {
+      flex-direction: row;
+      justify-content: flex-start;
+      text-align: left;
+    }
+  }
+
+  &--location-text {
+    display: none;
+    color: $color-dark-alpha;
+    margin-right: $spacing-pixel-small;
+
+    @include breakpoint($breakpoint-desk) {
+      display: block;
     }
   }
 }

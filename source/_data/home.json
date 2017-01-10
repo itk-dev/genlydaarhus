@@ -1,18 +1,16 @@
 {
   "home": {
     "activitySearch": {
-      "title": "Aktiviteter i Højbjerg",
-      "headingMeta": {
-        "text": "Aktiviteter i nærheden"
-      },
+      "title": "Aktiviteter i nærheden (Højbjerg)",
+      "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
       "button": {  
-        "class": "is-cta is-dark is-xsmall",
+        "class": "is-cta is-dark is-small",
         "href": "#",
         "title": "Skift område"
       }
     },
     "seeAllButton": {
-      "class": "is-secondary is-dark",
+      "class": "is-cta",
       "href": "#",
       "title": "Se alle aktiviteter"
     }

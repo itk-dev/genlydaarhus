@@ -1,13 +1,8 @@
 {
   "guidelines": {
     "headingMeta": {
-      "class": "center-text",
+      "class": "is-light center-text",
       "text": "Opret aktivitet"
-    },
-    "button": {
-      "class": "is-cta",
-      "href": "#",
-      "title": "Opret aktivitet"
     }
   }
 }

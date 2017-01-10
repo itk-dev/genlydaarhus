@@ -1,8 +1,13 @@
   <div class="activity-search">
-    {% include "elements-heading-meta" %}
-    <h2 class="activity-search--title">{{ activitySearch.title }}</h2>
-    <div class="activity-search--button">
-      {% set button = activitySearch.button %}
-      {% include "elements-button" %}
+    <div class="activitySearch--header">
+      <h2 class="activity-search--title">{{ activitySearch.title }}</h2>
+      <p class="activity-search--subtitle">{{ activitySearch.subtitle }}</p> 
+    </div>
+    <div class="activity-search--location">
+      <p class="activity-search--location-text">Er dette ikke i nærheden af dig?</p>
+      <div class="activity-search--location-button">
+        {% set button = activitySearch.button %}
+        {% include "elements-button" %}
+      </div>
     </div>
   </div>

@@ -1,0 +1,9 @@
+{
+"callToAction": {
+    "button": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Opret aktivitet"
+    }
+  }
+}

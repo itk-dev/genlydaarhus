@@ -1,14 +1,17 @@
 {
-  "heroButtons" : [
-    {  
-      "class": "is-cta",
-      "href": "#",
-      "title": "Find aktiviteter"
-    },
-    { 
-      "class": "is-secondary is-light",
-      "href": "#",
-      "title": "Opret aktivitet"
-    }
-  ]
+  "hero": {
+    "image": "/assets/images/styleguide/placeholder-hero.png",
+    "buttons": [
+      {  
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Find aktiviteter"
+      },
+      { 
+        "class": "is-secondary is-light is-full-width",
+        "href": "#",
+        "title": "Opret aktivitet"
+      }
+    ]
+  }
 }

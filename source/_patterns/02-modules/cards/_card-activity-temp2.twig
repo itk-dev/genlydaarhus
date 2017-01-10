@@ -1,4 +1,4 @@
-<a href="#" class="card-activity">
+<article class="card-activity">
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
@@ -17,7 +17,13 @@
         </div>
       {% endfor %}
     </div>
+    </div>
+    <div class="card-activity--buttons">
+      {% for button in cardActivity.buttons %}
+        <div class="card-activity--button">
+          {% include "elements-button" %}
+        </div>
+      {% endfor %}
+    </div>
   </div>
-
-  </div>
-</a>
+</article>

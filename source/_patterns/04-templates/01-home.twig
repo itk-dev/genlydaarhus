@@ -8,9 +8,9 @@
     
     <div class="grid">
       <div class="grid--inner">
-        {% for item in 1..7 %}
+        {% for item in activities %}
           <article class="grid--item">
-            {% include "modules-card-activity" %}
+            {% include "modules-card-activity" with { cardActivity: item } %}
           </article>
         {% endfor %}
       </div>
@@ -22,9 +22,12 @@
 
   </div>
   
-  <div class="section is-blue">
+  <div class="section is-black-lightest">
     <div class="container has-spacing">
       {% include "components-guidelines" %}
     </div>
+  </div>
+  <div class="section has-padding is-black-lighter">
+    {% include 'modules-call-to-action' %}
   </div>
 {% endblock %}

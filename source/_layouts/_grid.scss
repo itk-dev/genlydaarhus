@@ -40,6 +40,7 @@ $grid-spacing-percent-large:  $spacing-percent-large;
     align-items: stretch;
     display: flex;
     margin-bottom: $grid-spacing-pixel-medium;
+    width: 100%;
 
     @include breakpoint($breakpoint-tablet) {
       margin-bottom: $grid-spacing-percent-large;

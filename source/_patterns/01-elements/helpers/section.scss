@@ -1,4 +1,9 @@
 .section {
+
+  &.has-padding {
+    padding-top: $spacing-pixel-large;
+    padding-bottom: $spacing-pixel-large;
+  }
   &.is-blue {
     background-color: $color-blue;
   }
@@ -12,7 +17,31 @@
     background-color: $color-green-light;
   }
 
+  &.is-yellow {
+    background-color: $color-yellow;
+  }
+
   &.is-white {
     background-color: $color-white;
+  }
+
+  &.is-black {
+    background-color: $color-black-light;
+    color: $color-white;
+  }
+
+  &.is-black-light {
+    background-color: $color-black-light;
+    color: $color-white;
+  }
+
+  &.is-black-lighter {
+    background-color: $color-black-lighter;
+    color: $color-white;
+  }
+
+  &.is-black-lightest {
+    background-color: $color-black-lightest;
+    color: $color-white;
   }
 }

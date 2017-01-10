@@ -1,6 +1,8 @@
 /* stylelint-disable */
 
 $color-black-light:     #28353b;
+$color-black-lighter:   lighten($color-black-light, 20%);
+$color-black-lightest:  lighten($color-black-light, 20%);
 $color-green-dark:      #0e4f47;
 $color-green-light:     #98b788;
 $color-blue:            #b5d0d0;
@@ -19,4 +21,5 @@ $color-black:           #181715;
 $color-light-alpha:     transparentize($color-white, .50);
 $color-dark-alpha:      transparentize($color-black-light, .3);
 
-$color-border: transparentize($color-black-light, .9);
+$color-border-light: transparentize($color-white, .92);
+$color-border-dark: transparentize($color-black, .92);

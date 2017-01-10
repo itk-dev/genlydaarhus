@@ -4,5 +4,13 @@
   margin-top: 0;
   margin-bottom: $spacing-pixel-tiny;
   font-size: $font-size-small;
-  color: $color-dark-alpha;
+
+
+  &.is-dark {
+    color: $color-dark-alpha;
+  }
+
+  &.is-light {
+    color: $color-light-alpha;
+  }
 }

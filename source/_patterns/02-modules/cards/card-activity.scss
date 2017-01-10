@@ -3,9 +3,31 @@
   flex-direction: column;
   color: $color-white;
   width: 100%;
+  text-decoration: none;
+  transition: all .4s;
+
+  &:hover {
+    opacity: 0.95;
+  }
 
   &--top {
     position: relative;
+  }
+
+  &--image-container {
+    // Keeps aspect-ratio of div (16:9)
+    width: 100%;
+    padding-bottom: 56.25%;
+  }
+
+  &--image {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    position: absolute;
+    overflow: hidden;
+    width: 100%;
   }
 
   &--bottom {
@@ -24,10 +46,6 @@
     padding-right: $spacing-pixel-small;
     padding-top: $spacing-pixel-xsmall;
     padding-bottom: $spacing-pixel-xsmall;
-  }
-
-  &--text {
-    margin-bottom: $spacing-pixel-small;
   }
 
   &--metas {

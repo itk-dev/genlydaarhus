@@ -3,7 +3,6 @@
   height: 500px;
   background-size: cover;
   background-position: center center;
-  border-bottom: 5px solid $color-green-dark;
 
   @include breakpoint($breakpoint-desk) {
     height: 600px;
@@ -81,15 +80,13 @@
   }
 
   &--button {
-    flex-basis: 100%;
-
     @include breakpoint($breakpoint-lap) {
       flex-basis: auto;
       margin-right: $spacing-pixel-small;
     }
 
     &:first-child {
-      margin-bottom: $spacing-percent-xlarge;
+      margin-bottom: $spacing-percent-large;
 
       @include breakpoint($breakpoint-lap) {
         margin-bottom: 0;
