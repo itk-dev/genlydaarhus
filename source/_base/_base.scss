@@ -12,5 +12,7 @@ body {
 }
 
 .main {
-  background-color: $color-blue-light;
+  background-color: $color-blue-background;
+  display:flex;
+  flex-direction: column;
 }

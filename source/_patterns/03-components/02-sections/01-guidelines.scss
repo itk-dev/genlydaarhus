@@ -1,19 +1,17 @@
 .guidelines {
+  &--headings {
+    display: flex;
+    align-items: center
+  }
+
   &--item {
-    border-bottom: 1px solid $color-border-light;
+    border-bottom: 1px solid $color-border-dark;
     margin-top: $spacing-pixel-large;
     padding-bottom: $spacing-pixel-large;
 
     &:first-child {
-      border-top: 1px solid $color-border-light;
+      border-top: 1px solid $color-border-dark;
       padding-top: $spacing-pixel-large;
     }
-  }
-
-  &--title {
-    color: $color-yellow;
-    font-weight: 700;
-    margin-top: 0;
-    text-align: center;
   }
 }

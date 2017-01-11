@@ -8,6 +8,19 @@
     background-color: $color-blue;
   }
 
+  &.is-blue-light {
+    background-color: $color-blue-light;
+  }
+
+  &.is-blue-lighter {
+    background-color: $color-blue-lighter;
+  }
+
+  &.is-blue-lightest {
+    background-color: $color-blue-lightest;
+  }
+
+
   &.is-green-dark {
     background-color: $color-green-dark;
     color: $color-white;

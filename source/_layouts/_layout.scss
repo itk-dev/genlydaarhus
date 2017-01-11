@@ -28,20 +28,37 @@
 /* Helpers
    ========================================================================== */
 
-.flex {
-  display: flex;
-}
+.layout {
+  &.flex {
+    display: flex;
+  }
 
-.center {
-  justify-content: center;
-}
+  &.center {
+    justify-content: center;
+  }
 
-.col {
-  flex-direction: column;
+  &.col {
+    flex-direction: column;
+  }
+
+  &.margin-top {
+    margin-top: $spacing-pixel-large;
+  }
 }
 
 /* Layouts
    ========================================================================== */
+
+// Heading section with border
+
+.l-heading-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: $spacing-pixel-large;
+  border-bottom: 1px solid $color-border-dark;
+}
+
+// Two coloumn layout
 
 $two-col-max-width: 1200px;
 

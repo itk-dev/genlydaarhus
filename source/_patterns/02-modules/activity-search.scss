@@ -13,55 +13,6 @@
     flex-direction: row;
     justify-content: space-between;
     text-align: left;
-    padding-bottom: $spacing-pixel-small;
-  }
-
-
-  &--title {
-    font-size: $font-size-xlarge;
-    margin-bottom: $spacing-pixel-small;
-    margin-top: 0;
-
-    @include breakpoint($breakpoint-tablet) {
-      margin-bottom: $spacing-pixel-tiny;
-      font-size: $font-size-xlarge;
-    }
-
-    @include breakpoint($breakpoint-desk) {
-      font-size: $font-size-xlarge;
-    }
-  }
-
-  &--subtitle {
-    font-weight: 400;
-    color: $color-dark-alpha;
-    margin-top: 0;
-    display: none;
-
-    @include breakpoint($breakpoint-tablet) {
-      display: block;
-    }
-  }
-
-  &--location {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    @include breakpoint($breakpoint-lap) {
-      flex-direction: row;
-      justify-content: flex-start;
-      text-align: left;
-    }
-  }
-
-  &--location-text {
-    display: none;
-    color: $color-dark-alpha;
-    margin-right: $spacing-pixel-small;
-
-    @include breakpoint($breakpoint-desk) {
-      display: block;
-    }
+    padding-bottom: $spacing-pixel-normal;
   }
 }

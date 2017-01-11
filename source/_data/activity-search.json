@@ -1,7 +1,5 @@
 {
   "activitySearch": {
-    "title": "Titel",
-    "subtitle": "Dette er en undertitel",
     "button": {  
       "class": "is-secondary is-dark is-small",
       "href": "#",

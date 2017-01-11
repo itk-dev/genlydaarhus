@@ -1,35 +1,35 @@
 .header {
-  align-items: center;
   background-color: $color-white;
   display: flex;
-  height: 80px;
+  height: 60px;
   width: 100%;
-  z-index: 9999;
-  position: absolute;
-  top: 0;
-  left: 0;
 
   &--inner {
-    border-bottom: $color-white;
+    @include layout-wrapper($breakpoint-bigscreen);
     display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
+  }
+
+  &--navigation {
+    display: flex;
+    color: $color-white;
+    list-style: none;
+  }
+
+  &--navigation-item {
+    margin-right: $spacing-pixel-small;
   }
 
   &--logo {
     display: flex;
     align-items: center;
+    margin-top: $spacing-pixel-tiny;
   }
 
   &--logo-inner {
     width: 120px;
-
-    @include breakpoint($breakpoint-lap) {
-      width: 140px;
-    }
-
-    @include breakpoint($breakpoint-desk) {
-      width: 150px;
-    }
   }
 
   &.is-fixed {
@@ -38,5 +38,23 @@
 
   &.is-transparent {
     background-color: transparent;
+    height: 80px;
+    z-index: 9999;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .header--inner {
+      border-bottom: 1px solid transparentize($color-white, 0.80);
+    }
+
+    .header--logo-inner {
+      width: 120px;
+
+      @include breakpoint($breakpoint-lap) {
+        width: 130px;
+      }
+    }
+
   }
 }

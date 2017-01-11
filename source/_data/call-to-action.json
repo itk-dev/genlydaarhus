@@ -4,6 +4,7 @@
       "class": "is-cta",
       "href": "#",
       "title": "Opret aktivitet"
-    }
+    },
+    "text": "Her kan stå en call to action text"
   }
 }

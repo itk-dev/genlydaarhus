@@ -1,10 +1,14 @@
 <section class="guidelines">
-  {% include 'elements-heading-meta' with { headingMeta: guidelines.headingMeta } %}
-  <h1 class="guidelines--title">Hvordan laver du det bedste aktivitetsopslag?</h1>
+  <div class="layout flex center">
+    {% include 'modules-heading-with-icon' %}
+  </div>
   <div class="guidelines--items">
     <div class="l-two-col guidelines--item">
       <div class="l-two-col--left-col">
-        <h3>Hvad er en god overskrift?</h3>
+        <div class="guidelines--headings">
+          {% include 'elements-icon' with { icon: { type: "checkmark-bold", class: "is-small is-green-dark", color: 'light' } } %}
+          <h3>Hvad er en god overskrift?</h3>
+        </div>
       </div>
       <div class="l-two-col--right-col">
         <p>En god overskrift er mange ting. Den kan være kort og tydelig (fx Vinsmagning i Dokk1). Den kan gøre en nysgerrig (fx Løgn og latin i sognegården) eller bruge ordspil (Luther og lagkage). Den kan love noget (Lær at binde din egen flue) eller være inviterende (Drop-ind tennis)</p>
@@ -12,7 +16,10 @@
     </div>
     <div class="l-two-col guidelines--item">
       <div class="l-two-col--left-col">
-        <h3>Hvad er en god beskrivelse?</h3>
+        <div class="guidelines--headings">
+          {% include 'elements-icon' with { icon: { type: "checkmark-bold", class: "is-small is-green-dark", color: 'light' } } %}
+          <h3>Hvad er en god beskrivelse?</h3>
+        </div>
       </div>
       <div class="l-two-col--right-col">
         <p>En god beskrivelse fortæller lidt mere om emnet eller temaet, og hvad i skal sammen. Fx:</p>

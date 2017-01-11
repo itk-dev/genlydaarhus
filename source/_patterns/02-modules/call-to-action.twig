@@ -1,8 +1,8 @@
 <div class="call-to-action">
   <p class="call-to-action--text center-text">
-    Har du lyst til at biddrage til fælleskabet i Aarhus og omegn?
+    {{ callToAction.text }}
   </p>
-  <div class="call-to-action--button flex center">
+  <div class="call-to-action--button layout flex center">
     {% include 'elements-button' with { button: callToAction.button } %}
   </div>
 </div>

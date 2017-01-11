@@ -1,0 +1,12 @@
+{
+  "activityList": {
+    "headingWithIcon": {
+      "title": "Alle aktuelle aktiviteter",
+      "subtitle": "Her kan du se alle aktuelle aktiviteter.",
+      "icon": {
+        "type": "bulletin",
+        "class": ""
+      }
+    }
+  }
+}

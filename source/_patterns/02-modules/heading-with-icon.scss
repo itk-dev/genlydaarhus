@@ -1,0 +1,16 @@
+.heading-with-icon {
+  display: flex;
+  align-items: center;
+
+  &--title {
+    font-size: $font-size-xlarge;
+    margin-top: 0;
+    margin-bottom: $spacing-pixel-xtiny;
+  }
+
+  &--subtitle {
+    margin-top: 0;
+    margin-bottom: 0;
+    color: $color-dark-alpha;
+  }
+}

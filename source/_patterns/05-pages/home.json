@@ -1,5 +1,54 @@
 {
   "hero": {
     "image": "/assets/images/styleguide/hero.jpg"
+  },
+  "home": {
+    "activityAction": {
+      "text": "Ikke i nærheden af dig?",
+      "button": {  
+        "class": "is-cta is-dark is-small",
+        "href": "#",
+        "title": "Skift område"
+      }
+    },
+    "headingWithIcon": {
+      "title": "Aktiviteter i nærheden (Højbjerg)",
+      "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
+      "icon": {
+        "type": "location",
+        "class": ""
+      }
+    },
+    "seeAllButton": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Se alle aktiviteter"
+    },
+    "activityCallToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Alle aktiviteter" 
+      },
+      "text": "Fandt du ikke lige en aktivitet der passede dig?"
+    },
+    "guidelines": {
+      "callToAction": {
+        "button": {
+          "class": "is-cta",
+          "href": "#",
+          "title": "Opret aktivitet" 
+        },
+        "text": "Har du lyst til at biddrage til fælleskabet i Aarhus og omegn?"
+      },
+      "headingWithIcon": {
+        "title": "Hvordan laver du det bedste aktivitetsopslag?",
+        "subtitle": "Her kan du læse lidt om, hvordan du kan lave et godt aktivitetsopslag på Genlyd Aarhus.",
+        "icon": {
+          "class": "",
+          "type": "bulletin"
+        }
+      }
+    }
   }
 }

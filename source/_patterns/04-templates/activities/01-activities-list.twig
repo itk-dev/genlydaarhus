@@ -1,25 +1,25 @@
-{% extends "templates-activities" %}
-{% block search %}
-  <div class="grid">
-    <div class="grid--inner">
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
-      </div>
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
-      </div>
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
-      </div>
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
-      </div>
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
-      </div>
-      <div class="grid--item">
-        {% include "modules-card-activity" with {userActions: true } %}
+{% extends "templates-page" %}
+{% block hero %}{% endblock %}
+{% block main %}
+  <div class="container has-spacing">
+
+    {% include "modules-activity-search" with 
+      { 
+        activitySearch: activityList.activitySearch, 
+        headingWithIcon: activityList.headingWithIcon, 
+        icon: activityList.headingWithIcon.icon 
+      } 
+    %}
+  
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
       </div>
     </div>
+
   </div>
 {% endblock %}
