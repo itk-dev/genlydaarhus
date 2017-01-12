@@ -37,7 +37,7 @@ web:
             # The folder from which to serve static assets, for this location.
             #
             # This is a filesystem path, relative to the application root.
-            root: 'web/public'
+            root: 'web/public/'
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
