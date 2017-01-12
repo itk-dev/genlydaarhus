@@ -32,12 +32,4 @@
       margin-bottom: 0;
     }
   }
-
-  &--icon {
-    display: none;
-
-    @include breakpoint($breakpoint-desk) {
-      display: block;
-    }
-  }
 }

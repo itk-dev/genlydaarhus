@@ -46,6 +46,27 @@
   }
 }
 
+/* Responsive visibility
+   ========================================================================== */
+
+   @media (max-width: $breakpoint-desk) {
+    .hidden-desk-down {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .hidden-tablet-down {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: $breakpoint-lap) {
+    .hidden-lap-down {
+      display: none !important;
+    }
+  }
+
 /* Layouts
    ========================================================================== */
 
