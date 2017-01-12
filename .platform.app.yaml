@@ -51,7 +51,7 @@ web:
             # location to the application.
             #
             # Can be true, false or a URI path string.
-            passthru: '/index.php'
+            passthru: false
 
             # Deny access to static files in this location.
             allow: false
