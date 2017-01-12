@@ -1,0 +1,23 @@
+<a href="#" class="card-activity">
+  <div class="card-activity--top">
+    <div class="card-activity--image-container">
+      <div class="card-activity--image">
+        {% include "elements-image" with { image: cardActivity.image } %}
+      </div>
+    </div>
+    <h4 class="card-activity--title">{{ cardActivity.title }}</h4>
+  </div>
+
+  <div class="card-activity--bottom">
+    <div class="card-activity--text">
+      <div class="card-activity--metas">
+        {% for activityMeta in cardActivity.activityMetas %}
+        <div class="card-activity--meta">
+          {% include "elements-activity-meta" %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+
+  </div>
+</a>

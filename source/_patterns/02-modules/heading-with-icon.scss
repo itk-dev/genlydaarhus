@@ -1,16 +1,43 @@
 .heading-with-icon {
   display: flex;
   align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @include breakpoint($breakpoint-tablet) {
+    text-align: left;
+    max-width: 75%;
+  }
+
+  @include breakpoint($breakpoint-desk) {
+    max-width: 60%;
+  }
 
   &--title {
-    font-size: $font-size-xlarge;
+    font-size: $font-size-large;
     margin-top: 0;
-    margin-bottom: $spacing-pixel-xtiny;
+    margin-bottom: $spacing-pixel-xxsmall;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-bottom: $spacing-pixel-xtiny;
+    }
   }
 
   &--subtitle {
     margin-top: 0;
-    margin-bottom: 0;
     color: $color-dark-alpha;
+    margin-bottom: $spacing-pixel-normal;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-bottom: 0;
+    }
+  }
+
+  &--icon {
+    display: none;
+
+    @include breakpoint($breakpoint-desk) {
+      display: block;
+    }
   }
 }

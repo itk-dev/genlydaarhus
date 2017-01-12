@@ -8,7 +8,7 @@
 {% block main %}
   <div class="container has-spacing">
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIcon } %}
+      {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIcon, icon: home.activityAction.icon } %}
       {% include 'modules-activity-action' with { activityAction: home.activityAction, button: home.activityAction.button } %}
     </div>
     

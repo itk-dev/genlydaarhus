@@ -1,0 +1,11 @@
+{% extends "templates-page" %}
+{% block main %}
+  <p>2 af 6</p>
+  <h2>Vælg de vigtigste egenskaber</h2>
+  {% include "elements-selectbox" with {'name': 'participation-level', 'label': 'Hvilket niveau kræver det at deltage?', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}
+  {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+  {% include "elements-selectbox" with {'name': 'physical-level', 'label': 'Kræver det et særligt fysisk niveau?', options: [ 'Ingen fysisk forudsætning', 'i nogenlunde form', 'i god form' ] } %}
+  {% include "elements-selectbox" with {'name': 'help', 'label': 'Brug for en hjælpende hånd?', options: [ 'Ingen hjælp påkrævet', 'Kunne godt bruge en hånd', 'Alle er velkomne til at hjælpe' ] } %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-one')} %}
+  {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-three')} %}
+{% endblock %}

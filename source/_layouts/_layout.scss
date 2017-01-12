@@ -18,7 +18,7 @@
     padding-bottom: $spacing-pixel-medium;
     padding-top: $spacing-pixel-medium;
 
-    @include breakpoint($breakpoint-lap) {
+    @include breakpoint($breakpoint-desk) {
       padding-bottom: $spacing-pixel-xxlarge;
       padding-top: $spacing-pixel-xxlarge;
     }
@@ -53,9 +53,15 @@
 
 .l-heading-section {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   margin-bottom: $spacing-pixel-large;
   border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $spacing-pixel-normal;
+
+  @include breakpoint($breakpoint-tablet) {
+    flex-direction: row;
+  }
 }
 
 // Two coloumn layout

@@ -1,0 +1,20 @@
+{% extends "templates-page" %}
+{% block main %}
+  <h2>Hej Lasse</h2>
+  <p>På denne side kan du se oplysninger, samt dine seneste opslag</p>
+  <h3>Min Profil</h3>
+  <form>
+    {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'label': 'Fornavn', 'placeholder': 'Skriv fornavn her', 'value': 'Lasse' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'label': 'Efternavn', 'placeholder': 'Skriv dit efternavn', 'value': 'Iversen' } %}
+    {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'label': 'Email', 'placeholder': 'Skriv din email', 'value': 'eksempel@gmail.com' } %}
+    {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'label': 'Adgangskode', 'placeholder': 'Skriv din adgangskode', 'value': 'password' } %}
+    {% include "elements-image" with {'class': 'has-margin', 'src': '/assets/profile-image.png'} %}
+    <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload et profilbillede'} %}</p>
+    <p>Profilbilleder bliver kun brugt, når medlemmer ønsker at tilmelde sig din aktivitet.</p>
+    <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Gem'} %}</p>
+  </form>
+  <h3>Seneste opslag</h3>
+  {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
+  {% include "modules-card-activity" with {profileActions: true, editAction: true } %}
+  <p><a href="{{ attribute(link, 'templates-profile-activities-overview') }}">Se alle dine opslag</a></p>
+{% endblock %}

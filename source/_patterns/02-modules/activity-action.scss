@@ -12,14 +12,24 @@
     @include breakpoint($breakpoint-desk) {
       margin-left: $spacing-pixel-normal;
     }
-  }
 
-  &--text {
-    display: none;
-    color: $color-dark-alpha;
-    margin-right: $spacing-pixel-small;
+    &--text {
+      display: none;
+      color: $color-dark-alpha;
+      margin-right: $spacing-pixel-small;
 
-    @include breakpoint($breakpoint-desk) {
-      display: block;
+      @include breakpoint($breakpoint-desk) {
+        display: block;
+      }
+    }
+
+    &--button {
+      display: flex;
+      justify-content: center;
+      width: 100%;
+
+      @include breakpoint($breakpoint-desk) {
+        width: auto;
+      }
     }
   }

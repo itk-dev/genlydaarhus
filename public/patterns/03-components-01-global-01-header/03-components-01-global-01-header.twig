@@ -1,0 +1,14 @@
+<header class="header {{ class }} {{ transparent ? 'is-transparent' }}">
+  <div class="header--inner">
+      <div class="header--logo">
+        <div class="header--logo-inner">
+          {% if transparent %}
+            {% include "elements-logo-light" %}
+          {% else %}
+            {% include "elements-logo-dark" %}
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

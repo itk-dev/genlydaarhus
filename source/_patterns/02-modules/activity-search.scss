@@ -15,4 +15,8 @@
     text-align: left;
     padding-bottom: $spacing-pixel-normal;
   }
+
+  @include breakpoint($breakpoint-desk) {
+    max-width: 50%;
+  }
 }

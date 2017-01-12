@@ -9,6 +9,9 @@
         "class": "is-cta is-dark is-small",
         "href": "#",
         "title": "Skift område"
+      },
+      "icon": {
+        "type": "location"
       }
     },
     "headingWithIcon": {
@@ -45,7 +48,6 @@
         "title": "Hvordan laver du det bedste aktivitetsopslag?",
         "subtitle": "Her kan du læse lidt om, hvordan du kan lave et godt aktivitetsopslag på Genlyd Aarhus.",
         "icon": {
-          "class": "",
           "type": "bulletin"
         }
       }

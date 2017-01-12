@@ -1,0 +1,17 @@
+{% extends "templates-page" %}
+{% block main %}
+  <p>5 af 6</p>
+  <h3>Tilføj de sidste detaljer</h3>
+  <h4>Hvornår starter og slutter aktiviteten?</h4>
+    {% include "elements-text-field" with {'type': 'text', 'name': 'date', 'label': 'Dato', 'placeholder': '24-12-2016' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'time-from', 'label': 'Tidspunkt fra', 'placeholder': '12:00' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'time-to', 'label': 'Tidspunkt til', 'placeholder': '15:00' } %}
+    <h4>Kontaktoplysninger</h4>
+    {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name', 'label': 'Navn', 'placeholder': 'Indtast navn' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'label': 'Email', 'placeholder': 'Indtast email' } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'label': 'Eventuelt pris', 'placeholder': 'Indtast pris' } %}
+  <p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-four')} %}
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-six')} %}
+  </p>
+{% endblock %}

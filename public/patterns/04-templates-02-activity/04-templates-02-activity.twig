@@ -1,0 +1,30 @@
+{% extends "templates-page" %}
+{% block main %}
+  <h1>Titel på aktivitet</h1>
+  {% include "modules-categories" %}
+  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+  {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
+  {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
+  {% include "elements-activity-meta" with {'text': 'pris'} %}
+  {% include "elements-activity-meta" with {'text': 'bruger'} %}
+  {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
+  <p>
+    Her skal stå en beskrivelse af en aktiviteten og alt hvad der er relevant for denne aktivitet. 
+  <p>
+  <h4>Vigtig information:</h4>
+  <ul>
+    <li>tilmeldingspligt</li>
+    <li>niveau</li>
+    <li>hjælp</li>
+  </ul>
+  {% include "elements-button" with {'class': 'is-cta', 'title': 'Tilmeld'} %}
+  {% include "modules-social-share" %}
+  <h2>Lignende aktiviteter</h2>
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  <h2>Andre muligheder</h2>
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+  {% include "modules-card-activity" with {userActions: true } %}
+{% endblock %}

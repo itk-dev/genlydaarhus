@@ -1,0 +1,27 @@
+{% extends "templates-page" %}
+{% block main %}
+  <p>6 af 6</p>
+  <h3>Perfekt. Du har nu lavet et aktivitetsopslag.</h3>
+  <p>Kig dit opslag igennem. Hvis du er tilfreds trykker du på "Opret". Hvis du ønsker at rette i dit tilbud, kan du gå tilbage i opslaget.</p>
+  <h1>Titel på aktivitet</h1>
+  {% include "modules-categories" %}
+  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+  {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
+  {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
+  {% include "elements-activity-meta" with {'text': 'pris'} %}
+  {% include "elements-activity-meta" with {'text': 'bruger'} %}
+  {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
+  <p>
+    Her skal stå en beskrivelse af en aktiviteten og alt hvad der er relevant for denne aktivitet. 
+  <p>
+  <h4>Vigtig information:</h4>
+  <ul>
+    <li>tilmeldingspligt</li>
+    <li>niveau</li>
+    <li>hjælp</li>
+  </ul>
+  <p>
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-five')} %}
+    {% include "elements-button" with {'class': 'is-cta', 'title': 'Opret', 'href': attribute(link, 'templates-profile-activities-overview')} %}
+  </p>
+{% endblock %}

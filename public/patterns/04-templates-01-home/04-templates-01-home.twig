@@ -1,0 +1,45 @@
+{% extends "templates-page" %}
+{% block header %}
+  {% include "components-header" with { transparent: true } %}
+{% endblock %}
+{% block hero %}
+  {% include "modules-hero" %}
+{% endblock %}
+{% block main %}
+  <div class="container has-spacing">
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIcon, icon: home.activityAction.icon } %}
+      {% include 'modules-activity-action' with { activityAction: home.activityAction, button: home.activityAction.button } %}
+    </div>
+    
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="layout flex center">
+      {% include "modules-call-to-action" with { callToAction: home.activityCallToAction } %}
+    </div>
+
+  </div>
+  
+  <div class="section is-blue-lightest">
+    <div class="container has-spacing">
+      {% include "components-guidelines" with 
+        { 
+          guidelines: home.guidelines,
+          headingWithIcon: home.guidelines.headingWithIcon, 
+          icon: home.guidelines.headingWithIcon.icon 
+        } 
+      %}
+      <div class="layout margin-top">
+        {% include 'modules-call-to-action' with { callToAction: home.guidelines.callToAction } %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
