@@ -3,13 +3,10 @@
 {% block main %}
   <div class="container has-spacing">
 
-    {% include "modules-activity-search" with 
-      { 
-        activitySearch: activityList.activitySearch, 
-        headingWithIcon: activityList.headingWithIcon, 
-        icon: activityList.headingWithIcon.icon 
-      } 
-    %}
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: activityList.headingWithIcon, icon: activityList.headingWithIcon.icon } %}
+      {% include 'modules-activity-action' with { activityAction: activityList.activityAction, button: activityList.activityAction.button } %}
+    </div>
   
     <div class="grid">
       <div class="grid--inner">

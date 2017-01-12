@@ -2,10 +2,18 @@
   "activityList": {
     "headingWithIcon": {
       "title": "Alle aktuelle aktiviteter",
-      "subtitle": "Her kan du se alle aktuelle aktiviteter.",
+      "subtitle": "Her for du et overblik over alle aktuelle aktiviteter.",
+      "iconClass": "hidden-desk-down",
       "icon": {
-        "type": "bulletin",
-        "class": ""
+        "type": "bulletin"
+      }
+    },
+    "activityAction": {
+      "text": "Søger du efter noget bestemt?",
+      "button": {  
+        "class": "is-cta is-dark is-small",
+        "href": "#",
+        "title": "Filtrér"
       }
     }
   }

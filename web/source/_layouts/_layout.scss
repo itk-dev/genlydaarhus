@@ -42,7 +42,11 @@
   }
 
   &.margin-top {
-    margin-top: $spacing-pixel-large;
+    margin-top: $spacing-pixel-normal;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $spacing-pixel-large;
+    }
   }
 }
 
@@ -96,20 +100,20 @@ $two-col-max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
 
-  @include breakpoint($breakpoint-tablet) {
+  @include breakpoint($breakpoint-desk) {
     flex-direction: row;
   }
 
 
   &--left-col {
-    @include breakpoint($breakpoint-tablet) {
+    @include breakpoint($breakpoint-desk) {
       width: 30%;
       margin-right: $spacing-pixel-medium;
     }
   }
 
   &--right-col {
-    @include breakpoint($breakpoint-tablet) {
+    @include breakpoint($breakpoint-desk) {
       width: 70%;
     }
   }

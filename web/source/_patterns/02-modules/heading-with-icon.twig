@@ -1,9 +1,9 @@
-  <div class="heading-with-icon">
-    <div class="heading-with-icon--icon hidden-lap-down">
-      {% include 'elements-icon' %}
-    </div>
-    <div class="heading-with-icon--titles">
-      <h1 class="heading-with-icon--title">{{ headingWithIcon.title }}</h1>
-      <p class="heading-with-icon--subtitle">{{ headingWithIcon.subtitle }}</p>
-    </div>
+<div class="heading-with-icon">
+  <div class="heading-with-icon--icon {{ headingWithIcon.iconClass }}">
+    {% include 'elements-icon' %}
   </div>
+  <div class="heading-with-icon--titles">
+    <h1 class="heading-with-icon--title">{{ headingWithIcon.title }}</h1>
+    <p class="heading-with-icon--subtitle">{{ headingWithIcon.subtitle }}</p>
+  </div>
+</div>

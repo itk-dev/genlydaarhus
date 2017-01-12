@@ -17,6 +17,7 @@
     "headingWithIcon": {
       "title": "Aktiviteter i nærheden (Højbjerg)",
       "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
+      "iconClass": "hidden-desk-down",
       "icon": {
         "type": "location",
         "class": ""
@@ -45,8 +46,9 @@
         "text": "Har du lyst til at biddrage til fælleskabet i Aarhus og omegn?"
       },
       "headingWithIcon": {
-        "title": "Hvordan laver du det bedste aktivitetsopslag?",
-        "subtitle": "Her kan du læse lidt om, hvordan du kan lave et godt aktivitetsopslag på Genlyd Aarhus.",
+        "title": "Hvad vil det sige at give genlyd?",
+        "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
+        "iconClass": "hidden-tablet-down",
         "icon": {
           "type": "bulletin"
         }
