@@ -26,10 +26,6 @@
   &--subtitle {
     margin-top: 0;
     color: $color-dark-alpha;
-    margin-bottom: $spacing-pixel-normal;
-
-    @include breakpoint($breakpoint-tablet) {
-      margin-bottom: 0;
-    }
+    margin-bottom: 0;
   }
 }

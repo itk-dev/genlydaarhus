@@ -1,7 +1,8 @@
 .guidelines {
   &--headings {
     display: flex;
-    align-items: center
+    align-items: center;
+    margin-bottom: $spacing-pixel-small;
   }
 
   &--item {
@@ -25,10 +26,6 @@
         padding-top: $spacing-pixel-large;
       }
     }
-  }
-
-  &--headings {
-    margin-bottom: $spacing-pixel-small;
   }
 
   &--title {

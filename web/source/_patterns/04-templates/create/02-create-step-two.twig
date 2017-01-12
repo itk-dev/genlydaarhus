@@ -1,11 +1,22 @@
 {% extends "templates-page" %}
 {% block main %}
-  <p>2 af 6</p>
-  <h2>Vælg de vigtigste egenskaber</h2>
-  {% include "elements-selectbox" with {'name': 'participation-level', 'label': 'Hvilket niveau kræver det at deltage?', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}
-  {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
-  {% include "elements-selectbox" with {'name': 'physical-level', 'label': 'Kræver det et særligt fysisk niveau?', options: [ 'Ingen fysisk forudsætning', 'i nogenlunde form', 'i god form' ] } %}
-  {% include "elements-selectbox" with {'name': 'help', 'label': 'Brug for en hjælpende hånd?', options: [ 'Ingen hjælp påkrævet', 'Kunne godt bruge en hånd', 'Alle er velkomne til at hjælpe' ] } %}
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-one')} %}
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-three')} %}
+  <div class="container has-spacing">
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepTwo.headingWithIcon, icon: createStepTwo.headingWithIcon.icon } %}
+    </div>
+    <div class="l-section-with-margin only-bottom">
+      {% include 'modules-progress-bar' %}
+    </div>
+    {% include "modules-text-with-icon" with { textWithIcon: { title: "Deltagere" } }%}
+    {% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
+    {% include "elements-selectbox" with {'name': 'participation-level', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}
+    {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
+    {% include "elements-selectbox" with {'name': 'physical-level', options: [ 'Ingen fysisk forudsætning', 'i nogenlunde form', 'i god form' ] } %}
+    {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
+    {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+    {% include "modules-text-with-icon" with { textWithIcon: { title: "Har du brug for en hjælpende hånd?" } }%}
+    {% include "elements-selectbox" with {'name': 'help', 'label': 'Brug for en hjælpende hånd?', options: [ 'Ingen hjælp påkrævet', 'Kunne godt bruge en hånd', 'Alle er velkomne til at hjælpe' ] } %}
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-one')} %}
+    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-three')} %}
+  </div>
 {% endblock %}

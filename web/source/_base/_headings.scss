@@ -4,5 +4,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-weight: 400;
+  font-weight: 600;
+
+  &.has-border-dark {
+    padding-bottom: $spacing-pixel-small;
+    border-bottom: 1px solid $color-border-dark;
+  }
+
+  &.has-border-light {
+    padding-bottom: $spacing-pixel-small;
+    border-bottom: 1px solid $color-border-light;
+  }
 }

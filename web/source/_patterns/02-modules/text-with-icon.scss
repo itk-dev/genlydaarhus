@@ -1,0 +1,11 @@
+.text-with-icon {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-pixel-small;
+  border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $spacing-pixel-small;
+
+  &--title {
+    margin: 0;
+  }
+}

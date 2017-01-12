@@ -5,6 +5,7 @@
       "subtitle": "Her for du et overblik over alle aktuelle aktiviteter.",
       "iconClass": "hidden-desk-down",
       "icon": {
+        "class": "",
         "type": "bulletin"
       }
     },

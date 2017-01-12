@@ -87,6 +87,31 @@
   @include breakpoint($breakpoint-tablet) {
     flex-direction: row;
   }
+
+  &.no-spacing {
+    margin-bottom: 0;
+  }
+
+  &.has-top-spacing {
+    margin-top: $spacing-pixel-normal;
+  }
+
+  &.is-column {
+    flex-direction: column;
+  }
+}
+
+.l-section-with-margin {
+  margin-top: $spacing-pixel-large;
+  margin-bottom: $spacing-pixel-large;
+
+  &.only-top {
+    margin-bottom: 0;
+  }
+
+  &.only-bottom {
+    margin-top: 0;
+  }
 }
 
 // Two coloumn layout

@@ -1,0 +1,49 @@
+.progress-bar {
+  
+  &--list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: space-between;
+    margin: 0;
+  }
+
+  &--list-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding-bottom: $spacing-pixel-tiny;
+    padding-top: $spacing-pixel-tiny;
+    padding-left: $spacing-pixel-tiny;
+    padding-right: $spacing-pixel-tiny;
+    border-bottom: 1px solid $color-border-dark;
+    border-right: 1px solid $color-border-dark;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &.is-active {
+      background-color: $color-black-light;
+      color: $color-white;
+      font-weight: 600;
+    }
+  }
+
+  &--number {
+    @include breakpoint($breakpoint-desk) {
+      margin-right: $spacing-pixel-xxxsmall;
+    }
+  }
+
+  &--text {
+    display: none;
+    margin-top: $spacing-pixel-tiny;
+    margin-bottom: $spacing-pixel-tiny;
+
+    @include breakpoint($breakpoint-desk) {
+      display: block;
+    }
+  } 
+}

@@ -1,11 +1,21 @@
 {% extends "templates-page" %}
 {% block main %}
-  <p>1 af 6</p>
-  <h2>Hej Navn</h2>
-  <p>Lad os få oprettet en aktivitet</p>
-  <h2>Vælg en overskrift og tekst</h2>
-  {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'label': 'Overskrift', 'placeholder': 'Skriv en overskrift' } %}
-  {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', 'placeholder': 'Skriv beskrivelse her', 'cols': '40', 'rows': '8' } %}
-  {% include "elements-checkbox" with {'name': 'registration-required', 'label': 'Tilmeldingspligt' } %}
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-two')} %}
+  <div class="container has-spacing">
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepOne.headingWithIcon, icon: createStepOne.headingWithIcon.icon } %}
+    </div>
+    <div class="l-section-with-margin only-bottom">
+      {% include 'modules-progress-bar' %}
+    </div>
+    <div class="l-heading-section is-column has-top-spacing">
+      {% include "modules-text-with-icon" with { textWithIcon: { title: "Vælg en overskrift og beskrivelse" } }%}
+      {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'label': 'Overskrift', 'placeholder': '' } %}
+      {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
+      {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', 'placeholder': '', 'cols': '40', 'rows': '8' } %}
+      {% include "modules-text-with-icon" with { textWithIcon: { title: "Er der tilmeldingspligt?" } }%}
+      {% include "elements-checkbox" with {'name': 'registration-required', 'label': 'Tilmeldingspligt' } %}
+      {% include "elements-button" with { button: createStepOne.button } %}
+    </div>
+  </div>
 {% endblock %}

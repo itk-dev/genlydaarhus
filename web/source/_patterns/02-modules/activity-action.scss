@@ -27,9 +27,11 @@
       display: flex;
       justify-content: center;
       width: 100%;
+      margin-top: $spacing-pixel-xsmall;
 
-      @include breakpoint($breakpoint-desk) {
+      @include breakpoint($breakpoint-tablet) {
         width: auto;
+        margin-top: 0;
       }
     }
   }
