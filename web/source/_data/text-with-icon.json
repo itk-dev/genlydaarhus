@@ -1,0 +1,10 @@
+{ 
+  "textWithIcon": {
+    "title": "Eksempel på titel",
+    "icon": {
+      "type": "bulletin",
+      "class": "is-small is-green-dark", 
+      "color": "light"
+    }
+  }
+}

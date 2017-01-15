@@ -5,17 +5,33 @@
       {% include 'modules-heading-with-icon' with { headingWithIcon: createStepOne.headingWithIcon, icon: createStepOne.headingWithIcon.icon } %}
     </div>
     <div class="l-section-with-margin only-bottom">
-      {% include 'modules-progress-bar' %}
+      {% include 'modules-progress-bar' with { progressBar: createStepOne.progressBar } %}
     </div>
-    <div class="l-heading-section is-column has-top-spacing">
-      {% include "modules-text-with-icon" with { textWithIcon: { title: "Vælg en overskrift og beskrivelse" } }%}
-      {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
-      {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'label': 'Overskrift', 'placeholder': '' } %}
-      {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
-      {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', 'placeholder': '', 'cols': '40', 'rows': '8' } %}
-      {% include "modules-text-with-icon" with { textWithIcon: { title: "Er der tilmeldingspligt?" } }%}
-      {% include "elements-checkbox" with {'name': 'registration-required', 'label': 'Tilmeldingspligt' } %}
-      {% include "elements-button" with { button: createStepOne.button } %}
+    <div class="l-section-with-margin is-column has-top-spacing">
+      <div class="l-form-section">  
+        {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconHeadline, icon: createStepOne.textWithIconHeadline.icon } %}
+      </div>
+      
+      <div class="l-form-section">  
+        {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
+        {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'label': 'Overskrift', 'placeholder': '' } %}
+      </div>
+      
+      <div class="l-form-section">  
+        {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
+        {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', 'placeholder': '', 'cols': '40', 'rows': '8' } %}
+    </div>
+    <div class="l-section-with-margin is-column has-top-spacing">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconParticipation, icon: createStepOne.textWithIconParticipation.icon } %}
+      
+      <div class="l-form-section layout flex wrap">
+        {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
+        {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+      </div>
+      
+      <div class="l-section-with-margin layout flex">
+        {% include "elements-button" with { button: createStepOne.button } %}
+      </div>
     </div>
   </div>
 {% endblock %}

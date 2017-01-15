@@ -8,6 +8,45 @@
         "type": "create"
       }
     },
+    "progressBar": {
+      "items": [
+        {
+          "title": "Om aktiviteten",
+          "active": true
+        },
+        {
+          "title": "Information"
+        },
+        {
+          "title": "Kategorier"
+        },
+        {
+          "title": "Billede"
+        },
+        {
+          "title": "Detaljer"
+        },
+        {
+          "title": "Bekræft"
+        }
+      ]
+    },
+    "textWithIconHeadline": {
+      "title": "Vælg en overskrift og beskrivelse",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconParticipation": {
+      "title": "Tilmeldingspligt",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
     "button": {
       "class": "is-cta",
       "href": "#",

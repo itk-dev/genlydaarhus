@@ -16,9 +16,11 @@
   <input class="text-field--input" type="text" name="headline" id="headline" placeholder="Skriv en overskrift" value="Eksempel overskrift" />
 </div>      <div class="textarea">
     <textarea class="textarea--input" cols="40" rows="8" name="headline" id="headline" placeholder="Skriv beskrivelse her">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum.</textarea>
-  </div>    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="registration-required" id="registration-required" >
-</div>    <h2>De vigtigste egenskaber</h2>
+  </div>    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <h2>De vigtigste egenskaber</h2>
       <div class="selectbox">
     <select class="selectbox--select" name="participation-level" id="participation-level">
               <option class="select--option">Kom som du er</option>
@@ -41,21 +43,33 @@
           </select>
   </div>    <h2>Kategori og emner</h2>
     <h3>Kategorier</h3>
-    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="category-sport" id="category-sport" >
-</div>    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="category-fundraising" id="category-fundraising" >
-</div>    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="category-childcare" id="category-childcare" >
-</div>    <a href="#">Skriv forslag til nye kategorier</a>
+    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <a href="#">Skriv forslag til nye kategorier</a>
     <h3>Emner</h3>
-    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="subject-sedantary" id="subject-sedantary" >
-</div>    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="subject-green-fingers" id="subject-green-fingers" >
-</div>    <div class="checkbox">
-  <input class="checkbox--input" type="checkbox" name="subject-loud" id="subject-loud" >
-</div>    <a href="#">Skriv forslag til nye emner</a>
+    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <label class="checkbox">
+  <div class="checkbox--label"></div>
+  <input type="checkbox"/>
+  <div class="checkbox--indicator"></div>
+</label>    <a href="#">Skriv forslag til nye emner</a>
     <h3>Billede</h3>
     <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
 

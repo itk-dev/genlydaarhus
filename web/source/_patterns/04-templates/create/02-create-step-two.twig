@@ -5,18 +5,42 @@
       {% include 'modules-heading-with-icon' with { headingWithIcon: createStepTwo.headingWithIcon, icon: createStepTwo.headingWithIcon.icon } %}
     </div>
     <div class="l-section-with-margin only-bottom">
-      {% include 'modules-progress-bar' %}
+      {% include 'modules-progress-bar' with { progressBar: createStepTwo.progressBar } %}
     </div>
-    {% include "modules-text-with-icon" with { textWithIcon: { title: "Deltagere" } }%}
+    <div class="l-section-with-margin is-column has-top-spacing">
+    <div class="l-form-section">  
+        {% include "modules-text-with-icon" with { textWithIcon: createStepTwo.textWithIconParticipants, icon: createStepTwo.textWithIconParticipants.icon } %}
+    </div>
+    
     {% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
-    {% include "elements-selectbox" with {'name': 'participation-level', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Kom som du er' }} %}
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Lettere øvet'}} %}
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Øvet'}} %}
+    </div>
+    
     {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
-    {% include "elements-selectbox" with {'name': 'physical-level', options: [ 'Ingen fysisk forudsætning', 'i nogenlunde form', 'i god form' ] } %}
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'Ingen fysisk forudsætning' }} %}
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I nogenlunde form'}} %}
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I god form'}} %}
+    </div>
     {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
     {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
-    {% include "modules-text-with-icon" with { textWithIcon: { title: "Har du brug for en hjælpende hånd?" } }%}
-    {% include "elements-selectbox" with {'name': 'help', 'label': 'Brug for en hjælpende hånd?', options: [ 'Ingen hjælp påkrævet', 'Kunne godt bruge en hånd', 'Alle er velkomne til at hjælpe' ] } %}
-    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-one')} %}
-    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-three')} %}
+
+    <div class="l-form-section">  
+        {% include "modules-text-with-icon" with { textWithIcon: createStepTwo.textWithIconHelp, icon: createStepTwo.textWithIconHelp.icon } %}
+    </div>
+    {% include "elements-form-label" with { formLabel: { label: "Har du brug for en hjælpende hånd?" } } %}
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Ingen hjælp påkrævet' }} %}
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Kunne godt bruge en hånd'}} %}
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Alle er velkomne til at hjælpe'}} %}
+    </div>
+
+    <div class="l-section-with-margin layout flex">
+      {% include "elements-button" with { button: createStepTwo.buttonPrev } %}
+      {% include "elements-button" with { button: createStepTwo.buttonNext } %}
+    </div>
   </div>
 {% endblock %}

@@ -12,6 +12,11 @@ $grid-spacing-pixel-large:    $spacing-pixel-large;
 $grid-spacing-percent-medium: $spacing-percent-medium;
 $grid-spacing-percent-large:  $spacing-percent-large;
 
+$grid-spacing-pixel-tight-small:     $spacing-pixel-xxsmall;
+$grid-spacing-pixel-tight-medium:    $spacing-pixel-small;
+$grid-spacing-percent-tight-small:   $spacing-percent-small;
+$grid-spacing-percent-tight-medium:  $spacing-percent-medium;
+
 /* Grid
    ========================================================================== */
 
@@ -104,6 +109,68 @@ $grid-spacing-percent-large:  $spacing-percent-large;
 
       &:nth-of-type(4n+1) {
         margin-left: 0;
+      }
+    }
+  }
+
+  &.is-tight {
+    .grid--item {
+      margin-bottom: $grid-spacing-pixel-tight-small;
+
+      @include breakpoint($breakpoint-tablet) {
+        margin-bottom: $grid-spacing-percent-tight-small;
+        margin-left: $grid-spacing-percent-tight-small;
+        margin-right: $grid-spacing-percent-tight-small;
+
+        width: 50% - $grid-spacing-percent-tight-medium;
+      }
+
+      @include breakpoint($breakpoint-desk) {
+        // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+        // Calculate width: <width> - <number of margins> / <number of columns>.
+        width: (100% - 4%) / 3;
+
+        // Set margins from smaller breakpoint.
+        &:nth-of-type(2n) {
+          margin-right: $grid-spacing-percent-tight-small;
+        }
+
+        &:nth-of-type(2n+1) {
+          margin-left: $grid-spacing-percent-tight-small;
+        }
+        
+        // Set margins for 3 columns.
+        &:nth-of-type(3n) {
+          margin-right: 0;
+        }
+
+        &:nth-of-type(3n+1) {
+          margin-left: 0;
+        }
+      }
+
+      @include breakpoint($breakpoint-largedesk) {
+        // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+        // Calculate width: <width> - <number of margins> / <number of columns>.
+        width: (100% - 6%) / 4;
+
+        // Set margins from smaller breakpoint.
+        &:nth-of-type(3n) {
+          margin-right: $grid-spacing-percent-tight-small;
+        }
+
+        &:nth-of-type(3n+1) {
+          margin-left: $grid-spacing-percent-tight-small;
+        }
+
+        // Set margins for 3 columns.
+        &:nth-of-type(4n) {
+          margin-right: 0;
+        }
+
+        &:nth-of-type(4n+1) {
+          margin-left: 0;
+        }
       }
     }
   }
