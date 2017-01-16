@@ -4,52 +4,54 @@
     <div class="l-heading-section no-spacing">
       {% include 'modules-heading-with-icon' with { headingWithIcon: createStepThree.headingWithIcon, icon: createStepThree.headingWithIcon.icon } %}
     </div>
-    <div class="l-section-with-margin only-bottom">
+    <div class="l-section has-bottom-margin">
       {% include 'modules-progress-bar' with { progressBar: createStepThree.progressBar } %}
     </div>
+    
+    <div class="l-section has-bottom-margin">
     {% include "elements-form-label" with { formLabel: { label: "Hvilke kategorier vil du sætte på din kategori?" } } %}
     
-    <div class="grid is-tight">
-      <div class="grid--inner">
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Mad og fællseskab" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Kurser og læring" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "IT" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Spil" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Natur" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Kunst og Kultur" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Litteratur" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Håndarbejde" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Motion" } } %}
-        </article>
-        <article class="grid--item">
-          {% include "elements-checkbox" with {'checkbox': { "label": "Sport" } } %}
-        </article>
+      <div class="grid is-tight">
+        <div class="grid--inner">
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Mad og fællseskab" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Kurser og læring" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "IT" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Spil" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Natur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Kunst og Kultur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Litteratur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Håndarbejde" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Motion" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Sport" } } %}
+          </article>
+        </div>
       </div>
+      <a href="#">Skriv forslag til nye kategorier</a>
     </div>
-  
-  <a href="#">Skriv forslag til nye kategorier</a>
 
-    <div class="l-section-with-margin layout flex">
+    <div class="l-section has-bottom-margin layout flex">
       {% include "elements-button" with { button: createStepThree.buttonPrev } %}
       {% include "elements-button" with { button: createStepThree.buttonNext } %}
     </div>

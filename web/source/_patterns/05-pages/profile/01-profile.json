@@ -16,6 +16,11 @@
         "type": "bulletin"
       }
     },
+    "saveButton": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Gem oplysninger" 
+    },
     "callToAction": {
       "button": {
         "class": "is-cta",

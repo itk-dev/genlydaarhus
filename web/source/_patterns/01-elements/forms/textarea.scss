@@ -1,11 +1,6 @@
 .textarea {
   display: flex;
   flex-direction: column;
-  margin-bottom: $spacing-pixel-medium;
-
-  &--label {
-    margin-bottom: $spacing-pixel-small;
-  }
 
   &--input {
     border-color: $color-gray-light;

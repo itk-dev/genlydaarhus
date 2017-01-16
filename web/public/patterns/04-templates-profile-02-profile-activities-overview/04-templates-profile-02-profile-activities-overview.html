@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="/css/styles.css?1484326986" media="all" />
-    <link rel="stylesheet" href="/css/demo.css?1484326986" media="all" />
+    <link rel="stylesheet" href="/css/styles.css?1484504529" media="all" />
+    <link rel="stylesheet" href="/css/demo.css?1484504529" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -16,11 +16,11 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1484326986" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1484326986" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1484504529" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1484504529" media="all" />
     <!-- End Pattern Lab -->
 
-    <link rel="stylesheet" href="/css/styleguide.css?1484326986" media="all" />
+    <link rel="stylesheet" href="/css/styleguide.css?1484504529" media="all" />
 
     <!-- Leaflet map css and script -->
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
@@ -41,18 +41,37 @@
   </div>
 </header>
 <main class="main">
-      <h1>Mine opslag</h1>
-  <p>Her kan du se alle dine opslag, som du har lavet gennem tiden. Det gælder både aktive opslag og ikke aktive opslag.
-  <h2>Mine aktive opslag</h2>
-  <a href="#" class="card-activity">
+      <div class="container has-spacing">
+    <div class="l-heading-section">
+      <div class="heading-with-icon">
+  <div class="heading-with-icon--icon ">
+    <div class="icon  ">
+  </div>  </div>
+  <div class="heading-with-icon--titles">
+    <h1 class="heading-with-icon--title"></h1>
+    <p class="heading-with-icon--subtitle"></p>
+  </div>
+</div>    </div>
+
+    <div class="text-with-icon">
+  <div class="text-with-icon--icon">
+    <div class="icon  ">
+  </div>  </div>
+  <h3 class="text-with-icon--title"></h3>
+</div>
+    <div class="grid">
+      <div class="grid--inner">
+                  <article class="grid--item">
+              <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+        <img class="image " src="/assets/images/styleguide/badminton.jpg" />
 
       </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
+    <h4 class="card-activity--title">Drop-in badminton</h4>
   </div>
 
   <div class="card-activity--bottom">
@@ -61,7 +80,7 @@
                 <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
+  <p class="activity-meta--text">12 Januar</p>
 </div>        </div>
               <div class="card-activity--meta">
           <div class="activity-meta">
@@ -76,21 +95,32 @@
               <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
+  <p class="activity-meta--text">12 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>  <a href="#" class="card-activity">
+          </article>
+                  <article class="grid--item">
+              <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+        <img class="image " src="/assets/images/styleguide/nitting.jpg" />
 
       </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
+    <h4 class="card-activity--title">Strikkeklub for enlige</h4>
   </div>
 
   <div class="card-activity--bottom">
@@ -99,7 +129,7 @@
                 <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
+  <p class="activity-meta--text">5 Februar</p>
 </div>        </div>
               <div class="card-activity--meta">
           <div class="activity-meta">
@@ -114,21 +144,32 @@
               <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
+  <p class="activity-meta--text">4 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>  <a href="#" class="card-activity">
+          </article>
+                  <article class="grid--item">
+              <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+        <img class="image " src="/assets/images/styleguide/running.jpg" />
 
       </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
+    <h4 class="card-activity--title">Løbetur Marselisborg Skov</h4>
   </div>
 
   <div class="card-activity--bottom">
@@ -137,7 +178,7 @@
                 <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
+  <p class="activity-meta--text">23 Marts</p>
 </div>        </div>
               <div class="card-activity--meta">
           <div class="activity-meta">
@@ -152,22 +193,43 @@
               <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
+  <p class="activity-meta--text">15 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>  <h2>Ikke aktive opslag</h2>
-  <a href="#" class="card-activity">
+          </article>
+              </div>
+    </div>
+    
+    <div class="text-with-icon">
+  <div class="text-with-icon--icon">
+    <div class="icon  ">
+  </div>  </div>
+  <h3 class="text-with-icon--title"></h3>
+</div>
+    <div class="grid">
+      <div class="grid--inner">
+                  <article class="grid--item">
+              <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+        <img class="image " src="/assets/images/styleguide/badminton.jpg" />
 
       </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
+    <h4 class="card-activity--title">Drop-in badminton</h4>
   </div>
 
   <div class="card-activity--bottom">
@@ -176,7 +238,7 @@
                 <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
+  <p class="activity-meta--text">12 Januar</p>
 </div>        </div>
               <div class="card-activity--meta">
           <div class="activity-meta">
@@ -191,21 +253,32 @@
               <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
+  <p class="activity-meta--text">12 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>  <a href="#" class="card-activity">
+          </article>
+                  <article class="grid--item">
+              <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+        <img class="image " src="/assets/images/styleguide/nitting.jpg" />
 
       </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
+    <h4 class="card-activity--title">Strikkeklub for enlige</h4>
   </div>
 
   <div class="card-activity--bottom">
@@ -214,7 +287,7 @@
                 <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
+  <p class="activity-meta--text">5 Februar</p>
 </div>        </div>
               <div class="card-activity--meta">
           <div class="activity-meta">
@@ -229,58 +302,42 @@
               <div class="card-activity--meta">
           <div class="activity-meta">
   <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
+  <p class="activity-meta--text">4 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
-
-  </div>
-</a>  <a href="#" class="card-activity">
-  <div class="card-activity--top">
-    <div class="card-activity--image-container">
-      <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
-
-      </div>
+            </div>
     </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
-  </div>
 
-  <div class="card-activity--bottom">
-    <div class="card-activity--text">
-      <div class="card-activity--metas">
-                <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Pris</p>
-  <p class="activity-meta--text">Gratis</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Område</p>
-  <p class="activity-meta--text">Højbjerg</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
-</div>        </div>
-          </div>
-  </div>
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a></main>
+          </article>
+              </div>
+    </div>
+
+    <div class="layout flex center">
+      <div class="call-to-action">
+  <p class="call-to-action--text center-text">
+    
+  </p>
+  <div class="call-to-action--button layout flex center">
+    <a class="button " href=""></a>  </div>
+</div>    </div>
+
+  </div>
+</main>
 
 <footer class="footer">
   footer
 </footer>  
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[{"lineagePattern":"modules-card-activity","lineagePath":"..\/..\/patterns\/04-templates-profile-02-profile-activities-overview\/04-templates-profile-02-profile-activities-overview.html"}],"lineageR":[],"patternBreadcrumb":{"patternType":"templates","patternSubtype":"profile"},"patternDesc":"","patternExtension":"twig","patternName":"profile activities overview","patternPartial":"templates-profile-activities-overview","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[{"lineagePattern":"modules-card-activity","lineagePath":"..\/..\/patterns\/04-templates-profile-02-profile-activities-overview\/04-templates-profile-02-profile-activities-overview.html"},{"lineagePattern":"modules-call-to-action","lineagePath":"..\/..\/patterns\/04-templates-profile-02-profile-activities-overview\/04-templates-profile-02-profile-activities-overview.html"}],"lineageR":[{"lineagePattern":"pages-profile-activities-overview","lineagePath":"..\/..\/patterns\/05-pages-profile-02-profile-activities-overview\/05-pages-profile-02-profile-activities-overview.html"}],"patternBreadcrumb":{"patternType":"templates","patternSubtype":"profile"},"patternDesc":"","patternExtension":"twig","patternName":"profile activities overview","patternPartial":"templates-profile-activities-overview","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -314,10 +371,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1484326986">
+<script id="pl-js-polyfill-insert-1484504529">
   (function() {
     if (self != top) {
-      var cb = '1484326986';
+      var cb = '1484504529';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -327,10 +384,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1484326986">
+<script id="pl-js-insert-1484504529">
   (function() {
     if (self != top) {
-      var cb = '1484326986';
+      var cb = '1484504529';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

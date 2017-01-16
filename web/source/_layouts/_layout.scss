@@ -45,11 +45,19 @@
     flex-direction: column;
   }
 
-  &.margin-top {
+  &.has-margin-top {
     margin-top: $spacing-pixel-normal;
 
     @include breakpoint($breakpoint-tablet) {
       margin-top: $spacing-pixel-large;
+    }
+  }
+
+  &.has-margin-bottom {
+    margin-bottom: $spacing-pixel-normal;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-bottom: $spacing-pixel-large;
     }
   }
 }
@@ -106,18 +114,24 @@
 }
 
 .l-form-section {
+  width: 100%;
   margin-bottom: $spacing-pixel-medium;
 }
 
-.l-section-with-margin {
+.l-section {
   margin-top: $spacing-pixel-large;
   margin-bottom: $spacing-pixel-large;
 
-  &.only-top {
+  &.has-top-margin {
     margin-bottom: 0;
   }
 
-  &.only-bottom {
+  &.has-bottom-margin {
+    margin-top: 0;
+  }
+
+  &.has-no-margin {
+    margin-bottom: 0;
     margin-top: 0;
   }
 }
@@ -150,5 +164,93 @@ $two-col-max-width: 1200px;
       width: 70%;
     }
   }
+}
 
+$half:          (100%/2) - $spacing-percent-medium;
+
+$one-third:     (100%/3) - $spacing-percent-medium;
+$two-third:     (100%/3)*2 - $spacing-percent-medium;
+
+$one-fourth:    (100%/4) - $spacing-percent-medium;
+$two-fourth:    (100%/4)*2 - $spacing-percent-medium;
+$three-fourth:  (100%/4)*3 - $spacing-percent-medium;
+
+.l-cols {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  &.is-reversed {
+
+    &-tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-desk-up {
+      @include breakpoint($breakpoint-desk) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  // Columns
+  .l-col {
+    width: 100%;
+
+    &.tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+
+    &.desk-up {
+      @include breakpoint($breakpoint-desk) {
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+  }
 }

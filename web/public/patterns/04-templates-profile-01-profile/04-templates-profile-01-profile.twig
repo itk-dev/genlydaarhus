@@ -1,25 +1,60 @@
 {% extends "templates-page" %}
 {% block main %}
+
 <div class="container has-spacing">
   <div class="l-heading-section">
     {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
   </div>
-  {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'label': 'Fornavn', 'placeholder': 'Skriv fornavn her', 'value': 'Lasse' } %}
-  {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'label': 'Efternavn', 'placeholder': 'Skriv dit efternavn', 'value': 'Iversen' } %}
-  {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'label': 'Email', 'placeholder': 'Skriv din email', 'value': 'eksempel@gmail.com' } %}
-  {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'label': 'Adgangskode', 'placeholder': 'Skriv din adgangskode', 'value': 'password' } %}
-  {% include "elements-image" with {'class': 'has-margin', 'src': '/assets/profile-image.png'} %}
-  <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload et profilbillede'} %}</p>
-  <p>Profilbilleder bliver kun brugt, når medlemmer ønsker at tilmelde sig din aktivitet.</p>
-  <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Gem'} %}</p>
-  
+
+  <div class="l-section has-bottom-margin">
+    <div class="l-cols is-reversed-desk-up">
+      <div class="l-col three-fourth desk-up">
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Fornavn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'placeholder': '', 'value': 'Lasse' } %}
+            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Efternavn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'placeholder': '', 'value': 'Iversen' } %}
+            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+              {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'placeholder': '', 'value': 'eksempel@gmail.com' } %}
+            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
+              {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'placeholder': '', 'value': 'password' } %}
+            </div>
+          </div>
+          <div class="l-col layout flex has-margin-bottom">
+            {% include "elements-button" with { button: profile.saveButton } %}
+          </div>
+        </div>
+      </div>
+      <div class="l-col one-fourth desk-up">
+          {% include "modules-profile-image" %}
+      </div>
+    </div>
+  </div>
+
   <div class="l-heading-section">
     {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
   </div>
 
   <div class="grid">
     <div class="grid--inner">
-      {% for item in activities|slice(0, 3) %}
+      {% for item in activitiesEdit|slice(0, 3) %}
         <article class="grid--item">
           {% include "modules-card-activity" with { cardActivity: item } %}
         </article>

@@ -1,4 +1,9 @@
-<a href="#" class="card-activity">
+{% if cardActivity.edit %}
+  <div class="card-activity">
+{% else %}
+  <a href="#" class="card-activity has-hover">
+{% endif %}
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
@@ -16,8 +21,22 @@
           {% include "elements-activity-meta" %}
         </div>
       {% endfor %}
+      </div>
     </div>
+
+    {% if cardActivity.edit %}
+      <div class="card-activity--buttons">
+        {% for button in cardActivity.editButtons %}
+          <div class="card-activity--button">
+            {% include "elements-button" %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
   </div>
 
+{% if cardActivity.edit %}
   </div>
-</a>
+{% else %}
+  </a>
+{% endif %}

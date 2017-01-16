@@ -6,8 +6,10 @@
   text-decoration: none;
   transition: all .4s;
 
-  &:hover {
-    opacity: 0.95;
+  &.has-hover {
+    &:hover {
+      opacity: 0.95;
+    }
   }
 
   &--top {
@@ -64,6 +66,7 @@
   &--buttons {
     display: flex;
     justify-content: space-between;
+    margin-top: $spacing-pixel-small;
   }
 
   &--button {

@@ -1,38 +1,179 @@
 {% extends "templates-page" %}
 {% block main %}
-  <form>
-    <h2>Overskrift og tekst</h2>
-    {% include "elements-text-field" with {'type': 'text', 'name': 'headline', value: 'Eksempel overskrift', 'label': 'Overskrift', 'placeholder': 'Skriv en overskrift' } %}
-    {% include "elements-textarea" with {'name': 'headline', 'label': 'Beskrivelse', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum.', 'placeholder': 'Skriv beskrivelse her', 'cols': '40', 'rows': '8' } %}
-    {% include "elements-checkbox" with {'name': 'registration-required', 'label': 'Tilmeldingspligt' } %}
-    <h2>De vigtigste egenskaber</h2>
-    {% include "elements-selectbox" with {'name': 'participation-level', 'label': 'Hvilket niveau kræver det at deltage?', options: [ 'Kom som du er', 'lettere øvet', 'øvet' ] } %}
-    {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'value': '20', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
-    {% include "elements-selectbox" with {'name': 'physical-level', 'label': 'Kræver det et særligt fysisk niveau?', options: [ 'Ingen fysisk forudsætning', 'i nogenlunde form', 'i god form' ] } %}
-    {% include "elements-selectbox" with {'name': 'help', 'label': 'Brug for en hjælpende hånd?', options: [ 'Ingen hjælp påkrævet', 'Kunne godt bruge en hånd', 'Alle er velkomne til at hjælpe' ] } %}
-    <h2>Kategori og emner</h2>
-    <h3>Kategorier</h3>
-    {% include "elements-checkbox" with {'name': 'category-sport', 'label': 'Sport og fritid' } %}
-    {% include "elements-checkbox" with {'name': 'category-fundraising', 'label': 'Indsamling' } %}
-    {% include "elements-checkbox" with {'name': 'category-childcare', 'label': 'Pasning' } %}
-    <a href="#">Skriv forslag til nye kategorier</a>
-    <h3>Emner</h3>
-    {% include "elements-checkbox" with {'name': 'subject-sedantary', 'label': 'Stillesidende' } %}
-    {% include "elements-checkbox" with {'name': 'subject-green-fingers', 'label': 'Grønne fingre' } %}
-    {% include "elements-checkbox" with {'name': 'subject-loud', 'label': 'Højtråbende' } %}
-    <a href="#">Skriv forslag til nye emner</a>
-    <h3>Billede</h3>
+  <div class="container has-spacing"> 
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with 
+        { 
+          headingWithIcon: profileActivitiesEdit.headingWithIcon, 
+          icon: profileActivitiesEdit.headingWithIcon.icon 
+        } 
+      %}
+    </div>
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconHeadline, 
+        icon: profileActivitiesEdit.textWithIconHeadline.icon 
+      } 
+    %}
+
+    <div class="l-cols">
+      <div class="l-form-section">  
+        {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
+        {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'placeholder': '', value: 'Eksempel overskrift' } %}
+      </div>
+      
+      <div class="l-form-section">  
+        {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
+        {% include "elements-textarea" with {'name': 'headline', 'placeholder': '', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum.', 'cols': '40', 'rows': '8' } %}
+      </div>
+
+      <div class="l-form-section">
+        {% include "elements-form-label" with { formLabel: { label: "Tilmeldingspligt" } } %}
+        <div class="layout flex wrap">
+          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
+          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+        </div>
+      </div>
+    </div>
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconProperties, 
+        icon: profileActivitiesEdit.textWithIconProperties.icon 
+      } 
+    %}
+{% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Kom som du er' }} %}
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Lettere øvet'}} %}
+      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Øvet'}} %}
+    </div>
+    
+    {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'Ingen fysisk forudsætning' }} %}
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I nogenlunde form'}} %}
+      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I god form'}} %}
+    </div>
+      
+    <div class="l-form-section">
+      {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+    </div>
+
+    {% include "elements-form-label" with { formLabel: { label: "Har du brug for en hjælpende hånd?" } } %}
+    
+    <div class="l-form-section layout flex wrap">
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Ingen hjælp påkrævet' }} %}
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Kunne godt bruge en hånd'}} %}
+      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Alle er velkomne til at hjælpe'}} %}
+    </div>
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconCategories, 
+        icon: profileActivitiesEdit.textWithIconCategories.icon 
+      } 
+    %}
+
+    <div class="l-section has-bottom-margin">
+      <div class="grid is-tight">
+        <div class="grid--inner">
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Mad og fællseskab" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Kurser og læring" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "IT" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Spil" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Natur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Kunst og Kultur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Litteratur" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Håndarbejde" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Motion" } } %}
+          </article>
+          <article class="grid--item">
+            {% include "elements-checkbox" with {'checkbox': { "label": "Sport" } } %}
+          </article>
+        </div>
+      </div>
+      <a href="#">Skriv forslag til nye kategorier</a>
+    </div>
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconImage, 
+        icon: profileActivitiesEdit.textWithIconImage.icon 
+      } 
+    %}
     {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
     <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload billede'} %}</p>
-    <h3>Praktisk information</h3>
-    <h4>Sted og tidspunkt</h4>
-    {% include "elements-text-field" with {'type': 'text', 'name': 'date', 'value': '24-12-2016', 'label': 'Dato', 'placeholder': '24-12-2016' } %}
-    {% include "elements-text-field" with {'type': 'text', 'name': 'time-from', 'value': '09:00', 'label': 'Tidspunkt fra', 'placeholder': '12:00' } %}
-    {% include "elements-text-field" with {'type': 'text', 'name': 'time-to', 'value': '12:00', 'label': 'Tidspunkt til', 'placeholder': '15:00' } %}
-    <h4>Kontaktoplysninger</h4>
-    {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name', 'value': 'Eksempel navn', 'label': 'Navn', 'placeholder': 'Indtast navn' } %}
-    {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'value': 'eksempel@mail.dk', 'label': 'Email', 'placeholder': 'Indtast email' } %}
-    {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'value': '50', 'label': 'Eventuelt pris', 'placeholder': 'Indtast pris' } %}
-  </form>
-  {% include "elements-button" with {'class': 'is-primary', 'title': 'Gem', 'href': attribute(link, 'templates-activity')} %}
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconPractical, 
+        icon: profileActivitiesEdit.textWithIconPractical.icon 
+      } 
+    %}
+    
+    <div class="l-form-section">
+      {% include "elements-form-label" with { formLabel: { label: "Dato" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'date', 'value': '24-12-2016', 'label': 'Dato', 'placeholder': '24-12-2016' } %}
+    </div>
+    <div class="l-form-section">
+      {% include "elements-form-label" with { formLabel: { label: "Starttidspunkt" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'time-from', 'value': '09:00', 'placeholder': '12:00' } %}
+    </div>
+    <div class="l-form-section">
+      {% include "elements-form-label" with { formLabel: { label: "Sluttidspunkt" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'time-to', 'value': '12:00', 'placeholder': '15:00' } %}
+    </div>
+
+    {% include "modules-text-with-icon" with 
+      { 
+        textWithIcon: profileActivitiesEdit.textWithIconContact, 
+        icon: profileActivitiesEdit.textWithIconContact.icon 
+      } 
+    %}
+    
+    <div class="l-form-section">
+      
+      <div class="l-form-section">
+        {% include "elements-form-label" with { formLabel: { label: "Navn" } } %}
+        {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name', 'value': 'Eksempel navn' } %}
+      </div>
+
+      <div class="l-form-section">
+        {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+        {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'value': 'eksempel@mail.dk' } %}
+      </div>
+
+      <div class="l-form-section">
+        {% include "elements-form-label" with { formLabel: { label: "Eventuel pris" } } %}
+        {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'value': '50' } %}
+      </div>
+
+    </div>
+
+    {% include "elements-button" with { button: profileActivitiesEdit.saveButton } %}
+    
+  </div>
 {% endblock %}

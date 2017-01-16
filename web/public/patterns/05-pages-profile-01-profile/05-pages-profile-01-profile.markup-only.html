@@ -10,7 +10,8 @@
   </div>
 </header>
 <main class="main">
-    <div class="container has-spacing">
+    
+<div class="container has-spacing">
   <div class="l-heading-section">
     <div class="heading-with-icon">
   <div class="heading-with-icon--icon hidden-tablet-down">
@@ -27,20 +28,57 @@
     <p class="heading-with-icon--subtitle">På denne side kan du se og redigere oplysninger, samt dine seneste opslag.</p>
   </div>
 </div>  </div>
-  <div class="text-field">
-  <input class="text-field--input" type="text" name="firstname" id="firstname" placeholder="Skriv fornavn her" value="Lasse" />
-</div>  <div class="text-field">
-  <input class="text-field--input" type="text" name="lastname" id="lastname" placeholder="Skriv dit efternavn" value="Iversen" />
-</div>  <div class="text-field">
-  <input class="text-field--input" type="email" name="email" id="email" placeholder="Skriv din email" value="eksempel@gmail.com" />
-</div>  <div class="text-field">
-  <input class="text-field--input" type="password" name="password" id="password" placeholder="Skriv din adgangskode" value="password" />
-</div>  <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
 
-  <p><a class="button " href="#">Knap titel</a></p>
-  <p>Profilbilleder bliver kun brugt, når medlemmer ønsker at tilmelde sig din aktivitet.</p>
-  <p><a class="button " href="#">Knap titel</a></p>
-  
+  <div class="l-section has-bottom-margin">
+    <div class="l-cols is-reversed-desk-up">
+      <div class="l-col three-fourth desk-up">
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              <label class="form-label" for="">Fornavn</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="firstname" id="firstname" placeholder="" value="Lasse" />
+</div>            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              <label class="form-label" for="">Efternavn</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="lastname" id="lastname" placeholder="" value="Iversen" />
+</div>            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              <label class="form-label" for="">Email</label>              <div class="text-field">
+  <input class="text-field--input" type="email" name="email" id="email" placeholder="" value="eksempel@gmail.com" />
+</div>            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              <label class="form-label" for="">Adgangskode</label>              <div class="text-field">
+  <input class="text-field--input" type="password" name="password" id="password" placeholder="" value="password" />
+</div>            </div>
+          </div>
+          <div class="l-col layout flex has-margin-bottom">
+            <a class="button is-cta" href="#">Gem oplysninger</a>          </div>
+        </div>
+      </div>
+      <div class="l-col one-fourth desk-up">
+          <div class="profile-image-upload">
+  <div class="profile-image-upload--image-container">
+    <div class="profile-image-upload--image">
+      <img class="image " src="/assets/images/styleguide/upload-image.png" />
+
+    </div>
+  </div>
+  <p class="profile-image-upload--disclaimer">
+    Profilbilleder bliver kun brugt, når medlemmer ønsker at tilmelde sig din aktivitet.
+  </p>
+</div>      </div>
+    </div>
+  </div>
+
   <div class="l-heading-section">
     <div class="heading-with-icon">
   <div class="heading-with-icon--icon hidden-tablet-down">
@@ -60,7 +98,8 @@
   <div class="grid">
     <div class="grid--inner">
               <article class="grid--item">
-          <a href="#" class="card-activity">
+            <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
@@ -94,13 +133,22 @@
   <p class="activity-meta--label">Deltagere</p>
   <p class="activity-meta--text">12 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>        </article>
+        </article>
               <article class="grid--item">
-          <a href="#" class="card-activity">
+            <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
@@ -134,13 +182,22 @@
   <p class="activity-meta--label">Deltagere</p>
   <p class="activity-meta--text">4 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>        </article>
+        </article>
               <article class="grid--item">
-          <a href="#" class="card-activity">
+            <div class="card-activity">
+
   <div class="card-activity--top">
     <div class="card-activity--image-container">
       <div class="card-activity--image">
@@ -174,11 +231,19 @@
   <p class="activity-meta--label">Deltagere</p>
   <p class="activity-meta--text">15 tilmeldte</p>
 </div>        </div>
-          </div>
-  </div>
+            </div>
+    </div>
+
+          <div class="card-activity--buttons">
+                  <div class="card-activity--button">
+            <a class="button is-secondary is-light is-small is-full-width" href="{{ attribute(link, &#039;templates-activity&#039;) }}">Slet</a>          </div>
+                  <div class="card-activity--button">
+            <a class="button is-cta is-small is-full-width" href="#">Rediger</a>          </div>
+              </div>
+      </div>
 
   </div>
-</a>        </article>
+        </article>
           </div>
   </div>
   
