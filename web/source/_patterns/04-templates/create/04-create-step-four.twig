@@ -1,11 +1,41 @@
 {% extends "templates-page" %}
 {% block main %}
-  <p>4 af 6</p>
-  <h3>Billede</h3>
-  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
-  <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload billede'} %}</p>
-  <p>
-    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-three')} %}
-    {% include "elements-button" with {'class': 'is-primary', 'title': 'Næste', 'href': attribute(link, 'templates-create-step-five')} %}
-  </p>
+  <div class="container has-spacing">
+    
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepFour.headingWithIcon, icon: createStepFour.headingWithIcon.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepFour.progressBar } %}
+    </div>
+
+      <div class="l-cols">
+
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">  
+            {% include "modules-image-upload" %}
+          </div>
+        </div>
+
+        <div class="l-col half tablet-up">
+
+          <div class="l-section has-no-margin">  
+            {% include "modules-text-with-icon" with { textWithIcon: createStepFour.textWithIcon, icon: createStepFour.textWithIcon.icon } %}
+          </div>
+
+          <div class="l-section">  
+            <p>Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart).</p>
+            <p>Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget).</p>
+          </div>
+
+        </div>
+
+      </div>
+    
+    <div class="l-section has-no-margin">  
+      {% include 'modules-create-navigation' %}
+    </div>
+    
+  </div>
 {% endblock %}

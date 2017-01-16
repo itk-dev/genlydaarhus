@@ -1,30 +1,76 @@
 {% extends "templates-page" %}
 {% block main %}
-  <h1>Titel på aktivitet</h1>
-  {% include "modules-categories" %}
-  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
-  {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
-  {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
-  {% include "elements-activity-meta" with {'text': 'pris'} %}
-  {% include "elements-activity-meta" with {'text': 'bruger'} %}
-  {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
-  <p>
-    Her skal stå en beskrivelse af en aktiviteten og alt hvad der er relevant for denne aktivitet. 
-  <p>
-  <h4>Vigtig information:</h4>
-  <ul>
-    <li>tilmeldingspligt</li>
-    <li>niveau</li>
-    <li>hjælp</li>
-  </ul>
-  {% include "elements-button" with {'class': 'is-cta', 'title': 'Tilmeld'} %}
-  {% include "modules-social-share" %}
-  <h2>Lignende aktiviteter</h2>
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  <h2>Andre muligheder</h2>
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
-  {% include "modules-card-activity" with {userActions: true } %}
+  <div class="container has-spacing">
+    
+    <div class="l-section has-bottom-margin">
+      {% include "modules-activity-hero" %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols">
+        <div class="l-col two-third desk-up">
+          <div class="l-section has-bottom-margin">  
+            {% include "modules-text-with-icon" with { textWithIcon: activity.headingWithIconDescription, icon: activity.headingWithIconDescription.icon } %}
+          </div>
+
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.</p>
+          <p>Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra.<p>
+        </div>
+        <div class="l-col one-third desk-up">
+          <div class="l-section has-bottom-margin">  
+            {% include "modules-text-with-icon" with { textWithIcon: activity.headingWithIconDetails, icon: activity.headingWithIconDetails.icon } %}
+          </div>
+
+
+          {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
+          {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
+          {% include "elements-activity-meta" with {'text': 'pris'} %}
+          {% include "elements-activity-meta" with {'text': 'bruger'} %}
+          {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
+          {% include "modules-categories" %}
+
+          <h4>Vigtig information:</h4>
+          <ul>
+            <li>tilmeldingspligt</li>
+            <li>niveau</li>
+            <li>hjælp</li>
+          </ul>
+          {% include "elements-button" with {'class': 'is-cta', 'title': 'Tilmeld'} %}
+          {% include "modules-social-share" %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: activity.headingWithIconSimilar, icon: activity.headingWithIconSimilar.icon } %}
+    </div>
+    
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities|slice(0,4) %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: activity.headingWithIconOther, icon: activity.headingWithIconOther.icon } %}
+    </div>
+
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities|slice(4,7) %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="layout flex center">
+      {% include "modules-call-to-action" with { callToAction: activity.callToAction } %}
+    </div>
+  </div>
 {% endblock %}

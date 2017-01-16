@@ -36,6 +36,7 @@
 @import "_patterns/01-elements/forms/checkbox";
 @import "_patterns/01-elements/forms/textarea";
 @import "_patterns/01-elements/forms/selectbox";
+@import "_patterns/01-elements/forms/suggestion";
 @import "_patterns/01-elements/headings/heading-meta";
 
 /* Modules */
@@ -50,7 +51,10 @@
 @import "_patterns/02-modules/heading-with-icon";
 @import "_patterns/02-modules/text-with-icon";
 @import "_patterns/02-modules/progress-bar";
+@import "_patterns/02-modules/image-upload";
 @import "_patterns/02-modules/profile-image-upload";
+@import "_patterns/02-modules/create-navigation";
+@import "_patterns/02-modules/activity-hero";
 
 /* Components */
 @import "_patterns/03-components/01-global/01-header";

@@ -47,10 +47,18 @@
         "color": "light"
       }
     },
-    "button": {
-      "class": "is-cta",
-      "href": "#",
-      "title": "Næste"
-    }
+    "createNavigation": {
+      "buttonNext": {
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Næste"
+      },
+      "buttonPrev": {
+        "class": "is-secondary is-dark is-full-width is-inactive",
+        "href": "#",
+        "title": "Tilbage"
+      }
+    }    
+
   }
 }

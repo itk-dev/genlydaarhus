@@ -17,10 +17,13 @@
       } 
     %}
 
-    <div class="l-cols">
       <div class="l-form-section">  
         {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
-        {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'placeholder': '', value: 'Eksempel overskrift' } %}
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'placeholder': '', value: 'Eksempel overskrift' } %}
+          </div>
+        </div>
       </div>
       
       <div class="l-form-section">  
@@ -30,12 +33,15 @@
 
       <div class="l-form-section">
         {% include "elements-form-label" with { formLabel: { label: "Tilmeldingspligt" } } %}
-        <div class="layout flex wrap">
-          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
-          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+        <div class="l-cols flex-start">
+          <div class="l-col one-third desk-up">
+            {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
+          </div>
+          <div class="l-col one-third desk-up">
+            {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+          </div>
         </div>
       </div>
-    </div>
 
     {% include "modules-text-with-icon" with 
       { 
@@ -43,31 +49,59 @@
         icon: profileActivitiesEdit.textWithIconProperties.icon 
       } 
     %}
-{% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
-    <div class="l-form-section layout flex wrap">
-      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Kom som du er' }} %}
-      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Lettere øvet'}} %}
-      {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Øvet'}} %}
+    
+    {% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
+    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Kom som du er' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Lettere øvet'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Øvet'}} %}
+        </div>
+      </div>
     </div>
     
     {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
-    <div class="l-form-section layout flex wrap">
-      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'Ingen fysisk forudsætning' }} %}
-      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I nogenlunde form'}} %}
-      {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I god form'}} %}
-    </div>
-      
     <div class="l-form-section">
-      {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
-      {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'Ingen fysisk forudsætning' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I nogenlunde form'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I god form'}} %}
+        </div>
+      </div>
+    </div>
+    
+    {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
+    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+        </div>
+      </div>
     </div>
 
     {% include "elements-form-label" with { formLabel: { label: "Har du brug for en hjælpende hånd?" } } %}
-    
-    <div class="l-form-section layout flex wrap">
-      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Ingen hjælp påkrævet' }} %}
-      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Kunne godt bruge en hånd'}} %}
-      {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Alle er velkomne til at hjælpe'}} %}
+    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Ingen hjælp påkrævet' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Kunne godt bruge en hånd'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Alle er velkomne til at hjælpe'}} %}
+        </div>
+      </div>
     </div>
 
     {% include "modules-text-with-icon" with 
@@ -118,62 +152,78 @@
       <a href="#">Skriv forslag til nye kategorier</a>
     </div>
 
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconImage, 
-        icon: profileActivitiesEdit.textWithIconImage.icon 
-      } 
-    %}
-    {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
-    <p>{% include "elements-button" with {'class': 'is-primary', 'title': 'Upload billede'} %}</p>
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        {% include "modules-text-with-icon" with 
+          { 
+            textWithIcon: profileActivitiesEdit.textWithIconImage, 
+            icon: profileActivitiesEdit.textWithIconImage.icon 
+          } 
+        %}
 
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconPractical, 
-        icon: profileActivitiesEdit.textWithIconPractical.icon 
-      } 
-    %}
+        <div class="l-form-section">
+          {% include 'modules-image-upload' with { imageUpload: profileActivitiesEdit.imageUpload } %}
+        </div>
+
+      </div>
+      <div class="l-col half desk-up">
+        {% include "modules-text-with-icon" with 
+          { 
+            textWithIcon: profileActivitiesEdit.textWithIconPractical, 
+            icon: profileActivitiesEdit.textWithIconPractical.icon 
+          } 
+        %}
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Dato" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'date', 'value': '24-12-2016', 'label': 'Dato', 'placeholder': '24-12-2016' } %}
+            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Starttidspunkt" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'time-from', 'value': '09:00', 'placeholder': '12:00' } %}
+            </div>
+          </div>
+        </div>
+
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Sluttidspunkt" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'time-to', 'value': '12:00', 'placeholder': '15:00' } %}
+            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Eventuel pris" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'value': '50' } %}
+            </div>
+          </div>
+        </div>
+
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Navn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name', 'value': 'Eksempel navn' } %}
+            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'value': 'eksempel@mail.dk' } %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     
-    <div class="l-form-section">
-      {% include "elements-form-label" with { formLabel: { label: "Dato" } } %}
-      {% include "elements-text-field" with {'type': 'text', 'name': 'date', 'value': '24-12-2016', 'label': 'Dato', 'placeholder': '24-12-2016' } %}
+    <div class="l-section has-no-margin layout flex center">
+      {% include "elements-button" with { button: profileActivitiesEdit.saveButton } %}
     </div>
-    <div class="l-form-section">
-      {% include "elements-form-label" with { formLabel: { label: "Starttidspunkt" } } %}
-      {% include "elements-text-field" with {'type': 'text', 'name': 'time-from', 'value': '09:00', 'placeholder': '12:00' } %}
-    </div>
-    <div class="l-form-section">
-      {% include "elements-form-label" with { formLabel: { label: "Sluttidspunkt" } } %}
-      {% include "elements-text-field" with {'type': 'text', 'name': 'time-to', 'value': '12:00', 'placeholder': '15:00' } %}
-    </div>
-
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconContact, 
-        icon: profileActivitiesEdit.textWithIconContact.icon 
-      } 
-    %}
-    
-    <div class="l-form-section">
-      
-      <div class="l-form-section">
-        {% include "elements-form-label" with { formLabel: { label: "Navn" } } %}
-        {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name', 'value': 'Eksempel navn' } %}
-      </div>
-
-      <div class="l-form-section">
-        {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
-        {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email', 'value': 'eksempel@mail.dk' } %}
-      </div>
-
-      <div class="l-form-section">
-        {% include "elements-form-label" with { formLabel: { label: "Eventuel pris" } } %}
-        {% include "elements-text-field" with {'type': 'text', 'name': 'price', 'value': '50' } %}
-      </div>
-
-    </div>
-
-    {% include "elements-button" with { button: profileActivitiesEdit.saveButton } %}
     
   </div>
 {% endblock %}

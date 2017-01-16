@@ -46,14 +46,16 @@
           <article class="grid--item">
             {% include "elements-checkbox" with {'checkbox': { "label": "Sport" } } %}
           </article>
+          <article class="grid--item">
+            {% include 'elements-suggestion' %}
+          </article>
         </div>
       </div>
-      <a href="#">Skriv forslag til nye kategorier</a>
     </div>
 
-    <div class="l-section has-bottom-margin layout flex">
-      {% include "elements-button" with { button: createStepThree.buttonPrev } %}
-      {% include "elements-button" with { button: createStepThree.buttonNext } %}
+    <div class="l-section">  
+      {% include 'modules-create-navigation' %}
     </div>
+
   </div>
 {% endblock %}

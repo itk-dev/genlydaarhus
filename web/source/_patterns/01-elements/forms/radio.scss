@@ -17,7 +17,6 @@
   @include breakpoint($breakpoint-tablet) {
     width: auto;
     min-width: 300px;
-    margin-right: $spacing-pixel-small;
     margin-bottom: 0;
   }
 

@@ -1,0 +1,47 @@
+{
+  "activity": {
+    "image": {
+      "src": "/assets/images/styleguide/computer.jpg"
+    },
+    "headingWithIconSimilar": {
+      "title": "Lignende aktiviteter",
+      "subtitle": "Her kan du se aktivitet, som ligger sig op af aktiviteten ovenfor.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin"
+      }
+    },
+    "headingWithIconOther": {
+      "title": "Andre muligheder",
+      "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin"
+      }
+    },
+    "headingWithIconDetails": {
+      "title": "Detaljer",
+      "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin"
+      }
+    },
+    "headingWithIconDescription": {
+      "title": "Beskrivelse",
+      "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin"
+      }
+    },
+    "callToAction": {
+        "button": {
+          "class": "is-cta",
+          "href": "#",
+          "title": "Se alle aktiviteter" 
+        },
+        "text": "Ikke lige noget der passede dig?"
+    }
+  }
+}

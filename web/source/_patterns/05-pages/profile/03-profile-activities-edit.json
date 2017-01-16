@@ -48,18 +48,22 @@
         "color": "light"
       }
     },
-    "textWithIconContact": {
-      "title": "Kontaktoplysninger",
-      "icon": {
-        "type": "checkmark-bold",
-        "class": "is-small is-green-dark", 
-        "color": "light"
-      }
-    },
     "saveButton": {
       "class": "is-cta",
       "href": "#",
       "title": "Gem opslag" 
+    },
+    "imageUpload": {
+      "hover": true,
+      "image": {
+        "class": "",
+        "src": "/assets/images/styleguide/computer.jpg"
+      },
+      "button": {
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Skift billede"
+      }
     }
   }
 }

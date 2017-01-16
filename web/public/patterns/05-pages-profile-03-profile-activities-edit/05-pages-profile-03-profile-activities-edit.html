@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width" />
 
-    <link rel="stylesheet" href="/css/styles.css?1484504529" media="all" />
-    <link rel="stylesheet" href="/css/demo.css?1484504529" media="all" />
+    <link rel="stylesheet" href="/css/styles.css?1484592398" media="all" />
+    <link rel="stylesheet" href="/css/demo.css?1484592398" media="all" />
 
     <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
     <!-- never cache patterns -->
@@ -16,11 +16,11 @@
 <meta http-equiv="expires" content="Tue, 01 Jan 1980 1:00:00 GMT" />
 <meta http-equiv="pragma" content="no-cache" />
 
-<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1484504529" media="all">
-<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1484504529" media="all" />
+<link rel="stylesheet" href="../../styleguide/css/styleguide.min.css?1484592398" media="all">
+<link rel="stylesheet" href="../../styleguide/css/prism-typeahead.min.css?1484592398" media="all" />
     <!-- End Pattern Lab -->
 
-    <link rel="stylesheet" href="/css/styleguide.css?1484504529" media="all" />
+    <link rel="stylesheet" href="/css/styleguide.css?1484592398" media="all" />
 
     <!-- Leaflet map css and script -->
     <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
@@ -69,11 +69,14 @@
   </div>  </div>
   <h3 class="text-with-icon--title">Overskrift og beskrivelse</h3>
 </div>
-    <div class="l-cols">
       <div class="l-form-section">  
-        <label class="form-label" for="">Overskrift</label>        <div class="text-field">
+        <label class="form-label" for="">Overskrift</label>        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="text-field">
   <input class="text-field--input" type="text" name="headline" id="headline" placeholder="" value="Eksempel overskrift" />
-</div>      </div>
+</div>          </div>
+        </div>
+      </div>
       
       <div class="l-form-section">  
         <label class="form-label" for="">Beskrivelse</label>          <div class="textarea">
@@ -81,18 +84,21 @@
   </div>      </div>
 
       <div class="l-form-section">
-        <label class="form-label" for="">Tilmeldingspligt</label>        <div class="layout flex wrap">
-          <label class="radio">
+        <label class="form-label" for="">Tilmeldingspligt</label>        <div class="l-cols flex-start">
+          <div class="l-col one-third desk-up">
+            <label class="radio">
   <div class="radio--label">Der er tilmeldingspligt</div>
   <input type="radio" name="registration-required">
   <div class="radio--indicator"></div>
-</label>          <label class="radio">
+</label>          </div>
+          <div class="l-col one-third desk-up">
+            <label class="radio">
   <div class="radio--label">Der er ikke tilmeldingspligt</div>
   <input type="radio" name="registration-required">
   <div class="radio--indicator"></div>
-</label>        </div>
+</label>          </div>
+        </div>
       </div>
-    </div>
 
     <div class="text-with-icon">
   <div class="text-with-icon--icon">
@@ -103,56 +109,84 @@
     
   </div>  </div>
   <h3 class="text-with-icon--title">De vigtigste egenskaber</h3>
-</div><label class="form-label" for="">Hvilket niveau kræver det at deltage?</label>    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+</div>    
+    <label class="form-label" for="">Hvilket niveau kræver det at deltage?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Kom som du er</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Lettere øvet</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Øvet</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>    </div>
+</label>        </div>
+      </div>
+    </div>
     
-    <label class="form-label" for="">Kræver det et særligt fysisk niveau?</label>    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+    <label class="form-label" for="">Kræver det et særligt fysisk niveau?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Ingen fysisk forudsætning</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">I nogenlunde form</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">I god form</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>    </div>
-      
-    <div class="l-form-section">
-      <label class="form-label" for="">Hvor mange kan deltage?</label>      <div class="text-field">
+</label>        </div>
+      </div>
+    </div>
+    
+    <label class="form-label" for="">Hvor mange kan deltage?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <div class="text-field">
   <input class="text-field--input" type="text" name="participants" id="participants" placeholder="Indtast antal" value="" />
-</div>    </div>
+</div>        </div>
+      </div>
+    </div>
 
-    <label class="form-label" for="">Har du brug for en hjælpende hånd?</label>    
-    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+    <label class="form-label" for="">Har du brug for en hjælpende hånd?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Ingen hjælp påkrævet</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Kunne godt bruge en hånd</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Alle er velkomne til at hjælpe</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>    </div>
+</label>        </div>
+      </div>
+    </div>
 
     <div class="text-with-icon">
   <div class="text-with-icon--icon">
@@ -238,7 +272,9 @@
       <a href="#">Skriv forslag til nye kategorier</a>
     </div>
 
-    <div class="text-with-icon">
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="text-with-icon">
   <div class="text-with-icon--icon">
     <div class="icon is-small is-green-dark ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
@@ -247,11 +283,22 @@
     
   </div>  </div>
   <h3 class="text-with-icon--title">Billede</h3>
-</div>    <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+</div>
+        <div class="l-form-section">
+          <div class="image-upload">
+  <div class="image-upload--image">
+    <img class="image " src="/assets/images/styleguide/computer.jpg" />
 
-    <p><a class="button " href="#">Knap titel</a></p>
+  </div>
+  <div class="image-upload--overlay has-hover">
+    <div class="image-upload--button">
+      <a class="button is-cta is-full-width" href="#">Skift billede</a>    </div>
+  </div>
+</div>        </div>
 
-    <div class="text-with-icon">
+      </div>
+      <div class="l-col half desk-up">
+        <div class="text-with-icon">
   <div class="text-with-icon--icon">
     <div class="icon is-small is-green-dark ">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
@@ -260,50 +307,57 @@
     
   </div>  </div>
   <h3 class="text-with-icon--title">Praktisk Information</h3>
-</div>    
-    <div class="l-form-section">
-      <label class="form-label" for="">Dato</label>      <div class="text-field">
+</div>        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Dato</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="date" id="date" placeholder="24-12-2016" value="24-12-2016" />
-</div>    </div>
-    <div class="l-form-section">
-      <label class="form-label" for="">Starttidspunkt</label>      <div class="text-field">
+</div>            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Starttidspunkt</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="time-from" id="time-from" placeholder="12:00" value="09:00" />
-</div>    </div>
-    <div class="l-form-section">
-      <label class="form-label" for="">Sluttidspunkt</label>      <div class="text-field">
+</div>            </div>
+          </div>
+        </div>
+
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Sluttidspunkt</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="time-to" id="time-to" placeholder="15:00" value="12:00" />
-</div>    </div>
-
-    <div class="text-with-icon">
-  <div class="text-with-icon--icon">
-    <div class="icon is-small is-green-dark ">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
-        <path fill="#fff" stroke="#fff" stroke-width="1" d="M19.1 24.7c-.7 0-1.3-.3-1.8-.7l-2.7-2.7c-.2-.2-.2-.5 0-.7s.5-.2.7 0l2.7 2.7c.3.3.7.4 1.1.4.4 0 .8-.2 1.1-.4l6.4-6.6c.2-.2.5-.2.7 0 .2.2.2.5 0 .7L20.9 24c-.4.4-1.1.7-1.8.7z"/>
-      </svg>
-    
-  </div>  </div>
-  <h3 class="text-with-icon--title">Kontaktoplysninger</h3>
-</div>    
-    <div class="l-form-section">
-      
-      <div class="l-form-section">
-        <label class="form-label" for="">Navn</label>        <div class="text-field">
-  <input class="text-field--input" type="text" name="contact-name" id="contact-name" placeholder="" value="Eksempel navn" />
-</div>      </div>
-
-      <div class="l-form-section">
-        <label class="form-label" for="">Email</label>        <div class="text-field">
-  <input class="text-field--input" type="text" name="contact-email" id="contact-email" placeholder="" value="eksempel@mail.dk" />
-</div>      </div>
-
-      <div class="l-form-section">
-        <label class="form-label" for="">Eventuel pris</label>        <div class="text-field">
+</div>            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Eventuel pris</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="price" id="price" placeholder="" value="50" />
-</div>      </div>
+</div>            </div>
+          </div>
+        </div>
 
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Navn</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="contact-name" id="contact-name" placeholder="" value="Eksempel navn" />
+</div>            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Email</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="contact-email" id="contact-email" placeholder="" value="eksempel@mail.dk" />
+</div>            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <a class="button is-cta" href="#">Gem opslag</a>    
+    
+    <div class="l-section has-no-margin layout flex center">
+      <a class="button is-cta" href="#">Gem opslag</a>    </div>
+    
   </div>
 </main>
 
@@ -346,10 +400,10 @@
   }
 </script>
 
-<script id="pl-js-polyfill-insert-1484504529">
+<script id="pl-js-polyfill-insert-1484592398">
   (function() {
     if (self != top) {
-      var cb = '1484504529';
+      var cb = '1484592398';
       var js = [];
       if (typeof document !== 'undefined' && !('classList' in document.documentElement)) {
         js.push('styleguide/bower_components/classList.min.js');
@@ -359,10 +413,10 @@
   })();
 </script>
 
-<script id="pl-js-insert-1484504529">
+<script id="pl-js-insert-1484592398">
   (function() {
     if (self != top) {
-      var cb = '1484504529';
+      var cb = '1484592398';
       var js = [ { 'src': 'styleguide/bower_components/jwerty.min.js', 'dep': [ 'styleguide/js/patternlab-pattern.min.js' ] } ];
       scriptLoader.run(js,cb,'pl-js-insert');
     }

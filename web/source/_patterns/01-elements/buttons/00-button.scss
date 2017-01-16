@@ -25,6 +25,12 @@
   transition: all .4s;
   text-align: center;
 
+  &.is-inactive {
+    opacity: .5;
+    pointer-events: none;
+    cursor: default;
+  }
+
   &.is-primary {
     @include buttonHover($color-blue);
 

@@ -28,11 +28,14 @@
   </div>  </div>
   <h3 class="text-with-icon--title"></h3>
 </div>
-    <div class="l-cols">
       <div class="l-form-section">  
-        <label class="form-label" for="">Overskrift</label>        <div class="text-field">
+        <label class="form-label" for="">Overskrift</label>        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="text-field">
   <input class="text-field--input" type="text" name="headline" id="headline" placeholder="" value="Eksempel overskrift" />
-</div>      </div>
+</div>          </div>
+        </div>
+      </div>
       
       <div class="l-form-section">  
         <label class="form-label" for="">Beskrivelse</label>          <div class="textarea">
@@ -40,74 +43,105 @@
   </div>      </div>
 
       <div class="l-form-section">
-        <label class="form-label" for="">Tilmeldingspligt</label>        <div class="layout flex wrap">
-          <label class="radio">
+        <label class="form-label" for="">Tilmeldingspligt</label>        <div class="l-cols flex-start">
+          <div class="l-col one-third desk-up">
+            <label class="radio">
   <div class="radio--label">Der er tilmeldingspligt</div>
   <input type="radio" name="registration-required">
   <div class="radio--indicator"></div>
-</label>          <label class="radio">
+</label>          </div>
+          <div class="l-col one-third desk-up">
+            <label class="radio">
   <div class="radio--label">Der er ikke tilmeldingspligt</div>
   <input type="radio" name="registration-required">
   <div class="radio--indicator"></div>
-</label>        </div>
+</label>          </div>
+        </div>
       </div>
-    </div>
 
     <div class="text-with-icon">
   <div class="text-with-icon--icon">
     <div class="icon  ">
   </div>  </div>
   <h3 class="text-with-icon--title"></h3>
-</div><label class="form-label" for="">Hvilket niveau kræver det at deltage?</label>    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+</div>    
+    <label class="form-label" for="">Hvilket niveau kræver det at deltage?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Kom som du er</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Lettere øvet</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Øvet</div>
   <input type="radio" name="participation-level">
   <div class="radio--indicator"></div>
-</label>    </div>
+</label>        </div>
+      </div>
+    </div>
     
-    <label class="form-label" for="">Kræver det et særligt fysisk niveau?</label>    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+    <label class="form-label" for="">Kræver det et særligt fysisk niveau?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Ingen fysisk forudsætning</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">I nogenlunde form</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">I god form</div>
   <input type="radio" name="physical-level">
   <div class="radio--indicator"></div>
-</label>    </div>
-      
-    <div class="l-form-section">
-      <label class="form-label" for="">Hvor mange kan deltage?</label>      <div class="text-field">
+</label>        </div>
+      </div>
+    </div>
+    
+    <label class="form-label" for="">Hvor mange kan deltage?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <div class="text-field">
   <input class="text-field--input" type="text" name="participants" id="participants" placeholder="Indtast antal" value="" />
-</div>    </div>
+</div>        </div>
+      </div>
+    </div>
 
-    <label class="form-label" for="">Har du brug for en hjælpende hånd?</label>    
-    <div class="l-form-section layout flex wrap">
-      <label class="radio">
+    <label class="form-label" for="">Har du brug for en hjælpende hånd?</label>    <div class="l-form-section">
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Ingen hjælp påkrævet</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Kunne godt bruge en hånd</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>      <label class="radio">
+</label>        </div>
+        <div class="l-col one-third desk-up">
+          <label class="radio">
   <div class="radio--label">Alle er velkomne til at hjælpe</div>
   <input type="radio" name="help">
   <div class="radio--indicator"></div>
-</label>    </div>
+</label>        </div>
+      </div>
+    </div>
 
     <div class="text-with-icon">
   <div class="text-with-icon--icon">
@@ -189,60 +223,84 @@
       <a href="#">Skriv forslag til nye kategorier</a>
     </div>
 
-    <div class="text-with-icon">
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="text-with-icon">
   <div class="text-with-icon--icon">
     <div class="icon  ">
   </div>  </div>
   <h3 class="text-with-icon--title"></h3>
-</div>    <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+</div>
+        <div class="l-form-section">
+          <div class="image-upload">
+  <div class="image-upload--image">
+    <img class="image " src="" />
 
-    <p><a class="button " href="#">Knap titel</a></p>
+  </div>
+  <div class="image-upload--overlay ">
+    <div class="image-upload--button">
+      <a class="button " href=""></a>    </div>
+  </div>
+</div>        </div>
 
-    <div class="text-with-icon">
+      </div>
+      <div class="l-col half desk-up">
+        <div class="text-with-icon">
   <div class="text-with-icon--icon">
     <div class="icon  ">
   </div>  </div>
   <h3 class="text-with-icon--title"></h3>
-</div>    
-    <div class="l-form-section">
-      <label class="form-label" for="">Dato</label>      <div class="text-field">
+</div>        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Dato</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="date" id="date" placeholder="24-12-2016" value="24-12-2016" />
-</div>    </div>
-    <div class="l-form-section">
-      <label class="form-label" for="">Starttidspunkt</label>      <div class="text-field">
+</div>            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Starttidspunkt</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="time-from" id="time-from" placeholder="12:00" value="09:00" />
-</div>    </div>
-    <div class="l-form-section">
-      <label class="form-label" for="">Sluttidspunkt</label>      <div class="text-field">
+</div>            </div>
+          </div>
+        </div>
+
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Sluttidspunkt</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="time-to" id="time-to" placeholder="15:00" value="12:00" />
-</div>    </div>
-
-    <div class="text-with-icon">
-  <div class="text-with-icon--icon">
-    <div class="icon  ">
-  </div>  </div>
-  <h3 class="text-with-icon--title"></h3>
-</div>    
-    <div class="l-form-section">
-      
-      <div class="l-form-section">
-        <label class="form-label" for="">Navn</label>        <div class="text-field">
-  <input class="text-field--input" type="text" name="contact-name" id="contact-name" placeholder="" value="Eksempel navn" />
-</div>      </div>
-
-      <div class="l-form-section">
-        <label class="form-label" for="">Email</label>        <div class="text-field">
-  <input class="text-field--input" type="text" name="contact-email" id="contact-email" placeholder="" value="eksempel@mail.dk" />
-</div>      </div>
-
-      <div class="l-form-section">
-        <label class="form-label" for="">Eventuel pris</label>        <div class="text-field">
+</div>            </div>
+          </div>
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Eventuel pris</label>              <div class="text-field">
   <input class="text-field--input" type="text" name="price" id="price" placeholder="" value="50" />
-</div>      </div>
+</div>            </div>
+          </div>
+        </div>
 
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Navn</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="contact-name" id="contact-name" placeholder="" value="Eksempel navn" />
+</div>            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">
+              <label class="form-label" for="">Email</label>              <div class="text-field">
+  <input class="text-field--input" type="text" name="contact-email" id="contact-email" placeholder="" value="eksempel@mail.dk" />
+</div>            </div>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <a class="button " href=""></a>    
+    
+    <div class="l-section has-no-margin layout flex center">
+      <a class="button " href=""></a>    </div>
+    
   </div>
 </main>
 
