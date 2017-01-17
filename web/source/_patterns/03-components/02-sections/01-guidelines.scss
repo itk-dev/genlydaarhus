@@ -1,4 +1,9 @@
 .guidelines {
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
   &--headings {
     display: flex;
     align-items: center;
@@ -7,24 +12,12 @@
 
   &--item {
     border-bottom: 1px solid $color-border-dark;
-    margin-top: $spacing-pixel-small;
-    padding-bottom: $spacing-pixel-small;
-    padding-top: $spacing-pixel-small;
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-medium;
 
     @include breakpoint($breakpoint-desk) {
       padding-bottom: $spacing-pixel-large;
       padding-top: $spacing-pixel-large;
-    }
-
-    &:first-child {
-      border-top: 1px solid $color-border-dark;
-      padding-top: $spacing-pixel-small;
-      margin-top: 0;
-
-      @include breakpoint($breakpoint-tablet) {
-        margin-top: $spacing-pixel-medium;
-        padding-top: $spacing-pixel-large;
-      }
     }
   }
 

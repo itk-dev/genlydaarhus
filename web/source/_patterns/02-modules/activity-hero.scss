@@ -1,29 +1,33 @@
 .activity-hero {
-  display: flex;
+  position: relative;
+  width: 100%;
   
   &--image {
-    width: 66.66%;
     position: relative;
     background-size: cover;
     background-position: center center;
-    height: 500px;
+    width: 100%;
+    height: 600px;
   }
 
   &--content {
-    width: 33.33%;
-    flex-grow: 1;
+    position: absolute;
     display: flex;
-    align-items: center;
-    padding: $spacing-pixel-medium;
-    background-color: $color-black-light;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-dark-alpha;
+    padding-left: $spacing-pixel-normal;
+    padding-right: $spacing-pixel-normal;
+    padding-top: $spacing-pixel-normal;
+    padding-bottom: $spacing-pixel-normal;
   }
 
   &--title {
-    @include content-separator();
 
-    flex: 1;
     font-size: $font-size-xxxlarge;
-    margin-top: 0;
+    margin: 0;
     font-weight: 600;
     color: $color-white;
   }

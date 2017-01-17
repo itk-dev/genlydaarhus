@@ -1,0 +1,9 @@
+{
+  "activitySidebar": {
+    "signupButton": {
+      "class": "is-cta is-full-width is-large",
+      "href": "#",
+      "title": "Tilmeld dig"
+    }
+  }
+}

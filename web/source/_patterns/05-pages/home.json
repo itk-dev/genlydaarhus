@@ -14,13 +14,21 @@
         "type": "location"
       }
     },
-    "headingWithIcon": {
+    "headingWithIconNearby": {
       "title": "Aktiviteter i nærheden (Højbjerg)",
       "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
       "iconClass": "hidden-desk-down",
       "icon": {
         "type": "location",
         "class": ""
+      }
+    },
+    "headingWithIconPopular": {
+      "title": "Populære aktiviteter",
+      "subtitle": "Her kan du se de mest populære aktiviteter lige nu.",
+      "iconClass": "hidden-desk-down",
+      "icon": {
+        "type": "bulletin"
       }
     },
     "seeAllButton": {
@@ -36,7 +44,7 @@
       },
       "text": "Fandt du ikke lige en aktivitet der passede dig?"
     },
-    "guidelines": {
+    "guidelinesAbout": {
       "callToAction": {
         "button": {
           "class": "is-cta",
@@ -47,6 +55,32 @@
       },
       "headingWithIcon": {
         "title": "Hvad vil det sige at give genlyd?",
+        "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
+        "iconClass": "hidden-tablet-down",
+        "icon": {
+          "type": "bulletin"
+        }
+      }
+    },
+    "popularCallToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Alle aktiviteter" 
+      },
+      "text": "Ikke nogle populære aktiviteter der lige fangede dig?"
+    },
+    "guidelinesPool": {
+      "callToAction": {
+        "button": {
+          "class": "is-cta",
+          "href": "#",
+          "title": "Hør nærmere" 
+        },
+        "text": "Har du et projekt der giver Genlyd?"
+      },
+      "headingWithIcon": {
+        "title": "Hvad er Genlyd puljen?",
         "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
         "iconClass": "hidden-tablet-down",
         "icon": {

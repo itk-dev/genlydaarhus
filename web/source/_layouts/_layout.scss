@@ -14,6 +14,10 @@
 .container {
   @include layout-wrapper($breakpoint-bigscreen);
 
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
   &.has-spacing {
     padding-bottom: $spacing-pixel-medium;
     padding-top: $spacing-pixel-medium;
@@ -191,7 +195,7 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
     justify-content: flex-start;
 
     .l-col {
-      
+
       &.tablet-up {
         @include breakpoint($breakpoint-tablet) {
           margin-bottom: 0;
@@ -230,6 +234,33 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
 
     &:not(:last-child){
       margin-bottom: $spacing-percent-medium;
+    }
+
+    &.all {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
     }
 
     &.tablet-up {

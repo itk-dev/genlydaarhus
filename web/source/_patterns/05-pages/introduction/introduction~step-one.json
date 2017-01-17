@@ -2,7 +2,7 @@
   "introduction": {
     "headingWithIcon": {
       "title": "Velkommen til Genlyd Aarhus",
-      "subtitle": "Herunder finder du en kort introduction til Genlyd og hvordan du opretter en aktivitet.",
+      "subtitle": "Herunder finder du en kort introduktion til Genlyd og hvordan du opretter en aktivitet.",
       "iconClass": "hidden-tablet-down",
       "icon": {
         "type": "create"
@@ -32,7 +32,7 @@
       "buttonNext": {
         "class": "is-cta is-full-width",
         "href": "#",
-        "title": "Næste"
+        "title": "Lad os komme igang"
       },
       "buttonPrev": {
         "class": "is-secondary is-dark is-full-width is-inactive",
@@ -40,15 +40,14 @@
         "title": "Tilbage"
       }
     },    
-    "heading": "Dette er et eksempel på en titel",
-    "text": "Dette er en eksempel tekst",
-    "step": "1 af 5",
-    "buttons": [
-      {
-        "class": "is-primary",
-        "href": "#",
-        "title": "Næste knap titel"
+    "textWithIcon": {
+      "title": "Hvad er Genlyd?",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
       }
-    ]
+    },
+    "text": "Genlyd er oplevelser, interesser og mennesker med gode idéer. Når du opretter et arrangement eller deltager i et, er du med til at styrke fritidslivet og give genlyd i Aarhus og omegn."
   }
 }

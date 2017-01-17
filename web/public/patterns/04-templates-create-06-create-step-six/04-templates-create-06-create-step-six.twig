@@ -1,27 +1,150 @@
 {% extends "templates-page" %}
 {% block main %}
-  <p>6 af 6</p>
-  <h3>Perfekt. Du har nu lavet et aktivitetsopslag.</h3>
-  <p>Kig dit opslag igennem. Hvis du er tilfreds trykker du på "Opret". Hvis du ønsker at rette i dit tilbud, kan du gå tilbage i opslaget.</p>
-  <h1>Titel på aktivitet</h1>
-  {% include "modules-categories" %}
-  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
-  {% include "elements-activity-meta" with {'text': 'dato tidspunkt (antal timer)'} %}
-  {% include "elements-activity-meta" with {'text': 'adresse (se kort)'} %}
-  {% include "elements-activity-meta" with {'text': 'pris'} %}
-  {% include "elements-activity-meta" with {'text': 'bruger'} %}
-  {% include "elements-activity-meta" with {'text': 'antal tilmeldte'} %}
-  <p>
-    Her skal stå en beskrivelse af en aktiviteten og alt hvad der er relevant for denne aktivitet. 
-  <p>
-  <h4>Vigtig information:</h4>
-  <ul>
-    <li>tilmeldingspligt</li>
-    <li>niveau</li>
-    <li>hjælp</li>
-  </ul>
-  <p>
-    {% include "elements-button" with {'class': 'is-primary', 'title': 'Forrige', 'href': attribute(link, 'templates-create-step-five')} %}
-    {% include "elements-button" with {'class': 'is-cta', 'title': 'Opret', 'href': attribute(link, 'templates-profile-activities-overview')} %}
-  </p>
+  <div class="container has-spacing">
+    
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepSix.headingWithIcon, icon: createStepSix.headingWithIcon.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepSix.progressBar } %}
+    </div>
+    <h3>Perfekt. Du har nu lavet et aktivitetsopslag.</h3>
+    <p>Kig dit opslag igennem. Hvis du er tilfreds trykker du på "Opret". Hvis du ønsker at rette i dit tilbud, kan du gå tilbage i opslaget.</p>
+
+    <div class="l-section">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconAbout, icon: createStepSix.textWithIconAbout.icon } %}
+      
+      <div class="l-cols">
+        <div class="l-col two-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Overskrift", value: "Fusce nec neque commodo" } } %}
+          </div>
+
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { 
+              activityConfirmInfo: { 
+                label: "Beskrivelse", 
+                value: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est. Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra." 
+                } 
+              } 
+            %}
+          </div>
+        </div>
+
+        <div class="l-col one-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Tilmeldingspligt", value: "Der er tilmeldingspligt" } } %}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section">
+
+      {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconInformation, icon: createStepSix.textWithIconInformation.icon } %}
+      
+      <div class="l-cols">
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Hvilket niveau kræver det at deltage?", value: "Kom som du er" } } %}
+          </div>
+        </div>
+
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Kræver det et særligt fysisk niveau?", value: "I nogenlunde form" } } %}
+          </div>
+        </div>
+      </div>
+
+      <div class="l-cols">
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Hvor mange kan deltage?", value: "30" } } %}
+          </div>
+        </div>
+        
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Har du brug for en hjælpende hånd?", value: "Ingen hjælp påkrævet" } } %}
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="l-cols">
+      <div class="l-col half tablet-up">
+        <div class="l-section">  
+          {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconImage, icon: createStepSix.textWithIconImage.icon } %}
+          {% include "elements-image" with { image: { 'src': 'http://placehold.it/500x250' } } %}
+        </div>
+      </div>
+      <div class="l-col half tablet-up">
+        <div class="l-section">  
+          {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconCategories, icon: createStepSix.textWithIconCategories.icon } %}
+
+          {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Hvilke kategorier vil du sætte på din kategori?", value: "Musik, Natur, Sport" } } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconDetails, icon: createStepSix.textWithIconDetails.icon } %}
+      
+      <div class="l-cols">
+        <div class="l-col one-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Dato", value: "12. Januar 2017" } } %}
+          </div>
+        </div>
+        
+        <div class="l-col one-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Starttidspunkt", value: "12:00" } } %}
+          </div>
+        </div>
+
+        <div class="l-col one-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Slut tidspunkt", value: "15:00" } } %}
+          </div>
+        </div>
+      </div>
+
+      <div class="l-cols">
+        <div class="l-col two-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Hvor foregår det?", value: "Harald Jensens Plads, 8000 Aarhus C" } } %}
+          </div>
+        </div>
+
+        <div class="l-col one-third tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Pris", value: "Gratis" } } %}
+          </div>
+        </div>
+        
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Navn", value: "Lasse Iversen" } } %}
+          </div>
+        </div>
+
+        <div class="l-col half tablet-up">
+          <div class="l-section has-bottom-margin">
+            {% include 'modules-activity-confirm-info' with { activityConfirmInfo: { label: "Email", value: "lasse@example.dk" } } %}
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="l-section">  
+      {% include 'modules-create-navigation' with { createNavigation: createStepSix.createNavigation } %}
+    </div>
+
+  </div>
 {% endblock %}

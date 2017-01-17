@@ -26,6 +26,7 @@
 @import "_patterns/01-elements/02-text/inline-elements";
 @import "_patterns/01-elements/helpers/section";
 @import "_patterns/01-elements/activity-meta";
+@import "_patterns/01-elements/activity-info";
 @import "_patterns/01-elements/buttons/00-button";
 @import "_patterns/01-elements/category";
 @import "_patterns/01-elements/icons/icon";
@@ -55,8 +56,13 @@
 @import "_patterns/02-modules/profile-image-upload";
 @import "_patterns/02-modules/create-navigation";
 @import "_patterns/02-modules/activity-hero";
+@import "_patterns/02-modules/activity-confirm-info";
+@import "_patterns/02-modules/navigation";
+@import "_patterns/02-modules/hamburger-menu";
 
 /* Components */
 @import "_patterns/03-components/01-global/01-header";
 @import "_patterns/03-components/01-global/02-footer";
 @import "_patterns/03-components/02-sections/01-guidelines";
+@import "_patterns/03-components/introduction";
+@import "_patterns/03-components/activity-sidebar";

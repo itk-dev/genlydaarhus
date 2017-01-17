@@ -220,6 +220,10 @@
         </div>
       </div>
     </div>
+
+    <div class="layout flex center">
+      {% include "modules-call-to-action" with { callToAction: profileActivitiesEdit.callToAction } %}
+    </div>
     
     <div class="l-section has-no-margin layout flex center">
       {% include "elements-button" with { button: profileActivitiesEdit.saveButton } %}

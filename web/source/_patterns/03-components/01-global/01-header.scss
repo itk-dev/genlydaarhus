@@ -1,7 +1,7 @@
 .header {
   background-color: $color-white;
   display: flex;
-  height: 60px;
+  height: 80px;
   width: 100%;
 
   &--inner {
@@ -43,6 +43,11 @@
     position: absolute;
     top: 0;
     left: 0;
+
+    // Temporary disable of transparent navigation
+    .navigation, .hamburger-menu--toggle {
+      display: none;
+    }
 
     .header--inner {
       border-bottom: 1px solid transparentize($color-white, 0.80);

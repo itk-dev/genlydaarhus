@@ -48,10 +48,13 @@
         "color": "light"
       }
     },
-    "saveButton": {
-      "class": "is-cta",
-      "href": "#",
-      "title": "Gem opslag" 
+    "callToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Gem opslag" 
+      },
+      "text": "Har du rettet det du ville?"
     },
     "imageUpload": {
       "hover": true,

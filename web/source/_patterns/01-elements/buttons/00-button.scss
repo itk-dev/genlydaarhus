@@ -63,6 +63,13 @@
     color: $color-black-light;
   }
 
+  &.is-large {
+    padding-bottom: $spacing-pixel-xxsmall;
+    padding-left: $spacing-pixel-small;
+    padding-right: $spacing-pixel-small;
+    padding-top: $spacing-pixel-xxsmall; 
+  }
+
   &.is-small {
     font-size: $font-size-small;
     padding-bottom: $spacing-pixel-xxxsmall;

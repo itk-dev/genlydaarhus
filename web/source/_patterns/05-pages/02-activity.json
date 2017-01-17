@@ -1,7 +1,23 @@
 {
   "activity": {
-    "image": {
-      "src": "/assets/images/styleguide/computer.jpg"
+    "activityOverview": {
+      "image": {
+        "src": "/assets/images/styleguide/computer.jpg"
+      },
+      "headingWithIconDetails": {
+        "title": "Detaljer",
+        "iconClass": "hidden-tablet-down",
+        "icon": {
+          "type": "bulletin"
+        }
+      },
+      "headingWithIconDescription": {
+        "title": "Beskrivelse",
+        "iconClass": "hidden-tablet-down",
+        "icon": {
+          "type": "bulletin"
+        }
+      }
     },
     "headingWithIconSimilar": {
       "title": "Lignende aktiviteter",
@@ -13,22 +29,6 @@
     },
     "headingWithIconOther": {
       "title": "Andre muligheder",
-      "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
-      "iconClass": "hidden-tablet-down",
-      "icon": {
-        "type": "bulletin"
-      }
-    },
-    "headingWithIconDetails": {
-      "title": "Detaljer",
-      "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
-      "iconClass": "hidden-tablet-down",
-      "icon": {
-        "type": "bulletin"
-      }
-    },
-    "headingWithIconDescription": {
-      "title": "Beskrivelse",
       "subtitle": "Der er også andre muligheder. Dem kan du se herunder.",
       "iconClass": "hidden-tablet-down",
       "icon": {
