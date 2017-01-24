@@ -1,0 +1,19 @@
+{
+  "introduction": {
+    "heading": "Dette er et eksempel på en titel",
+    "text": "Dette er en eksempel tekst",
+    "step": "1 af 5",
+    "buttons": [
+      {
+        "class": "is-primary",
+        "href": "#",
+        "title": "Næste knap titel"
+      },
+      {
+        "class": "",
+        "href": "#",
+        "title": "Forrige knap titel"
+      }
+    ]
+  }
+}

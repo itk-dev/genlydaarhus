@@ -1,0 +1,7 @@
+{
+  "name": "selectbox-example",
+  "label": "Dette er en label",
+  "options": [
+    "Mulighed 1", "Mulighed 2", "Mulighed 3"
+  ]
+}

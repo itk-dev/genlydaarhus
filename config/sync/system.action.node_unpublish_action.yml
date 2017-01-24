@@ -1,0 +1,13 @@
+uuid: ff0c33c3-0a54-4190-9f87-da7897e56416
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: gGQXiSspwGl0lyOS6w_HCPpvGAPDciqDNLFwWOydVtI
+id: node_unpublish_action
+label: 'Afpubliceer indhold'
+type: node
+plugin: node_unpublish_action
+configuration: {  }

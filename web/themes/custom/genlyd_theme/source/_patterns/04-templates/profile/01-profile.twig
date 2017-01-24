@@ -1,0 +1,70 @@
+{% extends "templates-page" %}
+{% block main %}
+
+<div class="container has-spacing">
+  <div class="l-heading-section">
+    {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
+  </div>
+
+  <div class="l-section has-bottom-margin">
+    <div class="l-cols is-reversed-desk-up">
+      <div class="l-col three-fourth desk-up">
+        <div class="l-cols">
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Fornavn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'placeholder': '', 'value': 'Lasse' } %}
+            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Efternavn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'placeholder': '', 'value': 'Iversen' } %}
+            </div>
+          </div>
+          
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+              {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'placeholder': '', 'value': 'eksempel@gmail.com' } %}
+            </div>
+          </div>
+
+          <div class="l-col half desk-up">
+            <div class="l-form-section">  
+              {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
+              {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'placeholder': '', 'value': 'password' } %}
+            </div>
+          </div>
+          <div class="l-col layout flex has-margin-bottom">
+            {% include "elements-button" with { button: profile.saveButton } %}
+          </div>
+        </div>
+      </div>
+      <div class="l-col one-fourth desk-up">
+        {% include "modules-profile-image-upload" %}
+      </div>
+    </div>
+  </div>
+
+  <div class="l-heading-section">
+    {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
+  </div>
+
+  <div class="grid">
+    <div class="grid--inner">
+      {% for item in activitiesEdit|slice(0, 3) %}
+        <article class="grid--item">
+          {% include "modules-card-activity" with { cardActivity: item } %}
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+  
+  <div class="layout flex center">
+    {% include "modules-call-to-action" with { callToAction: profile.callToAction } %}
+  </div>
+
+</div>
+{% endblock %}

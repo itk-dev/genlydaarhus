@@ -1,30 +1,6 @@
-# Genlyd Styleguide
+# Genlyd
 
-Styleguide for the Genlyd Aarhus website using [Pattern Lab](http://patternlab.io/).
-
-#### Installation
-
-Prerequisites: [git](https://git-scm.com/) and [Composer](https://getcomposer.org/) installed.
-
-In the `htdocs`directory run:
-
-```sh
-composer create-project pattern-lab/edition-twig-standard pattern-lab
-```
-
-When prompted for suggested starterkit choose `1: pattern-lab/starterkit-twig-base`.
-
-In the `pattern-lab` directory run:
-
-```sh
-composer install
-```
-
-In the file `pattern-lab/config/config.yml` change sourceDir to:
-
-```json
-sourceDir: ../source
-```
+#### Pattern lab
 
 If everything went well you should now be able to generate the static Pattern Lab site. In the `pattern-lab` directory run:
 

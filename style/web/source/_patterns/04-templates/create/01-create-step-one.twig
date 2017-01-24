@@ -1,0 +1,48 @@
+{% extends "templates-page" %}
+{% block main %}
+  <div class="container has-spacing">
+
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepOne.headingWithIcon, icon: createStepOne.headingWithIcon.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepOne.progressBar } %}
+    </div>
+
+
+    <div class="l-section">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconHeadline, icon: createStepOne.textWithIconHeadline.icon } %}
+    </div>
+    
+    <div class="l-section has-bottom-margin">  
+      {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
+      {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'placeholder': '' } %}
+    </div>
+    
+    <div class="l-section has-bottom-margin">  
+      {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
+      {% include "elements-textarea" with {'name': 'headline', 'placeholder': '', 'cols': '40', 'rows': '8' } %}
+    </div>
+
+    <div class="l-section">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconParticipation, icon: createStepOne.textWithIconParticipation.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols flex-start">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section">  
+      {% include 'modules-create-navigation' with { createNavigation: createStepOne.createNavigation } %}
+    </div>
+
+  </div>
+{% endblock %}
