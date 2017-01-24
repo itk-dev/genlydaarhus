@@ -1,0 +1,29 @@
+name: Genlyd theme
+type: theme
+description: 'The Genlyd theme.'
+
+libraries:
+#  - devteam/styling
+#  - devteam/hamburger-menu
+
+regions:
+  header: 'Header'
+  content: 'Content'
+  footer: 'Footer'
+
+component-libraries:
+  layouts:
+    paths:
+      - source/_layouts
+  elements:
+    paths:
+      - source/_patterns/00-elements
+  modules:
+    paths:
+      - source/_patterns/01-modules
+  components:
+    paths:
+      - source/_patterns/02-components
+
+version: '1.0.0-beta1'
+core: '8.x'

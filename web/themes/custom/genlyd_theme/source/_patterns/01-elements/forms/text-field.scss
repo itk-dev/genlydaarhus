@@ -1,0 +1,8 @@
+.text-field {
+  display: flex;
+  flex-direction: column;
+
+  &--input {
+    padding: $spacing-pixel-xxsmall;
+  }
+}

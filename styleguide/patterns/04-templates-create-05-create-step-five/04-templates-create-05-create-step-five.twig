@@ -1,0 +1,64 @@
+{% extends "templates-page" %}
+{% block main %}
+  <div class="container has-spacing">
+    
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepFive.headingWithIcon, icon: createStepFive.headingWithIcon.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepFive.progressBar } %}
+    </div>
+
+    <div class="l-section has-no-margin">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepFive.textWithIconPractical, icon: createStepFive.textWithIconPractical.icon } %}
+    </div>
+    
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols">
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Dato" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'date' } %}
+        </div>
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Starttidspunkt" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'time-from' } %}
+        </div>
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Sluttidspunkt" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'time-to' } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols">
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Eventuel pris" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'price' } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section has-no-margin">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepFive.textWithIconContact, icon: createStepFive.textWithIconContact.icon } %}
+    </div>
+
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols flex-start">
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Navn" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'contact-name' } %}
+        </div>
+        <div class="l-col one-third tablet-up">
+          {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'contact-email' } %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="l-section has-no-margin">  
+      {% include 'modules-create-navigation' %}
+    </div>
+{% endblock %}

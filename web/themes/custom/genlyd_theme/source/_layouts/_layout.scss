@@ -1,0 +1,324 @@
+@mixin layout-wrapper($breakpoint, $spacing: $spacing-percent-xlarge) {
+  margin-left: $spacing;
+  margin-right: $spacing;
+
+  @include breakpoint($breakpoint) {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: $spacing;
+    padding-right: $spacing;
+    max-width: $breakpoint;
+  }
+}
+
+.container {
+  @include layout-wrapper($breakpoint-bigscreen);
+
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+
+  &.has-spacing {
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-medium;
+
+    @include breakpoint($breakpoint-desk) {
+      padding-bottom: $spacing-pixel-xxlarge;
+      padding-top: $spacing-pixel-xxlarge;
+    }
+  }
+}
+
+/* Helpers
+   ========================================================================== */
+
+.layout {
+  &.flex {
+    display: flex;
+  }
+
+  &.wrap {
+    flex-wrap: wrap;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+
+  &.col {
+    flex-direction: column;
+  }
+
+  &.has-margin-top {
+    margin-top: $spacing-pixel-normal;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $spacing-pixel-large;
+    }
+  }
+
+  &.has-margin-bottom {
+    margin-bottom: $spacing-pixel-normal;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-bottom: $spacing-pixel-large;
+    }
+  }
+}
+
+/* Responsive visibility
+   ========================================================================== */
+
+   @media (max-width: $breakpoint-desk) {
+    .hidden-desk-down {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: $breakpoint-tablet) {
+    .hidden-tablet-down {
+      display: none !important;
+    }
+  }
+
+  @media (max-width: $breakpoint-lap) {
+    .hidden-lap-down {
+      display: none !important;
+    }
+  }
+
+/* Layouts
+   ========================================================================== */
+
+// Heading section with border
+
+.l-heading-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: $spacing-pixel-large;
+  border-bottom: 1px solid $color-border-dark;
+  padding-bottom: $spacing-pixel-normal;
+
+  @include breakpoint($breakpoint-tablet) {
+    flex-direction: row;
+  }
+
+  &.no-spacing {
+    margin-bottom: 0;
+  }
+
+  &.has-top-spacing {
+    margin-top: $spacing-pixel-normal;
+  }
+
+  &.is-column {
+    flex-direction: column;
+  }
+}
+
+.l-form-section {
+  width: 100%;
+  margin-bottom: $spacing-pixel-large;
+}
+
+.l-section {
+  width: 100%;
+  margin-top: $spacing-pixel-medium;
+  margin-bottom: $spacing-pixel-medium;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: $spacing-pixel-large;
+    margin-bottom: $spacing-pixel-large;
+  }
+
+  &.has-top-margin {
+    margin-bottom: 0;
+  }
+
+  &.has-bottom-margin {
+    margin-top: 0;
+  }
+
+  &.has-no-margin {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+
+// Two coloumn layout
+
+$two-col-max-width: 1200px;
+
+.l-two-col {
+  display: flex;
+  flex-direction: column;
+  max-width: $two-col-max-width;
+  margin-left: auto;
+  margin-right: auto;
+
+  @include breakpoint($breakpoint-desk) {
+    flex-direction: row;
+  }
+
+
+  &--left-col {
+    @include breakpoint($breakpoint-desk) {
+      width: 30%;
+      margin-right: $spacing-pixel-medium;
+    }
+  }
+
+  &--right-col {
+    @include breakpoint($breakpoint-desk) {
+      width: 70%;
+    }
+  }
+}
+
+$half:          (100%/2) - $spacing-percent-medium;
+
+$one-third:     (100%/3) - $spacing-percent-medium;
+$two-third:     (100%/3)*2 - $spacing-percent-medium;
+
+$one-fourth:    (100%/4) - $spacing-percent-medium;
+$two-fourth:    (100%/4)*2 - $spacing-percent-medium;
+$three-fourth:  (100%/4)*3 - $spacing-percent-medium;
+
+.l-cols {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &.flex-start {
+    justify-content: flex-start;
+
+    .l-col {
+
+      &.tablet-up {
+        @include breakpoint($breakpoint-tablet) {
+          margin-bottom: 0;
+          margin-right: $spacing-pixel-normal;
+        }
+      }
+
+      &.desk-up {
+        @include breakpoint($breakpoint-desk) {
+          margin-bottom: 0;
+          margin-right: $spacing-pixel-normal;
+        }
+      }
+    }
+
+  }
+
+  &.is-reversed {
+
+    &-tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-desk-up {
+      @include breakpoint($breakpoint-desk) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  // Columns
+  .l-col {
+    width: 100%;
+
+    &:not(:last-child){
+      margin-bottom: $spacing-percent-medium;
+    }
+
+    &.all {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+    }
+
+    &.tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+
+    &.desk-up {
+      @include breakpoint($breakpoint-desk) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+  }
+}

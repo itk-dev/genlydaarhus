@@ -1,0 +1,31 @@
+.guidelines {
+
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--headings {
+    display: flex;
+    align-items: center;
+    margin-bottom: $spacing-pixel-small;
+  }
+
+  &--item {
+    border-bottom: 1px solid $color-border-dark;
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-medium;
+
+    @include breakpoint($breakpoint-desk) {
+      padding-bottom: $spacing-pixel-large;
+      padding-top: $spacing-pixel-large;
+    }
+  }
+
+  &--title {
+    margin: 0;
+  }
+
+  &--text {
+    margin: 0;
+  }
+}

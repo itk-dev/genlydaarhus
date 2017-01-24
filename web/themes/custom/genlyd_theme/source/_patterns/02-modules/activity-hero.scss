@@ -1,0 +1,34 @@
+.activity-hero {
+  position: relative;
+  width: 100%;
+  
+  &--image {
+    position: relative;
+    background-size: cover;
+    background-position: center center;
+    width: 100%;
+    height: 600px;
+  }
+
+  &--content {
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: $color-dark-alpha;
+    padding-left: $spacing-pixel-normal;
+    padding-right: $spacing-pixel-normal;
+    padding-top: $spacing-pixel-normal;
+    padding-bottom: $spacing-pixel-normal;
+  }
+
+  &--title {
+
+    font-size: $font-size-xxxlarge;
+    margin: 0;
+    font-weight: 600;
+    color: $color-white;
+  }
+}

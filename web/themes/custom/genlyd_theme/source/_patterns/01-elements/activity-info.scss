@@ -1,0 +1,17 @@
+.activity-info {
+
+  padding-bottom: $spacing-pixel-small;
+  margin-bottom: $spacing-pixel-small;
+  border-bottom: 1px solid $color-border-dark;
+
+  &--meta {
+    margin-top: 0;
+    margin-bottom: $spacing-pixel-xtiny;
+    font-weight: 600;
+  }
+
+  &--data {
+    margin: 0;
+    font-size: 110%;
+  }
+}

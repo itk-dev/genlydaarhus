@@ -1,0 +1,29 @@
+<div class="introduction">
+  <div class="l-heading-section no-spacing">
+    {% include 'modules-heading-with-icon' with { headingWithIcon: introduction.headingWithIcon, icon: introduction.headingWithIcon.icon } %}
+  </div>
+
+  <div class="l-section has-bottom-margin">
+    {% include 'modules-progress-bar' with { progressBar: introduction.progressBar } %}
+  </div>
+
+  <div class="l-cols">
+    <div class="l-col half desk-up">
+      <div class="l-section has-bottom-margin">  
+        {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
+      </div>
+    </div>
+    <div class="l-col half desk-up">
+      <div class="l-section has-no-margin">  
+        {% include "modules-text-with-icon" with { textWithIcon: introduction.textWithIcon, icon: introduction.textWithIcon.icon } %}
+      </div>
+      <div class="l-section has-bottom-margin"> 
+        <p class="introduction--text">{{ introduction.text }}</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="l-section has-bottom-margin">  
+    {% include 'modules-create-navigation' with { createNavigation: introduction.createNavigation } %}
+  </div>
+</div>

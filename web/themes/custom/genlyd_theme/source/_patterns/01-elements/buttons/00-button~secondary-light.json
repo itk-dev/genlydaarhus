@@ -1,0 +1,7 @@
+{
+  "button": {
+    "class": "is-secondary is-light",
+    "href": "#",
+    "title": "Knap titel"
+  }
+}

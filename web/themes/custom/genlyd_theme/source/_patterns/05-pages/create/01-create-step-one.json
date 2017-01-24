@@ -1,0 +1,64 @@
+{
+  "createStepOne": {
+    "headingWithIcon": {
+      "title": "Hej Lasse",
+      "subtitle": "Lad os få oprettet en aktivitet.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "create"
+      }
+    },
+    "progressBar": {
+      "items": [
+        {
+          "title": "Om aktiviteten",
+          "active": true
+        },
+        {
+          "title": "Information"
+        },
+        {
+          "title": "Kategorier"
+        },
+        {
+          "title": "Billede"
+        },
+        {
+          "title": "Detaljer"
+        },
+        {
+          "title": "Bekræft"
+        }
+      ]
+    },
+    "textWithIconHeadline": {
+      "title": "Vælg en overskrift og beskrivelse",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconParticipation": {
+      "title": "Tilmeldingspligt",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "createNavigation": {
+      "buttonNext": {
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Næste"
+      },
+      "buttonPrev": {
+        "class": "is-secondary is-dark is-full-width is-inactive",
+        "href": "#",
+        "title": "Tilbage"
+      }
+    }    
+
+  }
+}

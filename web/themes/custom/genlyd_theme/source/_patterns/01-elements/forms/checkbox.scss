@@ -1,0 +1,87 @@
+.checkbox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-bottom: $spacing-pixel-small;
+  padding-top: $spacing-pixel-small;
+  padding-left: $spacing-pixel-xxsmall;
+  padding-right: $spacing-pixel-xxsmall;
+  width: 100%;
+  margin-bottom: $spacing-pixel-xsmall;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @include breakpoint($breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+
+  input {
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &--indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid $color-border-dark;
+    border-radius: 10px;
+    background-color: $color-white;
+
+  }
+  
+  /* Hover state whilst checked */
+  &:hover input:not([disabled]):checked ~ .checkbox--indicator,
+  input:checked:focus ~ .checkbox--indicator {
+    border: 2px solid $color-green-dark;
+  }
+
+  /* Checked state */
+  input:checked ~ .checkbox--indicator {
+    background-color: $color-white;
+	  border: 2px solid $color-green-dark;
+  }
+
+  input:checked ~ .checkbox--indicator:after {
+	  display: block;
+  }
+
+  /* checkbox button inner circle */
+  &--indicator:after {
+    position: relative;
+    display: none;
+    content: '';
+    top: 37%;
+    left: 20px;
+    width: 5px;
+    height: 10px;
+    border: solid $color-black-light;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
+
+  &--label {
+    position: relative;
+    z-index: 1;
+    margin-left: $spacing-pixel-medium;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    left: 14px;
+    width: 20px;
+    height: 20px;
+    border-radius: 5px;
+    border: 2px solid $color-border-dark;
+    z-index: 10;
+  }
+}

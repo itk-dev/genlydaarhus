@@ -1,0 +1,7 @@
+{
+  "name": "text-field-example",
+  "label": "Dette er en label",
+  "type": "text",
+  "placeholder": "Dette er en placeholder tekst",
+  "value": ""
+}
