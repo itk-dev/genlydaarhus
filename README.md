@@ -1,5 +1,9 @@
 # Genlyd
 
+## Structure
+
+This project consists of two parts: drupal and styleguide. 
+
 ## Pattern lab
 
 The styleguide is created by pattern-lab. The source of the styleguide is in web/themes/genlyd_theme/source.
@@ -69,12 +73,17 @@ There are included two platform.sh apps in the project (app and styleguide).
 
 ```sh
 platform    # login
-git remote add platform [Project ID]@git.eu.platform.sh:[Project ID].git
+platform project:set-remote [Project ID]
 ```
 
-Push to platform.sh
+#### Push to platform.sh
 
 ```sh
 git push platform develop       # or master
 ```
 
+#### Setup drush aliases
+
+```sh
+platform drush-aliases
+```
