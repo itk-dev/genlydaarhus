@@ -33,14 +33,6 @@ relationships:
 web:
     # Specific parameters for different URL prefixes.
     locations:
-        '/styleguide':
-            # The folder from which to serve static assets, for this location.
-            #
-            # This is a filesystem path, relative to the application root.
-            root: 'styleguide'
-
-            # The front-controller script to send non-static requests to.
-            passthru: '/index.html'
         '/':
             # The folder from which to serve static assets, for this location.
             #
@@ -88,6 +80,7 @@ web:
                 # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
                 '^/sites/default/files/(css|js)':
                     expires: 2w
+                    
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048

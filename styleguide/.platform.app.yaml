@@ -1,0 +1,30 @@
+# This file describes an application. You can have multiple applications
+# in the same project.
+#
+# See https://docs.platform.sh/user_guide/reference/platform-app-yaml.html
+
+# The name of this app. Must be unique within a project.
+name: 'styleguide'
+
+# The runtime the application uses.
+type: 'php:7.0'
+
+# Configuration of the build of this application.
+build:
+    flavor: composer
+
+# The configuration of app when it is exposed to the web.
+web:
+    # Specific parameters for different URL prefixes.
+    locations:
+        '/styleguide/':
+            # The folder from which to serve static assets, for this location.
+            #
+            # This is a filesystem path, relative to the application root.
+            root: 'styleguide'
+
+            # The front-controller script to send non-static requests to.
+            passthru: '/index.html'
+
+# The size of the persistent disk of the application (in MB).
+disk: 2048
