@@ -5,7 +5,8 @@
       "subtitle": "På denne side kan du se og redigere oplysninger, samt dine seneste opslag.",
       "iconClass": "hidden-tablet-down",
       "icon": {
-        "type": "create"
+        "type": "create",
+        "color": "light"
       }
     },
     "headingWithIconActivities": {
@@ -13,7 +14,8 @@
       "subtitle": "Herunder vises de seneste aktiviteter du ar slået op.",
       "iconClass": "hidden-tablet-down",
       "icon": {
-        "type": "bulletin"
+        "type": "bulletin",
+        "color": "light"
       }
     },
     "saveButton": {
