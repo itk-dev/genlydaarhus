@@ -17,7 +17,7 @@ build:
 web:
     # Specific parameters for different URL prefixes.
     locations:
-        '/styleguide/':
+        '/':
             # The folder from which to serve static assets, for this location.
             #
             # This is a filesystem path, relative to the application root.
