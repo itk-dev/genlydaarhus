@@ -1,0 +1,22 @@
+.activity-search {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: $spacing-pixel-medium;
+  padding-bottom: $spacing-pixel-medium;
+  text-align: center;
+  border-bottom: 1px solid $color-border-dark;
+
+  @include breakpoint($breakpoint-tablet) {
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: left;
+    padding-bottom: $spacing-pixel-normal;
+  }
+
+  @include breakpoint($breakpoint-desk) {
+    max-width: 50%;
+  }
+}

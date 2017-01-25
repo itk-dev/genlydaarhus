@@ -1,0 +1,10 @@
+<div class="image-upload">
+  <div class="image-upload--image">
+    {% include "elements-image" with { image: imageUpload.image } %}
+  </div>
+  <div class="image-upload--overlay {{ imageUpload.hover ? 'has-hover' }}">
+    <div class="image-upload--button">
+      {% include "elements-button" with { button: imageUpload.button } %}
+    </div>
+  </div>
+</div>

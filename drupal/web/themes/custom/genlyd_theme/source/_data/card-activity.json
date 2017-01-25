@@ -1,0 +1,53 @@
+{
+  "cardActivity": {
+    "title": "Titel på aktivitet",
+    "image": {
+      "class": "",
+      "src": "/assets/images/styleguide/placeholder-1000x750.png"
+    },
+    
+    "editButtons" : [
+      {  
+        "class": "is-secondary is-light is-small is-full-width",
+        "href": "{{ attribute(link, 'templates-activity') }}",
+        "title": "Slet"
+      },
+      { 
+        "class": "is-cta is-small is-full-width",
+        "href": "#",
+        "title": "Rediger"
+      }
+    ],
+
+    "buttons" : [
+      {  
+        "class": "is-secondary is-light is-small is-full-width",
+        "href": "{{ attribute(link, 'templates-activity') }}",
+        "title": "Se mere"
+      },
+      { 
+        "class": "is-cta is-small is-full-width",
+        "href": "#",
+        "title": "Tilmeld"
+      }
+    ],
+    "activityMetas" : [
+      {  
+        "label": "Dato",
+        "text": "12. Januar 2017"
+      },
+      { 
+        "label": "Pris",
+        "text": "Gratis"
+      },
+      { 
+        "label": "Område",
+        "text": "Højbjerg"
+      },
+      { 
+        "label": "Deltagere",
+        "text": "20 tilmeldte"
+      }
+    ]
+  }
+}

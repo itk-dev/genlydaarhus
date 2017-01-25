@@ -1,0 +1,24 @@
+ {
+  "navigation": {
+    "items": [
+      {
+        "title": "Opret aktivitet",
+        "url": "#"
+      },
+      {
+        "title": "Få hjælp til opslag",
+        "url": "#"
+      },
+      {
+        "title": "Tilmeld",
+        "url": "#",
+        "class": "is-button is-secondary"
+      },
+      {
+        "title": "Login",
+        "url": "#",
+        "class": "is-button is-primary"
+      }
+    ]
+  }
+}

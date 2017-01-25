@@ -1,0 +1,9 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+
+  &--input {
+    border-color: $color-gray-light;
+    padding: 10px;
+  }
+}

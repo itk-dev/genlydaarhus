@@ -1,0 +1,76 @@
+{% extends "templates-page" %}
+{% block main %}
+  <div class="container has-spacing">
+    <div class="l-heading-section no-spacing">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepTwo.headingWithIcon, icon: createStepTwo.headingWithIcon.icon } %}
+    </div>
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepTwo.progressBar } %}
+    </div>
+
+    <div class="l-section has-margin-bottom">  
+        {% include "modules-text-with-icon" with { textWithIcon: createStepTwo.textWithIconParticipants, icon: createStepTwo.textWithIconParticipants.icon } %}
+    </div>
+
+    <div class="l-section has-margin-bottom">
+      {% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Kom som du er' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Lettere øvet'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'participation-level', 'label': 'Øvet'}} %}
+        </div>
+    </div>
+    
+    <div class="l-section has-margin-bottom">
+      {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'Ingen fysisk forudsætning' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I nogenlunde form'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'physical-level', 'label': 'I god form'}} %}
+        </div>
+      </div>
+
+    </div>
+
+    <div class="l-section has-margin-bottom">  
+      {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-text-field" with {'type': 'text', 'name': 'participants', 'label': 'Antal deltagere', 'placeholder': 'Indtast antal' } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section has-margin-bottom">  
+        {% include "modules-text-with-icon" with { textWithIcon: createStepTwo.textWithIconHelp, icon: createStepTwo.textWithIconHelp.icon } %}
+    </div>
+
+    <div class="l-section has-margin-bottom">
+      {% include "elements-form-label" with { formLabel: { label: "Har du brug for en hjælpende hånd?" } } %}
+      <div class="l-cols">
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Ingen hjælp påkrævet' }} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Kunne godt bruge en hånd'}} %}
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "elements-radio" with { radio: {'name': 'help', 'label': 'Alle er velkomne til at hjælpe'}} %}
+        </div>
+    </div>
+
+    <div class="l-section">  
+      {% include 'modules-create-navigation' %}
+    </div>
+  </div>
+{% endblock %}

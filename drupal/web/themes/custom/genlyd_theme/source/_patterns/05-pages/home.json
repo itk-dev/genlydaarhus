@@ -1,0 +1,95 @@
+{
+  "hero": {
+    "image": "/assets/images/styleguide/hero.jpg"
+  },
+  "home": {
+    "activityAction": {
+      "text": "Ikke i nærheden af dig?",
+      "button": {  
+        "class": "is-cta is-dark is-small",
+        "href": "#",
+        "title": "Skift område"
+      },
+      "icon": {
+        "type": "location"
+      }
+    },
+    "headingWithIconNearby": {
+      "title": "Aktiviteter i nærheden (Højbjerg)",
+      "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
+      "iconClass": "hidden-desk-down",
+      "icon": {
+        "type": "location",
+        "color": "light"
+      }
+    },
+    "headingWithIconPopular": {
+      "title": "Populære aktiviteter",
+      "subtitle": "Her kan du se de mest populære aktiviteter lige nu.",
+      "iconClass": "hidden-desk-down",
+      "icon": {
+        "type": "bulletin",
+        "color": "light"
+      }
+    },
+    "seeAllButton": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Se alle aktiviteter"
+    },
+    "activityCallToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Alle aktiviteter" 
+      },
+      "text": "Fandt du ikke lige en aktivitet der passede dig?"
+    },
+    "guidelinesAbout": {
+      "callToAction": {
+        "button": {
+          "class": "is-cta",
+          "href": "#",
+          "title": "Opret aktivitet" 
+        },
+        "text": "Har du lyst til at biddrage til fælleskabet i Aarhus og omegn?"
+      },
+      "headingWithIcon": {
+        "title": "Hvad vil det sige at give genlyd?",
+        "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
+        "iconClass": "hidden-tablet-down",
+        "icon": {
+          "type": "bulletin",
+          "color": "light"
+        }
+      }
+    },
+    "popularCallToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Alle aktiviteter" 
+      },
+      "text": "Ikke nogle populære aktiviteter der lige fangede dig?"
+    },
+    "guidelinesPool": {
+      "callToAction": {
+        "button": {
+          "class": "is-cta",
+          "href": "#",
+          "title": "Hør nærmere" 
+        },
+        "text": "Har du et projekt der giver Genlyd?"
+      },
+      "headingWithIcon": {
+        "title": "Hvad er Genlyd puljen?",
+        "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
+        "iconClass": "hidden-tablet-down",
+        "icon": {
+          "type": "bulletin",
+          "color": "light"
+        }
+      }
+    }
+  }
+}

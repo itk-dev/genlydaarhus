@@ -1,0 +1,8 @@
+.introduction {
+  &--text {
+    @include breakpoint($breakpoint-desk) {
+      font-size: $font-size-medium;
+      line-height: 1.7;
+    }
+  }
+}

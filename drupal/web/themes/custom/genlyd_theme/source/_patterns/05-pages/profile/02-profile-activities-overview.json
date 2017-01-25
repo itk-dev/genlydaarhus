@@ -1,0 +1,37 @@
+{
+  "profileActivitiesOverview": {
+    "headingWithIcon": {
+      "title": "Mine opslag",
+      "subtitle": "Her kan du se alle dine opslag, som du har lavet gennem tiden, både aktive og ikke aktive.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin",
+        "color": "light"
+      }
+    },
+    "textWithIconActive": {
+      "title": "Mine aktive opslag",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconInactive": {
+      "title": "Mine inaktive opslag",
+      "icon": {
+        "type": "cross-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "callToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Se alle aktiviteter" 
+      },
+      "text": "Lyst til at deltage i andre aktiviteter?"
+    }
+  }
+}

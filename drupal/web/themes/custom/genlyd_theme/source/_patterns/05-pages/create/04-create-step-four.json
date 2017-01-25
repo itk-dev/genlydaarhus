@@ -1,0 +1,49 @@
+{
+  "createStepFour": {
+    "headingWithIcon": {
+      "title": "Hej Lasse",
+      "subtitle": "Lad os få oprettet en aktivitet.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "create",
+        "color": "light"
+      }
+    },
+    "progressBar": {
+      "items": [
+        {
+          "title": "Om aktiviteten"
+        },
+        {
+          "title": "Information"
+        },
+        {
+          "title": "Kategorier"
+        },
+        {
+          "title": "Billede",
+          "active": true
+        },
+        {
+          "title": "Detaljer"
+        },
+        {
+          "title": "Bekræft"
+        }
+      ]
+    },
+    "textWithIcon": {
+      "title": "Upload et billede",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "button": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Upload et billede"
+    }
+  }
+}

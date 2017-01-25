@@ -1,0 +1,15 @@
+<section class="hero" style="background-image: url('{{ hero.image }}')">
+    <div class="hero--content-wrapper">
+      <div class="hero--content">
+        <h1>Fællesskab i Aarhus</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <div class="hero--buttons">
+          {% for button in hero.buttons %}
+            <div class="hero--button">
+              {% include "elements-button" %}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>

@@ -1,0 +1,42 @@
+/**
+ * This stylesheet is for styles you want to include only when displaying demo
+ * styles for grids, animations, color swatches, etc.
+ * These styles will not be your production CSS.
+ */
+
+#sg-patterns {
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
+  max-width: 100%;
+  padding: 2em;
+}
+
+.sg-subtype:not(:first-child) {
+  border-top: 1px solid #ddd;
+  margin-top: 4em;
+  padding-top: 2em;
+}
+
+.sg-subtype h2 a,
+.sg-subtype h2 a:link,
+.sg-subtype h2 a:visited,
+.sg-subtype h2 a:hover,
+.sg-subtype h2 a:focus {
+  color: #111;
+}
+
+.sg-pattern-body {
+  margin-top: 1em;
+}
+
+.sg-pattern {
+  margin-top: 1em;
+}
+
+.sg-pattern-extra-toggle span {
+  color: black;
+}
+
+.sg-tabs-panel {
+  min-height: 12em;
+}

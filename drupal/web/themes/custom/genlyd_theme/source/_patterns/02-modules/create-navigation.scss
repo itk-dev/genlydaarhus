@@ -1,0 +1,15 @@
+.create-navigation {
+  width: 100%;
+  border-top: 1px solid $color-border-dark;
+  padding-top: $spacing-pixel-medium;
+
+  &--button {
+    &:first-child {
+      margin-bottom: $spacing-pixel-xxxsmall;
+
+      @include breakpoint($breakpoint-desk) {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

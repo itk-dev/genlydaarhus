@@ -1,0 +1,10 @@
+<div class="progress-bar">
+  <ul class="progress-bar--list">
+    {% for item in progressBar.items %}
+    <li class="progress-bar--list-item {{ item.active ? 'is-active' }}">
+      <span class="progress-bar--number">{{loop.index}}.</span>
+      <p class="progress-bar--text">{{ item.title }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

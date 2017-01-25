@@ -1,0 +1,73 @@
+{
+  "profileActivitiesEdit": {
+    "headingWithIcon": {
+      "title": "Rediger opslag",
+      "subtitle": "Her har du mulighed for at redigere det valgte opslag.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "create",
+        "color": "light"
+      }
+    },
+    "textWithIconHeadline": {
+      "title": "Overskrift og beskrivelse",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconProperties": {
+      "title": "De vigtigste egenskaber",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconCategories": {
+      "title": "Kategorier",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconImage": {
+      "title": "Billede",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconPractical": {
+      "title": "Praktisk Information",
+      "icon": {
+        "type": "checkmark-bold",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "callToAction": {
+      "button": {
+        "class": "is-cta",
+        "href": "#",
+        "title": "Gem opslag" 
+      },
+      "text": "Har du rettet det du ville?"
+    },
+    "imageUpload": {
+      "hover": true,
+      "image": {
+        "class": "",
+        "src": "/assets/images/styleguide/computer.jpg"
+      },
+      "button": {
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Skift billede"
+      }
+    }
+  }
+}

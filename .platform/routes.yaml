@@ -1,0 +1,20 @@
+# The routes of the project.
+#
+# Each route describes how an incoming URL is going
+# to be processed by Platform.sh.
+
+"http://{default}/":
+    type: upstream
+    upstream: "drupal:http"
+
+"http://www.{default}/":
+    type: redirect
+    to: "http://{default}/"
+
+"http://styleguide.{default}/":
+    type: upstream
+    upstream: "styleguide:http"
+
+"http://www.styleguide.{default}/":
+    type: redirect
+    to: "http://styleguide.{default}/"
