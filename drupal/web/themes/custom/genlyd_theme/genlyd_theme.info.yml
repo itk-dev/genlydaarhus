@@ -2,10 +2,6 @@ name: Genlyd theme
 type: theme
 description: 'The Genlyd theme.'
 
-libraries:
-#  - devteam/styling
-#  - devteam/hamburger-menu
-
 regions:
   header: 'Header'
   content: 'Content'

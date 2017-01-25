@@ -15,7 +15,7 @@ What it does is the following, from the htdocs/ folder:
 composer create-project pattern-lab/edition-twig-standard pattern-lab
 
 sed -i "s/publicDir:.*/publicDir: ..\/styleguide/g" pattern-lab/config/config.yml
-sed -i "s/sourceDir:.*/sourceDir: ..\/web\/themes\/custom\/genlyd_theme\/source/g" pattern-lab/config/config.yml
+sed -i "s/sourceDir:.*/sourceDir: ..\/drupal\/web\/themes\/custom\/genlyd_theme\/source/g" pattern-lab/config/config.yml
 sed -i "s/cacheBusterOn:.*/cacheBusterOn: 'false'/g" pattern-lab/config/config.yml
 
 cd pattern-lab
