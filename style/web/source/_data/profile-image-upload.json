@@ -1,9 +1,0 @@
-{
-  "profileImageUpload": {
-    "button": {
-      "class": "is-cta is-full-width",
-      "href": "#",
-      "title": "Upload et profilbillede"
-    }
-  }
-}

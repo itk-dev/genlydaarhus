@@ -1,8 +1,0 @@
-{
-  "name": "textarea-example",
-  "label": "Dette er en label",
-  "cols": "20",
-  "rows": "4",
-  "placeholder": "Dette er en placeholder tekst",
-  "value": ""
-}

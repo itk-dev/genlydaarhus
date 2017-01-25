@@ -1,9 +1,0 @@
-{
-  "activitySearch": {
-    "button": {  
-      "class": "is-secondary is-dark is-small",
-      "href": "#",
-      "title": "Skift område"
-    }
-  }
-}
