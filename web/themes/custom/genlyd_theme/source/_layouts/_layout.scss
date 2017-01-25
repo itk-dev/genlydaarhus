@@ -146,36 +146,6 @@
   }
 }
 
-// Two coloumn layout
-
-$two-col-max-width: 1200px;
-
-.l-two-col {
-  display: flex;
-  flex-direction: column;
-  max-width: $two-col-max-width;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include breakpoint($breakpoint-desk) {
-    flex-direction: row;
-  }
-
-
-  &--left-col {
-    @include breakpoint($breakpoint-desk) {
-      width: 30%;
-      margin-right: $spacing-pixel-medium;
-    }
-  }
-
-  &--right-col {
-    @include breakpoint($breakpoint-desk) {
-      width: 70%;
-    }
-  }
-}
-
 $half:          (100%/2) - $spacing-percent-medium;
 
 $one-third:     (100%/3) - $spacing-percent-medium;
