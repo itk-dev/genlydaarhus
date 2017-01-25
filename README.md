@@ -9,6 +9,19 @@ The generated styleguide is located in /styleguide.
 
 Run the script "pattern-lab.sh" in the vagrant.
 
+What it does is the following, from the htdocs/ folder:
+
+```sh
+composer create-project pattern-lab/edition-twig-standard pattern-lab
+
+sed -i "s/publicDir:.*/publicDir: ..\/styleguide/g" pattern-lab/config/config.yml
+sed -i "s/sourceDir:.*/sourceDir: ..\/web\/themes\/custom\/genlyd_theme\/source/g" pattern-lab/config/config.yml
+
+cd pattern-lab
+
+composer install
+```
+
 #### Generating styleguide
 
 If everything went well you should now be able to generate the static Pattern Lab site. In the `pattern-lab` directory run:
