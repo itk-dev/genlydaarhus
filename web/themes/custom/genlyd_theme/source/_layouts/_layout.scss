@@ -5,9 +5,9 @@
   @include breakpoint($breakpoint) {
     margin-left: auto;
     margin-right: auto;
+    max-width: $breakpoint;
     padding-left: $spacing;
     padding-right: $spacing;
-    max-width: $breakpoint;
   }
 }
 
@@ -15,8 +15,8 @@
   @include layout-wrapper($breakpoint-bigscreen);
 
   display: flex;
-  flex-grow: 1;
   flex-direction: column;
+  flex-grow: 1;
 
   &.has-spacing {
     padding-bottom: $spacing-pixel-medium;
@@ -93,11 +93,11 @@
 // Heading section with border
 
 .l-heading-section {
+  border-bottom: 1px solid $color-border-dark;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   margin-bottom: $spacing-pixel-large;
-  border-bottom: 1px solid $color-border-dark;
   padding-bottom: $spacing-pixel-normal;
 
   @include breakpoint($breakpoint-tablet) {
@@ -118,18 +118,18 @@
 }
 
 .l-form-section {
-  width: 100%;
   margin-bottom: $spacing-pixel-large;
+  width: 100%;
 }
 
 .l-section {
-  width: 100%;
-  margin-top: $spacing-pixel-medium;
   margin-bottom: $spacing-pixel-medium;
+  margin-top: $spacing-pixel-medium;
+  width: 100%;
 
   @include breakpoint($breakpoint-tablet) {
-    margin-top: $spacing-pixel-large;
     margin-bottom: $spacing-pixel-large;
+    margin-top: $spacing-pixel-large;
   }
 
   &.has-top-margin {
@@ -143,36 +143,6 @@
   &.has-no-margin {
     margin-bottom: 0;
     margin-top: 0;
-  }
-}
-
-// Two coloumn layout
-
-$two-col-max-width: 1200px;
-
-.l-two-col {
-  display: flex;
-  flex-direction: column;
-  max-width: $two-col-max-width;
-  margin-left: auto;
-  margin-right: auto;
-
-  @include breakpoint($breakpoint-desk) {
-    flex-direction: row;
-  }
-
-
-  &--left-col {
-    @include breakpoint($breakpoint-desk) {
-      width: 30%;
-      margin-right: $spacing-pixel-medium;
-    }
-  }
-
-  &--right-col {
-    @include breakpoint($breakpoint-desk) {
-      width: 70%;
-    }
   }
 }
 
