@@ -5,7 +5,8 @@
       "subtitle": "Lad os få oprettet en aktivitet.",
       "iconClass": "hidden-tablet-down",
       "icon": {
-        "type": "create"
+        "type": "create",
+        "color": "light"
       }
     },
     "progressBar": {

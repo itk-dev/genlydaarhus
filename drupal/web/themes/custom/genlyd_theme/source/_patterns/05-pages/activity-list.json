@@ -6,7 +6,8 @@
       "iconClass": "hidden-desk-down",
       "icon": {
         "class": "",
-        "type": "bulletin"
+        "type": "bulletin",
+        "color": "light"
       }
     },
     "activityAction": {

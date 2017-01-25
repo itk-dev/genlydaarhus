@@ -5,7 +5,8 @@
       "subtitle": "Her kan du se alle dine opslag, som du har lavet gennem tiden, både aktive og ikke aktive.",
       "iconClass": "hidden-tablet-down",
       "icon": {
-        "type": "bulletin"
+        "type": "bulletin",
+        "color": "light"
       }
     },
     "textWithIconActive": {

@@ -20,7 +20,7 @@
       "iconClass": "hidden-desk-down",
       "icon": {
         "type": "location",
-        "class": ""
+        "color": "light"
       }
     },
     "headingWithIconPopular": {
@@ -28,7 +28,8 @@
       "subtitle": "Her kan du se de mest populære aktiviteter lige nu.",
       "iconClass": "hidden-desk-down",
       "icon": {
-        "type": "bulletin"
+        "type": "bulletin",
+        "color": "light"
       }
     },
     "seeAllButton": {
@@ -58,7 +59,8 @@
         "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
         "iconClass": "hidden-tablet-down",
         "icon": {
-          "type": "bulletin"
+          "type": "bulletin",
+          "color": "light"
         }
       }
     },
@@ -84,7 +86,8 @@
         "subtitle": "Phasellus fermentum nulla vestibulum erat euismod accumsan.",
         "iconClass": "hidden-tablet-down",
         "icon": {
-          "type": "bulletin"
+          "type": "bulletin",
+          "color": "light"
         }
       }
     }
