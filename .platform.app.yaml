@@ -80,7 +80,7 @@ web:
                 # Provide a longer TTL (2 weeks) for aggregated CSS and JS files.
                 '^/sites/default/files/(css|js)':
                     expires: 2w
-                    
+
 
 # The size of the persistent disk of the application (in MB).
 disk: 2048
