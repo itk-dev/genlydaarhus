@@ -16,6 +16,7 @@ composer create-project pattern-lab/edition-twig-standard pattern-lab
 
 sed -i "s/publicDir:.*/publicDir: ..\/styleguide/g" pattern-lab/config/config.yml
 sed -i "s/sourceDir:.*/sourceDir: ..\/web\/themes\/custom\/genlyd_theme\/source/g" pattern-lab/config/config.yml
+sed -i "s/cacheBusterOn:.*/cacheBusterOn: 'false'/g" pattern-lab/config/config.yml
 
 cd pattern-lab
 
@@ -54,6 +55,11 @@ Run the server with watch and auto reload:
 ```sh
 php core/console --server --with-watch
 ```
+
+#### Release on master
+
+Set "cacheBusterOn" to true, and compile the styleguide. Then set "cacheBusterOn" to false again. 
+This makes the timestamps on each file change.
 
 ## platform.sh
 
