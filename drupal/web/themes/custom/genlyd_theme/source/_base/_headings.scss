@@ -7,12 +7,12 @@ h6 {
   font-weight: 600;
 
   &.has-border-dark {
-    padding-bottom: $spacing-pixel-small;
     border-bottom: 1px solid $color-border-dark;
+    padding-bottom: $spacing-pixel-small;
   }
 
   &.has-border-light {
-    padding-bottom: $spacing-pixel-small;
     border-bottom: 1px solid $color-border-light;
+    padding-bottom: $spacing-pixel-small;
   }
 }

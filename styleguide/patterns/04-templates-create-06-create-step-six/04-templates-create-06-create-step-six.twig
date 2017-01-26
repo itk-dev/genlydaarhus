@@ -12,8 +12,9 @@
     <h3>Perfekt. Du har nu lavet et aktivitetsopslag.</h3>
     <p>Kig dit opslag igennem. Hvis du er tilfreds trykker du på "Opret". Hvis du ønsker at rette i dit tilbud, kan du gå tilbage i opslaget.</p>
 
-    <div class="l-section">  
+    <div class="l-section has-top-margin">  
       {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconAbout, icon: createStepSix.textWithIconAbout.icon } %}
+    </div>
       
       <div class="l-cols">
         <div class="l-col two-third tablet-up">
@@ -38,9 +39,8 @@
           </div>
         </div>
       </div>
-    </div>
 
-    <div class="l-section">
+    <div class="l-section has-no-margin">
 
       {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconInformation, icon: createStepSix.textWithIconInformation.icon } %}
       
@@ -76,7 +76,7 @@
 
     <div class="l-cols">
       <div class="l-col half tablet-up">
-        <div class="l-section">  
+        <div class="l-section has-bottom-margin">  
           {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconImage, icon: createStepSix.textWithIconImage.icon } %}
           {% include "elements-image" with { image: { 'src': 'http://placehold.it/500x250' } } %}
         </div>
@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div class="l-section">  
+    <div class="l-section has-no-margin">  
       {% include "modules-text-with-icon" with { textWithIcon: createStepSix.textWithIconDetails, icon: createStepSix.textWithIconDetails.icon } %}
       
       <div class="l-cols">

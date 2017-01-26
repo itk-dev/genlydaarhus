@@ -5,7 +5,7 @@
         "title": "Phasellus fermentum?",
         "description": "Phasellus fermentum nulla vestibulum erat euismod accumsan. Praesent ac efficitur dui. Aliquam commodo ipsum a libero tempus accumsan. Nam elit orci, aliquam et vestibulum sodales, pharetra a dolor.",
         "icon": {
-          "type": "checkmark-bold", 
+          "type": "arrow", 
           "class": "is-small is-green-dark", 
           "color": "light"
         }
@@ -14,7 +14,7 @@
         "title": "Phasellus fermentum?",
         "description": "Phasellus fermentum nulla vestibulum erat euismod accumsan. Praesent ac efficitur dui. Aliquam commodo ipsum a libero tempus accumsan. Nam elit orci, aliquam et vestibulum sodales, pharetra a dolor.",
         "icon": {
-          "type": "checkmark-bold", 
+          "type": "arrow", 
           "class": "is-small is-green-dark", 
           "color": "light"
         }

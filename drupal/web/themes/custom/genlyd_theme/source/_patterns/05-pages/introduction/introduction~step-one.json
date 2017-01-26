@@ -44,7 +44,7 @@
     "textWithIcon": {
       "title": "Hvad er Genlyd?",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }

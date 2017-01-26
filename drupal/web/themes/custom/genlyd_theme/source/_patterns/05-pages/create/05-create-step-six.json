@@ -35,7 +35,7 @@
     "textWithIconAbout": {
       "title": "Om aktiviteten",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }
@@ -43,7 +43,7 @@
     "textWithIconInformation": {
       "title": "Information",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }
@@ -51,7 +51,7 @@
     "textWithIconCategories": {
       "title": "Kategorier",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }
@@ -59,7 +59,7 @@
     "textWithIconImage": {
       "title": "Billede",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }
@@ -67,7 +67,7 @@
     "textWithIconDetails": {
       "title": "Detaljer",
       "icon": {
-        "type": "checkmark-bold",
+        "type": "arrow",
         "class": "is-small is-green-dark", 
         "color": "light"
       }
