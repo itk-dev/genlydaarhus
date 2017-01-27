@@ -44,6 +44,10 @@
       "class": "is-cta",
       "href": "#",
       "title": "Upload et billede"
+    },
+    "helpBox": {
+      "title": "Hvad er et godt billede?",
+      "description": "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)."
     }
   }
 }

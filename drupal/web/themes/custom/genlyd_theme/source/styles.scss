@@ -16,6 +16,7 @@
 
 /* Helpers */
 @import "_helpers/content-separator";
+@import "_helpers/arrows";
 
 /* Layouts */
 @import "_layouts/breakpoints";
@@ -39,6 +40,7 @@
 @import "_patterns/01-elements/forms/textarea";
 @import "_patterns/01-elements/forms/selectbox";
 @import "_patterns/01-elements/forms/suggestion";
+@import "_patterns/01-elements/forms/help-box";
 @import "_patterns/01-elements/headings/heading-meta";
 
 /* Modules */
