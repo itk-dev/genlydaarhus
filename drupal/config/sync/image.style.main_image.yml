@@ -1,0 +1,17 @@
+uuid: 377910b2-adf4-49fe-9997-63e09f5f737d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: Wg74eMC3-03pFlrQ9XqgETMebjVqabGoNw4NkjSItS8
+name: main_image
+label: 'Main Image (W: 1216)'
+effects:
+  b02ce3d8-5e82-4358-a000-dad79b75cf0b:
+    uuid: b02ce3d8-5e82-4358-a000-dad79b75cf0b
+    id: image_scale
+    weight: 1
+    data:
+      width: 1216
+      height: null
+      upscale: false

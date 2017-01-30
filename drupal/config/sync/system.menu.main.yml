@@ -1,10 +1,10 @@
-uuid: b5271fa2-d84d-4ab4-a906-874d6b721748
-langcode: da
+uuid: d50b93be-9adb-47fa-a315-b6545b264f2b
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: Q2Ra3jfoIVk0f3SjxJX61byRQFVBAbpzYDQOiY-kno8
 id: main
-label: 'Primær navigation'
-description: 'Links til sitets sektioner'
+label: 'Main navigation'
+description: 'Site section links'
 locked: true

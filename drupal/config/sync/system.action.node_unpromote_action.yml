@@ -1,5 +1,5 @@
-uuid: d68e04cb-7191-4732-a34f-dfeb48ed61c1
-langcode: da
+uuid: 045d80f5-2c24-439f-a2dd-0fb9736d8707
+langcode: en
 status: true
 dependencies:
   module:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: JBptjnfuOMtsdKygklXxoOgeOCTMtQxlkymjnnj-cC0
 id: node_unpromote_action
-label: 'Fjern indhold fra forsiden'
+label: 'Remove content from front page'
 type: node
 plugin: node_unpromote_action
 configuration: {  }

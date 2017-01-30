@@ -1,0 +1,48 @@
+uuid: 12c6607c-2198-4f7d-9ee1-0565f4e5f0e9
+langcode: en
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related_pages
+    - field.field.node.page.body
+    - field.field.node.page.field_lead
+    - field.field.node.page.field_main_image
+    - field.field.node.page.field_pages
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_related_page_image
+    - field.field.node.page.field_related_page_teaser
+    - image.style.related_page_image
+    - node.type.page
+  module:
+    - image
+    - user
+_core:
+  default_config_hash: cen4GO3DuPaJg4lLG_mUp996s96bUx9PcJdL9cKAcT4
+id: node.page.related_pages
+targetEntityType: node
+bundle: page
+mode: related_pages
+content:
+  field_related_page_image:
+    type: image
+    weight: 0
+    label: hidden
+    settings:
+      image_style: related_page_image
+      image_link: content
+    third_party_settings: {  }
+  field_related_page_teaser:
+    type: string
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden:
+  body: true
+  field_lead: true
+  field_main_image: true
+  field_pages: true
+  field_paragraphs: true
+  langcode: true
+  links: true

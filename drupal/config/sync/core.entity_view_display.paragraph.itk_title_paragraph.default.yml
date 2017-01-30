@@ -1,0 +1,24 @@
+uuid: a11e95ce-9ad6-4913-bed9-9d6ebf6b1819
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_title_paragraph.field_title
+    - paragraphs.paragraphs_type.itk_title_paragraph
+_core:
+  default_config_hash: e5QG3FaoovvLxSkOV4RhEc9OIMJOkpibIn25spoiHco
+id: paragraph.itk_title_paragraph.default
+targetEntityType: paragraph
+bundle: itk_title_paragraph
+mode: default
+content:
+  field_title:
+    weight: 0
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

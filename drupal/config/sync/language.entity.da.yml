@@ -1,9 +1,0 @@
-uuid: 52fcc2c3-f080-41a8-abc0-05b6a3384bbb
-langcode: da
-status: true
-dependencies: {  }
-id: da
-label: Danish
-direction: ltr
-weight: 0
-locked: false

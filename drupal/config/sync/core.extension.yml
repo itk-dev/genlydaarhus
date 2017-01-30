@@ -1,21 +1,65 @@
 module:
   block: 0
+  breakpoint: 0
+  ckeditor: 0
+  config: 0
+  config_translation: 0
+  ctools: 0
+  datetime: 0
   dblog: 0
   dynamic_page_cache: 0
+  editor: 0
+  entity_reference: 0
+  entity_reference_revisions: 0
   field: 0
+  field_group: 0
+  field_ui: 0
   file: 0
   filter: 0
+  help: 0
+  image: 0
+  imce: 0
+  itk_admin_links: 0
+  itk_cookie_message: 0
+  itk_hamburger_menu: 0
+  itk_paragraph: 0
+  itkore_admin: 0
+  itkore_content_types: 0
+  itkore_fields: 0
+  itkore_footer: 0
+  itkore_frontpage_header: 0
+  itkore_user_roles: 0
+  itkore_user_theme: 0
   language: 0
+  link: 0
   locale: 0
+  menu_ui: 0
+  metatag: 0
   node: 0
   page_cache: 0
+  paragraphs: 0
+  path: 0
+  redirect: 0
+  role_delegation: 0
   system: 0
+  taxonomy: 0
   text: 0
+  token: 0
+  toolbar: 0
+  toolbar_visibility: 0
   update: 0
   user: 0
-  minimal: 1000
+  views_ui: 0
+  youtube: 0
+  menu_link_content: 1
+  pathauto: 1
+  views: 10
+  itkore: 1000
 theme:
   stark: 0
+  stable: 0
+  classy: 0
+  seven: 0
+  adminimal_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
-langcode: da

@@ -1,0 +1,23 @@
+uuid: 00ef9ced-0c72-40e9-81df-c4e266950470
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.itk_internal_link
+  module:
+    - text
+_core:
+  default_config_hash: xP1NSTZ2vMRL7PgA6VjhgELBFvzndrZHE58QP6gAtY8
+id: paragraph.itk_internal_link.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: itk_internal_link
+label: Text
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,27 @@
+uuid: e2f887d3-b1b1-4f3c-b7b2-668a59807c90
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_pages
+    - node.type.page
+_core:
+  default_config_hash: hwASCLESvlGGGtVa5fKFasXiBfiQprhhKrWlzX6JIb0
+id: node.page.field_pages
+field_name: field_pages
+entity_type: node
+bundle: page
+label: 'Related pages'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      page: page
+    sort:
+      field: _none
+field_type: entity_reference
