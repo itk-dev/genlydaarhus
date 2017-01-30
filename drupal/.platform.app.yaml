@@ -96,10 +96,10 @@ mounts:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # The deploy hook runs after your application has been deployed and started.
-    deploy: |
-      cd web
 #  For first time server setup.
 #      drush -y site-install itkore --config-dir=../config/sync
+    deploy: |
+      cd web
       drush -y cache-rebuild
       drush -y updatedb
       drush -y config-import
