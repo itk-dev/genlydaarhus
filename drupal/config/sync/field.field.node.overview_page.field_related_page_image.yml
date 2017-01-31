@@ -1,0 +1,40 @@
+uuid: 1e4863a6-25aa-4fc1-9df5-9788bf0020f6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_page_image
+    - node.type.overview_page
+  module:
+    - image
+_core:
+  default_config_hash: BsuQeBd9rjKsV-wm_A1-eqwkyiDBsnRp6Md3EaTFKOI
+id: node.overview_page.field_related_page_image
+field_name: field_related_page_image
+entity_type: node
+bundle: overview_page
+label: 'Related Page Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

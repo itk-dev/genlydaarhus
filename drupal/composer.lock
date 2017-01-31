@@ -284,16 +284,16 @@
         },
         {
             "name": "consolidation/annotated-command",
-            "version": "2.3.2",
+            "version": "2.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/consolidation/annotated-command.git",
-                "reference": "3074e408160e1b81bda5483f6d2342abc872ea1b"
+                "reference": "c23ebfa81cb8c06dcea63afde98f444e818bceb2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/3074e408160e1b81bda5483f6d2342abc872ea1b",
-                "reference": "3074e408160e1b81bda5483f6d2342abc872ea1b",
+                "url": "https://api.github.com/repos/consolidation/annotated-command/zipball/c23ebfa81cb8c06dcea63afde98f444e818bceb2",
+                "reference": "c23ebfa81cb8c06dcea63afde98f444e818bceb2",
                 "shasum": ""
             },
             "require": {
@@ -332,7 +332,7 @@
                 }
             ],
             "description": "Initialize Symfony Console commands from annotated command class methods.",
-            "time": "2017-01-27T01:59:21+00:00"
+            "time": "2017-01-30T22:46:53+00:00"
         },
         {
             "name": "consolidation/output-formatters",
@@ -1586,17 +1586,17 @@
         },
         {
             "name": "drupal/entity_reference_revisions",
-            "version": "1.1.0",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/entity_reference_revisions",
-                "reference": "8.x-1.1"
+                "reference": "8.x-1.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.1.zip",
+                "url": "https://ftp.drupal.org/files/projects/entity_reference_revisions-8.x-1.2.zip",
                 "reference": null,
-                "shasum": "3767fd2245ab2731aaf0c992c586b5ddc6f7efe8"
+                "shasum": "15261a4237cc2a743522a7bd81e9f34e01d12843"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -1610,8 +1610,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.1",
-                    "datestamp": "1485526384"
+                    "version": "8.x-1.2",
+                    "datestamp": "1485790085"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1742,16 +1742,16 @@
         },
         {
             "name": "drupal/itkore",
-            "version": "1.0.7",
+            "version": "1.0.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/aakb/itkore-profile.git",
-                "reference": "834df1cc5f0dba4e1492e41c2799c4813eb8cdcf"
+                "reference": "276aa6906835abc667b3f45451e1a6a7560ced7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/aakb/itkore-profile/zipball/834df1cc5f0dba4e1492e41c2799c4813eb8cdcf",
-                "reference": "834df1cc5f0dba4e1492e41c2799c4813eb8cdcf",
+                "url": "https://api.github.com/repos/aakb/itkore-profile/zipball/276aa6906835abc667b3f45451e1a6a7560ced7f",
+                "reference": "276aa6906835abc667b3f45451e1a6a7560ced7f",
                 "shasum": ""
             },
             "require": {
@@ -1786,7 +1786,7 @@
             "keywords": [
                 "Drupal"
             ],
-            "time": "2017-01-11T10:20:11+00:00"
+            "time": "2017-01-31T07:38:54+00:00"
         },
         {
             "name": "drupal/metatag",

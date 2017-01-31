@@ -1,0 +1,24 @@
+uuid: e15f484b-f279-4b9f-be3f-6a8c00e35692
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.body
+    - node.type.overview_page
+  module:
+    - text
+_core:
+  default_config_hash: xzjky5F5aGJMAnuDB_I_I_-UvgWxvRotRlIUpK8c2G8
+id: node.overview_page.body
+field_name: body
+entity_type: node
+bundle: overview_page
+label: Body
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  display_summary: true
+field_type: text_with_summary

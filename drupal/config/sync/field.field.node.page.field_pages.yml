@@ -1,9 +1,11 @@
-uuid: ebb926cb-edf5-463c-a586-e39b00e382e1
+uuid: ea091e41-f0be-4868-9fda-6e5faca7bce5
 langcode: en
 status: true
 dependencies:
   config:
     - field.storage.node.field_pages
+    - node.type.news
+    - node.type.overview_page
     - node.type.page
 _core:
   default_config_hash: hwASCLESvlGGGtVa5fKFasXiBfiQprhhKrWlzX6JIb0
@@ -21,6 +23,8 @@ settings:
   handler: 'default:node'
   handler_settings:
     target_bundles:
+      news: news
+      overview_page: overview_page
       page: page
     sort:
       field: _none

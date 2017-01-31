@@ -1,0 +1,21 @@
+uuid: 2a40d2dd-9749-4258-ac72-57355eaa11bc
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_page_teaser
+    - node.type.news
+_core:
+  default_config_hash: mmU20lVpBWNbv8WeWQH8xwgGA-tVL6J0h1QdCv525sQ
+id: node.news.field_related_page_teaser
+field_name: field_related_page_teaser
+entity_type: node
+bundle: news
+label: 'Related Page Teaser'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
