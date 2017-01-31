@@ -35,13 +35,11 @@
 
   }
   
-  /* Hover state whilst checked */
   &:hover input:not([disabled]):checked ~ .checkbox--indicator,
   input:checked:focus ~ .checkbox--indicator {
     border: 2px solid $color-green-dark;
   }
 
-  /* Checked state */
   input:checked ~ .checkbox--indicator {
     background-color: $color-white;
 	  border: 2px solid $color-green-dark;
@@ -51,29 +49,29 @@
 	  display: block;
   }
 
-  /* checkbox button inner circle */
   &--indicator:after {
     position: relative;
     display: none;
     content: '';
     top: 37%;
-    left: 20px;
+    left: 32px;
     width: 5px;
     height: 10px;
     border: solid $color-black-light;
     border-width: 0 2px 2px 0;
     transform: rotate(45deg);
   }
+  
 
   &--label {
     position: relative;
     z-index: 1;
-    margin-left: $spacing-pixel-medium;
+    margin-left: $spacing-pixel-normal;
   }
 
   &:before {
     content: '';
-    position: absolute;
+    position: relative;
     top: 50%;
     transform: translateY(-50%);
 
@@ -82,6 +80,41 @@
     height: 20px;
     border-radius: 5px;
     border: 2px solid $color-border-dark;
-    z-index: 10;
+  }
+
+  &.borderless {
+    border-bottom: 1px solid $color-border-dark;
+    margin-left: $spacing-pixel-small;
+    margin-right: $spacing-pixel-small;
+    padding-bottom: $spacing-pixel-xxsmall;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: $spacing-pixel-tiny;
+
+    .checkbox--indicator {
+      background-color: transparent;
+      border: 0;
+      border-radius: 0;
+    }
+
+    .checkbox--indicator:after {
+      top: 8px;
+      left: 22px;
+    }
+
+    input:checked ~ .checkbox--indicator {
+      background-color: transparent;
+      border: 0;
+    }
+
+    /* Hover state whilst checked */
+    &:hover input:not([disabled]):checked ~ .checkbox--indicator,
+    input:checked:focus ~ .checkbox--indicator {
+      border: 0;
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+      border: 0;
+    }
   }
 }

@@ -28,6 +28,16 @@
       padding-top: $spacing-pixel-xxlarge;
     }
   }
+
+  &.has-large-spacing {
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-xxxlarge;
+
+    @include breakpoint($breakpoint-desk) {
+      padding-bottom: $spacing-pixel-xxlarge;
+      padding-top: $spacing-pixel-xxxxlarge;
+    }
+  }
 }
 
 /* Helpers
