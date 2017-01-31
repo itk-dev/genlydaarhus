@@ -1,10 +1,10 @@
-uuid: 19ec929c-e583-4ef0-9c33-014bb0edb9b7
-langcode: da
+uuid: c3e77a82-648d-467d-83ab-3c00f5a45c4b
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: NIKBt6kw_uPhNI0qtR2DnRf7mSOgAQdx7Q94SKMjXbQ
-name: 'Ren tekst'
+name: 'Plain text'
 format: plain_text
 weight: 10
 filters:

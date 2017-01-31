@@ -1,0 +1,21 @@
+uuid: e04d538c-6c89-410a-a52a-455034c63345
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_lead
+    - node.type.news
+_core:
+  default_config_hash: b8ymOzd3ESSoKq9YKRsDgP1ldUUH4ehBTkSkoamL7KA
+id: node.news.field_lead
+field_name: field_lead
+entity_type: node
+bundle: news
+label: Lead
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

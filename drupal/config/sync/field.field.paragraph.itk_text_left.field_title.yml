@@ -1,0 +1,21 @@
+uuid: c9a96c2d-f211-4d5d-87ef-5961c328733a
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_title
+    - paragraphs.paragraphs_type.itk_text_left
+_core:
+  default_config_hash: 2rEiqouX0QCUxW81XhbXx4OcDAwJApS6G8Hy_cYBF74
+id: paragraph.itk_text_left.field_title
+field_name: field_title
+entity_type: paragraph
+bundle: itk_text_left
+label: Title
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

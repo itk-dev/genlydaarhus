@@ -1,0 +1,23 @@
+uuid: 68e47535-1e4d-42d1-96c2-1de3bb1bf953
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_text
+    - paragraphs.paragraphs_type.itk_text_left
+  module:
+    - text
+_core:
+  default_config_hash: 4scUIYr-rDXzGpbL7lGyekimkwLSMH4EAgNVNEjcv10
+id: paragraph.itk_text_left.field_text
+field_name: field_text
+entity_type: paragraph
+bundle: itk_text_left
+label: Text
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

@@ -1,0 +1,68 @@
+uuid: 4ce4bbc4-8c19-4adf-8c77-916820b329e6
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.news.body
+    - field.field.node.news.field_lead
+    - field.field.node.news.field_main_image
+    - field.field.node.news.field_pages
+    - field.field.node.news.field_paragraphs
+    - field.field.node.news.field_related_page_image
+    - field.field.node.news.field_related_page_teaser
+    - image.style.main_image
+    - node.type.news
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: AgnzIEgYdz10rbsviaiGPvdbcbyfjBKaCzuR3mmVr-s
+id: node.news.default
+targetEntityType: node
+bundle: news
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_lead:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_main_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: main_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_pages:
+    type: entity_reference_entity_view
+    weight: 3
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+  field_paragraphs:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+hidden:
+  field_related_page_image: true
+  field_related_page_teaser: true
+  langcode: true
+  links: true

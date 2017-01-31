@@ -1,0 +1,59 @@
+uuid: 93696dc4-1d41-4dab-9ffc-a362a4ab6aa5
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_internal_link.field_file
+    - field.field.paragraph.itk_internal_link.field_image
+    - field.field.paragraph.itk_internal_link.field_link_text
+    - field.field.paragraph.itk_internal_link.field_text
+    - field.field.paragraph.itk_internal_link.field_title
+    - paragraphs.paragraphs_type.itk_internal_link
+  module:
+    - file
+    - image
+    - text
+_core:
+  default_config_hash: 2ibtR0bDSVLfoTxmBaJf2jlcoBPstVicB3HARuYRTcQ
+id: paragraph.itk_internal_link.default
+targetEntityType: paragraph
+bundle: itk_internal_link
+mode: default
+content:
+  field_file:
+    weight: 3
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: file_url_plain
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_link_text:
+    weight: 4
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_text:
+    weight: 2
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_title:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

@@ -1,0 +1,35 @@
+uuid: c5b1624b-6cc1-4ff1-84ed-27872313d48d
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 1HFYcfIN4dsuWV8OCSSDK6j425Q3IfBXCPCcvc-Opjk
+id: custom_profile
+label: 'Custom profile'
+description: 'Configuration for site members'
+conf:
+  extensions: 'jpg png gif pdf doc docx txt zip xls xlsx'
+  maxsize: !!float 16
+  quota: !!float 50
+  maxwidth: 2000
+  maxheight: 2000
+  replace: 0
+  folders:
+    -
+      path: images
+      permissions:
+        browse_files: true
+        browse_subfolders: true
+        create_subfolders: true
+        upload_files: true
+        delete_files: true
+        delete_subfolders: true
+    -
+      path: uploads
+      permissions:
+        browse_files: true
+        browse_subfolders: true
+        create_subfolders: true
+        upload_files: true
+        delete_files: true
+        delete_subfolders: true

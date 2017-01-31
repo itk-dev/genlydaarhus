@@ -1,0 +1,8 @@
+uuid: 5bed6950-e2e2-499c-b9b8-0f028eef3fea
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: 654Khoz8fJcdW995IT2Hfdit264QtEp6MWf2AfXvB48
+id: itk_internal_link
+label: 'Liste element/link'

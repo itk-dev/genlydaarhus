@@ -1,0 +1,23 @@
+uuid: ff838616-86f5-42e9-9c65-6d3e1b86893d
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+_core:
+  default_config_hash: _Ebtf9FHfFs4KPORym7rJKMYHSVfWzsKWGkMlfbRzus
+id: node.field_lead
+field_name: field_lead
+entity_type: node
+type: string
+settings:
+  max_length: 255
+  is_ascii: false
+  case_sensitive: false
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

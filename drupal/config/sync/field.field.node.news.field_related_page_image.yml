@@ -1,0 +1,40 @@
+uuid: 8c154b9b-429f-4954-a8f4-662797885b47
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_related_page_image
+    - node.type.news
+  module:
+    - image
+_core:
+  default_config_hash: '-th4B4d0cXOByFVUdjR4D3mAyQcX4GmLew9L2GInuXU'
+id: node.news.field_related_page_image
+field_name: field_related_page_image
+entity_type: node
+bundle: news
+label: 'Related Page Image'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  file_directory: images
+  file_extensions: 'png gif jpg jpeg'
+  max_filesize: ''
+  max_resolution: ''
+  min_resolution: ''
+  alt_field: true
+  alt_field_required: false
+  title_field: false
+  title_field_required: false
+  default_image:
+    uuid: ''
+    alt: ''
+    title: ''
+    width: null
+    height: null
+  handler: 'default:file'
+  handler_settings: {  }
+field_type: image

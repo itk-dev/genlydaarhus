@@ -1,0 +1,68 @@
+uuid: 9c2a1d0d-7e64-4efe-b457-2ef5536bf148
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_lead
+    - field.field.node.page.field_main_image
+    - field.field.node.page.field_pages
+    - field.field.node.page.field_paragraphs
+    - field.field.node.page.field_related_page_image
+    - field.field.node.page.field_related_page_teaser
+    - image.style.main_image
+    - node.type.page
+  module:
+    - entity_reference_revisions
+    - image
+    - text
+    - user
+_core:
+  default_config_hash: gO2FSCjKtAGzDkxoHXDuouMB9QMxX4u7KRLyOVVhwvw
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 2
+    settings: {  }
+    third_party_settings: {  }
+  field_lead:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_main_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: main_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_pages:
+    weight: 4
+    label: hidden
+    settings:
+      view_mode: teaser
+      link: false
+    third_party_settings: {  }
+    type: entity_reference_entity_view
+  field_paragraphs:
+    weight: 5
+    label: hidden
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    type: entity_reference_revisions_entity_view
+hidden:
+  field_related_page_image: true
+  field_related_page_teaser: true
+  langcode: true
+  links: true

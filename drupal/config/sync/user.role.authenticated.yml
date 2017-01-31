@@ -1,12 +1,13 @@
-uuid: 840f7cd8-cb62-491d-b48d-67c77b2dff40
-langcode: da
+uuid: 79214e8f-7823-4244-a92c-df01668d456e
+langcode: en
 status: true
 dependencies: {  }
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
-label: 'Godkendt bruger'
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
   - 'access content'
+  - 'view the administration theme'

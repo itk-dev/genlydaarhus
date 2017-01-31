@@ -1,0 +1,8 @@
+uuid: 82bc3aff-1b63-408a-81ad-9e59405292fd
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: M8vpAFi-SDee2Y6LMj9hqb3O91WfqUfe5NNQhGDg8fg
+id: itk_text_left
+label: 'Text left'

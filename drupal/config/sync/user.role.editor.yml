@@ -1,0 +1,43 @@
+uuid: 984435ac-efbc-4d9d-9e78-382f28cc7ba9
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hIkZP596-MIMxF4s_iRBhq4FzrXWfoB3IiS7K4AJPKY
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  0: 'access contextual links'
+  1: 'access files overview'
+  2: 'use text format filtered_html'
+  3: 'translate interface'
+  4: 'create itkore_event content'
+  5: 'delete any itkore_event content'
+  6: 'delete own itkore_event content'
+  7: 'delete itkore_event revisions'
+  8: 'edit any itkore_event content'
+  9: 'edit own itkore_event content'
+  10: 'create itkore_resource content'
+  11: 'delete any itkore_resource content'
+  12: 'delete own itkore_resource content'
+  13: 'delete itkore_resource revisions'
+  14: 'edit any itkore_resource content'
+  15: 'edit own itkore_resource content'
+  16: 'access content overview'
+  17: 'administer nodes'
+  18: 'bypass node access'
+  19: 'access in-place editing'
+  20: 'administer menu'
+  21: 'access site reports'
+  22: 'view the administration theme'
+  23: 'access toolbar'
+  24: 'administer users'
+  25: 'access user profiles'
+  26: 'access itkore settings'
+  27: 'create url aliases'
+  28: 'administer themes'
+  29: 'access administration pages'
+  30: 'change own username'
+  32: 'assign editor role'

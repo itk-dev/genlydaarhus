@@ -1,0 +1,23 @@
+uuid: fc9ad8bc-0399-4e72-b49a-a31368635ecf
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_youtube
+    - paragraphs.paragraphs_type.itk_youtube
+  module:
+    - youtube
+_core:
+  default_config_hash: iY-w5mXfF19b-qh2b91HJo0dAY5TliHtItNtT8-nSHg
+id: paragraph.itk_youtube.field_youtube
+field_name: field_youtube
+entity_type: paragraph
+bundle: itk_youtube
+label: Youtube
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: youtube

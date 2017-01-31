@@ -1,0 +1,42 @@
+uuid: 7d071b8a-96e8-4615-8228-b5b755c033b3
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_youtube.field_title
+    - field.field.paragraph.itk_youtube.field_youtube
+    - paragraphs.paragraphs_type.itk_youtube
+  module:
+    - youtube
+_core:
+  default_config_hash: mUtKaa4hEjGx53TXHqdI6HqRiS4v0gYwKCmF4kK4VFw
+id: paragraph.itk_youtube.default
+targetEntityType: paragraph
+bundle: itk_youtube
+mode: default
+content:
+  field_title:
+    weight: 0
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_youtube:
+    weight: 1
+    label: hidden
+    settings:
+      youtube_size: responsive
+      youtube_width: ''
+      youtube_height: ''
+      youtube_autoplay: false
+      youtube_loop: false
+      youtube_showinfo: false
+      youtube_controls: false
+      youtube_autohide: false
+      youtube_iv_load_policy: false
+    third_party_settings: {  }
+    type: youtube_video
+hidden:
+  created: true
+  uid: true

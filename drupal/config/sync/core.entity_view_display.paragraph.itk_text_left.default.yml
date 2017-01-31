@@ -1,0 +1,44 @@
+uuid: 821fc2db-6a5a-4737-919d-cd051b5c5569
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.itk_text_left.field_image
+    - field.field.paragraph.itk_text_left.field_text
+    - field.field.paragraph.itk_text_left.field_title
+    - image.style.paragraphs_content_image
+    - paragraphs.paragraphs_type.itk_text_left
+  module:
+    - image
+    - text
+_core:
+  default_config_hash: uwG6-hCzPwE4fHaljTw7fAAMOd49B3BilRt7fO1hhPw
+id: paragraph.itk_text_left.default
+targetEntityType: paragraph
+bundle: itk_text_left
+mode: default
+content:
+  field_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: paragraphs_content_image
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_text:
+    weight: 1
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_title:
+    weight: 2
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden:
+  created: true
+  uid: true

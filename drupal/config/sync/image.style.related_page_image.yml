@@ -1,0 +1,16 @@
+uuid: aa190649-4e4c-49dd-ac00-f4291b7df126
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: gdKqga4EIjCu9zRABciUu-u4JBf48k9p0Iilt1V6OpM
+name: related_page_image
+label: 'Related Page Image'
+effects:
+  43ac76a3-0bca-4c7d-be00-0f7462bb31ac:
+    uuid: 43ac76a3-0bca-4c7d-be00-0f7462bb31ac
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 192
+      height: 192

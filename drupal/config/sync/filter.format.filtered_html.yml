@@ -1,0 +1,25 @@
+uuid: cb1834e7-302c-4daf-8ca4-9fe5d1a4c8ce
+langcode: en
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: be0uffNhXGTHMgr-QirqdhvdH-Efh1Q1niv7aWWkuG4
+name: 'Filtered HTML'
+format: filtered_html
+weight: 0
+filters:
+  filter_autop:
+    id: filter_autop
+    provider: filter
+    status: true
+    weight: 0
+    settings: {  }
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<em> <strong> <code> <ul> <ol> <li> <h2> <h3> <h4> <p> <br> <a href>'
+      filter_html_help: true
+      filter_html_nofollow: false

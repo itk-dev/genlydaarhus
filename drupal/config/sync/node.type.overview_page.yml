@@ -1,0 +1,20 @@
+uuid: fed66185-13d7-4f15-bab2-52d3c723a4de
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - main
+    parent: 'main:'
+_core:
+  default_config_hash: suM0PtRmZJ5qkW0yvMIL9J6CTK0ItKB-k4_vByHY0_o
+name: 'Overview Page'
+type: overview_page
+description: ''
+help: ''
+new_revision: false
+preview_mode: 1
+display_submitted: false
