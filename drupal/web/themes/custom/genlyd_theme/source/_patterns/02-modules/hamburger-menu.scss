@@ -1,28 +1,13 @@
-// Add required elements to z-index.
-
-$hamburger-menu-z-index:
-  hamburger-menu-overlay,
-  hamburger-menu,
-  hamburger-menu-toggle;
-
-@each $hamburger-menu-z-index-item in $hamburger-menu-z-index {
-  //$z-index-elements: add-to-z-index($z-index-elements, $hamburger-menu-z-index-item, 'last');
-}
-
-
 // Configuration
 
-$hamburger-menu-bg-color:           $color-white;
-$hamburger-menu-width:              30em;
+$hamburger-menu-bg-color:           $color-gray-darkest;
+$hamburger-menu-width:              400px;
 $hamburger-menu-spacing:            $spacing-percent-large;
 $hamburger-menu-max-width:          90%;
 $hamburger-menu-animation-duration: .3s;
 $hamburger-menu-overlay-color:      transparentize($color-black, .15);
-$hamburger-menu-border-style:       1px solid;
-$hamburger-menu-border-color:       $color-black-light;
-$hamburger-menu-link-color:         $color-black-light;
-$hamburger-menu-link-color-hover:   $color-black-light;
-$hamburger-menu-toggle-color:       $color-black-light;
+$hamburger-menu-link-color:         $color-white;
+$hamburger-menu-link-color-hover:   darken($color-white, 1%);
 
 html,
 body {
@@ -43,7 +28,7 @@ body {
   top: 0;
   transition: right $hamburger-menu-animation-duration;
   width: $hamburger-menu-width;
-  // z-index: z($z-index-elements, hamburger-menu);
+  z-index: 3;
 
   @include breakpoint($breakpoint-desk) {
     display: none;
@@ -60,8 +45,13 @@ body {
     text-align: center;
 
     a {
-
+      color: $hamburger-menu-link-color;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      
       &:hover {
+        color: $hamburger-menu-link-color-hover;
       }
     }
   }
@@ -77,8 +67,9 @@ body {
   }
 
   &--link {
-    border-top: $hamburger-menu-border-style $hamburger-menu-border-color;
-    display: block;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-border-light;
     padding-bottom: 20px;
     padding-top: 20px;
   }
@@ -86,20 +77,20 @@ body {
   &--toggle {
     cursor: pointer;
     height: 30px;
-    position: absolute;
+    position: fixed;
     right: 6%;
-    top: 26px;
+    top: 23px;
     transform: rotate(0deg);
     transition: $hamburger-menu-animation-duration;
     width: 30px;
-    // z-index: z($z-index-elements, hamburger-menu-toggle);
+    z-index: 4;
 
     @include breakpoint($breakpoint-desk) {
       display: none;
     }
 
     span {
-      background: $hamburger-menu-toggle-color;
+      background: $color-black-light;
       border-radius: 10px;
       display: block;
       height: 3px;
@@ -126,7 +117,7 @@ body {
 
     &.is-open {
       span {
-        background: $hamburger-menu-toggle-color;
+        background: $color-white;
       }
 
       span:nth-child(1) {
@@ -151,6 +142,15 @@ body {
         width: 0;
       }
     }
+
+    &.is-transparent {
+      position: absolute;
+      top: 38px;
+
+      span {
+        background: $color-white;
+      }
+    }
   }
 
   // Overlay
@@ -161,7 +161,7 @@ body {
     top: 0;
     visibility: hidden;
     width: 100%;
-    //z-index: z($z-index-elements, hamburger-menu-overlay);
+    z-index: 2;
 
     &.is-visible {
       background-color: $hamburger-menu-overlay-color;

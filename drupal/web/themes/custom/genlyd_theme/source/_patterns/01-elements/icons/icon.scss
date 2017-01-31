@@ -28,11 +28,27 @@
     background-color: $color-red;
   }
 
+  &.is-yellow {
+    background-color: $color-yellow;
+  }
+
   &.is-green-light {
     background-color: $color-green-light;
   }
 
   &.is-green-dark {
     background-color: $color-green-dark;
+  }
+
+  &.is-black-light {
+    background-color: transparentize($color-black-light, .4);
+  }
+
+  &.is-transparent {
+    background-color: transparent;
+  }
+
+  &.has-small-margin {
+    margin-right: $spacing-pixel-xxxsmall;
   }
 }
