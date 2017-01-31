@@ -14,12 +14,12 @@
         "type": "location"
       }
     },
-    "headingWithIconNearby": {
-      "title": "Aktiviteter i nærheden (Højbjerg)",
-      "subtitle": "Her kan du se aktiviteter tæt på hvor du befinder dig lige nu.",
+    "headingWithIconNewest": {
+      "title": "Nyeste aktiviteter",
+      "subtitle": "Her kan du se de senest oprettede aktiviteter.",
       "iconClass": "hidden-desk-down",
       "icon": {
-        "type": "location",
+        "type": "bulletin",
         "color": "light"
       }
     },
