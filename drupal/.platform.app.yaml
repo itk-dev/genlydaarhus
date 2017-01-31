@@ -100,6 +100,7 @@ hooks:
 #      drush -y site-install itkore --config-dir=../config/sync
     deploy: |
       cd web
+      drush -y site-install itkore --config-dir=../config/sync
       drush -y cache-rebuild
       drush -y updatedb
       drush -y config-import
