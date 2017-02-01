@@ -20,6 +20,11 @@
     width: 20px;
   }
 
+  &.is-xtiny {
+    height: 15px;
+    width: 15px;
+  }
+
   &.is-white {
     background-color: $color-white;
   }
