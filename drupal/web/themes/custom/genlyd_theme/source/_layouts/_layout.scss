@@ -301,5 +301,34 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
         }
       }
     }
+
+    &.mediumdesk-up {
+      @include breakpoint($breakpoint-mediumdesk) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+        
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
   }
 }

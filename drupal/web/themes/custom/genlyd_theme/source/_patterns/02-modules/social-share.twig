@@ -1,4 +1,8 @@
 <div class="social-share">
-  <a href="#">Del på Facebook</a>
-  <a href="#">Send info via email</a>
+  <div class="social-share--button">
+    {% include 'elements-button' with { button: { class: "is-secondary is-dark is-full-width", title: "Del på facebook" } } %}
+  </div>
+  <div class="social-share--button">
+    {% include 'elements-button' with { button: { class: "is-secondary is-dark is-full-width", title: "Send via mail" } } %}
+  </div>
 </div>

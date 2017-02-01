@@ -1,7 +1,32 @@
+$breakpoint-sidebar: 1500px;
+
 .activity-sidebar {
   background-color: $color-white;
+  padding-bottom: $spacing-pixel-normal;
   padding-left: $spacing-pixel-normal;
   padding-right: $spacing-pixel-normal;
   padding-top: $spacing-pixel-normal;
-  padding-bottom: $spacing-pixel-normal;
+
+  &--col {
+    border-bottom: 1px solid $color-border-dark;
+
+    // Overrides layout col defaults
+    margin-bottom: $spacing-pixel-small !important;
+
+    @media only screen and (max-width: $breakpoint-lap) {
+      // Overrides layout col defaults
+      width: 100% !important;
+    }
+
+    @media only screen and (min-width: $breakpoint-desk) and (max-width: $breakpoint-sidebar) { 
+      // Overrides layout col defaults
+      width: 100% !important;
+    }
+  }
+
+  &--signup {
+    border-bottom: 1px solid $color-border-dark;
+    margin-bottom: $spacing-pixel-small;
+    padding-bottom: $spacing-pixel-small;
+  }
 }

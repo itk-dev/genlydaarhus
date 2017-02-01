@@ -1,3 +1,15 @@
 .category {
-  margin: 0;
+  background-color: $color-green-dark;
+  border-radius: $border-radius;
+  color: $color-white;
+  display: inline-block;
+  font-size: $font-size-normal;
+  font-weight: 600;
+  margin-bottom: $spacing-pixel-xxxsmall;
+  margin-right: $spacing-pixel-xxxsmall;
+  margin-top: 0;
+  padding-bottom: $spacing-pixel-xtiny;
+  padding-left: $spacing-pixel-xxsmall;
+  padding-right: $spacing-pixel-xxsmall;
+  padding-top: $spacing-pixel-xtiny;
 }

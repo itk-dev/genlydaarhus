@@ -1,5 +1,7 @@
 .social-share {
-  > a {
-    display: block;
+  &--button {
+    &:first-child {
+      margin-bottom: $spacing-pixel-xxxsmall;
+    }
   }
 }
