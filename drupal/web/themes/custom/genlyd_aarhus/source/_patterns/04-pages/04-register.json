@@ -1,0 +1,29 @@
+{
+  "register": {
+    "headingWithIcon": {
+      "title": "Tilmeld til Genlyd Aarhus",
+      "subtitle": "Når du er tilmeldt kan du oprette aktiviteter.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "user",
+        "color": "light"
+      }
+    },
+    "textWithIconSocial": {
+      "title": "Tilmeld gennem service",
+      "icon": {
+        "type": "arrow",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "textWithIconPersonal": {
+      "title": "Eller brug personlige oplysninger",
+      "icon": {
+        "type": "arrow",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    }
+  }
+}

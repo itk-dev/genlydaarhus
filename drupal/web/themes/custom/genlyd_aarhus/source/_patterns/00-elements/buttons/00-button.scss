@@ -76,6 +76,18 @@
     color: $color-white;
   }
 
+  &.is-facebook {
+    @include buttonHover($color-facebook);
+    background-color: $color-facebook;
+    color: $color-white;
+  }
+
+  &.is-google {
+    @include buttonHover($color-google);
+    background-color: $color-google;
+    color: $color-white;
+  }
+
   &.is-large {
     padding-bottom: $spacing-pixel-xxsmall;
     padding-left: $spacing-pixel-small;

@@ -135,23 +135,90 @@
   </ul>
 </nav>
 <main class="main">
-      <h1>Tilmeld</h1>
-  <a class="button " href="#">Knap titel</a>  <a class="button " href="#">Knap titel</a>  <h3>eller</h3>
-  <form>
-    <div class="text-field">
-  <input class="text-field--input" type="text" name="firstname" id="firstname" placeholder="Skriv dit fornavn" value="" />
-</div>    <div class="text-field">
-  <input class="text-field--input" type="text" name="lastname" id="lastname" placeholder="Skriv dit efternavn" value="" />
-</div>    <div class="text-field">
-  <input class="text-field--input" type="email" name="email" id="email" placeholder="Skriv din email" value="" />
-</div>    <div class="text-field">
-  <input class="text-field--input" type="password" name="password" id="password" placeholder="Skriv ønsket adgangskode" value="" />
-</div>    <div class="text-field">
-  <input class="text-field--input" type="text" name="postalcode" id="postalcode" placeholder="Skriv dit postnummer" value="" />
-</div>    <p>Jeg har læst <a href="#">betingelserne</a></p>
-    <a class="button " href="#">Knap titel</a>  </form>
-  <h3>Jeg har allerede en konto</h3>
-  <a class="button " href="#">Knap titel</a></main>
+      <div class="container has-large-spacing">
+    <div class="l-heading-section">
+      <div class="heading-with-icon">
+  <div class="heading-with-icon--icon ">
+    <div class="icon  ">
+  </div>
+  </div>
+  <div class="heading-with-icon--titles">
+    <h1 class="heading-with-icon--title"></h1>
+    <p class="heading-with-icon--subtitle"></p>
+  </div>
+</div>    </div>
+
+    <div class="l-section has-bottom-margin">  
+      <div class="social-buttons">
+  <div class="social-buttons--button">
+    <a class="button is-facebook is-full-width" href="">Tilmeld med Facebook</a>  </div>
+  <div class="social-buttons--button">
+    <a class="button is-google is-full-width" href="">Tilmeld med Google</a>  </div>
+</div>    </div>
+
+    <div class="l-section has-no-margin">  
+      <div class="text-with-icon">
+  <div class="text-with-icon--icon">
+    <div class="icon  ">
+  </div>
+  </div>
+  <h3 class="text-with-icon--title"></h3>
+</div>    </div>
+
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          <label class="form-label" for="">Fornavn</label>          <div class="text-field">
+  <input class="text-field--input" type="text" name="firstname" id="firstname" placeholder="" value="" />
+</div>        </div>
+      </div>
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          <label class="form-label" for="">Efternavn</label>          <div class="text-field">
+  <input class="text-field--input" type="text" name="lastname" id="lastname" placeholder="" value="" />
+</div>        </div>
+      </div>
+    </div>
+
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          <label class="form-label" for="">Email</label>          <div class="text-field">
+  <input class="text-field--input" type="email" name="email" id="email" placeholder="" value="" />
+</div>        </div>
+      </div>
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          <label class="form-label" for="">Adgangskode</label>          <div class="text-field">
+  <input class="text-field--input" type="password" name="password" id="password" placeholder="" value="" />
+</div>        </div>
+      </div>
+    </div>
+
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          <label class="form-label" for="">Postnummer</label>          <div class="text-field">
+  <input class="text-field--input" type="text" name="postalcode" id="postalcode" placeholder="" value="" />
+</div>        </div>
+      </div>
+    </div>
+        
+    <div class="l-section has-bottom-margin is-tight">
+      <p>Husk at læse <a href="#">betingelserne</a>.</p>
+    </div>
+
+    <div class="l-section has-no-margin is-tight">
+      <div class="l-section has-bottom-margin is-tight layout flex">
+        <a class="button is-cta" href="">Tilmeld</a>      </div>
+      <div class="layout flex">
+        <a class="button is-secondary is-dark" href="">Jeg har allerede en konto</a>      </div>
+    </div>
+    
+    <div class="l-section has-bottom-margin layout flex">
+    </div>
+  </div>
+</main>
 
 <div class="floating-help">
   <div class="floating-help--button">
@@ -171,7 +238,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#fff" stroke="#fff" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
       <div class="floating-help-text">
         <p class="floating-help--meta">Kontaktperson</p>
@@ -183,7 +250,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#fff" stroke="#fff" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
       <div class="floating-help-text">
         <p class="floating-help--meta">Telefon</p>
@@ -195,7 +262,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#fff" stroke="#fff" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
       <div class="floating-help-text">
         <p class="floating-help--meta">Mail</p>
@@ -251,7 +318,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Hvad er Genlyd</span>
         </a>
@@ -260,7 +327,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Om Genlyd puljen</span>
         </a>
@@ -269,7 +336,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Få hjælp til opslag</span>
         </a>
@@ -284,7 +351,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Aktuelle aktiviteter</span>
         </a>
@@ -293,7 +360,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Login</span>
         </a>
@@ -302,7 +369,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Tilmeld</span>
         </a>
@@ -311,7 +378,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 50">
         <path fill="#231815" stroke="#231815" stroke-width="3" d="M18 26.5c-.1 0-.3 0-.4-.1-.2-.2-.2-.5 0-.7l4.6-4.6c.6-.6.6-1.5 0-2.1l-4.6-4.6c-.2-.2-.2-.5 0-.7s.5-.2.7 0l4.6 4.6c.5.5.7 1.1.7 1.8s-.3 1.3-.7 1.8l-4.6 4.6H18z"/>
       </svg>
-      
+    
   </div>
           <span>Opret aktivitet</span>
         </a>

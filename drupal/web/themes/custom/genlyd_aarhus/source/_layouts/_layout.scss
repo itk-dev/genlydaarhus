@@ -60,6 +60,14 @@
     flex-direction: column;
   }
 
+  &.has-margin-left {
+    margin-left: $spacing-pixel-small;
+  }
+
+  &.has-margin-right {
+    margin-right: $spacing-pixel-small;
+  }
+
   &.has-margin-top {
     margin-top: $spacing-pixel-normal;
 
@@ -141,6 +149,16 @@
   @include breakpoint($breakpoint-tablet) {
     margin-bottom: $spacing-pixel-large;
     margin-top: $spacing-pixel-large;
+  }
+
+  &.is-tight {
+    margin-bottom: $spacing-pixel-small;
+    margin-top: $spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-bottom: $spacing-pixel-small;
+      margin-top: $spacing-pixel-small;
+    }
   }
 
   &.has-top-margin {
