@@ -17,13 +17,13 @@ component-libraries:
       - source/_layouts
   elements:
     paths:
-      - source/_patterns/01-elements
+      - source/_patterns/00-elements
   modules:
     paths:
-      - source/_patterns/02-modules
+      - source/_patterns/01-modules
   components:
     paths:
-      - source/_patterns/03-components
+      - source/_patterns/02-components
 
 version: '1.0.0-beta1'
 core: '8.x'

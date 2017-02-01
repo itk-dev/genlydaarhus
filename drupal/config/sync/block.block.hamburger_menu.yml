@@ -1,0 +1,24 @@
+uuid: ce7a4c8f-ab50-400f-adbc-bef03836318f
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.main
+  module:
+    - system
+  theme:
+    - genlyd_aarhus
+id: hamburger_menu
+theme: genlyd_aarhus
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:main'
+settings:
+  id: 'system_menu_block:main'
+  label: 'Hamburger menu'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+visibility: {  }

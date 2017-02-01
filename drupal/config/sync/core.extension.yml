@@ -2,6 +2,7 @@ module:
   block: 0
   breakpoint: 0
   ckeditor: 0
+  components: 0
   config: 0
   config_translation: 0
   ctools: 0
@@ -63,6 +64,7 @@ theme:
   seven: 0
   adminimal_theme: 0
   genlyd_theme: 0
+  genlyd_aarhus: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: da
