@@ -62,6 +62,12 @@
     background-color: $color-yellow;
     color: $color-black-light;
   }
+  &.is-tertiary {
+    @include buttonHover($color-black-lighter);
+    
+    background-color: $color-black-lighter;
+    color: $color-white;
+  }
 
   &.is-delete {
     @include buttonHover($color-red);

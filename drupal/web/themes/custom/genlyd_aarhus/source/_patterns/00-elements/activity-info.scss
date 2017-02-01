@@ -1,8 +1,8 @@
 .activity-info {
 
   padding-bottom: $spacing-pixel-small;
-  margin-bottom: $spacing-pixel-small;
-  border-bottom: 1px solid $color-border-dark;
+  margin-left: $spacing-pixel-xxxsmall;
+  margin-right: $spacing-pixel-xxxsmall;
 
   &--meta {
     margin-top: 0;
@@ -12,6 +12,5 @@
 
   &--data {
     margin: 0;
-    font-size: 110%;
   }
 }

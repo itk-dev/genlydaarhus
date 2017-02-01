@@ -1,33 +1,38 @@
 <div class="activity-sidebar">
     <div class="l-cols">
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Dato", data: "12 Marts 2017" }} %}
       </div>
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Pris", data: "Gratis" }} %}
       </div>
     </div>
     <div class="l-cols">
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Starttidspunkt", data: "12:00" }} %}
       </div>
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Sluttidspunkt", data: "15:00" }} %}
       </div>
     </div>
     <div class="l-cols">
-      <div class="l-col">
+      <div class="l-col activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Adresse", data: "Søndre Ringgade 102, 8000 Aarhus C" }} %}
       </div>
     </div>
     <div class="l-cols">
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Arrangør", data: "Lasse Iversen" }} %}
       </div>
-      <div class="l-col half all">
+      <div class="l-col half all activity-sidebar--col">
         {% include "elements-activity-info" with { activityInfo: { meta: "Antal tilmeldte", data: "14 deltagere" }} %}
       </div>
     </div>
     
-    {% include 'elements-button' with { button: activitySidebar.signupButton } %}
+    <div class="activity-sidebar--signup">
+      {% include 'elements-button' with { button: activitySidebar.signupButton } %}
+    </div>
+    <div class="activity-sidebar--social-share">
+      {% include 'modules-social-share' %}
+    </div>
 </div>
