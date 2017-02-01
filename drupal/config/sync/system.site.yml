@@ -1,11 +1,11 @@
 uuid: 8a3aef51-e569-477b-89bf-ac0b55b24752
-name: Site-Install
+name: 'Genlyd Aarhus'
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
   404: /siden-blev-ikke-fundet
-  front: /user
+  front: /user/login
 admin_compact_mode: false
 weight_select_max: 100
 langcode: da
