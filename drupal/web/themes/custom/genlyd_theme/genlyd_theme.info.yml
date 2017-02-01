@@ -1,6 +1,10 @@
-name: Genlyd theme
+name: Genlyd Aarhus theme
 type: theme
 description: 'The Genlyd theme.'
+
+libraries:
+  - genlyd_theme/styling
+  - genlyd_theme/hamburger-menu
 
 regions:
   header: 'Header'
