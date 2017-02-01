@@ -1,0 +1,23 @@
+.suggestion {
+  display: flex;
+  border: 2px solid $color-border-dark;
+  border-radius: 10px;
+  background-color: darken($color-white, 2%);
+  padding-bottom: $spacing-pixel-small;
+  padding-top: $spacing-pixel-small;
+  padding-left: $spacing-pixel-xxsmall;
+  padding-right: $spacing-pixel-xxsmall;
+  margin-bottom: $spacing-pixel-xsmall;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+  
+  @include breakpoint($breakpoint-tablet) {
+    margin-bottom: 0;
+  }
+
+}

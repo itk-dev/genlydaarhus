@@ -1,0 +1,79 @@
+{% extends "templates-page" %}
+{% block header %}
+  {% include "components-header" with { transparent: true } %}
+{% endblock %}
+{% block hero %}
+  {% include "modules-hero" %}
+{% endblock %}
+{% block main %}
+  <div class="container has-spacing">
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
+    </div>
+    
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="layout flex center">
+      {% include "modules-call-to-action" with { callToAction: home.activityCallToAction } %}
+    </div>
+
+  </div>
+  
+  <div class="section is-blue-lightest">
+    <div class="container has-spacing">
+      {% include "components-section-info" with 
+        { 
+          guidelines: home.guidelinesAbout,
+          headingWithIcon: home.guidelinesAbout.headingWithIcon, 
+          icon: home.guidelinesAbout.headingWithIcon.icon 
+        } 
+      %}
+      <div class="layout has-margin-top">
+        {% include 'modules-call-to-action' with { callToAction: home.guidelinesAbout.callToAction } %}
+      </div>
+    </div>
+  </div>
+
+  <div class="container has-spacing">
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
+    </div>
+
+    <div class="grid">
+      <div class="grid--inner">
+        {% for item in activities %}
+          <article class="grid--item">
+            {% include "modules-card-activity" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      </div>
+    </div>
+
+    <div class="layout">
+      {% include 'modules-call-to-action' with { callToAction: home.popularCallToAction } %}
+    </div>
+  </div>
+
+  <div class="section is-blue-lightest">
+    <div class="container has-spacing">
+      {% include "components-section-info" with 
+        { 
+          guidelines: home.guidelinesPool,
+          headingWithIcon: home.guidelinesPool.headingWithIcon, 
+          icon: home.guidelinesPool.headingWithIcon.icon 
+        } 
+      %}
+      <div class="layout has-margin-top">
+        {% include 'modules-call-to-action' with { callToAction: home.guidelinesPool.callToAction } %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

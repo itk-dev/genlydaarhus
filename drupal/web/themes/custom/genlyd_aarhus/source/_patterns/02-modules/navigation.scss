@@ -1,0 +1,119 @@
+.navigation {
+  display: none;
+  height: 100%;
+
+  @include breakpoint($breakpoint-desk) {
+    display: flex;
+  }
+
+  &--items {
+    padding-left: $spacing-pixel-xxxsmall;
+
+    @include breakpoint($breakpoint-desk) {
+      align-items: stretch;
+      display: flex;
+      flex-grow: 0;
+      flex-shrink: 1;
+      height: 100%;
+      margin-left: auto;
+    }
+  }
+
+  &--item {
+    font-size: $font-size-normal;
+    font-weight: 600;
+    margin-right: $spacing-pixel-medium;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: opacity .4s;
+
+    span {
+      align-items: center;
+      display: flex;
+      height: 100%;
+    }
+
+    &.is-active {
+      span {
+        box-shadow: inset 0px -2px 0px 0px $color-black-light;
+      }
+    }
+
+    &:last-child {
+      border: 0;
+      margin-right: 0;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      align-items: center;
+      display: flex;
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+
+    &:hover,
+    &.is-active {
+      @include breakpoint($breakpoint-desk) {
+      }
+    }
+
+    &.is-active {
+      @include breakpoint($breakpoint-desk) {
+      }
+    }
+  }
+
+  &--icon svg {
+    opacity: .5;
+  }
+
+  .navigation--icon-main {
+    display: block;
+  }
+
+  .navigation--icon-transparent {
+    display: none;
+  }
+
+
+  &.is-transparent {
+
+    height: auto;
+
+    .navigation--items {
+      background-color: transparentize($color-black, .5);
+      border-radius: $border-radius;
+      padding-bottom: $spacing-pixel-xsmall;
+      padding-left: $spacing-pixel-xsmall;
+      padding-right: $spacing-pixel-xxsmall;
+      padding-top: $spacing-pixel-xsmall;
+    }
+
+    .navigation--item {
+      color: $color-white;
+      transition: opacity .4s;
+
+      &:last-child {
+        margin-right: $spacing-pixel-xxxsmall;
+      }
+
+      &.is-primary, &.is-secondary {
+        padding-right: 0;
+      }
+    }
+
+    .navigation--icon-main {
+      display: none;
+    }
+
+    .navigation--icon-transparent {
+      display: block;
+    }
+
+    .navigation--icon svg {
+      opacity: 1;
+    }
+  }
+}

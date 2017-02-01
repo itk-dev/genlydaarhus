@@ -24,6 +24,7 @@ module:
   itk_hamburger_menu: 0
   itk_paragraph: 0
   itkore_admin: 0
+  itkore_base_content: 0
   itkore_content_types: 0
   itkore_fields: 0
   itkore_footer: 0
@@ -61,5 +62,7 @@ theme:
   classy: 0
   seven: 0
   adminimal_theme: 0
+  genlyd_theme: 0
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
+langcode: da

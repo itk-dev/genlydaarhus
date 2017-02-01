@@ -1,5 +1,5 @@
-uuid: 6722bb16-8bd6-4381-a122-72a5f335fb51
-langcode: en
+uuid: 8b7fd56c-ce71-419e-a22a-b608a33bd440
+langcode: da
 status: true
 dependencies:
   config:
@@ -26,7 +26,7 @@ content:
       progress_indicator: throbber
     third_party_settings:
       imce:
-        enabled: '1'
+        enabled: true
     type: image_image
   field_text:
     weight: 2

@@ -1,0 +1,178 @@
+// Configuration
+
+$hamburger-menu-bg-color:           $color-gray-darkest;
+$hamburger-menu-width:              400px;
+$hamburger-menu-spacing:            $spacing-percent-large;
+$hamburger-menu-max-width:          90%;
+$hamburger-menu-animation-duration: .3s;
+$hamburger-menu-overlay-color:      transparentize($color-black, .15);
+$hamburger-menu-link-color:         $color-white;
+$hamburger-menu-link-color-hover:   darken($color-white, 1%);
+
+html,
+body {
+  &.is-locked-by-hamburger-menu {
+    overflow: hidden;
+    position: fixed;
+  }
+}
+
+.hamburger-menu {
+  background-color: $hamburger-menu-bg-color;
+  bottom: 0;
+  margin-right: 0;
+  max-width: $hamburger-menu-max-width;
+  overflow: hidden;
+  position: fixed;
+  right: -$hamburger-menu-width;
+  top: 0;
+  transition: right $hamburger-menu-animation-duration;
+  width: $hamburger-menu-width;
+  z-index: 13;
+
+  @include breakpoint($breakpoint-desk) {
+    display: none;
+  }
+
+  &--inner {
+    height: 100%;
+    overflow-y: scroll;
+  }
+
+  &--links {
+    margin: 90px 20px 0;
+    padding: 0;
+    text-align: center;
+
+    a {
+      color: $hamburger-menu-link-color;
+      font-weight: 600;
+      text-decoration: none;
+      text-transform: uppercase;
+      
+      &:hover {
+        color: $hamburger-menu-link-color-hover;
+      }
+    }
+  }
+
+  &--group {
+    list-style: none;
+    margin-top: 20px;
+    padding-bottom: 20px;
+
+    &:not(:last-child) {
+
+    }
+  }
+
+  &--link {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid $color-border-light;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  &--toggle {
+    cursor: pointer;
+    height: 30px;
+    position: fixed;
+    right: 6%;
+    top: 23px;
+    transform: rotate(0deg);
+    transition: $hamburger-menu-animation-duration;
+    width: 30px;
+    z-index: 14;
+
+    @include breakpoint($breakpoint-desk) {
+      display: none;
+    }
+
+    span {
+      background: $color-black-light;
+      border-radius: 10px;
+      display: block;
+      height: 3px;
+      left: 0;
+      opacity: 1;
+      position: absolute;
+      transform: rotate(0deg);
+      transition: $hamburger-menu-animation-duration;
+      width: 100%;
+    }
+
+    span:nth-child(1) {
+      top: 0;
+    }
+
+    span:nth-child(2),
+    span:nth-child(3) {
+      top: 9px;
+    }
+
+    span:nth-child(4) {
+      top: 18px;
+    }
+
+    &.is-open {
+      span {
+        background: $color-white;
+      }
+
+      span:nth-child(1) {
+        left: 50%;
+        top: 15px;
+        width: 0;
+      }
+
+      span:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+
+      span:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+
+      span:nth-child(4) {
+        left: 50%;
+        top: 14px;
+        width: 0;
+      }
+    }
+
+    &.is-transparent {
+      position: absolute;
+      top: 38px;
+
+      span {
+        background: $color-white;
+      }
+    }
+  }
+
+  // Overlay
+  &--overlay {
+    bottom: 0;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+    z-index: 12;
+
+    &.is-visible {
+      background-color: $hamburger-menu-overlay-color;
+      cursor: pointer;
+      transition: background $hamburger-menu-animation-duration;
+      visibility: visible;
+    }
+  }
+
+  // States
+  &.is-open {
+    right: 0;
+  }
+}

@@ -1,0 +1,2 @@
+label: Image
+description: 'The image will scale to 500 pixel width and scale the height accordingly to maintain the original height/width ratio'
