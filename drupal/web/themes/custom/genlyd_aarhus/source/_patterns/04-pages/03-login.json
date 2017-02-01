@@ -1,0 +1,21 @@
+{
+  "login": {
+    "headingWithIcon": {
+      "title": "Log ind på Genlyd Aarhus",
+      "subtitle": "Her kan du logge ind på din profil.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "user",
+        "color": "light"
+      }
+    },
+    "textWithIcon": {
+      "title": "Eller brug personlige oplysninger",
+      "icon": {
+        "type": "arrow",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    }
+  }
+}

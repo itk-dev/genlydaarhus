@@ -66,20 +66,20 @@
   &--label {
     position: relative;
     z-index: 1;
-    margin-left: $spacing-pixel-normal;
+    margin-left: $spacing-pixel-large;
   }
 
   &:before {
     content: '';
-    position: relative;
+    position: absolute;
     top: 50%;
     transform: translateY(-50%);
-
-    left: 14px;
+    left: 25px;
     width: 20px;
     height: 20px;
     border-radius: 5px;
     border: 2px solid $color-border-dark;
+    z-index: 5;
   }
 
   &.borderless {
@@ -95,11 +95,6 @@
       background-color: transparent;
       border: 0;
       border-radius: 0;
-    }
-
-    .checkbox--indicator:after {
-      top: 8px;
-      left: 22px;
     }
 
     input:checked ~ .checkbox--indicator {

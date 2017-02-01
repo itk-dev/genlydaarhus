@@ -7,9 +7,19 @@
   display: flex;
   flex-direction: column;
   position: fixed;
-  right: $spacing-percent-xlarge;
+  right: 0;
+  left: 0;
+  margin-left: $spacing-pixel-normal;
+  margin-right: $spacing-pixel-normal;
   padding-top: $spacing-pixel-xxsmall;
   transform: translateY(320px);
+  z-index: 20;
+
+  @include breakpoint($breakpoint-tablet) {
+    left: auto;
+    right: $spacing-percent-xlarge;
+    margin: 0;
+  }
 
   &--button {
     align-items: center;
