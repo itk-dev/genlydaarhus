@@ -1,20 +1,24 @@
 .header {
   background-color: $color-white;
+  box-shadow: inset 0px -1px 0px 0px $color-border-dark;
   display: flex;
-  height: 80px;
+  height: 70px;
+  position: fixed;
   width: 100%;
+  z-index: 10;
 
   &--inner {
     @include layout-wrapper($breakpoint-bigscreen);
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     width: 100%;
+    z-index: 10;
   }
 
   &--navigation {
-    display: flex;
     color: $color-white;
+    display: flex;
     list-style: none;
   }
 
@@ -23,13 +27,21 @@
   }
 
   &--logo {
-    display: flex;
     align-items: center;
-    margin-top: $spacing-pixel-tiny;
+    display: flex;
+    margin-top: 7px;
   }
 
   &--logo-inner {
     width: 120px;
+  }
+
+  &--logo-dark {
+    display: block;
+  }
+
+  &--logo-light {
+    display: none;
   }
 
   &.is-fixed {
@@ -38,28 +50,18 @@
 
   &.is-transparent {
     background-color: transparent;
-    height: 80px;
-    z-index: 9999;
+    box-shadow: none;
+    height: 100px;
+    left: 0;
     position: absolute;
     top: 0;
-    left: 0;
 
-    // Temporary disable of transparent navigation
-    .navigation, .hamburger-menu--toggle {
+    .header--logo-dark {
       display: none;
     }
 
-    .header--inner {
-      border-bottom: 1px solid transparentize($color-white, 0.80);
+    .header--logo-light {
+      display: block;
     }
-
-    .header--logo-inner {
-      width: 120px;
-
-      @include breakpoint($breakpoint-lap) {
-        width: 130px;
-      }
-    }
-
   }
 }

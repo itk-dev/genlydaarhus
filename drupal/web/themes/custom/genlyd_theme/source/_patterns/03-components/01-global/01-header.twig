@@ -1,18 +1,17 @@
 <header class="header {{ class }} {{ transparent ? 'is-transparent' }}">
   <div class="header--inner">
-
-      <div class="header--logo">
-        <div class="header--logo-inner">
-          {% if transparent %}
+    <div class="header--logo">
+      <div class="header--logo-inner">
+          <div class="header--logo-light">
             {% include "elements-logo-light" %}
-          {% else %}
+          </div>
+          <div class="header--logo-dark">
             {% include "elements-logo-dark" %}
-          {% endif %}
-        </div>
+          </div>
       </div>
-
-      {% include "modules-navigation" %}
-      {% include "modules-hamburger-menu" %}
     </div>
+
+    {% include "modules-navigation" with { transparent: transparent } %}
   </div>
 </header>
+{% include "modules-hamburger-menu" with { transparent: transparent } %}

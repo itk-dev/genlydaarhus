@@ -10,8 +10,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -51,8 +51,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -92,8 +92,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -133,8 +133,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -174,8 +174,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -215,7 +215,7 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
           "href": "{{ attribute(link, 'templates-activity') }}",
           "title": "Slet"
         },
@@ -255,8 +255,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 
@@ -295,8 +295,8 @@
       "edit": true,
       "editButtons" : [
         {  
-          "class": "is-secondary is-light is-small is-full-width",
-          "href": "{{ attribute(link, 'templates-activity') }}",
+          "class": "is-secondary is-light is-small is-full-width action-delete",
+          "href": "#",
           "title": "Slet"
         },
         { 

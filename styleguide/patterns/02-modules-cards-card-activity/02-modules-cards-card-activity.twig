@@ -1,5 +1,14 @@
 {% if cardActivity.edit %}
   <div class="card-activity">
+    <div class="card-activity--overlay">
+      <p class="card-activity--overlay-warning">
+        Er du sikker på du vil slette aktiviten?
+      </p>
+      <div class="card-activity--overlay-buttons">
+        {% include "elements-button" with { button: { class: "is-delete is-small is-full-width", "href": "#", "title": "Slet" } } %}
+        {% include "elements-button" with { button: { class: "is-secondary is-small is-light is-full-width action-back", "href": "#", "title": "Tilbage" } } %}
+      </div>
+    </div>
 {% else %}
   <a href="#" class="card-activity has-hover">
 {% endif %}

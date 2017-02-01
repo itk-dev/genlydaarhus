@@ -63,6 +63,13 @@
     color: $color-black-light;
   }
 
+  &.is-delete {
+    @include buttonHover($color-red);
+    
+    background-color: darken($color-red, 7%);
+    color: $color-white;
+  }
+
   &.is-large {
     padding-bottom: $spacing-pixel-xxsmall;
     padding-left: $spacing-pixel-small;
