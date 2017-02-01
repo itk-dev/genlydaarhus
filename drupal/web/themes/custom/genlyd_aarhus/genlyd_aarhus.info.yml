@@ -25,5 +25,5 @@ component-libraries:
     paths:
       - source/_patterns/02-components
 
-version: '1.0.0-beta1'
+version: '1.0.0'
 core: '8.x'
