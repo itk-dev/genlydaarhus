@@ -1,4 +1,4 @@
-uuid: d5065856-2722-42e1-b807-c7e317b6fa9c
+uuid: 2ac17ea4-b31b-482e-ab76-47d3dd1ba80c
 langcode: en
 status: true
 dependencies: {  }
@@ -9,8 +9,8 @@ label: 'Member profile'
 description: 'Configuration for site members'
 conf:
   extensions: 'jpg png gif'
-  maxsize: 2
-  quota: 50
+  maxsize: !!float 2
+  quota: !!float 50
   maxwidth: 1024
   maxheight: 1024
   replace: 0

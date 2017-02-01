@@ -1,10 +1,10 @@
-uuid: 2b5a5b1a-c423-4032-83de-766cb50c9f05
+uuid: 8a3aef51-e569-477b-89bf-ac0b55b24752
 name: Site-Install
 mail: admin@example.com
 slogan: ''
 page:
   403: ''
-  404: ''
+  404: /siden-blev-ikke-fundet
   front: /user
 admin_compact_mode: false
 weight_select_max: 100
