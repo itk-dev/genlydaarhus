@@ -1,0 +1,38 @@
+<div class="l-section has-bottom-margin">
+  {% include "modules-activity-hero" %}
+</div>
+
+<div class="l-section has-bottom-margin">
+  <div class="l-section has-bottom-margin">
+    <div class="l-cols">
+      <div class="l-col two-third desk-up">
+        <div class="l-section has-no-margin">  
+          {% include "modules-text-with-icon" with { textWithIcon: activityOverview.headingWithIconDescription, icon: activityOverview.headingWithIconDescription.icon } %}
+        </div>
+
+        <div class="l-section has-no-margin">
+          {% include "elements-category" with { category: { text: "IT" } } %}
+          {% include "elements-category" with { category: { text: "Spil" } } %}
+          {% include "elements-category" with { category: { text: "Sport" } } %}
+          {% include "elements-category" with { category: { text: "Mad og fællesskab" } } %}
+        </div>
+
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.</p>
+        <p>Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra.<p>
+
+        <h4>Vigtig information:</h4>
+        <ul>
+          <li>tilmeldingspligt</li>
+          <li>niveau</li>
+          <li>hjælp</li>
+        </ul>
+
+      </div>
+      <div class="l-col one-third desk-up">
+        <div class="l-section has-no-margin"> 
+          {% include "modules-text-with-icon" with { textWithIcon: activityOverview.headingWithIconDetails, icon: activityOverview.headingWithIconDetails.icon } %}
+        </div>
+        {% include 'components-activity-sidebar' %}
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,16 @@
+{% block header %}
+  {% include "components-header" %}
+{% endblock %}
+
+<main class="main">
+{% block content %}
+  {% block hero %}{% endblock %}
+  {% block main %}
+    <p>Content goes in here</p>
+  {% endblock %}
+</main>
+{% endblock %}
+
+{% include "elements-floating-help" %}
+
+{% include "components-footer" %}
