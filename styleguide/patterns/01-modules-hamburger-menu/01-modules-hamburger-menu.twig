@@ -7,9 +7,9 @@
 <nav class="hamburger-menu {{ transparent ? 'is-transparent' }}">
   <ul class="hamburger-menu--links">
     <li class="hamburger-menu--group">
-    {% for item in navigation.items %}
+    {% for item in hamburgermenuItems %}
       <a href="{{ item.url }}" class="hamburger-menu--link">
-        {% include "elements-icon" with { icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" } } %}
+        {% include "@elements/icons/icon.twig" with {icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" }} %}
         {{ item.title }}
       </a>
     {% endfor %}

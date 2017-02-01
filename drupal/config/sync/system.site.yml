@@ -4,8 +4,8 @@ mail: admin@example.com
 slogan: ''
 page:
   403: ''
-  404: /siden-blev-ikke-fundet
-  front: /user/login
+  404: /node/4
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 langcode: da
