@@ -1,0 +1,22 @@
+{
+  "help": {
+    "headingWithIcon": {
+      "title": "Få hjælp til opslag",
+      "subtitle": "Her kan du se ofte stillede spørgsmål",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin",
+        "color": "light"
+      }
+    },
+    "headingWithIconDetails": {
+      "title": "Har du spørgsmål?",
+      "subtitle": "Kontakt os gerne",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "bulletin",
+        "color": "light"
+      }
+    }
+  }
+}

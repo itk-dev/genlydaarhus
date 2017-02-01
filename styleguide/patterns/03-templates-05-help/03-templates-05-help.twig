@@ -1,14 +1,32 @@
 {% extends "templates-page" %}
 {% block main %}
-  <h2>Få hjælp til opslag</h2>
-  <h3>Spørgsmål 1</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
-  <h3>Spørgsmål 2</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
-  <h3>Spørgsmål 3</h3>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
-  <h2>Ring eller skriv, hvis du er i tvivl</h2>
-  <h3>Livlinie</h3>
-  {% include "elements-image" with {'class': 'has-margin', 'src': 'http://placehold.it/500x500'} %}
-  <p><a href="#">Kontakt</a></p>
+
+  <div class="container has-large-spacing">
+    <div class="l-section has-bottom-margin">
+      <div class="l-section has-bottom-margin">
+        <div class="l-cols">
+          <div class="l-col two-third desk-up">
+            <div class="l-section has-no-margin">  
+              {% include "modules-text-with-icon" with { textWithIcon: help.headingWithIcon, icon: help.headingWithIcon.icon } %}
+            </div>
+            <h3>Spørgsmål 1</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
+            <h3>Spørgsmål 2</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
+            <h3>Spørgsmål 3</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
+            <h3>Spørgsmål 4</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum, tellus quis porta rhoncus, mi velit molestie justo, in hendrerit turpis mauris eu magna.</p>
+          </div>
+          <div class="l-col one-third desk-up">
+            <div class="l-section has-no-margin"> 
+              {% include "modules-text-with-icon" with { textWithIcon: help.headingWithIconDetails, icon: help.headingWithIconDetails.icon } %}
+            </div>
+            {% include 'components-help-sidebar' %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 {% endblock %}
+

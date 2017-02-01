@@ -4,29 +4,8 @@
     <p class="floating-help--title">Spørgsmål? Klik her</p>
   </div>
   <p class="floating-help--subtitle">Har du spørgsmål eller brug for hjælp, så kontakt os endeligt.</p>
-  <div class="floating-help--info-wrapper">
-    <div class="floating-help--info-block">
-      {% include "elements-icon" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
-      <div class="floating-help-text">
-        <p class="floating-help--meta">Kontaktperson</p>
-        <p class="floating-help--info">Louise Elkjær Kortegård</p>
-      </div>
-    </div>
-    <div class="floating-help--info-block">
-      {% include "elements-icon" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
-      <div class="floating-help-text">
-        <p class="floating-help--meta">Telefon</p>
-        <p class="floating-help--info">12345678</p>
-      </div>
-    </div>
-    <div class="floating-help--info-block">
-      {% include "elements-icon" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
-      <div class="floating-help-text">
-        <p class="floating-help--meta">Mail</p>
-        <p class="floating-help--info">louise@genlydaarhus.dk</p>
-      </div>
-    </div>
-  </div>
 
+
+  {% include 'modules-contact-information' with { contactInformation: { class: "is-green-light has-spacing" } }  %}
   {% include 'elements-button' with { button: { class: "is-tertiary is-small is-full-width action-help", title: "Luk boks" } } %}
 </div>
