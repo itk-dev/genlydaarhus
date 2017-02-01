@@ -53,7 +53,7 @@
     position: relative;
     display: none;
     content: '';
-    top: 37%;
+    top: 16px;
     left: 32px;
     width: 5px;
     height: 10px;
@@ -84,17 +84,29 @@
 
   &.borderless {
     border-bottom: 1px solid $color-border-dark;
-    margin-left: $spacing-pixel-small;
+    margin-left: 0;
     margin-right: $spacing-pixel-small;
     padding-bottom: $spacing-pixel-xxsmall;
     padding-left: 0;
     padding-right: 0;
-    padding-top: $spacing-pixel-tiny;
+    padding-top: $spacing-pixel-xxsmall;
 
     .checkbox--indicator {
       background-color: transparent;
       border: 0;
       border-radius: 0;
+    }
+
+    .checkbox--indicator:after {
+      left: 8px;
+    }
+
+    &:before {
+      left: 0;
+    }
+
+    .checkbox--label {
+      margin-left: $spacing-pixel-medium;
     }
 
     input:checked ~ .checkbox--indicator {
