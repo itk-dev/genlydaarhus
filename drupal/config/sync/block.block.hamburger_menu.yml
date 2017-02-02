@@ -10,7 +10,7 @@ dependencies:
     - genlyd_aarhus
 id: hamburger_menu
 theme: genlyd_aarhus
-region: header
+region: hamburger_menu
 weight: 0
 provider: null
 plugin: 'system_menu_block:main'
