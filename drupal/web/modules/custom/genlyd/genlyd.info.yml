@@ -1,0 +1,5 @@
+name: Genlyd Aarhus
+type: module
+description: 'Enables modules'
+version: 1.0.0-alpha1
+core: 8.x
