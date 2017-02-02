@@ -1,6 +1,7 @@
 {% block header %}
   {% include "components-header" %}
 {% endblock %}
+{% include "modules-hamburger-menu" with { transparent: hamburgerMenu.class } %}
 
 <main class="main">
 {% block content %}

@@ -1,10 +1,9 @@
 <nav class="navigation {{ transparent ? 'is-transparent' }}">
   <div class="navigation--items">
-    {% for item in navigation.items %}
+    {% for item in navigationItems %}
       <a href="{{ item.url }}" title="{{ item.title }}" class="navigation--item {{ item.class }}">
         <div class="navigation--icon">
-            {% include "elements-icon" with { icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" } } %}
-            {% include "elements-icon" with { icon: item.icon } %}
+          {% include "@elements/icons/icon.twig" with {icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" }} %}
         </div>
         <span>{{ item.title }}</span>
       </a>

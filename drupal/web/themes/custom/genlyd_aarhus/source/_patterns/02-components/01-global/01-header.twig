@@ -2,16 +2,20 @@
   <div class="header--inner">
     <div class="header--logo">
       <div class="header--logo-inner">
-          <div class="header--logo-light">
-            {% include "elements-logo-light" %}
-          </div>
-          <div class="header--logo-dark">
-            {% include "elements-logo-dark" %}
-          </div>
+        <div class="header--logo-light">
+        {% block logo_light %}
+          {% include "@elements/images/logo-light.twig" %}
+        {% endblock %}
+        </div>
+        <div class="header--logo-dark">
+        {% block logo_dark %}
+          {% include "@elements/images/logo-dark.twig" %}
+        {% endblock %}
+        </div>
       </div>
     </div>
-
-    {% include "modules-navigation" with { transparent: transparent } %}
+    {% block header %}
+      {% include "@modules/navigation.twig" with { transparent: transparent } %}
+    {% endblock %}
   </div>
 </header>
-{% include "modules-hamburger-menu" with { transparent: transparent } %}

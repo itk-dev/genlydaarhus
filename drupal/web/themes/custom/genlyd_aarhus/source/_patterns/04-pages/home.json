@@ -2,6 +2,9 @@
   "hero": {
     "image": "/assets/images/styleguide/hero.jpg"
   },
+  "hamburgerMenu": {
+    "class": "is-transparent"
+  },
   "home": {
     "activityAction": {
       "text": "Ikke i nærheden af dig?",
