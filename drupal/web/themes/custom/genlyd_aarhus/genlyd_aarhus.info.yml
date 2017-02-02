@@ -8,6 +8,7 @@ libraries:
 
 regions:
   header: 'Header'
+  hamburger_menu: 'Hamburger menu'
   content: 'Content'
   footer: 'Footer'
 
