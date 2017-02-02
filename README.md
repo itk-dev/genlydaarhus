@@ -4,6 +4,18 @@
 
 This project consists of two parts: drupal and styleguide. 
 
+## Installation
+
+Change [config-dir] and database information to what applies to your installation.
+
+```sh
+cd drupal
+composer install
+
+cd web
+drush --yes site-install itkore --db-url='mysql://root:vagrant@localhost/db' --config-dir=/vagrant/htdocs/config/sync
+```
+
 ## Pattern lab
 
 The styleguide is created by pattern-lab. The source of the styleguide is in web/themes/genlyd_theme/source.
