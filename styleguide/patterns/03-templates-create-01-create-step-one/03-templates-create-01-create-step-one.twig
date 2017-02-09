@@ -1,5 +1,5 @@
-{% extends "templates-page" %}
-{% block main %}
+{% embed "page.twig" %}
+  {% block main %}
   <div class="container has-large-spacing">
 
     <div class="l-heading-section no-spacing">
@@ -55,4 +55,5 @@
     </div>
 
   </div>
-{% endblock %}
+  {% endblock %}
+{% endembed %}

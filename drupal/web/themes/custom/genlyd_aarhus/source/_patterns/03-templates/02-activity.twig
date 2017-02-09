@@ -1,5 +1,5 @@
-{% extends "templates-page" %}
-{% block main %}
+{% embed "page.twig" %}
+  {% block main %}
   <div class="container has-large-spacing">
     
     {% include 'components-activity-overview' with { activityOverview: activity.activityOverview } %}
@@ -37,4 +37,5 @@
       {% include "modules-call-to-action" with { callToAction: activity.callToAction } %}
     </div>
   </div>
-{% endblock %}
+  {% endblock %}
+{% endembed %}

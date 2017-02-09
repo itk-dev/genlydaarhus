@@ -1,5 +1,5 @@
-{% extends "templates-page" %}
-{% block main %}
+{% embed "page.twig" %}
+  {% block main %}
   <div class="container has-large-spacing">
     <div class="l-heading-section">
       {% include 'modules-heading-with-icon' with { headingWithIcon: register.headingWithIcon, icon: register.headingWithIcon.icon } %}
@@ -68,4 +68,5 @@
     <div class="l-section has-bottom-margin layout flex">
     </div>
   </div>
-{% endblock %}
+  {% endblock %}
+{% endembed %}

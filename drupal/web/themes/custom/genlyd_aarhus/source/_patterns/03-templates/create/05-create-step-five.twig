@@ -1,5 +1,5 @@
-{% extends "templates-page" %}
-{% block main %}
+{% embed "page.twig" %}
+  {% block main %}
   <div class="container has-large-spacing">
     
     <div class="l-heading-section no-spacing">
@@ -61,4 +61,5 @@
     <div class="l-section has-no-margin">  
       {% include 'modules-create-navigation' %}
     </div>
-{% endblock %}
+  {% endblock %}
+{% endembed %}

@@ -8,7 +8,7 @@
         <p class="footer--text">Søren Frichs Vej 36M</p>
         <p class="footer--text">8230 Åbyhøj</p>
         <div class="footer--logo">
-          {% include 'elements-logo-aarhus' %}
+          {% include "@elements/images/logo-aarhus.twig" %}
         </div>
       </div>
     </div>
@@ -17,6 +17,8 @@
       <div class="footer--col-inner">
         <h3 class="footer--title">Om Genlyd Aarhus</h3>
         <a class="footer--link" href="#">
+          {% include "@elements/images/logo-aarhus.twig" %}
+
           {% include "elements-icon" with { icon: { type: "chevron-small", class: "is-xtiny is-white has-small-margin" } } %}
           <span>Hvad er Genlyd</span>
         </a>

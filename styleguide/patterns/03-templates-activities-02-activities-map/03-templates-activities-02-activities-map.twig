@@ -1,4 +1,5 @@
-{% extends "templates-page" %}
-{% block main %}
-  {% include "modules-map" %}
-{% endblock %}
+{% embed "page.twig" %}
+  {% block main %}
+    {% include "modules-map" %}
+  {% endblock %}
+{% endembed %}

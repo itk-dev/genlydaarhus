@@ -1,6 +1,7 @@
-{% extends "templates-page" %}
-{% block main %}
+{% embed "page.twig" %}
+  {% block main %}
   <div class="container has-large-spacing">
     {% include "components-introduction" %}
   </div>
-{% endblock %}
+  {% endblock %}
+{% endembed %}
