@@ -1,11 +1,8 @@
 <div class="footer-block">
   <div class="footer-block--inner">
-    <h3 class="footer-block--title">Kontakt</h3>
+    <h3 class="footer-block--title">{{ footerBlockTitle }}</h3>
     <div class="footer-block--text">
-      <p>Genlyd Aarhus</p>
-      <p>Sundhed og Omsorg</p>
-      <p>Søren Frichs Vej 36M</p>
-      <p>8230 Åbyhøj</p>
+      {{ footerBlockContent|raw }}
     </div>
     <div class="footer-block--logo">
       {% include "@elements/images/logo-aarhus.twig" %}
