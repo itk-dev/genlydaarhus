@@ -54,3 +54,11 @@
 {% if page.hamburger_menu %}
   {{ page.hamburger_menu }}
 {% endif %}
+{% embed "@components/01-global/02-footer.twig" %}
+  {% if page.footer %}
+    {% block content %}
+      {% include "@modules/footer-block.twig" %}
+      {{ page.footer }}
+    {% endblock %}
+  {% endif %}
+{% endembed %}

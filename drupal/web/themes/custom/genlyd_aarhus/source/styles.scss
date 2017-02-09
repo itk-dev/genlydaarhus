@@ -21,7 +21,6 @@
 /* Layouts */
 @import "_layouts/breakpoints";
 @import "_layouts/layout";
-@import "_layouts/helpers";
 @import "_layouts/grid";
 
 /* Elements */
@@ -42,6 +41,7 @@
 @import "_patterns/00-elements/forms/suggestion";
 @import "_patterns/00-elements/forms/help-box";
 @import "_patterns/00-elements/headings/heading-meta";
+@import "_patterns/00-elements/headings/footer-heading";
 @import "_patterns/00-elements/floating-help";
 
 /* Modules */
@@ -66,6 +66,7 @@
 @import "_patterns/01-modules/filters";
 @import "_patterns/01-modules/social-buttons";
 @import "_patterns/01-modules/contact-information";
+@import "_patterns/01-modules/footer-block";
 
 /* Components */
 @import "_patterns/02-components/01-global/01-header";

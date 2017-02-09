@@ -1,0 +1,24 @@
+uuid: 57bad938-50bb-4726-b56b-054ce21f2cc0
+langcode: da
+status: true
+dependencies:
+  config:
+    - system.menu.footer-secondary
+  module:
+    - system
+  theme:
+    - genlyd_aarhus
+id: footer_secondary
+theme: genlyd_aarhus
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-secondary'
+settings:
+  id: 'system_menu_block:footer-secondary'
+  label: Aktiviteter
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 1
+visibility: {  }
