@@ -1,11 +1,10 @@
 <div class="floating-help">
   <div class="floating-help--button">
-    {% include 'elements-icon' with { icon: { "class": "is-tiny has-small-margin is-white", "type": "help" } } %}
+    {% include '@elements/icons/icon.twig' with { icon: { "class": "is-tiny has-small-margin is-white", "type": "help" } } %}
     <p class="floating-help--title">Spørgsmål? Klik her</p>
   </div>
   <p class="floating-help--subtitle">Har du spørgsmål eller brug for hjælp, så kontakt os endeligt.</p>
 
-
-  {% include 'modules-contact-information' with { contactInformation: { class: "is-green-light has-spacing" } }  %}
-  {% include 'elements-button' with { button: { class: "is-tertiary is-small is-full-width action-help", title: "Luk boks" } } %}
+  {% include '@modules/contact-information.twig' with { contactInformation: { class: "is-green-light has-spacing" } }  %}
+  {% include '@elements/buttons/00-button.twig' with { button: { class: "is-tertiary is-small is-full-width action-help", title: "Luk boks" } } %}
 </div>
