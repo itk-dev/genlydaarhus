@@ -2,16 +2,16 @@
   <div class="header--inner">
     <div class="header--logo">
       <div class="header--logo-inner">
-        <div class="header--logo-light">
+        <a class="header--logo-light" href="/">
         {% block logo_light %}
           {% include "@elements/images/logo-light.twig" %}
         {% endblock %}
-        </div>
-        <div class="header--logo-dark">
+        </a>
+        <a class="header--logo-dark" href="/">
         {% block logo_dark %}
           {% include "@elements/images/logo-dark.twig" %}
         {% endblock %}
-        </div>
+        </a>
       </div>
     </div>
     {% block header %}
