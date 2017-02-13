@@ -7,5 +7,6 @@ hamburger-menu:
   version: VERSION
   js:
     source/assets/js/hamburger-menu.js: {}
+    source/assets/js/floating-help.js: {}
   dependencies:
       - core/jquery
