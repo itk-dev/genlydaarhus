@@ -1,0 +1,20 @@
+uuid: a11434a4-3fcf-4e1d-9a23-b9182f7c323b
+langcode: da
+status: true
+dependencies:
+  module:
+    - itkore_footer
+  theme:
+    - genlyd_aarhus
+id: itkorefooter
+theme: genlyd_aarhus
+region: footer
+weight: -2
+provider: null
+plugin: itkore_footer
+settings:
+  id: itkore_footer
+  label: Footer
+  provider: itkore_footer
+  label_display: '0'
+visibility: {  }
