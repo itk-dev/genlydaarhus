@@ -1,17 +1,16 @@
 {% block header %}
-  {% include "components-header" %}
+  {% include "@components/01-global/01-header.twig" %}
+  {% include "@modules/hamburger-menu.twig" with { transparent: hamburgerMenu.class } %}
 {% endblock %}
-{% include "modules-hamburger-menu" with { transparent: hamburgerMenu.class } %}
 
-<main class="main">
-{% block content %}
   {% block hero %}{% endblock %}
-  {% block main %}
-    <p>Content goes in here</p>
-  {% endblock %}
-</main>
+  <main class="main">
+    {% block main %}
+    {% endblock %}
+  </main>
+
+{% include "@elements/floating-help.twig" %}
+
+{% block footer %}
+  {% include "@components/01-global/02-footer.twig" %}
 {% endblock %}
-
-{% include "elements-floating-help" %}
-
-{% include "components-footer" %}
