@@ -20,3 +20,8 @@ body {
 a {
   color: $color-black-light;
 }
+
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
