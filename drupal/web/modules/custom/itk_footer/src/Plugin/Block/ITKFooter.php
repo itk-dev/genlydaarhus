@@ -21,7 +21,7 @@ class ITKFooter extends BlockBase {
   public function build() {
     $config = \Drupal::getContainer()->get('itk_footer.config')->getAll();
 
-    $footer_title = check_markup($config['footer_title'], 'filtered_html');
+    $footer_title = $config['footer_title'];
     $footer_text = check_markup($config['footer_text'], 'filtered_html');
 
     return array(
