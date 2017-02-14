@@ -5,8 +5,8 @@ module:
   components: 0
   config: 0
   config_translation: 0
-  datetime: 0
   ctools: 0
+  datetime: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
@@ -21,6 +21,7 @@ module:
   image: 0
   itk_admin_links: 0
   itk_cookie_message: 0
+  itk_floating_help: 0
   itk_footer: 0
   itk_hero: 0
   language: 0
