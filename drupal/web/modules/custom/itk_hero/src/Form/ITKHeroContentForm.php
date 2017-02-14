@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains Drupal\itk_hero\Form\ItkoreFrontpageHeaderSettingsForm.
+ * Contains Drupal\itk_hero\Form\ITKHeroContentForm.
  */
 
 namespace Drupal\itk_hero\Form;
