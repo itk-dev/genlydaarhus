@@ -22,7 +22,7 @@ class ITKHero extends BlockBase {
     $config = \Drupal::getContainer()->get('itk_hero.config')->getAll();
 
     // Fetch header top file.
-    $file = ($config['frontpage_image']) ? File::load($config['frontpage_image']) : FALSE;
+    $file = isset($config['frontpage_image']) ? File::load($config['frontpage_image']) : FALSE;
     $config['frontpage_image_url'] = $file ? $file->url() : '';
 
     return array(
