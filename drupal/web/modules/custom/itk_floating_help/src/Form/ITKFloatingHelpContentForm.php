@@ -1,16 +1,13 @@
 <?php
 /**
  * @file
- * Contains Drupal\itkore_frontpage_header\Form\ItkoreFrontpageHeaderSettingsForm.
+ * Contains Drupal\itk_floating_help\Form\ITKFloatingHelpContentForm.
  */
 
 namespace Drupal\itk_floating_help\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
-use Drupal\Core\Session\AccountInterface;
-use Drupal\system\Entity\Menu;
-use Drupal\Core\Session;
 
 /**
  * Class ITKFloatingHelpContentForm
@@ -32,7 +29,7 @@ class ITKFloatingHelpContentForm extends FormBase {
    * @return object
    */
   private function getBaseConfig() {
-    return \Drupal::getContainer()->get('itkore_admin.itkore_config');
+    return \Drupal::getContainer()->get('itk_floating_help.config');
   }
 
   /**
@@ -41,19 +38,49 @@ class ITKFloatingHelpContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->getBaseConfig();
 
-    $form['footer_title'] = array(
+    $form['intro_wrapper'] = array(
+      '#title' => $this->t('ITK Floating Help'),
+      '#type' => 'item',
+      '#description' => $this->t('Configure the content of the floating help module.'),
+      '#weight' => '1',
+      '#open' => TRUE,
+    );
+
+    $form['floating_help_title'] = array(
       '#title' => $this->t('Title'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('footer_title'),
+      '#default_value' => $config->get('floating_help_title'),
+      '#required' => true,
       '#weight' => '1',
     );
 
-    $form['footer_text'] = array(
+    $form['floating_help_text'] = array(
       '#title' => $this->t('Text'),
-      '#type' => 'text_format',
-      '#format' => 'filtered_html',
-      '#default_value' => $config->get('footer_text'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('floating_help_text'),
+      '#required' => true,
       '#weight' => '2',
+    );
+
+    $form['floating_help_contact'] = array(
+      '#title' => $this->t('Contact'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('floating_help_contact'),
+      '#weight' => '3',
+    );
+
+    $form['floating_help_phone'] = array(
+      '#title' => $this->t('Phone'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('floating_help_phone'),
+      '#weight' => '4',
+    );
+
+    $form['floating_help_email'] = array(
+      '#title' => $this->t('Email'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('floating_help_email'),
+      '#weight' => '4',
     );
 
     $form['submit'] = array(
@@ -73,11 +100,13 @@ class ITKFloatingHelpContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple(array(
-      'footer_title' => $form_state->getValue('footer_title'),
-      'footer_text' => $form_state->getValue('footer_text')['value'],
+      'floating_help_title' => $form_state->getValue('floating_help_title'),
+      'floating_help_text' => $form_state->getValue('floating_help_text'),
+      'floating_help_contact' => $form_state->getValue('floating_help_contact'),
+      'floating_help_phone' => $form_state->getValue('floating_help_phone'),
+      'floating_help_email' => $form_state->getValue('floating_help_email'),
     ));
 
     drupal_flush_all_caches();
   }
 }
-

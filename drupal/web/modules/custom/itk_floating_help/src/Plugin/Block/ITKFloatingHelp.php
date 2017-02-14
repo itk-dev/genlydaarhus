@@ -18,19 +18,20 @@ class ITKFloatingHelp extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $config = \Drupal::getContainer()->get('itkore_admin.itkore_config')->getAll();
+    $config = \Drupal::getContainer()->get('itk_floating_help.config')->getAll();
 
-    $footer_title = $config['footer_title'];
-    $footer_text = check_markup($config['footer_text'], 'filtered_html');
+    $floating_help_title = $config['floating_help_title'];
+    $floating_help_text = $config['floating_help_text'];
+    $floating_help_contact = $config['floating_help_contact'];
+    $floating_help_phone = $config['floating_help_phone'];
+    $floating_help_email = $config['floating_help_email'];
 
     return array (
-      '#type' => 'markup',
-      '#theme' => 'itkore_footer_block',
-      '#cache' => array(
-        'max-age' => 0,
-      ),
-      '#footer_title' => $footer_title,
-      '#footer_text' => $footer_text,
+      '#floating_help_title' => $floating_help_title,
+      '#floating_help_text' => $floating_help_text,
+      '#floating_help_contact' => $floating_help_contact,
+      '#floating_help_phone' => $floating_help_phone,
+      '#floating_help_email' => $floating_help_email,
     );
   }
 
@@ -43,4 +44,3 @@ class ITKFloatingHelp extends BlockBase {
     return $form;
   }
 }
-?>
