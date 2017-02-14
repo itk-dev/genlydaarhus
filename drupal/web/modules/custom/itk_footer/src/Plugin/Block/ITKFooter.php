@@ -21,6 +21,7 @@ class ITKFooter extends BlockBase {
   public function build() {
     $config = \Drupal::getContainer()->get('itk_footer.config')->getAll();
 
+    $footer_title = check_markup($config['footer_title'], 'filtered_html');
     $footer_text = check_markup($config['footer_text'], 'filtered_html');
 
     return array(
@@ -29,6 +30,7 @@ class ITKFooter extends BlockBase {
       '#cache' => array(
         'max-age' => 0,
       ),
+      '#footer_title' => $footer_title,
       '#footer_text' => $footer_text,
     );
   }

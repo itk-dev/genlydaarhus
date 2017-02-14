@@ -38,12 +38,19 @@ class ITKFooterContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->getBaseConfig();
 
+    $form['footer_title'] = array(
+      '#title' => $this->t('Title'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('footer_title'),
+      '#weight' => '1',
+    );
+
     $form['footer_text'] = array(
       '#title' => $this->t('Text'),
       '#type' => 'text_format',
       '#format' => 'filtered_html',
       '#default_value' => $config->get('footer_text'),
-      '#weight' => '1',
+      '#weight' => '2',
     );
 
     $form['submit'] = array(
@@ -63,6 +70,7 @@ class ITKFooterContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple(array(
+      'footer_title' => $form_state->getValue('footer_title')['value'],
       'footer_text' => $form_state->getValue('footer_text')['value'],
     ));
 

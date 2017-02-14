@@ -4,11 +4,17 @@
  * Display of footer
  *
  * Available variables:
+ * - footer_title: The heading.
  * - footer_text: Rendered html of the footer.
  */
 #}
 <div class="footer">
-  <div class="footer--text">
-    {{ footer_text }}
-  </div>
+    {% if footer_title %}
+        <h3>{{ footer_title }}</h3>
+    {% endif %}
+    {% if footer_text %}
+        <div class="footer--text">
+            {{ footer_text }}
+        </div>
+    {% endif %}
 </div>
