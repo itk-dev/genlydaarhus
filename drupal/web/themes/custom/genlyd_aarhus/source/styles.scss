@@ -42,10 +42,10 @@
 @import "_patterns/00-elements/forms/help-box";
 @import "_patterns/00-elements/headings/heading-meta";
 @import "_patterns/00-elements/headings/footer-heading";
-@import "_patterns/00-elements/floating-help";
 
 /* Modules */
 @import "_patterns/01-modules/cards/card-activity";
+@import "_patterns/01-modules/cards/card-edit-overlay";
 @import "_patterns/01-modules/activity-search";
 @import "_patterns/01-modules/activity-action";
 @import "_patterns/01-modules/categories";
@@ -75,3 +75,4 @@
 @import "_patterns/02-components/introduction";
 @import "_patterns/02-components/activity-sidebar";
 @import "_patterns/02-components/help-sidebar";
+@import "_patterns/02-components/floating-help";

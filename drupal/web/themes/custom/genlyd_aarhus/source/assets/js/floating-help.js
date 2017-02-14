@@ -7,8 +7,8 @@
 
 jQuery(document).ready(function($) {
   // Set variables.
-  var floatingHelp = $('.floating-help');
-  var closeButton = $('.action-help');
+  var floatingHelp = $('.js-floating-help-open');
+  var closeButton = $('.js-floating-help-close');
 
   // Open floating help.
   floatingHelp.click(function() {
@@ -20,6 +20,6 @@ jQuery(document).ready(function($) {
   // Close floating help.
   closeButton.click(function() {
     floatingHelp.removeClass('is-open');
-    event.stopPropagation();
+    return false;
   })
 });
