@@ -70,7 +70,7 @@ class ITKFooterContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple(array(
-      'footer_title' => $form_state->getValue('footer_title')['value'],
+      'footer_title' => $form_state->getValue('footer_title'),
       'footer_text' => $form_state->getValue('footer_text')['value'],
     ));
 
