@@ -1,0 +1,4 @@
+itk_footer.admin:
+  title: 'Footer'
+  route_name: itk_footer.content
+  base_route: system.admin_content

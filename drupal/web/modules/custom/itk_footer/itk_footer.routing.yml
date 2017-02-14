@@ -1,0 +1,7 @@
+itk_footer.content:
+  path: '/admin/content/itk_footer'
+  defaults:
+    _form: '\Drupal\itk_footer\Form\ItkFooterContentForm'
+    _title: 'Footer'
+  requirements:
+    _permission: 'administer content'

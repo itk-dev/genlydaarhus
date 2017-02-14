@@ -1,0 +1,6 @@
+itk_cookie_message.settings:
+  title: 'Cookie message'
+  parent: system.admin_config_system
+  description: 'Show a message about cookies being used on the site (cf. the EU Directive on Privacy and Electronic Communications).'
+  route_name: itk_cookie_message.settings
+  weight: -20

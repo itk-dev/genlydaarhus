@@ -1,0 +1,7 @@
+itk_hero.content:
+  path: '/admin/content/hero'
+  defaults:
+    _form: '\Drupal\itk_hero\Form\ITKHeroContentForm'
+    _title: 'Hero'
+  requirements:
+    _permission: 'administer content'
