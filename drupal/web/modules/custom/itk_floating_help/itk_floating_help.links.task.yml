@@ -1,0 +1,4 @@
+itk_floating_help.admin:
+  title: 'Floating help'
+  route_name: itk_floating_help.content
+  base_route: system.admin_content

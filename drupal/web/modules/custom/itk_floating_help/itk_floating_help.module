@@ -1,0 +1,17 @@
+<?php
+/**
+ * @file
+ * Add template for widget.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function itk_floating_help($existing, $type, $theme, $path) {
+  return array(
+    'itk_floating_help_block' => array(
+      'template' => 'itk-floating-help-block',
+      'variables' => ['itk_floating_help_title' => NULL, 'itk_floating_help_text' => NULL, 'menus' => NULL],
+    ),
+  );
+}
