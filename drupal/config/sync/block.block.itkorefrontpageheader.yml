@@ -1,0 +1,26 @@
+uuid: 2f9db36c-e7d8-4c97-96f8-c6b3ca2b547a
+langcode: da
+status: true
+dependencies:
+  module:
+    - itkore_frontpage_header
+    - system
+  theme:
+    - genlyd_aarhus
+id: itkorefrontpageheader
+theme: genlyd_aarhus
+region: content
+weight: 0
+provider: null
+plugin: itkore_frontpage_header
+settings:
+  id: itkore_frontpage_header
+  label: 'ITKore frontpage header'
+  provider: itkore_frontpage_header
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }
