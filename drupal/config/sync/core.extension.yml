@@ -5,13 +5,12 @@ module:
   components: 0
   config: 0
   config_translation: 0
-  ctools: 0
   datetime: 0
+  ctools: 0
   dblog: 0
   dynamic_page_cache: 0
   editor: 0
   entity_reference: 0
-  entity_reference_revisions: 0
   field: 0
   field_group: 0
   field_ui: 0
@@ -20,7 +19,6 @@ module:
   genlyd: 0
   help: 0
   image: 0
-  imce: 0
   itk_admin_links: 0
   itk_cookie_message: 0
   itk_footer: 0
@@ -32,10 +30,8 @@ module:
   metatag: 0
   node: 0
   page_cache: 0
-  paragraphs: 0
   path: 0
   redirect: 0
-  role_delegation: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -45,7 +41,6 @@ module:
   update: 0
   user: 0
   views_ui: 0
-  youtube: 0
   menu_link_content: 1
   pathauto: 1
   views: 10

@@ -1,8 +1,0 @@
-uuid: 5a15d9f4-7c85-45d4-849a-b69ef07e2b61
-langcode: da
-status: true
-dependencies: {  }
-_core:
-  default_config_hash: 654Khoz8fJcdW995IT2Hfdit264QtEp6MWf2AfXvB48
-id: itk_internal_link
-label: 'Liste element/link'
