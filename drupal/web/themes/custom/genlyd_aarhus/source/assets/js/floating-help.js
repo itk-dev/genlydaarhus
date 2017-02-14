@@ -1,14 +1,24 @@
+/**
+ *
+ * Toggle floating help
+ *
+ */
+
+
 jQuery(document).ready(function($) {
+  // Set variables.
   var floatingHelp = $('.floating-help');
   var closeButton = $('.action-help');
 
-  floatingHelp.click(function(){
-    if(!floatingHelp.hasClass('is-open')) {
+  // Open floating help.
+  floatingHelp.click(function() {
+    if (!floatingHelp.hasClass('is-open')) {
       floatingHelp.addClass('is-open');
     }
   });
 
-  closeButton.click(function(e){
+  // Close floating help.
+  closeButton.click(function() {
     floatingHelp.removeClass('is-open');
     return false;
   })

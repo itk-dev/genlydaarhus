@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Display of frontpage header block
+ *
+ * Available variables:
+ * - content['#variables']: Holds variables from itkore frontpage config page.
+ */
+#}
+
+{% include "@modules/hero.twig" with
+    {
+        hero: {
+            lead: content['#variables'].frontpage_lead,
+            sub: content['#variables'].frontpage_sub,
+            image: content['#variables'].frontpage_image_url,
+            buttons: [
+                {
+                    href: content['#variables'].frontpage_link,
+                    title: content['#variables'].frontpage_button
+                }
+            ]
+        }
+    }
+%}
