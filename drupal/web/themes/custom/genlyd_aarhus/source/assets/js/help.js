@@ -8,8 +8,8 @@ jQuery(document).ready(function($) {
     }
   });
 
-  closeButton.click(function(){
+  closeButton.click(function(e){
     floatingHelp.removeClass('is-open');
-    event.stopPropagation();
+    return false;
   })
 });

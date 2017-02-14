@@ -9,32 +9,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "12 Januar"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "12 tilmeldte"
         }
@@ -50,32 +50,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "5 Februar"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "4 tilmeldte"
         }
@@ -91,32 +91,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "23 Marts"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "15 tilmeldte"
         }
@@ -132,32 +132,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "3. April"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "2 tilmeldte"
         }
@@ -173,32 +173,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "7. Maj"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "8 tilmeldte"
         }
@@ -214,32 +214,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "{{ attribute(link, 'templates-activity') }}",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "16. Juni"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "8 tilmeldte"
         }
@@ -254,32 +254,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "9. Juli"
         },
-        { 
+        {
           "label": "Pris",
           "text": "Gratis"
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "8 tilmeldte"
         }
@@ -294,32 +294,32 @@
 
       "edit": true,
       "editButtons" : [
-        {  
-          "class": "is-secondary is-light is-small is-full-width action-delete",
+        {
+          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
           "href": "#",
           "title": "Slet"
         },
-        { 
+        {
           "class": "is-cta is-small is-full-width",
           "href": "#",
           "title": "Rediger"
         }
       ],
-      
+
       "activityMetas" : [
-        {  
+        {
           "label": "Dato",
           "text": "30. August"
         },
-        { 
+        {
           "label": "Pris",
           "text": "50 kr."
         },
-        { 
+        {
           "label": "Område",
           "text": "Højbjerg"
         },
-        { 
+        {
           "label": "Deltagere",
           "text": "8 tilmeldte"
         }

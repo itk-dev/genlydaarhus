@@ -73,34 +73,4 @@
   &--button {
     width: 48%;
   }
-
-  &--overlay {
-    align-items: center;
-    background-color: transparentize($color-black, .1);
-    display: none;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-  }
-
-  &--overlay-warning {
-    font-size: $font-size-large;
-    font-weight: 600;
-    margin-bottom: $spacing-pixel-normal;
-    margin-top: 0;
-    padding-left: $spacing-pixel-medium;
-    padding-right: $spacing-pixel-medium;
-    text-align: center;
-  }
-
-  &--overlay-buttons {
-    .button {
-      &:first-child {
-        margin-bottom: $spacing-pixel-xxxsmall;
-      }
-    }
-  }
 }
