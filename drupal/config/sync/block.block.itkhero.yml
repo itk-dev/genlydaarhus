@@ -1,0 +1,26 @@
+uuid: 5625128e-c825-48db-9f64-f3d5797195ea
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_hero
+    - system
+  theme:
+    - genlyd_aarhus
+id: itkhero
+theme: genlyd_aarhus
+region: content
+weight: 0
+provider: null
+plugin: itk_hero
+settings:
+  id: itk_hero
+  label: 'ITK hero'
+  provider: itk_hero
+  label_display: '0'
+visibility:
+  request_path:
+    id: request_path
+    pages: '<front>'
+    negate: false
+    context_mapping: {  }

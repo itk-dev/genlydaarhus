@@ -1,0 +1,20 @@
+uuid: 2583c2cc-c223-499e-8b4d-9c45fdb7faba
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_footer
+  theme:
+    - genlyd_aarhus
+id: itkfooter
+theme: genlyd_aarhus
+region: footer
+weight: -2
+provider: null
+plugin: itk_footer
+settings:
+  id: itk_footer
+  label: 'ITK footer'
+  provider: itk_footer
+  label_display: '0'
+visibility: {  }

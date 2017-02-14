@@ -1,0 +1,4 @@
+services:
+  itk_footer.config:
+    class: Drupal\itk_footer\State\ITKFooterConfig
+    arguments: ['@serialization.json', '@database']

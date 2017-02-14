@@ -1,0 +1,21 @@
+uuid: a7cb7f13-be21-4241-bbd6-003bd4caff13
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_date
+    - node.type.activity
+  module:
+    - datetime
+id: node.activity.field_date
+field_name: field_date
+entity_type: node
+bundle: activity
+label: Date
+description: 'Dato for aktiviteten.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: datetime

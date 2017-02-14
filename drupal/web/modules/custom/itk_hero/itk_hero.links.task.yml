@@ -1,0 +1,4 @@
+itk_hero.admin:
+  title: 'Hero'
+  route_name: itk_hero.content
+  base_route: system.admin_content

@@ -1,0 +1,11 @@
+uuid: a3044cb7-d31f-4307-9608-173ea4563df2
+langcode: da
+status: true
+dependencies:
+  config:
+    - node.type.activity
+id: node.activity
+target_entity_type_id: node
+target_bundle: activity
+default_langcode: site_default
+language_alterable: false
