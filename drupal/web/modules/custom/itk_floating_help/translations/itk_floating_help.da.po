@@ -1,4 +1,4 @@
-# Danish translation of ITkore admin (8.x-1.0)
+# Danish translation of ITK Floating Help (8.x-1.0)
 #
 msgid ""
 msgstr ""

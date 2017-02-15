@@ -1,20 +1,20 @@
 {#
 /**
  * @file
- * Display of footer
+ * Display of itk_footer
  *
  * Available variables:
- * - footer_title: The heading.
- * - footer_text: Rendered html of the footer.
+ * - itk_footer_title: The heading.
+ * - itk_footer_text: Rendered html of the footer.
  */
 #}
 <div class="footer">
-    {% if footer_title %}
-        <h3>{{ footer_title }}</h3>
+    {% if itk_footer_title %}
+        <h3>{{ itk_footer_title }}</h3>
     {% endif %}
-    {% if footer_text %}
+    {% if itk_footer_text %}
         <div class="footer--text">
-            {{ footer_text }}
+            {{ itk_footer_text }}
         </div>
     {% endif %}
 </div>

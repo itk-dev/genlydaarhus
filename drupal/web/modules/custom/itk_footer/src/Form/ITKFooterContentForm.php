@@ -38,24 +38,34 @@ class ITKFooterContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->getBaseConfig();
 
-    $form['footer_title'] = array(
+    $form['wrapper'] = array(
+      '#title' => $this->t('ITK Footer'),
+      '#type' => 'details',
+      '#description' => $this->t('Configure the content of the footer module.'),
+      '#weight' => '1',
+      '#open' => TRUE,
+    );
+
+    $form['wrapper']['itk_footer_title'] = array(
       '#title' => $this->t('Title'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('footer_title'),
+      '#default_value' => $config->get('itk_footer_title'),
       '#weight' => '1',
     );
 
-    $form['footer_text'] = array(
+    $form['wrapper']['itk_footer_text'] = array(
       '#title' => $this->t('Text'),
       '#type' => 'text_format',
       '#format' => 'filtered_html',
-      '#default_value' => $config->get('footer_text'),
+      '#default_value' => $config->get('itk_footer_text'),
       '#weight' => '2',
     );
 
-    $form['submit'] = array(
+    $form['actions'] = array('#type' => 'actions');
+    $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => t('Save changes'),
+      '#attributes' => ['class' => ['button--primary']],
+      '#value' => t('Save content'),
       '#weight' => '6',
     );
 
@@ -70,8 +80,8 @@ class ITKFooterContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple(array(
-      'footer_title' => $form_state->getValue('footer_title'),
-      'footer_text' => $form_state->getValue('footer_text')['value'],
+      'itk_footer_title' => $form_state->getValue('itk_footer_title'),
+      'itk_footer_text' => $form_state->getValue('itk_footer_text')['value'],
     ));
 
     drupal_flush_all_caches();

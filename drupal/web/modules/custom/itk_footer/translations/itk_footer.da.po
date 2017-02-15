@@ -1,0 +1,19 @@
+# Danish translation of ITK Footer (8.x-1.0)
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ITK footer (8.x-1.0)\n"
+"POT-Creation-Date: 2016-06-12 11:00+0000\n"
+"PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
+"Language-Team: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+msgid "Configure the content of the footer module."
+msgstr "Konfigurer indholdet af footer modulet."
+msgid "Title"
+msgstr "Overskrift"
+msgid "Text"
+msgstr "Tekst"
