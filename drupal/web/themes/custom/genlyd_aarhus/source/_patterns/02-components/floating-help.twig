@@ -1,10 +1,10 @@
 <div class="floating-help js-floating-help-open">
   <div class="floating-help--button">
     {% include '@elements/icons/icon.twig' with { icon: { "class": "is-tiny has-small-margin is-white", "type": "help" } } %}
-    <p class="floating-help--title">{{ floatingHelp.title }}</p>
+    <p class="floating-help--title">{{ floatingHelp.buttonLabelClosed }}</p>
   </div>
   <p class="floating-help--subtitle">{{ floatingHelp.text }}</p>
 
   {% include '@modules/contact-information.twig' with { contactInformation: contactInformation, contactInformationClass: "is-green-light has-spacing" }  %}
-  {% include '@elements/buttons/00-button.twig' with { button: { class: "is-tertiary is-small is-full-width js-floating-help-close", title: floatingHelp.buttonLabel }} %}
+  {% include '@elements/buttons/00-button.twig' with { button: { class: "is-tertiary is-small is-full-width js-floating-help-close", title: floatingHelp.buttonLabelOpen }} %}
 </div>
