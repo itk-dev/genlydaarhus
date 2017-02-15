@@ -23,6 +23,7 @@
 @import "_layouts/layout";
 @import "_layouts/grid";
 @import "_layouts/card";
+@import "_layouts/card-header";
 
 /* Elements */
 @import "_patterns/00-elements/02-text/inline-elements";
@@ -47,7 +48,6 @@
 /* Modules */
 @import "_patterns/01-modules/cards/card-actions";
 @import "_patterns/01-modules/cards/card-edit-overlay";
-@import "_patterns/01-modules/cards/card-header";
 @import "_patterns/01-modules/cards/card-info";
 @import "_patterns/01-modules/activity-search";
 @import "_patterns/01-modules/activity-action";

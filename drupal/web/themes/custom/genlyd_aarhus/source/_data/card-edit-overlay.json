@@ -1,13 +1,13 @@
 {
   "cardEditOverlay": {
-    "title": "Er du sikker på du vil slette aktiviteten?!!!",
+    "title": "Er du sikker på du vil slette aktiviteten?",
     "deleteButton": {
-      "class": "is-delete is-small is-full-width",
+      "class": "is-delete is-small is-half-width has-margin-bottom",
       "href": "#",
       "title": "Slet"
     },
     "backButton": {
-      "class": "is-secondary is-small is-light is-full-width js-card-edit-overlay-back",
+      "class": "is-secondary is-small is-light is-half-width js-card-edit-overlay-back",
       "href": "#",
       "title": "Tilbage"
     }
