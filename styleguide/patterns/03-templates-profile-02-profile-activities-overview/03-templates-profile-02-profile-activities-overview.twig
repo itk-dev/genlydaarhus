@@ -19,7 +19,7 @@
 
       <div class="grid">
         <div class="grid--inner">
-          {% for item in activitiesEdit|slice(0, 3) %}
+          {% for item in activities|slice(0, 3) %}
             <article class="grid--item">
               {% include "components-card-activity-edit" with { cardActivity: item } %}
             </article>
@@ -36,9 +36,9 @@
 
       <div class="grid">
         <div class="grid--inner">
-          {% for item in activitiesEdit|slice(0, 2) %}
+          {% for item in activities|slice(0, 2) %}
             <article class="grid--item">
-              {% include "components-card-activity" with { cardActivity: item } %}
+              {% include "components-card-activity-edit" with { cardActivity: item } %}
             </article>
           {% endfor %}
         </div>
