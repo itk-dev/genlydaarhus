@@ -26,13 +26,15 @@ class ITKFloatingHelp extends BlockBase {
     $floating_help_phone = $config['floating_help_phone'];
     $floating_help_email = $config['floating_help_email'];
 
-    return array (
+
+    return [
+      '#theme' => 'itk_floating_help_block',
       '#floating_help_title' => $floating_help_title,
       '#floating_help_text' => $floating_help_text,
       '#floating_help_contact' => $floating_help_contact,
       '#floating_help_phone' => $floating_help_phone,
       '#floating_help_email' => $floating_help_email,
-    );
+    ];
   }
 
   /**

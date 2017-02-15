@@ -1,0 +1,11 @@
+{
+  "contactInformation":
+    {
+      "contactLabel": "Kontaktperson",
+      "contact": "Louise Elkjær Kortegård",
+      "phoneLabel": "Telefon",
+      "phone": "12345678",
+      "emailLabel": "E-mail",
+      "email": "example@example.com"
+    }
+}

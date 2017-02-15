@@ -1,23 +1,23 @@
-<div class="contact-information {{ contactInformation.class }}">
+<div class="contact-information {{ contactInformationClass }}">
   <div class="contact-information--info-block">
     {% include "@elements/icons/icon.twig" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
     <div class="contact-information--text">
-      <p class="contact-information--meta">Kontaktperson</p>
-      <p class="contact-information--info">Louise Elkjær Kortegård</p>
+      <p class="contact-information--meta">{{ contactInformation.contactLabel }}</p>
+      <p class="contact-information--info">{{ contactInformation.contact }}</p>
     </div>
   </div>
   <div class="contact-information--info-block">
     {% include "@elements/icons/icon.twig" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
     <div class="contact-information--text">
-      <p class="contact-information--meta">Telefon</p>
-      <p class="contact-information--info">12345678</p>
+      <p class="contact-information--meta">{{ contactInformation.phoneLabel }}</p>
+      <p class="contact-information--info">{{ contactInformation.phone }}</p>
     </div>
   </div>
   <div class="contact-information--info-block">
     {% include "@elements/icons/icon.twig" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
     <div class="contact-information--text">
-      <p class="contact-information--meta">Mail</p>
-      <p class="contact-information--info">louise@genlydaarhus.dk</p>
+      <p class="contact-information--meta">{{ contactInformation.emailLabel }}</p>
+      <p class="contact-information--info">{{ contactInformation.email }}</p>
     </div>
   </div>
 </div>

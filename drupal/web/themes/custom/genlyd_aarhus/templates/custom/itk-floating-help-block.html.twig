@@ -1,0 +1,33 @@
+{#
+/**
+  * @file
+  * Display of Floating Help
+  *
+  * Available variables:
+  * - variables: Holds variables.
+  *   - floating_help_title: Title field.
+  *   - floating_help_text: Text field.
+  *   - floating_help_contact: Contact field.
+  *   - floating_help_phone: Phone field.
+  *   - floating_help_email: Email field.
+  */
+#}
+
+{% set floatingHelp = {
+    "title": floating_help_title,
+    "text": floating_help_text,
+    "buttonLabel": "TODO: Button Label"
+  }
+%}
+
+{% set contactInformation = {
+    "contact": floating_help_contact,
+    "contactLabel": "TODO: Kontaktperson",
+    "phoneLabel": "TODO: Telefon",
+    "phone": floating_help_phone,
+    "emailLabel": "TODO: E-mail",
+    "email": floating_help_email
+  }
+%}
+
+{% include "@components/floating-help.twig" with {floatingHelp: floatingHelp, contactInformation: contactInformation} %}
