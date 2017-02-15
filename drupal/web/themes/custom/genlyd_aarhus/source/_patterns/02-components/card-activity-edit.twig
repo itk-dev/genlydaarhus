@@ -1,0 +1,18 @@
+{% embed "card.twig"  %}
+  {% block overlay %}
+      {% include "modules-card-edit-overlay" %}
+  {% endblock %}
+
+  {% block content %}
+    <a href="{{ cardActivity.link }}" class="card-activity--link has-hover">
+
+      {% include "modules-card-header" with { cardHeader: cardActivity.cardHeader } %}
+
+      {% include "modules-card-info" with { class: "has-spacing", cardInfo: cardActivity.cardInfo } %}
+
+    </a>
+  {% endblock %}
+  {% block footer %}
+    {% include "modules-card-actions" with { class: "has-padding" } %}
+  {% endblock %}
+{% endembed %}

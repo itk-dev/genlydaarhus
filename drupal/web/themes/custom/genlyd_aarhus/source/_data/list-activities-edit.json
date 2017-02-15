@@ -1,329 +1,245 @@
 {
   "activitiesEdit": [
     {
-      "title": "Drop-in badminton",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/badminton.jpg"
+      "cardHeader": {
+        "title": "Drop-in badminton",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/badminton.jpg"
+        }
       },
 
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "12 Januar"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "12 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "12 Januar"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "12 tilmeldte"
+          }
+        ]
+      }
     },
 
     {
-      "title": "Strikkeklub for enlige",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/nitting.jpg"
+      "cardHeader": {
+        "title": "Strikkeklub for enlige",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/nitting.jpg"
+        }
       },
 
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "5 Februar"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "4 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "5 Februar"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "4 tilmeldte"
+          }
+        ]
+      }
     },
 
     {
-      "title": "Løbetur Marselisborg Skov",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/running.jpg"
+      "cardHeader": {
+        "title": "Løbetur Marselisborg Skov",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/running.jpg"
+        }
       },
-
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "23 Marts"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "15 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "23 Marts"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "15 tilmeldte"
+          }
+        ]
+      }
     },
 
     {
-      "title": "Kortspil for alle",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/cards.jpg"
+      "cardHeader": {
+        "title": "Kortspil for alle",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/cards.jpg"
+        }
       },
-
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "3. April"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "2 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "3. April"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "2 tilmeldte"
+          }
+        ]
+      }
     },
 
     {
-      "title": "Gospel korsang i kirken",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/gospel.jpg"
+      "cardHeader": {
+        "title": "Gospel korsang i kirken",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/gospel.jpg"
+        }
       },
 
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "7. Maj"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "8 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "7. Maj"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
     },
 
     {
-      "title": "Vinsmagning i vinkælderen",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/wine.jpg"
+      "cardHeader": {
+        "title": "Vinsmagning i vinkælderen",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/wine.jpg"
+        }
       },
-
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "{{ attribute(link, 'templates-activity') }}",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "16. Juni"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "8 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "16. Juni"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
     },
     {
-      "title": "Hækling for alle aldre",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/crocheting.jpg"
+      "cardHeader": {
+        "title": "Hækling for alle aldre",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/crocheting.jpg"
+        }
       },
-
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "9. Juli"
-        },
-        {
-          "label": "Pris",
-          "text": "Gratis"
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "8 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "9. Juli"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
     },
     {
-      "title": "Fælles computerspil",
-      "image": {
-        "class": "",
-        "src": "/assets/images/styleguide/computer.jpg"
+      "cardHeader": {
+        "title": "Fælles computerspil",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/computer.jpg"
+        }
       },
 
-      "edit": true,
-      "editButtons" : [
-        {
-          "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
-          "href": "#",
-          "title": "Slet"
-        },
-        {
-          "class": "is-cta is-small is-full-width",
-          "href": "#",
-          "title": "Rediger"
-        }
-      ],
-
-      "activityMetas" : [
-        {
-          "label": "Dato",
-          "text": "30. August"
-        },
-        {
-          "label": "Pris",
-          "text": "50 kr."
-        },
-        {
-          "label": "Område",
-          "text": "Højbjerg"
-        },
-        {
-          "label": "Deltagere",
-          "text": "8 tilmeldte"
-        }
-      ]
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "30. August"
+          },
+          {
+            "label": "Pris",
+            "text": "50 kr."
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
     }
   ]
 }

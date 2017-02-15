@@ -22,6 +22,7 @@
 @import "_layouts/breakpoints";
 @import "_layouts/layout";
 @import "_layouts/grid";
+@import "_layouts/card";
 
 /* Elements */
 @import "_patterns/00-elements/02-text/inline-elements";
@@ -44,8 +45,10 @@
 @import "_patterns/00-elements/headings/footer-heading";
 
 /* Modules */
-@import "_patterns/01-modules/cards/card-activity";
+@import "_patterns/01-modules/cards/card-actions";
 @import "_patterns/01-modules/cards/card-edit-overlay";
+@import "_patterns/01-modules/cards/card-header";
+@import "_patterns/01-modules/cards/card-info";
 @import "_patterns/01-modules/activity-search";
 @import "_patterns/01-modules/activity-action";
 @import "_patterns/01-modules/categories";
@@ -74,5 +77,6 @@
 @import "_patterns/02-components/02-sections/section-info";
 @import "_patterns/02-components/introduction";
 @import "_patterns/02-components/activity-sidebar";
+@import "_patterns/02-components/card-activity";
 @import "_patterns/02-components/help-sidebar";
 @import "_patterns/02-components/floating-help";

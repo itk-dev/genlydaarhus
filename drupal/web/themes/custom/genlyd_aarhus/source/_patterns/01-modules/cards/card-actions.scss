@@ -1,0 +1,16 @@
+.card-actions {
+  background-color: $color-black-light;
+  display: flex;
+  justify-content: space-between;
+
+  &.has-padding {
+    padding-bottom: $spacing-pixel-small;
+    padding-left: $spacing-pixel-small;
+    padding-right: $spacing-pixel-small;
+    padding-top: $spacing-pixel-small;
+  }
+
+  &--button {
+    width: 48%;
+  }
+}

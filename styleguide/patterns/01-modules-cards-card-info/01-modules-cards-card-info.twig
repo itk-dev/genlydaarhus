@@ -1,0 +1,9 @@
+<div class="card-info {{ class }}">
+  <div class="card-info--metas">
+    {% for activityMeta in cardInfo.activityMetas %}
+    <div class="card-info--meta">
+      {% include "elements-activity-meta" %}
+    </div>
+  {% endfor %}
+  </div>
+</div>

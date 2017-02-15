@@ -1,18 +1,18 @@
 {% embed "page.twig" %}
   {% block main %}
   <div class="container has-large-spacing">
-    
+
     {% include 'components-activity-overview' with { activityOverview: activity.activityOverview } %}
 
       <div class="l-heading-section">
         {% include 'modules-heading-with-icon' with { headingWithIcon: activity.headingWithIconSimilar, icon: activity.headingWithIconSimilar.icon } %}
       </div>
-      
+
       <div class="grid">
         <div class="grid--inner">
           {% for item in activities|slice(0,4) %}
             <article class="grid--item">
-              {% include "modules-card-activity" with { cardActivity: item } %}
+              {% include "components-card-activity" with { cardActivity: item } %}
             </article>
           {% endfor %}
         </div>
@@ -27,7 +27,7 @@
       <div class="grid--inner">
         {% for item in activities|slice(4,7) %}
           <article class="grid--item">
-            {% include "modules-card-activity" with { cardActivity: item } %}
+            {% include "components-card-activity" with { cardActivity: item } %}
           </article>
         {% endfor %}
       </div>

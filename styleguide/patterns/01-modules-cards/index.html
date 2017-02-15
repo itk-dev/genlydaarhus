@@ -43,11 +43,11 @@
   <div class="sg-pattern-body">
     
   </div>
-</div>                        <div id="modules-card-activity" class="sg-pattern">
+</div>                        <div id="modules-card-actions" class="sg-pattern">
   <div class="sg-pattern-head">
     <h3 class="sg-pattern-title">
-      <a href="../../patterns/01-modules-cards-card-activity/01-modules-cards-card-activity.html" class="patternLink" data-patternpartial="modules-card-activity" title="Link to Pattern">
-        card activity
+      <a href="../../patterns/01-modules-cards-card-actions/01-modules-cards-card-actions.html" class="patternLink" data-patternpartial="modules-card-actions" title="Link to Pattern">
+        card actions
         
               </a>
     </h3>
@@ -56,60 +56,24 @@
       
     </div>
     
-    <a href="#" data-patternpartial="modules-card-activity" title="View Pattern Info" id="sg-pattern-extra-toggle-modules-card-activity" class="sg-pattern-extra-toggle">
+    <a href="#" data-patternpartial="modules-card-actions" title="View Pattern Info" id="sg-pattern-extra-toggle-modules-card-actions" class="sg-pattern-extra-toggle">
       <span>&#9660;</span>
     </a>
   </div>
   
-  <div class="sg-pattern-extra" id="sg-pattern-extra-modules-card-activity"></div>
+  <div class="sg-pattern-extra" id="sg-pattern-extra-modules-card-actions"></div>
     
   <div class="sg-pattern-example">
-      <a href="#" class="card-activity has-hover">
-
-  <div class="card-activity--top">
-    <div class="card-activity--image-container">
-      <div class="card-activity--image">
-        <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
-
-      </div>
-    </div>
-    <h4 class="card-activity--title">Titel på aktivitet</h4>
-  </div>
-
-  <div class="card-activity--bottom">
-    <div class="card-activity--text">
-      <div class="card-activity--metas">
-                <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Dato</p>
-  <p class="activity-meta--text">12. Januar 2017</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Pris</p>
-  <p class="activity-meta--text">Gratis</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Område</p>
-  <p class="activity-meta--text">Højbjerg</p>
-</div>        </div>
-              <div class="card-activity--meta">
-          <div class="activity-meta">
-  <p class="activity-meta--label">Deltagere</p>
-  <p class="activity-meta--text">20 tilmeldte</p>
-</div>        </div>
-            </div>
-    </div>
-
-      </div>
-
-  </a>
-
+    <div class="card-actions ">
+    <div class="card-actions--button">
+      <a class="button is-secondary is-light is-small is-full-width js-card-activity-delete" href="#">Slet</a>    </div>
+    <div class="card-actions--button">
+      <a class="button is-cta is-small is-full-width" href="#">Rediger</a>    </div>
+</div>
   </div>
   
-  <script type="text/json" id="sg-pattern-data-modules-card-activity" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"modules-card-edit-overlay","lineagePath":"..\/..\/patterns\/01-modules-cards-card-activity\/01-modules-cards-card-activity.html"},{"lineagePattern":"elements-image","lineagePath":"..\/..\/patterns\/01-modules-cards-card-activity\/01-modules-cards-card-activity.html"},{"lineagePattern":"elements-activity-meta","lineagePath":"..\/..\/patterns\/01-modules-cards-card-activity\/01-modules-cards-card-activity.html"},{"lineagePattern":"elements-button","lineagePath":"..\/..\/patterns\/01-modules-cards-card-activity\/01-modules-cards-card-activity.html"}],"lineageR":[{"lineagePattern":"templates-home","lineagePath":"..\/..\/patterns\/03-templates-01-home\/03-templates-01-home.html"},{"lineagePattern":"templates-activity","lineagePath":"..\/..\/patterns\/03-templates-02-activity\/03-templates-02-activity.html"},{"lineagePattern":"templates-activities-list","lineagePath":"..\/..\/patterns\/03-templates-activities-01-activities-list\/03-templates-activities-01-activities-list.html"},{"lineagePattern":"templates-profile","lineagePath":"..\/..\/patterns\/03-templates-profile-01-profile\/03-templates-profile-01-profile.html"},{"lineagePattern":"templates-profile-activities-overview","lineagePath":"..\/..\/patterns\/03-templates-profile-02-profile-activities-overview\/03-templates-profile-02-profile-activities-overview.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card activity","patternPartial":"modules-card-activity","patternState":""}
+  <script type="text/json" id="sg-pattern-data-modules-card-actions" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"elements-button","lineagePath":"..\/..\/patterns\/01-modules-cards-card-actions\/01-modules-cards-card-actions.html"}],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card actions","patternPartial":"modules-card-actions","patternState":""}
   </script>
 </div><!--end .sg-pattern-->                        <div id="modules-card-edit-overlay" class="sg-pattern">
   <div class="sg-pattern-head">
@@ -134,7 +98,7 @@
   <div class="sg-pattern-example">
     <div class="card-edit-overlay">
   <p class="card-edit-overlay--warning">
-    Er du sikker på du vil slette aktiviten?
+    
   </p>
   <div class="card-edit-overlay--buttons">
     <a class="button is-delete is-small is-full-width" href="#">Slet</a>    <a class="button is-secondary is-small is-light is-full-width js-card-edit-overlay-back" href="#">Tilbage</a>  </div>
@@ -142,7 +106,72 @@
   </div>
   
   <script type="text/json" id="sg-pattern-data-modules-card-edit-overlay" class="sg-pattern-data">
-    {"lineage":[{"lineagePattern":"elements-button","lineagePath":"..\/..\/patterns\/01-modules-cards-card-edit-overlay\/01-modules-cards-card-edit-overlay.html"}],"lineageR":[{"lineagePattern":"modules-card-activity","lineagePath":"..\/..\/patterns\/01-modules-cards-card-activity\/01-modules-cards-card-activity.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card edit overlay","patternPartial":"modules-card-edit-overlay","patternState":""}
+    {"lineage":[{"lineagePattern":"elements-button","lineagePath":"..\/..\/patterns\/01-modules-cards-card-edit-overlay\/01-modules-cards-card-edit-overlay.html"}],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card edit overlay","patternPartial":"modules-card-edit-overlay","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="modules-card-header" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/01-modules-cards-card-header/01-modules-cards-card-header.html" class="patternLink" data-patternpartial="modules-card-header" title="Link to Pattern">
+        card header
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="modules-card-header" title="View Pattern Info" id="sg-pattern-extra-toggle-modules-card-header" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-modules-card-header"></div>
+    
+  <div class="sg-pattern-example">
+    <div class="card-header">
+  <div class="card-header--image-container">
+    <div class="card-header--image">
+      <img class="image " src="" />
+
+    </div>
+  </div>
+  <h4 class="card-header--title"></h4>
+</div>
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-modules-card-header" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"elements-image","lineagePath":"..\/..\/patterns\/01-modules-cards-card-header\/01-modules-cards-card-header.html"}],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"},{"lineagePattern":"components-card-activity","lineagePath":"..\/..\/patterns\/02-components-card-activity\/02-components-card-activity.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card header","patternPartial":"modules-card-header","patternState":""}
+  </script>
+</div><!--end .sg-pattern-->                        <div id="modules-card-info" class="sg-pattern">
+  <div class="sg-pattern-head">
+    <h3 class="sg-pattern-title">
+      <a href="../../patterns/01-modules-cards-card-info/01-modules-cards-card-info.html" class="patternLink" data-patternpartial="modules-card-info" title="Link to Pattern">
+        card info
+        
+              </a>
+    </h3>
+    
+    <div class="sg-pattern-breadcrumb">
+      
+    </div>
+    
+    <a href="#" data-patternpartial="modules-card-info" title="View Pattern Info" id="sg-pattern-extra-toggle-modules-card-info" class="sg-pattern-extra-toggle">
+      <span>&#9660;</span>
+    </a>
+  </div>
+  
+  <div class="sg-pattern-extra" id="sg-pattern-extra-modules-card-info"></div>
+    
+  <div class="sg-pattern-example">
+    <div class="card-info ">
+  <div class="card-info--metas">
+      </div>
+</div>
+  </div>
+  
+  <script type="text/json" id="sg-pattern-data-modules-card-info" class="sg-pattern-data">
+    {"lineage":[{"lineagePattern":"elements-activity-meta","lineagePath":"..\/..\/patterns\/01-modules-cards-card-info\/01-modules-cards-card-info.html"}],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"},{"lineagePattern":"components-card-activity","lineagePath":"..\/..\/patterns\/02-components-card-activity\/02-components-card-activity.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card info","patternPartial":"modules-card-info","patternState":""}
   </script>
 </div><!--end .sg-pattern-->            </div> <!--end #sg-patterns-->
 </div><!--end .sg-main-->  
