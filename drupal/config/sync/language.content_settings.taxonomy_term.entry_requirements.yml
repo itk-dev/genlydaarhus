@@ -1,0 +1,11 @@
+uuid: 362eeffc-f726-41c5-9b67-4108d0927ab1
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.entry_requirements
+id: taxonomy_term.entry_requirements
+target_entity_type_id: taxonomy_term
+target_bundle: entry_requirements
+default_langcode: site_default
+language_alterable: false

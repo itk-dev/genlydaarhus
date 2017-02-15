@@ -1,0 +1,11 @@
+uuid: 50e5d1c7-93e0-45b3-9dd1-ba0a21afbbaa
+langcode: en
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.physical_requirements
+id: taxonomy_term.physical_requirements
+target_entity_type_id: taxonomy_term
+target_bundle: physical_requirements
+default_langcode: site_default
+language_alterable: false

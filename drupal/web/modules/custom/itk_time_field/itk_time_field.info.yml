@@ -1,0 +1,7 @@
+name: ITK time field
+type: module
+description: 'Provides a time field'
+package: ITK
+core: 8.x
+dependencies:
+  - datetime

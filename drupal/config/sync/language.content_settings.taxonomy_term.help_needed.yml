@@ -1,0 +1,11 @@
+uuid: aac095a9-b863-4de3-b583-3db809220324
+langcode: da
+status: true
+dependencies:
+  config:
+    - taxonomy.vocabulary.help_needed
+id: taxonomy_term.help_needed
+target_entity_type_id: taxonomy_term
+target_bundle: help_needed
+default_langcode: site_default
+language_alterable: false

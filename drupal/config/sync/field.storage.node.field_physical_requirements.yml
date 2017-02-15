@@ -1,0 +1,20 @@
+uuid: b32b566d-b182-4f87-9f59-29f79cbfc918
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - taxonomy
+id: node.field_physical_requirements
+field_name: field_physical_requirements
+entity_type: node
+type: entity_reference
+settings:
+  target_type: taxonomy_term
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

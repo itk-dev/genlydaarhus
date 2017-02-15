@@ -1,0 +1,9 @@
+uuid: 99761ece-f4be-4ab5-bff1-e4469f36fc87
+langcode: en
+status: true
+dependencies: {  }
+name: 'Entry Requirements'
+vid: entry_requirements
+description: ''
+hierarchy: 0
+weight: 0

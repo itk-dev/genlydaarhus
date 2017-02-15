@@ -1,0 +1,28 @@
+uuid: d23863ed-d115-42c8-9eaa-dd77d3fbb179
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_physical_requirements
+    - node.type.activity
+    - taxonomy.vocabulary.physical_requirements
+id: node.activity.field_physical_requirements
+field_name: field_physical_requirements
+entity_type: node
+bundle: activity
+label: 'Physical Requirements'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      physical_requirements: physical_requirements
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

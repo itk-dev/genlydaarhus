@@ -1,0 +1,23 @@
+uuid: b32c9533-bd83-40a8-86f7-29e6b894e632
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_price
+    - node.type.activity
+id: node.activity.field_price
+field_name: field_price
+entity_type: node
+bundle: activity
+label: Price
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: decimal

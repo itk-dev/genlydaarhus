@@ -1,0 +1,28 @@
+uuid: 1c75cce9-b054-4b81-abcb-c9461ff2a2b7
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_entry_requirements
+    - node.type.activity
+    - taxonomy.vocabulary.entry_requirements
+id: node.activity.field_entry_requirements
+field_name: field_entry_requirements
+entity_type: node
+bundle: activity
+label: 'Entry Requirements'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      entry_requirements: entry_requirements
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference
