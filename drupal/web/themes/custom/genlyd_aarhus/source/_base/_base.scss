@@ -4,17 +4,18 @@ html {
 
 body {
   color: $color-black-light;
+  display: flex;
   font: $font;
-  height: 100%;
+  flex-direction: column;
   margin: 0;
+  height: 100%;
   position: relative;
   width: 100%;
 }
 
 .main {
   background-color: $color-blue-background;
-  display:flex;
-  flex-direction: column;
+  flex: 1 0 auto;
 }
 
 a {
