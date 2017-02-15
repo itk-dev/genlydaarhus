@@ -55,7 +55,7 @@
       color: $color-white;
     }
   }
-  
+
   &.is-cta {
     @include buttonHover($color-yellow);
 
@@ -64,14 +64,14 @@
   }
   &.is-tertiary {
     @include buttonHover($color-black-lighter);
-    
+
     background-color: $color-black-lighter;
     color: $color-white;
   }
 
   &.is-delete {
     @include buttonHover($color-red);
-    
+
     background-color: darken($color-red, 7%);
     color: $color-white;
   }
@@ -92,7 +92,7 @@
     padding-bottom: $spacing-pixel-xxsmall;
     padding-left: $spacing-pixel-small;
     padding-right: $spacing-pixel-small;
-    padding-top: $spacing-pixel-xxsmall; 
+    padding-top: $spacing-pixel-xxsmall;
   }
 
   &.is-small {
@@ -122,5 +122,13 @@
   &.is-full-width {
     display: inline-block;
     width: 100%;
+  }
+
+  &.is-half-width {
+    width: 50%;
+  }
+
+  &.has-margin-bottom {
+    margin-bottom: $spacing-pixel-xxsmall;
   }
 }

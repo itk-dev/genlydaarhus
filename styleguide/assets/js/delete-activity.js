@@ -7,7 +7,7 @@ jQuery(document).ready(function($) {
 
   // Show overlay when delete button clicked
   buttonDelete.click(function(){
-    overlay = $(this).parents('.card-activity').children('.card-edit-overlay');
+    overlay = $(this).parents('.card').children('.card-edit-overlay');
     overlay.css("display", "flex");
   });
 

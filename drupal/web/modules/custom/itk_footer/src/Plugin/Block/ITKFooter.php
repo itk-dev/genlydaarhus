@@ -7,7 +7,7 @@ use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Provides footer content
+ * Provides itk_footer content
  *
  * @Block(
  *   id = "itk_footer",
@@ -21,8 +21,8 @@ class ITKFooter extends BlockBase {
   public function build() {
     $config = \Drupal::getContainer()->get('itk_footer.config')->getAll();
 
-    $footer_title = $config['footer_title'];
-    $footer_text = check_markup($config['footer_text'], 'filtered_html');
+    $itk_footer_title = $config['itk_footer_title'];
+    $itk_footer_text = check_markup($config['itk_footer_text'], 'filtered_html');
 
     return array(
       '#type' => 'markup',
@@ -30,8 +30,8 @@ class ITKFooter extends BlockBase {
       '#cache' => array(
         'max-age' => 0,
       ),
-      '#footer_title' => $footer_title,
-      '#footer_text' => $footer_text,
+      '#itk_footer_title' => $itk_footer_title,
+      '#itk_footer_text' => $itk_footer_text,
     );
   }
 

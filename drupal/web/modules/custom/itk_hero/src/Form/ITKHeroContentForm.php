@@ -40,64 +40,66 @@ class ITKHeroContentForm extends FormBase {
     $config = $this->getBaseConfig();
 
     // Add front page wrapper.
-    $form['frontpage_wrapper'] = array(
-      '#title' => $this->t('Front page settings'),
+    $form['wrapper'] = array(
+      '#title' => $this->t('ITK Hero'),
       '#type' => 'details',
       '#weight' => '1',
       '#open' => TRUE,
     );
 
-    $form['frontpage_wrapper']['frontpage_lead'] = array(
+    $form['wrapper']['itk_hero_lead'] = array(
       '#title' => $this->t('Lead text'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('frontpage_lead'),
+      '#default_value' => $config->get('itk_hero_lead'),
       '#weight' => '2',
     );
 
-    $form['frontpage_wrapper']['frontpage_sub'] = array(
+    $form['wrapper']['itk_hero_sub'] = array(
       '#title' => $this->t('Sub text'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('frontpage_sub'),
+      '#default_value' => $config->get('itk_hero_sub'),
       '#weight' => '3',
     );
 
-    $form['frontpage_wrapper']['frontpage_button'] = array(
+    $form['wrapper']['itk_hero_button'] = array(
       '#title' => $this->t('Button text'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('frontpage_button'),
+      '#default_value' => $config->get('itk_hero_button'),
       '#weight' => '4',
     );
 
-    $form['frontpage_wrapper']['frontpage_link'] = array(
+    $form['wrapper']['itk_hero_link'] = array(
       '#title' => $this->t('Button link'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('frontpage_link'),
+      '#default_value' => $config->get('itk_hero_link'),
       '#weight' => '5',
     );
 
     $fids = array();
     if (!empty($input)) {
-      if (!empty($input['frontpage_image'])) {
-        $fids[0] = $form_state->getValue('frontpage_image');
+      if (!empty($input['itk_hero_image'])) {
+        $fids[0] = $form_state->getValue('itk_hero_image');
       }
     }
     else {
-      $fids[0] = $config->get('frontpage_image', '');
+      $fids[0] = $config->get('itk_hero_image', '');
     }
 
-    $form['frontpage_wrapper']['frontpage_image'] = array(
+    $form['wrapper']['itk_hero_image'] = array(
       '#title' => $this->t('Image'),
       '#type' => 'managed_file',
       '#default_value' => ($fids[0]) ? $fids : '',
       '#upload_location' => 'public://',
       '#weight' => '3',
       '#open' => TRUE,
-      '#description' => t('The image used at the top of the front page.'),
+      '#description' => t('The image used for the hero.'),
     );
 
-    $form['submit'] = array(
+    $form['actions'] = array('#type' => 'actions');
+    $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => t('Save changes'),
+      '#attributes' => ['class' => ['button--primary']],
+      '#value' => t('Save content'),
       '#weight' => '6',
     );
 
@@ -112,10 +114,10 @@ class ITKHeroContentForm extends FormBase {
 
     // Fetch the file id previously saved.
     $config = $this->getBaseConfig();
-    $old_fid = $config->get('frontpage_image', '');
+    $old_fid = $config->get('itk_hero_image', '');
 
     // Load the file set in the form.
-    $value = $form_state->getValue('frontpage_image');
+    $value = $form_state->getValue('itk_hero_image');
     $form_fid = count($value) > 0 ? $value[0] : 0;
     $file = ($form_fid) ? File::load($form_fid) : FALSE;
 
@@ -143,11 +145,11 @@ class ITKHeroContentForm extends FormBase {
 
     // Set the rest of the configuration values.
     $this->getBaseConfig()->setMultiple(array(
-      'frontpage_lead' => $form_state->getValue('frontpage_lead'),
-      'frontpage_sub' => $form_state->getValue('frontpage_sub'),
-      'frontpage_button' => $form_state->getValue('frontpage_button'),
-      'frontpage_link' => $form_state->getValue('frontpage_link'),
-      'frontpage_image' => $file ? $file->id() : NULL,
+      'itk_hero_lead' => $form_state->getValue('itk_hero_lead'),
+      'itk_hero_sub' => $form_state->getValue('itk_hero_sub'),
+      'itk_hero_button' => $form_state->getValue('itk_hero_button'),
+      'itk_hero_link' => $form_state->getValue('itk_hero_link'),
+      'itk_hero_image' => $file ? $file->id() : NULL,
     ));
 
     drupal_flush_all_caches();
