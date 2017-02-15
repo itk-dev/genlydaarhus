@@ -7,10 +7,10 @@
 
 <main class="main">
   {% block main %}
-    {% include "@components/floating-help.twig" %}
   {% endblock %}
 </main>
 
 {% block footer %}
   {% include "@components/01-global/02-footer.twig" %}
+  {% include "@components/floating-help.twig" %}
 {% endblock %}

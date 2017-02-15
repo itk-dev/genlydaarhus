@@ -9,7 +9,7 @@ dependencies:
 id: itkfooter
 theme: genlyd_aarhus
 region: footer
-weight: -2
+weight: -3
 provider: null
 plugin: itk_footer
 settings:

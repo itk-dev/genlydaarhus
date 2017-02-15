@@ -1,8 +1,8 @@
 {
   "floatingHelp":
     {
-      "title": "Spørgsmål? Klik her",
-      "text": "Har du spørgsmål eller brug for hjælp, så kontakt os endeligt.",
-      "buttonLabel": "Luk boks"
+      "buttonLabelClosed": "Spørgsmål? Klik her",
+      "buttonLabelOpen": "Luk boks",
+      "text": "Har du spørgsmål eller brug for hjælp, så kontakt os endeligt."
     }
 }

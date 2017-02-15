@@ -8,7 +8,7 @@ dependencies:
     - genlyd_aarhus
 id: itkfloatinghelp
 theme: genlyd_aarhus
-region: content
+region: footer
 weight: 0
 provider: null
 plugin: itk_floating_help
