@@ -1,4 +1,4 @@
-uuid: b25089ae-12d9-4f21-ade0-7c449c0d1985
+uuid: 8c97ee07-edd1-4eb5-9c01-4a3ba7e756f7
 langcode: da
 status: false
 dependencies:
@@ -7,6 +7,6 @@ dependencies:
 _core:
   default_config_hash: 6GCOQ-jP2RbdbHA5YWQ6bT8CfGbqrBYKOSC_XY4E3ZM
 id: node.search_result
-label: 'Søgeresultat med fremhævelse af input'
+label: 'Search result highlighting input'
 targetEntityType: node
 cache: true

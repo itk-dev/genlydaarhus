@@ -1,0 +1,52 @@
+.floating-help {
+  align-items: center;
+  background-color: $color-green-light;
+  border-radius: $border-radius $border-radius 0 0;
+  cursor: pointer;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-left: $spacing-pixel-normal;
+  margin-right: $spacing-pixel-normal;
+  padding-top: $spacing-pixel-xxsmall;
+  transform: translateY(320px);
+  z-index: 20;
+
+  @include breakpoint($breakpoint-tablet) {
+    left: auto;
+    right: $spacing-percent-xlarge;
+    margin: 0;
+  }
+
+  &--button {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding-left: $spacing-pixel-normal;
+    padding-right: $spacing-pixel-normal;
+  }
+
+  &--title {
+    font-size: $font-size-normal;
+    font-weight: 600;
+    margin: 0;
+    text-transform: uppercase;
+  }
+
+  &--subtitle {
+    font-size: $font-size-small;
+    text-align: center;
+    padding-left: $spacing-pixel-normal;
+    padding-right: $spacing-pixel-normal;
+    max-width: 280px;
+    margin-bottom: $spacing-pixel-tiny;
+  }
+
+  &.is-open {
+    transform: translateY(0);
+      cursor: auto;
+  }
+}

@@ -1,0 +1,16 @@
+.activity-info {
+
+  padding-bottom: $spacing-pixel-small;
+  margin-left: $spacing-pixel-xxxsmall;
+  margin-right: $spacing-pixel-xxxsmall;
+
+  &--meta {
+    margin-top: 0;
+    margin-bottom: $spacing-pixel-xtiny;
+    font-weight: 600;
+  }
+
+  &--data {
+    margin: 0;
+  }
+}

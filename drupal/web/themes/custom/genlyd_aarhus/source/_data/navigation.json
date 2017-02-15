@@ -1,0 +1,38 @@
+ {
+  "navigationItems": [
+    {
+      "title": "Få hjælp til opslag",
+      "url": "#",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+      }
+    },
+    {
+      "title": "Login",
+      "url": "#",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+      }
+    },
+    {
+      "title": "Tilmeld",
+      "url": "#",
+      "class": "is-button is-secondary",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-yellow has-small-margin"
+      }
+    },
+    {
+      "title": "Opret aktivitet",
+      "url": "#",
+      "class": "is-button is-primary",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-green-light has-small-margin"
+      }
+    }
+  ]
+}

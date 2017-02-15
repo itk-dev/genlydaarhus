@@ -1,0 +1,21 @@
+<header class="header js-header {{ class }} {{ transparent ? 'is-transparent' }}">
+  <div class="header--inner">
+    <div class="header--logo">
+      <div class="header--logo-inner">
+        <a class="header--logo-light" href="/">
+        {% block logo_light %}
+          {% include "@elements/images/logo-light.twig" %}
+        {% endblock %}
+        </a>
+        <a class="header--logo-dark" href="/">
+        {% block logo_dark %}
+          {% include "@elements/images/logo-dark.twig" %}
+        {% endblock %}
+        </a>
+      </div>
+    </div>
+    {% block header %}
+      {% include "@modules/navigation.twig" with { transparent: transparent } %}
+    {% endblock %}
+  </div>
+</header>

@@ -1,0 +1,12 @@
+<nav class="navigation js-navigation">
+  <div class="navigation--items">
+    {% for item in navigationItems %}
+      <a href="{{ item.url }}" title="{{ item.title }}" class="navigation--item {{ item.class }}">
+        <div class="navigation--icon">
+          {% include "@elements/icons/icon.twig" with {icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" }} %}
+        </div>
+        <span>{{ item.title }}</span>
+      </a>
+    {% endfor %}
+  </div>
+</nav>

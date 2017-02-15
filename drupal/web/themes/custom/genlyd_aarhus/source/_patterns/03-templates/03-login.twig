@@ -1,0 +1,52 @@
+{% embed "page.twig" %}
+  {% block main %}
+  <div class="container has-large-spacing">
+    <div class="l-heading-section">
+      {% include 'modules-heading-with-icon' with { headingWithIcon: login.headingWithIcon, icon: login.headingWithIcon.icon } %}
+    </div>
+    <div class="l-section has-bottom-margin">  
+      {% include 'modules-social-buttons' with { socialButtons: { titleFacebook: "Login med Facebook", titleGoogle: "Login med Google" } } %}
+    </div>
+    <div class="l-section has-no-margin">  
+      {% include "modules-text-with-icon" with { textWithIcon: login.textWithIcon, icon: login.textWithIcon.icon } %}
+    </div>
+
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          {% include "elements-form-label" with { formLabel: { label: "Brugernavn" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'username' } %}
+        </div>
+      </div>
+    </div>
+    
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        <div class="l-section has-bottom-margin is-tight">
+          {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
+          {% include "elements-text-field" with {'type': 'password', 'name': 'password' } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-cols">
+      <div class="l-col half desk-up">
+        {% include "elements-checkbox" with {'checkbox': { "label": "Husk mig", class: "borderless" } } %}
+      </div>
+    </div>
+
+    <div class="l-section has-bottom-margin is-tight">
+      <p><a href="#">Glemt adgangskode?</a></p>
+    </div>
+
+    <div class="l-section has-no-margin is-tight">
+      <div class="l-section has-bottom-margin is-tight layout flex">
+        {% include "elements-button" with { button: { 'class': 'is-cta', 'title': 'Log ind'} } %}
+      </div>
+      <div class="layout flex">
+        {% include "elements-button" with { button: { 'class': 'is-secondary is-dark', 'title': 'Jeg har ikke en konto'} } %}
+      </div>
+    </div>
+  </div>
+  {% endblock %}
+{% endembed %}

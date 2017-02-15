@@ -1,0 +1,32 @@
+{#
+/**
+ * @file
+ * Display of footer
+ *
+ * Available variables:
+ * - footer_title: The heading.
+ * - footer_text: Rendered html of the footer.
+ * - menus: An array containing rendered menus.
+ */
+#}
+<div class="footer">
+  {% if footer_title %}
+    <h3>{{ footer_title }}</h3>
+  {% endif %}
+  {% if footer_text %}
+    <div class="footer--text">
+      {{ footer_text }}
+    </div>
+  {% endif %}
+  {% if menus %}
+    <div class="footer--menus">
+      {% for item in menus %}
+        {% if item %}
+          <div class="menu">
+            {{ item }}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>

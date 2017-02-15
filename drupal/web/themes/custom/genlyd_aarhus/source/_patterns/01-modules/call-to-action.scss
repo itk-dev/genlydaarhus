@@ -1,0 +1,9 @@
+.call-to-action {
+  &--text {
+    font-size: $font-size-large;
+    font-style: italic;
+    margin-bottom: $spacing-pixel-small;
+    margin-top: 0;
+    text-align: center;
+  }
+}

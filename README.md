@@ -4,6 +4,18 @@
 
 This project consists of two parts: drupal and styleguide. 
 
+## Installation
+
+Change [config-dir] and database information to what applies to your installation.
+
+```sh
+cd drupal
+composer install
+
+cd web
+drush --yes site-install itkore --db-url='mysql://root:vagrant@localhost/db' --config-dir=/vagrant/htdocs/config/sync
+```
+
 ## Pattern lab
 
 The styleguide is created by pattern-lab. The source of the styleguide is in web/themes/genlyd_theme/source.
@@ -19,7 +31,7 @@ What it does is the following, from the htdocs/ folder:
 composer create-project pattern-lab/edition-twig-standard pattern-lab
 
 sed -i "s/publicDir:.*/publicDir: ..\/styleguide/g" pattern-lab/config/config.yml
-sed -i "s/sourceDir:.*/sourceDir: ..\/drupal\/web\/themes\/custom\/genlyd_theme\/source/g" pattern-lab/config/config.yml
+sed -i "s/sourceDir:.*/sourceDir: ..\/drupal\/web\/themes\/custom\/genlyd_aarhus\/source/g" pattern-lab/config/config.yml
 sed -i "s/cacheBusterOn:.*/cacheBusterOn: 'false'/g" pattern-lab/config/config.yml
 
 cd pattern-lab

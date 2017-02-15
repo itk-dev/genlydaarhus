@@ -1,0 +1,10 @@
+itk-cookie-message:
+    version: 1.0
+    css:
+      theme:
+        css/itk-cookie-message.css: {}
+    js:
+        js/itk-cookie-message.js: {}
+    dependencies:
+        - core/jquery
+        - core/drupalSettings

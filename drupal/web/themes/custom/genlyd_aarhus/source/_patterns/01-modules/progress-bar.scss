@@ -1,0 +1,55 @@
+.progress-bar {
+
+  background-color: $color-gray-lightest;
+  color: transparentize($color-black-light, .2);
+  font-weight: 600;
+
+  &--list {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &--list-item {
+    align-items: center;
+    border-bottom: 1px solid $color-border-dark;
+    border-right: 1px solid $color-border-dark;
+    display: flex;
+    font-size: $font-size-normal;
+    justify-content: center;
+    padding-bottom: $spacing-pixel-tiny;
+    padding-left: $spacing-pixel-tiny;
+    padding-right: $spacing-pixel-tiny;
+    padding-top: $spacing-pixel-tiny;
+    width: 100%;
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    &.is-active {
+      background-color: $color-black-light;
+      color: $color-white;
+    }
+  }
+
+  &--number {
+
+
+    @include breakpoint($breakpoint-desk) {
+      margin-right: $spacing-pixel-xxxsmall;
+    }
+  }
+
+  &--text {
+    display: none;
+    margin-bottom: $spacing-pixel-tiny;
+    margin-top: $spacing-pixel-tiny;
+
+    @include breakpoint($breakpoint-desk) {
+      display: block;
+    }
+  } 
+}

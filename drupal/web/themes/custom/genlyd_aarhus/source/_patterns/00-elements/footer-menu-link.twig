@@ -1,0 +1,6 @@
+{% for item in footerMenuItems %}
+  <a class="footer-menu--link" href="{{ item.url }}">
+    {% include "@elements/icons/icon.twig" with { icon: { type: "chevron-small", class: "is-xtiny is-white has-small-margin" } } %}
+    <span>{{ item.title }}</span>
+  </a>
+{% endfor %}

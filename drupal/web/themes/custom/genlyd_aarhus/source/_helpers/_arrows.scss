@@ -1,0 +1,20 @@
+@mixin arrow($color, $direction) {
+
+  &:after {
+    content: "";
+    height: 0;
+    position: absolute;
+    width: 0;
+  }
+
+  @if $direction == "top" {
+    &:after {
+      border-bottom: 12px solid $color;
+      border-left: 12px solid transparent;
+      border-right: 12px solid transparent;
+      left: 50%;
+      top: -12px;
+      transform: translateX(-50%);
+    }
+  }
+}

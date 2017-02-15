@@ -1,9 +1,0 @@
-$breakpoint-lap:       481px;
-$breakpoint-tablet:    720px;
-$breakpoint-desk:      1024px;
-$breakpoint-largedesk: 1350px;
-$breakpoint-bigscreen: 2000px;
-
-@mixin breakpoint($breakpoint) {
-  @media only screen and (min-width: $breakpoint) { @content; }
-}

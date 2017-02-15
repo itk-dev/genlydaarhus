@@ -1,0 +1,4 @@
+services:
+  itk_hero.config:
+    class: Drupal\itk_hero\State\ITKHeroConfig
+    arguments: ['@serialization.json', '@database']

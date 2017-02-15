@@ -1,0 +1,21 @@
+.activity-meta {
+  margin: 0;
+  width: 100%;
+
+  &--label {
+    color: $color-light-alpha;
+    font-size: $font-size-small;
+    font-weight: 600;
+    margin-bottom: $spacing-pixel-xtiny;
+    margin-top: 0;
+    text-decoration: none;
+  }
+
+  &--text {
+    color: $color-white;
+    font-weight: 500;
+    margin-top: 0;
+    margin-bottom: 0;
+    text-decoration: none;
+  }
+}

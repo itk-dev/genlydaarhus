@@ -1,0 +1,30 @@
+name: Genlyd Aarhus theme
+type: theme
+description: 'The Genlyd Aarhus theme.'
+
+libraries:
+  - genlyd_aarhus/styling
+  - genlyd_aarhus/hamburger-menu
+
+regions:
+  header: 'Header'
+  hamburger_menu: 'Hamburger menu'
+  content: 'Content'
+  footer: 'Footer'
+
+component-libraries:
+  layouts:
+    paths:
+      - source/_layouts
+  elements:
+    paths:
+      - source/_patterns/00-elements
+  modules:
+    paths:
+      - source/_patterns/01-modules
+  components:
+    paths:
+      - source/_patterns/02-components
+
+version: '1.0.0'
+core: '8.x'

@@ -1,0 +1,8 @@
+uuid: 5a5bf19e-55e4-4ec8-b8f8-626b76a140cf
+langcode: da
+status: true
+dependencies: {  }
+id: footer-secondary
+label: 'Footer secondary'
+description: 'This is the menu displayed second in the footer'
+locked: false

@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Display of itk_hero header block
+ *
+ * Available variables:
+ * - variables: Holds variables from the itk_hero content page.
+ */
+#}
+
+{% include "@modules/hero.twig" with
+    {
+        hero: {
+            lead: variables.itk_hero_lead,
+            sub: variables.itk_hero_sub,
+            image: variables.itk_hero_image_url,
+            buttons: [
+                {
+                    href: variables.itk_hero_link,
+                    title: variables.itk_hero_button
+                }
+            ]
+        }
+    }
+%}

@@ -1,0 +1,67 @@
+ {
+  "footerMenuHeading": "Om Genlyd Aarhus",
+  "footerMenuItems": [
+    {
+      "title": "Hvad er Genlyd",
+      "url": "#",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+      }
+    },
+    {
+      "title": "Om Genlyd puljen",
+      "url": "#",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+      }
+    },
+    {
+      "title": "Få hjælp til opslag",
+      "url": "#",
+      "class": "is-button is-secondary",
+      "icon": {
+        "type": "chevron",
+        "class": "navigation--icon-main is-tiny is-yellow has-small-margin"
+      }
+    }
+  ],
+   "footerMenuSecondaryHeading": "Aktiviteter",
+   "footerMenuSecondaryItems": [
+     {
+       "title": "Aktuelle aktiviteter",
+       "url": "#",
+       "icon": {
+         "type": "chevron",
+         "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+       }
+     },
+     {
+       "title": "Login",
+       "url": "#",
+       "icon": {
+         "type": "chevron",
+         "class": "navigation--icon-main is-tiny is-transparent has-small-margin"
+       }
+     },
+     {
+       "title": "Tilmeld",
+       "url": "#",
+       "class": "is-button is-secondary",
+       "icon": {
+         "type": "chevron",
+         "class": "navigation--icon-main is-tiny is-yellow has-small-margin"
+       }
+     },
+     {
+       "title": "Opret aktivitet",
+       "url": "#",
+       "class": "is-button is-secondary",
+       "icon": {
+         "type": "chevron",
+         "class": "navigation--icon-main is-tiny is-yellow has-small-margin"
+       }
+     }
+   ]
+}

@@ -1,0 +1,6 @@
+name: ITK footer
+type: module
+description: 'Provides custom administration settings for footer'
+package: ITK
+core: 8.x
+dependencies:

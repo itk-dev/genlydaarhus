@@ -1,0 +1,30 @@
+uuid: 6925df88-dcbe-4c76-8483-03efd2f9b536
+langcode: da
+status: true
+dependencies: {  }
+_core:
+  default_config_hash: hIkZP596-MIMxF4s_iRBhq4FzrXWfoB3IiS7K4AJPKY
+id: editor
+label: Editor
+weight: 2
+is_admin: null
+permissions:
+  - 'access contextual links'
+  - 'access files overview'
+  - 'use text format filtered_html'
+  - 'translate interface'
+  - 'access content overview'
+  - 'administer nodes'
+  - 'bypass node access'
+  - 'access in-place editing'
+  - 'administer menu'
+  - 'access site reports'
+  - 'view the administration theme'
+  - 'access toolbar'
+  - 'administer users'
+  - 'access user profiles'
+  - 'create url aliases'
+  - 'administer themes'
+  - 'access administration pages'
+  - 'change own username'
+  - 'assign editor role'

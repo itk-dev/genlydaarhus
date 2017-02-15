@@ -1,0 +1,9 @@
+<div class="card-edit-overlay">
+  <p class="card-edit-overlay--warning">
+    {{ cardEditOverLay.title }}
+  </p>
+  <div class="card-edit-overlay--buttons">
+    {% include "elements-button" with { button: cardEditOverlay.deleteButton } %}
+    {% include "elements-button" with { button: cardEditOverlay.backButton } %}
+  </div>
+</div>

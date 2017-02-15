@@ -1,0 +1,22 @@
+.social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--button {
+    display: flex;
+    width: 100%;
+
+    &:first-child {
+      margin-bottom: $spacing-pixel-xxxsmall;
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+      width: auto;
+      
+      &:first-child {
+        margin-bottom: 0;
+        margin-right: $spacing-pixel-small;
+      }
+    }
+  }
+}

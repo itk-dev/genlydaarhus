@@ -1,0 +1,53 @@
+{
+  "createStepFour": {
+    "headingWithIcon": {
+      "title": "Hej Lasse",
+      "subtitle": "Lad os få oprettet en aktivitet.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "create",
+        "color": "light"
+      }
+    },
+    "progressBar": {
+      "items": [
+        {
+          "title": "Om aktiviteten"
+        },
+        {
+          "title": "Information"
+        },
+        {
+          "title": "Kategorier"
+        },
+        {
+          "title": "Billede",
+          "active": true
+        },
+        {
+          "title": "Detaljer"
+        },
+        {
+          "title": "Bekræft"
+        }
+      ]
+    },
+    "textWithIcon": {
+      "title": "Upload et billede",
+      "icon": {
+        "type": "arrow",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "button": {
+      "class": "is-cta",
+      "href": "#",
+      "title": "Upload et billede"
+    },
+    "helpBox": {
+      "title": "Hvad er et godt billede?",
+      "description": "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)."
+    }
+  }
+}

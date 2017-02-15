@@ -1,0 +1,21 @@
+uuid: 6afe2ae4-43aa-4d17-b137-f77362bf9efd
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.related_pages
+    - field.field.node.page.body
+    - node.type.page
+  module:
+    - user
+_core:
+  default_config_hash: cen4GO3DuPaJg4lLG_mUp996s96bUx9PcJdL9cKAcT4
+id: node.page.related_pages
+targetEntityType: node
+bundle: page
+mode: related_pages
+content: {  }
+hidden:
+  body: true
+  langcode: true
+  links: true

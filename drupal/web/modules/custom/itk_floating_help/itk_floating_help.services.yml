@@ -1,0 +1,4 @@
+services:
+  itk_floating_help.config:
+    class: Drupal\itk_floating_help\State\ITKFloatingHelpConfig
+    arguments: ['@serialization.json', '@database']

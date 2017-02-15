@@ -1,0 +1,39 @@
+.contact-information {
+  width: 100%;
+
+  &--info-block {
+    align-items: center;
+    border-bottom: 1px solid $color-border-dark;
+    display: flex;
+    padding-bottom: $spacing-pixel-xxsmall;
+    padding-top: $spacing-pixel-xxsmall;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  &--meta {
+   font-size: $font-size-xsmall;
+   font-weight: 600;
+   margin: 0;
+   text-transform: uppercase;
+  }
+
+  &--info {
+    font-size: $font-size-normal;
+    margin: 0;
+  }
+
+  &.is-green-light {
+    background-color: lighten($color-green-light, 5%);
+  }
+
+  &.has-spacing {
+    margin-top: $spacing-pixel-xxsmall;
+    padding-bottom: $spacing-pixel-xsmall;
+    padding-left: $spacing-pixel-normal;
+    padding-right: $spacing-pixel-normal;
+    padding-top: $spacing-pixel-xsmall;
+  }
+}

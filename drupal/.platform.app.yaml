@@ -81,7 +81,6 @@ web:
                 '^/sites/default/files/(css|js)':
                     expires: 2w
 
-
 # The size of the persistent disk of the application (in MB).
 disk: 2048
 
@@ -97,6 +96,8 @@ mounts:
 # The hooks executed at various points in the lifecycle of the application.
 hooks:
     # The deploy hook runs after your application has been deployed and started.
+#  For first time server setup.
+#      drush -y site-install minimal --config-dir=../config/sync
     deploy: |
       cd web
       drush -y cache-rebuild
@@ -109,4 +110,3 @@ crons:
     drupal:
         spec: '*/20 * * * *'
         cmd: 'cd web; drush core-cron'
-

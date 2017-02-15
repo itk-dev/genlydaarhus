@@ -1,0 +1,13 @@
+.textarea {
+  display: flex;
+  flex-direction: column;
+
+  &--input {
+    border: 2px solid $color-border-dark;
+    border-radius: $border-radius;
+    padding-bottom: $spacing-pixel-xsmall;
+    padding-left: $spacing-pixel-xxsmall;
+    padding-right: $spacing-pixel-xxsmall;
+    padding-top: $spacing-pixel-xsmall;
+  }
+}

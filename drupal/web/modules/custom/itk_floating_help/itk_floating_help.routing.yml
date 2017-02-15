@@ -1,0 +1,8 @@
+# --- Administration pages routing --- #
+itk_floating_help.content:
+  path: '/admin/content/floating-help'
+  defaults:
+    _form: '\Drupal\itk_floating_help\Form\ITKFloatingHelpContentForm'
+    _title: 'Floating help'
+  requirements:
+    _permission: 'administer content'

@@ -1,10 +1,10 @@
-uuid: a0a4fc80-5156-4bec-be85-847f91856280
+uuid: 58f7703d-12fb-4410-9e64-58f8e24c3ea8
 langcode: da
 status: true
 dependencies: {  }
 _core:
   default_config_hash: 7yrlW5z9zdg2eBucB2GPqXKSMQfH9lSRSO4DbWF7AFc
 id: footer
-label: Sidefod
-description: 'Links til informationen om sitet'
+label: Footer
+description: 'This is the menu displayed first in the footer'
 locked: true

@@ -1,0 +1,35 @@
+<?php
+/**
+ * @file
+ * Handles updates for genlyd.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function genlyd_install() {
+  $module_list = array(
+    'components',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+
+  $themes_list = array(
+    'genlyd_aarhus',
+  );
+  \Drupal::service('theme_installer')->install($themes_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8001() {
+  $module_list = array(
+    'components',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+
+  $themes_list = array(
+    'genlyd_aarhus',
+  );
+  \Drupal::service('theme_installer')->install($themes_list);
+}

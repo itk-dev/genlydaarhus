@@ -10,11 +10,3 @@
 "http://www.{default}/":
     type: redirect
     to: "http://{default}/"
-
-"http://styleguide.{default}/":
-    type: upstream
-    upstream: "styleguide:http"
-
-"http://www.styleguide.{default}/":
-    type: redirect
-    to: "http://styleguide.{default}/"

@@ -1,4 +1,4 @@
-uuid: e0c3e83a-1064-46ad-8aea-82a471a576ff
+uuid: 5d353223-91e3-4de5-a3b5-690e79703418
 langcode: da
 status: true
 dependencies:
@@ -7,7 +7,7 @@ dependencies:
 _core:
   default_config_hash: U9HspszLxcw6pZmRacFa6yDbbheyMN-We4fPbrWWHGg
 id: node_save_action
-label: 'Gem indhold'
+label: 'Save content'
 type: node
 plugin: node_save_action
 configuration: {  }

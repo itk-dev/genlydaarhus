@@ -1,0 +1,6 @@
+name: ITK Floating Help
+type: module
+description: 'Provides floating help module'
+package: ITK
+core: 8.x
+dependencies:

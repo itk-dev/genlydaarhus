@@ -1,0 +1,245 @@
+{
+  "activitiesEdit": [
+    {
+      "cardHeader": {
+        "title": "Drop-in badminton",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/badminton.jpg"
+        }
+      },
+
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "12 Januar"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "12 tilmeldte"
+          }
+        ]
+      }
+    },
+
+    {
+      "cardHeader": {
+        "title": "Strikkeklub for enlige",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/nitting.jpg"
+        }
+      },
+
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "5 Februar"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "4 tilmeldte"
+          }
+        ]
+      }
+    },
+
+    {
+      "cardHeader": {
+        "title": "Løbetur Marselisborg Skov",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/running.jpg"
+        }
+      },
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "23 Marts"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "15 tilmeldte"
+          }
+        ]
+      }
+    },
+
+    {
+      "cardHeader": {
+        "title": "Kortspil for alle",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/cards.jpg"
+        }
+      },
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "3. April"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "2 tilmeldte"
+          }
+        ]
+      }
+    },
+
+    {
+      "cardHeader": {
+        "title": "Gospel korsang i kirken",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/gospel.jpg"
+        }
+      },
+
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "7. Maj"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
+    },
+
+    {
+      "cardHeader": {
+        "title": "Vinsmagning i vinkælderen",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/wine.jpg"
+        }
+      },
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "16. Juni"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
+    },
+    {
+      "cardHeader": {
+        "title": "Hækling for alle aldre",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/crocheting.jpg"
+        }
+      },
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "9. Juli"
+          },
+          {
+            "label": "Pris",
+            "text": "Gratis"
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
+    },
+    {
+      "cardHeader": {
+        "title": "Fælles computerspil",
+        "image": {
+          "class": "",
+          "src": "/assets/images/styleguide/computer.jpg"
+        }
+      },
+
+      "cardInfo": {
+        "activityMetas" : [
+          {
+            "label": "Dato",
+            "text": "30. August"
+          },
+          {
+            "label": "Pris",
+            "text": "50 kr."
+          },
+          {
+            "label": "Område",
+            "text": "Højbjerg"
+          },
+          {
+            "label": "Deltagere",
+            "text": "8 tilmeldte"
+          }
+        ]
+      }
+    }
+  ]
+}

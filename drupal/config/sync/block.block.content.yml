@@ -1,0 +1,20 @@
+uuid: 47d02d62-16d1-4e66-80f2-a5d5421a7fc3
+langcode: da
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - genlyd_aarhus
+id: content
+theme: genlyd_aarhus
+region: content
+weight: 0
+provider: null
+plugin: system_main_block
+settings:
+  id: system_main_block
+  label: Content
+  provider: system
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,24 @@
+.card-info {
+
+  background-color: $color-black-light;
+
+  &.has-spacing {
+    padding-bottom: $spacing-pixel-small;
+    padding-left: $spacing-pixel-small;
+    padding-right: $spacing-pixel-small;
+    padding-top: $spacing-pixel-small;
+  }
+
+  &--metas {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--meta {
+    width: 50%;
+
+    &:nth-child(-n+2) {
+      margin-bottom: $spacing-pixel-xxsmall;
+    }
+  }
+}
