@@ -38,77 +38,77 @@ class ITKFloatingHelpContentForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $config = $this->getBaseConfig();
 
-    $form['basic_information_wrapper'] = array(
+    $form['basic_information_wrapper'] = [
       '#title' => $this->t('Basic information'),
       '#type' => 'details',
       '#description' => $this->t('Configure the content of the basic information of the floating help module.'),
       '#weight' => '1',
       '#open' => TRUE,
-    );
+    ];
 
-    $form['basic_information_wrapper']['floating_help_button_label_closed'] = array(
+    $form['basic_information_wrapper']['floating_help_button_label_closed'] = [
       '#title' => $this->t('Button label (closed)'),
       '#type' => 'textfield',
       '#description' => $this->t('Set the button text for opening the box.'),
       '#default_value' => $config->get('floating_help_button_label_closed'),
       '#required' => true,
       '#weight' => '2',
-    );
+    ];
 
-    $form['basic_information_wrapper']['floating_help_button_label_open'] = array(
+    $form['basic_information_wrapper']['floating_help_button_label_open'] = [
       '#title' => $this->t('Button label (open)'),
       '#type' => 'textfield',
       '#description' => $this->t('Set the button text for closing the box.'),
       '#default_value' => $config->get('floating_help_button_label_open'),
       '#required' => true,
       '#weight' => '3',
-    );
+    ];
 
-    $form['basic_information_wrapper']['floating_help_text'] = array(
+    $form['basic_information_wrapper']['floating_help_text'] = [
       '#title' => $this->t('Text'),
       '#type' => 'textfield',
       '#description' => $this->t('A short text that provides information to the user.'),
       '#default_value' => $config->get('floating_help_text'),
       '#required' => true,
       '#weight' => '4',
-    );
+    ];
 
-    $form['contact_information_wrapper'] = array(
+    $form['contact_information_wrapper'] = [
       '#title' => $this->t('Contact information'),
       '#type' => 'details',
       '#description' => $this->t('Configure the contact information for the floating help module.'),
       '#weight' => '1',
       '#open' => TRUE,
-    );
+    ];
 
-    $form['contact_information_wrapper']['floating_help_contact'] = array(
+    $form['contact_information_wrapper']['floating_help_contact'] = [
       '#title' => $this->t('Contact'),
       '#type' => 'textfield',
       '#default_value' => $config->get('floating_help_contact'),
       '#weight' => '2',
-    );
+    ];
 
-    $form['contact_information_wrapper']['floating_help_phone'] = array(
+    $form['contact_information_wrapper']['floating_help_phone'] = [
       '#title' => $this->t('Phone'),
       '#type' => 'textfield',
       '#default_value' => $config->get('floating_help_phone'),
       '#weight' => '3',
-    );
+    ];
 
-    $form['contact_information_wrapper']['floating_help_email'] = array(
+    $form['contact_information_wrapper']['floating_help_email'] = [
       '#title' => $this->t('Email'),
       '#type' => 'textfield',
       '#default_value' => $config->get('floating_help_email'),
       '#weight' => '4',
-    );
+    ];
 
     $form['actions'] = array('#type' => 'actions');
-    $form['actions']['submit'] = array(
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#attributes' => ['class' => ['button--primary']],
       '#value' => t('Save configuration'),
       '#weight' => '6',
-    );
+    ];
 
     return $form;
   }

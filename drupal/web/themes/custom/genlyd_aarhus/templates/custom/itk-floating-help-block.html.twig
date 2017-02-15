@@ -8,8 +8,11 @@
   *   - floating_help_button_label_closed: Button label closed.
   *   - floating_help_button_label_open: Button label open.
   *   - floating_help_text: Text field.
+  *   - floating_help_contact_label: Label for contact field.
   *   - floating_help_contact: Contact field.
+  *   - floating_help_phone_label: Label for phone field.
   *   - floating_help_phone: Phone field.
+  *   - floating_help_email_label: Label for email field.
   *   - floating_help_email: Email field.
   */
 #}
@@ -23,10 +26,10 @@
 
 {% set contactInformation = {
     "contact": floating_help_contact,
-    "contactLabel": "TODO: Kontaktperson",
-    "phoneLabel": "TODO: Telefon",
+    "contactLabel": floating_help_contact_label,
+    "phoneLabel": floating_help_phone_label,
     "phone": floating_help_phone,
-    "emailLabel": "TODO: E-mail",
+    "emailLabel": floating_help_email_label,
     "email": floating_help_email
   }
 %}
