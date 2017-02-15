@@ -1,0 +1,20 @@
+uuid: f12fb74b-d89f-457e-ace8-6b0e5cb3995f
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_floating_help
+  theme:
+    - genlyd_aarhus
+id: itkfloatinghelp
+theme: genlyd_aarhus
+region: content
+weight: 0
+provider: null
+plugin: itk_floating_help
+settings:
+  id: itk_floating_help
+  label: 'ITK Floating help'
+  provider: itk_floating_help
+  label_display: visible
+visibility: {  }
