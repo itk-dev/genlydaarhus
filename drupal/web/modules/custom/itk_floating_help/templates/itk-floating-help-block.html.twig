@@ -1,32 +1,20 @@
 {#
 /**
- * @file
- * Display of footer
- *
- * Available variables:
- * - footer_title: The heading.
- * - footer_text: Rendered html of the footer.
- * - menus: An array containing rendered menus.
- */
+  * @file
+  * Display of Floating Help
+  *
+  * Available variables:
+  * - variables: Holds variables.
+  *   - floating_help_title: Title field.
+  *   - floating_help_text: Text field.
+  *   - floating_help_contact: Contact field.
+  *   - floating_help_phone: Phone field.
+  *   - floating_help_email: Email field.
+  */
 #}
-<div class="footer">
-  {% if footer_title %}
-    <h3>{{ footer_title }}</h3>
-  {% endif %}
-  {% if footer_text %}
-    <div class="footer--text">
-      {{ footer_text }}
-    </div>
-  {% endif %}
-  {% if menus %}
-    <div class="footer--menus">
-      {% for item in menus %}
-        {% if item %}
-          <div class="menu">
-            {{ item }}
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  {% endif %}
-</div>
+
+{{ floating_help_title }}
+{{ floating_help_text }}
+{{ floating_help_contact }}
+{{ floating_help_phone }}
+{{ floating_help_email }}
