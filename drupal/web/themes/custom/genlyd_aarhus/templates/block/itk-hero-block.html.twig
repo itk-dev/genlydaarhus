@@ -8,18 +8,22 @@
  */
 #}
 
-{% include "@modules/hero.twig" with
+{% set hero = {
+  "lead": variables.itk_hero_lead,
+  "sub": variables.itk_hero_sub,
+  "image": variables.itk_hero_image_url,
+  "buttons":  [
     {
-        hero: {
-            lead: variables.itk_hero_lead,
-            sub: variables.itk_hero_sub,
-            image: variables.itk_hero_image_url,
-            buttons: [
-                {
-                    href: variables.itk_hero_link,
-                    title: variables.itk_hero_button
-                }
-            ]
-        }
-    }
+      "href": variables.itk_hero_link,
+      "title": variables.itk_hero_button,
+      "class": "is-cta is-full-width"
+    },
+    {
+      "href": "TODO: LINK",
+      "title": "TODO: TITLE",
+      "class": "button is-secondary is-light is-full-width"
+  }]
+}
 %}
+
+{% include "@modules/hero.twig" with {hero : hero} %}
