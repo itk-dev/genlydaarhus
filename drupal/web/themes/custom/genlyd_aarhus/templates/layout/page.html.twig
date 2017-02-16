@@ -58,6 +58,12 @@
     {% endif %}
   {% endblock %}
 
+  {% block hero %}
+    {% if page.hero %}
+      {{ page.hero }}
+    {% endif %}
+  {% endblock %}
+
   {% block main %}
     {% if page.content %}
       {{ page.content }}
