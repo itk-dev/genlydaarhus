@@ -29,3 +29,5 @@ permissions:
   - 'change own username'
   - 'assign editor role'
   - 'access floating help'
+  - 'access itk floating help'
+  - 'access itk hero'
