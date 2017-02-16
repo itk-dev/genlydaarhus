@@ -51,6 +51,7 @@ class ITKHeroContentForm extends FormBase {
       '#title' => $this->t('Lead text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_lead'),
+      '#required' => true,
       '#weight' => '2',
     ];
 
@@ -58,6 +59,7 @@ class ITKHeroContentForm extends FormBase {
       '#title' => $this->t('Sub text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_sub'),
+      '#required' => true,
       '#weight' => '3',
     ];
 
@@ -65,6 +67,7 @@ class ITKHeroContentForm extends FormBase {
       '#title' => $this->t('Button text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_button'),
+      '#required' => true,
       '#weight' => '4',
     ];
 
@@ -72,17 +75,18 @@ class ITKHeroContentForm extends FormBase {
       '#title' => $this->t('Button link'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_link'),
+      '#required' => true,
       '#weight' => '5',
     ];
 
     $fids = [];
     if (!empty($input)) {
       if (!empty($input['itk_hero_image'])) {
-        $fids[0] = $form_state->getValue('itk_hero_image'];
+        $fids[0] = $form_state->getValue('itk_hero_image');
       }
     }
     else {
-      $fids[0] = $config->get('itk_hero_image', ''];
+      $fids[0] = $config->get('itk_hero_image', '');
     }
 
     $form['wrapper']['itk_hero_image'] = [
@@ -90,6 +94,7 @@ class ITKHeroContentForm extends FormBase {
       '#type' => 'managed_file',
       '#default_value' => ($fids[0]) ? $fids : '',
       '#upload_location' => 'public://',
+      '#required' => true,
       '#weight' => '3',
       '#open' => TRUE,
       '#description' => t('The image used for the hero.'),
@@ -150,7 +155,7 @@ class ITKHeroContentForm extends FormBase {
       'itk_hero_button' => $form_state->getValue('itk_hero_button'),
       'itk_hero_link' => $form_state->getValue('itk_hero_link'),
       'itk_hero_image' => $file ? $file->id() : NULL,
-    ];
+    ]);
 
     drupal_flush_all_caches();
   }
