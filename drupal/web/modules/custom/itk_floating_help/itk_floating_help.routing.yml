@@ -5,4 +5,4 @@ itk_floating_help.content:
     _form: '\Drupal\itk_floating_help\Form\ITKFloatingHelpContentForm'
     _title: 'Floating help'
   requirements:
-    _permission: 'administer content'
+    _permission: 'access floating help'
