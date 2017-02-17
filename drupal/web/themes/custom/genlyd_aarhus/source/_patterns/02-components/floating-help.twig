@@ -6,5 +6,5 @@
   <p class="floating-help--subtitle">{{ floatingHelp.text }}</p>
 
   {% include '@modules/contact-information.twig' with { contactInformation: contactInformation, contactInformationClass: "is-green-light has-spacing" }  %}
-  {% include '@elements/buttons/00-button-small.twig' with { button: { class: "js-floating-help-close", title: floatingHelp.buttonLabelOpen }} %}
+  {% include '@elements/buttons/00-button-small.twig' with { button: { title: floatingHelp.buttonLabelOpen }, jsClass: "js-floating-help-close" } %}
 </div>
