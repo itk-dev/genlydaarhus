@@ -2,8 +2,6 @@
   <h3 class="is-light is-centered has-no-top-margin">
     {{ cardEditOverlay.title }}
   </h3>
-
-  {% include "elements-button" with { button: cardEditOverlay.deleteButton } %}
-  {% include "elements-button" with { button: cardEditOverlay.backButton } %}
-
+  {% include "@elements/buttons/00-button-delete-small.twig" with { button: cardEditOverlay.deleteButton } %}
+  {% include "@elements/buttons/00-button-secondary-light-small.twig" with { button: cardEditOverlay.backButton, buttonClass: "js-card-edit-overlay-back" } %}
 </div>
