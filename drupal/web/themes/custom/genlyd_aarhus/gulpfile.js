@@ -154,7 +154,7 @@ function watchTasks(theme, config) {
 
   gulp.task(taskName, false, function () {
     gulp.watch(config.sass.paths, ['sass']);
-    // gulp.watch(config.sass.paths, ['stylelint']);
+    gulp.watch(config.sass.paths, ['stylelint']);
 
     if (config.hasOwnProperty('js')) {
       gulp.watch(config.js.paths, ['eslint']);
