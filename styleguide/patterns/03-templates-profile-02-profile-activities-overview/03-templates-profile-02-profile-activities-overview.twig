@@ -17,15 +17,15 @@
         }
       %}
 
-      <div class="grid">
-        <div class="grid--inner">
+    {% embed "grid-fourths.twig" %}
+      {% block items %}
           {% for item in activities|slice(0, 3) %}
             <article class="grid--item">
               {% include "components-card-activity-edit" with { cardActivity: item } %}
             </article>
           {% endfor %}
-        </div>
-      </div>
+      {% endblock %}
+    {% endembed %}
 
       {% include "modules-text-with-icon" with
         {
