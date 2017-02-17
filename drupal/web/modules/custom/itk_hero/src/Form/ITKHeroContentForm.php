@@ -63,12 +63,28 @@ class ITKHeroContentForm extends FormBase {
       '#weight' => '3',
     ];
 
+    $form['wrapper']['itk_hero_cta_button'] = [
+      '#title' => $this->t('Call to action button'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('itk_hero_cta_button'),
+      '#required' => true,
+      '#weight' => '4',
+    ];
+
+    $form['wrapper']['itk_hero_cta_link'] = [
+      '#title' => $this->t('Call to action button link'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('itk_hero_cta_link'),
+      '#required' => true,
+      '#weight' => '5',
+    ];
+
     $form['wrapper']['itk_hero_button'] = [
-      '#title' => $this->t('Button text'),
+      '#title' => $this->t('Button'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_button'),
       '#required' => true,
-      '#weight' => '4',
+      '#weight' => '6',
     ];
 
     $form['wrapper']['itk_hero_link'] = [
@@ -76,7 +92,7 @@ class ITKHeroContentForm extends FormBase {
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_link'),
       '#required' => true,
-      '#weight' => '5',
+      '#weight' => '7',
     ];
 
     $fids = [];
@@ -152,9 +168,11 @@ class ITKHeroContentForm extends FormBase {
     $this->getBaseConfig()->setMultiple([
       'itk_hero_lead' => $form_state->getValue('itk_hero_lead'),
       'itk_hero_sub' => $form_state->getValue('itk_hero_sub'),
+      'itk_hero_image' => $file ? $file->id() : NULL,
+      'itk_hero_cta_button' => $form_state->getValue('itk_hero_cta_button'),
+      'itk_hero_cta_link' => $form_state->getValue('itk_hero_cta_link'),
       'itk_hero_button' => $form_state->getValue('itk_hero_button'),
       'itk_hero_link' => $form_state->getValue('itk_hero_link'),
-      'itk_hero_image' => $file ? $file->id() : NULL,
     ]);
 
     drupal_flush_all_caches();
