@@ -12,15 +12,16 @@
       {% include "modules-filters" %}
     </div>
 
-    <div class="grid">
-      <div class="grid--inner">
+    {% embed "grid-fourths.twig" %}
+      {% block items %}
         {% for item in activities %}
           <article class="grid--item">
           {% include "components-card-activity" with { cardActivity: item } %}
           </article>
         {% endfor %}
       </div>
-    </div>
+      {% endblock %}
+    {% endembed %}
 
   </div>
   {% endblock %}

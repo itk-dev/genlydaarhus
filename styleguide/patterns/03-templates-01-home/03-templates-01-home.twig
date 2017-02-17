@@ -11,15 +11,16 @@
         {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
       </div>
 
-      <div class="grid">
-        <div class="grid--inner">
+      {% embed "grid-fourths.twig" %}
+        {% block items %}
           {% for item in activities %}
             <article class="grid--item">
               {% include "components-card-activity" with { cardActivity: item } %}
             </article>
           {% endfor %}
-        </div>
-      </div>
+        {% endblock %}
+      {% endembed %}
+
 
       <div class="layout flex center">
         {% include "modules-call-to-action" with { callToAction: home.activityCallToAction } %}
@@ -47,15 +48,15 @@
         {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
       </div>
 
-      <div class="grid">
-        <div class="grid--inner">
+      {% embed "grid-fourths.twig" %}
+        {% block items %}
           {% for item in activities %}
             <article class="grid--item">
               {% include "components-card-activity" with { cardActivity: item } %}
             </article>
           {% endfor %}
-        </div>
-      </div>
+        {% endblock %}
+      {% endembed %}
 
       <div class="layout">
         {% include 'modules-call-to-action' with { callToAction: home.popularCallToAction } %}

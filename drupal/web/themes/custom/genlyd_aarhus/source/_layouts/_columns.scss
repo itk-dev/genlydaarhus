@@ -1,0 +1,165 @@
+.layout-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+
+  &.flex-start {
+    justify-content: flex-start;
+
+    .layout-column {
+
+      &.tablet-up {
+        @include breakpoint($breakpoint-tablet) {
+          margin-bottom: 0;
+          margin-right: $spacing-pixel-normal;
+        }
+      }
+
+      &.desk-up {
+        @include breakpoint($breakpoint-desk) {
+          margin-bottom: 0;
+          margin-right: $spacing-pixel-normal;
+        }
+      }
+    }
+
+  }
+
+  &.is-reversed {
+
+    &-tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        flex-direction: row-reverse;
+      }
+    }
+
+    &-desk-up {
+      @include breakpoint($breakpoint-desk) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  .layout-column {
+    width: 100%;
+
+    &:not(:last-child){
+      margin-bottom: $spacing-percent-medium;
+    }
+
+    &.all {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+    }
+
+    &.tablet-up {
+      @include breakpoint($breakpoint-tablet) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+
+    &.desk-up {
+      @include breakpoint($breakpoint-desk) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+
+    &.mediumdesk-up {
+      @include breakpoint($breakpoint-mediumdesk) {
+        margin-bottom: 0;
+
+        &.half {
+          width: $half;
+        }
+
+        &.one-third {
+          width: $one-third;
+        }
+        &.two-third {
+          width: $two-third;
+        }
+
+        &.one-fourth {
+          width: $one-fourth;
+        }
+
+        &.two-fourth {
+          width: $two-fourth;
+        }
+
+        &.three-fourth {
+          width: $three-fourth;
+        }
+      }
+    }
+  }
+}
