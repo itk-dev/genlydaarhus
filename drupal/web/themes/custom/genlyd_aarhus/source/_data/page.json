@@ -1,0 +1,15 @@
+{
+  "hero": {
+    "image": "/assets/images/styleguide/placeholder-hero.png",
+    "lead": "Fællesskab i Aarhus",
+    "sub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "cta_button":  {
+      "title": "Find aktiviteter",
+      "href": "#"
+    },
+    "button":  {
+      "title": "Opret aktivitet",
+      "href": "#"
+    }
+  }
+}

@@ -1,6 +1,14 @@
 {% block header %}
-  {% include "@components/01-global/01-header.twig" %}
-  {% include "@modules/hamburger-menu.twig" with { transparent: hamburgerMenu.class } %}
+  {% embed "@components/01-global/01-header.twig" %}
+    {% if page.header %}
+      {% block header %}
+        {{ page.header }}
+      {% endblock %}
+    {% endif %}
+  {% endembed %}
+  {% if page.hamburger_menu %}
+    {{ page.hamburger_menu }}
+  {% endif %}
 {% endblock %}
 
 {% block hero %}{% endblock %}

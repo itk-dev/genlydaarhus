@@ -23,6 +23,12 @@ component-libraries:
   components:
     paths:
       - source/_patterns/02-components
+  templates:
+    paths:
+      - source/_patterns/03-templates
+  pages:
+    paths:
+      - source/_patterns/04-pages
   layouts:
     paths:
       - source/_patterns/05-layouts
