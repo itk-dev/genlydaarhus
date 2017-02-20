@@ -8,7 +8,7 @@
   {% block main %}
     <div class="container has-spacing">
       <div class="l-heading-section">
-        {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
+        {% include "@modules/heading-with-icon.twig" with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
       </div>
 
       {% embed "@layouts/grid-fourths.twig" %}
@@ -46,7 +46,7 @@
 
     <div class="container has-spacing">
       <div class="l-heading-section">
-        {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
+        {% include "@modules/heading-with-icon.twig" with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
       </div>
 
     {% embed "@layouts/grid-fourths.twig" %}

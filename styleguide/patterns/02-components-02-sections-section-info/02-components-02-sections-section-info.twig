@@ -1,6 +1,6 @@
 <section class="section-info">
   <div class="section-info--top l-heading-section no-spacing layout flex center">
-    {% include "modules-heading-with-icon" %}
+    {% include "@modules/heading-with-icon.twig" %}
   </div>
 
   <div class="section-info--items">
@@ -9,7 +9,7 @@
         <div class="l-col one-third desk-up">
           <div class="section-info--headings">
             <div class="section-info--icon">
-              {% include "elements-icon" with { icon: item.icon } %}
+              {% include "@elements/icons/icon.twig" with { icon: item.icon } %}
             </div>
             <h3 class="section-info--title">{{ item.title }}</h3>
           </div>

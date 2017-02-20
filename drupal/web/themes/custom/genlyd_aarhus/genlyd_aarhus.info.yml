@@ -23,6 +23,9 @@ component-libraries:
   components:
     paths:
       - source/_patterns/02-components
+  templates:
+    paths:
+      - source/_patterns/03-templates
   layouts:
     paths:
       - source/_patterns/05-layouts

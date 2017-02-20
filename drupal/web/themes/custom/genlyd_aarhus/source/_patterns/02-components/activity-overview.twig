@@ -32,10 +32,10 @@
 
                 {% embed "@layouts/grid-item.twig" %}
                   {% block content %}
-                    {% include "elements-category" with { category: { text: "IT" } } %}
-                    {% include "elements-category" with { category: { text: "Spil" } } %}
-                    {% include "elements-category" with { category: { text: "Sport" } } %}
-                    {% include "elements-category" with { category: { text: "Mad og fællesskab" } } %}
+                    {% include "@elements/category.twig" with { category: { text: "IT" } } %}
+                    {% include "@elements/category.twig" with { category: { text: "Spil" } } %}
+                    {% include "@elements/category.twig" with { category: { text: "Sport" } } %}
+                    {% include "@elements/category.twig" with { category: { text: "Mad og fællesskab" } } %}
                   {% endblock %}
                 {% endembed %}
 
@@ -61,8 +61,8 @@
 
         {% embed "@layouts/grid-item.twig" %}
           {% block content %}
-            {% include "modules-text-with-icon" with { textWithIcon: activityOverview.headingWithIconDetails, icon: activityOverview.headingWithIconDetails.icon } %}
-            {% include 'components-activity-sidebar' %}
+            {% include "@modules/text-with-icon.twig" with { textWithIcon: activityOverview.headingWithIconDetails, icon: activityOverview.headingWithIconDetails.icon } %}
+            {% include "@components/activity-sidebar.twig" %}
           {% endblock %}
         {% endembed %}
 

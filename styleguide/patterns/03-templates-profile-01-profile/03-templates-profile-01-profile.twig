@@ -2,7 +2,7 @@
   {% block main %}
   <div class="container has-large-spacing">
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
     </div>
 
     <div class="l-section has-bottom-margin">
@@ -50,7 +50,7 @@
     </div>
 
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
     </div>
 
     {% embed "@layouts/grid-fourths.twig" %}
