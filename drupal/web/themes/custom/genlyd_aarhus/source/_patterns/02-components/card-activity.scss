@@ -1,11 +1,11 @@
 .card-activity {
   &--link {
     display: block;
-    transition: all .4s;
     text-decoration: none;
+    transition: all .4s;
 
     &:hover {
-      opacity: 0.95;
+      opacity: .95;
     }
   }
 }

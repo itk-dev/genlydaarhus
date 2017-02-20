@@ -5,10 +5,10 @@ html {
 body {
   color: $color-black-light;
   display: flex;
-  font: $font;
   flex-direction: column;
-  margin: 0;
+  font: $font;
   height: 100%;
+  margin: 0;
   position: relative;
   width: 100%;
 }

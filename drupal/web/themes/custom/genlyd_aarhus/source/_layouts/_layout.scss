@@ -186,8 +186,8 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
 
 .l-cols {
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
   width: 100%;
 
   &.flex-start {
@@ -241,7 +241,7 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
         &.half {
           width: $half;
         }
-        
+
         &.one-third {
           width: $one-third;
         }
@@ -269,7 +269,7 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
         &.half {
           width: $half;
         }
-        
+
         &.one-third {
           width: $one-third;
         }
@@ -298,7 +298,7 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
         &.half {
           width: $half;
         }
-        
+
         &.one-third {
           width: $one-third;
         }
@@ -327,7 +327,7 @@ $three-fourth:  (100%/4)*3 - $spacing-percent-medium;
         &.half {
           width: $half;
         }
-        
+
         &.one-third {
           width: $one-third;
         }

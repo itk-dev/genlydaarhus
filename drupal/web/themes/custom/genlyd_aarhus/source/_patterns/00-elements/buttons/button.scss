@@ -43,9 +43,9 @@ $button-xxxsmall: $spacing-pixel-xxxsmall;
   width: 100%;
 
   &.is-inactive {
+    cursor: default;
     opacity: .5;
     pointer-events: none;
-    cursor: default;
   }
 
   &.is-primary {
@@ -56,13 +56,13 @@ $button-xxxsmall: $spacing-pixel-xxxsmall;
     background-color: transparent;
 
     &.is-dark {
-      @include buttonOverride($color-black-light, 'transparent', transparentize($color-black, .9));
+      @include buttonOverride($color-black-light, "transparent", transparentize($color-black, .9));
 
       box-shadow: inset 0 0 0 2px $color-black-light;
     }
 
     &.is-light {
-      @include buttonOverride($color-white, 'transparent', transparentize($color-white, .9));
+      @include buttonOverride($color-white, "transparent", transparentize($color-white, .9));
 
       box-shadow: inset 0 0 0 2px $color-white;
     }

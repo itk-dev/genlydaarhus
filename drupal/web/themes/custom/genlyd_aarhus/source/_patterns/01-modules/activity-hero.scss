@@ -1,13 +1,13 @@
 .activity-hero {
   position: relative;
   width: 100%;
-  
+
   &--image {
-    position: relative;
-    background-size: cover;
     background-position: center center;
-    width: 100%;
+    background-size: cover;
     height: 300px;
+    position: relative;
+    width: 100%;
 
     @include breakpoint($breakpoint-tablet) {
       height: 400px;
@@ -19,25 +19,24 @@
   }
 
   &--content {
-    position: absolute;
+    background-color: $color-dark-alpha;
+    bottom: 0;
     display: flex;
     justify-content: space-between;
-    bottom: 0;
     left: 0;
-    width: 100%;
-    background-color: $color-dark-alpha;
+    padding-bottom: $spacing-pixel-normal;
     padding-left: $spacing-pixel-normal;
     padding-right: $spacing-pixel-normal;
     padding-top: $spacing-pixel-normal;
-    padding-bottom: $spacing-pixel-normal;
+    position: absolute;
+    width: 100%;
   }
 
   &--title {
-
-    margin: 0;
+    color: $color-white;
     font-size: $font-size-xlarge;
     font-weight: 600;
-    color: $color-white;
+    margin: 0;
 
     @include breakpoint($breakpoint-tablet) {
       font-size: $font-size-xxlarge;

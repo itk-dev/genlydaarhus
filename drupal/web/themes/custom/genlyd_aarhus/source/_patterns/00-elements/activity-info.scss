@@ -1,13 +1,12 @@
 .activity-info {
-
-  padding-bottom: $spacing-pixel-small;
   margin-left: $spacing-pixel-xxxsmall;
   margin-right: $spacing-pixel-xxxsmall;
+  padding-bottom: $spacing-pixel-small;
 
   &--meta {
-    margin-top: 0;
-    margin-bottom: $spacing-pixel-xtiny;
     font-weight: 600;
+    margin-bottom: $spacing-pixel-xtiny;
+    margin-top: 0;
   }
 
   &--data {

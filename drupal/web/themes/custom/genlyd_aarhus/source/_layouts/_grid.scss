@@ -63,8 +63,8 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     .grid--item {
 
       @include breakpoint($breakpoint-desk) {
-        // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
-        // Calculate width: <width> - <number of margins> / <number of columns>.
+        /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+         Calculate width: <width> - <number of margins> / <number of columns>. */
         width: (100% - 8%) / 3;
 
         // Set margins from smaller breakpoint.
@@ -84,8 +84,8 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
   &.is-fourths {
     .grid--item {
       @include breakpoint($breakpoint-largedesk) {
-        // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
-        // Calculate width: <width> - <number of margins> / <number of columns>.
+        /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+        Calculate width: <width> - <number of margins> / <number of columns>. */
         width: (100% - 12%) / 4;
 
         // Set margins from smaller breakpoint.
@@ -106,14 +106,14 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     .grid--item {
       @include breakpoint($breakpoint-desk) {
         &:nth-of-type(1n) {
-          width: ((100% - 4%) / 3)*2;
           margin-left: 0;
           margin-right: $grid-spacing-percent-medium;
+          width: ((100% - 4%) / 3)*2;
         }
         &:nth-of-type(2n) {
-          width: ((100% - 4%) / 3);
-          margin-right: 0;
           margin-left: $grid-spacing-percent-medium;
+          margin-right: 0;
+          width: ((100% - 4%) / 3);
         }
       }
     }

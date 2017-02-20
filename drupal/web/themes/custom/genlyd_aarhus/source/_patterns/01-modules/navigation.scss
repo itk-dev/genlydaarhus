@@ -52,17 +52,6 @@
     &:hover {
       opacity: .8;
     }
-
-    &:hover,
-    &.is-active {
-      @include breakpoint($breakpoint-desk) {
-      }
-    }
-
-    &.is-active {
-      @include breakpoint($breakpoint-desk) {
-      }
-    }
   }
 
   &--icon svg {

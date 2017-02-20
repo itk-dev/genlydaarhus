@@ -8,7 +8,6 @@
   }
 
   &--image-container {
-    // Keeps aspect-ratio of div (1:1)
     padding-bottom: 100%;
     position: relative;
     width: 100%;
@@ -17,10 +16,10 @@
   &--image {
     bottom: 0;
     left: 0;
+    overflow: hidden;
+    position: absolute;
     right: 0;
     top: 0;
-    position: absolute;
-    overflow: hidden;
     width: 100%;
   }
 
@@ -29,8 +28,8 @@
   }
 
   &--disclaimer {
-    text-align: center;
-    font-size: $font-size-small;
     color: $color-dark-alpha;
+    font-size: $font-size-small;
+    text-align: center;
   }
 }
