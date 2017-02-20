@@ -1,7 +1,6 @@
 {% embed "@layouts/page.twig" %}
-
   {% block header %}
-    {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
+    {% embed "@components/01-global/01-header.twig" with { is_front: is_front} %}
       {% if page.header %}
         {% block header %}
           {{ page.header }}
