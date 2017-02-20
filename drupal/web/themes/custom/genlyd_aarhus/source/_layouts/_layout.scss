@@ -83,6 +83,10 @@
       margin-bottom: $spacing-pixel-large;
     }
   }
+
+  &.inline-block {
+    display: inline-block;
+  }
 }
 
 /* Responsive visibility
