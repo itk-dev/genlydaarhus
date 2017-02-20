@@ -22,7 +22,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
    ========================================================================== */
 
    @mixin reset-margins($number) {
-      // Set margins for 2 columns.
+      /* Set margins for 2 columns. */
       &:nth-of-type(#{$number}n) {
         margin-right: 0;
       }
@@ -62,7 +62,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
         margin-right: $grid-spacing-percent-medium;
         width: 50% - $grid-spacing-percent-medium;
 
-        // We have to set this last to override margins.
+        /* We have to set this last to override margins. */
         @include reset-margins(2);
       }
     }
@@ -76,7 +76,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
          Calculate width: <width> - <number of margins> / <number of columns>. */
         width: (100% - 8%) / 3;
 
-        // Set margins from smaller breakpoint.
+        /* Set margins from smaller breakpoint. */
         &:nth-of-type(2n) {
           margin-right: $grid-spacing-percent-medium;
         }
@@ -85,7 +85,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
           margin-left: $grid-spacing-percent-medium;
         }
 
-        // We have to set this last to override margins.
+        /* We have to set this last to override margins. */
         @include reset-margins(3);
       }
     }
@@ -99,7 +99,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
         Calculate width: <width> - <number of margins> / <number of columns>. */
         width: (100% - 12%) / 4;
 
-        // Set margins from smaller breakpoint.
+        /* Set margins from smaller breakpoint. */
         &:nth-of-type(3n) {
           margin-right: $grid-spacing-percent-medium;
         }
@@ -108,7 +108,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
           margin-left: $grid-spacing-percent-medium;
         }
 
-        // We have to set this last to override margins.
+        /* We have to set this last to override margins. */
         @include reset-margins(4);
       }
     }
