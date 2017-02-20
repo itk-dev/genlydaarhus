@@ -1,0 +1,12 @@
+{
+  "socialButtons": {
+    "facebookButton": {
+      "title": "Facebook button",
+      "href": "#"
+    },
+    "googleButton": {
+      "title": "Google button",
+      "href": "#"
+    }
+  }
+}

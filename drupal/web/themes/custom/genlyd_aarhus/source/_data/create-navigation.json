@@ -1,12 +1,10 @@
 {
   "createNavigation": {
     "buttonNext": {
-      "class": "is-cta is-full-width",
       "href": "#",
       "title": "Næste"
     },
     "buttonPrev": {
-      "class": "is-secondary is-dark is-full-width",
       "href": "#",
       "title": "Tilbage"
     }

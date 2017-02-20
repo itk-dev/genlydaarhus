@@ -13,9 +13,23 @@
       "title": "Eller brug personlige oplysninger",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
+    },
+    "socialButtons": {
+      "facebookButton": {
+        "title": "Log ind med Facebook"
+      },
+      "googleButton": {
+        "title": "Log ind med Google"
+      }
+    },
+    "loginButton": {
+      "title": "Login"
+    },
+    "noAccountButton": {
+      "title": "Jeg har ikke en konto"
     }
   }
 }

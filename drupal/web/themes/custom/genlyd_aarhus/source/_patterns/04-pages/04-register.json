@@ -13,7 +13,7 @@
       "title": "Tilmeld gennem service",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -21,9 +21,23 @@
       "title": "Eller brug personlige oplysninger",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
+    },
+    "socialButtons": {
+      "facebookButton": {
+        "title": "Tilmeld med Facebook"
+      },
+      "googleButton": {
+        "title": "Tilmeld med Google"
+      }
+    },
+    "registerButton": {
+      "title": "Tilmeld"
+    },
+    "haveAccountButton": {
+      "title": "Jeg har allerede en konto"
     }
   }
 }
