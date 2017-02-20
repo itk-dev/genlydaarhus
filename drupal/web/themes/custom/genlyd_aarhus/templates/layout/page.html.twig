@@ -44,9 +44,13 @@
  */
 #}
 
+{%  if is_front %}
+  {% set headerTransparent = "is-transparent" %}
+{% endif %}
+
 {% embed "@layouts/page.twig" %}
   {% block header %}
-    {% embed "@components/01-global/01-header.twig" with {transparent: 'is-transparent'} %}
+    {% embed "@components/01-global/01-header.twig" with { transparent: headerTransparent } %}
       {% if page.header %}
         {% block header %}
           {{ page.header }}
