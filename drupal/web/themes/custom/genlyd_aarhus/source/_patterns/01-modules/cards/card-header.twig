@@ -1,7 +1,7 @@
-{% embed "card-header.twig"  %}
+{% embed "@layouts/card-header.twig"  %}
 
   {% block image %}
-    {% include "elements-image" with { image: cardHeader.image } %}
+    {% include "@elements/images/image.twig" with { image: cardHeader.image } %}
   {% endblock %}
 
   {% block content %}
