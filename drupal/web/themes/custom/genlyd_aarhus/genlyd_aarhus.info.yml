@@ -25,7 +25,7 @@ component-libraries:
       - source/_patterns/02-components
   layouts:
     paths:
-      - source/_patterns/layouts
+      - source/_patterns/05-layouts
 
 version: '1.0.0'
 core: '8.x'
