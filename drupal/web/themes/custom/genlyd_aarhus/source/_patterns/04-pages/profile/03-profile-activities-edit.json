@@ -13,7 +13,7 @@
       "title": "Overskrift og beskrivelse",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -21,7 +21,7 @@
       "title": "De vigtigste egenskaber",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -29,7 +29,7 @@
       "title": "Kategorier",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -37,7 +37,7 @@
       "title": "Billede",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -45,7 +45,7 @@
       "title": "Praktisk Information",
       "icon": {
         "type": "arrow",
-        "class": "is-small is-green-dark", 
+        "class": "is-small is-green-dark",
         "color": "light"
       }
     },
@@ -53,7 +53,7 @@
       "button": {
         "class": "is-cta",
         "href": "#",
-        "title": "Gem opslag" 
+        "title": "Gem opslag"
       },
       "text": "Har du rettet det du ville?"
     },
@@ -64,7 +64,6 @@
         "src": "/assets/images/styleguide/computer.jpg"
       },
       "button": {
-        "class": "is-cta is-full-width",
         "href": "#",
         "title": "Skift billede"
       }

@@ -37,7 +37,7 @@
               </div>
             </div>
             <div class="l-col layout flex has-margin-bottom">
-              {% include "elements-button" with { button: profile.saveButton } %}
+              {% include "@elements/buttons/button-call-to-action.twig" with { button: profile.saveButton } %}
             </div>
           </div>
         </div>
@@ -51,15 +51,15 @@
       {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
     </div>
 
-    <div class="grid">
-      <div class="grid--inner">
+    {% embed "grid-fourths.twig" %}
+      {% block items %}
         {% for item in activities|slice(0, 3) %}
           <article class="grid--item">
             {% include "components-card-activity-edit" with { cardActivity: item } %}
           </article>
         {% endfor %}
-      </div>
-    </div>
+      {% endblock %}
+    {% endembed %}
 
     <div class="layout flex center">
       {% include "modules-call-to-action" with { callToAction: profile.callToAction } %}
