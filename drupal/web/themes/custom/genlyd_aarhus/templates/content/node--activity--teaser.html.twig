@@ -74,6 +74,7 @@
 
 {% include "@components/card-activity.twig" with {
   cardActivity: {
+    link: path('entity.node.canonical', {'node': node.id }),
     cardHeader: {
       title: node.title.value,
       image: {
