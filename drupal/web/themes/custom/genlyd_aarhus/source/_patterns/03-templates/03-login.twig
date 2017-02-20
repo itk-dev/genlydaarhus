@@ -44,10 +44,10 @@
 
         <div class="l-section has-no-margin is-tight">
           <div class="l-section has-bottom-margin is-tight layout flex">
-            {% include "elements-button-call-to-action" with { button: login.loginButton } %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: login.loginButton } %}
           </div>
           <div class="layout flex">
-            {% include "elements-button-secondary-dark" with { button: login.noAccountButton } %}
+            {% include "@elements/buttons/button-secondary-dark.twig" with { button: login.noAccountButton } %}
           </div>
         </div>
       {% endblock %}
