@@ -19,15 +19,13 @@
       }
     },
     "saveButton": {
-      "class": "is-cta",
       "href": "#",
-      "title": "Gem oplysninger" 
+      "title": "Gem oplysninger"
     },
     "callToAction": {
       "button": {
-        "class": "is-cta",
         "href": "#",
-        "title": "Se alle dine opslag" 
+        "title": "Se alle dine opslag"
       },
       "text": "Mangler du et ældre opslag?"
     }

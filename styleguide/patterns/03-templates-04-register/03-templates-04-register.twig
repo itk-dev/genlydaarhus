@@ -5,11 +5,11 @@
       {% include 'modules-heading-with-icon' with { headingWithIcon: register.headingWithIcon, icon: register.headingWithIcon.icon } %}
     </div>
 
-    <div class="l-section has-bottom-margin">  
-      {% include 'modules-social-buttons' with { socialButtons: { titleFacebook: "Tilmeld med Facebook", titleGoogle: "Tilmeld med Google" } } %}
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-social-buttons' with { socialButtons: register.socialButtons } %}
     </div>
 
-    <div class="l-section has-no-margin">  
+    <div class="l-section has-no-margin">
       {% include "modules-text-with-icon" with { textWithIcon: register.textWithIconPersonal, icon: register.textWithIconPersonal.icon } %}
     </div>
 
@@ -51,21 +51,18 @@
         </div>
       </div>
     </div>
-        
+
     <div class="l-section has-bottom-margin is-tight">
       <p>Husk at læse <a href="#">betingelserne</a>.</p>
     </div>
 
     <div class="l-section has-no-margin is-tight">
       <div class="l-section has-bottom-margin is-tight layout flex">
-        {% include "elements-button" with { button: { 'class': 'is-cta', 'title': 'Tilmeld'} } %}
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: register.registerButton } %}
       </div>
       <div class="layout flex">
-        {% include "elements-button" with { button: { 'class': 'is-secondary is-dark', 'title': 'Jeg har allerede en konto'} } %}
+        {% include "@elements/buttons/button-secondary-dark.twig" with { button: register.haveAccountButton } %}
       </div>
-    </div>
-    
-    <div class="l-section has-bottom-margin layout flex">
     </div>
   </div>
   {% endblock %}

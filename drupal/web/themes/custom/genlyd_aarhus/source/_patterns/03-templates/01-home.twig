@@ -48,8 +48,8 @@
         {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
       </div>
 
-      {% embed "grid-fourths.twig" %}
-        {% block items %}
+    {% embed "grid-fourths.twig" %}
+      {% block items %}
           {% for item in activities %}
             <article class="grid--item">
               {% include "components-card-activity" with { cardActivity: item } %}

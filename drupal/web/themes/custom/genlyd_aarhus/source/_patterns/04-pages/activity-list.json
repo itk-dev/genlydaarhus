@@ -13,7 +13,6 @@
     "activityAction": {
       "text": "Søger du efter noget bestemt?",
       "button": {
-        "class": "is-cta is-dark is-small js-filters-toggle",
         "href": "#",
         "title": "Filtrér"
       }

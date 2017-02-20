@@ -19,6 +19,16 @@
           "type": "bulletin",
           "color": "light"
         }
+      },
+      "socialShare": {
+        "buttons": [
+            {
+              "title": "Del på Facebook"
+            },
+            {
+              "title": "Del via mail"
+            }
+          ]
       }
     },
     "headingWithIconSimilar": {
@@ -43,7 +53,7 @@
         "button": {
           "class": "is-cta",
           "href": "#",
-          "title": "Se alle aktiviteter" 
+          "title": "Se alle aktiviteter"
         },
         "text": "Ikke lige noget der passede dig?"
     }

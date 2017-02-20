@@ -12,4 +12,12 @@
   position: absolute;
   width: 100%;
   z-index: 1;
+
+  &--first-button, &--second-button {
+    width: 50%;
+  }
+
+  &--first-button {
+    margin-bottom: $spacing-pixel-xxsmall;
+  }
 }

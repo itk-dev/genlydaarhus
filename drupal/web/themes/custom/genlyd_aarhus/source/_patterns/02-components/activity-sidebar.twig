@@ -28,9 +28,9 @@
         {% include "elements-activity-info" with { activityInfo: { meta: "Antal tilmeldte", data: "14 deltagere" }} %}
       </div>
     </div>
-    
+
     <div class="activity-sidebar--signup">
-      {% include '@elements/buttons/00-button.twig' with { button: activitySidebar.signupButton } %}
+      {% include '@elements/buttons/button-call-to-action.twig' with { button: activitySidebar.signupButton } %}
     </div>
     <div class="activity-sidebar--social-share">
       {% include 'modules-social-share' %}

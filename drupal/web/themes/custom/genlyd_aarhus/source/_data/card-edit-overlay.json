@@ -1,11 +1,11 @@
 {
   "cardEditOverlay": {
     "title": "Er du sikker på du vil slette aktiviteten?",
-    "deleteButton": {
+    "firstButton": {
       "href": "#",
       "title": "Slet"
     },
-    "backButton": {
+    "secondButton": {
       "href": "#",
       "title": "Tilbage"
     }
