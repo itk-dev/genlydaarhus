@@ -1,4 +1,4 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
     <div class="container has-large-spacing">
       <div class="l-heading-section">
@@ -17,7 +17,7 @@
         }
       %}
 
-    {% embed "grid-fourths.twig" %}
+    {% embed "@layouts/grid-fourths.twig" %}
       {% block items %}
           {% for item in activities|slice(0, 3) %}
             <article class="grid--item">
@@ -34,7 +34,7 @@
         }
       %}
 
-    {% embed "grid-fourths.twig" %}
+    {% embed "@layouts/grid-fourths.twig" %}
       {% block items %}
         {% for item in activities|slice(0, 2) %}
           <article class="grid--item">

@@ -1,4 +1,4 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block header %}
     {% include "components-header" with { transparent: true } %}
   {% endblock %}
@@ -11,16 +11,17 @@
         {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
       </div>
 
-      {% embed "grid-fourths.twig" %}
+      {% embed "@layouts/grid-fourths.twig" %}
         {% block items %}
           {% for item in activities %}
-            <article class="grid--item">
-              {% include "components-card-activity" with { cardActivity: item } %}
-            </article>
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% include "components-card-activity" with { cardActivity: item } %}
+              {% endblock %}
+            {% endembed %}
           {% endfor %}
         {% endblock %}
       {% endembed %}
-
 
       <div class="layout flex center">
         {% include "modules-call-to-action" with { callToAction: home.activityCallToAction } %}
@@ -48,7 +49,7 @@
         {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
       </div>
 
-    {% embed "grid-fourths.twig" %}
+    {% embed "@layouts/grid-fourths.twig" %}
       {% block items %}
           {% for item in activities %}
             <article class="grid--item">

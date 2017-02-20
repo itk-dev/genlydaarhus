@@ -14,9 +14,6 @@ regions:
   footer: 'Footer'
 
 component-libraries:
-  layouts:
-    paths:
-      - source/_layouts
   elements:
     paths:
       - source/_patterns/00-elements
@@ -26,6 +23,9 @@ component-libraries:
   components:
     paths:
       - source/_patterns/02-components
+  layouts:
+    paths:
+      - source/_patterns/layouts
 
 version: '1.0.0'
 core: '8.x'

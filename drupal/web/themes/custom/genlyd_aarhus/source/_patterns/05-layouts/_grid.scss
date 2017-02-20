@@ -7,6 +7,7 @@
 /* Variables
    ========================================================================== */
 
+$grid-spacing-pixel-small:   $spacing-pixel-small;
 $grid-spacing-pixel-medium:   $spacing-pixel-medium;
 $grid-spacing-pixel-large:    $spacing-pixel-large;
 $grid-spacing-percent-medium: $spacing-percent-medium;
@@ -34,7 +35,13 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 /* Grid
    ========================================================================== */
 
+
+
 .grid {
+  + .grid {
+    margin-top: $grid-spacing-pixel-small;
+  }
+
   &--inner {
     display: flex;
     flex-wrap: wrap;
@@ -42,27 +49,30 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
-    display: flex;
-    margin-bottom: $grid-spacing-pixel-large;
     width: 100%;
   }
 
   &.is-halfs, &.is-thirds, &.is-fourths {
-    .grid--item {
+    > .grid--inner > .grid--item {
+
+      margin-bottom: $grid-spacing-pixel-large;
+
       @include breakpoint($breakpoint-tablet) {
         margin-left: $grid-spacing-percent-medium;
         margin-right: $grid-spacing-percent-medium;
         width: 50% - $grid-spacing-percent-medium;
 
+        // We have to set this last to override margins.
         @include reset-margins(2);
       }
     }
   }
 
   &.is-thirds, &.is-fourths {
-    .grid--item {
+    > .grid--inner > .grid--item {
 
       @include breakpoint($breakpoint-desk) {
+
         // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
         // Calculate width: <width> - <number of margins> / <number of columns>.
         width: (100% - 8%) / 3;
@@ -76,13 +86,15 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
           margin-left: $grid-spacing-percent-medium;
         }
 
+        // We have to set this last to override margins.
         @include reset-margins(3);
       }
     }
   }
 
   &.is-fourths {
-    .grid--item {
+    > .grid--inner > .grid--item {
+
       @include breakpoint($breakpoint-largedesk) {
         // 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
         // Calculate width: <width> - <number of margins> / <number of columns>.
@@ -97,13 +109,15 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
           margin-left: $grid-spacing-percent-medium;
         }
 
+        // We have to set this last to override margins.
         @include reset-margins(4);
       }
     }
   }
 
   &.is-two-thirds {
-    .grid--item {
+    > .grid--inner > .grid--item {
+
       @include breakpoint($breakpoint-desk) {
         &:nth-of-type(1n) {
           width: ((100% - 4%) / 3)*2;

@@ -1,11 +1,10 @@
-{% embed "card-header.twig"  %}
-
-  {% block image %}
-    {% include "elements-image" with { image: cardHeader.image } %}
-  {% endblock %}
-
-  {% block content %}
-      <h3 class="is-light has-background-dark-alpha has-no-margin has-padding">{{ cardHeader.title }}</h3>
-  {% endblock %}
-
-{% endembed %}
+<div class="card-header">
+  <div class="card-header--image-container">
+    <div class="card-header--image">
+      {% include "@elements/images/image.twig" with { image: cardHeader.image } %}
+    </div>
+  </div>
+  <div class="card-header--content">
+    <h3 class="is-light has-background-dark-alpha has-no-margin has-padding">{{ cardHeader.title }}</h3>
+  </div>
+</div>

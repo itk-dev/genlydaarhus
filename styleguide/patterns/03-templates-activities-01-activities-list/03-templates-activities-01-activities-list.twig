@@ -1,4 +1,4 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block hero %}{% endblock %}
   {% block main %}
   <div class="container has-large-spacing">
@@ -12,7 +12,7 @@
       {% include "modules-filters" %}
     </div>
 
-    {% embed "grid-fourths.twig" %}
+    {% embed "@layouts/grid-fourths.twig" %}
       {% block items %}
         {% for item in activities %}
           <article class="grid--item">

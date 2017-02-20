@@ -1,0 +1,11 @@
+<div class="card">
+  {% block overlay %}{% endblock %}
+
+  <a href="{{ cardActivity.link }}" class="card-activity--link has-hover">
+    {% block header %}{% endblock %}
+
+    {% block info %}{% endblock %}
+  </a>
+
+  {% block footer %}{% endblock %}
+</div>

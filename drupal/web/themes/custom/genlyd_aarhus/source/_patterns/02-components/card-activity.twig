@@ -1,11 +1,9 @@
-{% embed "@layouts/card.twig"  %}
-  {% block content %}
-    <a href="{{ cardActivity.link }}" class="card-activity--link has-hover">
+{% embed "@modules/cards/card.twig" %}
+  {% block header %}
+    {% include "@modules/cards/card-header.twig" with { cardHeader: cardActivity.cardHeader } %}
+  {% endblock %}
 
-      {% include "@modules/cards/card-header.twig" with { cardHeader: cardActivity.cardHeader } %}
-
-      {% include "@modules/cards/card-info.twig" with { class: "has-spacing", cardInfo: cardActivity.cardInfo } %}
-
-    </a>
+  {% block info %}
+    {% include "@modules/cards/card-info.twig" with { class: "has-spacing", cardInfo: cardActivity.cardInfo } %}
   {% endblock %}
 {% endembed %}

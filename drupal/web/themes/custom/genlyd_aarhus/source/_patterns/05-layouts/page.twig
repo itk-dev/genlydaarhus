@@ -1,0 +1,15 @@
+{% block header %}
+  {% include "@components/01-global/01-header.twig" %}
+  {% include "@modules/hamburger-menu.twig" with { transparent: hamburgerMenu.class } %}
+{% endblock %}
+
+{% block hero %}{% endblock %}
+
+<main class="main">
+  {% block main %}
+  {% endblock %}
+</main>
+
+{% block footer %}
+  {% include "@components/01-global/02-footer.twig" %}
+{% endblock %}

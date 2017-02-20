@@ -1,12 +1,11 @@
 {% set items %}
-   {% block items %}{% endblock %}
+  {% block items %}{% endblock %}
 {% endset %}
-
 
 {% embed "grid.twig" with { class: "is-two-thirds" } %}
   {% block content %}
-      {% block items %}
-        {{ items }}
-      {% endblock %}
+    {% block items %}
+      {{ items }}
+    {% endblock %}
   {% endblock %}
 {% endembed %}

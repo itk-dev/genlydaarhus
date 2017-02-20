@@ -1,4 +1,4 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
   <div class="container has-large-spacing">
     <div class="l-heading-section">
@@ -112,7 +112,7 @@
     %}
 
     <div class="l-section has-bottom-margin">
-    {% embed "grid-fourths.twig" %}
+    {% embed "@layouts/grid-fourths.twig" %}
       {% block items %}
           <article class="grid--item">
             {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
