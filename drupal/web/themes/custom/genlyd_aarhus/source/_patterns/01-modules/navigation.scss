@@ -65,47 +65,44 @@
   &--icon-transparent {
     display: none;
   }
-}
 
+  /* Is transparent variant */
+  &.is-transparent {
 
-// Variant when wrapper in header element with is-transparent class.
-// @TODO add the .is-transparent class to the navigation elements instead to keep the module isolated.
+    height: auto;
 
-.is-transparent .navigation {
-
-  height: auto;
-
-  &--items {
-    background-color: transparentize($color-black, .4);
-    border-radius: $border-radius;
-    padding-bottom: $spacing-pixel-xsmall;
-    padding-left: $spacing-pixel-xsmall;
-    padding-right: $spacing-pixel-xxsmall;
-    padding-top: $spacing-pixel-xsmall;
-  }
-
-  &--item {
-    color: $color-white;
-    transition: opacity .4s;
-
-    &:last-child {
-      margin-right: $spacing-pixel-xxxsmall;
+    &--items {
+      background-color: transparentize($color-black, .4);
+      border-radius: $border-radius;
+      padding-bottom: $spacing-pixel-xsmall;
+      padding-left: $spacing-pixel-xsmall;
+      padding-right: $spacing-pixel-xxsmall;
+      padding-top: $spacing-pixel-xsmall;
     }
 
-    &.is-primary, &.is-secondary {
-      padding-right: 0;
+    &--item {
+      color: $color-white;
+      transition: opacity .4s;
+
+      &:last-child {
+        margin-right: $spacing-pixel-xxxsmall;
+      }
+
+      &.is-primary, &.is-secondary {
+        padding-right: 0;
+      }
     }
-  }
 
-  &--icon-main {
-    display: none;
-  }
+    &--icon-main {
+      display: none;
+    }
 
-  &--icon-transparent {
-    display: block;
-  }
+    &--icon-transparent {
+      display: block;
+    }
 
-  &--icon svg {
-    opacity: 1;
+    &--icon svg {
+      opacity: 1;
+    }
   }
 }

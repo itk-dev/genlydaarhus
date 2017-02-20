@@ -1,4 +1,4 @@
-<nav class="navigation js-navigation">
+<nav class="navigation {{ is_front ? 'is-transparent' }} js-navigation">
   <div class="navigation--items">
     {% for item in navigationItems %}
       <a href="{{ item.url }}" title="{{ item.title }}" class="navigation--item {{ item.class }}">

@@ -1,0 +1,38 @@
+{% embed "@layouts/page.twig" %}
+
+  {% block header %}
+    {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
+      {% if page.header %}
+        {% block header %}
+          {{ page.header }}
+        {% endblock %}
+      {% endif %}
+    {% endembed %}
+    {% if page.hamburger_menu %}
+      {{ page.hamburger_menu }}
+    {% endif %}
+  {% endblock %}
+
+  {% block hero %}
+    {% if page.hero %}
+      {{ page.hero }}
+    {% endif %}
+  {% endblock %}
+
+  {% block main %}
+    {% if page.content %}
+      {{ page.content }}
+    {% endif %}
+  {% endblock %}
+
+  {% block footer %}
+    {% embed "@components/01-global/02-footer.twig" %}
+      {% if page.footer %}
+        {% block content %}
+          {{ page.footer }}
+        {% endblock %}
+      {% endif %}
+    {% endembed %}
+  {% endblock %}
+
+{% endembed %}
