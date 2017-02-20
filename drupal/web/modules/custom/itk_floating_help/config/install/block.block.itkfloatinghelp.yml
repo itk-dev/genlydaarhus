@@ -1,0 +1,19 @@
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_floating_help
+  theme:
+    - genlyd_aarhus
+id: itkfloatinghelp
+theme: genlyd_aarhus
+region: footer
+weight: 0
+provider: null
+plugin: itk_floating_help
+settings:
+  id: itk_floating_help
+  label: 'ITK Floating help'
+  provider: itk_floating_help
+  label_display: visible
+visibility: {  }
