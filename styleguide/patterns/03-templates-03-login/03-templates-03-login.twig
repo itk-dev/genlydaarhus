@@ -12,13 +12,11 @@
           {% include "modules-text-with-icon" with { textWithIcon: login.textWithIcon, icon: login.textWithIcon.icon } %}
         </div>
 
-        {% embed "@layouts/grid.twig" with { class: "is-half" } %}
+        {% embed "@layouts/grid-halfs.twig" %}
           {% block content %}
-            <div class="grid--item">
-              <div class="l-section has-bottom-margin is-tight">
-                {% include "elements-form-label" with { formLabel: { label: "Brugernavn" } } %}
-                {% include "elements-text-field" with {'type': 'text', 'name': 'username' } %}
-              </div>
+            <div class="l-section has-bottom-margin is-tight">
+              {% include "elements-form-label" with { formLabel: { label: "Brugernavn" } } %}
+              {% include "elements-text-field" with {'type': 'text', 'name': 'username' } %}
             </div>
           {% endblock %}
         {% endembed %}
@@ -43,10 +41,10 @@
         </div>
 
         <div class="l-section has-no-margin is-tight">
-          <div class="l-section has-bottom-margin is-tight layout flex">
+          <div class="layout inline-block">
             {% include "@elements/buttons/button-call-to-action.twig" with { button: login.loginButton } %}
           </div>
-          <div class="layout flex">
+          <div class="layout inline-block">
             {% include "@elements/buttons/button-secondary-dark.twig" with { button: login.noAccountButton } %}
           </div>
         </div>

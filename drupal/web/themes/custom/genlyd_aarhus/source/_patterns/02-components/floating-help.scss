@@ -2,23 +2,23 @@
   align-items: center;
   background-color: $color-green-light;
   border-radius: $border-radius $border-radius 0 0;
-  cursor: pointer;
   bottom: 0;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
-  position: fixed;
-  right: 0;
   left: 0;
   margin-left: $spacing-pixel-normal;
   margin-right: $spacing-pixel-normal;
   padding-top: $spacing-pixel-xxsmall;
+  position: fixed;
+  right: 0;
   transform: translateY(320px);
   z-index: 20;
 
   @include breakpoint($breakpoint-tablet) {
     left: auto;
-    right: $spacing-percent-xlarge;
     margin: 0;
+    right: $spacing-percent-xlarge;
   }
 
   &--button {
@@ -38,15 +38,15 @@
 
   &--subtitle {
     font-size: $font-size-small;
-    text-align: center;
+    margin-bottom: $spacing-pixel-tiny;
+    max-width: 280px;
     padding-left: $spacing-pixel-normal;
     padding-right: $spacing-pixel-normal;
-    max-width: 280px;
-    margin-bottom: $spacing-pixel-tiny;
+    text-align: center;
   }
 
   &.is-open {
+    cursor: auto;
     transform: translateY(0);
-      cursor: auto;
   }
 }

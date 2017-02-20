@@ -11,8 +11,8 @@
   display: flex;
   flex: 0 0 100%;
   flex-direction: column;
-  padding-bottom: $spacing-pixel-xlarge;
   margin-bottom: $spacing-pixel-xlarge;
+  padding-bottom: $spacing-pixel-xlarge;
 
   a {
     align-items: center;
@@ -24,15 +24,15 @@
   }
 
   &:last-child {
-    margin-bottom: 0;
     border: 0;
+    margin-bottom: 0;
   }
 
   @include breakpoint($breakpoint-tablet) {
     border: 0;
-    padding-bottom: 0;
-    margin-bottom: 0;
     flex: 1 0 33%;
+    margin-bottom: 0;
+    padding-bottom: 0;
   }
 
   &--inner {

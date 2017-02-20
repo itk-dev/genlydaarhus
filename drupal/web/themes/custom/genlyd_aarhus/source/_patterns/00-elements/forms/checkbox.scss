@@ -1,40 +1,40 @@
 .checkbox {
-  position: relative;
-  display: flex;
   align-items: center;
   cursor: pointer;
+  display: flex;
+  margin-bottom: $spacing-pixel-xsmall;
   padding-bottom: $spacing-pixel-small;
-  padding-top: $spacing-pixel-small;
   padding-left: $spacing-pixel-xxsmall;
   padding-right: $spacing-pixel-xxsmall;
+  padding-top: $spacing-pixel-small;
+  position: relative;
   width: 100%;
-  margin-bottom: $spacing-pixel-xsmall;
 
   &:last-child {
     margin-bottom: 0;
   }
-  
+
   @include breakpoint($breakpoint-tablet) {
     margin-bottom: 0;
   }
 
   input {
-    z-index: -1;
     opacity: 0;
+    z-index: -1;
   }
 
   &--indicator {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    background-color: $color-white;
     border: 2px solid $color-border-dark;
     border-radius: 10px;
-    background-color: $color-white;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
 
   }
-  
+
   &:hover input:not([disabled]):checked ~ .checkbox--indicator,
   input:checked:focus ~ .checkbox--indicator {
     border: 2px solid $color-green-dark;
@@ -50,35 +50,35 @@
   }
 
   &--indicator:after {
-    position: relative;
-    display: none;
-    content: '';
-    top: 16px;
-    left: 32px;
-    width: 5px;
-    height: 10px;
     border: solid $color-black-light;
     border-width: 0 2px 2px 0;
+    content: "";
+    display: none;
+    height: 10px;
+    left: 32px;
+    position: relative;
+    top: 16px;
     transform: rotate(45deg);
+    width: 5px;
   }
-  
+
 
   &--label {
+    margin-left: $spacing-pixel-large;
     position: relative;
     z-index: 1;
-    margin-left: $spacing-pixel-large;
   }
 
   &:before {
-    content: '';
+    border: 2px solid $color-border-dark;
+    border-radius: 5px;
+    content: "";
+    height: 20px;
+    left: 25px;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: 25px;
     width: 20px;
-    height: 20px;
-    border-radius: 5px;
-    border: 2px solid $color-border-dark;
     z-index: 5;
   }
 

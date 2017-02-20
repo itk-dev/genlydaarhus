@@ -1,8 +1,7 @@
 .section {
-
   &.has-padding {
-    padding-top: $spacing-pixel-large;
     padding-bottom: $spacing-pixel-large;
+    padding-top: $spacing-pixel-large;
   }
   &.is-blue {
     background-color: $color-blue;

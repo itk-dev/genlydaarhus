@@ -36,8 +36,10 @@
                 {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'placeholder': '', 'value': 'password' } %}
               </div>
             </div>
-            <div class="l-col layout flex has-margin-bottom">
-              {% include "@elements/buttons/button-call-to-action.twig" with { button: profile.saveButton } %}
+            <div class="l-col half desk-up">
+              <div class="layout has-margin-bottom inline-block">
+                {% include "@elements/buttons/button-call-to-action.twig" with { button: profile.saveButton } %}
+              </div>
             </div>
           </div>
         </div>
