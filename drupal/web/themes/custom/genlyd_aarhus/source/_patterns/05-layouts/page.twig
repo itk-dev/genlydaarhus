@@ -10,7 +10,6 @@
     {# Render Drupal blocks in header region #}
     {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
       {% block content %}
-        {# templates/navigation/menu--main--navigation.html.twig #}
         {{ page.header }}
       {% endblock %}
     {% endembed %}
@@ -23,7 +22,6 @@
     {# Render Drupal block in hamburger menu region #}
     {% embed "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
       {% block content %}
-        {# templates/navigation/menu--main--hamburger-menu.html.twig #}
         {{ page.hamburger_menu }}
       {% endblock %}
     {% endembed %}
@@ -36,7 +34,6 @@
 {% block hero %}
   {% if page.hero %}
     {# Render Drupal block in hero region #}
-    {# templates/block/itk-hero-block.html.twig #}
     {{ page.hero }}
   {% else %}
     {# Render Pattern Lab #}
