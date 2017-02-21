@@ -20,7 +20,6 @@ function genlyd_aarhus_theme_suggestions_menu_alter(array &$suggestions, array $
   }
 }
 
-
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */

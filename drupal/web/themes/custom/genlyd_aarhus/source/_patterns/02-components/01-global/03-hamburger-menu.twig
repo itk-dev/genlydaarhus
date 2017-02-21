@@ -1,0 +1,9 @@
+<div class="hamburger-menu--toggle js-hamburger-menu-toggle {{ is_front ? 'is-transparent' }}">
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+</div>
+{% block content %}
+  {% include "@modules/hamburger-menu.twig" with { is_front: is_front } %}
+{% endblock %}

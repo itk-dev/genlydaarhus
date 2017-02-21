@@ -1,7 +1,20 @@
 {
   "is_front": true,
+  "page": {
+
+  },
   "hero": {
-    "image": "/assets/images/styleguide/hero.jpg"
+    "lead": "variables.itk_hero_lead",
+    "sub": "variables.itk_hero_sub",
+    "image": "/assets/images/styleguide/hero.jpg",
+    "cta_button":  {
+      "title": "variables.itk_hero_cta_button",
+      "href": "variables.itk_hero_cta_link"
+    },
+    "button":  {
+      "title": "variables.itk_hero_button",
+      "href": "variables.itk_hero_link"
+    }
   },
   "hamburgerMenu": {
     "class": "is-transparent"
