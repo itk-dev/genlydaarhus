@@ -1,9 +1,1 @@
-{% embed "@layouts/page.twig" with { page: page, is_front: is_front } %}
-
-  {% block main %}
-    {% if page.content %}
-      {{ page.content }}
-    {% endif %}
-  {% endblock %}
-
-{% endembed %}
+{% include "@layouts/page.twig" with { page: page, is_front: is_front } %}
