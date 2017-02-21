@@ -65,10 +65,11 @@
   &--icon-transparent {
     display: none;
   }
+}
 
-  /* Is transparent variant */
-  &.is-transparent {
-
+/* Is transparent variant */
+.is-transparent {
+  .navigation {
     height: auto;
 
     &--items {
