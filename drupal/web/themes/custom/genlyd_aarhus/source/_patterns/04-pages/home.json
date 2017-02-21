@@ -1,4 +1,5 @@
 {
+  "is_front": true,
   "hero": {
     "image": "/assets/images/styleguide/hero.jpg"
   },

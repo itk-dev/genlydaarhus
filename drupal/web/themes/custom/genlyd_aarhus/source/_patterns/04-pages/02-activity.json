@@ -1,5 +1,9 @@
 {
   "activity": {
+    "activityHero": {
+      "title": "Fælles computerspil",
+      "image": "/assets/images/styleguide/computer.jpg"
+    },
     "activityOverview": {
       "image": {
         "src": "/assets/images/styleguide/computer.jpg"
@@ -29,7 +33,10 @@
               "title": "Del via mail"
             }
           ]
-      }
+      },
+      "categories": [
+        "IT", "Spil", "Sport", "Mad og fællesskab"
+      ]
     },
     "headingWithIconSimilar": {
       "title": "Lignende aktiviteter",

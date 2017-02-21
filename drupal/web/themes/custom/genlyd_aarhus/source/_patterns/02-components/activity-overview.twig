@@ -7,7 +7,7 @@
         {% embed "@layouts/grid-item.twig" %}
           {% block content %}
 
-            {% include "@modules/activity-hero.twig" with { activityHero: activityHero } %}
+            {% include "@modules/activity-hero.twig" with { activityHero: activity.activityHero } %}
 
           {% endblock %}
         {% endembed %}
@@ -32,15 +32,16 @@
 
                 {% embed "@layouts/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/category.twig" with { category: { text: "IT" } } %}
-                    {% include "@elements/category.twig" with { category: { text: "Spil" } } %}
-                    {% include "@elements/category.twig" with { category: { text: "Sport" } } %}
-                    {% include "@elements/category.twig" with { category: { text: "Mad og fællesskab" } } %}
+                    {% for category in activity.activityOverview.categories %}
+                      {% include "@elements/category.twig" with { category: { text: category } } %}
+                    {% endfor %}
                   {% endblock %}
                 {% endembed %}
 
                 {% embed "@layouts/grid-item.twig" %}
                   {% block content %}
+                    {{ activity.activityOverview.body }}
+
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.</p>
                     <p>Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra.<p>
 
@@ -61,7 +62,7 @@
 
         {% embed "@layouts/grid-item.twig" %}
           {% block content %}
-            {% include "@modules/text-with-icon.twig" with { textWithIcon: activityOverview.headingWithIconDetails, icon: activityOverview.headingWithIconDetails.icon } %}
+            {% include "@modules/text-with-icon.twig" with { textWithIcon: activity.activityOverview.headingWithIconDetails, icon: activity.activityOverview.headingWithIconDetails.icon } %}
             {% include "@components/activity-sidebar.twig" %}
           {% endblock %}
         {% endembed %}
