@@ -1,0 +1,7 @@
+<h4>{{ info.title }}</h4>
+<ul>
+  {% if info.signup_required %}<li>{{ info.signup_required }}</li>{% endif %}
+  {% if info.entry_requirements %}<li>{{ info.entry_requirements }}</li>{% endif %}
+  {% if info.physical_requirements %}<li>{{ info.physical_requirements }}</li>{% endif %}
+  {% if info.help_needed %}<li>{{ info.help_needed }}</li>{% endif %}
+</ul>
