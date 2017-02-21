@@ -28,3 +28,43 @@ function genlyd_aarhus_theme_suggestions_form_alter(&$suggestions, &$variables) 
   $hook = str_replace(array('form-', '-'), array('', '_'), $variables['element']['#form_id']);
   $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
 }
+
+/**
+ * Implements hook_theme_suggestions_HOOK_alter().
+ */
+function genlyd_aarhus_theme_suggestions_page_alter(array &$suggestions, array $variables) {
+  if ($node = \Drupal::routeMatch()->getParameter('node')) {
+    $content_type = $node->bundle();
+    $suggestions[] = $variables['theme_hook_original'] . '__' .$content_type;
+  }
+}
+
+
+function genlyd_aarhus_preprocess_page(&$variables) {
+  if (isset($variables['node']) && $variables['node']->getType() == 'activity') {
+    $node = $variables['node'];
+
+    // Get categories.
+    $categories = [];
+    foreach ($node->get('field_categories')->referencedEntities() as $category) {
+      $categories[] = $category->name->value;
+    }
+
+    $variables['activity'] = [
+      'activityHero' => [
+        'title' => $node->get('title')->value,
+        'image' => file_create_url($node->get('field_image')->entity->getFileUri()),
+      ],
+      'activityOverview' => [
+        'headingWithIconDescription' => [
+          'title' => \Drupal::translation()->translate('Description'),
+        ],
+        'headingWithIconDetails' => [
+          'title' => \Drupal::translation()->translate('Details')
+        ],
+        'categories' => $categories,
+        'body' => check_markup($node->get('body')->value, 'filtered_html'),
+      ],
+    ];
+  }
+}
