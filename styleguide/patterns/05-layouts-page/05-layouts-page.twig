@@ -1,17 +1,45 @@
+{#
+  This file contains the default layout for pages of the site.
+
+  Because if availability of data from Drupal in different parts of the site (page, block etc.), we render/include
+   modules and components for either Drupal or Pattern Lab.
+#}
+
 {% block header %}
-  {% embed "@components/01-global/01-header.twig" %}
-    {% if page.header %}
-      {% block header %}
+  {% if page.header %}
+    {# Render Drupal blocks #}
+    {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
+      {% block content %}
         {{ page.header }}
       {% endblock %}
-    {% endif %}
-  {% endembed %}
+    {% endembed %}
+  {% else %}
+    {# Render Pattern Lab #}
+    {% include "@components/01-global/01-header.twig" %}
+  {% endif %}
+
   {% if page.hamburger_menu %}
-    {{ page.hamburger_menu }}
+    {# Render Drupal block #}
+    {% embed "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
+      {% block content %}
+        {{ page.hamburger_menu }}
+      {% endblock %}
+    {% endembed %}
+  {% else %}
+    {# Render Pattern Lab #}
+    {% include "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
   {% endif %}
 {% endblock %}
 
-{% block hero %}{% endblock %}
+{% block hero %}
+  {% if page.hero %}
+    {# Render Drupal block #}
+    {{ page.hero }}
+  {% else %}
+    {# Render Pattern Lab #}
+    {% include "@modules/hero.twig" %}
+  {% endif %}
+{% endblock %}
 
 <main class="main">
   {% block main %}
@@ -19,5 +47,15 @@
 </main>
 
 {% block footer %}
-  {% include "@components/01-global/02-footer.twig" %}
+  {% if page.footer %}
+    {# Render Drupal blocks #}
+    {% embed "@components/01-global/02-footer.twig" %}
+      {% block content %}
+        {{ page.footer }}
+      {% endblock %}
+    {% endembed %}
+  {% else %}
+    {# Render Pattern Lab #}
+    {% include "@components/01-global/02-footer.twig" %}
+  {% endif %}
 {% endblock %}
