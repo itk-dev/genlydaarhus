@@ -2,14 +2,15 @@
   This file contains the default layout for pages of the site.
 
   Because if availability of data from Drupal in different parts of the site (page, block etc.), we render/include
-   modules and components for either Drupal or Pattern Lab.
+  modules and components for either Drupal or Pattern Lab.
 #}
 
 {% block header %}
   {% if page.header %}
-    {# Render Drupal blocks #}
+    {# Render Drupal blocks in header region #}
     {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
       {% block content %}
+        {# templates/navigation/menu--main--navigation.html.twig #}
         {{ page.header }}
       {% endblock %}
     {% endembed %}
@@ -19,9 +20,10 @@
   {% endif %}
 
   {% if page.hamburger_menu %}
-    {# Render Drupal block #}
+    {# Render Drupal block in hamburger menu region #}
     {% embed "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
       {% block content %}
+        {# templates/navigation/menu--main--hamburger-menu.html.twig #}
         {{ page.hamburger_menu }}
       {% endblock %}
     {% endembed %}
@@ -33,7 +35,8 @@
 
 {% block hero %}
   {% if page.hero %}
-    {# Render Drupal block #}
+    {# Render Drupal block in hero region #}
+    {# templates/block/itk-hero-block.html.twig #}
     {{ page.hero }}
   {% else %}
     {# Render Pattern Lab #}
@@ -48,7 +51,7 @@
 
 {% block footer %}
   {% if page.footer %}
-    {# Render Drupal blocks #}
+    {# Render Drupal blocks in footer region #}
     {% embed "@components/01-global/02-footer.twig" %}
       {% block content %}
         {{ page.footer }}

@@ -4,16 +4,16 @@
 
   },
   "hero": {
-    "lead": "variables.itk_hero_lead",
-    "sub": "variables.itk_hero_sub",
+    "lead": "Fællesskab i Aarhus",
+    "sub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     "image": "/assets/images/styleguide/hero.jpg",
     "cta_button":  {
-      "title": "variables.itk_hero_cta_button",
-      "href": "variables.itk_hero_cta_link"
+      "title": "Find aktiviteter",
+      "href": "#"
     },
     "button":  {
-      "title": "variables.itk_hero_button",
-      "href": "variables.itk_hero_link"
+      "title": "Opret aktivitet",
+      "href": "#"
     }
   },
   "hamburgerMenu": {
