@@ -16,12 +16,17 @@
  */
 #}
 
-{{ variables.itk_hero_lead }}
-{{ variables.itk_hero_sub }}
-{{ variables.itk_hero_image }}
-{{ variables.itk_hero_image_url }}
-{{ variables.frontpage_cta_link }}
-{{ variables.itk_hero_cta_button }}
-{{ variables.itk_hero_cta_link }}
-{{ variables.itk_hero_button }}
-{{ variables.itk_hero_link }}
+{% set hero = {
+  "lead": variables.itk_hero_lead,
+  "sub": variables.itk_hero_sub,
+  "image": variables.itk_hero_image_url,
+  "cta_button":  {
+    "title": variables.itk_hero_cta_button,
+    "href": variables.itk_hero_cta_link
+    },
+    "button":  {
+    "title": variables.itk_hero_button,
+    "href": variables.itk_hero_link
+    }
+  }
+%}

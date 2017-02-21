@@ -15,17 +15,16 @@ function genlyd_aarhus_theme_suggestions_menu_alter(array &$suggestions, array $
   // Remove the block and replace dashes with underscores in the block ID to
   // use for the hook name.
   if (isset($variables['attributes']['block'])) {
-    $hook = str_replace(array('block-', '-'), array('', '_'), $variables['attributes']['block']);
+    $hook = str_replace(['block-', '-'], ['', '_'], $variables['attributes']['block']);
     $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
   }
 }
-
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function genlyd_aarhus_theme_suggestions_form_alter(&$suggestions, &$variables) {
-  $hook = str_replace(array('form-', '-'), array('', '_'), $variables['element']['#form_id']);
+  $hook = str_replace(['form-', '-'], ['', '_'], $variables['element']['#form_id']);
   $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
 }
 
