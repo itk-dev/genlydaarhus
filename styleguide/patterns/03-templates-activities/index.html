@@ -179,7 +179,8 @@
 </nav>  
 
 <main class="main">
-    <div class="container has-large-spacing">
+  <div class="container has-large-spacing">
+      <div class="container has-large-spacing">
 
     <div class="l-heading-section no-spacing">
       <div class="heading-with-icon">
@@ -619,7 +620,8 @@
 </div>
 
   </div>
-  </main>
+    </div>
+</main>
 
           <footer class="footer">
   <div class="footer--content">
@@ -927,7 +929,8 @@
 </nav>  
 
 <main class="main">
-      <div class="map" id="map"></div>
+  <div class="container has-large-spacing">
+        <div class="map" id="map"></div>
 <script>
   var map = L.map('map').setView([56.1567, 10.2107], 12);
   // create the tile layer with correct attribution
@@ -937,7 +940,8 @@
   map.addLayer(osm);
   var marker = L.marker([56.1567, 10.2107]).addTo(map);
   var marker = L.marker([56.1112, 10.2099]).addTo(map);
-</script>  </main>
+</script>    </div>
+</main>
 
           <footer class="footer">
   <div class="footer--content">

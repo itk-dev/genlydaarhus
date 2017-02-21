@@ -4,23 +4,23 @@
  *
  */
 
+/* Helpers */
+@import "_helpers/arrows";
+@import "_helpers/layout";
+@import "_helpers/breakpoints";
 
 /* Base */
 @import "_base/spacing";
 @import "_base/colors";
+@import "_base/container";
 @import "_base/fonts";
 @import "_base/headings";
 @import "_base/normalize";
 @import "_base/variables";
 @import "_base/base";
 
-/* Helpers */
-@import "_helpers/arrows";
-
 /* Layouts */
-@import "_patterns/05-layouts/breakpoints";
 @import "_patterns/05-layouts/layout";
-@import "_patterns/05-layouts/columns";
 @import "_patterns/05-layouts/grid";
 
 /* Elements */

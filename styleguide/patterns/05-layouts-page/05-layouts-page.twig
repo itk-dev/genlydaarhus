@@ -34,12 +34,14 @@
 {% block hero %}
 {% endblock %}
 
-<main class="main">
-  {% block main %}
-    {% if page.content %}
-      {{ page.content }}
-    {% endif %}
-  {% endblock %}
+<main class="container">
+  <div class="container--inner">
+    {% block main %}
+      {% if page.content %}
+        {{ page.content }}
+      {% endif %}
+    {% endblock %}
+  </div>
 </main>
 
 {% block footer %}
