@@ -39,15 +39,7 @@
               {% block content %}
                 {{ activity.activityOverview.body }}
 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.</p>
-                <p>Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra.<p>
-
-                <h4>Vigtig information:</h4>
-                <ul>
-                  <li>tilmeldingspligt</li>
-                  <li>niveau</li>
-                  <li>hjælp</li>
-                </ul>
+                {% include "@components/important-info.twig" with { info: activity.activityOverview.info } %}
               {% endblock %}
             {% endembed %}
 

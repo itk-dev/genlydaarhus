@@ -44,44 +44,4 @@
  */
 #}
 
-{% if node.type.value[0]['target_id'] == "activity" %}
-
-  {# Extract category taxonomy terms #}
-  {% set categories = [] %}
-  {% for category in node.field_categories %}
-    {% set categories = categories|merge([category.entity.name.value]) %}
-  {% endfor %}
-
-  {% set text = node.body.value %}
-
-  {% include "@templates/02-activity.twig" with { activity:
-    {
-      activityHero: {
-        title: node.title.value,
-        image: file_url(node.field_image.entity.fileuri)
-      },
-      activityOverview: {
-        headingWithIconDescription: {
-          title: "Beskrivelse",
-          icon: {
-            type: "bulletin",
-            color: "light"
-          }
-        },
-        headingWithIconDetails: {
-          title: "Detaljer",
-          icon: {
-            type: "bulletin",
-            color: "light"
-          }
-        },
-        categories: categories,
-        body: text
-      }
-    }
-  } %}
-
-{% else %}
-  {% include "page.html.twig" %}
-{% endif %}
-
+{% include "@templates/02-activity.twig" with { activity: activity } %}
