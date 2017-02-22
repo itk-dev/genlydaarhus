@@ -30,10 +30,7 @@ function genlyd_aarhus_theme_suggestions_menu_alter(array &$suggestions, array $
  * Implements hook_theme_suggestions_HOOK_alter().
  */
 function genlyd_aarhus_theme_suggestions_form_alter(&$suggestions, &$variables) {
-  $hook = str_replace(['form-', '-'], [
-    '',
-    '_'
-  ], $variables['element']['#form_id']);
+  $hook = str_replace(['form-', '-'], ['', '_'], $variables['element']['#form_id']);
   $suggestions[] = $variables['theme_hook_original'] . '__' . $hook;
 }
 
