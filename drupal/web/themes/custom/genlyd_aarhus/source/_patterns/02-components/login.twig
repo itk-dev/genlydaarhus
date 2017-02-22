@@ -28,20 +28,50 @@
     {% embed "@layouts/grid-item.twig" %}
       {% block content %}
 
-        <form{{ attributes.removeClass('user-login-form') }}>
-          {{ children }}
-          {# @TODO
-            Add create user button.
+        {% if children %}
+          {# Render Drupal form #}
+          <form{{ attributes.removeClass('user-login-form') }}>
+            {{ children }}
+          </form>
+        {% else %}
+          {# Render Pattern Lab #}
 
-            {% include "@elements/buttons/button-secondary-dark.twig" with { button: login.noAccountButton } %}
-          #}
-          {# @TODO
-            Add "Remember me" functionality, maybe we can use https://www.drupal.org/project/persistent_login.
+          {% embed "@layouts/grid-item-section.twig" %}
+            {% block content %}
 
-            {% include "@elements/forms/checkbox.twig" with {'checkbox': { "label": "Husk mig", class: "borderless" } } %}
-          #}
-        </form>
+              {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Brugernavn" } } %}
+              {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'username' } %}
 
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "@layouts/grid-item-section.twig" %}
+            {% block content %}
+
+              {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adgangskode" } } %}
+              {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'password' } %}
+
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "@layouts/grid-item-section.twig" %}
+            {% block content %}
+
+              {% include "@elements/buttons/button-input-call-to-action.twig" %}
+
+            {% endblock %}
+          {% endembed %}
+
+        {% endif %}
+
+        {# @TODO
+          Add create user button.
+          {% include "@elements/buttons/button-secondary-dark.twig" with { button: login.noAccountButton } %}
+        #}
+        {# @TODO
+          Add "Remember me" functionality, maybe we can use https://www.drupal.org/project/persistent_login.
+          {% include "@elements/forms/checkbox.twig" with {'checkbox': { "label": "Husk mig", class: "borderless" } } %}
+        #}
       {% endblock %}
     {% endembed %}
   {% endblock %}

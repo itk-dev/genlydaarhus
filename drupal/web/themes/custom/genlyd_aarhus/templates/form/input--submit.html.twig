@@ -11,22 +11,17 @@
  */
 #}
 
-{%
-  set classes = [
-    'is-cta',
-  ]
-%}
-
-{%
-  set removeClasses = [
-    'form-submit',
-  ]
+{% set loginButton = {
+    "type": attributes.type,
+    "name": attributes.name,
+    "title": attributes.value,
+  }
 %}
 
 {% embed "@layouts/grid-item-section.twig" %}
   {% block content %}
 
-    {% include "@elements/buttons/button-input-call-to-action.twig" with { buttonAttributes: attributes.removeClass(removeClasses).addClass(classes)} %}
+    {% include "@elements/buttons/button-input-call-to-action.twig" with { button: loginButton } %}
 
   {% endblock %}
 {% endembed %}

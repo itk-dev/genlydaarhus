@@ -25,11 +25,13 @@
         "title": "Log ind med Google"
       }
     },
-    "loginButton": {
-      "title": "Login"
-    },
     "noAccountButton": {
       "title": "Jeg har ikke en konto"
     }
+  },
+  "button": {
+    "type": "submit",
+    "name": "login",
+    "title": "Login"
   }
 }
