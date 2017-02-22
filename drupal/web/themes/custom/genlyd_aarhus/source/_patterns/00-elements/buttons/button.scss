@@ -33,9 +33,10 @@ $button-xxxsmall: $spacing-pixel-xxxsmall;
   @include buttonOverride($color-white, $color-black-lighter, $color-black-light);
   @include buttonPadding($button-xxsmall, $button-small, $button-small, $button-xxsmall);
 
+  border: 0;
+  cursor: pointer;
   display: inline-block;
   font-weight: 600;
-
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;

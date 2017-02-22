@@ -1,9 +1,6 @@
 .text-with-icon {
   align-items: center;
-  border-bottom: 1px solid $color-border-dark;
   display: flex;
-  margin-bottom: $spacing-pixel-normal;
-  padding-bottom: $spacing-pixel-small;
 
   &--title {
     margin: 0;

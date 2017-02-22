@@ -24,4 +24,8 @@
   ]
 %}
 
-<input {{ attributes.removeClass(removeClasses).addClass(classes) }} />{{ children }}
+{% embed "@elements/forms/text-field.twig" %}
+  {% block content %}
+    <input {{ attributes.removeClass(removeClasses).addClass(classes) }} />{{ children }}
+  {% endblock %}
+{% endembed %}

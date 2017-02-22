@@ -1,17 +1,5 @@
 .heading-with-icon {
-  align-items: center;
   display: flex;
-  justify-content: center;
-  text-align: center;
-
-  @include breakpoint($breakpoint-tablet) {
-    max-width: 75%;
-    text-align: left;
-  }
-
-  @include breakpoint($breakpoint-desk) {
-    max-width: 60%;
-  }
 
   &--title {
     font-size: $font-size-large;

@@ -13,6 +13,10 @@ body {
   width: 100%;
 }
 
+button, input, optgroup, select, textarea {
+  font: $font;
+}
+
 a {
   color: $color-black-light;
 }

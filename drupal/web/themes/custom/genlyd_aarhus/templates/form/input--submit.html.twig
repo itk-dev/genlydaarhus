@@ -23,4 +23,10 @@
   ]
 %}
 
-<input {{ attributes.removeClass(removeClasses).addClass(classes) }} />{{ children }}
+{% embed "@layouts/grid-item-section.twig" %}
+  {% block content %}
+
+    {% include "@elements/buttons/button-input-call-to-action.twig" with { buttonAttributes: attributes.removeClass(removeClasses).addClass(classes)} %}
+
+  {% endblock %}
+{% endembed %}

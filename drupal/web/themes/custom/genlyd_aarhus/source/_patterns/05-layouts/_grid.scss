@@ -40,6 +40,14 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 .grid {
   + .grid {
     margin-top: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+
+    @include breakpoint($breakpoint-desk) {
+      margin-top: $grid-spacing-pixel-large;
+    }
   }
 
   &--inner {
@@ -51,8 +59,32 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     align-items: stretch;
   }
 
+  &--item-header-section {
+    border-bottom: 1px solid $color-border-dark;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &--item-section {
+    width: 100%;
+  }
+
+  &--item-section + &--item-section {
+    margin-top: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+  }
+
   &.is-full {
-    &--item {
+    .grid--item {
       width: 100%;
     }
   }

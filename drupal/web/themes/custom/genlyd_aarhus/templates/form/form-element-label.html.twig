@@ -12,14 +12,11 @@
  * @see template_preprocess_form_element_label()
  */
 #}
-{%
-  set classes = [
-    title_display == 'after' ? 'option',
-    title_display == 'invisible' ? 'visually-hidden',
-    required ? 'js-form-required',
-    required ? 'form-required',
-  ]
+
+{% set formLabel = {
+    "name": attributes.for,
+    "label": title
+  }
 %}
-{% if title is not empty or required -%}
-  <label{{ attributes.addClass(classes) }}>{{ title }}</label>
-{%- endif %}
+
+{% include "@elements/forms/form-label.twig" with { formLabel: formLabel } %}

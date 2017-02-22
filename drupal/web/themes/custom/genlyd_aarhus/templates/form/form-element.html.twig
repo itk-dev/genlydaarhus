@@ -44,29 +44,18 @@
  * @see template_preprocess_form_element()
  */
 #}
-{%
-  set classes = [
-    'js-form-item',
-    'l-col',
-    'js-form-type-' ~ type|clean_class,
-    'js-form-item-' ~ name|clean_class,
-    title_display not in ['after', 'before'] ? 'form-no-label',
-    disabled == 'disabled' ? 'form-disabled',
-    errors ? 'form-item--error',
-  ]
-%}
 
-<div{{ attributes.addClass(classes) }}>
-  {% if label_display in ['before', 'invisible'] %}
+{% embed "@layouts/grid-item-section.twig" %}
+  {% block content %}
+
     {{ label }}
-  {% endif %}
-  {{ children }}
-  {% if label_display == 'after' %}
-    {{ label }}
-  {% endif %}
-  {% if errors %}
-    <div class="form-item--error-message">
-      {{ errors }}
-    </div>
-  {% endif %}
-</div>
+    {{ children }}
+
+  {% endblock %}
+{% endembed %}
+
+{% if errors %}
+  <div class="form-item--error-message">
+    {{ errors }}
+  </div>
+{% endif %}
