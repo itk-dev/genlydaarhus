@@ -11,6 +11,7 @@ function genlyd_install() {
   $module_list = array(
     'components',
     'views_block_filter_block',
+    'page_manager_ui',
   );
   \Drupal::service('module_installer')->install($module_list);
 
@@ -42,6 +43,16 @@ function genlyd_update_8001() {
 function genlyd_update_8002() {
   $module_list = array(
     'views_block_filter_block',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8003() {
+  $module_list = array(
+    'page_manager_ui',
   );
   \Drupal::service('module_installer')->install($module_list);
 }
