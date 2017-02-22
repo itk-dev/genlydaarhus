@@ -140,7 +140,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
         ],
         [
           'label' => \Drupal::translation()->translate('Participants'),
-          'text' => '[TODO]'
+          'text' => $node->field_signed_up_users->count(),
         ]
       ]
     ]
