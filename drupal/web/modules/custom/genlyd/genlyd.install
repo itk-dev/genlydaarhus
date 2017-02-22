@@ -10,6 +10,7 @@
 function genlyd_install() {
   $module_list = array(
     'components',
+    'views_block_filter_block',
   );
   \Drupal::service('module_installer')->install($module_list);
 
@@ -32,4 +33,15 @@ function genlyd_update_8001() {
     'genlyd_aarhus',
   );
   \Drupal::service('theme_installer')->install($themes_list);
+}
+
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8002() {
+  $module_list = array(
+    'views_block_filter_block',
+  );
+  \Drupal::service('module_installer')->install($module_list);
 }
