@@ -71,35 +71,4 @@
  */
 #}
 
-
-{% include "@components/card-activity.twig" with {
-  cardActivity: {
-    link: path('entity.node.canonical', {'node': node.id }),
-    cardHeader: {
-      title: node.title.value,
-      image: {
-        src: file_url(node.field_image.entity.fileuri)
-      }
-    },
-    cardInfo: {
-      activityMetas: [
-      {
-        label: 'Dato',
-        text: node.field_date.value
-      },
-      {
-        label: 'Pris',
-        text: node.field_price.value ~ ' kr.'
-      },
-      {
-        label: 'Område',
-        text : '[TODO]'
-      },
-      {
-        label: 'Deltagere',
-        text:  '[TODO]' ~ ' tilmeldte'
-      }
-      ]
-    }
-  }
-} %}
+{% include "@components/card-activity.twig" %}
