@@ -49,7 +49,12 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
-    width: 100%;
+  }
+
+  &.is-full {
+    &--item {
+      width: 100%;
+    }
   }
 
   &.is-halfs, &.is-thirds, &.is-fourths {
