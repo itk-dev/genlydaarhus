@@ -27,14 +27,18 @@
 
 {% embed "@layouts/grid-fourths.twig" %}
   {% block items %}
+
     {% for row in items %}
       {% for column in row.content %}
+
         {% embed "@layouts/grid-item.twig" %}
           {% block content %}
             {{ column.content }}
           {% endblock %}
         {% endembed %}
+        
       {% endfor %}
     {% endfor %}
+
   {% endblock %}
 {% endembed %}
