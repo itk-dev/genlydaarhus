@@ -36,7 +36,6 @@ function genlyd_update_8001() {
   \Drupal::service('theme_installer')->install($themes_list);
 }
 
-
 /**
  * Implements hook_update().
  */
@@ -53,6 +52,16 @@ function genlyd_update_8002() {
 function genlyd_update_8003() {
   $module_list = array(
     'page_manager_ui',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8004() {
+  $module_list = array(
+    'itk_info_section',
   );
   \Drupal::service('module_installer')->install($module_list);
 }
