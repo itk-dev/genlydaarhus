@@ -22,5 +22,31 @@ function itk_info_section_theme($existing, $type, $theme, $path) {
         'answer_3' => NULL,
       ],
     ],
+    'itk_info_section_block1' => [
+      'template' => 'itk-info-section-block',
+      'variables' => [
+        'title' => NULL,
+        'subtitle' => NULL,
+        'question_1' => NULL,
+        'answer_1' => NULL,
+        'question_2' => NULL,
+        'answer_2' => NULL,
+        'question_3' => NULL,
+        'answer_3' => NULL,
+      ],
+    ],
+    'itk_info_section_block2' => [
+      'template' => 'itk-info-section-block',
+      'variables' => [
+        'title' => NULL,
+        'subtitle' => NULL,
+        'question_1' => NULL,
+        'answer_1' => NULL,
+        'question_2' => NULL,
+        'answer_2' => NULL,
+        'question_3' => NULL,
+        'answer_3' => NULL,
+      ],
+    ],
   ];
 }

@@ -1,0 +1,7 @@
+itk_info_section.content:
+  path: '/admin/content/info_section'
+  defaults:
+    _form: '\Drupal\itk_info_section\Form\ITKInfoSectionContentForm'
+    _title: 'Info Section'
+  requirements:
+    _permission: 'access itk info section'

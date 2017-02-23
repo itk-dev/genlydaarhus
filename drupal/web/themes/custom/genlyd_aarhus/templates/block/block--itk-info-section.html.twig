@@ -31,13 +31,5 @@
 #}
 
 {% block content %}
-  {% include "@components/02-sections/section-info.twig" with { sectionInfo: {
-    title: configuration.title,
-    subtitle: configuration.subtitle,
-    items: [
-      { title: configuration.question_1, description: configuration.answer_1 },
-      { title: configuration.question_2, description: configuration.answer_2 },
-      { title: configuration.question_3, description: configuration.answer_3 }
-    ]
-  } } %}
+  {{ content }}
 {% endblock %}

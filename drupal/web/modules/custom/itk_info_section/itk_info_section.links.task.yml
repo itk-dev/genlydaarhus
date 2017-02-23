@@ -1,0 +1,4 @@
+itk_info_section.admin:
+  title: 'Info section'
+  route_name: itk_info_section.content
+  base_route: system.admin_content
