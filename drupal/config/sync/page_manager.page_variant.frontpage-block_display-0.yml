@@ -24,22 +24,23 @@ variant_settings:
       weight: -9
       uuid: e9f3d841-0bd3-4ed5-881b-2d80182b73b0
       context_mapping: {  }
-    38d62363-2593-4857-b45d-cbff3344c128:
-      id: itk_info_section_block
-      label: 'ITK Info Section'
+    ebff0dd3-ffdf-478b-9c34-ef6dda6c5c03:
+      id: itk_info_section_block1
+      label: 'ITK Info Section 1'
       provider: itk_info_section
-      label_display: visible
+      label_display: '0'
       region: top
       weight: -10
-      uuid: 38d62363-2593-4857-b45d-cbff3344c128
-      title: 'Hvad er Genlyd?'
-      subtitle: 'Det kan du læse her'
-      question_1: 'Hvor?'
-      answer_1: 'Her?'
-      question_2: 'Hvad?'
-      answer_2: 'Det?'
-      question_3: 'Hvem?'
-      answer_3: 'Os?'
+      uuid: ebff0dd3-ffdf-478b-9c34-ef6dda6c5c03
+      context_mapping: {  }
+    9b1dfcb4-b1d0-4eb0-88a5-7c41bdd3bbe5:
+      id: itk_info_section_block2
+      label: 'ITK Info Section 2'
+      provider: itk_info_section
+      label_display: '0'
+      region: top
+      weight: -8
+      uuid: 9b1dfcb4-b1d0-4eb0-88a5-7c41bdd3bbe5
       context_mapping: {  }
   id: block_display
   uuid: d352e353-3bb0-4ae9-8d0a-9cc879e6a04e
