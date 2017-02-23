@@ -30,3 +30,4 @@ permissions:
   - 'assign editor role'
   - 'access itk floating help'
   - 'access itk hero'
+  - 'access itk footer'

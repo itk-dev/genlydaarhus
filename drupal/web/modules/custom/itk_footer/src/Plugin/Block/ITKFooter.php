@@ -27,9 +27,6 @@ class ITKFooter extends BlockBase {
     return array(
       '#type' => 'markup',
       '#theme' => 'itk_footer_block',
-      '#cache' => array(
-        'max-age' => 0,
-      ),
       '#itk_footer_title' => $itk_footer_title,
       '#itk_footer_text' => $itk_footer_text,
     );

@@ -4,4 +4,4 @@ itk_footer.content:
     _form: '\Drupal\itk_footer\Form\ITKFooterContentForm'
     _title: 'Footer'
   requirements:
-    _permission: 'administer content'
+    _permission: 'access itk footer'
