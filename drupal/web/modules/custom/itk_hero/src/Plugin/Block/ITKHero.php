@@ -28,9 +28,6 @@ class ITKHero extends BlockBase {
     return [
       '#type' => 'markup',
       '#theme' => 'itk_hero_block',
-      '#cache' => [
-        'max-age' => 0,
-      ],
       '#variables' => $config,
     ];
   }

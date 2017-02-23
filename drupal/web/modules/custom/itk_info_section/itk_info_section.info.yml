@@ -1,0 +1,6 @@
+name: ITK info section
+type: module
+description: 'Provides custom administration content for a info section'
+package: ITK
+core: 8.x
+dependencies:

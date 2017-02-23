@@ -1,18 +1,19 @@
-uuid: 9c244caa-3bf1-475a-bb5d-b1301bc452a7
-langcode: en
+uuid: 988956f0-6df9-4dc5-8b24-b5b30c85f589
+langcode: da
 status: true
 dependencies:
   config:
     - page_manager.page.frontpage
     - views.view.activity_recent
   module:
+    - itk_info_section
     - views
 id: frontpage-block_display-0
 label: Frontpage
 variant: block_display
 variant_settings:
   blocks:
-    c7ca09f0-fa63-498a-a027-3a9e5c5dcc2f:
+    e9f3d841-0bd3-4ed5-881b-2d80182b73b0:
       id: 'views_block:activity_recent-block_activities_recent'
       label: ''
       provider: views
@@ -20,11 +21,28 @@ variant_settings:
       views_label: ''
       items_per_page: none
       region: top
-      weight: 0
-      uuid: c7ca09f0-fa63-498a-a027-3a9e5c5dcc2f
+      weight: -9
+      uuid: e9f3d841-0bd3-4ed5-881b-2d80182b73b0
+      context_mapping: {  }
+    38d62363-2593-4857-b45d-cbff3344c128:
+      id: itk_info_section_block
+      label: 'ITK Info Section'
+      provider: itk_info_section
+      label_display: visible
+      region: top
+      weight: -10
+      uuid: 38d62363-2593-4857-b45d-cbff3344c128
+      title: 'Hvad er Genlyd?'
+      subtitle: 'Det kan du læse her'
+      question_1: 'Hvor?'
+      answer_1: 'Her?'
+      question_2: 'Hvad?'
+      answer_2: 'Det?'
+      question_3: 'Hvem?'
+      answer_3: 'Os?'
       context_mapping: {  }
   id: block_display
-  uuid: 4fc05bea-0e35-4d0c-8824-eba5258f450b
+  uuid: d352e353-3bb0-4ae9-8d0a-9cc879e6a04e
   label: null
   weight: 0
   page_title: Forside
