@@ -31,3 +31,4 @@ permissions:
   - 'access itk floating help'
   - 'access itk hero'
   - 'access itk footer'
+  - 'access itk info section'
