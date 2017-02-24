@@ -10,4 +10,25 @@
     {% endif %}
   {% endblock %}
 
+  {% block main %}
+    {% embed "@layouts/container.twig" %}
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@layouts/container-constrained-dark.twig" %}
+      {% block content %}
+        {{ page.content }}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@layouts/container.twig" %}
+      {% block content %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@layouts/container-constrained-dark.twig" %}
+      {% block content %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+
 {% endembed %}
