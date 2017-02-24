@@ -1,4 +1,4 @@
-uuid: a98b1355-4e43-43cb-b3c2-0bb305465dc0
+uuid: 3cd53922-c286-4717-9980-7a9c378b3407
 langcode: da
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
   module:
     - node
     - user
-id: activity_recent
-label: 'Activity Recent'
+id: activity_popular
+label: 'Activity Popular'
 module: views
 description: ''
 tag: ''
@@ -205,6 +205,18 @@ display:
           plugin_id: bundle
           group: 1
       sorts:
+        delta:
+          id: delta
+          table: node__field_signed_up_users
+          field: delta
+          relationship: none
+          group_type: count_distinct
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: standard
         title:
           id: title
           table: node_field_data
@@ -212,28 +224,13 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          order: DESC
+          order: ASC
           exposed: false
           expose:
             label: ''
           entity_type: node
           entity_field: title
           plugin_id: standard
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          entity_type: node
-          entity_field: created
-          plugin_id: date
       title: Activity
       header: {  }
       footer: {  }
