@@ -16,4 +16,8 @@
       padding-top: $spacing-pixel-xxxxlarge;
     }
   }
+
+  &.is-dark {
+    background-color: $color-blue-light;
+  }
 }
