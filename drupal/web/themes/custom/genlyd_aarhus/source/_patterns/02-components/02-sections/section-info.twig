@@ -1,25 +1,47 @@
-<section class="section-info">
-  <div class="section-info--top l-heading-section no-spacing layout flex center">
+{% embed "@layouts/grid-item-header-section.twig" %}
+  {% block content %}
+
     {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
     {% include "@modules/heading-with-icon.twig" %}
-  </div>
 
-  <div class="section-info--items">
-    {% for item in sectionInfo.items %}
-      <div class="l-cols section-info--item">
-        <div class="l-col one-third desk-up">
-          <div class="section-info--headings">
-            <div class="section-info--icon">
-              {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
-              {% include "@elements/icons/icon.twig" with { icon: icon } %}
-            </div>
-            <h3 class="section-info--title">{{ item.title }}</h3>
-          </div>
-        </div>
-        <div class="l-col two-third desk-up">
-          <p class="section-info--text">{{ item.description }}</p>
-        </div>
-      </div>
-    {% endfor %}
-  </div>
-</section>
+  {% endblock %}
+{% endembed %}
+
+
+{% for item in sectionInfo.items %}
+
+  {% embed "@layouts/grid-item-header-section.twig" %}
+    {% block content %}
+
+      {% embed "@layouts/grid-halfs.twig" %}
+        {% block items %}
+          {% embed "@layouts/grid-item.twig" %}
+            {% block content %}
+
+              <div class="section-info--headings">
+                <div class="section-info--icon">
+                  {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
+                  {% include "@elements/icons/icon.twig" with { icon: icon } %}
+                </div>
+                <h3 class="section-info--title">{{ item.title }}</h3>
+              </div>
+
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "@layouts/grid-item.twig" %}
+            {% block content %}
+
+              <p class="section-info--text">{{ item.description }}</p>
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+{% endfor %}
+
+
