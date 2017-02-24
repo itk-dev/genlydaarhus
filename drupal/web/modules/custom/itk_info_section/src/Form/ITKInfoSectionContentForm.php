@@ -94,6 +94,24 @@ class ITKInfoSectionContentForm extends FormBase {
       '#default_value' => $config->get('block1_answer_3'),
     );
 
+    $form['block1']['block1_call_to_action_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action text'),
+      '#default_value' => $config->get('block1_call_to_action_text'),
+    );
+
+    $form['block1']['block1_call_to_action_button_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button text'),
+      '#default_value' => $config->get('block1_call_to_action_button_text'),
+    );
+
+    $form['block1']['block1_call_to_action_button_link'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button link'),
+      '#default_value' => $config->get('block1_call_to_action_link'),
+    );
+
     // Block 2
     $form['block2'] = [
       '#title' => $this->t('Block 2'),
@@ -150,6 +168,24 @@ class ITKInfoSectionContentForm extends FormBase {
       '#default_value' => $config->get('block2_answer_3'),
     );
 
+    $form['block2']['block2_call_to_action_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action text'),
+      '#default_value' => $config->get('block2_call_to_action_text'),
+    );
+
+    $form['block2']['block2_call_to_action_button_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button text'),
+      '#default_value' => $config->get('block2_call_to_action_button_text'),
+    );
+
+    $form['block2']['block2_call_to_action_button_link'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button link'),
+      '#default_value' => $config->get('block2_call_to_action_link'),
+    );
+
     $form['actions'] = ['#type' => 'actions'];
     $form['actions']['submit'] = [
       '#type' => 'submit',
@@ -175,6 +211,9 @@ class ITKInfoSectionContentForm extends FormBase {
       'block1_answer_2' => $form_state->getValue('block1_answer_2'),
       'block1_question_3' => $form_state->getValue('block1_question_3'),
       'block1_answer_3' => $form_state->getValue('block1_answer_3'),
+      'block1_call_to_action_text' => $form_state->getValue('block1_call_to_action_text'),
+      'block1_call_to_action_button_text' => $form_state->getValue('block1_call_to_action_button_text'),
+      'block1_call_to_action_button_link' => $form_state->getValue('block1_call_to_action_button_link'),
 
       'block2_title' => $form_state->getValue('block2_title'),
       'block2_subtitle' => $form_state->getValue('block2_subtitle'),
@@ -184,6 +223,9 @@ class ITKInfoSectionContentForm extends FormBase {
       'block2_answer_2' => $form_state->getValue('block2_answer_2'),
       'block2_question_3' => $form_state->getValue('block2_question_3'),
       'block2_answer_3' => $form_state->getValue('block2_answer_3'),
+      'block2_call_to_action_text' => $form_state->getValue('block2_call_to_action_text'),
+      'block2_call_to_action_button_text' => $form_state->getValue('block2_call_to_action_button_text'),
+      'block2_call_to_action_button_link' => $form_state->getValue('block2_call_to_action_button_link'),
     ]);
 
     drupal_set_message('Settings saved');

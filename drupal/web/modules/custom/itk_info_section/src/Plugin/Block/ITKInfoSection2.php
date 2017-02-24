@@ -30,6 +30,9 @@ class ITKInfoSection2 extends BlockBase {
       '#answer_2' => $config['block2_answer_2'],
       '#question_3' => $config['block2_question_3'],
       '#answer_3' => $config['block2_answer_3'],
+      '#call_to_action_text' => $config['block2_call_to_action_text'],
+      '#call_to_action_button_text' => $config['block2_call_to_action_button_text'],
+      '#call_to_action_button_link' => $config['block2_call_to_action_button_link'],
     ];
   }
 
