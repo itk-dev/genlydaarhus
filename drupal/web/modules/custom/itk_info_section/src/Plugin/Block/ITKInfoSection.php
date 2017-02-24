@@ -79,17 +79,34 @@ class ITKInfoSection extends BlockBase {
 
     $form['question_3'] = array(
       '#type' => 'textfield',
-      "#multiple" => TRUE,
       '#title' => t('Question 3'),
       '#default_value' => isset($config['question_3']) ? $config['question_3'] : '',
     );
 
     $form['answer_3'] = array(
       '#type' => 'textfield',
-      "#multiple" => TRUE,
       '#title' => t('Answer 3'),
       '#default_value' => isset($config['answer_3']) ? $config['answer_3'] : '',
     );
+
+    $form['call_to_action_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action text'),
+      '#default_value' => isset($config['call_to_action_text']) ? $config['call_to_action_text'] : '',
+    );
+
+    $form['call_to_action_button_text'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button text'),
+      '#default_value' => isset($config['call_to_action_button_text']) ? $config['call_to_action_button_text'] : '',
+    );
+
+    $form['call_to_action_button_link'] = array(
+      '#type' => 'textfield',
+      '#title' => t('Call to action button link'),
+      '#default_value' => isset($config['call_to_action_button_link']) ? $config['call_to_action_button_link'] : '',
+    );
+
 
     return $form;
   }
@@ -107,6 +124,9 @@ class ITKInfoSection extends BlockBase {
     $this->setConfigurationValue('answer_2', $form_state->getValue('answer_2'));
     $this->setConfigurationValue('question_3', $form_state->getValue('question_3'));
     $this->setConfigurationValue('answer_3', $form_state->getValue('answer_3'));
+    $this->setConfigurationValue('call_to_action_text', $form_state->getValue('call_to_action_text'));
+    $this->setConfigurationValue('call_to_action_button_text', $form_state->getValue('call_to_action_button_text'));
+    $this->setConfigurationValue('call_to_action_button_link', $form_state->getValue('call_to_action_button_link'));
   }
 
   /**

@@ -20,6 +20,9 @@ function itk_info_section_theme($existing, $type, $theme, $path) {
         'answer_2' => NULL,
         'question_3' => NULL,
         'answer_3' => NULL,
+        'call_to_action_text' => NULL,
+        'call_to_action_button_text' => NULL,
+        'call_to_action_button_link' => NULL,
       ],
     ],
     'itk_info_section_block1' => [
@@ -33,6 +36,9 @@ function itk_info_section_theme($existing, $type, $theme, $path) {
         'answer_2' => NULL,
         'question_3' => NULL,
         'answer_3' => NULL,
+        'call_to_action_text' => NULL,
+        'call_to_action_button_text' => NULL,
+        'call_to_action_button_link' => NULL,
       ],
     ],
     'itk_info_section_block2' => [
@@ -46,6 +52,9 @@ function itk_info_section_theme($existing, $type, $theme, $path) {
         'answer_2' => NULL,
         'question_3' => NULL,
         'answer_3' => NULL,
+        'call_to_action_text' => NULL,
+        'call_to_action_button_text' => NULL,
+        'call_to_action_button_link' => NULL,
       ],
     ],
   ];
