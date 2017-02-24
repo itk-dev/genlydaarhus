@@ -21,15 +21,6 @@ a {
   color: $color-black-light;
 }
 
-p {
-  margin: 0;
-}
-
-p + p {
-  margin-bottom: 10px;
-  margin-top: 10px;
-}
-
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;

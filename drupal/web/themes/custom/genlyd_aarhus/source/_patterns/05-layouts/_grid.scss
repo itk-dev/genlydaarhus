@@ -69,7 +69,9 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
   }
 
   &--item-header-section + &--item-header-section,
-  &--item-section + &--item-section {
+  &--item-section + &--item-section,
+  &--item-header-section + &--item-section,
+  &--item-section + &--item-header-section {
     margin-top: $grid-spacing-pixel-small;
 
     @include breakpoint($breakpoint-tablet) {
