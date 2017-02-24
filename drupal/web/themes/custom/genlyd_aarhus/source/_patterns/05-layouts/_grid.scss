@@ -38,6 +38,8 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
 
 .grid {
+  width: 100%;
+
   + .grid {
     margin-top: $grid-spacing-pixel-small;
 
@@ -59,12 +61,25 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     align-items: stretch;
   }
 
+  &--item-header-section + &--item-header-section,
+  &--item-section + &--item-section {
+    margin-top: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+  }
+
   &--item-header-section {
     border-bottom: 1px solid $color-border-dark;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: $grid-spacing-pixel-small;
+
+    &.is-centered {
+      justify-content: center;
+    }
 
     @include breakpoint($breakpoint-tablet) {
       flex-direction: row;
@@ -73,14 +88,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item-section {
     width: 100%;
-  }
-
-  &--item-section + &--item-section {
-    margin-top: $grid-spacing-pixel-small;
-
-    @include breakpoint($breakpoint-tablet) {
-      margin-top: $grid-spacing-pixel-medium;
-    }
   }
 
   &.is-full {
@@ -160,10 +167,30 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
           margin-right: $grid-spacing-percent-medium;
           width: ((100% - 4%) / 3)*2;
         }
+
         &:nth-of-type(2n) {
           margin-left: $grid-spacing-percent-medium;
           margin-right: 0;
           width: ((100% - 4%) / 3);
+        }
+      }
+    }
+  }
+
+  &.is-two-thirds-reversed {
+    > .grid--inner > .grid--item {
+
+      @include breakpoint($breakpoint-desk) {
+        &:nth-of-type(1n) {
+          margin-left: 0;
+          margin-right: $grid-spacing-percent-medium;
+          width: ((100% - 4%) / 3);
+        }
+
+        &:nth-of-type(2n) {
+          margin-left: $grid-spacing-percent-medium;
+          margin-right: 0;
+          width: ((100% - 4%) / 3)*2;
         }
       }
     }

@@ -1,47 +1,73 @@
-{% embed "@layouts/grid-item-header-section.twig" %}
-  {% block content %}
+{% embed "@layouts/grid-full.twig" %}
+  {% block items %}
 
-    {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
-    {% include "@modules/heading-with-icon.twig" %}
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
+        {% embed "@layouts/grid-item-header-section-centered.twig" %}
+          {% block items %}
+
+            {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
+            {% include "@modules/heading-with-icon.twig" %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
 
   {% endblock %}
 {% endembed %}
 
+{% embed "@layouts/grid-full.twig" %}
+  {% block items %}
 
-{% for item in sectionInfo.items %}
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
 
-  {% embed "@layouts/grid-item-header-section.twig" %}
-    {% block content %}
+        {% for item in sectionInfo.items %}
 
-      {% embed "@layouts/grid-halfs.twig" %}
-        {% block items %}
-          {% embed "@layouts/grid-item.twig" %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
             {% block content %}
 
-              <div class="section-info--headings">
-                <div class="section-info--icon">
-                  {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
-                  {% include "@elements/icons/icon.twig" with { icon: icon } %}
-                </div>
-                <h3 class="section-info--title">{{ item.title }}</h3>
-              </div>
+              {% embed "@layouts/grid-two-thirds-reversed.twig" %}
+                {% block items %}
+
+                  {% embed "@layouts/grid-item.twig" %}
+                    {% block content %}
+
+                      {% embed "@modules/section-info.twig" %}
+
+                        {% block icon %}
+                          {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
+                          {% include "@elements/icons/icon.twig" with { icon: icon } %}
+                        {% endblock %}
+                        {% block title %}
+                          {{ item.title }}
+                        {% endblock %}
+
+                      {% endembed %}
+
+                    {% endblock %}
+                  {% endembed %}
+
+                  {% embed "@layouts/grid-item.twig" %}
+                    {% block content %}
+
+                      <p>{{ item.description }}</p>
+
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
 
             {% endblock %}
           {% endembed %}
 
-          {% embed "@layouts/grid-item.twig" %}
-            {% block content %}
+        {% endfor %}
 
-              <p class="section-info--text">{{ item.description }}</p>
+      {% endblock %}
+    {% endembed %}
 
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      {% endembed %}
-
-    {% endblock %}
-  {% endembed %}
-
-{% endfor %}
-
-
+  {% endblock %}
+{% endembed %}

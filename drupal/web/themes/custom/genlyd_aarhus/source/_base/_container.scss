@@ -8,9 +8,7 @@
 
   &.is-constrained {
     .container--inner {
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 1200px;
+      @include layout-wrapper($breakpoint-mediumdesk);
     }
   }
 
