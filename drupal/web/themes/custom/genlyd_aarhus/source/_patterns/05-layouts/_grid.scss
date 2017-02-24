@@ -61,6 +61,13 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     align-items: stretch;
   }
 
+  &--item-header-section,
+  &--item-section {
+    &.is-centered {
+      justify-content: center;
+    }
+  }
+
   &--item-header-section + &--item-header-section,
   &--item-section + &--item-section {
     margin-top: $grid-spacing-pixel-small;
@@ -76,10 +83,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     flex-direction: column;
     justify-content: space-between;
     padding-bottom: $grid-spacing-pixel-small;
-
-    &.is-centered {
-      justify-content: center;
-    }
 
     @include breakpoint($breakpoint-tablet) {
       flex-direction: row;
