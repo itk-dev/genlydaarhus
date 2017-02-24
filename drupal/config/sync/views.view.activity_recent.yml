@@ -205,6 +205,21 @@ display:
           plugin_id: bundle
           group: 1
       sorts:
+        created:
+          id: created
+          table: node_field_data
+          field: created
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: DESC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          entity_type: node
+          entity_field: created
+          plugin_id: date
         title:
           id: title
           table: node_field_data
@@ -219,21 +234,6 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: standard
-        created:
-          id: created
-          table: node_field_data
-          field: created
-          relationship: none
-          group_type: group
-          admin_label: ''
-          order: ASC
-          exposed: false
-          expose:
-            label: ''
-          granularity: second
-          entity_type: node
-          entity_field: created
-          plugin_id: date
       title: Activity
       header: {  }
       footer: {  }
