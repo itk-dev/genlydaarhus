@@ -63,8 +63,18 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item-header-section,
   &--item-section {
+    display: flex;
+
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: $grid-spacing-pixel-small;
+
     &.is-centered {
       justify-content: center;
+    }
+
+    @include breakpoint($breakpoint-tablet) {
+      flex-direction: row;
     }
   }
 
@@ -81,14 +91,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item-header-section {
     border-bottom: 1px solid $color-border-dark;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    padding-bottom: $grid-spacing-pixel-small;
 
-    @include breakpoint($breakpoint-tablet) {
-      flex-direction: row;
-    }
   }
 
   &--item-section {
