@@ -32,19 +32,8 @@ variant_settings:
       weight: -7
       uuid: 9b1dfcb4-b1d0-4eb0-88a5-7c41bdd3bbe5
       context_mapping: {  }
-    dc31abbb-c903-429a-a30b-cdb331156f1b:
-      id: 'views_block:activity_popular-block_1'
-      label: ''
-      provider: views
-      label_display: '0'
-      views_label: ''
-      items_per_page: none
-      region: top
-      weight: -8
-      uuid: dc31abbb-c903-429a-a30b-cdb331156f1b
-      context_mapping: {  }
-    3e737a5d-295a-4b9c-9501-d25364a81386:
-      id: 'views_block:activity_recent-block_1'
+    b3794120-ba4c-4315-973b-5094582e387d:
+      id: 'views_block:activity_recent-block'
       label: ''
       provider: views
       label_display: '0'
@@ -52,7 +41,18 @@ variant_settings:
       items_per_page: none
       region: top
       weight: -10
-      uuid: 3e737a5d-295a-4b9c-9501-d25364a81386
+      uuid: b3794120-ba4c-4315-973b-5094582e387d
+      context_mapping: {  }
+    5ad36a9d-f7fb-4103-93a7-a469064fc797:
+      id: 'views_block:activity_popular-block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -8
+      uuid: 5ad36a9d-f7fb-4103-93a7-a469064fc797
       context_mapping: {  }
   id: block_display
   uuid: d352e353-3bb0-4ae9-8d0a-9cc879e6a04e

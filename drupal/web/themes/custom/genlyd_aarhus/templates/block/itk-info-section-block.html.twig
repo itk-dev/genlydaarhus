@@ -5,15 +5,19 @@
  */
 #}
 
-{% include "@components/02-sections/section-info.twig" with {
-  sectionInfo: {
+{% embed "@layouts/container-constrained-dark.twig" %}
+  {% block content %}
+    {% include "@components/02-sections/section-info.twig" with {
+    sectionInfo: {
     title: title,
     subtitle: subtitle,
     items: [
-      { title: question_1, description: answer_1 },
-      { title: question_2, description: answer_2 },
-      { title: question_3, description: answer_3 }
+    { title: question_1, description: answer_1 },
+    { title: question_2, description: answer_2 },
+    { title: question_3, description: answer_3 }
     ]
-  }
-}
-%}
+    }
+    }
+    %}
+  {% endblock %}
+{% endembed %}
