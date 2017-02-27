@@ -12,7 +12,7 @@
   padding-top: $spacing-pixel-xxsmall;
   position: fixed;
   right: 0;
-  transform: translateY(320px);
+  transform: translateY(315px);
   z-index: 20;
 
   @include breakpoint($breakpoint-tablet) {
@@ -25,6 +25,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
+    margin-bottom: $spacing-pixel-tiny;
     padding-left: $spacing-pixel-normal;
     padding-right: $spacing-pixel-normal;
   }
@@ -32,6 +33,8 @@
   &--title {
     font-size: $font-size-normal;
     font-weight: 600;
+    margin-bottom: $spacing-pixel-tiny;
+    margin-top: $spacing-pixel-tiny;
     text-transform: uppercase;
   }
 
