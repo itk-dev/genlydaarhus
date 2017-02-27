@@ -103,7 +103,7 @@ function genlyd_aarhus_preprocess_page__activity(&$variables) {
         "address" => "[TODO]",
         "address_label" => "Adresse [TODO]",
         "owner" => "[TODO]",
-        "owner_label" => $node->field_owner->getFieldDefinition()->getLabel(),
+        "owner_label" => "[TODO]",
         "number_of_participants" => $node->field_signed_up_users->count(),
         "number_of_participants_label" => \Drupal::translation()
           ->translate('Signed up users'),

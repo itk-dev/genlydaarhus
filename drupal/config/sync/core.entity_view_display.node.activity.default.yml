@@ -10,7 +10,6 @@ dependencies:
     - field.field.node.activity.field_help_needed
     - field.field.node.activity.field_image
     - field.field.node.activity.field_maximum_participants
-    - field.field.node.activity.field_owner
     - field.field.node.activity.field_physical_requirements
     - field.field.node.activity.field_price
     - field.field.node.activity.field_signed_up_users
@@ -77,13 +76,6 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
-  field_owner:
-    weight: 111
-    label: above
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
   field_physical_requirements:
     weight: 109
     label: above
