@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.activity.body
     - field.field.node.activity.field_address
+    - field.field.node.activity.field_area
     - field.field.node.activity.field_categories
     - field.field.node.activity.field_date
     - field.field.node.activity.field_entry_requirements
@@ -39,6 +40,13 @@ content:
     third_party_settings: {  }
   field_address:
     weight: 29
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_area:
+    weight: 30
     settings:
       size: 60
       placeholder: ''

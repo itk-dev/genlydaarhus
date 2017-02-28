@@ -69,7 +69,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   $variables['activity'] = [
     'activityHero' => [
       'title' => $node->get('title')->value,
-      'image' => file_create_url($node->field_image->entity->getFileUri()),
+      'image' => isset($node->field_image->entity) ? file_create_url($node->field_image->entity->getFileUri()) : '',
     ],
     'activityOverview' => [
       'headingWithIconDescription' => [
@@ -102,7 +102,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
         "end_time_label" => $node->field_time_end->getFieldDefinition()->getLabel(),
         "address" => $node->field_address->value,
         "address_label" => $node->field_address->getFieldDefinition()->getLabel(),
-        "owner" => $node->author,
+        "owner" =>  $node->uid->entity->name->value,
         "owner_label" => \Drupal::translation()->translate('Owner'),
         "number_of_participants" => $node->field_signed_up_users->count(),
         "number_of_participants_label" => \Drupal::translation()

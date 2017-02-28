@@ -5,8 +5,6 @@
       {% block content %}
         {% include "@components/activity-overview.twig" with { activityOverview: activity.activityOverview } %}
 
-{# TODO:
-
         <div class="container has-large-spacing">
           <div class="l-heading-section">
             {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activity.headingWithIconSimilar, icon: activity.headingWithIconSimilar.icon } %}
@@ -41,7 +39,7 @@
         <div class="layout flex center">
           {% include "@modules/call-to-action.twig" with { callToAction: activity.callToAction } %}
         </div>
-#}
+
       {% endblock %}
     {% endembed %}
 
