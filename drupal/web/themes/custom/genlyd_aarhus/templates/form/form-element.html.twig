@@ -49,8 +49,12 @@
     {% embed "@layouts/grid-item-section.twig" %}
       {% block content %}
 
-        {{ label }}
-        {{ children }}
+        {% if type == 'radio' or type == 'checkbox'  %}
+          {{ children }}
+        {% else %}
+          {{ label }}
+          {{ children }}
+        {% endif %}
 
       {% endblock %}
     {% endembed %}
