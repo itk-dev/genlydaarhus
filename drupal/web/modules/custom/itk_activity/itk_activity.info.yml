@@ -1,0 +1,5 @@
+name: ITK Activity
+type: module
+description: 'Supplies activity.'
+version: 1.0.0-alpha1
+core: 8.x
