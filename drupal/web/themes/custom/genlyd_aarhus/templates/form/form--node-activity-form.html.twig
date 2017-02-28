@@ -44,7 +44,11 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Choose Headline and Description" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Choose Headline and Description" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.title }}
@@ -59,7 +63,11 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Signup required" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Signup required" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.field_signup_required }}
@@ -70,14 +78,22 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Participants" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Participants" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.field_entry_requirements }}
           {{ form.field_physical_requirements }}
           {{ form.field_maximum_participants }}
 
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Helping with the activity" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Helping with the activity" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.field_help_needed }}
@@ -87,7 +103,11 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Categories" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Categories" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.field_categories }}
@@ -97,21 +117,40 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Upload an image" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Upload an image" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
-          {{ form.field_image }}
+          {% embed "@layouts/grid-halfs.twig" %}
+            {% block items %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {{ form.field_image }}
+                {% endblock %}
+              {% endembed %}
 
-          {{ "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans }}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {{ "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans }}
 
-          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "Hvad er et godt billede?" | trans, description: "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)." | trans } } %}
-
+                  {% include "@elements/forms/help-box.twig" with { helpBox: { title: "Hvad er et godt billede?" | trans, description: "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)." | trans } } %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Practical information" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Practical information" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
           {% endembed %}
 
           {{ form.field_date }}

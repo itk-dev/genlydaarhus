@@ -44,18 +44,21 @@
  * @see template_preprocess_form_element()
  */
 #}
-
-{% embed "@layouts/grid-item-section.twig" %}
+{% embed "@layouts/grid-item.twig" %}
   {% block content %}
+    {% embed "@layouts/grid-item-section.twig" %}
+      {% block content %}
 
-    {{ label }}
-    {{ children }}
+        {{ label }}
+        {{ children }}
 
+      {% endblock %}
+    {% endembed %}
+
+    {% if errors %}
+      <div class="form-item--error-message">
+        {{ errors }}
+      </div>
+    {% endif %}
   {% endblock %}
 {% endembed %}
-
-{% if errors %}
-  <div class="form-item--error-message">
-    {{ errors }}
-  </div>
-{% endif %}
