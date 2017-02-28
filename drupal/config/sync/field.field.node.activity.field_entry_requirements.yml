@@ -12,7 +12,7 @@ entity_type: node
 bundle: activity
 label: 'Entry Requirements'
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''

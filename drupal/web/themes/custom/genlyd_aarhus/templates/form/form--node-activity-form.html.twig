@@ -10,6 +10,137 @@
  * @see template_preprocess_form()
  */
 #}
+
+{# TODO: step form #}
+{#
+{% set groups = form['#fieldgroups'] %}
+{% set group_keys = groups | keys %}
+#}
+      {#
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% set progressBar = { items: [
+                  {title: 'fisk'},
+                  {title: 'fusk'},
+                  {title: 'just'}
+                ] } %}
+                {% include '@modules/progress-bar.twig' %}
+              {% endblock %}
+            {% endembed %}
+      #}
+
+
+{% set form = element %}
+
 <form{{ attributes }}>
-  {{ children }}
+  {% embed "@layouts/grid-full.twig" %}
+    {% block items %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% set headingWithIcon = { title: ("Hello " ~ user.account.name) | trans, subtitle: "Let us create an activity" | trans, icon: { type: "create", color: 'light' } } %}
+          {% include '@modules/heading-with-icon.twig' %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Choose Headline and Description" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.title }}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "What is a good headline?" | trans, description: "En god overskrift er mange ting. Den kan være kort og tydelig (fx Vinsmagning i Dokk1). Den kan gøre en nysgerrig (fx Løgn og latin i sognegården) eller bruge ordspil (Luther og lagkage). Den kan love noget (Lær at binde din egen flue) eller være inviterende (Drop-ind tennis)" | trans } } %}
+
+          {{ form.body }}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "Hvad er en god beskrivelse?" | trans, description: "En god beskrivelse fortæller lidt mere om emnet eller temaet, og hvad i skal sammen. Fx: Vi lærer om de gode råvarer fra middelhavet og laver alle retter fra bunden. Eller: Tag på en frisk cykeltur ved Moesgård med en flok motionister, der nyder den friske luft og det gode humør. Vi cykler 5 km hver gang. Hvis det er et foredrag, kan man også skrive lidt om personen, der holder foredraget. Detaljer som, hvor og hvornår det foregår, kommer vi til senere. Det samme med hvor øvet, man skal være for at kunne deltage." | trans } } %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Signup required" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_signup_required }}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "Hvad er tilmeldingspligt?" | trans, description: "Hvis det er vigtigt at vide, hvor mange, der kommer til din aktivitet, fordi der fx skal laves mad eller betales billetter, så sæt kryds i tilmeldingspligt." | trans } } %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Participants" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_entry_requirements }}
+          {{ form.field_physical_requirements }}
+          {{ form.field_maximum_participants }}
+
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Helping with the activity" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_help_needed }}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Categories" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_categories }}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Upload an image" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_image }}
+
+          {{ "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans }}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "Hvad er et godt billede?" | trans, description: "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)." | trans } } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Practical information" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+          {% endembed %}
+
+          {{ form.field_date }}
+          {{ form.field_time_end }}
+          {{ form.field_time_start }}
+
+          {{ form.field_zipcode }}
+          {{ form.field_address }}
+
+          {{ form.field_price }}
+
+          <div>[TODO: Contact information - just user?]</div>
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% if logged_in %}
+            <button type="submit" name="op" value="{{ 'Save and publish' | trans }}" class="button js-form-submit form-submit">{{ "Save and publish" | trans }}</button>
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
 </form>
+

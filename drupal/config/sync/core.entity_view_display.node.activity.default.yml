@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - field.field.node.activity.body
+    - field.field.node.activity.field_address
     - field.field.node.activity.field_categories
     - field.field.node.activity.field_date
     - field.field.node.activity.field_entry_requirements
@@ -14,6 +15,9 @@ dependencies:
     - field.field.node.activity.field_price
     - field.field.node.activity.field_signed_up_users
     - field.field.node.activity.field_signup_required
+    - field.field.node.activity.field_time_end
+    - field.field.node.activity.field_time_start
+    - field.field.node.activity.field_zipcode
     - node.type.activity
   module:
     - datetime
@@ -31,6 +35,13 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_address:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_categories:
     weight: 110
     label: above
@@ -109,6 +120,28 @@ content:
       format_custom_true: ''
     third_party_settings: {  }
     type: boolean
+  field_time_end:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_time_start:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_zipcode:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   links:
     weight: 100
 hidden:
