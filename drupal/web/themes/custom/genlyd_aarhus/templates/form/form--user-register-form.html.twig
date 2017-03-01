@@ -104,9 +104,21 @@
 
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {{ form.actions.submit }}
+          {% embed "@layouts/grid-fourths.twig" %}
+            {% block items %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {{ form.actions.submit }}
+                {% endblock %}
+              {% endembed %}
 
-          {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I already have an account" | trans, href: "/user/login" } } %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I already have an account" | trans, href: "/user/login" } } %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
 
