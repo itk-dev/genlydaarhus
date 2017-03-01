@@ -44,18 +44,25 @@
  * @see template_preprocess_form_element()
  */
 #}
-
-{% embed "@layouts/grid-item-section.twig" %}
+{% embed "@layouts/grid-item.twig" %}
   {% block content %}
+    {% embed "@layouts/grid-item-section.twig" %}
+      {% block content %}
 
-    {{ label }}
-    {{ children }}
+        {% if type == 'radio' or type == 'checkbox'  %}
+          {{ children }}
+        {% else %}
+          {{ label }}
+          {{ children }}
+        {% endif %}
 
+      {% endblock %}
+    {% endembed %}
+
+    {% if errors %}
+      <div class="form-item--error-message">
+        {{ errors }}
+      </div>
+    {% endif %}
   {% endblock %}
 {% endembed %}
-
-{% if errors %}
-  <div class="form-item--error-message">
-    {{ errors }}
-  </div>
-{% endif %}

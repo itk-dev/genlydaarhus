@@ -1,16 +1,16 @@
-uuid: 59cc56e8-5d22-4748-87e6-1eb202b2c043
-langcode: en
+uuid: eda6d000-1be5-41f1-973d-08f9f2cdc910
+langcode: da
 status: true
 dependencies:
   module:
     - node
-    - user
-id: node.field_owner
-field_name: field_owner
+id: node.field_zipcode
+field_name: field_zipcode
 entity_type: node
-type: entity_reference
+type: integer
 settings:
-  target_type: user
+  unsigned: false
+  size: normal
 module: core
 locked: false
 cardinality: 1

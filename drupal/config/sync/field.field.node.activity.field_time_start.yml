@@ -1,0 +1,19 @@
+uuid: ecb6cb60-cb04-4ffe-b1d3-5db73a4642c5
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_start
+    - node.type.activity
+id: node.activity.field_time_start
+field_name: field_time_start
+entity_type: node
+bundle: activity
+label: 'Time Start'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
