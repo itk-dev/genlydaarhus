@@ -12,6 +12,8 @@ function genlyd_install() {
     'components',
     'views_block_filter_block',
     'page_manager_ui',
+    'itk_info_section',
+    'itk_activity',
   );
   \Drupal::service('module_installer')->install($module_list);
 
@@ -62,6 +64,16 @@ function genlyd_update_8003() {
 function genlyd_update_8004() {
   $module_list = array(
     'itk_info_section',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8005() {
+  $module_list = array(
+    'itk_activity',
   );
   \Drupal::service('module_installer')->install($module_list);
 }

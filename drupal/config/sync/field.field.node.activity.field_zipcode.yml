@@ -1,0 +1,23 @@
+uuid: 4174a51f-808f-42e9-9e67-561f4dc981aa
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_zipcode
+    - node.type.activity
+id: node.activity.field_zipcode
+field_name: field_zipcode
+entity_type: node
+bundle: activity
+label: Zipcode
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

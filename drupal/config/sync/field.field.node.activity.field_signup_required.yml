@@ -11,13 +11,11 @@ entity_type: node
 bundle: activity
 label: 'Signup Required'
 description: ''
-required: false
+required: true
 translatable: false
-default_value:
-  -
-    value: 0
+default_value: {  }
 default_value_callback: ''
 settings:
-  on_label: 'On'
-  off_label: 'Off'
+  on_label: 'Signup is required'
+  off_label: 'Signup is not required'
 field_type: boolean

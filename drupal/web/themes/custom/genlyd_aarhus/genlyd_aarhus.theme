@@ -4,6 +4,8 @@
  * Theme hooks.
  */
 
+use Drupal\image\Entity\ImageStyle;
+
 /**
  * Implements hook_preprocess_block().
  */
@@ -54,9 +56,9 @@ function genlyd_aarhus_theme_suggestions_page_alter(array &$suggestions, array $
 /**
  * Implements hook_preprocess_HOOK().
  *
- * Page Activity preprocess.
+ * Node Activity preprocess.
  */
-function genlyd_aarhus_preprocess_page__activity(&$variables) {
+function genlyd_aarhus_preprocess_node__activity(&$variables) {
   $node = $variables['node'];
 
   // Get categories.
@@ -65,11 +67,57 @@ function genlyd_aarhus_preprocess_page__activity(&$variables) {
     $categories[] = $category->name->value;
   }
 
+  $currentUser = \Drupal::currentUser();
+
+  $current_path = \Drupal::service('path.current')->getPath();
+  $current_path = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+
+  if ($currentUser->id() > 0) {
+    // Not anonymous user.
+
+    $signedUpUsers = $node->field_signed_up_users->referencedEntities();
+
+    $alreadyAdded = FALSE;
+
+    // Remove user if already added.
+    for ($i = 0; $i < count($signedUpUsers); $i++) {
+      if ($signedUpUsers[$i]->uid->value == $currentUser->id()) {
+        $alreadyAdded = TRUE;
+      }
+    }
+
+    if ($alreadyAdded) {
+      $signupButton = [
+        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $current_path,
+        'title' => \Drupal::translation()->translate('Deregister'),
+      ];
+    }
+    else {
+      $signupButton = [
+        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $current_path,
+        'title' => \Drupal::translation()->translate('Register'),
+      ];
+    }
+  } else {
+    $signupButton = [
+      // @TODO: ?destination=' . $current_path,
+      'href' => '/user',
+      'title' => \Drupal::translation()->translate('Login to register'),
+    ];
+  }
+
+  // Get image url.
+  $imageUrl = '';
+  if (isset($node->field_image->entity)) {
+    $image = $node->field_image->entity->getFileUri();
+    $imageUrl = ImageStyle::load('activity')->buildUrl($image);
+  }
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
-      'title' => $node->get('title')->value,
-      'image' => file_create_url($node->field_image->entity->getFileUri()),
+      'title' => $node->title->value,
+      'image' => $imageUrl,
     ],
     'activityOverview' => [
       'headingWithIconDescription' => [
@@ -88,25 +136,26 @@ function genlyd_aarhus_preprocess_page__activity(&$variables) {
         'help_needed' => $node->field_help_needed->entity->name->value,
       ],
       'body' => check_markup($node->body->value, 'filtered_html'),
-      "meta" => [
-        "date" => $node->field_date->value,
-        "date_label" => $node->field_date->getFieldDefinition()->getLabel(),
-        "price" =>
+      'meta' => [
+        'date' => $node->field_date->value,
+        'date_label' => $node->field_date->getFieldDefinition()->getLabel(),
+        'price' =>
           isset($node->field_price->value) && $node->field_price->value > 0 ?
             $node->field_price->value :
             \Drupal::translation()->translate('Free'),
-        "price_label" => $node->field_price->getFieldDefinition()->getLabel(),
-        "start_time" => "[TODO]",
-        "start_time_label" => "Starttidspunkt [TODO]",
-        "end_time" => "[TODO]",
-        "end_time_label" => "Sluttidspunkt [TODO]",
-        "address" => "[TODO]",
-        "address_label" => "Adresse [TODO]",
-        "owner" => "[TODO]",
-        "owner_label" => $node->field_owner->getFieldDefinition()->getLabel(),
-        "number_of_participants" => $node->field_signed_up_users->count(),
-        "number_of_participants_label" => \Drupal::translation()
+        'price_label' => $node->field_price->getFieldDefinition()->getLabel(),
+        'start_time' => $node->field_time_start->value,
+        'start_time_label' => $node->field_time_start->getFieldDefinition()->getLabel(),
+        'end_time' => $node->field_time_end->value,
+        'end_time_label' => $node->field_time_end->getFieldDefinition()->getLabel(),
+        'address' => $node->field_address->value,
+        'address_label' => $node->field_address->getFieldDefinition()->getLabel(),
+        'owner' =>  $node->uid->entity->name->value,
+        'owner_label' => \Drupal::translation()->translate('Owner'),
+        'number_of_participants' => $node->field_signed_up_users->count(),
+        'number_of_participants_label' => \Drupal::translation()
           ->translate('Signed up users'),
+        'signupButton' => $signupButton,
       ]
     ]
   ];
@@ -120,12 +169,19 @@ function genlyd_aarhus_preprocess_page__activity(&$variables) {
 function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
   $node = $variables['node'];
 
+  // Get image url.
+  $imageUrl = '';
+  if (isset($node->field_image->entity)) {
+    $image = $node->field_image->entity->getFileUri();
+    $imageUrl = ImageStyle::load('activity_teaser')->buildUrl($image);
+  }
+
   $variables['cardActivity'] = [
     'link' => $node->toUrl()->toString(),
     'cardHeader' => [
       'title' => $node->title->value,
       'image' => [
-        'src' => file_create_url($node->field_image->entity->getFileUri()),
+        'src' => $imageUrl,
       ],
     ],
     'cardInfo' => [
@@ -140,7 +196,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
         ],
         [
           'label' => \Drupal::translation()->translate('Area'),
-          'text' => '[TODO]'
+          'text' => $node->field_zipcode->value,
         ],
         [
           'label' => \Drupal::translation()->translate('Participants'),

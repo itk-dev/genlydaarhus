@@ -11,3 +11,7 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view the administration theme'
+  - 'create activity content'
+  - 'delete own activity content'
+  - 'edit own activity content'
+  - 'view own unpublished content'
