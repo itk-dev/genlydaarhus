@@ -163,7 +163,7 @@
 
           {{ form.field_price }}
 
-          <div>[TODO: Contact information - just user?]</div>
+          {# @TODO: Contact information - just user? #}
 
         {% endblock %}
       {% endembed %}
@@ -171,7 +171,7 @@
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
           {% if logged_in %}
-            <button type="submit" name="op" value="{{ 'Save and publish' | trans }}" class="button js-form-submit form-submit">{{ "Save and publish" | trans }}</button>
+            {{ form.actions.publish }}
           {% endif %}
         {% endblock %}
       {% endembed %}
@@ -183,4 +183,3 @@
   {{ form.form_token }}
   {{ form.form_id }}
 </form>
-
