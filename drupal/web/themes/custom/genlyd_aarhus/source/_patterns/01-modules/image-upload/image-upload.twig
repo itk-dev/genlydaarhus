@@ -4,7 +4,8 @@
   </div>
   <div class="image-upload--overlay {{ imageUpload.hover ? 'has-hover' }}">
     <div class="image-upload--button">
-      {% include "@elements/buttons/button-call-to-action.twig" with { button: imageUpload.button } %}
+      <input type="file" id="{{ imageUpload.button.name }}" name="{{ imageUpload.button.name }}" class="image-upload--file js-image-upload js-form-file">
+      {% include "@elements/buttons/button-label-call-to-action.twig" with { button: imageUpload.button } %}
     </div>
   </div>
 </div>
