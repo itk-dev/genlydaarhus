@@ -1,0 +1,119 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set form = element %}
+
+<form{{ attributes }}>
+  {% embed "@layouts/grid-full.twig" %}
+    {% block items %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: "Register to Genlyd Aarhus" | trans, subtitle: "When you are registered, you can create activities." | trans, icon: { type: "user", color: 'light' } } } %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@layouts/grid-full.twig" %}
+    {% block items %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-fourths.twig" %}
+            {% block items %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {% include "@elements/buttons/button-facebook.twig" with { button: { title: "Register with Facebook" | trans, href: "FACEBOOK_LINK" } } %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: "Or use your private information" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@layouts/grid-full.twig" %}
+    {% block items %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-halfs.twig" %}
+            {% block items %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+
+                  {{ form.field_first_name }}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+
+                  {{ form.field_surname }}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+
+                  {{ form.account }}
+
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+
+                  {{ form.user_picture }}
+
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "What about the password?" | trans, description: "You will create a password when you verify your email." | trans } } %}
+
+          {# @TODO: Husk at læse <a href="#">betingelserne</a>. #}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {{ form.actions.submit }}
+
+          {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I already have an account" | trans, href: "/user/login" } } %}
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {{ form.form_build_id }}
+  {{ form.form_token }}
+  {{ form.form_id }}
+</form>
