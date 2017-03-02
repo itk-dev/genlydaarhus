@@ -1,0 +1,51 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set register = {
+  "headingWithIcon": {
+    "title": "Register with Genlyd Aarhus" | trans,
+    "subtitle": "When you have registered you can create activities." | trans,
+    "iconClass": "hidden-tablet-down",
+    "icon": {
+      "type": "user",
+      "color": "light"
+    }
+  },
+  "textWithIconPersonal": {
+    "title": "Eller brug personlige oplysninger" | trans,
+    "icon": {
+      "type": "arrow",
+      "class": "is-small is-green-dark",
+      "color": "light"
+    }
+  },
+  "socialButtons": {
+    "facebookButton": {
+      "title": "Register with Facebook" | trans,
+      "href": "FacebookLink"
+    },
+  },
+  "noAccountButton": {
+    "title": "I do not have an account" | trans
+    }
+  }
+%}
+
+{#
+    "googleButton": {
+      "title": "Register with Google" | trans,
+      "href": "GoogleLink"
+    }
+#}
+
+{% include "@components/register.twig" with { page: children, attributes: attributes, login: login } %}

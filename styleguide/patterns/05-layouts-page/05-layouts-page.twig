@@ -34,15 +34,15 @@
 {% block hero %}
 {% endblock %}
 
-<main class="container">
-  <div class="container--inner">
-    {% block main %}
-      {% if page.content %}
+{% block main %}
+  {% if page.content %}
+    {% embed "@layouts/container.twig" %}
+      {% block content %}
         {{ page.content }}
-      {% endif %}
-    {% endblock %}
-  </div>
-</main>
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+{% endblock %}
 
 {% block footer %}
   {% if page.footer %}
