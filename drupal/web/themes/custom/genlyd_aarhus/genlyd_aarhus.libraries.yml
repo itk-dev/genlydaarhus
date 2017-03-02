@@ -3,6 +3,7 @@ styling:
   css:
     theme:
       source/css/styles.css: { media: screen }
+
 hamburger-menu:
   version: VERSION
   js:
@@ -10,3 +11,10 @@ hamburger-menu:
     source/assets/js/floating-help.js: {}
   dependencies:
       - core/jquery
+
+image-upload:
+  version: 1.x
+  js:
+    source/assets/js/image-upload.js: {}
+  dependencies:
+    - core/jquery
