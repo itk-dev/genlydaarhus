@@ -12,7 +12,24 @@
 
   {% block main %}
     {% block content %}
-      {{ page.content }}
+      {% if page.content %}
+        {# Render Drupal block in hero region #}
+        {{ page.content }}
+      {% else %}
+        {# Render Pattern Lab #}
+        {% include "@components/activities.twig" %}
+        {% embed "@layouts/container-constrained-dark.twig" %}
+          {% block content %}
+            {% include "@components/section-info.twig" %}
+          {% endblock %}
+        {% endembed %}
+        {% include "@components/activities.twig" %}
+        {% embed "@layouts/container-constrained-dark.twig" %}
+          {% block content %}
+            {% include "@components/section-info.twig" %}
+          {% endblock %}
+        {% endembed %}
+      {% endif %}
     {% endblock %}
   {% endblock %}
 {% endembed %}
