@@ -31,7 +31,35 @@
         {% if children %}
           {# Render Drupal form #}
           <form{{ attributes.removeClass('user-login-form') }}>
-            {{ children }}
+            {% set form = element %}
+
+            {% embed "@layouts/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.name }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@layouts/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.pass }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@layouts/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.actions.submit }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {{ form.form_build_id }}
+            {{ form.form_token }}
+            {{ form.form_id }}
           </form>
         {% else %}
           {# Render Pattern Lab #}
