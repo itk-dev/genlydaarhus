@@ -100,7 +100,16 @@
         {% block content %}
           {{ form.field_entry_requirements }}
           {{ form.field_physical_requirements }}
-          {{ form.field_maximum_participants }}
+
+          {% embed "@layouts/grid-fourths.twig" %}
+            {% block items %}
+              {% embed "@layouts/grid-item.twig" %}
+                {% block content %}
+                  {{ form.field_maximum_participants }}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
     {% endblock %}
@@ -272,7 +281,6 @@
   {{ form.form_id }}
 </form>
 
-
 {# TODO: step form #}
 {#
 {% set groups = form['#fieldgroups'] %}
@@ -290,4 +298,3 @@
               {% endblock %}
             {% endembed %}
       #}
-
