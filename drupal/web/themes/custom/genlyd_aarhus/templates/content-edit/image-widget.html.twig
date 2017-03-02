@@ -30,15 +30,24 @@
   {% endblock %}
 
   {% block content %}
+    {% embed "@layouts/grid-full.twig" %}
+      {% block items %}
+        {% embed "@layouts/grid-item.twig" %}
+          {% block content %}
+            {{ data.upload }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@layouts/grid-item.twig" %}
+          {% block content %}
+            {{ data.remove_button }}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
     {{ data.title }}
-    {{ data.upload }}
-    {{ data.remove_button }}
     {{ data.fids }}
     {{ data.display }}
   {% endblock %}
 {% endembed %}
-
-<div{{ attributes }}>
-  {{ data.preview }}
-  {{ data|without('preview') }}
-</div>
