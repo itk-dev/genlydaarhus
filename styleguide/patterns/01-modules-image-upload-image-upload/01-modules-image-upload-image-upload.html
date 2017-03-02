@@ -22,27 +22,25 @@
 
     <link rel="stylesheet" href="/css/styleguide.css?0" media="all" />
 
-    <!-- Leaflet map css and script -->
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-
   </head>
   <body class="">
   
-<div class="map" id="map"></div>
-<script>
-  var map = L.map('map').setView([56.1567, 10.2107], 12);
-  // create the tile layer with correct attribution
-  var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-  var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-  var osm = new L.TileLayer(osmUrl, {minZoom: 1, maxZoom: 20, attribution: osmAttrib});
-  map.addLayer(osm);
-  var marker = L.marker([56.1567, 10.2107]).addTo(map);
-  var marker = L.marker([56.1112, 10.2099]).addTo(map);
-</script>  
+<div class="image-upload">
+  <div class="image-upload--image">
+          <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+
+      </div>
+  <div class="image-upload--overlay ">
+    <div class="image-upload--button">
+              <input type="file" id="image-upload" name="image-upload" class="image-upload--file js-image-upload js-form-file">
+        <label for="image-upload" class="button button is-cta "><span>Vælg billede</span></label>
+          </div>
+  </div>
+</div>
+  
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[],"lineageR":[{"lineagePattern":"templates-activities-map","lineagePath":"..\/..\/patterns\/03-templates-activities-02-activities-map\/03-templates-activities-02-activities-map.html"}],"patternBreadcrumb":{"patternType":"modules"},"patternDesc":"","patternExtension":"twig","patternName":"map","patternPartial":"modules-map","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[],"lineageR":[{"lineagePattern":"templates-create-step-four","lineagePath":"..\/..\/patterns\/03-templates-create-04-create-step-four\/03-templates-create-04-create-step-four.html"},{"lineagePattern":"templates-profile","lineagePath":"..\/..\/patterns\/03-templates-profile-01-profile\/03-templates-profile-01-profile.html"},{"lineagePattern":"templates-profile-activities-edit","lineagePath":"..\/..\/patterns\/03-templates-profile-03-profile-activities-edit\/03-templates-profile-03-profile-activities-edit.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"image upload"},"patternDesc":"","patternExtension":"twig","patternName":"image upload","patternPartial":"modules-image-upload","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -105,6 +103,7 @@
   <script src="/assets/js/filters.js"></script>
   <script src="/assets/js/delete-activity.js"></script>
   <script src="/assets/js/floating-help.js"></script>
-  
+  <script src="/assets/js/image-upload.js"></script>
+
   </body>
 </html>
