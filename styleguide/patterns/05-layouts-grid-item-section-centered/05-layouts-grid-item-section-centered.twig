@@ -1,0 +1,11 @@
+{% set items %}
+  {% block items %}{% endblock %}
+{% endset %}
+
+{% embed "@layouts/grid-item-section.twig" with { class: "is-centered" } %}
+  {% block content %}
+    {% block items %}
+      {{ items }}
+    {% endblock %}
+  {% endblock %}
+{% endembed %}
