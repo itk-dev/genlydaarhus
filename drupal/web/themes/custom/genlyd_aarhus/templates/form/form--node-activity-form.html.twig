@@ -268,7 +268,7 @@
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
           {% if logged_in %}
-            {{ form.actions.publish }}
+            {{ form.actions.submit }}
           {% endif %}
         {% endblock %}
       {% endembed %}
