@@ -14,7 +14,7 @@ use Drupal\Core\Access\AccessResult;
  *   admin_label = @Translation("ITK Admin links"),
  * )
  */
-class ItkAdminLinks extends BlockBase {
+class ITKAdminLinks extends BlockBase {
   /**
    * {@inheritdoc}
    */
@@ -45,7 +45,6 @@ class ItkAdminLinks extends BlockBase {
    * {@inheritdoc}
    */
   public function blockAccess(AccountInterface $account, $return_as_object = FALSE) {
-    return AccessResult::allowedIfHasPermission($account, 'access content overview');
+    return AccessResult::allowedIfHasPermission($account, 'access itk admin links');
   }
 }
-?>
