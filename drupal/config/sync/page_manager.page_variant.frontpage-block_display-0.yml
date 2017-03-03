@@ -1,0 +1,66 @@
+uuid: 988956f0-6df9-4dc5-8b24-b5b30c85f589
+langcode: da
+status: true
+dependencies:
+  config:
+    - page_manager.page.frontpage
+    - views.view.activity_popular
+    - views.view.activity_recent
+  module:
+    - itk_info_section
+    - views
+id: frontpage-block_display-0
+label: Frontpage
+variant: block_display
+variant_settings:
+  blocks:
+    ebff0dd3-ffdf-478b-9c34-ef6dda6c5c03:
+      id: itk_info_section_block1
+      label: 'ITK Info Section 1'
+      provider: itk_info_section
+      label_display: '0'
+      region: top
+      weight: -9
+      uuid: ebff0dd3-ffdf-478b-9c34-ef6dda6c5c03
+      context_mapping: {  }
+    9b1dfcb4-b1d0-4eb0-88a5-7c41bdd3bbe5:
+      id: itk_info_section_block2
+      label: 'ITK Info Section 2'
+      provider: itk_info_section
+      label_display: '0'
+      region: top
+      weight: -7
+      uuid: 9b1dfcb4-b1d0-4eb0-88a5-7c41bdd3bbe5
+      context_mapping: {  }
+    b3794120-ba4c-4315-973b-5094582e387d:
+      id: 'views_block:activity_recent-block'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -10
+      uuid: b3794120-ba4c-4315-973b-5094582e387d
+      context_mapping: {  }
+    5ad36a9d-f7fb-4103-93a7-a469064fc797:
+      id: 'views_block:activity_popular-block'
+      label: ''
+      provider: views
+      label_display: visible
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -8
+      uuid: 5ad36a9d-f7fb-4103-93a7-a469064fc797
+      context_mapping: {  }
+  id: block_display
+  uuid: d352e353-3bb0-4ae9-8d0a-9cc879e6a04e
+  label: null
+  weight: 0
+  page_title: Forside
+page: frontpage
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

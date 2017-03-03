@@ -1,0 +1,14 @@
+uuid: 357d3384-a442-41f2-851c-2a8e5160e5bc
+langcode: da
+status: true
+dependencies: {  }
+name: activity_teaser
+label: 'Activity Teaser'
+effects:
+  7e4c8011-0211-4c85-97ba-653a349d080e:
+    uuid: 7e4c8011-0211-4c85-97ba-653a349d080e
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 440
+      height: 248

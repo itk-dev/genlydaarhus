@@ -4,8 +4,21 @@ status: true
 dependencies:
   config:
     - field.field.node.activity.body
+    - field.field.node.activity.field_address
+    - field.field.node.activity.field_area
+    - field.field.node.activity.field_categories
     - field.field.node.activity.field_date
+    - field.field.node.activity.field_entry_requirements
+    - field.field.node.activity.field_help_needed
     - field.field.node.activity.field_image
+    - field.field.node.activity.field_maximum_participants
+    - field.field.node.activity.field_physical_requirements
+    - field.field.node.activity.field_price
+    - field.field.node.activity.field_signed_up_users
+    - field.field.node.activity.field_signup_required
+    - field.field.node.activity.field_time_end
+    - field.field.node.activity.field_time_start
+    - field.field.node.activity.field_zipcode
     - node.type.activity
   module:
     - datetime
@@ -23,6 +36,27 @@ content:
     weight: 101
     settings: {  }
     third_party_settings: {  }
+  field_address:
+    weight: 116
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_area:
+    weight: 117
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_categories:
+    weight: 110
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_date:
     weight: 103
     label: above
@@ -31,6 +65,20 @@ content:
       timezone_override: ''
     third_party_settings: {  }
     type: datetime_default
+  field_entry_requirements:
+    weight: 108
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_help_needed:
+    weight: 107
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
   field_image:
     weight: 102
     label: above
@@ -39,6 +87,69 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+  field_maximum_participants:
+    weight: 106
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
+  field_physical_requirements:
+    weight: 109
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_price:
+    weight: 104
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+  field_signed_up_users:
+    weight: 112
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+  field_signup_required:
+    weight: 105
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    type: boolean
+  field_time_end:
+    weight: 114
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_time_start:
+    weight: 113
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+  field_zipcode:
+    weight: 115
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
   links:
     weight: 100
 hidden:

@@ -1,4 +1,4 @@
-<header class="header js-header {{ class }} {{ transparent ? 'is-transparent' }}">
+<header class="header js-header {{ class }} {{ is_front ? 'is-transparent' }}">
   <div class="header--inner">
     <div class="header--logo">
       <div class="header--logo-inner">
@@ -14,8 +14,8 @@
         </a>
       </div>
     </div>
-    {% block header %}
-      {% include "@modules/navigation.twig" with { transparent: transparent } %}
+    {% block content %}
+      {% include "@modules/navigation.twig" %}
     {% endblock %}
   </div>
 </header>

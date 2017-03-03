@@ -1,4 +1,4 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block header %}
     {% include "components-header" with { transparent: true } %}
   {% endblock %}
@@ -8,18 +8,20 @@
   {% block main %}
     <div class="container has-spacing">
       <div class="l-heading-section">
-        {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
+        {% include "@modules/heading-with-icon.twig" with { headingWithIcon: home.headingWithIconNewest, icon: home.headingWithIconNewest.icon } %}
       </div>
 
-      <div class="grid">
-        <div class="grid--inner">
+      {% embed "@layouts/grid-fourths.twig" %}
+        {% block items %}
           {% for item in activities %}
-            <article class="grid--item">
-              {% include "components-card-activity" with { cardActivity: item } %}
-            </article>
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% include "components-card-activity" with { cardActivity: item } %}
+              {% endblock %}
+            {% endembed %}
           {% endfor %}
-        </div>
-      </div>
+        {% endblock %}
+      {% endembed %}
 
       <div class="layout flex center">
         {% include "modules-call-to-action" with { callToAction: home.activityCallToAction } %}
@@ -44,18 +46,18 @@
 
     <div class="container has-spacing">
       <div class="l-heading-section">
-        {% include 'modules-heading-with-icon' with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
+        {% include "@modules/heading-with-icon.twig" with { headingWithIcon: home.headingWithIconPopular, icon: home.headingWithIconPopular.icon } %}
       </div>
 
-      <div class="grid">
-        <div class="grid--inner">
+    {% embed "@layouts/grid-fourths.twig" %}
+      {% block items %}
           {% for item in activities %}
             <article class="grid--item">
               {% include "components-card-activity" with { cardActivity: item } %}
             </article>
           {% endfor %}
-        </div>
-      </div>
+        {% endblock %}
+      {% endembed %}
 
       <div class="layout">
         {% include 'modules-call-to-action' with { callToAction: home.popularCallToAction } %}

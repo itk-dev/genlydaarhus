@@ -1,41 +1,50 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
-  <div class="container has-large-spacing">
 
-    {% include 'components-activity-overview' with { activityOverview: activity.activityOverview } %}
+    {% embed "@layouts/container.twig" %}
+      {% block content %}
+        {% include "@components/activity-overview.twig" with { activityOverview: activity.activityOverview } %}
 
-      <div class="l-heading-section">
-        {% include 'modules-heading-with-icon' with { headingWithIcon: activity.headingWithIconSimilar, icon: activity.headingWithIconSimilar.icon } %}
-      </div>
+        {# @TODO: Replace html with embedded twig templates.
 
-      <div class="grid">
-        <div class="grid--inner">
-          {% for item in activities|slice(0,4) %}
-            <article class="grid--item">
-              {% include "components-card-activity" with { cardActivity: item } %}
-            </article>
-          {% endfor %}
+        <div class="container has-large-spacing">
+          <div class="l-heading-section">
+            {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activity.headingWithIconSimilar, icon: activity.headingWithIconSimilar.icon } %}
+          </div>
+
+          {% embed "@layouts/grid-fourths.twig" %}
+            {% block items %}
+              {% for item in activities|slice(0,4) %}
+                <article class="grid--item">
+                  {% include "@components/card-activity.twig" with { cardActivity: item } %}
+                </article>
+              {% endfor %}
+            {% endblock %}
+          {% endembed %}
+
         </div>
-      </div>
-    </div>
 
-    <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: activity.headingWithIconOther, icon: activity.headingWithIconOther.icon } %}
-    </div>
+        <div class="l-heading-section">
+          {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activity.headingWithIconOther, icon: activity.headingWithIconOther.icon } %}
+        </div>
 
-    <div class="grid">
-      <div class="grid--inner">
-        {% for item in activities|slice(4,7) %}
-          <article class="grid--item">
-            {% include "components-card-activity" with { cardActivity: item } %}
-          </article>
-        {% endfor %}
-      </div>
-    </div>
+        {% embed "@layouts/grid-fourths.twig" %}
+          {% block items %}
+            {% for item in activities|slice(4,7) %}
+              <article class="grid--item">
+                {% include "@components/card-activity.twig" with { cardActivity: item } %}
+              </article>
+            {% endfor %}
+          {% endblock %}
+        {% endembed %}
 
-    <div class="layout flex center">
-      {% include "modules-call-to-action" with { callToAction: activity.callToAction } %}
-    </div>
-  </div>
+        <div class="layout flex center">
+          {% include "@modules/call-to-action.twig" with { callToAction: activity.callToAction } %}
+        </div>
+
+        #}
+      {% endblock %}
+    {% endembed %}
+
   {% endblock %}
 {% endembed %}

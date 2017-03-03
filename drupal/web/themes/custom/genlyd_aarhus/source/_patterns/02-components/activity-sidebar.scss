@@ -8,18 +8,16 @@ $breakpoint-sidebar: 1500px;
   padding-top: $spacing-pixel-normal;
 
   &--col {
-    border-bottom: 1px solid $color-border-dark;
+    // !importants Overrides layout col defaults
 
-    // Overrides layout col defaults
+    border-bottom: 1px solid $color-border-dark;
     margin-bottom: $spacing-pixel-small !important;
 
     @media only screen and (max-width: $breakpoint-lap) {
-      // Overrides layout col defaults
       width: 100% !important;
     }
 
-    @media only screen and (min-width: $breakpoint-desk) and (max-width: $breakpoint-sidebar) { 
-      // Overrides layout col defaults
+    @media only screen and (min-width: $breakpoint-desk) and (max-width: $breakpoint-sidebar) {
       width: 100% !important;
     }
   }

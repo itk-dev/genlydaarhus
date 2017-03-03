@@ -19,11 +19,12 @@ module:
   genlyd: 0
   help: 0
   image: 0
+  itk_activity: 0
   itk_admin_links: 0
-  itk_cookie_message: 0
   itk_floating_help: 0
   itk_footer: 0
   itk_hero: 0
+  itk_info_section: 0
   language: 0
   link: 0
   locale: 0
@@ -31,6 +32,8 @@ module:
   metatag: 0
   node: 0
   page_cache: 0
+  page_manager: 0
+  page_manager_ui: 0
   path: 0
   redirect: 0
   system: 0
@@ -41,6 +44,7 @@ module:
   toolbar_visibility: 0
   update: 0
   user: 0
+  views_block_filter_block: 0
   views_ui: 0
   menu_link_content: 1
   pathauto: 1

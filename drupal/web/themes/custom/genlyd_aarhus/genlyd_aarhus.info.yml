@@ -6,16 +6,17 @@ libraries:
   - genlyd_aarhus/styling
   - genlyd_aarhus/hamburger-menu
 
+libraries-override:
+  system/base: false
+
 regions:
   header: 'Header'
   hamburger_menu: 'Hamburger menu'
+  hero: 'Hero'
   content: 'Content'
   footer: 'Footer'
 
 component-libraries:
-  layouts:
-    paths:
-      - source/_layouts
   elements:
     paths:
       - source/_patterns/00-elements
@@ -25,6 +26,15 @@ component-libraries:
   components:
     paths:
       - source/_patterns/02-components
+  templates:
+    paths:
+      - source/_patterns/03-templates
+  pages:
+    paths:
+      - source/_patterns/04-pages
+  layouts:
+    paths:
+      - source/_patterns/05-layouts
 
 version: '1.0.0'
 core: '8.x'

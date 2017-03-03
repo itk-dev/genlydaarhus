@@ -28,3 +28,8 @@ permissions:
   - 'access administration pages'
   - 'change own username'
   - 'assign editor role'
+  - 'access itk floating help'
+  - 'access itk hero'
+  - 'access itk footer'
+  - 'access itk info section'
+  - 'access itk admin links'

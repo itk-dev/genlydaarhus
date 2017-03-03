@@ -1,23 +1,23 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
-  <div class="container has-large-spacing"> 
+  <div class="container has-large-spacing">
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with 
-        { 
-          headingWithIcon: profileActivitiesEdit.headingWithIcon, 
-          icon: profileActivitiesEdit.headingWithIcon.icon 
-        } 
+      {% include "@modules/heading-with-icon.twig" with
+        {
+          headingWithIcon: profileActivitiesEdit.headingWithIcon,
+          icon: profileActivitiesEdit.headingWithIcon.icon
+        }
       %}
     </div>
 
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconHeadline, 
-        icon: profileActivitiesEdit.textWithIconHeadline.icon 
-      } 
+    {% include "modules-text-with-icon" with
+      {
+        textWithIcon: profileActivitiesEdit.textWithIconHeadline,
+        icon: profileActivitiesEdit.textWithIconHeadline.icon
+      }
     %}
 
-      <div class="l-form-section">  
+      <div class="l-form-section">
         {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
         <div class="l-cols">
           <div class="l-col half desk-up">
@@ -25,8 +25,8 @@
           </div>
         </div>
       </div>
-      
-      <div class="l-form-section">  
+
+      <div class="l-form-section">
         {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
         {% include "elements-textarea" with {'name': 'headline', 'placeholder': '', value: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas condimentum.', 'cols': '40', 'rows': '8' } %}
       </div>
@@ -43,13 +43,13 @@
         </div>
       </div>
 
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconProperties, 
-        icon: profileActivitiesEdit.textWithIconProperties.icon 
-      } 
+    {% include "modules-text-with-icon" with
+      {
+        textWithIcon: profileActivitiesEdit.textWithIconProperties,
+        icon: profileActivitiesEdit.textWithIconProperties.icon
+      }
     %}
-    
+
     {% include "elements-form-label" with { formLabel: { label: "Hvilket niveau kræver det at deltage?" } } %}
     <div class="l-form-section">
       <div class="l-cols">
@@ -64,7 +64,7 @@
         </div>
       </div>
     </div>
-    
+
     {% include "elements-form-label" with { formLabel: { label: "Kræver det et særligt fysisk niveau?" } } %}
     <div class="l-form-section">
       <div class="l-cols">
@@ -79,7 +79,7 @@
         </div>
       </div>
     </div>
-    
+
     {% include "elements-form-label" with { formLabel: { label: "Hvor mange kan deltage?" } } %}
     <div class="l-form-section">
       <div class="l-cols">
@@ -104,16 +104,16 @@
       </div>
     </div>
 
-    {% include "modules-text-with-icon" with 
-      { 
-        textWithIcon: profileActivitiesEdit.textWithIconCategories, 
-        icon: profileActivitiesEdit.textWithIconCategories.icon 
-      } 
+    {% include "modules-text-with-icon" with
+      {
+        textWithIcon: profileActivitiesEdit.textWithIconCategories,
+        icon: profileActivitiesEdit.textWithIconCategories.icon
+      }
     %}
 
     <div class="l-section has-bottom-margin">
-      <div class="grid is-tight">
-        <div class="grid--inner">
+    {% embed "@layouts/grid-fourths.twig" %}
+      {% block items %}
           <article class="grid--item">
             {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
           </article>
@@ -147,18 +147,18 @@
           <article class="grid--item">
             {% include "elements-checkbox" with {'checkbox': { "label": "Sport" } } %}
           </article>
-        </div>
-      </div>
+        {% endblock %}
+      {% endembed %}
       <a href="#">Skriv forslag til nye kategorier</a>
     </div>
 
     <div class="l-cols">
       <div class="l-col half desk-up">
-        {% include "modules-text-with-icon" with 
-          { 
-            textWithIcon: profileActivitiesEdit.textWithIconImage, 
-            icon: profileActivitiesEdit.textWithIconImage.icon 
-          } 
+        {% include "modules-text-with-icon" with
+          {
+            textWithIcon: profileActivitiesEdit.textWithIconImage,
+            icon: profileActivitiesEdit.textWithIconImage.icon
+          }
         %}
 
         <div class="l-form-section">
@@ -167,11 +167,11 @@
 
       </div>
       <div class="l-col half desk-up">
-        {% include "modules-text-with-icon" with 
-          { 
-            textWithIcon: profileActivitiesEdit.textWithIconPractical, 
-            icon: profileActivitiesEdit.textWithIconPractical.icon 
-          } 
+        {% include "modules-text-with-icon" with
+          {
+            textWithIcon: profileActivitiesEdit.textWithIconPractical,
+            icon: profileActivitiesEdit.textWithIconPractical.icon
+          }
         %}
         <div class="l-cols">
           <div class="l-col half desk-up">
@@ -224,11 +224,7 @@
     <div class="layout flex center">
       {% include "modules-call-to-action" with { callToAction: profileActivitiesEdit.callToAction } %}
     </div>
-    
-    <div class="l-section has-no-margin layout flex center">
-      {% include "elements-button" with { button: profileActivitiesEdit.saveButton } %}
-    </div>
-    
+
   </div>
   {% endblock %}
 {% endembed %}

@@ -22,23 +22,24 @@
 
     <link rel="stylesheet" href="/css/styleguide.css?0" media="all" />
 
-    <!-- Leaflet map css and script -->
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-
   </head>
   <body class="">
   
 <div class="card-edit-overlay">
-  <p class="card-edit-overlay--warning">
-    
-  </p>
-  <div class="card-edit-overlay--buttons">
-    <a class="button is-delete is-small is-full-width" href="#">Slet</a>    <a class="button is-secondary is-small is-light is-full-width js-card-edit-overlay-back" href="#">Tilbage</a>  </div>
-</div>  
+  <h3 class="is-light is-centered has-no-top-margin">
+    Er du sikker på du vil slette aktiviteten?
+  </h3>
+  <div class="card-edit-overlay--first-button">
+    <a class="button is-delete is-small " href="#">Slet</a>
+  </div>
+  <div class="card-edit-overlay--second-button">
+    <a class="button is-secondary is-light is-small js-card-edit-overlay-back" href="#">Tilbage</a>
+  </div>
+</div>
+  
   <!--DO NOT REMOVE-->
   <script type="text/json" id="sg-pattern-data-footer" class="sg-pattern-data">
-  {"cssEnabled":false,"lineage":[{"lineagePattern":"elements-button","lineagePath":"..\/..\/patterns\/01-modules-cards-card-edit-overlay\/01-modules-cards-card-edit-overlay.html"}],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card edit overlay","patternPartial":"modules-card-edit-overlay","patternState":"","extraOutput":[]}
+  {"cssEnabled":false,"lineage":[],"lineageR":[{"lineagePattern":"components-card-activity-edit","lineagePath":"..\/..\/patterns\/02-components-card-activity-edit\/02-components-card-activity-edit.html"}],"patternBreadcrumb":{"patternType":"modules","patternSubtype":"cards"},"patternDesc":"","patternExtension":"twig","patternName":"card edit overlay","patternPartial":"modules-card-edit-overlay","patternState":"","extraOutput":[]}
 </script>
 
 <script>
@@ -101,6 +102,7 @@
   <script src="/assets/js/filters.js"></script>
   <script src="/assets/js/delete-activity.js"></script>
   <script src="/assets/js/floating-help.js"></script>
-  
+  <script src="/assets/js/image-upload.js"></script>
+
   </body>
 </html>

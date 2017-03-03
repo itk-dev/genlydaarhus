@@ -1,7 +1,20 @@
 {
-  "activitySidebar": {
+  "meta": {
+    "date": "12 Marts 2017",
+    "date_label": "Dato",
+    "price": "Gratis",
+    "price_label": "Pris",
+    "start_time": "12:00",
+    "start_time_label": "Starttidspunkt",
+    "end_time": "15:00",
+    "end_time_label": "Sluttidspunkt",
+    "address": "Søndre Ringgade 102, 8000 Aarhus C",
+    "address_label": "Adresse",
+    "owner": "Lasse Iversen",
+    "owner_label": "Arrangør",
+    "number_of_participants": "14 deltagere",
+    "number_of_participants_label": "Antal tilmeldte",
     "signupButton": {
-      "class": "is-cta is-full-width is-large",
       "href": "#",
       "title": "Tilmeld dig"
     }

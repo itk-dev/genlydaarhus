@@ -1,0 +1,23 @@
+uuid: f78e6b09-d303-41c5-a62e-480bf76acffa
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_maximum_participants
+    - node.type.activity
+id: node.activity.field_maximum_participants
+field_name: field_maximum_participants
+entity_type: node
+bundle: activity
+label: 'Maximum Participants'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  min: null
+  max: null
+  prefix: ''
+  suffix: ''
+field_type: integer

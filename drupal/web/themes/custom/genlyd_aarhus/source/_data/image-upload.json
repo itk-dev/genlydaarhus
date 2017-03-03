@@ -5,8 +5,9 @@
       "src": "/assets/images/styleguide/placeholder-1000x750.png"
     },
     "button": {
-      "class": "is-cta is-full-width",
+      "name": "image-upload",
       "href": "#",
+      "titleEmpty": "Vælg billede",
       "title": "Upload billede"
     }
   }

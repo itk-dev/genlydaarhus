@@ -1,0 +1,18 @@
+{% embed "@layouts/page.twig" with { page: page, is_front: is_front } %}
+
+  {% block hero %}
+    {% if page.hero %}
+      {# Render Drupal block in hero region #}
+      {{ page.hero }}
+    {% else %}
+      {# Render Pattern Lab #}
+      {% include "@modules/hero.twig" %}
+    {% endif %}
+  {% endblock %}
+
+  {% block main %}
+    {% block content %}
+      {{ page.content }}
+    {% endblock %}
+  {% endblock %}
+{% endembed %}

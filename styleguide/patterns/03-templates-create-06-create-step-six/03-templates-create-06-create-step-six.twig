@@ -1,9 +1,9 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
   <div class="container has-large-spacing">
     
     <div class="l-heading-section no-spacing">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: createStepSix.headingWithIcon, icon: createStepSix.headingWithIcon.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: createStepSix.headingWithIcon, icon: createStepSix.headingWithIcon.icon } %}
     </div>
 
     <div class="l-section has-bottom-margin">

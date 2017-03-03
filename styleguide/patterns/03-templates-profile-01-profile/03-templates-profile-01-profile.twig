@@ -1,8 +1,8 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block main %}
   <div class="container has-large-spacing">
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
     </div>
 
     <div class="l-section has-bottom-margin">
@@ -36,8 +36,10 @@
                 {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'placeholder': '', 'value': 'password' } %}
               </div>
             </div>
-            <div class="l-col layout flex has-margin-bottom">
-              {% include "elements-button" with { button: profile.saveButton } %}
+            <div class="l-col half desk-up">
+              <div class="layout has-margin-bottom inline-block">
+                {% include "@elements/buttons/button-call-to-action.twig" with { button: profile.saveButton } %}
+              </div>
             </div>
           </div>
         </div>
@@ -48,18 +50,18 @@
     </div>
 
     <div class="l-heading-section">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
     </div>
 
-    <div class="grid">
-      <div class="grid--inner">
-        {% for item in activitiesEdit|slice(0, 3) %}
+    {% embed "@layouts/grid-fourths.twig" %}
+      {% block items %}
+        {% for item in activities|slice(0, 3) %}
           <article class="grid--item">
             {% include "components-card-activity-edit" with { cardActivity: item } %}
           </article>
         {% endfor %}
-      </div>
-    </div>
+      {% endblock %}
+    {% endembed %}
 
     <div class="layout flex center">
       {% include "modules-call-to-action" with { callToAction: profile.callToAction } %}

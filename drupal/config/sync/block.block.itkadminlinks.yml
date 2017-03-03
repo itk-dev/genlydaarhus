@@ -1,0 +1,20 @@
+uuid: c316e7fb-1ac2-4ddb-af66-bf852e54ec89
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_admin_links
+  theme:
+    - genlyd_aarhus
+id: itkadminlinks
+theme: genlyd_aarhus
+region: footer
+weight: 0
+provider: null
+plugin: itk_admin_links
+settings:
+  id: itk_admin_links
+  label: 'ITK Admin links'
+  provider: itk_admin_links
+  label_display: visible
+visibility: {  }

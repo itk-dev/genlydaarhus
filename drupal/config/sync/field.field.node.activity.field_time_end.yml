@@ -1,0 +1,19 @@
+uuid: 843d2b0d-e597-451d-b31f-d06686a0f50d
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_time_end
+    - node.type.activity
+id: node.activity.field_time_end
+field_name: field_time_end
+entity_type: node
+bundle: activity
+label: 'Time End'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

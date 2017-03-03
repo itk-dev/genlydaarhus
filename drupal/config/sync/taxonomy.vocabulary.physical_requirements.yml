@@ -1,0 +1,9 @@
+uuid: 338f4380-6458-49c0-a1cc-f399a5e63366
+langcode: en
+status: true
+dependencies: {  }
+name: 'Physical Requirements'
+vid: physical_requirements
+description: ''
+hierarchy: 0
+weight: 0

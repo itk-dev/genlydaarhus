@@ -9,8 +9,8 @@ dependencies:
     - genlyd_aarhus
 id: itkhero
 theme: genlyd_aarhus
-region: content
-weight: 0
+region: hero
+weight: -3
 provider: null
 plugin: itk_hero
 settings:

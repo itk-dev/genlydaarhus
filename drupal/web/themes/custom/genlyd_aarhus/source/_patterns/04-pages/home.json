@@ -1,9 +1,20 @@
 {
-  "hero": {
-    "image": "/assets/images/styleguide/hero.jpg"
+  "is_front": true,
+  "page": {
+
   },
-  "hamburgerMenu": {
-    "class": "is-transparent"
+  "hero": {
+    "lead": "Fællesskab i Aarhus",
+    "sub": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+    "image": "/assets/images/styleguide/hero.jpg",
+    "cta_button":  {
+      "title": "Find aktiviteter",
+      "href": "#"
+    },
+    "button":  {
+      "title": "Opret aktivitet",
+      "href": "#"
+    }
   },
   "home": {
     "activityAction": {

@@ -1,0 +1,28 @@
+uuid: e11c210c-22cf-448f-a3d1-f87a92ce792f
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_signed_up_users
+    - node.type.activity
+id: node.activity.field_signed_up_users
+field_name: field_signed_up_users
+entity_type: node
+bundle: activity
+label: 'Signed Up Users'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:user'
+  handler_settings:
+    include_anonymous: false
+    filter:
+      type: _none
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

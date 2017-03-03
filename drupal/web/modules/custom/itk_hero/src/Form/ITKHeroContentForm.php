@@ -40,42 +40,62 @@ class ITKHeroContentForm extends FormBase {
     $config = $this->getBaseConfig();
 
     // Add front page wrapper.
-    $form['wrapper'] = array(
+    $form['wrapper'] = [
       '#title' => $this->t('ITK Hero'),
       '#type' => 'details',
       '#weight' => '1',
       '#open' => TRUE,
-    );
+    ];
 
-    $form['wrapper']['itk_hero_lead'] = array(
+    $form['wrapper']['itk_hero_lead'] = [
       '#title' => $this->t('Lead text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_lead'),
+      '#required' => true,
       '#weight' => '2',
-    );
+    ];
 
-    $form['wrapper']['itk_hero_sub'] = array(
+    $form['wrapper']['itk_hero_sub'] = [
       '#title' => $this->t('Sub text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_sub'),
+      '#required' => true,
       '#weight' => '3',
-    );
+    ];
 
-    $form['wrapper']['itk_hero_button'] = array(
-      '#title' => $this->t('Button text'),
+    $form['wrapper']['itk_hero_cta_button'] = [
+      '#title' => $this->t('Call to action button'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('itk_hero_cta_button'),
+      '#required' => true,
+      '#weight' => '4',
+    ];
+
+    $form['wrapper']['itk_hero_cta_link'] = [
+      '#title' => $this->t('Call to action button link'),
+      '#type' => 'textfield',
+      '#default_value' => $config->get('itk_hero_cta_link'),
+      '#required' => true,
+      '#weight' => '5',
+    ];
+
+    $form['wrapper']['itk_hero_button'] = [
+      '#title' => $this->t('Button'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_button'),
-      '#weight' => '4',
-    );
+      '#required' => true,
+      '#weight' => '6',
+    ];
 
-    $form['wrapper']['itk_hero_link'] = array(
+    $form['wrapper']['itk_hero_link'] = [
       '#title' => $this->t('Button link'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_link'),
-      '#weight' => '5',
-    );
+      '#required' => true,
+      '#weight' => '7',
+    ];
 
-    $fids = array();
+    $fids = [];
     if (!empty($input)) {
       if (!empty($input['itk_hero_image'])) {
         $fids[0] = $form_state->getValue('itk_hero_image');
@@ -85,23 +105,24 @@ class ITKHeroContentForm extends FormBase {
       $fids[0] = $config->get('itk_hero_image', '');
     }
 
-    $form['wrapper']['itk_hero_image'] = array(
+    $form['wrapper']['itk_hero_image'] = [
       '#title' => $this->t('Image'),
       '#type' => 'managed_file',
       '#default_value' => ($fids[0]) ? $fids : '',
       '#upload_location' => 'public://',
+      '#required' => true,
       '#weight' => '3',
       '#open' => TRUE,
       '#description' => t('The image used for the hero.'),
-    );
+    ];
 
-    $form['actions'] = array('#type' => 'actions');
-    $form['actions']['submit'] = array(
+    $form['actions'] = ['#type' => 'actions'];
+    $form['actions']['submit'] = [
       '#type' => 'submit',
       '#attributes' => ['class' => ['button--primary']],
       '#value' => t('Save content'),
       '#weight' => '6',
-    );
+    ];
 
     return $form;
   }
@@ -144,13 +165,15 @@ class ITKHeroContentForm extends FormBase {
     }
 
     // Set the rest of the configuration values.
-    $this->getBaseConfig()->setMultiple(array(
+    $this->getBaseConfig()->setMultiple([
       'itk_hero_lead' => $form_state->getValue('itk_hero_lead'),
       'itk_hero_sub' => $form_state->getValue('itk_hero_sub'),
+      'itk_hero_image' => $file ? $file->id() : NULL,
+      'itk_hero_cta_button' => $form_state->getValue('itk_hero_cta_button'),
+      'itk_hero_cta_link' => $form_state->getValue('itk_hero_cta_link'),
       'itk_hero_button' => $form_state->getValue('itk_hero_button'),
       'itk_hero_link' => $form_state->getValue('itk_hero_link'),
-      'itk_hero_image' => $file ? $file->id() : NULL,
-    ));
+    ]);
 
     drupal_flush_all_caches();
   }
@@ -167,4 +190,3 @@ class ITKHeroContentForm extends FormBase {
     \Drupal::service('file.usage')->delete($file, 'itk_hero', 'user', '1', '1');
   }
 }
-

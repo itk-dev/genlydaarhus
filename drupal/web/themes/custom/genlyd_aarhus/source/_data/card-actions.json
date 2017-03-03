@@ -1,14 +1,12 @@
 {
   "cardActions": {
     "firstButton":  {
-      "class": "is-secondary is-light is-small is-full-width js-card-activity-delete",
       "href": "#",
       "title": "Slet"
     },
     "secondButton": {
-        "class": "is-cta is-small is-full-width",
-        "href": "#",
-        "title": "Rediger"
+      "href": "#",
+      "title": "Rediger"
     }
   }
 }

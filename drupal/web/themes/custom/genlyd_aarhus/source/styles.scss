@@ -4,32 +4,30 @@
  *
  */
 
+/* Helpers */
+@import "_helpers/arrows";
+@import "_helpers/layout";
+@import "_helpers/breakpoints";
 
 /* Base */
 @import "_base/spacing";
 @import "_base/colors";
+@import "_base/container";
 @import "_base/fonts";
 @import "_base/headings";
 @import "_base/normalize";
 @import "_base/variables";
 @import "_base/base";
 
-/* Helpers */
-@import "_helpers/content-separator";
-@import "_helpers/arrows";
-
 /* Layouts */
-@import "_layouts/breakpoints";
-@import "_layouts/layout";
-@import "_layouts/grid";
-@import "_layouts/card";
+@import "_patterns/05-layouts/grid";
 
 /* Elements */
 @import "_patterns/00-elements/02-text/inline-elements";
 @import "_patterns/00-elements/helpers/section";
 @import "_patterns/00-elements/activity-meta";
 @import "_patterns/00-elements/activity-info";
-@import "_patterns/00-elements/buttons/00-button";
+@import "_patterns/00-elements/buttons/button";
 @import "_patterns/00-elements/category";
 @import "_patterns/00-elements/icons/icon";
 @import "_patterns/00-elements/images/image";
@@ -47,19 +45,17 @@
 /* Modules */
 @import "_patterns/01-modules/cards/card-actions";
 @import "_patterns/01-modules/cards/card-edit-overlay";
-@import "_patterns/01-modules/cards/card-header";
 @import "_patterns/01-modules/cards/card-info";
-@import "_patterns/01-modules/activity-search";
 @import "_patterns/01-modules/activity-action";
+@import "_patterns/01-modules/cards/card";
 @import "_patterns/01-modules/categories";
 @import "_patterns/01-modules/social-share";
 @import "_patterns/01-modules/hero";
-@import "_patterns/01-modules/map";
 @import "_patterns/01-modules/call-to-action";
 @import "_patterns/01-modules/heading-with-icon";
 @import "_patterns/01-modules/text-with-icon";
 @import "_patterns/01-modules/progress-bar";
-@import "_patterns/01-modules/image-upload";
+@import "_patterns/01-modules/image-upload/image-upload";
 @import "_patterns/01-modules/profile-image-upload";
 @import "_patterns/01-modules/create-navigation";
 @import "_patterns/01-modules/activity-hero";

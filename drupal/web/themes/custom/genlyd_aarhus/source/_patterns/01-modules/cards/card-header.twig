@@ -1,8 +1,10 @@
 <div class="card-header">
   <div class="card-header--image-container">
     <div class="card-header--image">
-      {% include "elements-image" with { image: cardHeader.image } %}
+      {% include "@elements/images/image.twig" with { image: cardHeader.image } %}
     </div>
   </div>
-  <h4 class="card-header--title">{{ cardHeader.title }}</h4>
+  <div class="card-header--content">
+    <h3 class="is-light has-background-dark-alpha has-no-margin has-padding">{{ cardHeader.title }}</h3>
+  </div>
 </div>

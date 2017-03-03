@@ -1,8 +1,8 @@
 <div class="social-buttons">
   <div class="social-buttons--button">
-    {% include "elements-button" with { button: { 'class': 'is-facebook is-full-width', 'title': socialButtons.titleFacebook } } %}
+    {% include "@elements/buttons/button-facebook.twig" with { button: socialButtons.facebookButton } %}
   </div>
   <div class="social-buttons--button">
-    {% include "elements-button" with { button: {'class': 'is-google is-full-width', 'title': socialButtons.titleGoogle } } %}
+    {% include "@elements/buttons/button-google.twig" with { button: socialButtons.googleButton } %}
   </div>
 </div>

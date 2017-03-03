@@ -1,22 +1,81 @@
-<section class="section-info">
-  <div class="section-info--top l-heading-section no-spacing layout flex center">
-    {% include 'modules-heading-with-icon' %}
-  </div>
+{% embed "@layouts/grid-full.twig" %}
+  {% block items %}
 
-  <div class="section-info--items">
-    {% for item in sectionInfo.items  %}
-      <div class="l-cols section-info--item">
-        <div class="l-col one-third desk-up">
-          <div class="section-info--headings">
-            <div class="section-info--icon">
-              {% include 'elements-icon' with { icon: item.icon } %}
-            </div>
-            <h3 class="section-info--title">{{ item.title }}</h3>
-          </div>
-        </div>
-        <div class="l-col two-third desk-up">
-          <p class="section-info--text">{{ item.description }}</p>
-        </div>
-      </div>
-    {% endfor %}
-</section>
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
+        {% embed "@layouts/grid-item-header-section-centered.twig" %}
+          {% block items %}
+
+            {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
+            {% include "@modules/heading-with-icon.twig" %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}
+
+{% embed "@layouts/grid-full.twig" %}
+  {% block items %}
+
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
+        {% for item in sectionInfo.items %}
+
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+
+              {% embed "@layouts/grid-two-thirds-reversed.twig" %}
+                {% block items %}
+
+                  {% embed "@layouts/grid-item.twig" %}
+                    {% block content %}
+
+                      {% embed "@modules/section-info.twig" %}
+
+                        {% block icon %}
+                          {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
+                          {% include "@elements/icons/icon.twig" with { icon: icon } %}
+                        {% endblock %}
+                        {% block title %}
+                          {{ item.title }}
+                        {% endblock %}
+
+                      {% endembed %}
+
+                    {% endblock %}
+                  {% endembed %}
+
+                  {% embed "@layouts/grid-item.twig" %}
+                    {% block content %}
+
+                      {{ item.description }}
+
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+
+        {% endfor %}
+
+        {% embed "@layouts/grid-item-section-centered.twig" %}
+          {% block items %}
+
+            {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}

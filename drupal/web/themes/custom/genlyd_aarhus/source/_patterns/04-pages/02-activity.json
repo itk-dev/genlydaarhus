@@ -1,5 +1,9 @@
 {
   "activity": {
+    "activityHero": {
+      "title": "Fælles computerspil",
+      "image": "/assets/images/styleguide/computer.jpg"
+    },
     "activityOverview": {
       "image": {
         "src": "/assets/images/styleguide/computer.jpg"
@@ -19,6 +23,43 @@
           "type": "bulletin",
           "color": "light"
         }
+      },
+      "socialShare": {
+        "buttons": [
+            {
+              "title": "Del på Facebook"
+            },
+            {
+              "title": "Del via mail"
+            }
+          ]
+      },
+      "categories": [
+        "IT", "Spil", "Sport", "Mad og fællesskab"
+      ],
+      "info": {
+        "title": "Vigtig information",
+        "signup_required": "Kræver tilmelding",
+        "entry_requirements": "Kom som du er",
+        "physical_requirements": "Ingen fysisk forudsætning",
+        "help_needed": "Alle er velkomne til at hjælpe"
+      },
+      "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.",
+      "meta": {
+        "date": "12 Marts 2017",
+        "date_label": "Dato",
+        "price": "Gratis",
+        "price_label": "Pris",
+        "start_time": "12:00",
+        "start_time_label": "Starttidspunkt",
+        "end_time": "15:00",
+        "end_time_label": "Sluttidspunkt",
+        "address": "Søndre Ringgade 102, 8000 Aarhus C",
+        "address_label": "Adresse",
+        "owner": "Lasse Iversen",
+        "owner_label": "Arrangør",
+        "number_of_participants": "14 deltagere",
+        "number_of_participants_label": "Antal deltagere"
       }
     },
     "headingWithIconSimilar": {
@@ -43,7 +84,7 @@
         "button": {
           "class": "is-cta",
           "href": "#",
-          "title": "Se alle aktiviteter" 
+          "title": "Se alle aktiviteter"
         },
         "text": "Ikke lige noget der passede dig?"
     }

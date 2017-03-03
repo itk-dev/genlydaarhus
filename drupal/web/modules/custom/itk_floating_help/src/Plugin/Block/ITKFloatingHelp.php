@@ -19,20 +19,31 @@ class ITKFloatingHelp extends BlockBase {
    */
   public function build() {
     $config = \Drupal::getContainer()->get('itk_floating_help.config')->getAll();
+    $form = \Drupal::formBuilder()->getForm('Drupal\itk_floating_help\Form\ITKFloatingHelpContentForm');
 
-    $floating_help_title = $config['floating_help_title'];
+    $floating_help_button_label_closed = $config['floating_help_button_label_closed'];
+    $floating_help_button_label_open = $config['floating_help_button_label_open'];
     $floating_help_text = $config['floating_help_text'];
     $floating_help_contact = $config['floating_help_contact'];
     $floating_help_phone = $config['floating_help_phone'];
     $floating_help_email = $config['floating_help_email'];
 
-    return array (
-      '#floating_help_title' => $floating_help_title,
+    $floating_help_contact_label = $form['contact_information_wrapper']['floating_help_contact']['#title'];
+    $floating_help_phone_label = $form['contact_information_wrapper']['floating_help_phone']['#title'];
+    $floating_help_email_label = $form['contact_information_wrapper']['floating_help_email']['#title'];
+
+    return [
+      '#theme' => 'itk_floating_help_block',
+      '#floating_help_contact_label' => $floating_help_contact_label,
+      '#floating_help_phone_label' => $floating_help_phone_label,
+      '#floating_help_email_label' => $floating_help_email_label,
+      '#floating_help_button_label_closed' => $floating_help_button_label_closed,
+      '#floating_help_button_label_open' => $floating_help_button_label_open,
       '#floating_help_text' => $floating_help_text,
       '#floating_help_contact' => $floating_help_contact,
       '#floating_help_phone' => $floating_help_phone,
       '#floating_help_email' => $floating_help_email,
-    );
+    ];
   }
 
   /**

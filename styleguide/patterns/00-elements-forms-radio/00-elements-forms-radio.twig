@@ -1,5 +1,7 @@
 <label class="radio">
   <div class="radio--label">{{ radio.label }}</div>
-  <input type="radio" name="{{ radio.name }}">
+  {% block content %}
+    <input type="radio" name="{{ radio.name }}">
+  {% endblock %}
   <div class="radio--indicator"></div>
 </label>

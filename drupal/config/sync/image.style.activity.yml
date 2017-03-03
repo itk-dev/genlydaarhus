@@ -1,0 +1,15 @@
+uuid: e31d9861-e5fb-4ab3-a34d-c3e031b9a22e
+langcode: da
+status: true
+dependencies: {  }
+name: activity
+label: Activity
+effects:
+  e137f792-efeb-4dec-a3ae-48b87194de30:
+    uuid: e137f792-efeb-4dec-a3ae-48b87194de30
+    id: image_scale
+    weight: 1
+    data:
+      width: 2000
+      height: null
+      upscale: false

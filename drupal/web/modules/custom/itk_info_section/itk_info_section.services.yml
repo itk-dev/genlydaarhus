@@ -1,0 +1,4 @@
+services:
+  itk_info_section.config:
+    class: Drupal\itk_info_section\State\ITKInfoSectionConfig
+    arguments: ['@serialization.json', '@database']

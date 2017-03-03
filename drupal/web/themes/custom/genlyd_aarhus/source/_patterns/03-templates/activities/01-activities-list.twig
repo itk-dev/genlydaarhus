@@ -1,10 +1,10 @@
-{% embed "page.twig" %}
+{% embed "@layouts/page.twig" %}
   {% block hero %}{% endblock %}
   {% block main %}
   <div class="container has-large-spacing">
 
     <div class="l-heading-section no-spacing">
-      {% include 'modules-heading-with-icon' with { headingWithIcon: activityList.headingWithIcon, icon: activityList.headingWithIcon.icon } %}
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activityList.headingWithIcon, icon: activityList.headingWithIcon.icon } %}
       {% include 'modules-activity-action' with { activityAction: activityList.activityAction, button: activityList.activityAction.button } %}
     </div>
 
@@ -12,15 +12,16 @@
       {% include "modules-filters" %}
     </div>
 
-    <div class="grid">
-      <div class="grid--inner">
+    {% embed "@layouts/grid-fourths.twig" %}
+      {% block items %}
         {% for item in activities %}
           <article class="grid--item">
           {% include "components-card-activity" with { cardActivity: item } %}
           </article>
         {% endfor %}
       </div>
-    </div>
+      {% endblock %}
+    {% endembed %}
 
   </div>
   {% endblock %}

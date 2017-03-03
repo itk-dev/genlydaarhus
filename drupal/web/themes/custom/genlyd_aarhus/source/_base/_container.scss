@@ -1,0 +1,29 @@
+.container {
+  background-color: $color-blue-background;
+  flex: 1 0 auto;
+
+  &.is-dark {
+    background-color: $color-blue-light;
+  }
+
+  &.is-constrained {
+    .container--inner {
+      @include layout-wrapper($breakpoint-mediumdesk);
+    }
+  }
+
+  &--inner {
+    @include layout-wrapper($breakpoint-bigscreen);
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding-bottom: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-medium;
+
+    @include breakpoint($breakpoint-desk) {
+      padding-bottom: $spacing-pixel-xxlarge;
+      padding-top: $spacing-pixel-xxxxlarge;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 .activity-action {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 
     @include breakpoint($breakpoint-lap) {
       flex-direction: row;
@@ -14,8 +14,8 @@
     }
 
     &--text {
-      display: none;
       color: $color-dark-alpha;
+      display: none;
       margin-right: $spacing-pixel-small;
 
       @include breakpoint($breakpoint-desk) {
@@ -26,12 +26,12 @@
     &--button {
       display: flex;
       justify-content: center;
-      width: 100%;
       margin-top: $spacing-pixel-xsmall;
+      width: 100%;
 
       @include breakpoint($breakpoint-tablet) {
-        width: auto;
         margin-top: 0;
+        width: auto;
       }
     }
   }

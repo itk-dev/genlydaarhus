@@ -4,6 +4,8 @@ html {
 
 body {
   color: $color-black-light;
+  display: flex;
+  flex-direction: column;
   font: $font;
   height: 100%;
   margin: 0;
@@ -11,10 +13,8 @@ body {
   width: 100%;
 }
 
-.main {
-  background-color: $color-blue-background;
-  display:flex;
-  flex-direction: column;
+button, input, optgroup, select, textarea {
+  font: $font;
 }
 
 a {

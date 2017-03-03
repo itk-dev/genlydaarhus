@@ -1,8 +1,8 @@
 .hero {
-  position: relative;
-  height: 500px;
-  background-size: cover;
   background-position: center center;
+  background-size: cover;
+  height: 500px;
+  position: relative;
 
   @include breakpoint($breakpoint-desk) {
     height: 700px;
@@ -13,28 +13,28 @@
   }
 
   &--content-wrapper {
-    background-image: linear-gradient(296deg, rgba(0,80,71,0.00) 5%, rgba(26,48,56,0.75) 100%);
-    width: 100%;
+    background-image: linear-gradient(296deg, rgba(0,80,71,0) 5%, rgba(26,48,56,.75) 100%);
     height: 100%;
+    width: 100%;
   }
 
   &--content {
     /* Rectangle 6: */
     color: $color-white;
-    padding-left: $spacing-percent-xlarge;
-    padding-right: $spacing-percent-xlarge;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 100%;
     height: 100%;
-    text-align: center;
+    justify-content: center;
+    padding-left: $spacing-percent-xlarge;
+    padding-right: $spacing-percent-xlarge;
     padding-top: 50px;
+    text-align: center;
+    width: 100%;
 
     @include breakpoint($breakpoint-lap) {
-      text-align: left;
       margin-left: auto;
       margin-right: auto;
+      text-align: left;
     }
 
     @include breakpoint($breakpoint-bigscreen) {
@@ -45,12 +45,12 @@
 
     h1 {
       font-size: $font-size-xxlarge;
-      margin-top: 0;
       font-weight: 700;
+      margin-top: 0;
 
       @include breakpoint($breakpoint-lap) {
-        line-height: 0.8;
         font-size: $font-size-xxxlarge;
+        line-height: .8;
       }
 
       @include breakpoint($breakpoint-desk) {
@@ -60,8 +60,8 @@
 
     p {
       font-size: $font-size-large;
-      margin-top: 0;
       margin-bottom: $spacing-pixel-medium;
+      margin-top: 0;
 
       @include breakpoint($breakpoint-desk) {
         font-size: $font-size-xlarge;

@@ -1,8 +1,9 @@
 <div class="social-share">
-  <div class="social-share--button">
-    {% include 'elements-button' with { button: { class: "is-secondary is-dark is-full-width", title: "Del på facebook" } } %}
-  </div>
-  <div class="social-share--button">
-    {% include 'elements-button' with { button: { class: "is-secondary is-dark is-full-width", title: "Send via mail" } } %}
-  </div>
+
+    {% for button in socialShare.buttons %}
+      <div class="social-share--button">
+        {% include '@elements/buttons/button-secondary-dark.twig' %}
+      </div>
+    {% endfor %}
+
 </div>

@@ -1,11 +1,11 @@
 img {
   display: inline;
   height: auto;
-  width: 100%;
   vertical-align: bottom;
+  width: 100%;
 
   &.has-margin {
-    margin-top: $spacing-pixel-medium;
     margin-bottom: $spacing-pixel-medium;
+    margin-top: $spacing-pixel-medium;
   }
 }

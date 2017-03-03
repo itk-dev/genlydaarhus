@@ -1,38 +1,87 @@
-<div class="l-section has-bottom-margin">
-  {% include "modules-activity-hero" %}
-</div>
+{% embed "@layouts/grid-full.twig" %}
+  {% block items %}
 
-<div class="l-section has-bottom-margin">
-  <div class="l-section has-bottom-margin">
-    <div class="l-cols">
-      <div class="l-col two-third desk-up">
-        <div class="l-section has-no-margin">  
-          {% include "modules-text-with-icon" with { textWithIcon: activityOverview.headingWithIconDescription, icon: activityOverview.headingWithIconDescription.icon } %}
-        </div>
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
 
-        <div class="l-section has-no-margin">
-          {% include "elements-category" with { category: { text: "IT" } } %}
-          {% include "elements-category" with { category: { text: "Spil" } } %}
-          {% include "elements-category" with { category: { text: "Sport" } } %}
-          {% include "elements-category" with { category: { text: "Mad og fællesskab" } } %}
-        </div>
+        {% include "@modules/activity-hero.twig" with { activityHero: activity.activityHero } %}
 
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nec neque commodo, rutrum nisi in, dignissim erat. Nullam tortor diam, sodales non urna id, accumsan pulvinar est.</p>
-        <p>Duis vel nibh luctus, consectetur magna sed, pharetra quam. Aliquam faucibus diam non ipsum elementum, non imperdiet nunc hendrerit. Aenean in vestibulum purus, viverra ullamcorper orci. Mauris condimentum mi in diam efficitur, in pellentesque arcu viverra.<p>
+      {% endblock %}
+    {% endembed %}
 
-        <h4>Vigtig information:</h4>
-        <ul>
-          <li>tilmeldingspligt</li>
-          <li>niveau</li>
-          <li>hjælp</li>
-        </ul>
+  {% endblock %}
+{% endembed %}
 
-      </div>
-      <div class="l-col one-third desk-up">
-        <div class="l-section has-no-margin"> 
-          {% include "modules-text-with-icon" with { textWithIcon: activityOverview.headingWithIconDetails, icon: activityOverview.headingWithIconDetails.icon } %}
-        </div>
-        {% include 'components-activity-sidebar' %}
-      </div>
-    </div>
-  </div>
+{% embed "@layouts/grid-two-thirds.twig" %}
+  {% block items %}
+
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
+        {% embed "@layouts/grid-full.twig" %}
+          {% block items %}
+
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% embed "@layouts/grid-item-header-section.twig" %}
+                  {% block content %}
+
+                    {% include "@modules/text-with-icon.twig" with {textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title, icon: { type: "bulletin", color: "light" } } } %}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% for category in activity.activityOverview.categories %}
+                  {% include "@elements/category.twig" with { category: { text: category } } %}
+                {% endfor %}
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {{ activity.activityOverview.body }}
+
+                {% include "@components/important-info.twig" with { info: activity.activityOverview.info } %}
+              {% endblock %}
+            {% endembed %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+        {% embed "@layouts/grid-full.twig" %}
+          {% block items %}
+
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% embed "@layouts/grid-item-header-section.twig" %}
+                  {% block content %}
+                    {% include "@modules/text-with-icon.twig" with {textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title, icon: { type: "bulletin", color: "light" } } } %}
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+
+                {% include "@components/activity-sidebar.twig" with { meta : activity.activityOverview.meta }  %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}

@@ -1,8 +1,8 @@
 <div class="card-actions {{ class }}">
     <div class="card-actions--button">
-      {% include "elements-button" with { button: cardActions.firstButton } %}
+      {% include "@elements/buttons/button-secondary-light-small.twig" with { button: cardActions.firstButton, jsClass: "js-card-activity-delete" } %}
     </div>
     <div class="card-actions--button">
-      {% include "elements-button" with { button: cardActions.secondButton } %}
+      {% include "@elements/buttons/button-call-to-action-small.twig" with { button: cardActions.secondButton } %}
     </div>
 </div>

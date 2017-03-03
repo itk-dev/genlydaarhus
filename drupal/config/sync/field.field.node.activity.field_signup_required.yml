@@ -1,0 +1,21 @@
+uuid: daddcfab-516b-40c3-989b-878caf627934
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_signup_required
+    - node.type.activity
+id: node.activity.field_signup_required
+field_name: field_signup_required
+entity_type: node
+bundle: activity
+label: 'Signup Required'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  on_label: 'Signup is required'
+  off_label: 'Signup is not required'
+field_type: boolean

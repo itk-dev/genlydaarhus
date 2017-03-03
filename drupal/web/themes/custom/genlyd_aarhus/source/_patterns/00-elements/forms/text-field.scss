@@ -1,3 +1,9 @@
+/* Variables
+   ========================================================================== */
+
+$text-field-spacing-xsmall: $spacing-pixel-xsmall;
+$text-field-spacing-xxsmall: $spacing-pixel-xxsmall;
+
 .text-field {
   display: flex;
   flex-direction: column;
@@ -5,9 +11,13 @@
   &--input {
     border: 2px solid $color-border-dark;
     border-radius: $border-radius;
-    padding-bottom: $spacing-pixel-xsmall;
-    padding-left: $spacing-pixel-xxsmall;
-    padding-right: $spacing-pixel-xxsmall;
-    padding-top: $spacing-pixel-xsmall;
+    padding-bottom: $text-field-spacing-xsmall;
+    padding-left: $text-field-spacing-xxsmall;
+    padding-right: $text-field-spacing-xxsmall;
+    padding-top: $text-field-spacing-xsmall;
   }
+}
+
+label + .text-field {
+  margin-top: $text-field-spacing-xsmall;
 }

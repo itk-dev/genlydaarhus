@@ -1,29 +1,23 @@
 .card-edit-overlay {
-    align-items: center;
-    background-color: transparentize($color-black, .1);
-    display: none;
-    flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    position: absolute;
-    width: 100%;
-    z-index: 1;
+  align-items: center;
+  background-color: transparentize($color-black, .1);
+  display: none;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+  padding-bottom: $spacing-pixel-small;
+  padding-left: $spacing-pixel-small;
+  padding-right: $spacing-pixel-small;
+  padding-top: $spacing-pixel-small;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 
-  &--warning {
-    font-size: $font-size-large;
-    font-weight: 600;
-    margin-bottom: $spacing-pixel-normal;
-    margin-top: 0;
-    padding-left: $spacing-pixel-medium;
-    padding-right: $spacing-pixel-medium;
-    text-align: center;
+  &--first-button, &--second-button {
+    width: 50%;
   }
 
-  &--buttons {
-    .button {
-      &:first-child {
-        margin-bottom: $spacing-pixel-xxxsmall;
-      }
-    }
+  &--first-button {
+    margin-bottom: $spacing-pixel-xxsmall;
   }
 }

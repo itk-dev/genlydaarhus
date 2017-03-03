@@ -4,17 +4,29 @@
  * Display of frontpage header block
  *
  * Available variables:
- * - variables: Holds variables from itkore frontpage config page.
+  * - variables: Holds variables.
+  *   - itk_hero_lead: Lead text.
+  *   - itk_hero_sub: Sub text.
+  *   - itk_hero_image: Returns true if image is set.
+  *   - itk_hero_image_url:  Image url.
+  *   - itk_hero_cta_button: Call to action button label.
+  *   - itk_hero_cta_link: Call to action button link.
+  *   - itk_hero_button: Button label.
+  *   - itk_hero_link: Button link.
  */
 #}
-<div class="frontpage-header" style="background:url({{ variables.frontpage_image_url }}) no-repeat;">
-  {% if variables.frontpage_lead  %}
-    <h2>{{ variables.frontpage_lead }}</h2>
-  {% endif %}
-  {% if variables.frontpage_sub  %}
-    <p>{{ variables.frontpage_sub }}</p>
-  {% endif %}
-  {% if variables.frontpage_link and variables.frontpage_button %}
-    <a class="button" href="{{ variables.frontpage_link }}">{{ variables.frontpage_button }}</a>
-  {% endif %}
-</div>
+
+{% set hero = {
+  "lead": variables.itk_hero_lead,
+  "sub": variables.itk_hero_sub,
+  "image": variables.itk_hero_image_url,
+  "cta_button":  {
+    "title": variables.itk_hero_cta_button,
+    "href": variables.itk_hero_cta_link
+    },
+    "button":  {
+    "title": variables.itk_hero_button,
+    "href": variables.itk_hero_link
+    }
+  }
+%}

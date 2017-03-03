@@ -1,0 +1,32 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.card-header {
+  position: relative;
+
+  &--image-container {
+    /* Keeps aspect-ratio of div (16:9) */
+    padding-bottom: 56.25%;
+    width: 100%;
+  }
+
+  &--image {
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+
+  &--content {
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+  }
+}

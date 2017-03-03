@@ -10,6 +10,10 @@
 function genlyd_install() {
   $module_list = array(
     'components',
+    'views_block_filter_block',
+    'page_manager_ui',
+    'itk_info_section',
+    'itk_activity',
   );
   \Drupal::service('module_installer')->install($module_list);
 
@@ -32,4 +36,44 @@ function genlyd_update_8001() {
     'genlyd_aarhus',
   );
   \Drupal::service('theme_installer')->install($themes_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8002() {
+  $module_list = array(
+    'views_block_filter_block',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8003() {
+  $module_list = array(
+    'page_manager_ui',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8004() {
+  $module_list = array(
+    'itk_info_section',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Implements hook_update().
+ */
+function genlyd_update_8005() {
+  $module_list = array(
+    'itk_activity',
+  );
+  \Drupal::service('module_installer')->install($module_list);
 }
