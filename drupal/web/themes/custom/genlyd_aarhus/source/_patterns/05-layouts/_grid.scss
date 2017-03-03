@@ -101,7 +101,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
       width: 100%;
     }
 
-    .grid--item + .grid--item {
+    > .grid--inner > .grid--item + .grid--item {
       margin-top: $grid-spacing-pixel-small;
 
       @include breakpoint($breakpoint-tablet) {
