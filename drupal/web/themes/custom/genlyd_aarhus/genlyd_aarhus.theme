@@ -89,7 +89,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     if ($alreadyAdded) {
       $signupButton = [
         'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $current_path,
-        'title' => \Drupal::translation()->translate('Deregister'),
+        'title' => \Drupal::translation()->translate('Unregister'),
       ];
     }
     else {

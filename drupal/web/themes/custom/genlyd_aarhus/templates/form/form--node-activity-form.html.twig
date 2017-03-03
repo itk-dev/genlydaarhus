@@ -267,9 +267,8 @@
     {% block items %}
       {% embed "@layouts/grid-item.twig" %}
         {% block content %}
-          {% if logged_in %}
-            {{ form.actions.publish }}
-          {% endif %}
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
         {% endblock %}
       {% endembed %}
 
