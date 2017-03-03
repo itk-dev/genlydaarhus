@@ -6,6 +6,9 @@ libraries:
   - genlyd_aarhus/styling
   - genlyd_aarhus/hamburger-menu
 
+libraries-override:
+  system/base: false
+
 regions:
   header: 'Header'
   hamburger_menu: 'Hamburger menu'
