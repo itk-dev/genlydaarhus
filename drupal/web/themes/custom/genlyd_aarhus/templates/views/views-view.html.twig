@@ -31,68 +31,22 @@
  */
 #}
 {%
-  set classes = [
-    dom_id ? 'js-view-dom-id-' ~ dom_id,
-  ]
+  set classes = [ dom_id ? 'js-view-dom-id-' ~ dom_id ]
 %}
-<div{{ attributes.addClass(classes) }}>
-  {{ title_prefix }}
-  {{ title }}
-  {{ title_suffix }}
 
-  {% if view.data.header %}
-    {% embed "@layouts/grid-full.twig" %}
-      {% block items %}
-        {% embed "@layouts/grid-item.twig" %}
-          {% block content %}
-            {% set headingWithIcon = { title: view.data.header.title, subtitle: view.data.header.subtitle, icon: { type: "bulletin", color: 'light' } } %}
-            {% include '@modules/heading-with-icon.twig' %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-  {% else %}
-    {% if header %}
-      <header>
-        {{ header }}
-      </header>
-    {% endif %}
-  {% endif %}
+{% set callToAction = {
+    "text": view.data.footer.text,
+    "button": {
+      "href": view.data.footer.button_link,
+      "title": view.data.footer.button_text
+    }
+  }
+%}
 
-  {{ exposed }}
-  {{ attachment_before }}
+{% set headingWithIcon = {
+    "title": view.data.header.title,
+    "subtitle": view.data.header.subtitle
+  }
+%}
 
-  {{ rows }}
-  {{ empty }}
-  {{ pager }}
-
-  {{ attachment_after }}
-  {{ more }}
-
-  {% if view.data.footer %}
-    {% embed "@layouts/grid-full.twig" %}
-      {% block items %}
-        {% embed "@layouts/grid-item.twig" %}
-          {% block content %}
-            {% include "@modules/call-to-action.twig" with { callToAction: {
-              text: view.data.footer.text,
-              button: {
-                href: view.data.footer.button_link,
-                title: view.data.footer.button_text
-              }
-            } } %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-  {% else %}
-    {% if footer %}
-      <footer>
-        {{ footer.text }}
-      </footer>
-    {% endif %}
-  {% endif %}
-
-
-  {{ feed_icons }}
-</div>
+{% include "@components/activities.twig" with { "callToAction": callToAction, "classes": classes } %}

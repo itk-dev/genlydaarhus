@@ -1,6 +1,8 @@
 <div class="heading-with-icon">
   <div class="heading-with-icon--icon {{ headingWithIcon.iconClass }}">
-    {% include '@elements/icons/icon.twig' with { icon: headingWithIcon.icon } %}
+    {% block icon %}
+      {% include "@elements/icons/icon-bulletin.twig" %}
+    {% endblock %}
   </div>
   <div class="heading-with-icon--titles">
     <h1 class="heading-with-icon--title">{{ headingWithIcon.title }}</h1>

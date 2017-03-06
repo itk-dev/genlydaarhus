@@ -7,6 +7,7 @@
         {% embed "@layouts/grid-item-header-section-centered.twig" %}
           {% block items %}
 
+            {# @TODO include specific icon directly #}
             {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
             {% include "@modules/heading-with-icon.twig" %}
 
@@ -39,8 +40,7 @@
                       {% embed "@modules/section-info.twig" %}
 
                         {% block icon %}
-                          {% set icon = { type: "arrow", class: "is-small is-green-dark", color: "light" } %}
-                          {% include "@elements/icons/icon.twig" with { icon: icon } %}
+                          {% include "@elements/icons/icon-arrow-dark-green-small.twig" %}
                         {% endblock %}
                         {% block title %}
                           {{ item.title }}
