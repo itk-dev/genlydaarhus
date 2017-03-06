@@ -49,6 +49,9 @@
         "color": "light"
       }
     },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
     "text": "Derefter skal du vælge de kategorier, der passer bedst til din oplevelse."
   }
 }

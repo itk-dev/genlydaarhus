@@ -49,6 +49,9 @@
         "color": "light"
       }
     },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
     "text": "Genlyd er oplevelser, interesser og mennesker med gode idéer. Når du opretter et arrangement eller deltager i et, er du med til at styrke fritidslivet og give genlyd i Aarhus og omegn."
   }
 }

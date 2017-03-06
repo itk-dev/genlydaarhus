@@ -49,6 +49,9 @@
         "color": "light"
       }
     },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
     "text": "Til sidst kan du tilføje de vigtige detaljer som adresse og dato. Du kan se dit opslag, inden du godkender det."
   }
 }
