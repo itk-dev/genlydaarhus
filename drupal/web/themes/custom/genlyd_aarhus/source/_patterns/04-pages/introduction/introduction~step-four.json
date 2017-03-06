@@ -49,6 +49,9 @@
         "color": "light"
       }
     },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
     "text": "Derefter kan du give din oplevelse et billede."
   }
 }

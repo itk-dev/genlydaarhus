@@ -49,6 +49,9 @@
         "color": "light"
       }
     },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
     "text": "Først skal du vælge en overskrift til din idé og beskrive, hvad der skal foregå. Vi hjælper dig med detaljerne."
   }
 }

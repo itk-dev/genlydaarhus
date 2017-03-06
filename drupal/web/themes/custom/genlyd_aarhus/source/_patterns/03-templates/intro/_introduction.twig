@@ -1,7 +1,9 @@
 {% embed "@layouts/page.twig" %}
   {% block main %}
-  <div class="container has-large-spacing">
-    {% include "components-introduction" %}
-  </div>
+    {% embed "@layouts/container.twig" %}
+      {% block content %}
+        {% include "@components/introduction.twig" %}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
 {% endembed %}
