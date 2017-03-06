@@ -1,0 +1,236 @@
+{
+  "activities": [
+    {
+      "link": "/node/9",
+      "cardHeader": {
+        "title": "Fodbold",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-04-21"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 2
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/8",
+      "cardHeader": {
+        "title": "Byg dit egen b\u00e5l",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-04-03"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 0
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/7",
+      "cardHeader": {
+        "title": "Pluk din egen citrus!",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-04-19"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 4
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/6",
+      "cardHeader": {
+        "title": "Kaffebrygning",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-06-08"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 2
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/5",
+      "cardHeader": {
+        "title": "Sy og sjov",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-03-10"
+          },
+          {
+            "label": "Price",
+            "text": "150.00"
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 1
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/4",
+      "cardHeader": {
+        "title": "Sv\u00f8mning",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-04-07"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 1
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/3",
+      "cardHeader": {
+        "title": "Potter og pander",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-03-23"
+          },
+          {
+            "label": "Price",
+            "text": "50.00"
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 1
+          }
+        ]
+      }
+    },
+    {
+      "link": "/node/2",
+      "cardHeader": {
+        "title": "Kagebagning",
+        "image": {
+          "src": "/assets/images/styleguide/placeholder-1000x750.png"
+        }
+      },
+      "cardInfo": {
+        "activityMetas": [
+          {
+            "label": "Date",
+            "text": "2017-03-19"
+          },
+          {
+            "label": "Price",
+            "text": null
+          },
+          {
+            "label": "Area",
+            "text": null
+          },
+          {
+            "label": "Participants",
+            "text": 3
+          }
+        ]
+      }
+    }
+  ]
+}
