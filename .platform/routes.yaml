@@ -3,10 +3,11 @@
 # Each route describes how an incoming URL is going
 # to be processed by Platform.sh.
 
+"http://www.{default}/":
+    type: upstream
+    upstream: "app:http"
+
 "http://{default}/":
     type: upstream
-    upstream: "drupal:http"
+    upstream: "app:http"
 
-"http://www.{default}/":
-    type: redirect
-    to: "http://{default}/"
