@@ -21,6 +21,14 @@
       "color": "light"
     }
   },
+  "noAccountButton": {
+    "title": "I do not have an account" | trans
+    }
+  }
+%}
+
+{# @TODO: Add this disabled config:
+
   "textWithIconPersonal": {
     "title": "Eller brug personlige oplysninger" | trans,
     "icon": {
@@ -34,18 +42,11 @@
       "title": "Register with Facebook" | trans,
       "href": "FacebookLink"
     },
-  },
-  "noAccountButton": {
-    "title": "I do not have an account" | trans
-    }
-  }
-%}
-
-{#
     "googleButton": {
       "title": "Register with Google" | trans,
       "href": "GoogleLink"
     }
+  },
 #}
 
 {% include "@components/register.twig" with { page: children, attributes: attributes, login: login } %}
