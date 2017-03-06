@@ -100,6 +100,14 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     .grid--item {
       width: 100%;
     }
+
+    > .grid--inner > .grid--item + .grid--item {
+      margin-top: $grid-spacing-pixel-small;
+
+      @include breakpoint($breakpoint-tablet) {
+        margin-top: $grid-spacing-pixel-medium;
+      }
+    }
   }
 
   &.is-halfs, &.is-thirds, &.is-fourths {

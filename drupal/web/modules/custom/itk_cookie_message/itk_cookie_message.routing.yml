@@ -1,7 +1,0 @@
-itk_cookie_message.settings:
-  path: '/admin/config/system/itk-cookie-message'
-  defaults:
-    _form: '\Drupal\itk_cookie_message\Form\ItkCookieMessageConfigForm'
-    _title: 'Cookie message'
-  requirements:
-    _permission: 'administer site configuration'

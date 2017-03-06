@@ -24,6 +24,19 @@ content:
   links:
     weight: 100
 hidden:
+  field_address: true
+  field_area: true
+  field_categories: true
   field_date: true
+  field_entry_requirements: true
+  field_help_needed: true
   field_image: true
+  field_maximum_participants: true
+  field_physical_requirements: true
+  field_price: true
+  field_signed_up_users: true
+  field_signup_required: true
+  field_time_end: true
+  field_time_start: true
+  field_zipcode: true
   langcode: true

@@ -22,10 +22,6 @@
 
     <link rel="stylesheet" href="/css/styleguide.css?0" media="all" />
 
-    <!-- Leaflet map css and script -->
-    <link rel="stylesheet" href="//unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
-    <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
-
   </head>
   <body class="">
   
@@ -241,15 +237,17 @@
         <div class="l-col one-third desk-up">
           <div class="image-upload">
   <div class="image-upload--image">
-    <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
+          <img class="image " src="/assets/images/styleguide/placeholder-1000x750.png" />
 
-  </div>
+      </div>
   <div class="image-upload--overlay ">
     <div class="image-upload--button">
-      <a class="button is-cta " href="#">Upload billede</a>
-    </div>
+              <input type="file" id="image-upload" name="image-upload" class="image-upload--file js-image-upload js-form-file">
+        <label for="image-upload" class="button button is-cta "><span>Vælg billede</span></label>
+          </div>
   </div>
-</div>        </div>
+</div>
+        </div>
       </div>
     </div>
 
@@ -1408,15 +1406,17 @@
         <div class="l-form-section">
           <div class="image-upload">
   <div class="image-upload--image">
-    <img class="image " src="" />
+          <img class="image " src="" />
 
-  </div>
+      </div>
   <div class="image-upload--overlay ">
     <div class="image-upload--button">
-      <a class="button is-cta " href=""></a>
-    </div>
+              <input type="file" id="" name="" class="image-upload--file js-image-upload js-form-file">
+        <label for="" class="button button is-cta "><span></span></label>
+          </div>
   </div>
-</div>        </div>
+</div>
+        </div>
 
       </div>
       <div class="l-col half desk-up">
@@ -1729,6 +1729,7 @@
   <script src="/assets/js/filters.js"></script>
   <script src="/assets/js/delete-activity.js"></script>
   <script src="/assets/js/floating-help.js"></script>
-  
+  <script src="/assets/js/image-upload.js"></script>
+
   </body>
 </html>

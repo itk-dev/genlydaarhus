@@ -25,6 +25,17 @@
     }
   }
 
+  /* Hide the file upload, we use the label to trigger it. */
+  /* https://tympanus.net/codrops/2015/09/15/styling-customizing-file-inputs-smart-way/ */
+  &--file {
+    height: .1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    width: .1px;
+    z-index: -1;
+  }
+
   &--button {
     left: 50%;
     position: absolute;

@@ -32,3 +32,4 @@ permissions:
   - 'access itk hero'
   - 'access itk footer'
   - 'access itk info section'
+  - 'access itk admin links'

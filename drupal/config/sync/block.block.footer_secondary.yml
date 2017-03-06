@@ -11,7 +11,7 @@ dependencies:
 id: footer_secondary
 theme: genlyd_aarhus
 region: footer
-weight: -1
+weight: -2
 provider: null
 plugin: 'system_menu_block:footer-secondary'
 settings:
