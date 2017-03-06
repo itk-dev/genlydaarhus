@@ -1,14 +1,21 @@
- <div class="create-navigation">
-  <div class="l-cols is-reversed-desk-up">
-    <div class="l-col one-fourth desk-up">
-      <div class="create-navigation--button">
-        {% include "@elements/buttons/button-call-to-action.twig" with { button: createNavigation.buttonNext } %}
-      </div>
-    </div>
-    <div class="l-col one-fourth desk-up">
-      <div class="create-navigation--button">
+{% embed "@layouts/grid-fourths.twig" %}
+  {% block items %}
+
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
         {% include "@elements/buttons/button-secondary-dark.twig" with { button: createNavigation.buttonPrev } %}
-      </div>
-    </div>
-  </div>
-</div>
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@layouts/grid-item.twig" %}
+      {% block content %}
+
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: createNavigation.buttonNext } %}
+
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}
