@@ -2,7 +2,7 @@ pattern-lab
 .DS_STORE
 
 # Styleguide-generated
-styleguide-generated
+styleguide-generated/*
 !styleguide-generated/index.html
 !styleguide-generated/patternlab-components
 !styleguide-generated/styleguide
