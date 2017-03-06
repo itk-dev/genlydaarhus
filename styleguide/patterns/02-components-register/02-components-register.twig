@@ -12,47 +12,49 @@
   {% endblock %}
 {% endembed %}
 
-{% embed "@layouts/grid-full.twig" %}
-  {% block items %}
-    {% embed "@layouts/grid-item.twig" %}
-      {% block content %}
-        {% embed "@layouts/grid-fourths.twig" %}
-          {% block items %}
+{% if register.socialButtons %}
+  {% embed "@layouts/grid-full.twig" %}
+    {% block items %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-fourths.twig" %}
+            {% block items %}
 
-            {% if register.socialButtons.facebookButton %}
-              {% embed "@layouts/grid-item.twig" %}
-                {% block content %}
-                    {% include "@elements/buttons/button-facebook.twig" with { button: register.socialButtons.facebookButton } %}
-                {% endblock %}
-              {% endembed %}
-            {% endif %}
+              {% if register.socialButtons.facebookButton %}
+                {% embed "@layouts/grid-item.twig" %}
+                  {% block content %}
+                      {% include "@elements/buttons/button-facebook.twig" with { button: register.socialButtons.facebookButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
 
-            {% if register.socialButtons.googleButton %}
-              {% embed "@layouts/grid-item.twig" %}
-                {% block content %}
+              {% if register.socialButtons.googleButton %}
+                {% embed "@layouts/grid-item.twig" %}
+                  {% block content %}
 
-                    {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.googleButton } %}
+                      {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.googleButton } %}
 
-                {% endblock %}
-              {% endembed %}
-            {% endif %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
 
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
 
-    {% embed "@layouts/grid-item.twig" %}
-      {% block content %}
-        {% embed "@layouts/grid-item-header-section.twig" %}
-          {% block content %}
-            {% include "@modules/text-with-icon.twig" with { textWithIcon: register.textWithIconPersonal } %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-  {% endblock %}
-{% endembed %}
+      {% embed "@layouts/grid-item.twig" %}
+        {% block content %}
+          {% embed "@layouts/grid-item-header-section.twig" %}
+            {% block content %}
+              {% include "@modules/text-with-icon.twig" with { textWithIcon: register.textWithIconPersonal } %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}
 
 {# Form elements #}
 

@@ -26,7 +26,11 @@
                 {% embed "@layouts/grid-item-header-section.twig" %}
                   {% block content %}
 
-                    {% include "@modules/text-with-icon.twig" with {textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title, icon: { type: "bulletin", color: "light" } } } %}
+                    {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title } } %}
+                      {% block icon %}
+                        {% include "@elements/icons/icon-bulletin.twig" %}
+                      {% endblock %}
+                    {% endembed %}
 
                   {% endblock %}
                 {% endembed %}
@@ -62,9 +66,14 @@
 
             {% embed "@layouts/grid-item.twig" %}
               {% block content %}
+
                 {% embed "@layouts/grid-item-header-section.twig" %}
                   {% block content %}
-                    {% include "@modules/text-with-icon.twig" with {textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title, icon: { type: "bulletin", color: "light" } } } %}
+                    {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title } } %}
+                      {% block icon %}
+                        {% include "@elements/icons/icon-bulletin.twig" %}
+                      {% endblock %}
+                    {% endembed %}
                   {% endblock %}
                 {% endembed %}
 
