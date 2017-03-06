@@ -5,9 +5,9 @@
 
 "http://www.{default}/":
     type: upstream
-    upstream: "app:http"
+    upstream: "drupal:http"
 
 "http://{default}/":
     type: upstream
-    upstream: "app:http"
+    upstream: "drupal:http"
 
