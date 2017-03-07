@@ -1,3 +1,7 @@
+NB!
+This module is a modified version of the https://www.drupal.org/project/prlp with a patch applied.
+
+
 Description
 -----------
 This module enhances Drupal's out-of-the-box password reset landing page by
