@@ -27,7 +27,6 @@ class ThemeNegotiator implements ThemeNegotiatorInterface {
   public function applies(RouteMatchInterface $route) {
     switch ($route->getRouteName()) {
       case 'entity.user.edit_form':
-        // /user/{user}/edit
         return true;
     }
     return false;
