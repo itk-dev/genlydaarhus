@@ -2,7 +2,7 @@
    {% block items %}{% endblock %}
 {% endset %}
 
-{% embed "@layouts/grid.twig" with { class: "is-fourths" } %}
+{% embed "@modules/grid/grid.twig" with { class: "is-fourths" } %}
   {% block content %}
     {% block items %}
       {{ items }}

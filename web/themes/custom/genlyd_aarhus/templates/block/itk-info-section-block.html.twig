@@ -31,8 +31,4 @@
   }
 %}
 
-{% embed "@layouts/container-constrained-dark.twig" %}
-  {% block content %}
-    {% include "@components/section-info.twig" with { "sectionInfo": sectionInfo } %}
-  {% endblock %}
-{% endembed %}
+{% include "@components/section-info.twig" with { "sectionInfo": sectionInfo } %}

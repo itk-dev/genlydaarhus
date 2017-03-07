@@ -1,35 +1,57 @@
-{% embed "@layouts/page.twig" with { page: page, is_front: is_front } %}
-
-  {% block hero %}
-    {% if page.hero %}
-      {# Render Drupal block in hero region #}
-      {{ page.hero }}
-    {% else %}
-      {# Render Pattern Lab #}
-      {% include "@modules/hero.twig" %}
-    {% endif %}
-  {% endblock %}
-
-  {% block main %}
+{% if page.header %}
+  {# Render Drupal blocks in header region #}
+  {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
     {% block content %}
-      {% if page.content %}
-        {# Render Drupal block in hero region #}
-        {{ page.content }}
-      {% else %}
-        {# Render Pattern Lab #}
-        {% include "@components/activities.twig" %}
-        {% embed "@layouts/container-constrained-dark.twig" %}
-          {% block content %}
-            {% include "@components/section-info.twig" %}
-          {% endblock %}
-        {% endembed %}
-        {% include "@components/activities.twig" %}
-        {% embed "@layouts/container-constrained-dark.twig" %}
-          {% block content %}
-            {% include "@components/section-info.twig" %}
-          {% endblock %}
-        {% endembed %}
-      {% endif %}
+      {{ page.header }}
     {% endblock %}
-  {% endblock %}
-{% endembed %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/01-header.twig" %}
+{% endif %}
+
+{% if page.hamburger_menu %}
+  {# Render Drupal block in hamburger menu region #}
+  {% embed "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
+    {% block content %}
+      {{ page.hamburger_menu }}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
+{% endif %}
+
+{% if page.hero %}
+  {# Render Drupal block in hero region #}
+  {{ page.hero }}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@modules/hero.twig" %}
+{% endif %}
+
+{% if page.content %}
+  {# Render Drupal block in hero region #}
+  {{ page.content }}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/activities.twig" %}
+
+  {% include "@components/section-info.twig" %}
+
+  {% include "@components/activities.twig" %}
+
+  {% include "@components/section-info.twig" %}
+{% endif %}
+
+{% if page.footer %}
+  {# Render Drupal blocks in footer region #}
+  {% embed "@components/01-global/02-footer.twig" %}
+    {% block content %}
+      {{ page.footer }}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/02-footer.twig" %}
+{% endif %}

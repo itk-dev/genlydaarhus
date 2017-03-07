@@ -1,5 +1,7 @@
-{% embed "@layouts/page.twig" %}
+{% embed "@templates/page.twig" %}
   {% block main %}
+    {# @TODO: Fix this. #}
+
   <div class="container has-large-spacing">
     <div class="l-heading-section no-spacing">
       {% include "@modules/heading-with-icon.twig" with { headingWithIcon: createStepThree.headingWithIcon, icon: createStepThree.headingWithIcon.icon } %}
@@ -11,7 +13,7 @@
     <div class="l-section has-bottom-margin">
       {% include "elements-form-label" with { formLabel: { label: "Hvilke kategorier vil du sætte på din kategori?" } } %}
 
-      {% embed "@layouts/grid-fourths.twig" %}
+      {% embed "@modules/grid/grid-fourths.twig" %}
         {% block items %}
             <article class="grid--item">
               {% include "elements-checkbox" with {'checkbox': { "label": "Musik" } } %}
