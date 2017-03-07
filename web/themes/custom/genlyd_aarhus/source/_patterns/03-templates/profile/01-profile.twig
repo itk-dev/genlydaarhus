@@ -1,5 +1,7 @@
-{% embed "@layouts/page.twig" %}
+{% embed "@templates/page.twig" %}
   {% block main %}
+    {# @TODO: Fix this. #}
+
   <div class="container has-large-spacing">
     <div class="l-heading-section">
       {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
@@ -53,7 +55,7 @@
       {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
     </div>
 
-    {% embed "@layouts/grid-fourths.twig" %}
+    {% embed "@modules/grid/grid-fourths.twig" %}
       {% block items %}
         {% for item in activities|slice(0, 3) %}
           <article class="grid--item">

@@ -14,11 +14,11 @@
 {% set form = element %}
 
 <form{{ attributes }}>
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: ("Hello " ~ user.account.name) | trans, subtitle: "Let us create an activity" | trans, icon: { type: "create", color: 'light' } } } %}
             {% endblock %}
@@ -29,11 +29,11 @@
   {% endembed %}
 
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Choose Headline and Description" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -44,9 +44,9 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.title }}
 
@@ -60,11 +60,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Signup required" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -79,11 +79,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Participants" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -94,16 +94,16 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_entry_requirements }}
           {{ form.field_physical_requirements }}
 
-          {% embed "@layouts/grid-fourths.twig" %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
             {% block items %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {{ form.field_maximum_participants }}
                 {% endblock %}
@@ -115,11 +115,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Helping with the activity" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -130,9 +130,9 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_help_needed }}
         {% endblock %}
@@ -140,11 +140,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Categories" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -155,9 +155,9 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_categories }}
         {% endblock %}
@@ -165,11 +165,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Upload an image" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -180,19 +180,19 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-halfs.twig" %}
+          {% embed "@modules/grid/grid-halfs.twig" %}
             {% block items %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {{ form.field_image }}
                 {% endblock %}
               {% endembed %}
 
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {{ "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans }}
 
@@ -206,11 +206,11 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Practical information" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
               {% endembed %}
@@ -221,39 +221,39 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-halfs.twig" %}
+  {% embed "@modules/grid/grid-halfs.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_date }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_price }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_time_start }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_time_end }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_zipcode }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_area }}
         {% endblock %}
       {% endembed %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.field_address }}
         {% endblock %}
@@ -263,9 +263,9 @@
     {% endblock %}
   {% endembed %}
 
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {{ form.actions.submit }}
           {{ form.actions.publish }}
@@ -286,7 +286,7 @@
 {% set group_keys = groups | keys %}
 #}
       {#
-            {% embed "@layouts/grid-item.twig" %}
+            {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
                 {% set progressBar = { items: [
                   {title: 'fisk'},

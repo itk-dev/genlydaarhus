@@ -9,9 +9,9 @@
  * @see template_preprocess_views_exposed_form()
  */
 #}
-{% embed "@layouts/grid-full.twig" %}
+{% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
-    {% embed "@layouts/grid-item.twig" %}
+    {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
 
         {% if q is not empty %}

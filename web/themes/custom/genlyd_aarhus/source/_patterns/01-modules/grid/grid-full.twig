@@ -2,8 +2,7 @@
   {% block items %}{% endblock %}
 {% endset %}
 
-
-{% embed "@layouts/grid.twig" with { class: "is-thirds" } %}
+{% embed "@modules/grid/grid.twig" with { class: "is-full" } %}
   {% block content %}
     {% block items %}
       {{ items }}

@@ -25,13 +25,13 @@
  */
 #}
 
-{% embed "@layouts/grid-fourths.twig" %}
+{% embed "@modules/grid/grid-fourths.twig" %}
   {% block items %}
 
     {% for row in items %}
       {% for column in row.content %}
 
-        {% embed "@layouts/grid-item.twig" %}
+        {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
             {{ column.content }}
           {% endblock %}

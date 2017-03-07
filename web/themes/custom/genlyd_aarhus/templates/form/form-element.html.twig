@@ -44,9 +44,9 @@
  * @see template_preprocess_form_element()
  */
 #}
-{% embed "@layouts/grid-item.twig" %}
+{% embed "@modules/grid/grid-item.twig" %}
   {% block content %}
-    {% embed "@layouts/grid-item-section.twig" %}
+    {% embed "@modules/grid/grid-item-section.twig" %}
       {% block content %}
 
         {% if type == 'radio' or type == 'checkbox'  %}
