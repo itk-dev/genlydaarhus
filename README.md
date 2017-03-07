@@ -17,7 +17,7 @@ cd drupal
 composer install
 
 cd web
-drush --yes site-install itkore --db-url='mysql://root:vagrant@localhost/db' --config-dir=/vagrant/htdocs/config/sync
+drush --yes site-install minimal --db-url='mysql://root:vagrant@localhost/db' --config-dir=/vagrant/htdocs/config/sync
 ```
 
 ## Pattern lab
