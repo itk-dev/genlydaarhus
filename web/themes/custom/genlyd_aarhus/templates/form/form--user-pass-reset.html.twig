@@ -10,7 +10,12 @@
  * @see template_preprocess_form()
  */
 #}
-TODO: User pass reset
-<form{{ attributes }}>
-  {{ children }}
-</form>
+
+{% set resetPassword = {
+  headingWithIcon: {
+    title: "Set your password" | trans,
+    subtitle: "Here you must set your password." | trans
+  }
+} %}
+
+{% include "@components/reset-password.twig" with { page: children, attributes: attributes, resetPassword: resetPassword } %}
