@@ -1,8 +1,8 @@
-{% embed "@layouts/grid-full.twig" %}
+{% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
-    {% embed "@layouts/grid-item.twig" %}
+    {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% embed "@layouts/grid-item-header-section.twig" %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
           {% block content %}
 
             {% include "@modules/heading-with-icon.twig" with { headingWithIcon: login.headingWithIcon, icon: login.headingWithIcon.icon } %}
@@ -23,9 +23,9 @@
   {% include "@modules/text-with-icon.twig" with { textWithIcon: login.textWithIcon, icon: login.textWithIcon.icon } %}
 #}
 
-{% embed "@layouts/grid-halfs.twig" %}
+{% embed "@modules/grid/grid-halfs.twig" %}
   {% block items %}
-    {% embed "@layouts/grid-item.twig" %}
+    {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
 
         {% if children %}
@@ -33,7 +33,7 @@
           <form{{ attributes.removeClass('user-login-form') }}>
             {% set form = element %}
 
-            {% embed "@layouts/grid-item-section.twig" %}
+            {% embed "@modules/grid/grid-item-section.twig" %}
               {% block content %}
 
                 {{ form.name }}
@@ -41,7 +41,7 @@
               {% endblock %}
             {% endembed %}
 
-            {% embed "@layouts/grid-item-section.twig" %}
+            {% embed "@modules/grid/grid-item-section.twig" %}
               {% block content %}
 
                 {{ form.pass }}
@@ -49,7 +49,7 @@
               {% endblock %}
             {% endembed %}
 
-            {% embed "@layouts/grid-item-section.twig" %}
+            {% embed "@modules/grid/grid-item-section.twig" %}
               {% block content %}
 
                 {{ form.actions.submit }}
@@ -64,7 +64,7 @@
         {% else %}
           {# Render Pattern Lab #}
 
-          {% embed "@layouts/grid-item-section.twig" %}
+          {% embed "@modules/grid/grid-item-section.twig" %}
             {% block content %}
 
               {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Brugernavn" } } %}
@@ -73,7 +73,7 @@
             {% endblock %}
           {% endembed %}
 
-          {% embed "@layouts/grid-item-section.twig" %}
+          {% embed "@modules/grid/grid-item-section.twig" %}
             {% block content %}
 
               {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adgangskode" } } %}
@@ -82,7 +82,7 @@
             {% endblock %}
           {% endembed %}
 
-          {% embed "@layouts/grid-item-section.twig" %}
+          {% embed "@modules/grid/grid-item-section.twig" %}
             {% block content %}
 
               {% include "@elements/buttons/button-input-call-to-action.twig" %}

@@ -1,15 +1,20 @@
-{% embed "@layouts/grid-full.twig" %}
-  {% block items %}
+<section class="container is-constrained is-dark">
+  <div class="container--inner">
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
 
-    {% embed "@layouts/grid-item.twig" %}
-      {% block content %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
 
-        {% embed "@layouts/grid-item-header-section-centered.twig" %}
-          {% block items %}
+            {% embed "@modules/grid/grid-item-header-section-centered.twig" %}
+              {% block items %}
 
-            {# @TODO include specific icon directly #}
-            {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
-            {% include "@modules/heading-with-icon.twig" %}
+                {# @TODO include specific icon directly #}
+                {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
+                {% include "@modules/heading-with-icon.twig" %}
+
+              {% endblock %}
+            {% endembed %}
 
           {% endblock %}
         {% endembed %}
@@ -17,65 +22,64 @@
       {% endblock %}
     {% endembed %}
 
-  {% endblock %}
-{% endembed %}
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
 
-{% embed "@layouts/grid-full.twig" %}
-  {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
 
-    {% embed "@layouts/grid-item.twig" %}
-      {% block content %}
+            {% for item in sectionInfo.items %}
 
-        {% for item in sectionInfo.items %}
+              {% embed "@modules/grid/grid-item-header-section.twig" %}
+                {% block content %}
 
-          {% embed "@layouts/grid-item-header-section.twig" %}
-            {% block content %}
+                  {% embed "@modules/grid/grid-two-thirds-reversed.twig" %}
+                    {% block items %}
 
-              {% embed "@layouts/grid-two-thirds-reversed.twig" %}
-                {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
 
-                  {% embed "@layouts/grid-item.twig" %}
-                    {% block content %}
+                          {% embed "@modules/section-info.twig" %}
 
-                      {% embed "@modules/section-info.twig" %}
+                            {% block icon %}
+                              {% include "@elements/icons/icon-arrow-dark-green-small.twig" %}
+                            {% endblock %}
+                            {% block title %}
+                              {{ item.title }}
+                            {% endblock %}
 
-                        {% block icon %}
-                          {% include "@elements/icons/icon-arrow-dark-green-small.twig" %}
+                          {% endembed %}
+
                         {% endblock %}
-                        {% block title %}
-                          {{ item.title }}
-                        {% endblock %}
-
                       {% endembed %}
 
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+
+                          {{ item.description }}
+
+                        {% endblock %}
+                      {% endembed %}
                     {% endblock %}
                   {% endembed %}
 
-                  {% embed "@layouts/grid-item.twig" %}
-                    {% block content %}
-
-                      {{ item.description }}
-
-                    {% endblock %}
-                  {% endembed %}
                 {% endblock %}
               {% endembed %}
 
-            {% endblock %}
-          {% endembed %}
+            {% endfor %}
 
-        {% endfor %}
+            {% embed "@modules/grid/grid-item-section-centered.twig" %}
+              {% block items %}
 
-        {% embed "@layouts/grid-item-section-centered.twig" %}
-          {% block items %}
+                {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
 
-            {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
+              {% endblock %}
+            {% endembed %}
 
           {% endblock %}
         {% endembed %}
 
       {% endblock %}
     {% endembed %}
-
-  {% endblock %}
-{% endembed %}
+  </div>
+</section>

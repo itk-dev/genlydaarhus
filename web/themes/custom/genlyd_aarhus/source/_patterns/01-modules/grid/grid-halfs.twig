@@ -2,7 +2,7 @@
  {% block items %}{% endblock %}
 {% endset %}
 
-{% embed "@layouts/grid.twig" with { class: "is-halfs" } %}
+{% embed "@modules/grid/grid.twig" with { class: "is-halfs" } %}
   {% block content %}
     {{ items }}
   {% endblock %}

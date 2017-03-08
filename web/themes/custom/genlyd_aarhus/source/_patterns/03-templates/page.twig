@@ -1,1 +1,45 @@
-{% include "@layouts/page.twig" with { page: page, is_front: is_front } %}
+{% if page.header %}
+  {# Render Drupal blocks in header region #}
+  {% embed "@components/01-global/01-header.twig" with { is_front: is_front } %}
+    {% block content %}
+      {{ page.header }}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/01-header.twig" %}
+{% endif %}
+
+{% if page.hamburger_menu %}
+  {# Render Drupal block in hamburger menu region #}
+  {% embed "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
+    {% block content %}
+      {{ page.hamburger_menu }}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/03-hamburger-menu.twig" with { is_front: is_front } %}
+{% endif %}
+
+<section class="container">
+  <div class="container--inner">
+    {% block main %}
+      {% if page.content %}
+        {{ page.content }}
+      {% endif %}
+    {% endblock %}
+  </div>
+</section>
+
+{% if page.footer %}
+  {# Render Drupal blocks in footer region #}
+  {% embed "@components/01-global/02-footer.twig" %}
+    {% block content %}
+      {{ page.footer }}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {# Render Pattern Lab #}
+  {% include "@components/01-global/02-footer.twig" %}
+{% endif %}

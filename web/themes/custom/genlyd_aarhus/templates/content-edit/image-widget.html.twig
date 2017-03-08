@@ -30,15 +30,15 @@
   {% endblock %}
 
   {% block content %}
-    {% embed "@layouts/grid-full.twig" %}
+    {% embed "@modules/grid/grid-full.twig" %}
       {% block items %}
-        {% embed "@layouts/grid-item.twig" %}
+        {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
             {{ data.upload }}
           {% endblock %}
         {% endembed %}
 
-        {% embed "@layouts/grid-item.twig" %}
+        {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
             {{ data.remove_button }}
           {% endblock %}

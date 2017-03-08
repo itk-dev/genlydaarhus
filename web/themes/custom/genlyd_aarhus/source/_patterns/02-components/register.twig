@@ -1,8 +1,8 @@
-{% embed "@layouts/grid-full.twig" %}
+{% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
-    {% embed "@layouts/grid-item.twig" %}
+    {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% embed "@layouts/grid-item-header-section.twig" %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
           {% block content %}
             {% include "@modules/heading-with-icon.twig" with { headingWithIcon: register.headingWithIcon } %}
           {% endblock %}
@@ -13,15 +13,15 @@
 {% endembed %}
 
 {% if register.socialButtons %}
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-fourths.twig" %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
             {% block items %}
 
               {% if register.socialButtons.facebookButton %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
                       {% include "@elements/buttons/button-facebook.twig" with { button: register.socialButtons.facebookButton } %}
                   {% endblock %}
@@ -29,7 +29,7 @@
               {% endif %}
 
               {% if register.socialButtons.googleButton %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
 
                       {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.googleButton } %}
@@ -43,9 +43,9 @@
         {% endblock %}
       {% endembed %}
 
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-item-header-section.twig" %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
               {% include "@modules/text-with-icon.twig" with { textWithIcon: register.textWithIconPersonal } %}
             {% endblock %}
@@ -61,28 +61,28 @@
 {% if children %}
   {# Drupal #}
   {% set form = element %}
-    {% embed "@layouts/grid-full.twig" %}
+    {% embed "@modules/grid/grid-full.twig" %}
       {% block items %}
         <form{{ attributes }}>
-        {% embed "@layouts/grid-item.twig" %}
+        {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
-            {% embed "@layouts/grid-halfs.twig" %}
+            {% embed "@modules/grid/grid-halfs.twig" %}
               {% block items %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
 
                     {{ form.field_first_name }}
 
                   {% endblock %}
                 {% endembed %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
 
                     {{ form.field_surname }}
 
                   {% endblock %}
                 {% endembed %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
 
                     {{ form.account.name }}
@@ -90,7 +90,7 @@
                   {% endblock %}
                 {% endembed %}
 
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
 
                     {{ form.account.mail }}
@@ -107,17 +107,17 @@
           {% endblock %}
         {% endembed %}
 
-        {% embed "@layouts/grid-item.twig" %}
+        {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
-            {% embed "@layouts/grid-fourths.twig" %}
+            {% embed "@modules/grid/grid-fourths.twig" %}
               {% block items %}
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
                     {{ form.actions.submit }}
                   {% endblock %}
                 {% endembed %}
 
-                {% embed "@layouts/grid-item.twig" %}
+                {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
                     {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I have an account", href: "/user/login" } } %}
                   {% endblock %}
@@ -136,40 +136,40 @@
 
 {% else %}
   {# Pattern Lab #}
-  {% embed "@layouts/grid-full.twig" %}
+  {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
       <form>
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-halfs.twig" %}
+          {% embed "@modules/grid/grid-halfs.twig" %}
             {% block items %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "elements-form-label" with { formLabel: { label: "Fornavn" } } %}
                   {% include "elements-text-field" with {'type': 'text', 'name': 'firstname' } %}
                 {% endblock %}
               {% endembed %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "elements-form-label" with { formLabel: { label: "Efternavn" } } %}
                   {% include "elements-text-field" with {'type': 'text', 'name': 'lastname' } %}
                 {% endblock %}
               {% endembed %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
                   {% include "elements-text-field" with {'type': 'email', 'name': 'email' } %}
                 {% endblock %}
               {% endembed %}
 
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
                   {% include "elements-text-field" with {'type': 'password', 'name': 'password' } %}
                 {% endblock %}
               {% endembed %}
 
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "elements-form-label" with { formLabel: { label: "Postnummer" } } %}
                   {% include "elements-text-field" with {'type': 'text', 'name': 'postalcode' } %}
@@ -184,17 +184,17 @@
         <p>Husk at læse <a href="#">betingelserne</a>.</p>
       </div>
 
-      {% embed "@layouts/grid-item.twig" %}
+      {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@layouts/grid-fourths.twig" %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
             {% block items %}
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "@elements/buttons/button-call-to-action.twig" with { button: register.registerButton } %}
                 {% endblock %}
               {% endembed %}
 
-              {% embed "@layouts/grid-item.twig" %}
+              {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include "@elements/buttons/button-secondary-dark.twig" with { button: register.haveAccountButton } %}
                 {% endblock %}

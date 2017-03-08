@@ -1,9 +1,5 @@
-{% embed "@layouts/page.twig" %}
+{% embed "@templates/page.twig" %}
   {% block main %}
-    {% embed "@layouts/container.twig" %}
-      {% block content %}
-        {% include "@components/introduction.twig" %}
-      {% endblock %}
-    {% endembed %}
+    {% include "@components/introduction.twig" %}
   {% endblock %}
 {% endembed %}
