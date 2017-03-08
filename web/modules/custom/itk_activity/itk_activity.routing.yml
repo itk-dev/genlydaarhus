@@ -7,3 +7,19 @@ itk_activity.action_signup:
     _permission: 'access content'
   options:
     _admin_route: TRUE
+
+itk_activity.multistep_one:
+  path: '/activity/create-one'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepOneForm'
+    _title: 'About activity'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_two:
+  path: '/activity/create-two'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepTwoForm'
+    _title: 'Information'
+  requirements:
+    _permission: 'access content'

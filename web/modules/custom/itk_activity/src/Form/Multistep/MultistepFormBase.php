@@ -5,7 +5,7 @@
  * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormBase.
  */
 
-namespace Drupal\demo\Form\Multistep;
+namespace Drupal\itk_activity\Form\Multistep;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -15,6 +15,11 @@ use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
 
+/**
+ * Class MultistepFormBase.
+ *
+ * @package Drupal\itk_activity\Form\Multistep
+ */
 abstract class MultistepFormBase extends FormBase {
 
   /**
@@ -50,8 +55,6 @@ abstract class MultistepFormBase extends FormBase {
     $this->currentUser = $current_user;
 
     $this->store = $this->tempStoreFactory->get('multistep_data');
-
-    $form = \Drupal::formBuilder()->getForm('Drupal\itk_floating_help\Form\ITKFloatingHelpContentForm');
   }
 
   /**
