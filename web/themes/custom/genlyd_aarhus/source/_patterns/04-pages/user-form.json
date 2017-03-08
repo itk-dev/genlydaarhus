@@ -20,7 +20,7 @@
       "button": {
         "name": "test",
         "href": "#",
-        "title": "Vælg billede"
+        "titleEmpty": "Vælg billede"
       }
     }
   }

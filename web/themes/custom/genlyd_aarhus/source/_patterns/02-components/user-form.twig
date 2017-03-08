@@ -111,7 +111,7 @@
             {{ form.user_picture }}
           {% else %}
             {# Pattern Lab #}
-            {% include "@modules/image-upload/image-upload.twig" with { imageUpload: userForm.image } %}
+            {% include "@modules/image-upload/image-upload.twig" with { imageUpload: userForm.imageUpload } %}
           {% endif %}
         {% endblock %}
       {% endembed %}
