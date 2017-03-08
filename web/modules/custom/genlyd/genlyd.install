@@ -24,7 +24,7 @@ function genlyd_install() {
 }
 
 /**
- * Implements hook_update().
+ * Enable components and genlyd_aarhus.
  */
 function genlyd_update_8001() {
   $module_list = array(
@@ -39,7 +39,7 @@ function genlyd_update_8001() {
 }
 
 /**
- * Implements hook_update().
+ * Enable views_block_filter_block.
  */
 function genlyd_update_8002() {
   $module_list = array(
@@ -49,7 +49,7 @@ function genlyd_update_8002() {
 }
 
 /**
- * Implements hook_update().
+ * Enable page_manager_ui.
  */
 function genlyd_update_8003() {
   $module_list = array(
@@ -59,7 +59,7 @@ function genlyd_update_8003() {
 }
 
 /**
- * Implements hook_update().
+ * Enable itk_info_section.
  */
 function genlyd_update_8004() {
   $module_list = array(
@@ -69,7 +69,7 @@ function genlyd_update_8004() {
 }
 
 /**
- * Implements hook_update().
+ * Enable itk_activity.
  */
 function genlyd_update_8005() {
   $module_list = array(
