@@ -77,3 +77,13 @@ function genlyd_update_8005() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Enable prlp.
+ */
+function genlyd_update_8106() {
+  $module_list = array(
+    'prlp',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
