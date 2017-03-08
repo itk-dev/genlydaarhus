@@ -11,99 +11,19 @@
  */
 #}
 
-{% set form = element %}
+{% set userForm = {
+  headingWithIcon: {
+    title: ("Hello " ~ user.account.name) | trans,
+    subtitle: "Here you can edit your user" | trans
+  },
+  textWithIcon: {
+    title: "Personal details" | trans
+  },
+  formTexts: {
+    profileHelp: "Here you can choose a profile image" | trans,
+    profileTitle: "What is a good profile image." | trans,
+    profileDescription: "An image of you or something that symbolises you." | trans
+  }
+} %}
 
-<form{{ attributes }}>
-  {% embed "@modules/grid/grid-full.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {% embed "@modules/grid/grid-item-header-section.twig" %}
-            {% block content %}
-              {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: ("Hello " ~ user.account.name) | trans, subtitle: "Here you can edit your user" | trans, icon: { type: "create", color: 'light' } } } %}
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  {% endembed %}
-
-  {% embed "@modules/grid/grid-full.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {% embed "@modules/grid/grid-item-header-section.twig" %}
-            {% block content %}
-              {% embed "@modules/text-with-icon.twig" with {textWithIcon: {title: "Personal details" | trans, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
-              {% endembed %}
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  {% endembed %}
-
-  {% embed "@modules/grid/grid-halfs.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.field_first_name }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.field_surname }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.account.name }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.account.mail }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.account.pass.pass1 }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.account.pass.pass2 }}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.user_picture }}
-        {% endblock %}
-      {% endembed %}
-
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ "Here you can choose a profile image" | trans }}
-
-          {% include "@elements/forms/help-box.twig" with { helpBox: { title: "What is a good profile image." | trans, description: "An image that symbolises you." | trans } } %}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  {% endembed %}
-
-  {% embed "@modules/grid/grid-full.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ form.actions.submit }}
-          {{ form.actions.publish }}
-        {% endblock %}
-      {% endembed %}
-
-    {% endblock %}
-  {% endembed %}
-
-  {{ form.form_build_id }}
-  {{ form.form_token }}
-  {{ form.form_id }}
-</form>
+{% include "@components/user-form.twig" %}

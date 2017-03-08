@@ -1,0 +1,27 @@
+{
+  "userForm": {
+    "headingWithIcon": {
+      "title": "Hej Lars",
+      "subtitle": "Her kan du ændre brugeren"
+    },
+    "textWithIcon": {
+      "title": "Personlige detaljer"
+    },
+    "formTexts": {
+      "profileHelp": "Her kan du vælge dit profilbillede.",
+      "profileTitle": "Hvad er et godt profilbillede?",
+      "profileDescription": "Et billede der ligner dig, eller som symboliserer dig."
+    },
+    "imageUpload": {
+      "image": {
+        "src": "/assets/images/styleguide/placeholder-500x500.png"
+      },
+      "hover": true,
+      "button": {
+        "name": "test",
+        "href": "#",
+        "title": "Vælg billede"
+      }
+    }
+  }
+}
