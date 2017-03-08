@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set forgotPassword = {
+  headingWithIcon: {
+    title: "Reset your password" | trans,
+    subtitle: "Here you can reset your password." | trans
+  }
+} %}
+
+{% include "@components/forgot-password.twig" with { page: children, attributes: attributes, forgotPassword: forgotPassword } %}

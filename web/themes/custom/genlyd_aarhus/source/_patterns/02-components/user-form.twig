@@ -1,0 +1,149 @@
+{% set form = element %}
+
+<form{{ attributes }}>
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: userForm.headingWithIcon.title, subtitle: userForm.headingWithIcon.subtitle, icon: { type: "create", color: 'light' } } } %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: userForm.textWithIcon.title, icon: { type: "arrow", color: "light", class: 'is-small' } } } %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_first_name }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Fornavn" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'first_name' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_surname }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Efternavn" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'surname' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.name }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Brugernavn" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'username' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.mail }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Email" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'mail' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.pass.pass1 }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass1' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.pass.pass2 }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord (Bekræft)" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass2' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.user_picture }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@modules/image-upload/image-upload.twig" with { imageUpload: userForm.imageUpload } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {{ userForm.formTexts.profileHelp }}
+          {% include "@elements/forms/help-box.twig" with { helpBox: { title: userForm.formTexts.profileTitle, description: userForm.formTexts.profileDescription } } %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.actions.submit }}
+            {{ form.actions.publish }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/buttons/button-input-call-to-action.twig" %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

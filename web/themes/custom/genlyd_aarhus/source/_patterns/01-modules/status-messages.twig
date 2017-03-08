@@ -1,0 +1,15 @@
+{% for type, messages in message_list %}
+  <div class="status-messages">
+    <div class="status-messages--inner{% if type %} is-{{ type }}{% endif %}">
+      {% if messages|length > 1 %}
+        <ul>
+          {% for message in messages %}
+            <li>{{ message }}</li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        {{ messages|first }}
+      {% endif %}
+    </div>
+  </div>
+{% endfor %}

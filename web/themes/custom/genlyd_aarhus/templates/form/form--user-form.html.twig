@@ -1,0 +1,29 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set userForm = {
+  headingWithIcon: {
+    title: ("Hello " ~ user.account.name) | trans,
+    subtitle: "Here you can edit your user" | trans
+  },
+  textWithIcon: {
+    title: "Personal details" | trans
+  },
+  formTexts: {
+    profileHelp: "Here you can choose a profile image" | trans,
+    profileTitle: "What is a good profile image." | trans,
+    profileDescription: "An image of you or something that symbolises you." | trans
+  }
+} %}
+
+{% include "@components/user-form.twig" %}
