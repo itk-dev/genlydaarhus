@@ -12,7 +12,7 @@
   padding-top: $spacing-pixel-xxsmall;
   position: fixed;
   right: 0;
-  transform: translateY(315px);
+  transform: translateY(320px);
   z-index: 20;
 
   @include breakpoint($breakpoint-tablet) {
@@ -25,7 +25,7 @@
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: $spacing-pixel-tiny;
+    margin-bottom: $spacing-pixel-xxxsmall;
     padding-left: $spacing-pixel-normal;
     padding-right: $spacing-pixel-normal;
   }
