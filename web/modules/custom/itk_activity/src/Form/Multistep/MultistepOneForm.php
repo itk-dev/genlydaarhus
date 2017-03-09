@@ -43,11 +43,11 @@ class MultistepOneForm extends MultistepFormBase {
       '#default_value' => $this->store->get('description') ? $this->store->get('description') : '',
     );
 
-    $form['signup_required'] = array(
+    $form['field_signup_required'] = array(
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this->t('Sign up required'),
-      '#default_value' => 1,
+      '#default_value' => $this->store->get('field_signup_required') ? $this->store->get('field_signup_required') : NULL,
       '#options' => [
         1 => $this->t('Sign up required'),
         0 => $this->t('Sign up not required'),
@@ -73,6 +73,7 @@ class MultistepOneForm extends MultistepFormBase {
     // Set values in storage.
     $this->store->set('title', $form_state->getValue('title'));
     $this->store->set('body', $form_state->getValue('body'));
+    $this->store->set('field_signup_required', $form_state->getValue('field_signup_required'));
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_two');

@@ -23,3 +23,27 @@ itk_activity.multistep_two:
     _title: 'Information'
   requirements:
     _permission: 'access content'
+
+itk_activity.multistep_three:
+  path: '/activity/create-three'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepThreeForm'
+    _title: 'Categories'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_four:
+  path: '/activity/create-four'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFourForm'
+    _title: 'Image'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_five:
+  path: '/activity/create-five'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFiveForm'
+    _title: 'Image'
+  requirements:
+    _permission: 'access content'

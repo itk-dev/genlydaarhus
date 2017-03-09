@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepOneForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepTwoForm.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -40,11 +40,11 @@ class MultistepTwoForm extends MultistepFormBase {
       $entryRequirementOptions[$requirement->tid] = $requirement->name;
     }
 
-    $form['entry_requirements'] = [
+    $form['field_entry_requirements'] = [
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this->t('Entry requirements'),
-      '#default_value' => NULL,
+      '#default_value' => $this->store->get('field_entry_requirements') ? $this->store->get('field_entry_requirements') : NULL,
       '#options' => $entryRequirementOptions,
     ];
 
@@ -59,11 +59,11 @@ class MultistepTwoForm extends MultistepFormBase {
       $physicalRequirementOptions[$requirement->tid] = $requirement->name;
     }
 
-    $form['physical_requirements'] = [
+    $form['field_physical_requirements'] = [
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this->t('Physical requirements'),
-      '#default_value' => NULL,
+      '#default_value' => $this->store->get('field_physical_requirements') ? $this->store->get('field_physical_requirements') : NULL,
       '#options' => $physicalRequirementOptions,
     ];
 
@@ -78,11 +78,11 @@ class MultistepTwoForm extends MultistepFormBase {
       $helpNeededOptions[$requirement->tid] = $requirement->name;
     }
 
-    $form['help_needed'] = [
+    $form['field_help_needed'] = [
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this->t('Help needed'),
-      '#default_value' => NULL,
+      '#default_value' => $this->store->get('field_help_needed') ? $this->store->get('field_help_needed') : NULL,
       '#options' => $helpNeededOptions,
     ];
     
@@ -103,9 +103,9 @@ class MultistepTwoForm extends MultistepFormBase {
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Set values in storage.
-    $this->store->set('entry_requirements', $form_state->getValue('entry_requirements'));
-    $this->store->set('physical_requirements', $form_state->getValue('physical_requirements'));
-    $this->store->set('help_needed', $form_state->getValue('help_needed'));
+    $this->store->set('field_entry_requirements', $form_state->getValue('field_entry_requirements'));
+    $this->store->set('field_physical_requirements', $form_state->getValue('field_physical_requirements'));
+    $this->store->set('field_help_needed', $form_state->getValue('field_help_needed'));
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_three');
