@@ -620,7 +620,9 @@
     {% endblock %}
   {% endembed %}
 
-  {{ form.form_build_id }}
-  {{ form.form_token }}
-  {{ form.form_id }}
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
 </form>
