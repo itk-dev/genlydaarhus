@@ -36,20 +36,24 @@ class MultistepFourForm extends MultistepFormBase {
       '#default_value' => $this->store->get('field_image'),
       '#upload_location' => 'public://',
       '#theme' => 'image_widget',
-      '#upload_validators' => array(
-        'file_validate_extensions' => array('jpg png jpeg'),
-      ),
+      '#upload_validators' => [
+        'file_validate_extensions' => [ 'jpg png jpeg' ],
+        'file_validate_size' => [ 10 * 1024 * 1024, ],
+      ],
       '#required' => FALSE,
     ];
 
     // Load image preview, if image is already set.
     $fileId = $this->store->get('field_image')[0];
     if (isset($fileId)) {
+      // Get the file.
       $file = File::load($fileId);
 
       if ($file) {
+        // Get the image.
         $image = \Drupal::service('image.factory')->get($file->getFileUri());
 
+        // Set dimensions.
         if ($image->isValid()) {
           $variables['width'] = $image->getWidth();
           $variables['height'] = $image->getHeight();
@@ -58,6 +62,7 @@ class MultistepFourForm extends MultistepFormBase {
           $variables['width'] = $variables['height'] = NULL;
         }
 
+        // Set preview entry.
         $form['field_image']['preview'] = array(
           '#weight' => -10,
           '#theme' => 'image_style',
@@ -89,8 +94,6 @@ class MultistepFourForm extends MultistepFormBase {
 
     // Set values in storage.
     $this->store->set('field_image', $fileId);
-
-    $st = $this->store->get('field_image');
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_five');

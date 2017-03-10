@@ -1,5 +1,4 @@
 <?php
-
 /**
  * @file
  * Contains \Drupal\itk_activity\Form\Multistep\MultistepOneForm.
@@ -40,7 +39,7 @@ class MultistepOneForm extends MultistepFormBase {
       '#type' => 'textarea',
       '#required' => TRUE,
       '#title' => $this->t('Description'),
-      '#default_value' => $this->store->get('description') ? $this->store->get('description') : '',
+      '#default_value' => $this->store->get('body') ? $this->store->get('body') : '',
     );
 
     $form['field_signup_required'] = array(
