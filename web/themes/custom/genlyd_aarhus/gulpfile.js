@@ -6,8 +6,8 @@ var argv = require('yargs')
 .alias('t', 'theme')
 .alias('d', 'domain')
 .default('sync', false)
-.default('theme', ['devteam'])
-.default('domain', 'localhost:8080')
+.default('theme', ['genlydaarhus'])
+.default('domain', 'genlydaarhus.vm')
   .argv;
 
 // Gulp basic.
@@ -27,7 +27,7 @@ var gulp = require('gulp-help')(require('gulp'), {
 
     console.log.apply(console, args);
     console.log(chalk.underline('Usage examples:'));
-    console.log(chalk.cyan('  *') + chalk.green(' gulp watch --theme base --theme blue --domain test.devteam.vm --sync'));
+    console.log(chalk.cyan('  *') + chalk.green(' gulp watch --theme base --theme blue --domain test.genlydaarhus.vm --sync'));
     console.log(chalk.cyan('  *') + chalk.green(' gulp watch --sync'));
     console.log(chalk.cyan('  *') + chalk.green(' gulp sass -t base'));
     console.log('\n' + 'It will always default to use all themes' + '\n');
@@ -56,9 +56,9 @@ var browserSync;
  */
 var configuration = {
   // Base theme.
-  'devteam': {
+  'genlydaarhus': {
     "js": {
-      "paths": ['./js/*.js', '!./devteam/js/*.min.*'],
+      "paths": ['./js/*.js', '!./genlydaarhus/js/*.min.*'],
       "dest": './js'
     },
     "sass": {

@@ -23,17 +23,9 @@
 
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
-                {% embed "@modules/grid/grid-item-header-section.twig" %}
-                  {% block content %}
 
-                    {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title } } %}
-                      {% block icon %}
-                        {% include "@elements/icons/icon-bulletin.twig" %}
-                      {% endblock %}
-                    {% endembed %}
+                {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title }, iconName: 'bulletin' } %}
 
-                  {% endblock %}
-                {% endembed %}
               {% endblock %}
             {% endembed %}
 
@@ -67,15 +59,7 @@
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
 
-                {% embed "@modules/grid/grid-item-header-section.twig" %}
-                  {% block content %}
-                    {% embed "@modules/text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title } } %}
-                      {% block icon %}
-                        {% include "@elements/icons/icon-bulletin.twig" %}
-                      {% endblock %}
-                    {% endembed %}
-                  {% endblock %}
-                {% endembed %}
+                {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title }, iconName: 'bulletin' } %}
 
               {% endblock %}
             {% endembed %}

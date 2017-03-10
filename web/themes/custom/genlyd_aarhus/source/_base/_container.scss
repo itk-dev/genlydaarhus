@@ -19,7 +19,7 @@
     flex-direction: column;
     flex-grow: 1;
     padding-bottom: $spacing-pixel-medium;
-    padding-top: $spacing-pixel-medium;
+    padding-top: $spacing-pixel-xxxlarge;
 
     @include breakpoint($breakpoint-desk) {
       padding-bottom: $spacing-pixel-xxlarge;
