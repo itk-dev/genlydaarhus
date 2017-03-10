@@ -39,6 +39,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 .grid {
   width: 100%;
 
+  &:not(:first-child),
   + .grid {
     margin-top: $grid-spacing-pixel-small;
 
@@ -58,6 +59,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
+    width: 100%;
   }
 
   &--item-header-section,
@@ -112,7 +114,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
   &.is-halfs, &.is-thirds, &.is-fourths {
     > .grid--inner > .grid--item {
 
-      margin-bottom: $grid-spacing-pixel-large;
+      margin-top: $grid-spacing-pixel-medium;
 
       @include breakpoint($breakpoint-tablet) {
         margin-left: $grid-spacing-percent-medium;
