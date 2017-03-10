@@ -94,15 +94,33 @@ abstract class MultistepFormBase extends FormBase {
    * Saves the data from the multistep form.
    */
   protected function saveData() {
-    // @TODO: Logic for saving data goes here...
-
-    // Setup activity, that data should be saved to.
     $activity =  Node::create([
       'type' => 'activity',
+      'title' => $this->store->get('title'),
+      'body' => $this->store->get('body'),
+      'field_address' => $this->store->get('field_address'),
+      'field_area' => $this->store->get('field_area'),
+      'field_categories' => $this->store->get('field_categories'),
+      'field_date' => $this->store->get('field_date'),
+      'field_entry_requirements' => $this->store->get('field_entry_requirements'),
+      'field_help_needed' => $this->store->get('field_help_needed'),
+      'field_image' => $this->store->get('field_image'),
+      'field_maximum_participants' => $this->store->get('field_maximum_participants'),
+      'field_physical_requirements' => $this->store->get('field_physical_requirements'),
+      'field_price' => $this->store->get('field_price'),
+      'field_signed_up_users' => $this->store->get('field_signed_up_users'),
+      'field_signup_required' => $this->store->get('field_signup_required'),
+      'field_time_end' => $this->store->get('field_time_end'),
+      'field_time_start' => $this->store->get('field_time_start'),
+      'field_zipcode' => $this->store->get('field_zipcode'),
     ]);
+
+    $activity->save();
 
     $this->deleteStore();
     drupal_set_message($this->t('The form has been saved.'));
+
+    return $activity->id();
   }
 
   /**

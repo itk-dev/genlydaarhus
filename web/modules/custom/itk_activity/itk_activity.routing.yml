@@ -47,3 +47,11 @@ itk_activity.multistep_five:
     _title: 'Image'
   requirements:
     _permission: 'access content'
+
+itk_activity.multistep_six:
+  path: '/activity/create-six'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepSixForm'
+    _title: 'Confirm'
+  requirements:
+    _permission: 'access content'

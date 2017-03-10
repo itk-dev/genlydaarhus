@@ -78,8 +78,8 @@ class MultistepFiveForm extends MultistepFormBase {
       '#type' => 'number',
       '#max_length' => 4,
       '#attributes' => [
-        'maxlength' => 4,
         'min' => 0,
+        'max' => 9999,
         'class' => [ 'js-field-zipcode', ],
       ],
       '#required' => TRUE,
@@ -92,10 +92,8 @@ class MultistepFiveForm extends MultistepFormBase {
 
     $form['field_area'] = array(
       '#type' => 'textfield',
-      '#required' => TRUE,
       '#attributes' => [
-        'disabled' => 'disabled',
-        'class' => [ 'js-field-area', 'is-disabled', ],
+        'class' => [ 'js-field-area', ],
       ],
       '#title' => $this->t('Area'),
       '#default_value' => $this->store->get('field_area') ? $this->store->get('field_area') : NULL,
