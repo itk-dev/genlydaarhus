@@ -10,11 +10,6 @@
  * @see template_preprocess_form()
  */
 #}
-{#
-<form{{ attributes }}>
-  {{ children }}
-</form>
-#}
 
 {% set addActivity = {
   headingWithIcon: {
@@ -48,19 +43,19 @@
       active: true
     },
     {
-      "title": "Information" | trans
+      title: "Information" | trans
     },
     {
-      "title": "Categories" | trans
+      title: "Categories" | trans
     },
     {
-      "title": "Image" | trans
+      title: "Image" | trans
     },
     {
-      "title": "Details" | trans
+      title: "Details" | trans
     },
     {
-      "title": "Confirm" | trans
+      title: "Confirm" | trans
     }
   ]
 } %}

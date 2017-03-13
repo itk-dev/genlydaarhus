@@ -1,0 +1,292 @@
+{#
+/**
+ * addActivity:
+ * - headingWithIcon:
+ *   - title
+ *   - subtitle
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-user.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/progress-bar.twig" %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <h3>{{ addActivity.completeText.title }}</h3>
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <p>{{ addActivity.completeText.text }}</p>
+        {% endblock %}
+      {% endembed %}
+
+      {# About activity #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[0].title } } %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% embed "@modules/grid/grid-two-thirds.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% embed "@modules/grid/grid-full.twig" %}
+                    {% block items %}
+
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.title } %}
+                        {% endblock %}
+                      {% endembed %}
+
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.body } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.signupRequired } %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Information #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[1].title } } %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% embed "@modules/grid/grid-halfs.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.entryRequirements } %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.physicalRequirements } %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.maximumParticipants } %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.helpNeeded } %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Image and Categories #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% embed "@modules/grid/grid-halfs.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% embed "@modules/grid/grid-full.twig" %}
+                    {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[3].title } } %}
+                        {% endblock %}
+                      {% endembed %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@elements/images/image.twig" with { image: addActivity.data.image } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% embed "@modules/grid/grid-full.twig" %}
+                    {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[2].title } } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
+                  {% embed "@modules/grid/grid-full.twig" %}
+                    {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.categories } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Details #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[4].title } } %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-thirds.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.date } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.timeStart } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.timeEnd } %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-halfs.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.address } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.price } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.name } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.email } %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Action buttons #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

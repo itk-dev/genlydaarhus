@@ -32,24 +32,27 @@
         {% block content %}
           {% embed "@modules/grid/grid-item-header-section.twig" %}
             {% block content %}
-
               {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
                 {% block icon %}
                   {% include "@elements/icons/icon-user.twig" %}
                 {% endblock %}
               {% endembed %}
-
             {% endblock %}
           {% endembed %}
         {% endblock %}
       {% endembed %}
+    {% endblock %}
+  {% endembed %}
 
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {% include '@modules/progress-bar.twig' %}
         {% endblock %}
       {% endembed %}
-
     {% endblock %}
   {% endembed %}
 
