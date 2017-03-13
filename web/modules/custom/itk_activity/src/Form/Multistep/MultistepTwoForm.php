@@ -67,6 +67,13 @@ class MultistepTwoForm extends MultistepFormBase {
       '#options' => $physicalRequirementOptions,
     ];
 
+
+    $form['field_maximum_participants'] = [
+      '#type' => 'number',
+      '#title' => $this->t('Maximum participants'),
+      '#default_value' => $this->store->get('field_maximum_participants') ? $this->store->get('field_maximum_participants') : NULL,
+    ];
+
     // Load help_needed.
     $helpNeeded = \Drupal::service('entity_type.manager')
       ->getStorage("taxonomy_term")
@@ -105,6 +112,7 @@ class MultistepTwoForm extends MultistepFormBase {
     // Set values in storage.
     $this->store->set('field_entry_requirements', $form_state->getValue('field_entry_requirements'));
     $this->store->set('field_physical_requirements', $form_state->getValue('field_physical_requirements'));
+    $this->store->set('field_maximum_participants', $form_state->getValue('field_maximum_participants'));
     $this->store->set('field_help_needed', $form_state->getValue('field_help_needed'));
 
     // Redirect to next step.

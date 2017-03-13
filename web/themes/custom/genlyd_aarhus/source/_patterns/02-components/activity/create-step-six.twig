@@ -246,22 +246,22 @@
 
               {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.zipcode } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.area } %}
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
                   {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.address } %}
                 {% endblock %}
               {% endembed %}
               {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
                   {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.price } %}
-                {% endblock %}
-              {% endembed %}
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.name } %}
-                {% endblock %}
-              {% endembed %}
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.email } %}
                 {% endblock %}
               {% endembed %}
 

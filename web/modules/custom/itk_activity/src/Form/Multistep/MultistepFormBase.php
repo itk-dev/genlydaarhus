@@ -91,10 +91,10 @@ abstract class MultistepFormBase extends FormBase {
   }
 
   /**
-   * Saves the data from the multistep form.
+   * Get all data from store.
    */
-  protected function saveData() {
-    $activity =  Node::create([
+  protected function getData() {
+    return [
       'type' => 'activity',
       'title' => $this->store->get('title'),
       'body' => $this->store->get('body'),
@@ -108,12 +108,20 @@ abstract class MultistepFormBase extends FormBase {
       'field_maximum_participants' => $this->store->get('field_maximum_participants'),
       'field_physical_requirements' => $this->store->get('field_physical_requirements'),
       'field_price' => $this->store->get('field_price'),
-      'field_signed_up_users' => $this->store->get('field_signed_up_users'),
       'field_signup_required' => $this->store->get('field_signup_required'),
       'field_time_end' => $this->store->get('field_time_end'),
       'field_time_start' => $this->store->get('field_time_start'),
       'field_zipcode' => $this->store->get('field_zipcode'),
-    ]);
+    ];
+  }
+
+  /**
+   * Saves the data from the multistep form.
+   */
+  protected function saveData() {
+    $data = $this->getData();
+
+    $activity =  Node::create($data);
 
     $activity->save();
 
@@ -141,7 +149,6 @@ abstract class MultistepFormBase extends FormBase {
       'field_maximum_participants',
       'field_physical_requirements',
       'field_price',
-      'field_signed_up_users',
       'field_signup_required',
       'field_time_end',
       'field_time_start',
