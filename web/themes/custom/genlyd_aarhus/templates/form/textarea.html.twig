@@ -13,6 +13,13 @@
  * @see template_preprocess_textarea()
  */
 #}
-<div{{ wrapper_attributes }}>
-  <textarea{{ attributes }}>{{ value }}</textarea>
-</div>
+
+{% set classes = [ 'textarea--input' ] %}
+
+{% set removeClasses = [ 'form-text', 'required' ] %}
+
+{% embed "@elements/forms/textarea.twig" %}
+  {% block content %}
+  <textarea {{ attributes.removeClass(removeClasses).addClass(classes) }}>{{ value }}</textarea>{{ children }}
+  {% endblock %}
+{% endembed %}

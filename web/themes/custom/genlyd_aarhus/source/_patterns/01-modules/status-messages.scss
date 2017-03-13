@@ -6,6 +6,9 @@ $message-info-color:             $color-green-light;
 $message-warning-color:          $color-yellow;
 $message-error-color:            $color-red;
 $message-border-radius:          $border-radius;
+$message-small:                  $spacing-pixel-small;
+$message-medium:                 $spacing-pixel-medium;
+$message-large:                  $spacing-pixel-large;
 
 
 /* Styles
@@ -13,6 +16,16 @@ $message-border-radius:          $border-radius;
 
 .status-messages {
   @include layout-wrapper($breakpoint-mediumdesk, auto);
+
+  margin-top: $message-small;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: $message-medium;
+  }
+
+  @include breakpoint($breakpoint-desk) {
+    margin-top: $message-large;
+  }
 }
 
 .status-messages--inner {

@@ -39,19 +39,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 .grid {
   width: 100%;
 
-  &:not(:first-child),
-  + .grid {
-    margin-top: $grid-spacing-pixel-small;
-
-    @include breakpoint($breakpoint-tablet) {
-      margin-top: $grid-spacing-pixel-medium;
-    }
-
-    @include breakpoint($breakpoint-desk) {
-      margin-top: $grid-spacing-pixel-large;
-    }
-  }
-
   &--inner {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +46,21 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
+    margin-top: $grid-spacing-pixel-small;
     width: 100%;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+
+    > .grid.is-full > .grid--inner > .grid--item:first-child {
+      margin-top: 0;
+    }
+
+    /* @TODO: Fix this issue where we have .grid--item > .grid--item in Drupal */
+    > .grid--item {
+      margin-top: 0;
+    }
   }
 
   &--item-header-section,
@@ -70,6 +71,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     }
   }
 
+  /* Add margin top to item sections. */
   &--item-header-section + &--item-header-section,
   &--item-section + &--item-section,
   &--item-header-section + &--item-section,
@@ -90,7 +92,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     @include breakpoint($breakpoint-tablet) {
       flex-direction: row;
     }
-
   }
 
   &--item-section {
@@ -101,21 +102,10 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     .grid--item {
       width: 100%;
     }
-
-    > .grid--inner > .grid--item + .grid--item {
-      margin-top: $grid-spacing-pixel-small;
-
-      @include breakpoint($breakpoint-tablet) {
-        margin-top: $grid-spacing-pixel-medium;
-      }
-    }
   }
 
   &.is-halfs, &.is-thirds, &.is-fourths {
     > .grid--inner > .grid--item {
-
-      margin-top: $grid-spacing-pixel-medium;
-
       @include breakpoint($breakpoint-tablet) {
         margin-left: $grid-spacing-percent-medium;
         margin-right: $grid-spacing-percent-medium;
@@ -152,7 +142,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &.is-fourths {
     > .grid--inner > .grid--item {
-
       @include breakpoint($breakpoint-largedesk) {
         /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
         Calculate width: <width> - <number of margins> / <number of columns>. */
