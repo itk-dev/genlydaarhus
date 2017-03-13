@@ -5,22 +5,25 @@
 
 (function ($) {
   $(document).ready(function () {
+    var zipcodeField = $('.js-field-zipcode');
+    var areaField = $('.js-field-area');
+
     /**
      * Update area field with data from dawa.
      */
     var updateArea = function updateArea() {
-      var zipcode = $('.js-field-zipcode').val();
+      var zipcode = zipcodeField.val();
 
       if (zipcode.length === 4) {
         $.getJSON("http://dawa.aws.dk/postnumre/" + zipcode,
           function (data) {
-            $('.js-field-area').val(data.navn);
+            areaField.val(data.navn);
           }
         );
       }
     };
 
     // Register the change listener.
-    $('.js-field-zipcode').change(updateArea);
+    zipcodeField.change(updateArea);
   });
 })(jQuery);
