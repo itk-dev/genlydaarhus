@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepTwoForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormInformation.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -10,11 +10,11 @@ namespace Drupal\itk_activity\Form\Multistep;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class MultistepTwoForm.
+ * Class MultistepFormInformation.
  *
  * @package Drupal\itk_activity\Form\Multistep
  */
-class MultistepTwoForm extends MultistepFormBase {
+class MultistepFormInformation extends MultistepFormBase {
 
   /**
    * {@inheritdoc}
@@ -116,7 +116,7 @@ class MultistepTwoForm extends MultistepFormBase {
     $this->store->set('field_help_needed', $form_state->getValue('field_help_needed'));
 
     // Redirect to next step.
-    $form_state->setRedirect('itk_activity.multistep_three');
+    $form_state->setRedirect('itk_activity.multistep_categories');
   }
 
 }

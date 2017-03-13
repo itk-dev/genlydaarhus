@@ -18,6 +18,8 @@ use Drupal\node\Entity\Node;
 /**
  * Class MultistepFormBase.
  *
+ * The abstract class the other forms inherit from. Manages data and final submission.
+ *
  * @package Drupal\itk_activity\Form\Multistep
  */
 abstract class MultistepFormBase extends FormBase {

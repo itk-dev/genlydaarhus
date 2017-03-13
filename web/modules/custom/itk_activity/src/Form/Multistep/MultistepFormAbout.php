@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepOneForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormAbout.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -9,11 +9,11 @@ namespace Drupal\itk_activity\Form\Multistep;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class MultistepOneForm.
+ * Class MultistepFormAbout.
  *
  * @package Drupal\itk_activity\Form\Multistep
  */
-class MultistepOneForm extends MultistepFormBase {
+class MultistepFormAbout extends MultistepFormBase {
 
   /**
    * {@inheritdoc}
@@ -75,7 +75,7 @@ class MultistepOneForm extends MultistepFormBase {
     $this->store->set('field_signup_required', $form_state->getValue('field_signup_required'));
 
     // Redirect to next step.
-    $form_state->setRedirect('itk_activity.multistep_two');
+    $form_state->setRedirect('itk_activity.multistep_information');
   }
 
 }

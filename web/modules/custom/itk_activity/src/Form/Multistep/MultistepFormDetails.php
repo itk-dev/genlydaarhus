@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepFiveForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormDetails.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -10,11 +10,11 @@ namespace Drupal\itk_activity\Form\Multistep;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Class MultistepFiveForm.
+ * Class MultistepFormDetails.
  *
  * @package Drupal\itk_activity\Form\Multistep
  */
-class MultistepFiveForm extends MultistepFormBase {
+class MultistepFormDetails extends MultistepFormBase {
 
   /**
    * {@inheritdoc}
@@ -131,7 +131,7 @@ class MultistepFiveForm extends MultistepFormBase {
     $this->store->set('field_address', $form_state->getValue('field_address'));
 
     // Redirect to next step.
-    $form_state->setRedirect('itk_activity.multistep_six');
+    $form_state->setRedirect('itk_activity.multistep_confirm');
   }
 
 }

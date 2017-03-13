@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepFourForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormImage.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -11,11 +11,11 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 
 /**
- * Class MultistepFourForm.
+ * Class MultistepFormImage.
  *
  * @package Drupal\itk_activity\Form\Multistep
  */
-class MultistepFourForm extends MultistepFormBase {
+class MultistepFormImage extends MultistepFormBase {
 
   /**
    * {@inheritdoc}
@@ -96,7 +96,7 @@ class MultistepFourForm extends MultistepFormBase {
     $this->store->set('field_image', $fileId);
 
     // Redirect to next step.
-    $form_state->setRedirect('itk_activity.multistep_five');
+    $form_state->setRedirect('itk_activity.multistep_details');
   }
 
 }

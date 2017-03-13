@@ -1,3 +1,5 @@
+# Sign up:
+
 itk_activity.action_signup:
   path: '/activity/{nid}/signup/{uid}'
   defaults:
@@ -8,50 +10,52 @@ itk_activity.action_signup:
   options:
     _admin_route: TRUE
 
-itk_activity.multistep_one:
-  path: '/activity/create-one'
+# Multi-step create form:
+
+itk_activity.multistep_about:
+  path: '/activity/create/about'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepOneForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormAbout'
     _title: 'About activity'
   requirements:
     _permission: 'access content'
 
-itk_activity.multistep_two:
-  path: '/activity/create-two'
+itk_activity.multistep_information:
+  path: '/activity/create/information'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepTwoForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormInformation'
     _title: 'Information'
   requirements:
     _permission: 'access content'
 
-itk_activity.multistep_three:
-  path: '/activity/create-three'
+itk_activity.multistep_categories:
+  path: '/activity/create/categories'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepThreeForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormCategories'
     _title: 'Categories'
   requirements:
     _permission: 'access content'
 
-itk_activity.multistep_four:
-  path: '/activity/create-four'
+itk_activity.multistep_image:
+  path: '/activity/create/image'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFourForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormImage'
     _title: 'Image'
   requirements:
     _permission: 'access content'
 
-itk_activity.multistep_five:
-  path: '/activity/create-five'
+itk_activity.multistep_details:
+  path: '/activity/create/details'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFiveForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormDetails'
     _title: 'Image'
   requirements:
     _permission: 'access content'
 
-itk_activity.multistep_six:
-  path: '/activity/create-six'
+itk_activity.multistep_confirm:
+  path: '/activity/create/confirm'
   defaults:
-    _form: '\Drupal\itk_activity\Form\Multistep\MultistepSixForm'
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormConfirm'
     _title: 'Confirm'
   requirements:
     _permission: 'access content'

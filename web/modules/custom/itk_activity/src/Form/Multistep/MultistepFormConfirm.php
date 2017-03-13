@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Contains \Drupal\itk_activity\Form\Multistep\MultistepSixForm.
+ * Contains \Drupal\itk_activity\Form\Multistep\MultistepFormConfirm.
  */
 
 namespace Drupal\itk_activity\Form\Multistep;
@@ -12,11 +12,11 @@ use Drupal\file\Entity\File;
 use Drupal\taxonomy\Entity\Term;
 
 /**
- * Class MultistepSixForm.
+ * Class MultistepFormConfirm.
  *
  * @package Drupal\itk_activity\Form\Multistep
  */
-class MultistepSixForm extends MultistepFormBase {
+class MultistepFormConfirm extends MultistepFormBase {
 
   /**
    * {@inheritdoc}
@@ -129,6 +129,7 @@ class MultistepSixForm extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     $activityId = $this->saveData();
 
+    // Redirect to the created activity.
     $form_state->setRedirect('entity.node.canonical', ['node' => $activityId]);
   }
 
