@@ -87,3 +87,13 @@ function genlyd_update_8106() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Enable simple_fb_connect.
+ */
+function genlyd_update_8107() {
+  $module_list = array(
+    'simple_fb_connect',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
