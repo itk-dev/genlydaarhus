@@ -1,0 +1,48 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set addActivity = {
+  headingWithIcon: {
+    title: ("Hello " ~ user.account.name) | trans,
+    subtitle: "Let us create an activity" | trans
+  },
+  categories: {
+    title: "Categories" | trans
+  }
+} %}
+
+{% set progressBar = {
+  items: [
+    {
+      title: "About activity" | trans
+    },
+    {
+      "title": "Information" | trans
+    },
+    {
+      "title": "Categories" | trans,
+      active: true
+    },
+    {
+      "title": "Image" | trans
+    },
+    {
+      "title": "Details" | trans
+    },
+    {
+      "title": "Confirm" | trans
+    }
+  ]
+} %}
+
+{% include "@components/activity/create-step-three.twig" with { form: element, addActivity: addActivity } %}

@@ -4,7 +4,7 @@
       {% include "@elements/images/image.twig" with { image: imageUpload.image } %}
     {% endblock %}
   </div>
-  <div class="image-upload--overlay {{ imageUpload.hover ? 'has-hover' }}">
+  <div class="image-upload--overlay has-hover">
     <div class="image-upload--button">
       {% block content %}
         <input type="file" id="{{ imageUpload.button.name }}" name="{{ imageUpload.button.name }}" class="image-upload--file js-image-upload js-form-file">

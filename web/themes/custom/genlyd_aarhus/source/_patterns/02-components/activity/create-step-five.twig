@@ -1,0 +1,195 @@
+{#
+/**
+ * addActivity:
+ * - headingWithIcon:
+ *   - title
+ *   - subtitle
+ * - categories:
+ *   - title
+ * progressBar:
+ * - items:
+ *   - title
+ *   - active
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-user.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include '@modules/progress-bar.twig' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {# Practical information #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.practicalInformation } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-halfs.twig" %}
+            {% block items %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_date }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Dato" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_date" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_price }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Pris" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_price" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_time_start }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Starttidspunkt" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_start" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_time_end }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Sluttidspunkt" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_end" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_zipcode }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Postnummer" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_zipcode" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_area }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Område" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_area" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+
+                  {% if form %}
+                    {# Drupal #}
+                    {{ form.field_address }}
+                  {% else %}
+                    {# Pattern Lab #}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adresse" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_address" } %}
+                  {% endif %}
+
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+
+        {% endblock %}
+      {% endembed %}
+
+
+      {# Action buttons #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

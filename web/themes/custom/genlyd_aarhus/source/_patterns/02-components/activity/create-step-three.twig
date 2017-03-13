@@ -1,0 +1,194 @@
+{#
+/**
+ * addActivity:
+ * - headingWithIcon:
+ *   - title
+ *   - subtitle
+ * - categories:
+ *   - title
+ * progressBar:
+ * - items:
+ *   - title
+ *   - active
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-user.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include '@modules/progress-bar.twig' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+
+      {# Categories #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.categories } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_categories }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@elements/forms/fieldset.twig" %}
+              {% block legend %}Hvilke kategorier vil du sætte på din kategori?{% endblock %}
+              {% block content %}
+                {% embed "@modules/grid/grid-fourths.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Musik", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Mad og fællseskab", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Kurser og læring", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "IT", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-fourths.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Spil", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Natur", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Kunst og Kultur", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Litteratur", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-fourths.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Håndarbejde", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Motion", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Sport", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/suggestion.twig" %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Action buttons #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

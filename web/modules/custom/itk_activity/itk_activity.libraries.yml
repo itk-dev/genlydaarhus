@@ -1,0 +1,5 @@
+zipcode:
+  js:
+    js/zipcode.js: {}
+  dependencies:
+    - core/jquery

@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Contains ITKHero block.
+ */
 
 namespace Drupal\itk_hero\Plugin\Block;
 
@@ -15,6 +19,7 @@ use Drupal\Core\Form\FormStateInterface;
  * )
  */
 class ITKHero extends BlockBase {
+
   /**
    * {@inheritdoc}
    */
@@ -32,7 +37,6 @@ class ITKHero extends BlockBase {
     ];
   }
 
-
   /**
    * {@inheritdoc}
    */
@@ -41,4 +45,5 @@ class ITKHero extends BlockBase {
 
     return $form;
   }
+
 }

@@ -1,0 +1,251 @@
+{#
+/**
+ * addActivity:
+ * - headingWithIcon:
+ *   - title
+ *   - subtitle
+ * - participants
+ *   - title
+ * - helpWithActivity
+ *   - title
+ * progressBar:
+ * - items:
+ *   - title
+ *   - active
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-user.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include '@modules/progress-bar.twig' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+
+      {# Participants #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.participants } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Entry Requirements #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_entry_requirements }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@elements/forms/fieldset.twig" %}
+              {% block legend %}Hvilket niveau kræver det at deltage?{% endblock %}
+              {% block content %}
+
+                {% embed "@modules/grid/grid-thirds.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Kom som du er", name: "signup_required" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Lettere øvet", name: "signup_not_required" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Øvet", name: "signup_not_required" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Physical Requirements #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_physical_requirements }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@elements/forms/fieldset.twig" %}
+              {% block legend %}Kræver det et særligt fysisk niveau?{% endblock %}
+              {% block content %}
+
+                {% embed "@modules/grid/grid-thirds.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Ingen fysisk forudsætning", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "I nogenlunde form", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "I god form", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Maximum Participants #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_maximum_participants }}
+          {% else %}
+            {% embed "@modules/grid/grid-thirds.twig" %}
+              {% block items %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Maximum Participants" } } %}
+                    {% include "@elements/forms/text-field.twig" with { type: "number", "name": "maximum_participants" } %}
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+      {# Help with activity #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.helpWithActivity } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_help_needed }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@elements/forms/fieldset.twig" %}
+              {% block legend %}Har du brug for en hjælpende hånd?{% endblock %}
+              {% block content %}
+
+                {% embed "@modules/grid/grid-thirds.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Ingen hjælp påkrævet", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Kunne godt bruge en hånd", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/forms/radio.twig" with { radio: { label: "Alle er velkomne til at hjælpe", name: "name" } } %}
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>
