@@ -98,7 +98,10 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
       width: 100%;
     }
 
-    /* Add margin top to grid--item directly after grid--items in the first grid--inner. */
+    /*
+      Because we stack grid items, we add margin top to grid--item directly after grid--items in the first grid--inner.
+      We only add it to the first grid--inner so we don't have to override it if there are nested grids.
+    */
     > .grid--inner > .grid--item + .grid--item {
       margin-top: $grid-spacing-pixel-small;
 
