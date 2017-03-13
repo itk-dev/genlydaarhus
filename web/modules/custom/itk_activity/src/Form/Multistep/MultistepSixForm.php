@@ -111,7 +111,7 @@ class MultistepSixForm extends MultistepFormBase {
       ],
     ];
 
-    $form['actions']['submit']['#value'] = $this->t('Create booking');
+    $form['actions']['submit']['#value'] = $this->t('Create activity');
 
     return $form;
   }
