@@ -1,0 +1,114 @@
+{% embed "@templates/page.twig" %}
+  {% block main %}
+
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-item-header-section.twig" %}
+              {% block content %}
+
+                {% include "@modules/heading-with-icon.twig" with { headingWithIcon: firstGrid.headingWithIcon } %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+
+            {{ firstGrid.content.body }}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-item-header-section.twig" %}
+              {% block content %}
+
+                {% include "@modules/heading-with-icon.twig" with { headingWithIcon: secondGrid.headingWithIcon } %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-halfs.twig" %}
+          {% block items %}
+
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {{ secondGrid.content.body }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {{ secondGrid.content.body }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {{ secondGrid.content.body }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {{ secondGrid.content.body }}
+
+              {% endblock %}
+            {% endembed %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-halfs.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-item-header-section.twig" %}
+              {% block content %}
+
+                {% include "@modules/heading-with-icon.twig" with { headingWithIcon: thirdGrid.headingWithIconOne } %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-item-header-section.twig" %}
+              {% block content %}
+
+                {% include "@modules/heading-with-icon.twig" with { headingWithIcon: thirdGrid.headingWithIconTwo } %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}

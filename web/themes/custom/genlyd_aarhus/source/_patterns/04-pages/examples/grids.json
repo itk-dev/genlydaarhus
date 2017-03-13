@@ -1,0 +1,47 @@
+{
+  "message_list": {
+    "error": [
+      "First message",
+      "Second message",
+      "Third message",
+      "Fourth message"
+    ],
+    "status": [
+      "First message",
+      "Second message",
+      "Third message",
+      "Fourth message"
+    ]
+  },
+  "firstGrid": {
+    "headingWithIcon": {
+      "title": "A simple grid with two grid items",
+      "subtitle": "The grid is full width."
+    },
+    "content": {
+      "body": "A communi observantia non est recedendum. Ut enim ad minim veniam, quis nostrud exercitation."
+    }
+  },
+  "secondGrid": {
+    "headingWithIcon": {
+      "title": "A grid with four grid items",
+      "subtitle": "The grid uses grid halfs."
+    },
+    "content": {
+      "body": "A communi observantia non est recedendum. Ut enim ad minim veniam, quis nostrud exercitation."
+    }
+  },
+  "thirdGrid": {
+    "headingWithIconOne": {
+      "title": "This is the first item in the grid",
+      "subtitle": "The grid uses grid halfs."
+    },
+    "headingWithIconTwo": {
+      "title": "This is the second item in the grid",
+      "subtitle": "The grid uses grid halfs."
+    },
+    "content": {
+      "body": "A communi observantia non est recedendum. Ut enim ad minim veniam, quis nostrud exercitation."
+    }
+  }
+}

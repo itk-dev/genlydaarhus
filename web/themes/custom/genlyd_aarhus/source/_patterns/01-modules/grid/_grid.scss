@@ -37,19 +37,15 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
 
 .grid {
+  margin-top: $grid-spacing-pixel-small;
   width: 100%;
 
-  &:not(:first-child),
-  + .grid {
-    margin-top: $grid-spacing-pixel-small;
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: $grid-spacing-pixel-medium;
+  }
 
-    @include breakpoint($breakpoint-tablet) {
-      margin-top: $grid-spacing-pixel-medium;
-    }
-
-    @include breakpoint($breakpoint-desk) {
-      margin-top: $grid-spacing-pixel-large;
-    }
+  @include breakpoint($breakpoint-desk) {
+    margin-top: $grid-spacing-pixel-large;
   }
 
   &--inner {
@@ -70,6 +66,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     }
   }
 
+  /* Add margin top to item sections. */
   &--item-header-section + &--item-header-section,
   &--item-section + &--item-section,
   &--item-header-section + &--item-section,
@@ -90,7 +87,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     @include breakpoint($breakpoint-tablet) {
       flex-direction: row;
     }
-
   }
 
   &--item-section {
@@ -102,6 +98,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
       width: 100%;
     }
 
+    /* Add margin top to grid--item directly after grid--items in the first grid--inner. */
     > .grid--inner > .grid--item + .grid--item {
       margin-top: $grid-spacing-pixel-small;
 
@@ -113,9 +110,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &.is-halfs, &.is-thirds, &.is-fourths {
     > .grid--inner > .grid--item {
-
-      margin-top: $grid-spacing-pixel-medium;
-
       @include breakpoint($breakpoint-tablet) {
         margin-left: $grid-spacing-percent-medium;
         margin-right: $grid-spacing-percent-medium;
