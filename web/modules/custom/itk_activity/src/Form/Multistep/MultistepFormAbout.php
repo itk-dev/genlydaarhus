@@ -46,7 +46,7 @@ class MultistepFormAbout extends MultistepFormBase {
       '#type' => 'radios',
       '#required' => TRUE,
       '#title' => $this->t('Sign up required'),
-      '#default_value' => $this->store->get('field_signup_required') ? $this->store->get('field_signup_required') : NULL,
+      '#default_value' => $this->store->get('field_signup_required'),
       '#options' => [
         1 => $this->t('Sign up required'),
         0 => $this->t('Sign up not required'),

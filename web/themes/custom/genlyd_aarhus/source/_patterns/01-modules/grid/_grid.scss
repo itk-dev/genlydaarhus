@@ -37,16 +37,7 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
 
 .grid {
-  margin-top: $grid-spacing-pixel-small;
   width: 100%;
-
-  @include breakpoint($breakpoint-tablet) {
-    margin-top: $grid-spacing-pixel-medium;
-  }
-
-  @include breakpoint($breakpoint-desk) {
-    margin-top: $grid-spacing-pixel-large;
-  }
 
   &--inner {
     display: flex;
@@ -55,7 +46,21 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
+    margin-top: $grid-spacing-pixel-small;
     width: 100%;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+
+    > .grid.is-full > .grid--inner > .grid--item:first-child {
+      margin-top: 0;
+    }
+
+    /* @TODO: Fix this issue where we have .grid--item > .grid--item in Drupal */
+    > .grid--item {
+      margin-top: 0;
+    }
   }
 
   &--item-header-section,
@@ -97,18 +102,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     .grid--item {
       width: 100%;
     }
-
-    /*
-      Because we stack grid items, we add margin top to grid--item directly after grid--items in the first grid--inner.
-      We only add it to the first grid--inner so we don't have to override it if there are nested grids.
-    */
-    > .grid--inner > .grid--item + .grid--item {
-      margin-top: $grid-spacing-pixel-small;
-
-      @include breakpoint($breakpoint-tablet) {
-        margin-top: $grid-spacing-pixel-medium;
-      }
-    }
   }
 
   &.is-halfs, &.is-thirds, &.is-fourths {
@@ -126,12 +119,6 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &.is-thirds, &.is-fourths {
     > .grid--inner > .grid--item {
-
-      margin-top: $grid-spacing-pixel-small;
-
-      @include breakpoint($breakpoint-tablet) {
-        margin-top: $grid-spacing-pixel-medium;
-      }
 
       @include breakpoint($breakpoint-desk) {
         /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
