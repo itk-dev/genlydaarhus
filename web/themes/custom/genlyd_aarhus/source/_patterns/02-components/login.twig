@@ -4,9 +4,7 @@
       {% block content %}
         {% embed "@modules/grid/grid-item-header-section.twig" %}
           {% block content %}
-
             {% include "@modules/heading-with-icon.twig" with { headingWithIcon: login.headingWithIcon, icon: login.headingWithIcon.icon } %}
-
           {% endblock %}
         {% endembed %}
       {% endblock %}
@@ -14,14 +12,48 @@
   {% endblock %}
 {% endembed %}
 
+{% if login.socialButtons %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
+            {% block items %}
 
-{# @TODO
-  Add social buttons.
+              {% if login.socialButtons.facebookButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-facebook.twig" with { button: login.socialButtons.facebookButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
 
-  {% include "@modules/social-buttons.twig" with { socialButtons: login.socialButtons } %}
+              {% if login.socialButtons.googleButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
 
-  {% include "@modules/text-with-icon.twig" with { textWithIcon: login.textWithIcon, icon: login.textWithIcon.icon } %}
-#}
+                    {% include "@elements/buttons/button-google.twig" with { button: login.socialButtons.googleButton } %}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: login.textWithIconPersonal, iconName: "user" } %}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+{% endif %}
 
 {% embed "@modules/grid/grid-halfs.twig" %}
   {% block items %}
