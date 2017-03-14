@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set addActivity = {
+  headingWithIcon: {
+    title: ("Hello " ~ user.account.name) | trans,
+    subtitle: "Let us create an activity" | trans
+  },
+  image: {
+    title: "Upload an image" | trans,
+    text: "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans
+  },
+  helpBoxImage: {
+    title: "Hvad er et godt billede?" | trans,
+    description: "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)." | trans
+  }
+} %}
+
+{% set progressBar = {
+  items: [
+    {
+      title: "About activity" | trans
+    },
+    {
+      "title": "Information" | trans
+    },
+    {
+      "title": "Categories" | trans
+    },
+    {
+      "title": "Image" | trans,
+      active: true
+    },
+    {
+      "title": "Details" | trans
+    },
+    {
+      "title": "Confirm" | trans
+    }
+  ]
+} %}
+
+{% include "@components/activity/create-step-four.twig" with { form: element, addActivity: addActivity } %}

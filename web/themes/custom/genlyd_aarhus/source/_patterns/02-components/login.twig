@@ -1,0 +1,138 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" with { headingWithIcon: login.headingWithIcon, icon: login.headingWithIcon.icon } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% if login.socialButtons %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
+            {% block items %}
+
+              {% if login.socialButtons.facebookButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-facebook.twig" with { button: login.socialButtons.facebookButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+
+              {% if login.socialButtons.googleButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {% include "@elements/buttons/button-google.twig" with { button: login.socialButtons.googleButton } %}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: login.textWithIconPersonal, iconName: "user" } %}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+{% endif %}
+
+{% embed "@modules/grid/grid-halfs.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% if children %}
+          {# Render Drupal form #}
+          <form{{ attributes.removeClass('user-login-form') }}>
+            {% set form = element %}
+
+            {% embed "@modules/grid/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.name }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.pass }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item-section.twig" %}
+              {% block content %}
+
+                {{ form.actions.submit }}
+
+              {% endblock %}
+            {% endembed %}
+
+            {{ form.form_build_id }}
+            {{ form.form_token }}
+            {{ form.form_id }}
+          </form>
+        {% else %}
+          {# Render Pattern Lab #}
+
+          {% embed "@modules/grid/grid-item-section.twig" %}
+            {% block content %}
+
+              {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Brugernavn" } } %}
+              {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'username' } %}
+
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "@modules/grid/grid-item-section.twig" %}
+            {% block content %}
+
+              {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adgangskode" } } %}
+              {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'password' } %}
+
+            {% endblock %}
+          {% endembed %}
+
+          {% embed "@modules/grid/grid-item-section.twig" %}
+            {% block content %}
+
+              {% include "@elements/buttons/button-input-call-to-action.twig" %}
+
+            {% endblock %}
+          {% endembed %}
+
+        {% endif %}
+
+        {# @TODO
+          Add create user button.
+          {% include "@elements/buttons/button-secondary-dark.twig" with { button: login.noAccountButton } %}
+        #}
+        {# @TODO
+          Add "Remember me" functionality, maybe we can use https://www.drupal.org/project/persistent_login.
+          {% include "@elements/forms/checkbox.twig" with {'checkbox': { "label": "Husk mig", class: "borderless" } } %}
+        #}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

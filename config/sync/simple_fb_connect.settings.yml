@@ -1,0 +1,10 @@
+app_id: ''
+app_secret: ''
+api_version: v2.8
+post_login_path: user
+redirect_user_form: 0
+disable_admin_login: 1
+disabled_roles: {  }
+_core:
+  default_config_hash: JJ2pkb09VwVm5U7EFJhYMC3keuZN0Le2_YRvZwZbzeQ
+langcode: da

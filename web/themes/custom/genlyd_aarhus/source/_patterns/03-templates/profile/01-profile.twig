@@ -1,0 +1,74 @@
+{% embed "@templates/page.twig" %}
+  {% block main %}
+    {# @TODO: Fix this. #}
+
+  <div class="container has-large-spacing">
+    <div class="l-heading-section">
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconProfile, icon: profile.headingWithIconProfile.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols is-reversed-desk-up">
+        <div class="l-col two-third desk-up">
+          <div class="l-cols">
+            <div class="l-col half desk-up">
+              <div class="l-form-section">
+                {% include "elements-form-label" with { formLabel: { label: "Fornavn" } } %}
+                {% include "elements-text-field" with {'type': 'text', 'name': 'firstname', 'placeholder': '', 'value': 'Lasse' } %}
+              </div>
+            </div>
+
+            <div class="l-col half desk-up">
+              <div class="l-form-section">
+                {% include "elements-form-label" with { formLabel: { label: "Efternavn" } } %}
+                {% include "elements-text-field" with {'type': 'text', 'name': 'lastname', 'placeholder': '', 'value': 'Iversen' } %}
+              </div>
+            </div>
+
+            <div class="l-col half desk-up">
+              <div class="l-form-section">
+                {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+                {% include "elements-text-field" with {'type': 'email', 'name': 'email', 'placeholder': '', 'value': 'eksempel@gmail.com' } %}
+              </div>
+            </div>
+
+            <div class="l-col half desk-up">
+              <div class="l-form-section">
+                {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
+                {% include "elements-text-field" with {'type': 'password', 'name': 'password', 'placeholder': '', 'value': 'password' } %}
+              </div>
+            </div>
+            <div class="l-col half desk-up">
+              <div class="layout has-margin-bottom inline-block">
+                {% include "@elements/buttons/button-call-to-action.twig" with { button: profile.saveButton } %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="l-col one-third desk-up">
+          {% include "modules-image-upload" %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-heading-section">
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: profile.headingWithIconActivities, icon: profile.headingWithIconActivities.icon } %}
+    </div>
+
+    {% embed "@modules/grid/grid-fourths.twig" %}
+      {% block items %}
+        {% for item in activities|slice(0, 3) %}
+          <article class="grid--item">
+            {% include "components-card-activity-edit" with { cardActivity: item } %}
+          </article>
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+
+    <div class="layout flex center">
+      {% include "modules-call-to-action" with { callToAction: profile.callToAction } %}
+    </div>
+
+  </div>
+  {% endblock %}
+{% endembed %}

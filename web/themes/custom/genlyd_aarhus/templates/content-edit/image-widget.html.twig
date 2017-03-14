@@ -1,0 +1,53 @@
+{#
+/**
+ * @file
+ * Theme override for an image field widget.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the containing element.
+ * - data: Render elements of the image widget.
+ *
+ * @see template_preprocess_image_widget()
+ */
+#}
+
+{{ attach_library('genlyd_aarhus/image-upload') }}
+
+{% set imageUpload = {
+  "image": {
+    "class": "",
+    "src": "/themes/custom/genlyd_aarhus/source/assets/images/styleguide/placeholder-1000x750.png"
+  },
+} %}
+
+{% embed "@modules/image-upload/image-upload.twig" %}
+  {% block image %}
+    {% if data.preview %}
+      {{ data.preview }}
+    {% else %}
+      {% include "@elements/images/image.twig" with { image: imageUpload.image } %}
+    {% endif %}
+  {% endblock %}
+
+  {% block content %}
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ data.upload }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ data.remove_button }}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {{ data.title }}
+    {{ data.fids }}
+    {{ data.display }}
+  {% endblock %}
+{% endembed %}

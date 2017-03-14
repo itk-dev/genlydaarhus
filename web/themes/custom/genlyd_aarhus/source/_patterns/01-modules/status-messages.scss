@@ -1,0 +1,56 @@
+/* Variables
+   ========================================================================== */
+
+$message-color:                  $color-gray-lighter;
+$message-info-color:             $color-green-light;
+$message-warning-color:          $color-yellow;
+$message-error-color:            $color-red;
+$message-border-radius:          $border-radius;
+$message-small:                  $spacing-pixel-small;
+$message-medium:                 $spacing-pixel-medium;
+$message-large:                  $spacing-pixel-large;
+
+
+/* Styles
+   ========================================================================== */
+
+.status-messages {
+  @include layout-wrapper($breakpoint-mediumdesk, auto);
+
+  margin-top: $message-small;
+
+  @include breakpoint($breakpoint-tablet) {
+    margin-top: $message-medium;
+  }
+
+  @include breakpoint($breakpoint-desk) {
+    margin-top: $message-large;
+  }
+}
+
+.status-messages--inner {
+  background-color: $message-color;
+  border: 1px solid darken($message-color, 25%);
+  border-radius: $message-border-radius;
+  color: darken($message-color, 50%);
+  padding: 1em;
+
+  &.is-status,
+  &.is-info {
+    background-color: $message-info-color;
+    border: 1px solid darken($message-info-color, 25%);
+    color: darken($message-info-color, 50%);
+  }
+
+  &.is-warning {
+    background-color: $message-warning-color;
+    border: 1px solid darken($message-warning-color, 25%);
+    color: darken($message-warning-color, 50%);
+  }
+
+  &.is-error {
+    background-color: $message-error-color;
+    border: 1px solid darken($message-error-color, 25%);
+    color: darken($message-error-color, 50%);
+  }
+}

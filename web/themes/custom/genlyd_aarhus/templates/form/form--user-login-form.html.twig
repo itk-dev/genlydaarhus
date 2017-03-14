@@ -1,0 +1,44 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set login = {
+  "headingWithIcon": {
+    "title": "Login to your Genlyd Aarhus account"|trans,
+    "subtitle": "Login to your profile"|trans,
+    "iconClass": "hidden-tablet-down",
+    "icon": {
+      "type": "user",
+      "color": "light"
+    }
+  },
+  "textWithIconPersonal": {
+    "title": "Eller brug personlige oplysninger"|trans,
+    "icon": {
+      "type": "arrow",
+      "class": "is-small is-green-dark",
+      "color": "light"
+    }
+  },
+  "socialButtons": {
+    "facebookButton": {
+      "title": "Login with Facebook"|trans,
+      "href": "/user/simple-fb-connect"
+    }
+  },
+  "noAccountButton": {
+    "title": "I do not have an account"|trans
+  }
+}
+%}
+
+{% include "@components/login.twig" with { page: children, attributes: attributes, login: login } %}

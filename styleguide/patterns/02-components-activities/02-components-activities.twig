@@ -1,0 +1,43 @@
+{% embed "@layouts/container.twig" %}
+  {% block content %}
+
+    {% embed "@layouts/grid-full.twig" %}
+      {% block items %}
+        {% embed "@layouts/grid-item.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {% if rows %}
+      {# Render Drupal #}
+      {{ rows }}
+    {% else %}
+      {# Render Pattern Lab #}
+      {% embed "@layouts/grid-fourths.twig" %}
+        {% block items %}
+          {% for cardActivity in activities %}
+            {% embed "@layouts/grid-item.twig" %}
+              {% block content %}
+                {% include "@components/card-activity.twig" %}
+              {% endblock %}
+            {% endembed %}
+          {% endfor %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+
+    {% embed "@layouts/grid-full.twig" %}
+      {% block items %}
+        {% embed "@layouts/grid-item.twig" %}
+          {% block content %}
+            {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}

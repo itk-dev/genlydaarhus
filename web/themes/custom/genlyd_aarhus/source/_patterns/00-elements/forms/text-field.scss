@@ -1,0 +1,25 @@
+/* Variables
+   ========================================================================== */
+
+$text-field-spacing-xsmall: $spacing-pixel-xsmall;
+$text-field-spacing-xxsmall: $spacing-pixel-xxsmall;
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+
+  &--input {
+    border: 2px solid $color-border-dark;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+    padding-bottom: $text-field-spacing-xsmall;
+    padding-left: $text-field-spacing-xxsmall;
+    padding-right: $text-field-spacing-xxsmall;
+    padding-top: $text-field-spacing-xsmall;
+    width: 100%;
+  }
+}
+
+label + .text-field {
+  margin-top: $text-field-spacing-xsmall;
+}

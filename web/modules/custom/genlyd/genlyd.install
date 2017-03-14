@@ -1,0 +1,99 @@
+<?php
+/**
+ * @file
+ * Handles updates for genlyd.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function genlyd_install() {
+  $module_list = array(
+    'components',
+    'views_block_filter_block',
+    'page_manager_ui',
+    'itk_info_section',
+    'itk_activity',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+
+  $themes_list = array(
+    'genlyd_aarhus',
+  );
+  \Drupal::service('theme_installer')->install($themes_list);
+}
+
+/**
+ * Enable components and genlyd_aarhus.
+ */
+function genlyd_update_8001() {
+  $module_list = array(
+    'components',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+
+  $themes_list = array(
+    'genlyd_aarhus',
+  );
+  \Drupal::service('theme_installer')->install($themes_list);
+}
+
+/**
+ * Enable views_block_filter_block.
+ */
+function genlyd_update_8002() {
+  $module_list = array(
+    'views_block_filter_block',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable page_manager_ui.
+ */
+function genlyd_update_8003() {
+  $module_list = array(
+    'page_manager_ui',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable itk_info_section.
+ */
+function genlyd_update_8004() {
+  $module_list = array(
+    'itk_info_section',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable itk_activity.
+ */
+function genlyd_update_8005() {
+  $module_list = array(
+    'itk_activity',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable prlp.
+ */
+function genlyd_update_8106() {
+  $module_list = array(
+    'prlp',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
+
+/**
+ * Enable simple_fb_connect.
+ */
+function genlyd_update_8107() {
+  $module_list = array(
+    'simple_fb_connect',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}

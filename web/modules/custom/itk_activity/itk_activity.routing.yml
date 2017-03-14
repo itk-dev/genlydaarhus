@@ -1,0 +1,61 @@
+# Sign up:
+
+itk_activity.action_signup:
+  path: '/activity/{nid}/signup/{uid}'
+  defaults:
+    _controller: '\Drupal\itk_activity\Controller\ActivityController::signup'
+    _title: 'Sign up'
+  requirements:
+    _permission: 'access content'
+  options:
+    _admin_route: TRUE
+
+# Multi-step create form:
+
+itk_activity.multistep_about:
+  path: '/activity/create/about'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormAbout'
+    _title: 'About activity'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_information:
+  path: '/activity/create/information'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormInformation'
+    _title: 'Information'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_categories:
+  path: '/activity/create/categories'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormCategories'
+    _title: 'Categories'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_image:
+  path: '/activity/create/image'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormImage'
+    _title: 'Image'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_details:
+  path: '/activity/create/details'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormDetails'
+    _title: 'Image'
+  requirements:
+    _permission: 'access content'
+
+itk_activity.multistep_confirm:
+  path: '/activity/create/confirm'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormConfirm'
+    _title: 'Confirm'
+  requirements:
+    _permission: 'access content'

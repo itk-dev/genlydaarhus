@@ -1,0 +1,61 @@
+{% embed "@templates/page.twig" %}
+  {% block main %}
+    {# @TODO: Fix this. #}
+
+  <div class="container has-large-spacing">
+
+    <div class="l-heading-section no-spacing">
+      {% include "@modules/heading-with-icon.twig" with { headingWithIcon: createStepOne.headingWithIcon, icon: createStepOne.headingWithIcon.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      {% include 'modules-progress-bar' with { progressBar: createStepOne.progressBar } %}
+    </div>
+
+    
+    <div class="l-section has-no-margin">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconHeadline, icon: createStepOne.textWithIconHeadline.icon } %}
+    </div>
+    
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols">
+        <div class="l-col half desk-up">
+          {% include "elements-form-label" with { formLabel: { label: "Overskrift" } } %}
+          {% include "elements-text-field" with {'type': 'text', 'name': 'headline', 'placeholder': '' } %}
+          {% include "elements-help-box" with { helpBox: createStepOne.helpBoxHeadline } %}
+        </div>
+      </div>
+    
+    <div class="l-section has-bottom-margin">
+      {% include "elements-form-label" with { formLabel: { label: "Beskrivelse" } } %}
+      {% include "elements-textarea" with {'name': 'headline', 'placeholder': '', 'cols': '40', 'rows': '8' } %}
+      {% include "elements-help-box" with { helpBox: createStepOne.helpBoxDescription } %}
+    </div>
+
+    <div class="l-section has-no-margin">  
+      {% include "modules-text-with-icon" with { textWithIcon: createStepOne.textWithIconParticipation, icon: createStepOne.textWithIconParticipation.icon } %}
+    </div>
+
+    <div class="l-section has-bottom-margin">
+      <div class="l-cols">
+        <div class="l-col two-third desk-up">
+          <div class="l-cols">
+            <div class="l-col half desk-up">
+              {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-required', 'label': 'Der er tilmeldingspligt' }} %}
+            </div>
+            <div class="l-col half desk-up">
+              {% include "elements-radio" with { radio: {'name': 'registration-required', 'id': 'registration-not-required', 'label': 'Der er ikke tilmeldingspligt'}} %}
+            </div>
+          </div>
+          {% include "elements-help-box" with { helpBox: createStepOne.helpBoxParticipation } %}
+        </div>
+      </div>
+    </div>
+
+    <div class="l-section">  
+      {% include 'modules-create-navigation' with { createNavigation: createStepOne.createNavigation } %}
+    </div>
+
+  </div>
+  {% endblock %}
+{% endembed %}

@@ -1,0 +1,209 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" with { headingWithIcon: register.headingWithIcon } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% if register.socialButtons %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-fourths.twig" %}
+            {% block items %}
+
+              {% if register.socialButtons.facebookButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-facebook.twig" with { button: register.socialButtons.facebookButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+
+              {% if register.socialButtons.googleButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.googleButton } %}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: register.textWithIconPersonal, iconName: "user" } %}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+{% endif %}
+
+{# Form elements #}
+
+{% if children %}
+  {# Drupal #}
+  {% set form = element %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      <form{{ attributes }}>
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-halfs.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {{ form.field_first_name }}
+
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {{ form.field_surname }}
+
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {{ form.account.name }}
+
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+
+                    {{ form.account.mail }}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+
+            {% include "@elements/forms/help-box.twig" with { helpBox: { title: "What about the password?", description: "You will create a password when you verify your email." } } %}
+
+            {# @TODO: Husk at læse <a href="#">betingelserne</a>. #}
+
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-fourths.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {{ form.actions.submit }}
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I have an account", href: "/user/login" } } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        {{ form.form_build_id }}
+        {{ form.form_token }}
+        {{ form.form_id }}
+      </form>
+    {% endblock %}
+  {% endembed %}
+
+{% else %}
+  {# Pattern Lab #}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      <form>
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-halfs.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "elements-form-label" with { formLabel: { label: "Fornavn" } } %}
+                    {% include "elements-text-field" with {'type': 'text', 'name': 'firstname' } %}
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "elements-form-label" with { formLabel: { label: "Efternavn" } } %}
+                    {% include "elements-text-field" with {'type': 'text', 'name': 'lastname' } %}
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "elements-form-label" with { formLabel: { label: "Email" } } %}
+                    {% include "elements-text-field" with {'type': 'email', 'name': 'email' } %}
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "elements-form-label" with { formLabel: { label: "Adgangskode" } } %}
+                    {% include "elements-text-field" with {'type': 'password', 'name': 'password' } %}
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "elements-form-label" with { formLabel: { label: "Postnummer" } } %}
+                    {% include "elements-text-field" with {'type': 'text', 'name': 'postalcode' } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        <div class="l-section has-bottom-margin is-tight">
+          <p>Husk at læse <a href="#">betingelserne</a>.</p>
+        </div>
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-fourths.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-call-to-action.twig" with { button: register.registerButton } %}
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-secondary-dark.twig" with { button: register.haveAccountButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+      </form>
+    {% endblock %}
+  {% endembed %}
+{% endif %}

@@ -1,9 +1,0 @@
-itk_activity.action_signup:
-  path: '/activity/{nid}/signup/{uid}'
-  defaults:
-    _controller: '\Drupal\itk_activity\Controller\ActivityController::signup'
-    _title: 'Sign up'
-  requirements:
-    _permission: 'access content'
-  options:
-    _admin_route: TRUE

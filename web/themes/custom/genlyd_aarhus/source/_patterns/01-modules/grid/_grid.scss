@@ -1,0 +1,202 @@
+/**
+ *
+ * Grid
+ *
+ */
+
+/* Variables
+   ========================================================================== */
+
+$grid-spacing-pixel-small:   $spacing-pixel-small;
+$grid-spacing-pixel-medium:   $spacing-pixel-medium;
+$grid-spacing-pixel-large:    $spacing-pixel-large;
+$grid-spacing-percent-medium: $spacing-percent-medium;
+$grid-spacing-percent-large:  $spacing-percent-large;
+
+$grid-spacing-pixel-tight-small:     $spacing-pixel-xxsmall;
+$grid-spacing-pixel-tight-medium:    $spacing-pixel-small;
+$grid-spacing-percent-tight-small:   $spacing-percent-small;
+$grid-spacing-percent-tight-medium:  $spacing-percent-medium;
+
+/* Mixins
+   ========================================================================== */
+
+   @mixin reset-margins($number) {
+      /* Set margins for 2 columns. */
+      &:nth-of-type(#{$number}n) {
+        margin-right: 0;
+      }
+
+      &:nth-of-type(#{$number}n+1) {
+        margin-left: 0;
+      }
+   }
+
+/* Grid
+   ========================================================================== */
+
+
+.grid {
+  width: 100%;
+
+  &--inner {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &--item {
+    align-items: stretch;
+    margin-top: $grid-spacing-pixel-small;
+    width: 100%;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+
+    > .grid.is-full > .grid--inner > .grid--item:first-child {
+      margin-top: 0;
+    }
+
+    /* @TODO: Fix this issue where we have .grid--item > .grid--item in Drupal */
+    > .grid--item {
+      margin-top: 0;
+    }
+  }
+
+  &--item-header-section,
+  &--item-section {
+    &.is-centered {
+      display: flex;
+      justify-content: center;
+    }
+  }
+
+  /* Add margin top to item sections. */
+  &--item-header-section + &--item-header-section,
+  &--item-section + &--item-section,
+  &--item-header-section + &--item-section,
+  &--item-section + &--item-header-section {
+    margin-top: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: $grid-spacing-pixel-medium;
+    }
+  }
+
+  &--item-header-section {
+    border-bottom: 1px solid $color-border-dark;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-bottom: $grid-spacing-pixel-small;
+
+    @include breakpoint($breakpoint-tablet) {
+      flex-direction: row;
+    }
+  }
+
+  &--item-section {
+    width: 100%;
+  }
+
+  &.is-full {
+    .grid--item {
+      width: 100%;
+    }
+  }
+
+  &.is-halfs, &.is-thirds, &.is-fourths {
+    > .grid--inner > .grid--item {
+      @include breakpoint($breakpoint-tablet) {
+        margin-left: $grid-spacing-percent-medium;
+        margin-right: $grid-spacing-percent-medium;
+        width: 50% - $grid-spacing-percent-medium;
+
+        /* We have to set this last to override margins. */
+        @include reset-margins(2);
+      }
+    }
+  }
+
+  &.is-thirds, &.is-fourths {
+    > .grid--inner > .grid--item {
+
+      @include breakpoint($breakpoint-desk) {
+        /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+         Calculate width: <width> - <number of margins> / <number of columns>. */
+        width: (100% - 8%) / 3;
+
+        /* Set margins from smaller breakpoint. */
+        &:nth-of-type(2n) {
+          margin-right: $grid-spacing-percent-medium;
+        }
+
+        &:nth-of-type(2n+1) {
+          margin-left: $grid-spacing-percent-medium;
+        }
+
+        /* We have to set this last to override margins. */
+        @include reset-margins(3);
+      }
+    }
+  }
+
+  &.is-fourths {
+    > .grid--inner > .grid--item {
+      @include breakpoint($breakpoint-largedesk) {
+        /* 2 columns = 2 margins, 3 columns = 4 margins, 4 columns = 6 margins.
+        Calculate width: <width> - <number of margins> / <number of columns>. */
+        width: (100% - 12%) / 4;
+
+        /* Set margins from smaller breakpoint. */
+        &:nth-of-type(3n) {
+          margin-right: $grid-spacing-percent-medium;
+        }
+
+        &:nth-of-type(3n+1) {
+          margin-left: $grid-spacing-percent-medium;
+        }
+
+        /* We have to set this last to override margins. */
+        @include reset-margins(4);
+      }
+    }
+  }
+
+  &.is-two-thirds {
+    > .grid--inner > .grid--item {
+
+      @include breakpoint($breakpoint-desk) {
+        &:nth-of-type(1n) {
+          margin-left: 0;
+          margin-right: $grid-spacing-percent-medium;
+          width: ((100% - 4%) / 3)*2;
+        }
+
+        &:nth-of-type(2n) {
+          margin-left: $grid-spacing-percent-medium;
+          margin-right: 0;
+          width: ((100% - 4%) / 3);
+        }
+      }
+    }
+  }
+
+  &.is-two-thirds-reversed {
+    > .grid--inner > .grid--item {
+
+      @include breakpoint($breakpoint-desk) {
+        &:nth-of-type(1n) {
+          margin-left: 0;
+          margin-right: $grid-spacing-percent-medium;
+          width: ((100% - 4%) / 3);
+        }
+
+        &:nth-of-type(2n) {
+          margin-left: $grid-spacing-percent-medium;
+          margin-right: 0;
+          width: ((100% - 4%) / 3)*2;
+        }
+      }
+    }
+  }
+}

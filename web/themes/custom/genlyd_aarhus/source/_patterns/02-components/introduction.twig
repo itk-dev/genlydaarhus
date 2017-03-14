@@ -1,0 +1,83 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include "@modules/heading-with-icon.twig" with { headingWithIcon: introduction.headingWithIcon, icon: introduction.headingWithIcon.icon } %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include '@modules/progress-bar.twig' with { progressBar: introduction.progressBar } %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% embed "@modules/grid/grid-halfs.twig" %}
+          {% block items %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {% include "@elements/images/image.twig" with { "class": "has-margins", "src": introduction.image.src } %}
+
+              {% endblock %}
+            {% endembed %}
+
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+
+                {% embed "@modules/grid/grid-full.twig" %}
+                  {% block items %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% embed "@modules/grid/grid-item-header-section.twig" %}
+                          {% block content %}
+                            {% include "@modules/text-with-icon.twig" with { textWithIcon: introduction.textWithIcon, icon: introduction.textWithIcon.icon } %}
+                          {% endblock %}
+                        {% endembed %}
+                      {% endblock %}
+                    {% endembed %}
+
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+
+                        {{ introduction.text }}
+
+                      {% endblock %}
+                    {% endembed %}
+
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include '@modules/create-navigation.twig' with { createNavigation: introduction.createNavigation } %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

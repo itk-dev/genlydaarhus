@@ -1,0 +1,170 @@
+{#
+/**
+ * addActivity:
+ * - headingWithIcon:
+ *   - title
+ *   - subtitle
+ * - chooseHeadline:
+ *   - title
+ * - helpBoxTitle:
+ *   - title
+ *   - description
+ * - helpBoxBody:
+ *   - title
+ *   - description
+ * - signupRequired:
+ *   - title
+ * - helpBoxSignup:
+ *   - title
+ *   - description
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-user.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Progress bar #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include '@modules/progress-bar.twig' %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+
+      {# Choose Headline and Description #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.chooseHeadline } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Field Title #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.title }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Title" } } %}
+            {% include "@elements/forms/text-field.twig" with { type: "text", "name": "title" } %}
+          {% endif %}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxTitle } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Field Body #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {# Drupal #}
+            {{ form.body }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/textarea.twig" with { textArea: { name: "body" } } %}
+          {% endif %}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxBody } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {# Signup required #}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: addActivity.signupRequired } %}
+
+        {% endblock %}
+      {% endembed %}
+
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_signup_required }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@modules/grid/grid-fourths.twig" %}
+              {% block items %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/forms/radio.twig" with { radio: { label: "Der er tilmeldingspligt", name: "signup_required" } } %}
+                  {% endblock %}
+                {% endembed %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/forms/radio.twig" with { radio: { label: "Der er ikke tilmeldingspligt", name: "signup_not_required" } } %}
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+
+          {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxSignup } %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {{ form.actions.submit }}
+          {{ form.actions.publish }}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

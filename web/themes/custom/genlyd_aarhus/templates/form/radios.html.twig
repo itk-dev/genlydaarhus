@@ -1,0 +1,17 @@
+{#
+/**
+ * @file
+ * Theme override for a 'checkboxes' #type form element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The rendered checkboxes.
+ *
+ * @see template_preprocess_checkboxes()
+#}
+
+{% embed "@modules/grid/grid-thirds.twig" %}
+  {% block items %}
+    {{ children }}
+  {% endblock %}
+{% endembed %}

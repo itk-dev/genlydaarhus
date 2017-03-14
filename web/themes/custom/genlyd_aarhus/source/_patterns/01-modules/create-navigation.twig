@@ -1,0 +1,21 @@
+{% embed "@modules/grid/grid-fourths.twig" %}
+  {% block items %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include "@elements/buttons/button-secondary-dark.twig" with { button: createNavigation.buttonPrev } %}
+
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: createNavigation.buttonNext } %}
+
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}

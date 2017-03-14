@@ -1,0 +1,57 @@
+{
+  "introduction": {
+    "headingWithIcon": {
+      "title": "Velkommen til Genlyd Aarhus",
+      "subtitle": "Herunder finder du en kort introduktion til Genlyd og hvordan du opretter en aktivitet.",
+      "iconClass": "hidden-tablet-down",
+      "icon": {
+        "type": "create",
+        "color": "light"
+      }
+    },
+    "progressBar": {
+      "items": [
+        {
+          "title": "Velkommen"
+        },
+        {
+          "title": "Om aktiviteten"
+        },
+        {
+          "title": "Kategorier"
+        },
+        {
+          "title": "Billede"
+        },
+        {
+          "title": "Detaljer",
+          "active": true
+        }
+      ]
+    },
+    "createNavigation": {
+      "buttonNext": {
+        "class": "is-cta is-full-width",
+        "href": "#",
+        "title": "Lav et opslag"
+      },
+      "buttonPrev": {
+        "class": "is-secondary is-dark is-full-width",
+        "href": "#",
+        "title": "Tilbage"
+      }
+    },    
+    "textWithIcon": {
+      "title": "Hvordan opretter jeg en aktivitet?",
+      "icon": {
+        "type": "arrow",
+        "class": "is-small is-green-dark", 
+        "color": "light"
+      }
+    },
+    "image": {
+      "src": "http://placehold.it/500x500"
+    },
+    "text": "Til sidst kan du tilføje de vigtige detaljer som adresse og dato. Du kan se dit opslag, inden du godkender det."
+  }
+}
