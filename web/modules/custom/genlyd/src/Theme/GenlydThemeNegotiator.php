@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains \Drupal\genlyd\Theme\ThemeNegotiator.
+ * Contains \Drupal\genlyd\Theme\GenlydThemeNegotiator.
  */
 
 namespace Drupal\genlyd\Theme;
@@ -12,11 +12,11 @@ use Drupal\Core\Theme\ThemeNegotiatorInterface;
 /**
  * Class ThemeNegotiator
  *
- * Controllers which theme is applies to a given path.
+ * Controls which theme is applies to a given path.
  *
  * @package Drupal\genlyd\Theme
  */
-class ThemeNegotiator implements ThemeNegotiatorInterface {
+class GenlydThemeNegotiator implements ThemeNegotiatorInterface {
 
   /**
    * Renegotiate paths from administration theme to genlyd_aarhus theme.
@@ -28,6 +28,12 @@ class ThemeNegotiator implements ThemeNegotiatorInterface {
     switch ($route->getRouteName()) {
       case 'entity.user.edit_form':
         return true;
+      case 'entity.node.edit_form':
+        $node = $route->getParameter('node');
+
+        if ($node->getType() == 'activity') {
+          return true;
+        }
     }
     return false;
   }
