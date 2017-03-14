@@ -34,6 +34,14 @@ class GenlydThemeNegotiator implements ThemeNegotiatorInterface {
         if ($node->getType() == 'activity') {
           return true;
         }
+        return false;
+      case 'node.add':
+        $nodeType = $route->getRawParameter('node_type');
+
+        if ($nodeType == 'activity') {
+          return true;
+        }
+        return false;
     }
     return false;
   }
