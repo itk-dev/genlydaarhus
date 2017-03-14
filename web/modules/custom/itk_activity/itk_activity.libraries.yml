@@ -3,3 +3,10 @@ zipcode:
     js/zipcode.js: {}
   dependencies:
     - core/jquery
+
+fb_share:
+  js:
+    js/fbShare.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
