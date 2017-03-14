@@ -5,7 +5,7 @@
 
 (function ($) {
   $(document).ready(function () {
-    // Facebook initialize function.
+    // Initialize facebook.
     window.fbAsyncInit = function () {
       FB.init({
         appId: drupalSettings.itk_activity.fbShare.appId,
@@ -15,7 +15,7 @@
       FB.AppEvents.logPageView();
     };
 
-    // Add facebook script.
+    // Load facebook sdk.
     var js, fjs = document.getElementsByTagName('script')[0];
     if (document.getElementById('facebook-jssdk')) {
       return;

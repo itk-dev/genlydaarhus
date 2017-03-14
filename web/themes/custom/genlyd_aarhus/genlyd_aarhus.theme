@@ -115,10 +115,12 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 
   // Attach facebook share button js and drupalSettings.
   $variables['#attached']['library'][] = 'itk_activity/fb_share';
-  $variables['#attached']['drupalSettings']['itk_activity']['fbShare'] = [
-    'appId' => \Drupal::config('simple_fb_connect.settings')->get('app_id'),
-    'apiVersion' => \Drupal::config('simple_fb_connect.settings')->get('api_version'),
-    'url' => \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+  $variables['#attached']['drupalSettings']['itk_activity'] = [
+    'fbShare' => [
+      'appId' => \Drupal::config('simple_fb_connect.settings')->get('app_id'),
+      'apiVersion' => \Drupal::config('simple_fb_connect.settings')->get('api_version'),
+      'url' => \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+    ],
   ];
 
   // Set data for template.
