@@ -33,6 +33,12 @@
       {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupButton } %}
     </div>
     <div class="activity-sidebar--social-share">
-      {% include '@modules/social-share.twig' %}
+      <div class="social-share">
+        {% for button in meta.socialShare.buttons %}
+          <div class="social-share--button">
+            {% include '@elements/buttons/real-button.twig' with { buttonClass: "is-secondary is-dark", jsClass: button.jsClass } %}
+          </div>
+        {% endfor %}
+      </div>
     </div>
 </div>

@@ -113,6 +113,16 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     $imageUrl = ImageStyle::load('activity')->buildUrl($image);
   }
 
+  // Attach facebook share button js and drupalSettings.
+  $variables['#attached']['library'][] = 'itk_activity/fb_share';
+  $variables['#attached']['drupalSettings']['itk_activity'] = [
+    'fbShare' => [
+      'appId' => \Drupal::config('simple_fb_connect.settings')->get('app_id'),
+      'apiVersion' => \Drupal::config('simple_fb_connect.settings')->get('api_version'),
+      'url' => \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+    ],
+  ];
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -156,6 +166,14 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
         'number_of_participants_label' => \Drupal::translation()
           ->translate('Signed up users'),
         'signupButton' => $signupButton,
+        'socialShare' => [
+          'buttons' => [
+            [
+              'title' => \Drupal::translation()->translate('Share on facebook'),
+              'jsClass' => 'js-facebook-share-button',
+            ],
+          ]
+        ],
       ]
     ]
   ];
