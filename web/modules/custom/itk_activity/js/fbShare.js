@@ -5,29 +5,32 @@
 
 (function ($) {
   $(document).ready(function () {
-    // Initialize facebook.
-    window.fbAsyncInit = function() {
+    // Facebook initialize function.
+    window.fbAsyncInit = function () {
       FB.init({
-        appId      : drupalSettings.fbShare.appId,
-        xfbml      : true,
-        version    : drupalSettings.fbShare.apiVersion
+        appId: drupalSettings.itk_activity.fbShare.appId,
+        xfbml: true,
+        version: drupalSettings.itk_activity.fbShare.apiVersion
       });
       FB.AppEvents.logPageView();
     };
-    (function(d, s, id){
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) {return;}
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/sdk.js";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));
+
+    // Add facebook script.
+    var js, fjs = document.getElementsByTagName('script')[0];
+    if (document.getElementById('facebook-jssdk')) {
+      return;
+    }
+    js = document.createElement('script');
+    js.id = 'facebook-jssdk';
+    js.src = "//connect.facebook.net/en_US/sdk.js";
+    fjs.parentNode.insertBefore(js, fjs);
 
     // Setup click listener for facebook button.
     $('.js-facebook-share-button').click(function () {
       FB.ui({
         method: 'share',
-        href: drupalSettings.fbShare.url
-      }, function(response){});
+        href: drupalSettings.itk_activity.fbShare.url
+      });
     });
   });
 })(jQuery);
