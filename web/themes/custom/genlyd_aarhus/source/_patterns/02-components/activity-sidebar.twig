@@ -39,6 +39,11 @@
             {% include '@elements/buttons/real-button.twig' with { buttonClass: "is-secondary is-dark", jsClass: button.jsClass } %}
           </div>
         {% endfor %}
+        {% for link in meta.socialShare.links %}
+          <div class="social-share--button">
+            {% include '@elements/buttons/button.twig' with { buttonClass: "is-secondary is-dark", button: link } %}
+          </div>
+        {% endfor %}
       </div>
     </div>
 </div>
