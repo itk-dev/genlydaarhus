@@ -10,3 +10,13 @@ fb_share:
   dependencies:
     - core/jquery
     - core/drupalSettings
+
+timepickers:
+  css:
+    theme:
+      css/jquery.timepicker.min.css: {}
+  js:
+    js/jquery.timepicker.min.js: {}
+    js/timepickers.js: {}
+  dependencies:
+    - core/jquery

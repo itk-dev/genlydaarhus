@@ -44,6 +44,7 @@ class MultistepFormDetails extends MultistepFormBase {
         'placeholder' => $this->t('Must have format: HH:mm, for example: 12:00'),
         'pattern' => '[0-9]{2}:[0-9]{2}',
         'maxlength' => 5,
+        'class' => [ 'js-field-time-start' ],
       ],
       '#required' => TRUE,
       '#title' => $this->t('Time start'),
@@ -58,11 +59,15 @@ class MultistepFormDetails extends MultistepFormBase {
         'placeholder' => $this->t('Must have format: HH:mm, for example: 12:00'),
         'pattern' => '[0-9]{2}:[0-9]{2}',
         'maxlength' => 5,
+        'class' => [ 'js-field-time-end' ],
       ],
       '#required' => TRUE,
       '#title' => $this->t('Time end'),
       '#default_value' => $this->store->get('field_time_end') ? $this->store->get('field_time_end') : NULL,
     );
+
+    // Attach timepickers js.
+    $form['#attached']['library'][] = 'itk_activity/timepickers';
 
     $form['field_price'] = array(
       '#type' => 'number',
