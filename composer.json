@@ -37,7 +37,8 @@
     "drupal/components": "^1.0",
     "drupal/views_block_filter_block": "1.x-dev",
     "drupal/page_manager": "^1.0@alpha",
-    "drupal/simple_fb_connect": "^3.0"
+    "drupal/simple_fb_connect": "^3.0",
+    "drupal/prlp": "^1.3"
   },
   "require-dev": {
     "behat/mink": "~1.7",
@@ -93,6 +94,11 @@
       "drush/contrib/{$name}": [
         "type:drupal-drush"
       ]
+    },
+    "patches": {
+      "drupal/prlp": {
+        "Login redirect not working": "https://www.drupal.org/files/issues/login_redirect_not-2785087-8.patch"
+      }
     }
   }
 }
