@@ -123,6 +123,24 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     ],
   ];
 
+  // Urlencoded newlines.
+  $newlines = rawurlencode("\n\n");
+
+  // Setup mailto link.
+  $mailtoParts = [
+    "mailto:?subject=",
+    rawurlencode(\Drupal::translation()->translate('Here is a suggestion for an activity in a community in Aarhus')),
+    "&body=",
+    rawurlencode(\Drupal::translation()->translate('Try to have a look at this activity in Aarhus.')),
+    $newlines,
+    rawurlencode($node->title->value),
+    $newlines,
+    rawurlencode(\Drupal::translation()->translate('Open this link to see the activity')),
+    ": ",
+    \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+  ];
+  $mailto = implode("", $mailtoParts);
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -172,7 +190,13 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
               'title' => \Drupal::translation()->translate('Share on facebook'),
               'jsClass' => 'js-facebook-share-button',
             ],
-          ]
+          ],
+          'links' => [
+            [
+              'title' => \Drupal::translation()->translate('Share by mail'),
+              'href' => $mailto,
+            ]
+          ],
         ],
       ]
     ]
