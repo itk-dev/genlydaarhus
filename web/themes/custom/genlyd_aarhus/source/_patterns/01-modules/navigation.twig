@@ -3,7 +3,9 @@
     {% for item in navigationItems %}
       <a href="{{ item.url }}" title="{{ item.title }}" class="navigation--item {{ item.class }}">
         <div class="navigation--icon">
-          {% include "@elements/icons/icon.twig" with {icon: { type: "chevron", class: "navigation--icon-transparent is-tiny is-white has-small-margin" }} %}
+          {% set color = (loop.last ? 'is-green-light' : (loop.index == (navigationItems|length) - 1 ? 'is-yellow' : 'is-white')) %}
+
+          {% include "@elements/icons/icon.twig" with {icon: { type: "chevron", class: "navigation--icon-transparent is-tiny has-small-margin " ~ color }} %}
         </div>
         <span>{{ item.title }}</span>
       </a>
