@@ -165,7 +165,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
       ],
       'body' => check_markup($node->body->value, 'filtered_html'),
       'meta' => [
-        'date' => $node->field_date->value,
+        'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'custom', 'j. F Y'),
         'date_label' => $node->field_date->getFieldDefinition()->getLabel(),
         'price' =>
           isset($node->field_price->value) && $node->field_price->value > 0 ?
@@ -230,7 +230,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
       'activityMetas' => [
         [
           'label' => \Drupal::translation()->translate('Date'),
-          'text' => $node->field_date->value,
+          'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'custom', 'j. F Y'),
         ],
         [
           'label' => \Drupal::translation()->translate('Price'),
