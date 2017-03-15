@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "3afb849e3dd334ad10c109bb7cbc9cb5",
+    "content-hash": "48614161219d528c4111f3649ff4ba9f",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1913,7 +1913,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/prlp-8.x-1.3.zip",
-                "reference": null,
+                "reference": "8.x-1.3",
                 "shasum": "ca9cdbc9d0272a11c56e69f0920af4961ed4bf80"
             },
             "require": {
@@ -1927,6 +1927,9 @@
                 "drupal": {
                     "version": "8.x-1.3",
                     "datestamp": "1488994219"
+                },
+                "patches_applied": {
+                    "Login redirect not working": "https://www.drupal.org/files/issues/login_redirect_not-2785087-8.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -1955,17 +1958,17 @@
         },
         {
             "name": "drupal/redirect",
-            "version": "1.0.0-alpha3",
+            "version": "1.0.0-alpha4",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/redirect",
-                "reference": "8.x-1.0-alpha3"
+                "reference": "8.x-1.0-alpha4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha3.zip",
-                "reference": "8.x-1.0-alpha3",
-                "shasum": "9e27696fdb8a4992694151fdde5588cfac28c789"
+                "url": "https://ftp.drupal.org/files/projects/redirect-8.x-1.0-alpha4.zip",
+                "reference": null,
+                "shasum": "883401f9983a00ac23bfda9830bf6b77d53209ad"
             },
             "require": {
                 "drupal/core": "~8"
@@ -1976,8 +1979,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha3",
-                    "datestamp": "1486078383"
+                    "version": "8.x-1.0-alpha4",
+                    "datestamp": "1487092684"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
