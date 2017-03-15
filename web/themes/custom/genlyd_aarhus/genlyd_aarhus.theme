@@ -106,7 +106,6 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     ];
   } else {
     $signupButton = [
-      // @TODO: ?destination=' . $currentPath,
       'href' => '/user',
       'title' => \Drupal::translation()->translate('Login to register'),
     ];
