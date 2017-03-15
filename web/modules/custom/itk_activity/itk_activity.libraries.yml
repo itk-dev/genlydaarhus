@@ -15,6 +15,7 @@ timepickers:
   css:
     theme:
       css/jquery.timepicker.min.css: {}
+      css/timepickers.css: {}
   js:
     js/jquery.timepicker.min.js: {}
     js/timepickers.js: {}

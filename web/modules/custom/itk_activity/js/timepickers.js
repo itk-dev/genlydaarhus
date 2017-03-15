@@ -9,7 +9,7 @@
       timeFormat: 'HH:mm',
       interval: 30,
       defaultTime: '8',
-      startTime: '8:00',
+      startTime: '07:00',
       dynamic: false,
       dropdown: true,
       scrollbar: true
