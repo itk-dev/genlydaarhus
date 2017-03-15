@@ -40,10 +40,16 @@ class ActivityExternalSignupUserForm extends FormBase {
     // Set node for later processing.
     $form_state->set('node', $node);
 
-    $form['name'] = array(
+    $form['first_name'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('Name'),
+      '#title' => $this->t('First name'),
+    );
+
+    $form['surname'] = array(
+      '#type' => 'textfield',
+      '#required' => TRUE,
+      '#title' => $this->t('Surname'),
     );
 
     $form['email'] = array(
@@ -80,14 +86,16 @@ class ActivityExternalSignupUserForm extends FormBase {
     $node = $form_state->get('node');
 
     if (isset($node)) {
-      $name = $form_state->getValue('name');
+      $firstName = $form_state->getValue('first_name');
+      $surname = $form_state->getValue('surname');
       $email = $form_state->getValue('email');
       $phone = $form_state->getValue('phone');
 
       // Create new external user entity.
       $externalUser = ExternalUser::create([
         'type' => 'itk_activity_external_user',
-        'name' => $name,
+        'first_name' => $firstName,
+        'surname' => $surname,
         'email' => $email,
         'phone' => $phone,
       ]);
@@ -98,7 +106,7 @@ class ActivityExternalSignupUserForm extends FormBase {
       $node->save();
 
       // Add message.
-      drupal_set_message($name . t(' is registered to activity.'));
+      drupal_set_message($firstName . t(' is registered to activity.'));
     }
     else {
       drupal_set_message(t('Activity is not set.'));

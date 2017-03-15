@@ -138,9 +138,18 @@ class ExternalUser extends ContentEntityBase implements ExternalUserInterface {
 
     // Entity specific fields.
 
-    $fields['name'] = BaseFieldDefinition::create('string')
-      ->setLabel(t('Name'))
-      ->setDescription(t('The name of the ExternalUser entity.'))
+    $fields['first_name'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('First name'))
+      ->setDescription(t('The first name of the ExternalUser entity.'))
+      ->setSettings(array(
+        'default_value' => '',
+        'max_length' => 255,
+        'text_processing' => 0,
+      ));
+
+    $fields['surname'] = BaseFieldDefinition::create('string')
+      ->setLabel(t('Surname'))
+      ->setDescription(t('The surname of the ExternalUser entity.'))
       ->setSettings(array(
         'default_value' => '',
         'max_length' => 255,
