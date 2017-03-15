@@ -8,8 +8,10 @@ namespace Drupal\itk_activity\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\itk_activity\Entity\ExternalUser;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Drupal\Core\Url;
+use Drupal\node\Entity\Node;
 
 /**
  * ActivityExternalSignupUserForm.
@@ -75,20 +77,32 @@ class ActivityExternalSignupUserForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $name = $form_state->getValue('name');
-    $email = $form_state->getValue('email');
-    $phone = $form_state->getValue('phone');
-
     $node = $form_state->get('node');
 
     if (isset($node)) {
-      $node->field_external_signed_up_users[] = $name . " - " . $email . " - " . $phone;
+      $name = $form_state->getValue('name');
+      $email = $form_state->getValue('email');
+      $phone = $form_state->getValue('phone');
 
+      // Create new external user entity.
+      $externalUser = ExternalUser::create([
+        'type' => 'itk_activity_external_user',
+        'name' => $name,
+        'email' => $email,
+        'phone' => $phone,
+      ]);
+      $externalUser->save();
+
+      // Update activity node.
+      $node->field_external_signed_up_users[] = $externalUser;
       $node->save();
-    }
 
-    // Add message.
-    drupal_set_message(t($name . ' is registered to activity.'));
+      // Add message.
+      drupal_set_message($name . t(' is registered to activity.'));
+    }
+    else {
+      drupal_set_message(t('Activity is not set.'));
+    }
 
     // Redirect to node.
     $form_state->setRedirect('entity.node.canonical', ['node' => $node->id()]);

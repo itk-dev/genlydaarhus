@@ -71,10 +71,11 @@ content:
   field_external_signed_up_users:
     weight: 31
     settings:
+      match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
-    type: string_textfield
+    type: entity_reference_autocomplete
   field_help_needed:
     weight: 8
     settings: {  }

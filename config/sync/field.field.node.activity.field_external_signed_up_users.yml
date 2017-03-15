@@ -1,4 +1,4 @@
-uuid: b0c2932e-6b3a-47d6-98d3-e73afcfae2a0
+uuid: 5b458646-7a33-4db9-9f0f-88eaff61e701
 langcode: da
 status: true
 dependencies:
@@ -15,5 +15,7 @@ required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
-settings: {  }
-field_type: string
+settings:
+  handler: 'default:itk_activity_external_user'
+  handler_settings: {  }
+field_type: entity_reference
