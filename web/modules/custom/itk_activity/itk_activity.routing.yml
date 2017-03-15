@@ -16,7 +16,7 @@ itk_activity.external_signup_form:
     _form: '\Drupal\itk_activity\Form\ActivityExternalSignupUserForm'
     _title: 'Sign up external user'
   requirements:
-    _permission: 'access content'
+    _permission: 'access itk_activity external user signup'
 
 # Multi-step create form:
 
