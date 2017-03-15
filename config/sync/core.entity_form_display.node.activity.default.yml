@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.activity.field_categories
     - field.field.node.activity.field_date
     - field.field.node.activity.field_entry_requirements
+    - field.field.node.activity.field_external_signed_up_users
     - field.field.node.activity.field_help_needed
     - field.field.node.activity.field_image
     - field.field.node.activity.field_maximum_participants
@@ -67,6 +68,13 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: options_buttons
+  field_external_signed_up_users:
+    weight: 31
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
   field_help_needed:
     weight: 8
     settings: {  }

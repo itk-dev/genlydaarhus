@@ -9,6 +9,7 @@ dependencies:
     - field.field.node.activity.field_categories
     - field.field.node.activity.field_date
     - field.field.node.activity.field_entry_requirements
+    - field.field.node.activity.field_external_signed_up_users
     - field.field.node.activity.field_help_needed
     - field.field.node.activity.field_image
     - field.field.node.activity.field_maximum_participants
@@ -72,6 +73,13 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+  field_external_signed_up_users:
+    weight: 118
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
   field_help_needed:
     weight: 107
     label: above

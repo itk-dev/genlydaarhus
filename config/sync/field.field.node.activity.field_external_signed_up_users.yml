@@ -1,0 +1,19 @@
+uuid: b0c2932e-6b3a-47d6-98d3-e73afcfae2a0
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_external_signed_up_users
+    - node.type.activity
+id: node.activity.field_external_signed_up_users
+field_name: field_external_signed_up_users
+entity_type: node
+bundle: activity
+label: 'External signed up users'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string
