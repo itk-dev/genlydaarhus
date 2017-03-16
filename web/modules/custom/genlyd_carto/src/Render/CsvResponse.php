@@ -89,7 +89,7 @@ class CsvResponse extends Response {
 
     $output = implode($this->content['header'], ',') . "\r\n";
     foreach ($this->content['rows'] as $row) {
-      $output .= implode($row, ',') . "\r\n";
+      $output .= '"' . implode($row, '","') . '"' . "\r\n";
     }
 
     echo $output;
