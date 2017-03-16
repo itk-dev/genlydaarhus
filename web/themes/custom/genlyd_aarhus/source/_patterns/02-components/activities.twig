@@ -1,18 +1,22 @@
 <section class="container">
   <div class="container--inner">
-    {% embed "@modules/grid/grid-full.twig" %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@modules/heading-with-icon.twig" %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
+    {% if headingWithIcon %}
+      {% embed "@modules/grid/grid-full.twig" %}
+        {% block items %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {% include "@modules/heading-with-icon.twig" %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
 
     {% if rows %}
       {# Render Drupal #}
       {{ rows }}
+
+      {{ pager }}
     {% else %}
       {# Render Pattern Lab #}
       {% embed "@modules/grid/grid-fourths.twig" %}
@@ -28,14 +32,16 @@
       {% endembed %}
     {% endif %}
 
-    {% embed "@modules/grid/grid-full.twig" %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
+    {% if callToAction %}
+      {% embed "@modules/grid/grid-full.twig" %}
+        {% block items %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
   </div>
 </section>

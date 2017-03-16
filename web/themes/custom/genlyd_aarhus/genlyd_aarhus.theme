@@ -276,7 +276,7 @@ function genlyd_aarhus_views_pre_render(&$view) {
   $id = $view->id();
 
   // Attach header and footer data to activity views.
-  if ($id === 'activity_popular' || $id === 'activity_recent') {
+  if ($id === 'activity_popular' || $id === 'activity_recent' || $id === 'activity_user') {
     $view->data = (object) [];
 
     $header = $view->header;
