@@ -87,7 +87,7 @@ class CsvResponse extends Response {
       throw new \UnexpectedValueException('The CSV content is not filled in correctly');
     }
 
-    $output = implode($this->content['header'], ',') . "\r\n";
+    $output = '"' . implode($this->content['header'], '","') . '"' . "\r\n";
     foreach ($this->content['rows'] as $row) {
       $output .= '"' . implode($row, '","') . '"' . "\r\n";
     }
