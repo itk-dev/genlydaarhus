@@ -38,7 +38,7 @@ class CsvResponse extends Response {
       if (empty($content['header']) || empty($content['rows'])) {
         throw new \UnexpectedValueException('The content do not have the right format (header and rows keys missing).');
       }
-      
+
       $this->content = $content;
     }
     else {
