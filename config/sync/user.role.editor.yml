@@ -33,3 +33,4 @@ permissions:
   - 'access itk footer'
   - 'access itk info section'
   - 'access itk admin links'
+  - 'access itk_activity external user signup'

@@ -1,0 +1,20 @@
+uuid: f4b1d5b7-a148-40d9-9482-7cd85efb5074
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_activity
+    - node
+id: node.field_external_signed_up_users
+field_name: field_external_signed_up_users
+entity_type: node
+type: entity_reference
+settings:
+  target_type: itk_activity_external_user
+module: core
+locked: false
+cardinality: -1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

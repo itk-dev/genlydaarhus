@@ -1,0 +1,98 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" with { headingWithIcon: externalSignup.headingWithIcon, icon: externalSignup.headingWithIcon.icon } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+<form{{ attributes.removeClass('itk-activity-external-signup-form') }}>
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+
+      {% if children %}
+        {# Render Drupal form #}
+        {% set form = element %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.first_name }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.surname }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.email }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.phone }}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.submit }}
+          {% endblock %}
+        {% endembed %}
+
+        {{ form.form_build_id }}
+        {{ form.form_token }}
+        {{ form.form_id }}
+      {% else %}
+        {# Render Pattern Lab #}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "First name" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'first_name' } %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Surname" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'surname' } %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Email" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'email', 'name': 'email' } %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Phone" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'tel', 'name': 'phone' } %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/buttons/button-input-call-to-action.twig" %}
+          {% endblock %}
+        {% endembed %}
+
+      {% endif %}
+
+    {% endblock %}
+  {% endembed %}
+</form>
+
