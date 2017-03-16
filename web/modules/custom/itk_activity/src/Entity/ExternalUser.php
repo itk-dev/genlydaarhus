@@ -137,7 +137,6 @@ class ExternalUser extends ContentEntityBase implements ExternalUserInterface {
       ->setReadOnly(TRUE);
 
     // Entity specific fields.
-
     $fields['first_name'] = BaseFieldDefinition::create('string')
       ->setLabel(t('First name'))
       ->setDescription(t('The first name of the ExternalUser entity.'))

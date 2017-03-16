@@ -106,7 +106,9 @@ class ActivityExternalSignupUserForm extends FormBase {
       $node->save();
 
       // Add message.
-      drupal_set_message($firstName . t(' is registered to activity.'));
+      drupal_set_message(t(':first_name is registered to activity.', [
+        ':first_name' => $firstName,
+      ]));
     }
     else {
       drupal_set_message(t('Activity is not set.'));
