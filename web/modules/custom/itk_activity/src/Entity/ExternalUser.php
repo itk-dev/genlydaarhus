@@ -28,6 +28,7 @@ use Drupal\user\UserInterface;
  *   fieldable = TRUE,
  *   entity_keys = {
  *     "id" = "id",
+ *     "label" = "first_name",
  *     "uuid" = "uuid"
  *   }
  * )
