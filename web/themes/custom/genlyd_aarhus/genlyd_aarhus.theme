@@ -68,13 +68,14 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   }
 
   $currentUser = \Drupal::currentUser();
+  $currentPath = \Drupal::service('path.alias_manager')->getAliasByPath(\Drupal::service('path.current')->getPath());
 
-  $current_path = \Drupal::service('path.current')->getPath();
-  $current_path = \Drupal::service('path.alias_manager')->getAliasByPath($current_path);
+  $signupButton = NULL;
+  $externalSignupButton = NULL;
 
-  if ($currentUser->id() > 0) {
+  // Only show register to logged in users.
+  if (!$currentUser->isAnonymous()) {
     // Not anonymous user.
-
     $signedUpUsers = $node->field_signed_up_users->referencedEntities();
 
     $alreadyAdded = FALSE;
@@ -88,19 +89,23 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 
     if ($alreadyAdded) {
       $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $current_path,
+        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $currentPath,
         'title' => \Drupal::translation()->translate('Unregister'),
       ];
     }
     else {
       $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $current_path,
+        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $currentPath,
         'title' => \Drupal::translation()->translate('Register'),
       ];
     }
+
+    $externalSignupButton = [
+      'href' => '/activity/' . $node->id() . '/external_signup',
+      'title' => \Drupal::translation()->translate('Register other user'),
+    ];
   } else {
     $signupButton = [
-      // @TODO: ?destination=' . $current_path,
       'href' => '/user',
       'title' => \Drupal::translation()->translate('Login to register'),
     ];
@@ -180,10 +185,11 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
         'address_label' => $node->field_address->getFieldDefinition()->getLabel(),
         'owner' =>  $node->uid->entity->name->value,
         'owner_label' => \Drupal::translation()->translate('Owner'),
-        'number_of_participants' => $node->field_signed_up_users->count(),
+        'number_of_participants' => $node->field_signed_up_users->count() + $node->field_external_signed_up_users->count(),
         'number_of_participants_label' => \Drupal::translation()
           ->translate('Signed up users'),
         'signupButton' => $signupButton,
+        'signupExternalButton' => $externalSignupButton,
         'socialShare' => [
           'buttons' => [
             [

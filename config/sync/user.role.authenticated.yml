@@ -15,3 +15,4 @@ permissions:
   - 'delete own activity content'
   - 'edit own activity content'
   - 'view own unpublished content'
+  - 'access itk_activity external user signup'
