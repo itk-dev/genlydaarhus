@@ -1,4 +1,4 @@
-uuid: 2cbe1db8-0ff7-4fe6-964c-726c604d4a47
+uuid: 169a127d-4f77-4679-b14a-d2234b734b66
 langcode: da
 status: true
 dependencies:
@@ -9,14 +9,14 @@ dependencies:
     - views
   theme:
     - genlyd_aarhus
-id: views_block__activity_user_registered_block
+id: views_block__genlyd_activities_registered
 theme: genlyd_aarhus
 region: content
 weight: 0
 provider: null
-plugin: 'views_block:activity_user_registered-genlyd_block_activities_user_registered'
+plugin: 'views_block:activity_user_registered-genlyd_activities_registered'
 settings:
-  id: 'views_block:activity_user_registered-genlyd_block_activities_user_registered'
+  id: 'views_block:activity_user_registered-genlyd_activities_registered'
   label: ''
   provider: views
   label_display: '0'
