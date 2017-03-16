@@ -1,4 +1,4 @@
-uuid: 563a7e7a-06ab-4e95-8ed3-930dca6813c1
+uuid: 228125a8-ae23-484b-93b7-aa1d5d542db6
 langcode: da
 status: true
 dependencies:
@@ -9,8 +9,8 @@ dependencies:
   module:
     - node
     - user
-id: activity_user
-label: 'Activity User'
+id: activity_user_registered
+label: 'Activity User Registered'
 module: views
 description: ''
 tag: ''
@@ -54,7 +54,7 @@ display:
         options:
           items_per_page: 4
           offset: 0
-          id: 1
+          id: 2
           total_pages: null
           tags:
             previous: ‹‹
@@ -277,23 +277,21 @@ display:
       footer: {  }
       empty: {  }
       relationships:
-        uid:
-          id: uid
-          table: node_field_data
-          field: uid
+        field_signed_up_users:
+          id: field_signed_up_users
+          table: node__field_signed_up_users
+          field: field_signed_up_users
           relationship: none
           group_type: group
-          admin_label: author
-          required: false
-          entity_type: node
-          entity_field: uid
+          admin_label: 'field_signed_up_users: User'
+          required: true
           plugin_id: standard
       arguments:
         uid:
           id: uid
           table: users_field_data
           field: uid
-          relationship: uid
+          relationship: field_signed_up_users
           group_type: group
           admin_label: ''
           default_action: default
@@ -344,15 +342,15 @@ display:
         - user.permissions
       tags:
         - 'config:field.storage.node.field_categories'
-  genlyd_block_activity_user:
+  genlyd_block_activities_user_registered:
     display_plugin: block
-    id: genlyd_block_activity_user
-    display_title: 'Activity User'
+    id: genlyd_block_activities_user_registered
+    display_title: 'Activity User Registered'
     position: 1
     display_options:
       display_extenders: {  }
       exposed_block: true
-      display_description: 'Used to display activities owned by user'
+      display_description: 'Displays the activities the user is registered to.'
     cache_metadata:
       max-age: -1
       contexts:

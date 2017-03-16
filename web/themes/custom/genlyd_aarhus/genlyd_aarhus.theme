@@ -236,7 +236,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
       'activityMetas' => [
         [
           'label' => \Drupal::translation()->translate('Date'),
-          'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'custom', 'j. F Y'),
+          'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'custom', 'j. M Y'),
         ],
         [
           'label' => \Drupal::translation()->translate('Price'),
