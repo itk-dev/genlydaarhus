@@ -16,9 +16,11 @@
  * @see template_preprocess_user()
  */
 #}
-TODO: user
+
 <article{{ attributes }}>
   {% if content %}
     {{- content -}}
   {% endif %}
 </article>
+
+{% include "@components/user-profile.twig" %}

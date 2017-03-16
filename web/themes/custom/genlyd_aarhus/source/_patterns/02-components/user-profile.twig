@@ -1,0 +1,41 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
+          {% block content %}
+            {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: userForm.headingWithIcon.title, subtitle: userForm.headingWithIcon.subtitle, icon: { type: "create", color: 'light' } } } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+        {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userForm.textWithIcon.title } } %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% embed "@modules/grid/grid-halfs.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
