@@ -1,47 +1,43 @@
-<section class="container">
-  <div class="container--inner">
-    {% if headingWithIcon %}
-      {% embed "@modules/grid/grid-full.twig" %}
-        {% block items %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {% include "@modules/heading-with-icon.twig" %}
-            {% endblock %}
-          {% endembed %}
+{% if headingWithIcon %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/heading-with-icon.twig" %}
         {% endblock %}
       {% endembed %}
-    {% endif %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}
 
-    {% if rows %}
-      {# Render Drupal #}
-      {{ rows }}
+{% if rows %}
+  {# Render Drupal #}
+  {{ rows }}
 
-      {{ pager }}
-    {% else %}
-      {# Render Pattern Lab #}
-      {% embed "@modules/grid/grid-fourths.twig" %}
-        {% block items %}
-          {% for cardActivity in activities %}
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-                {% include "@components/card-activity.twig" %}
-              {% endblock %}
-            {% endembed %}
-          {% endfor %}
+  {{ pager }}
+{% else %}
+  {# Render Pattern Lab #}
+  {% embed "@modules/grid/grid-fourths.twig" %}
+    {% block items %}
+      {% for cardActivity in activities %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@components/card-activity.twig" %}
+          {% endblock %}
+        {% endembed %}
+      {% endfor %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}
+
+{% if callToAction %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
         {% endblock %}
       {% endembed %}
-    {% endif %}
-
-    {% if callToAction %}
-      {% embed "@modules/grid/grid-full.twig" %}
-        {% block items %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {% include "@modules/call-to-action.twig" with { callToAction: callToAction } %}
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      {% endembed %}
-    {% endif %}
-  </div>
-</section>
+    {% endblock %}
+  {% endembed %}
+{% endif %}
