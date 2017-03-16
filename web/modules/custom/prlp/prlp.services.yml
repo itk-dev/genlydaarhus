@@ -1,5 +1,0 @@
-services:
-  prlp.route_subscriber:
-    class: Drupal\prlp\Routing\RouteSubscriber
-    tags:
-      - { name: event_subscriber }
