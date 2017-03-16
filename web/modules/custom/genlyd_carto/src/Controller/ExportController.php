@@ -31,7 +31,7 @@ class ExportController extends ControllerBase {
     $response = new CsvResponse();
 
     // Set headers in the CSV file.
-    $response->setHeaderRow(['Title', 'Image', 'Address', 'Postel', 'Area', 'Encoded address', 'URL']);
+    $response->setHeaderRow(['Title', 'Image', 'Address', 'Postal code', 'Area', 'Encoded address', 'URL']);
 
     foreach ($activities as $activity) {
       // Load image and use image style.

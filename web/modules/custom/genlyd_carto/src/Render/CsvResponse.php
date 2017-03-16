@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * Defines new CSV response object.
+ */
 
 namespace Drupal\genlyd_carto\Render;
 
@@ -6,8 +10,9 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 /**
+ * Defines new CSV response object.
  *
- * @see \Drupal\Core\Cache\CacheableResponse
+ * @see \Symfony\Component\HttpFoundation\Response
  */
 class CsvResponse extends Response {
 
@@ -30,7 +35,10 @@ class CsvResponse extends Response {
     $this->headers->set('Content-Type', 'application/CSV');
 
     if (!empty($content)) {
-      // @TODO: check format for the content parameter.
+      if (empty($content['header']) || empty($content['rows'])) {
+        throw new \UnexpectedValueException('The content do not have the right format (header and rows keys missing).');
+      }
+      
       $this->content = $content;
     }
     else {
