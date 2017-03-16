@@ -4,7 +4,7 @@
       {% block content %}
         {% embed "@modules/grid/grid-item-header-section.twig" %}
           {% block content %}
-            {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: userForm.headingWithIcon.title, subtitle: userForm.headingWithIcon.subtitle, icon: { type: "create", color: 'light' } } } %}
+            {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: userProfile.headingWithIcon.title, subtitle: userProfile.headingWithIcon.subtitle, icon: { type: "create", color: 'light' } } } %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
@@ -13,7 +13,7 @@
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
 
-        {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userForm.textWithIcon.title } } %}
+        {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userProfile.personalDetails } } %}
 
       {% endblock %}
     {% endembed %}
@@ -24,9 +24,34 @@
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Username' | trans, value: userProfile.username } } %}
       {% endblock %}
     {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Email' | trans, value: userProfile.email } } %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'First name' | trans, value: userProfile.first_name } } %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Surname' | trans, value: userProfile.surname } } %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: userProfile.editProfileButton } %}
+      {% endblock %}
+    {% endembed %}
+
   {% endblock %}
 {% endembed %}
 
