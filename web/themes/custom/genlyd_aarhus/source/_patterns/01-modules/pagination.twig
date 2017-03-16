@@ -1,0 +1,39 @@
+{% if items %}
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <div class="pagination">
+            {% if items.first %}
+              <a href="{{ item.first.href }}">«</a>
+            {% else %}
+              <a class="is-disabled">«</a>
+            {% endif %}
+
+            {% if items.previous %}
+              <a href="{{ item.previous.href }}">‹</a>
+            {% else %}
+              <a class="is-disabled">‹</a>
+            {% endif %}
+
+            {% for key, item in items.pages %}
+              <a href="{{ item.href }}" class="{{ current == key ? 'is-active' : '' }}">{{ key }}</a>
+            {% endfor %}
+
+            {% if items.next %}
+              <a href="{{ item.next.href }}">›</a>
+            {% else %}
+              <a class="is-disabled">›</a>
+            {% endif %}
+
+            {% if items.last %}
+              <a href="{{ item.last.href }}">»</a>
+            {% else %}
+              <a class="is-disabled">»</a>
+            {% endif %}
+          </div>
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}
