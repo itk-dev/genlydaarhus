@@ -20,6 +20,47 @@
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
 
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userForm.passwordTitle.title } } %}
+
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.pass.pass1 }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass1' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.pass.pass2 }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord (Bekræft)" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass2' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
           {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userForm.textWithIcon.title } } %}
 
         {% endblock %}
@@ -74,30 +115,6 @@
             {# Pattern Lab #}
             {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Email" } } %}
             {% include "@elements/forms/text-field.twig" with {'type': 'text', 'name': 'mail' } %}
-          {% endif %}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {% if form %}
-            {# Drupal #}
-            {{ form.account.pass.pass1 }}
-          {% else %}
-            {# Pattern Lab #}
-            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord" } } %}
-            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass1' } %}
-          {% endif %}
-        {% endblock %}
-      {% endembed %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {% if form %}
-            {# Drupal #}
-            {{ form.account.pass.pass2 }}
-          {% else %}
-            {# Pattern Lab #}
-            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Kodeord (Bekræft)" } } %}
-            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'pass2' } %}
           {% endif %}
         {% endblock %}
       {% endembed %}

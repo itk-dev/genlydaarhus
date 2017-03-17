@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "48614161219d528c4111f3649ff4ba9f",
+    "content-hash": "68dcc985ff9be353c8cf15d3c5e242c0",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1900,60 +1900,6 @@
             "homepage": "https://www.drupal.org/project/pathauto",
             "support": {
                 "source": "http://cgit.drupalcode.org/pathauto"
-            }
-        },
-        {
-            "name": "drupal/prlp",
-            "version": "1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/prlp",
-                "reference": "8.x-1.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/prlp-8.x-1.3.zip",
-                "reference": "8.x-1.3",
-                "shasum": "ca9cdbc9d0272a11c56e69f0920af4961ed4bf80"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.3",
-                    "datestamp": "1488994219"
-                },
-                "patches_applied": {
-                    "Login redirect not working": "https://www.drupal.org/files/issues/login_redirect_not-2785087-8.patch"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Jitesh Doshi",
-                    "homepage": "https://www.drupal.org/user/1799550"
-                },
-                {
-                    "name": "Tcraw",
-                    "homepage": "https://www.drupal.org/user/2899465"
-                },
-                {
-                    "name": "greggles",
-                    "homepage": "https://www.drupal.org/user/36762"
-                }
-            ],
-            "description": "Enhances the password reset landing page by letting user change their password on arrival via the password reset link",
-            "homepage": "https://www.drupal.org/project/prlp",
-            "support": {
-                "source": "http://cgit.drupalcode.org/prlp"
             }
         },
         {
