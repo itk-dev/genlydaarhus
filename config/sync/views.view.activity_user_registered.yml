@@ -261,7 +261,7 @@ display:
           admin_label: Title
           empty: false
           tokenize: false
-          content: 'Your activities'
+          content: 'Activities registered to'
           plugin_id: text_custom
         area_text_custom_1:
           id: area_text_custom_1
@@ -272,7 +272,7 @@ display:
           admin_label: Subtitle
           empty: false
           tokenize: false
-          content: 'Here you can see your activities.'
+          content: 'Here you can see the activities you are registered to.'
           plugin_id: text_custom
       footer: {  }
       empty: {  }
