@@ -9,19 +9,52 @@
  * @see template_preprocess_views_exposed_form()
  */
 #}
+{% if q is not empty %}
+  {#
+    This ensures that, if clean URLs are off, the 'q' is added first,
+    as a hidden form element, so that it shows up first in the POST URL.
+  #}
+  {{ q }}
+{% endif %}
 {% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
 
-        {% if q is not empty %}
-          {#
-            This ensures that, if clean URLs are off, the 'q' is added first,
-            as a hidden form element, so that it shows up first in the POST URL.
-          #}
-          {{ q }}
-        {% endif %}
-        {{ form }}
+        {% embed "@modules/grid/grid-fourths.twig" %}
+          {% block items %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {{ form.title }}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {{ form.actions }}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                <div class="activity-action">
+                  <p class="activity-action--text">{{ "Filter the results" | trans }}</p>
+                  <div class="activity-action--button">
+                    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Filters" }, jsClass: "js-filters-toggle" } %}
+                  </div>
+                </div>
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+      {% endblock %}
+    {% endembed %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        <div class="filters js-filters">
+          {{ form.field_categories_target_id }}
+        </div>
+
+        {{ form|without('actions', 'title', 'field_categories_target_id') }}
 
       {% endblock %}
     {% endembed %}

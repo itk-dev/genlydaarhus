@@ -1,0 +1,35 @@
+uuid: 4a0ac41d-06b7-4f0a-8099-6aa0835cca61
+langcode: da
+status: true
+dependencies:
+  config:
+    - page_manager.page.activities
+    - views.view.activity
+  module:
+    - views
+id: activities-block_display-0
+label: Activities
+variant: block_display
+variant_settings:
+  blocks:
+    71a61a00-a70d-410a-b2ac-44d38c8bbfe3:
+      id: 'views_block:activity-block_1'
+      label: ''
+      provider: views
+      label_display: '0'
+      views_label: ''
+      items_per_page: none
+      region: top
+      weight: -9
+      uuid: 71a61a00-a70d-410a-b2ac-44d38c8bbfe3
+      context_mapping: {  }
+  id: block_display
+  uuid: 9c53339f-9d25-4f11-aeed-4d4da18b6361
+  label: null
+  weight: 0
+  page_title: Activities
+page: activities
+weight: 0
+selection_criteria: {  }
+selection_logic: and
+static_context: {  }

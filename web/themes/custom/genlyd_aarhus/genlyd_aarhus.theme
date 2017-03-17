@@ -277,7 +277,7 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
   $id = $view->id();
 
   // Attach header and footer data to activity views.
-  if ($id === 'activity_popular' || $id === 'activity_recent' || $id === 'activity_user' || $id === 'activity_user_registered') {
+  if ($id == 'activity_popular' || $id == 'activity_recent' || $id == 'activity_user' || $id == 'activity_user_registered' || $id == 'activity') {
     $view->data = (object) [];
 
     $header = $view->header;
@@ -308,5 +308,8 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
         $view->data->footer->button_link = \Drupal::translation()->translate('' . $footer['area_text_custom_2']->options['content']);
       }
     }
+
+    // Attach filters js.
+    $view->element['#attached']['library'][] = 'genlyd_aarhus/filters';
   }
 }
