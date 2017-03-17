@@ -82,6 +82,7 @@ There are included two platform.sh apps in the project (app and styleguide).
 #### Connect with platform.sh
 
 ```sh
+cd /vagrant/htdocs
 platform    # login
 platform project:set-remote [Project ID]
 ```
@@ -96,4 +97,9 @@ git push platform develop       # or master
 
 ```sh
 platform drush-aliases
+```
+
+#### Pull database
+```sh
+drush pull-dev
 ```

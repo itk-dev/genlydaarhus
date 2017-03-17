@@ -1,0 +1,20 @@
+.ui-timepicker-container {
+  width: 310px !important;
+  font: 1em/1.5 "Open Sans",Arial,sans-serif;
+}
+
+.ui-timepicker {
+  width: 300px !important;
+}
+
+.ui-timepicker-viewport {
+  width: 300px !important;
+}
+
+.ui-state-hover {
+  background: #F2F7F7 !important;
+}
+
+.ui-menu-item {
+  width: 285px !important;
+}

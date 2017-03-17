@@ -1,0 +1,27 @@
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination a {
+  color: $color-black;
+  cursor: pointer;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+.pagination a.is-active {
+  background-color: $color-yellow;
+}
+
+.pagination a.is-disabled {
+  color: $color-gray-light;
+}
+
+.pagination a:hover {
+  background-color: $color-green-light;
+}
+
+.pagination a:hover.is-disabled {
+  background-color: transparent;
+}

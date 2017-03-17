@@ -28,15 +28,24 @@
         {% include "@elements/activity-info.twig" with { activityInfo: { meta: meta.number_of_participants_label, data: meta.number_of_participants }} %}
       </div>
     </div>
-
     <div class="activity-sidebar--signup">
       {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupButton } %}
     </div>
+    {% if meta.signupExternalButton %}
+    <div class="activity-sidebar--signup">
+      {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupExternalButton } %}
+    </div>
+    {% endif %}
     <div class="activity-sidebar--social-share">
       <div class="social-share">
         {% for button in meta.socialShare.buttons %}
           <div class="social-share--button">
             {% include '@elements/buttons/real-button.twig' with { buttonClass: "is-secondary is-dark", jsClass: button.jsClass } %}
+          </div>
+        {% endfor %}
+        {% for link in meta.socialShare.links %}
+          <div class="social-share--button">
+            {% include '@elements/buttons/button.twig' with { buttonClass: "is-secondary is-dark", button: link } %}
           </div>
         {% endfor %}
       </div>

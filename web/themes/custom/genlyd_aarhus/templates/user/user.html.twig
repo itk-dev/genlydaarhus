@@ -16,9 +16,21 @@
  * @see template_preprocess_user()
  */
 #}
-TODO: user
-<article{{ attributes }}>
-  {% if content %}
-    {{- content -}}
-  {% endif %}
-</article>
+
+{% set userProfile = {
+  username: user.name.value,
+  email: user.mail.value,
+  first_name: user.field_first_name.value,
+  surname: user.surname.value,
+  headingWithIcon: {
+    title: "User profile" | trans,
+    subtitle: "Here you can see your details, your own activities and those activities you are signed up to." | trans
+  },
+  personalDetails: "Personal details" | trans,
+  editProfileButton: {
+    title: "Edit profile" | trans,
+    href: path( 'entity.user.edit_form', {'user': user.id} )
+  }
+} %}
+
+{% include "@components/user-profile.twig" %}

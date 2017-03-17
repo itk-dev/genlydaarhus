@@ -1,0 +1,30 @@
+uuid: 169a127d-4f77-4679-b14a-d2234b734b66
+langcode: da
+status: true
+dependencies:
+  config:
+    - views.view.activity_user_registered
+  module:
+    - system
+    - views
+  theme:
+    - genlyd_aarhus
+id: views_block__genlyd_activities_registered
+theme: genlyd_aarhus
+region: content
+weight: 0
+provider: null
+plugin: 'views_block:activity_user_registered-genlyd_activities_registered'
+settings:
+  id: 'views_block:activity_user_registered-genlyd_activities_registered'
+  label: ''
+  provider: views
+  label_display: '0'
+  views_label: ''
+  items_per_page: none
+visibility:
+  request_path:
+    id: request_path
+    pages: '/user/*'
+    negate: false
+    context_mapping: {  }

@@ -10,6 +10,14 @@ itk_activity.action_signup:
   options:
     _admin_route: TRUE
 
+itk_activity.external_signup_form:
+  path: '/activity/{nid}/external_signup'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\ActivityExternalSignupUserForm'
+    _title: 'Sign up external user'
+  requirements:
+    _permission: 'access itk_activity external user signup'
+
 # Multi-step create form:
 
 itk_activity.multistep_about:
