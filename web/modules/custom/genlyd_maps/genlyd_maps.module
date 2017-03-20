@@ -1,8 +1,8 @@
 <?php
 /**
  * @file
+ * Defines drupal hooks used by the module.
  */
-
 
 /**
  * Implements hook_theme().

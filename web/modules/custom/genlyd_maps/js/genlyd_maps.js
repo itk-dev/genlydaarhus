@@ -61,9 +61,6 @@ function addActivities(map) {
   jQuery.ajax({
     url: '/api/maps/activities.json'
   }).done(function(data) {
-
-    console.log(data);
-
     var format = new ol.format.GeoJSON({
       defaultDataProjection: 'EPSG:4326'
     });
@@ -74,8 +71,6 @@ function addActivities(map) {
         featureProjection: 'EPSG:3857'
       })
     });
-
-    console.log(dataSource.getFeatures()[0].getGeometry().getCoordinates());
 
     // Find the marker to use or fallback to default.
     var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;

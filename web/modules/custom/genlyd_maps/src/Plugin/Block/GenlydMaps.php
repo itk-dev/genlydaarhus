@@ -1,13 +1,16 @@
 <?php
+/**
+ * @file
+ * Defines block to display activities map.
+ */
 
 namespace Drupal\genlyd_maps\Plugin\Block;
 
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Menu\MenuTreeParameters;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Provides itk_footer content
+ * Provides activities map block content.
  *
  * @Block(
  *   id = "genlyd_map",

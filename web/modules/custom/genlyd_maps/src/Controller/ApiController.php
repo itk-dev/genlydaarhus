@@ -26,6 +26,9 @@ class ApiController extends ControllerBase {
    *   The activities as GeoJSON encoded array.
    */
   public function activates() {
+    /**
+     * @TODO: Filter based on date?
+     */
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $ids = $storage->getQuery()
       ->condition('type', 'activity')
