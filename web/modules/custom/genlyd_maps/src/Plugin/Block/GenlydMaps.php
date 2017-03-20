@@ -26,6 +26,12 @@ class GenlydMaps extends BlockBase {
           'genlyd_maps/openlayers',
           'genlyd_maps/maps',
         ],
+        'drupalSettings' => [
+          'genlyd_maps' => [
+            'path' => '/' . drupal_get_path('module', 'genlyd_maps'),
+            'marker' => '/images/marker.png',
+          ],
+        ],
       ],
     ];
   }

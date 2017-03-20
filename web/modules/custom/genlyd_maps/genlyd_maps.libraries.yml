@@ -4,6 +4,7 @@ maps:
     js/genlyd_maps.js: {}
   dependencies:
     - genlyd_maps/openlayers
+    - core/jquery
 
 openlayers:
   js:

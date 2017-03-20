@@ -50,6 +50,57 @@ function mapDebugInfo(map) {
   });
 }
 
+
+/**
+ * Add activities.
+ *
+ * @param {ol.Map} map
+ *   The OpenLayers map object.
+ */
+function addActivities(map) {
+  jQuery.ajax({
+    url: '/api/maps/activities.json'
+  }).done(function(data) {
+
+    console.log(data);
+
+    var format = new ol.format.GeoJSON({
+      defaultDataProjection: 'EPSG:4326'
+    });
+
+    var dataSource = new ol.source.Vector({
+      features: format.readFeatures(data, {
+        dataProjection: 'EPSG:4326',
+        featureProjection: 'EPSG:3857'
+      })
+    });
+
+    console.log(dataSource.getFeatures()[0].getGeometry().getCoordinates());
+
+    // Find the marker to use or fallback to default.
+    var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
+    console.log(markerUrl);
+
+    var dataLayer = new ol.layer.Vector({
+      source: dataSource,
+      visible: true,
+      style: new ol.style.Style({
+        image: new ol.style.Icon({
+          anchor: [0.5, 40],
+          anchorXUnits: 'fraction',
+          anchorYUnits: 'pixels',
+          src: markerUrl,
+          scale: 1.0
+        })
+      })
+    });
+
+    // Add the layer to the map.
+    map.addLayer(dataLayer);
+    map.getView().fit(dataSource.getExtent(), map.getSize());
+  });
+}
+
 /**
  * OpenStreetMap layer to use in test.
  *
@@ -63,5 +114,6 @@ function addOSMMap(map) {
 }
 
 var map = initOpenlayersMap();
-mapDebugInfo(map);
+//mapDebugInfo(map);
 addOSMMap(map);
+addActivities(map);

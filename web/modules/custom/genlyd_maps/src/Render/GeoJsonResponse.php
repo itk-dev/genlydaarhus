@@ -43,12 +43,12 @@ class GeoJsonResponse extends Response {
     }
     else {
       $this->content = [
-        'crs' => [
+        /*'crs' => [
           'type' => 'EPSG',
           'properties' => [
             'code' => '4326',
           ],
-        ],
+        ],*/
         'type' => 'FeatureCollection',
         'features' => [],
       ];
