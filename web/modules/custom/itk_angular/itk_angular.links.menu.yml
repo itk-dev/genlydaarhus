@@ -1,5 +1,0 @@
-itk_angular.admin:
-  title: 'AngularJS'
-  description: 'Configure basic AngularJS settings.'
-  parent: system.admin_structure
-  route_name: itk_angular.settings

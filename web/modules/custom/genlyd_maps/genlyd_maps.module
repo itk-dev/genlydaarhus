@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ */
+
+
+/**
+ * Implements hook_theme().
+ */
+function genlyd_maps_theme($existing, $type, $theme, $path) {
+  return array(
+    'genlyd_maps_map_block' => array(
+      'variables' => array(),
+    ),
+  );
+}

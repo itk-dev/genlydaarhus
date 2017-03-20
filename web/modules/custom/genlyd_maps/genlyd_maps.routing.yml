@@ -1,0 +1,7 @@
+genlyd_maps.activities:
+  path: '/api/maps/activities.json'
+  defaults:
+    _controller: '\Drupal\genlyd_maps\Controller\ApiController::activates'
+    _title: 'Encode activity as geo-json'
+  requirements:
+    _permission: 'access content'

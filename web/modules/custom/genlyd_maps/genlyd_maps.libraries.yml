@@ -1,0 +1,14 @@
+maps:
+  js:
+    js/libs/twig/twig.min.js: { minified: true }
+    js/genlyd_maps.js: {}
+  dependencies:
+    - genlyd_maps/openlayers
+
+openlayers:
+  js:
+    js/libs/proj4/proj4-compressed.js: { minified: true }
+    js/libs/openlayers/ol.js: { minified: true }
+  css:
+    base:
+      js/libs/openlayers/ol.css: {}
