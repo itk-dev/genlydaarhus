@@ -45,11 +45,11 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
           bef:
@@ -57,7 +57,13 @@ display:
               allow_secondary: false
               secondary_label: 'Advanced options'
               autosubmit: false
-              autosubmit_hide: true
+              autosubmit_hide: false
+            title:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
             field_categories_target_id:
               bef_format: bef
               more_options:
@@ -383,7 +389,7 @@ display:
         operator: AND
         groups:
           1: AND
-      use_ajax: false
+      use_ajax: true
     cache_metadata:
       max-age: -1
       contexts:
@@ -400,10 +406,9 @@ display:
     display_plugin: block
     id: block_1
     display_title: Block
-    position: 1
+    position: 2
     display_options:
       display_extenders: {  }
-      exposed_block: false
     cache_metadata:
       max-age: -1
       contexts:

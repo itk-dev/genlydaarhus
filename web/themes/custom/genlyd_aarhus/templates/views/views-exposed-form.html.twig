@@ -16,12 +16,12 @@
   #}
   {{ q }}
 {% endif %}
+
 {% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-
-        {% embed "@modules/grid/grid-fourths.twig" %}
+        {% embed "@modules/grid/grid-halfs.twig" %}
           {% block items %}
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
@@ -30,32 +30,33 @@
             {% endembed %}
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
-                {{ form.actions }}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-                <div class="activity-action">
-                  <p class="activity-action--text">{{ "Filter the results" | trans }}</p>
-                  <div class="activity-action--button">
-                    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Filters" }, jsClass: "js-filters-toggle" } %}
-                  </div>
-                </div>
+                {% embed "@modules/grid/grid-halfs.twig" %}
+                  {% block items %}
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {{ form.actions }}
+                      {% endblock %}
+                    {% endembed %}
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" | trans }, jsClass: "js-filters-toggle" } %}
+                      {% endblock %}
+                    {% endembed %}
+                  {% endblock %}
+                {% endembed %}
               {% endblock %}
             {% endembed %}
           {% endblock %}
         {% endembed %}
-
       {% endblock %}
     {% endembed %}
+
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
         <div class="filters js-filters">
           {{ form.field_categories_target_id }}
         </div>
-
         {{ form|without('actions', 'title', 'field_categories_target_id') }}
-
       {% endblock %}
     {% endembed %}
   {% endblock %}

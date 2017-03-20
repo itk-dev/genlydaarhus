@@ -94,6 +94,11 @@
       "drush/contrib/{$name}": [
         "type:drupal-drush"
       ]
+    },
+    "patches": {
+      "drupal/core": {
+        "Fix ajax error": "https://www.drupal.org/files/issues/2771361-7-do-not-attach-ajax-to-non-present-views.patch"
+      }
     }
   }
 }

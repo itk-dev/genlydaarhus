@@ -10,16 +10,8 @@
   {% endembed %}
 {% endif %}
 
-{% if rows %}
-  {% embed "@modules/grid/grid-full.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {{ exposed }}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  {% endembed %}
+{% if view %}
+  {{ exposed }}
 
   {# Render Drupal #}
   {{ rows }}
