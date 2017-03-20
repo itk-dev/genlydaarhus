@@ -1,0 +1,8 @@
+name: ITK AngularJS
+type: module
+description: 'Adds AngularJS to the site'
+package: ITK
+core: '8.x'
+dependencies:
+  - block
+  - user
