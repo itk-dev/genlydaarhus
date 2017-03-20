@@ -1,0 +1,7 @@
+itk_angular.settings:
+  path: '/admin/structure/angular/settings'
+  defaults:
+    _form: '\Drupal\itk_angular\Form\ITKAngularSettingFrom'
+    _title: 'AngularJS'
+  requirements:
+    _permission: 'administer site configuration'
