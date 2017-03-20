@@ -81,10 +81,11 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 
     $alreadyAdded = FALSE;
 
-    // Remove user if already added.
-    for ($i = 0; $i < count($signedUpUsers); $i++) {
-      if ($signedUpUsers[$i]->uid->value == $currentUser->id()) {
+    // Is the user registered to the activity?
+    foreach ($signedUpUsers as $user) {
+      if ($user->uid->value == $currentUser->id()) {
         $alreadyAdded = TRUE;
+        break;
       }
     }
 
@@ -308,8 +309,17 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
         $view->data->footer->button_link = \Drupal::translation()->translate('' . $footer['area_text_custom_2']->options['content']);
       }
     }
+  }
 
+  // Attach filter js to
+  if ($id == 'activity') {
     // Attach filters js.
     $view->element['#attached']['library'][] = 'genlyd_aarhus/filters';
+    $view->element['#attached']['drupalSettings']['itk_activity'] = [
+      'filterButton' => [
+        'textShow' => \Drupal::translation()->translate('Show filters'),
+        'textHide' => \Drupal::translation()->translate('Hide filters'),
+      ],
+    ];
   }
 }

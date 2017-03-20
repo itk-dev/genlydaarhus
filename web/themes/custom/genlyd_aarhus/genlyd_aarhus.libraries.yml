@@ -23,3 +23,7 @@ filters:
   version: 1.x
   js:
     source/assets/js/filters.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings
+    - core/jquery.cookie

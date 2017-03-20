@@ -44,7 +44,7 @@ class ActivityController extends ControllerBase {
     if ($alreadyAdded) {
       // If already added, set new array.
       $activity->set('field_signed_up_users', $signedUpUsers);
-      drupal_set_message(t('Unregistered to activity.'));
+      drupal_set_message(t('Unregistered from activity.'));
     }
     else {
       // If not, add to array.
