@@ -86,10 +86,6 @@ class GeoJsonResponse extends Response {
    * @return $this
    */
   public function sendContent() {
-    if (empty($this->content['header']) || empty($this->content['rows'])) {
-      throw new \UnexpectedValueException('The CSV content is not filled in correctly');
-    }
-
     echo json_encode($this->content);
 
     return $this;
