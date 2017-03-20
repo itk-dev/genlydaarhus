@@ -7,8 +7,9 @@
     // Find button and filters in DOM.
     var button = $('.js-filters-toggle');
     var filters = $('.js-filters');
-    // Get show filters from cookie.
-    var showFilters = ($.cookie('showfilters') == "true");
+
+    // If a category filter is active in the url, open the filters.
+    var showFilters = window.location.href.split('field_categories_target_id').length > 1 ? true : false;
 
     // Get button config.
     var buttonConfig;
@@ -35,7 +36,6 @@
         filters.hide();
       }
     };
-
     setFilters();
 
     // Show and hide filters on click
@@ -46,11 +46,7 @@
       // Toggle filter variable.
       showFilters = !showFilters;
 
-      // Set cookie.
-      $.cookie('showfilters', showFilters, { expires: 1 });
-
       setFilters();
     });
-
   });
 }(jQuery));
