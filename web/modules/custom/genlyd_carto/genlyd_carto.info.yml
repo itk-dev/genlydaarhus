@@ -1,4 +1,0 @@
-name: Genlyd Caro export
-type: module
-description: 'Export genlyd activity as CSV feed'
-core: 8.x
