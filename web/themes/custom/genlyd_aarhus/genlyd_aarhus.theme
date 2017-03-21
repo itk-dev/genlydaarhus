@@ -81,10 +81,11 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 
     $alreadyAdded = FALSE;
 
-    // Remove user if already added.
-    for ($i = 0; $i < count($signedUpUsers); $i++) {
-      if ($signedUpUsers[$i]->uid->value == $currentUser->id()) {
+    // Is the user registered to the activity?
+    foreach ($signedUpUsers as $user) {
+      if ($user->uid->value == $currentUser->id()) {
         $alreadyAdded = TRUE;
+        break;
       }
     }
 
@@ -173,10 +174,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
         'date_label' => $node->field_date->getFieldDefinition()->getLabel(),
-        'price' =>
-          isset($node->field_price->value) && $node->field_price->value > 0 ?
-            $node->field_price->value :
-            \Drupal::translation()->translate('Free'),
+        'price' => _genlyd_aarhus_get_price_text($node->field_price->value),
         'price_label' => $node->field_price->getFieldDefinition()->getLabel(),
         'start_time' => $node->field_time_start->value,
         'start_time_label' => $node->field_time_start->getFieldDefinition()->getLabel(),
@@ -241,11 +239,11 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
         ],
         [
           'label' => \Drupal::translation()->translate('Price'),
-          'text' => $node->field_price->value,
+          'text' => _genlyd_aarhus_get_price_text($node->field_price->value),
         ],
         [
           'label' => \Drupal::translation()->translate('Area'),
-          'text' => $node->field_zipcode->value,
+          'text' => $node->field_area->value,
         ],
         [
           'label' => \Drupal::translation()->translate('Participants'),
@@ -277,7 +275,7 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
   $id = $view->id();
 
   // Attach header and footer data to activity views.
-  if ($id === 'activity_popular' || $id === 'activity_recent' || $id === 'activity_user' || $id === 'activity_user_registered') {
+  if ($id == 'activity_popular' || $id == 'activity_recent' || $id == 'activity_user' || $id == 'activity_user_registered' || $id == 'activity') {
     $view->data = (object) [];
 
     $header = $view->header;
@@ -308,5 +306,35 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
         $view->data->footer->button_link = \Drupal::translation()->translate('' . $footer['area_text_custom_2']->options['content']);
       }
     }
+  }
+
+  // Attach filter js to
+  if ($id == 'activity') {
+    // Attach filters js.
+    $view->element['#attached']['library'][] = 'genlyd_aarhus/filters';
+    $view->element['#attached']['drupalSettings']['itk_activity'] = [
+      'filterButton' => [
+        'textShow' => \Drupal::translation()->translate('Show filters'),
+        'textHide' => \Drupal::translation()->translate('Hide filters'),
+      ],
+    ];
+  }
+}
+
+/**
+ * Get the text for the price.
+ *
+ * @param $price
+ *   The value of the price field.
+ * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+ *   The markup result.
+ */
+function _genlyd_aarhus_get_price_text($price) {
+  // Set price text.
+  if (!isset($price) || $price <= 0) {
+    return \Drupal::translation()->translate('Free');
+  }
+  else {
+    return \Drupal::translation()->translate(':price kr.', [':price' => $price]);
   }
 }
