@@ -2,6 +2,13 @@
 
 ## In develop
 
+## v1.0.0-alpha6
+
+* Added ellipsis for activity teaser heading text.
+* Added permission for creating activity.
+
+## v1.0.0-alpha5
+
 * Fixed pagination arrows.
 * Fixed /activity block, for searching through activities.
 * Added free text search.

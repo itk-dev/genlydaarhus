@@ -1,3 +1,11 @@
 'access itk_activity external user signup':
   title: 'Access activity external user signup form'
   description: 'Access to signing up external users to activities.'
+
+'access itk_activity user signup':
+  title: 'Access activity user signup form'
+  description: 'Allow user to signup for activity.'
+
+'create itk_activity activity':
+  title: 'Access the creation form'
+  description: 'Allow users to access the creation form.'
