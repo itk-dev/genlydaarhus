@@ -1,0 +1,4 @@
+itk_cookie_message.settings:
+  title: 'Cookie message'
+  route_name: itk_cookie_message.settings
+  parent: system.admin_content
