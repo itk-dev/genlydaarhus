@@ -26,7 +26,10 @@
 
   &--content {
     bottom: 0;
+    overflow: hidden;
     position: absolute;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     width: 100%;
   }
 }
