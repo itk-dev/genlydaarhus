@@ -6,19 +6,19 @@ dependencies:
     - language
     - node
 id: aktiviteter
-label: Aktivity
+label: Activity
 type: 'canonical_entities:node'
 pattern: '[node:content-type:name]/[node:title]'
 selection_criteria:
-  c770188c-148d-4887-862e-9a22b40355b2:
+  680daf4c-b835-440f-afcd-32ad7adc5071:
     id: node_type
     bundles:
       activity: activity
     negate: false
     context_mapping:
       node: node
-    uuid: c770188c-148d-4887-862e-9a22b40355b2
-  36f91f2c-7115-4383-be37-4d2e7d12a4d2:
+    uuid: 680daf4c-b835-440f-afcd-32ad7adc5071
+  66bb9d69-7fa1-409a-ade7-9f4554bace39:
     id: language
     langcodes:
       da: da
@@ -26,7 +26,7 @@ selection_criteria:
     negate: false
     context_mapping:
       language: 'node:langcode:language'
-    uuid: 36f91f2c-7115-4383-be37-4d2e7d12a4d2
+    uuid: 66bb9d69-7fa1-409a-ade7-9f4554bace39
 selection_logic: and
 weight: -10
 relationships:
