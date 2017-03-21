@@ -5,6 +5,7 @@ maps:
   dependencies:
     - genlyd_maps/openlayers
     - core/jquery
+    - core/drupal
 
 openlayers:
   js:

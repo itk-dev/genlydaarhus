@@ -33,6 +33,7 @@ class GenlydMaps extends BlockBase {
           'genlyd_maps' => [
             'path' => '/' . drupal_get_path('module', 'genlyd_maps'),
             'marker' => '/images/marker.png',
+            'template' => '/js/templates/popup.html.twig',
           ],
         ],
       ],

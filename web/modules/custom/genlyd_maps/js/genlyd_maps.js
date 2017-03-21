@@ -1,14 +1,7 @@
-
-var template = Twig.twig({
-  id: "list", // id is optional, but useful for referencing the template later
-  data: "{% for value in list %}{{ value }}, {% endfor %}"
-});
-
-var output = template.render({
-  list: ["one", "two", "three"]
-});
-
-console.log(output);
+/**
+ * @file
+ * Javascript to load OSM and plot activities.
+ */
 
 /**
  * Initialize the OpenLayers Map.
@@ -34,6 +27,17 @@ function initOpenlayersMap() {
 }
 
 /**
+ * Load template used by popup's for markers.
+ */
+function loadPopupTemplate() {
+  var template = Twig.twig({
+    id: 'popup',
+    href: drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.template,
+    async: false
+  });
+}
+
+/**
  * Display information about the map.
  *
  * Used when debuging and changes in configuration.
@@ -50,6 +54,105 @@ function mapDebugInfo(map) {
   });
 }
 
+/**
+ * Add feature event clicks with popup.
+ *
+ * @param {ol.Map} map
+ *   The OpenLayers map object.
+ */
+function addPopups(map) {
+  // Get the popup element from the DOM and add it to the map as an overlay.
+  var element = document.getElementById('popup');
+  var popup = new ol.Overlay({
+    element: element,
+    positioning: 'top-center'
+  });
+  map.addOverlay(popup);
+
+  // Change mouse cursor when over a marker.
+  var target =  document.getElementById(map.getTarget());
+  map.on('pointermove', function(e) {
+    var pixel = map.getEventPixel(e.originalEvent);
+    var hit = map.hasFeatureAtPixel(pixel);
+    if (hit) {
+      target.style.cursor = 'pointer';
+    }
+    else {
+      target.style.cursor = '';
+    }
+  });
+
+  // Display popup on click.
+  map.on('click', function(evt) {
+    // Loop over the features at the current event point.
+    map.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
+
+      // Move popup to the right position.
+      var coordinates = evt.coordinate;
+      popup.setPosition(coordinates);
+
+      // Get properties and render them with twig into popup content.
+      var properties = feature.getProperties();
+      element.innerHTML = Twig.twig({ ref: 'popup' }).render(properties);
+
+      // Get hold of the close button and when clicked hide it.
+      var close = document.getElementsByClassName('js-close-button');
+      if (close.length) {
+        close[0].addEventListener('click', function() {
+          element.innerHTML = '';
+        });
+      }
+
+      // This is used to move the popup/map into view if this partly outside the
+      // current view area.
+      var bs_element = document.getElementsByClassName('popup')[0];
+      var clicked_pixel = evt.pixel;
+      var mapSize = map.getSize();
+
+      var offset_height = 10;
+      var offset_width = 10;
+
+      // Get popup height.
+      var popup_height = Math.max(
+          bs_element.scrollHeight,
+          bs_element.offsetHeight,
+          bs_element.clientHeight
+        ) + offset_height;
+
+      // Get popup width.
+      var popup_width = Math.max(
+          bs_element.scrollWidth,
+          bs_element.offsetWidth,
+          bs_element.clientWidth
+        ) + offset_width;
+
+      // Calculate if the popup is outside the view area.
+      var height_left = mapSize[1] - clicked_pixel[1] - popup_height;
+      var width_left = mapSize[0] - clicked_pixel[0] - popup_width;
+
+      // Get current view and map center.
+      var view = map.getView();
+      var center_px = map.getPixelFromCoordinate(view.getCenter());
+
+      // Check if we are outside map view.
+      if (height_left < 0 || width_left < 0) {
+        if (height_left < 0) {
+          center_px[1] -= height_left;
+        }
+        if (width_left < 0) {
+          center_px[0] -= width_left;
+        }
+
+        view.animate({
+          center: map.getCoordinateFromPixel(center_px),
+          duration: 300
+        });
+      }
+
+
+    });
+  });
+}
 
 /**
  * Add activities.
@@ -110,5 +213,7 @@ function addOSMMap(map) {
 
 var map = initOpenlayersMap();
 //mapDebugInfo(map);
+loadPopupTemplate();
 addOSMMap(map);
 addActivities(map);
+addPopups(map);

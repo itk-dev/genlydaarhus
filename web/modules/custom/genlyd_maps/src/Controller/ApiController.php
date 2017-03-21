@@ -52,10 +52,19 @@ class ApiController extends ControllerBase {
       $file = File::load($activity->get('field_image')->entity->id());
       $image_uri = ImageStyle::load('activity_teaser')->buildUrl($file->getFileUri());
 
+      // Get the prices for this activity.
+      $priceRaw = $activity->field_price->value;
+      $price = \Drupal::translation()->translate('Free');
+      if (isset($priceRaw) || $priceRaw > 0) {
+        $price = \Drupal::translation()->translate(':price kr.', [ ':price' => $priceRaw ]);
+      }
+
       // Create metadata, which can be used in the marker popup's.
       $metadata = [
         'title' => $activity->getTitle(),
         'image' => $image_uri,
+        'date' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+        'price' => $price,
         'address' => $activity->get('field_address')->value,
         'zipcode' => $activity->get('field_zipcode')->value,
         'area' => $activity->get('field_area')->value,
