@@ -61,6 +61,11 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
     > .grid--item {
       margin-top: 0;
     }
+
+    &.is-centered {
+      align-items: center;
+      display: flex;
+    }
   }
 
   &--item-header-section,
