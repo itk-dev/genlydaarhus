@@ -340,7 +340,7 @@ display:
           exposed: true
           expose:
             operator_id: field_zipcode_value_op
-            label: 'Zipcode (field_zipcode)'
+            label: Zipcode
             description: ''
             use_operator: false
             operator: field_zipcode_value_op
