@@ -147,16 +147,6 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   ];
   $mailto = implode("", $mailtoParts);
 
-
-  // Set price text.
-  $price = $node->field_price->value;
-  if (!isset($price) || $price <= 0) {
-    $price = \Drupal::translation()->translate('Free');
-  }
-  else {
-    $price = \Drupal::translation()->translate(':price kr.', [':price' => $price]);
-  }
-
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -183,7 +173,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
         'date_label' => $node->field_date->getFieldDefinition()->getLabel(),
-        'price' => $price,
+        'price' => _genlyd_aarhus_get_price_text($node->field_price->value),
         'price_label' => $node->field_price->getFieldDefinition()->getLabel(),
         'start_time' => $node->field_time_start->value,
         'start_time_label' => $node->field_time_start->getFieldDefinition()->getLabel(),
@@ -232,15 +222,6 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
     $imageUrl = ImageStyle::load('activity_teaser')->buildUrl($image);
   }
 
-  // Set price text.
-  $price = $node->field_price->value;
-  if (!isset($price) || $price <= 0) {
-    $price = \Drupal::translation()->translate('Free');
-  }
-  else {
-    $price = \Drupal::translation()->translate(':price kr.', [':price' => $price]);
-  }
-
   $variables['cardActivity'] = [
     'link' => $node->toUrl()->toString(),
     'cardHeader' => [
@@ -257,7 +238,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
         ],
         [
           'label' => \Drupal::translation()->translate('Price'),
-          'text' => $price
+          'text' => _genlyd_aarhus_get_price_text($node->field_price->value),
         ],
         [
           'label' => \Drupal::translation()->translate('Area'),
@@ -324,5 +305,23 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
         $view->data->footer->button_link = \Drupal::translation()->translate('' . $footer['area_text_custom_2']->options['content']);
       }
     }
+  }
+}
+
+/**
+ * Get the text for the price.
+ *
+ * @param $price
+ *   The value of the price field.
+ * @return \Drupal\Core\StringTranslation\TranslatableMarkup
+ *   The markup result.
+ */
+function _genlyd_aarhus_get_price_text($price) {
+  // Set price text.
+  if (!isset($price) || $price <= 0) {
+    return \Drupal::translation()->translate('Free');
+  }
+  else {
+    return \Drupal::translation()->translate(':price kr.', [':price' => $price]);
   }
 }
