@@ -2,6 +2,14 @@
 
 ## In develop
 
+* Fixed pagination arrows.
+* Fixed /activity block, for searching through activities.
+* Added free text search.
+* Fixed filters styling.
+* Addes sorting by next activity.
+* Fixed checkbox styling.
+* Added "Free" text when price it not set or set to 0.
+
 ## v1.0.0-alpha4
 
 * Added register for external users.

@@ -5,13 +5,13 @@
         {% block content %}
           <div class="pagination">
             {% if items.first %}
-              <a href="{{ item.first.href }}">«</a>
+              <a href="{{ items.first.href }}">«</a>
             {% else %}
               <a class="is-disabled">«</a>
             {% endif %}
 
             {% if items.previous %}
-              <a href="{{ item.previous.href }}">‹</a>
+              <a href="{{ items.previous.href }}">‹</a>
             {% else %}
               <a class="is-disabled">‹</a>
             {% endif %}
@@ -21,13 +21,13 @@
             {% endfor %}
 
             {% if items.next %}
-              <a href="{{ item.next.href }}">›</a>
+              <a href="{{ items.next.href }}">›</a>
             {% else %}
               <a class="is-disabled">›</a>
             {% endif %}
 
             {% if items.last %}
-              <a href="{{ item.last.href }}">»</a>
+              <a href="{{ items.last.href }}">»</a>
             {% else %}
               <a class="is-disabled">»</a>
             {% endif %}

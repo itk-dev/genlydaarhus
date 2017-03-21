@@ -10,7 +10,9 @@
   {% endembed %}
 {% endif %}
 
-{% if rows %}
+{% if view %}
+  {{ exposed }}
+
   {# Render Drupal #}
   {{ rows }}
 
