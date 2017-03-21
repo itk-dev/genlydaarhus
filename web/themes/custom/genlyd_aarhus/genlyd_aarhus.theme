@@ -225,6 +225,15 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
     $imageUrl = ImageStyle::load('activity_teaser')->buildUrl($image);
   }
 
+  // Set price text.
+  $price = $node->field_price->value;
+  if (!isset($price)) {
+    $price = \Drupal::translation()->translate('Free');
+  }
+  else {
+    $price = \Drupal::translation()->translate(':price kr.', [':price' => $price]);
+  }
+
   $variables['cardActivity'] = [
     'link' => $node->toUrl()->toString(),
     'cardHeader' => [
@@ -241,11 +250,11 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
         ],
         [
           'label' => \Drupal::translation()->translate('Price'),
-          'text' => $node->field_price->value,
+          'text' => $price
         ],
         [
           'label' => \Drupal::translation()->translate('Area'),
-          'text' => $node->field_zipcode->value,
+          'text' => $node->field_area->value,
         ],
         [
           'label' => \Drupal::translation()->translate('Participants'),
