@@ -147,6 +147,16 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   ];
   $mailto = implode("", $mailtoParts);
 
+
+  // Set price text.
+  $price = $node->field_price->value;
+  if (!isset($price) || $price <= 0) {
+    $price = \Drupal::translation()->translate('Free');
+  }
+  else {
+    $price = \Drupal::translation()->translate(':price kr.', [':price' => $price]);
+  }
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -173,10 +183,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
         'date_label' => $node->field_date->getFieldDefinition()->getLabel(),
-        'price' =>
-          isset($node->field_price->value) && $node->field_price->value > 0 ?
-            $node->field_price->value :
-            \Drupal::translation()->translate('Free'),
+        'price' => $price,
         'price_label' => $node->field_price->getFieldDefinition()->getLabel(),
         'start_time' => $node->field_time_start->value,
         'start_time_label' => $node->field_time_start->getFieldDefinition()->getLabel(),
@@ -227,7 +234,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
 
   // Set price text.
   $price = $node->field_price->value;
-  if (!isset($price)) {
+  if (!isset($price) || $price <= 0) {
     $price = \Drupal::translation()->translate('Free');
   }
   else {
