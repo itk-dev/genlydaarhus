@@ -8,6 +8,8 @@ dependencies:
     - node.type.activity
     - taxonomy.vocabulary.categories
   module:
+    - better_exposed_filters
+    - datetime
     - node
     - taxonomy
     - user
@@ -42,15 +44,35 @@ display:
           query_comment: ''
           query_tags: {  }
       exposed_form:
-        type: basic
+        type: bef
         options:
-          submit_button: Apply
+          submit_button: Search
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
-          expose_sort_order: true
+          expose_sort_order: false
           sort_asc_label: Asc
           sort_desc_label: Desc
+          bef:
+            general:
+              allow_secondary: false
+              secondary_label: 'Advanced options'
+              autosubmit: false
+              autosubmit_hide: false
+            title:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_categories_target_id:
+              bef_format: bef
+              more_options:
+                bef_select_all_none: false
+                bef_collapsible: false
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
       pager:
         type: full
         options:
@@ -201,6 +223,16 @@ display:
           field_api_classes: false
           plugin_id: field
       filters:
+        type:
+          id: type
+          table: node_field_data
+          field: type
+          value:
+            activity: activity
+          entity_type: node
+          entity_field: type
+          plugin_id: bundle
+          group: 1
         status:
           value: '1'
           table: node_field_data
@@ -212,16 +244,86 @@ display:
           expose:
             operator: ''
           group: 1
-        type:
-          id: type
-          table: node_field_data
-          field: type
+        field_date_value:
+          id: field_date_value
+          table: node__field_date
+          field: field_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '>='
           value:
-            activity: activity
-          entity_type: node
-          entity_field: type
-          plugin_id: bundle
+            min: ''
+            max: ''
+            value: '-0 hours'
+            type: offset
           group: 1
+          exposed: false
+          expose:
+            operator_id: ''
+            label: ''
+            description: ''
+            use_operator: false
+            operator: ''
+            identifier: ''
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: datetime
+        title:
+          id: title
+          table: node_field_data
+          field: title
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: contains
+          value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: title_op
+            label: Title
+            description: ''
+            use_operator: false
+            operator: title_op
+            identifier: title
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          entity_type: node
+          entity_field: title
+          plugin_id: string
         field_categories_target_id:
           id: field_categories_target_id
           table: node__field_categories
@@ -229,7 +331,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: and
+          operator: or
           value: {  }
           group: 1
           exposed: true
@@ -250,17 +352,29 @@ display:
             reduce: false
           is_grouped: false
           group_info:
-            label: ''
+            label: 'Categories (field_categories)'
             description: ''
-            identifier: ''
+            identifier: field_categories_target_id
             optional: true
             widget: select
-            multiple: false
+            multiple: true
             remember: false
-            default_group: All
+            default_group: '1'
             default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
+            group_items:
+              1:
+                title: ''
+                operator: and
+                value: {  }
+              2:
+                title: ''
+                operator: and
+                value: {  }
+              3:
+                title: ''
+                operator: and
+                value: {  }
+          reduce_duplicates: true
           type: select
           limit: true
           vid: categories
@@ -268,6 +382,19 @@ display:
           error_message: true
           plugin_id: taxonomy_index_tid
       sorts:
+        field_date_value:
+          id: field_date_value
+          table: node__field_date
+          field: field_date_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          granularity: second
+          plugin_id: datetime
         created:
           id: created
           table: node_field_data
@@ -284,7 +411,29 @@ display:
             label: ''
           granularity: second
       title: Activity
-      header: {  }
+      header:
+        area_text_custom:
+          id: area_text_custom
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: Title
+          empty: false
+          tokenize: false
+          content: 'Search activities'
+          plugin_id: text_custom
+        area_text_custom_1:
+          id: area_text_custom_1
+          table: views
+          field: area_text_custom
+          relationship: none
+          group_type: group
+          admin_label: Subtitle
+          empty: false
+          tokenize: false
+          content: 'Here you can search available activities'
+          plugin_id: text_custom
       footer: {  }
       empty: {  }
       relationships: {  }
@@ -294,6 +443,8 @@ display:
         operator: AND
         groups:
           1: AND
+      use_ajax: true
+      group_by: false
     cache_metadata:
       max-age: -1
       contexts:
@@ -310,7 +461,7 @@ display:
     display_plugin: block
     id: block_1
     display_title: Block
-    position: 1
+    position: 2
     display_options:
       display_extenders: {  }
     cache_metadata:
@@ -332,7 +483,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: aktiviteter
+      path: activity
     cache_metadata:
       max-age: -1
       contexts:
