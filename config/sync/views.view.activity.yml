@@ -324,6 +324,47 @@ display:
           entity_type: node
           entity_field: title
           plugin_id: string
+        field_zipcode_value:
+          id: field_zipcode_value
+          table: node__field_zipcode
+          field: field_zipcode_value
+          relationship: none
+          group_type: group
+          admin_label: ''
+          operator: '='
+          value:
+            min: ''
+            max: ''
+            value: ''
+          group: 1
+          exposed: true
+          expose:
+            operator_id: field_zipcode_value_op
+            label: 'Zipcode (field_zipcode)'
+            description: ''
+            use_operator: false
+            operator: field_zipcode_value_op
+            identifier: field_zipcode_value
+            required: false
+            remember: false
+            multiple: false
+            remember_roles:
+              authenticated: authenticated
+              anonymous: '0'
+              editor: '0'
+          is_grouped: false
+          group_info:
+            label: ''
+            description: ''
+            identifier: ''
+            optional: true
+            widget: select
+            multiple: false
+            remember: false
+            default_group: All
+            default_group_multiple: {  }
+            group_items: {  }
+          plugin_id: numeric
         field_categories_target_id:
           id: field_categories_target_id
           table: node__field_categories
@@ -483,7 +524,7 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: activity
+      path: aktiviteter
     cache_metadata:
       max-age: -1
       contexts:
