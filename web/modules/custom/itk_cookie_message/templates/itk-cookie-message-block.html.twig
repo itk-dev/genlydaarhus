@@ -1,0 +1,12 @@
+<div id="js-cookieterms" class="cookie-message">
+  <div class="cookies--inner">
+    <span class="cookies--text">{{ text }}.
+    {% if not (read_more_url is empty or read_more_text is empty) %}
+    <a href="{{ read_more_url }}">{{ read_more_text }}</a>.
+    {% endif %}
+    </span>
+    <span class="cookies--agree">
+      <span id="js-cookieterms--agree" class="cookieterms--button button">{{ accept_button_text }}</span>
+    </span>
+  </div>
+</div>

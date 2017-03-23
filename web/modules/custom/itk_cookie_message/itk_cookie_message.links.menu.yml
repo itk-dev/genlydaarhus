@@ -1,0 +1,5 @@
+itk_cookie_message.admin:
+  title: 'Cookie message'
+  description: 'Control settings for cookies.'
+  route_name: itk_cookie_message.settings
+  parent: user.admin_index

@@ -97,3 +97,13 @@ function genlyd_update_8107() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Enable itk_cookie_message.
+ */
+function genlyd_update_8108() {
+  $module_list = array(
+    'itk_cookie_message',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
