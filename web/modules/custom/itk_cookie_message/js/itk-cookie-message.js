@@ -4,10 +4,10 @@
  */
 
 (function ($, Drupal) {
+  'use strict';
+
   Drupal.behaviors.cookieMessageBehavior = {
     attach: function (context, settings) {
-      'use strict';
-
       var cookieName = drupalSettings.itk_cookie_message.cookie_name;
 
       // Inline function to get the current value of the cookie.
@@ -17,9 +17,12 @@
         return result ? (result[1]) : null;
       }();
 
+      // Get the element.
       var el = $('#js-cookieterms');
+
+      // If the cookie has not been set, display the dialog.
       if (!cookieValue) {
-        // Display cookie dialog.
+        // Display cookie dialog. The cookie dialog is hidden by css, as default.
         el.show();
 
         // Handle "Acceptance" of cookie usage.
@@ -27,13 +30,15 @@
           var expiryDate = new Date(new Date().getTime() + drupalSettings.itk_cookie_message.cookie_lifetime * 1000);
           document.cookie = cookieName + '=true; path=/; expires=' + expiryDate.toGMTString();
 
-          // Hide the dialog.
+          // Hide the dialog, by sliding it up.
           el.slideUp('fast', function slideUp() {
+            // Remove the element from the DOM.
             el.empty().remove();
           });
         });
       }
       else {
+        // Remove the element from the DOM, since it should not be shown.
         el.remove();
       }
     }
