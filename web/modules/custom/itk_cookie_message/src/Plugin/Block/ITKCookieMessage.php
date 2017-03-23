@@ -24,19 +24,15 @@ class ITKCookieMessage extends BlockBase {
    */
   public function build() {
     $settings = _itk_cookie_message_get_settings();
-    $config = \Drupal::config('itk_cookie_message.settings');
-
-    $cookieName = $config->get('cookie_name');
-    $cookieLifetime = $config->get('cookie_lifetime');
 
     return [
       '#type' => 'markup',
       '#theme' => 'itk_cookie_message_block',
       '#variables' => [
-        'text' => isset($settings['text']) ? trim($settings['text']) : \Drupal::translation()->translate('We use cookies to improve your user experience'),
-        'read_more_url' => isset($settings['read_more_url']) ? trim($settings['read_more_url']) : '/information-about-cookies',
-        'read_more_text' => isset($settings['read_more_text']) ? trim($settings['read_more_text']) : \Drupal::translation()->translate('Read more about cookies'),
-        'accept_button_text' => isset($settings['accept_button_text']) ? trim($settings['accept_button_text']) : \Drupal::translation()->translate('Accept cookies'),
+        'text' => $settings['text'],
+        'read_more_url' => $settings['read_more_url'],
+        'read_more_text' => $settings['read_more_text'],
+        'accept_button_text' => $settings['accept_button_text'],
       ],
       '#attached' => array(
         'library' => array(
@@ -44,8 +40,8 @@ class ITKCookieMessage extends BlockBase {
         ),
         'drupalSettings' => array(
           'itk_cookie_message' => array(
-            'cookie_name' => isset($cookieName) ? $cookieName : 'accept_cookies',
-            'cookie_lifetime' => isset($cookieLifetime) ? $cookieLifetime : 365 * 24 * 60 * 60,
+            'cookie_name' => $settings['cookie_name'],
+            'cookie_lifetime' => $settings['cookie_lifetime'],
           ),
         ),
       ),

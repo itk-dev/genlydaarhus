@@ -46,30 +46,29 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
       '#group' => 'tabs',
     );
 
-    $key = 'cookie_name';
-    $form['general'][$this->getKey($key)] = array(
+    $form['general'][$this->getKey('cookie_name')] = array(
       '#type' => 'textfield',
       '#title' => $this->t('Cookie name'),
       '#required' => TRUE,
-      '#default_value' => $settings[$key],
+      '#default_value' => $settings['cookie_name'],
     );
 
-    $key = 'cookie_lifetime';
-    $form['general'][$this->getKey($key)] = array(
+    $form['general'][$this->getKey('cookie_lifetime')] = array(
       '#type' => 'select',
       '#title' => $this->t('Cookie lifetime'),
       '#options' => array(
-        1 * 30 * 24 * 60 * 60 => $this->t('One month'),
-        1 * 365 * 24 * 60 * 60 => $this->t('One year'),
+        30 * 24 * 60 * 60 => $this->t('One month'),
+        365 * 24 * 60 * 60 => $this->t('One year'),
       ),
-      '#default_value' => $settings[$key],
+      '#default_value' => $settings['cookie_lifetime'],
     );
 
     $languages = \Drupal::languageManager()->getLanguages();
 
     foreach ($languages as $language) {
       $language_id = $language->getId();
-      $settings = _itk_cookie_message_get_settings($language);
+
+      $languageSpecificSettings = _itk_cookie_message_get_settings($language);
 
       $form[$language_id] = array(
         '#type' => 'details',
@@ -77,35 +76,31 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
         '#group' => 'tabs',
       );
 
-      $key = 'text';
-      $form[$language_id][$this->getKey($key, $language)] = array(
+      $form[$language_id][$this->getKey('text', $language)] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Message'),
         '#description' => $this->t('Message to display in the dialog show to the users.'),
         '#required' => TRUE,
-        '#default_value' => $settings[$key],
+        '#default_value' => $languageSpecificSettings['text'],
       );
 
-      $key = 'read_more_url';
-      $form[$language_id][$this->getKey($key, $language)] = array(
+      $form[$language_id][$this->getKey('read_more_url', $language)] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Read more url'),
-        '#default_value' => $settings[$key],
+        '#default_value' => $languageSpecificSettings['read_more_url'],
       );
 
-      $key = 'read_more_text';
-      $form[$language_id][$this->getKey($key, $language)] = array(
+      $form[$language_id][$this->getKey('read_more_text', $language)] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Read more text'),
-        '#default_value' => $settings[$key],
+        '#default_value' => $languageSpecificSettings['read_more_text'],
       );
 
-      $key = 'accept_button_text';
-      $form[$language_id][$this->getKey($key, $language)] = array(
+      $form[$language_id][$this->getKey('accept_button_text', $language)] = array(
         '#type' => 'textfield',
         '#title' => $this->t('Accept button text'),
         '#required' => TRUE,
-        '#default_value' => $settings[$key],
+        '#default_value' => $languageSpecificSettings['accept_button_text'],
       );
     }
 
@@ -116,10 +111,14 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $config = $this->config('itk_cookie_message.settings')
-      ->set('cookie_name', $form_state->getValue($this->getKey('cookie_name')))
+    // Get configuration.
+    $config = $this->config('itk_cookie_message.settings');
+
+    // Set cookie values.
+    $config->set('cookie_name', $form_state->getValue($this->getKey('cookie_name')))
       ->set('cookie_lifetime', $form_state->getValue($this->getKey('cookie_lifetime')));
 
+    // Set language specific values.
     $languages = \Drupal::languageManager()->getLanguages();
     foreach ($languages as $language) {
       $language_id = $language->getId();

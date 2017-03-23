@@ -2,7 +2,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ITK cookie message (8.x-1.0)\n"
+"Project-Id-Version: ITK cookie message (8.x-1.x)\n"
 "POT-Creation-Date: 2016-06-12 11:00+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Danish\n"

@@ -22,37 +22,33 @@ function itk_cookie_message_theme($existing, $type, $theme, $path) {
  * Get settings for cookie messages.
  *
  * @param \Drupal\Core\Language\LanguageInterface $language
- *   The languge to use for translations.
+ *   The language to use for translations. Defaults to current language.
  *
  * @return array
  *   The (localized) settings.
  */
 function _itk_cookie_message_get_settings(\Drupal\Core\Language\LanguageInterface $language = NULL) {
-  if ($language === NULL) {
+  // Default language is current language.
+  if (!isset($language)) {
     $language = \Drupal::languageManager()->getCurrentLanguage();
   }
-  $config = \Drupal::config('itk_cookie_message.settings');
-  $global_settings = $config->get();
-  $localized_settings = $config->get($language->getId());
 
-  if (!is_array($localized_settings)) {
-    $localized_settings = array();
+  // Get config.
+  $config = \Drupal::config('itk_cookie_message.settings');
+
+  // Values that apply to all languages.
+  $settings = [
+    'cookie_name' => $config->get('cookie_name'),
+    'cookie_lifetime' => $config->get('cookie_lifetime'),
+  ];
+
+  // Only configuration for given language.
+  $localizedSettings = $config->get($language->getId());
+
+  // If not set, use english config which is installed with the module.
+  if (!isset($localizedSettings)) {
+    $localizedSettings = $config->get('en');
   }
 
-  // Merge default values into global settings.
-  $global_settings += array(
-    'cookie_name' => 'accept_cookies',
-    'cookie_lifetime' => 365 * 24 * 60 * 60,
-    'template' => '',
-  );
-
-  // Merge default values into localized settings.
-  $localized_settings += array(
-    'text' => t('We use cookies to improve your user experience', array(), array('langcode' => $language->getId())),
-    'read_more_url' => '/information-om-cookies',
-    'read_more_text' => t('Read more about cookies', array(), array('langcode' => $language->getId())),
-    'accept_button_text' => t('Accept cookies', array(), array('langcode' => $language->getId())),
-  );
-
-  return array_merge($global_settings, $localized_settings);
+  return array_merge($settings, $localizedSettings);
 }
