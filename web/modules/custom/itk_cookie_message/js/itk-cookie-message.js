@@ -14,7 +14,9 @@
       var cookieValue = function () {
         var regex = new RegExp('(?:^|; )' + encodeURIComponent(cookieName) + '=([^;]*)');
         var result = regex.exec(document.cookie);
-        return result ? (result[1]) : null;
+
+        // If cookie is set, return true.
+        return result ? true : null;
       }();
 
       // Get the element.
@@ -33,7 +35,7 @@
           // Hide the dialog, by sliding it up.
           el.slideUp('fast', function slideUp() {
             // Remove the element from the DOM.
-            el.empty().remove();
+            el.remove();
           });
         });
       }

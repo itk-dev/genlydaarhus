@@ -6,6 +6,8 @@
  * The EU Directive on Privacy and Electronic Communications.
  */
 
+use \Drupal\Core\Language\LanguageInterface;
+
 /**
  * Implements hook_theme().
  */
@@ -21,13 +23,13 @@ function itk_cookie_message_theme($existing, $type, $theme, $path) {
 /**
  * Get settings for cookie messages.
  *
- * @param \Drupal\Core\Language\LanguageInterface $language
+ * @param LanguageInterface $language
  *   The language to use for translations. Defaults to current language.
  *
  * @return array
  *   The (localized) settings.
  */
-function _itk_cookie_message_get_settings(\Drupal\Core\Language\LanguageInterface $language = NULL) {
+function _itk_cookie_message_get_settings(LanguageInterface $language = NULL) {
   // Default language is current language.
   if (!isset($language)) {
     $language = \Drupal::languageManager()->getCurrentLanguage();
