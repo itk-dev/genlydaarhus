@@ -13,7 +13,7 @@ function itk_cookie_message_theme($existing, $type, $theme, $path) {
   return [
     'itk_cookie_message_block' => [
       'template' => 'itk-cookie-message-block',
-      'variables' => ['variables' => NULL],
+      'variables' => [ 'variables' => NULL ],
     ],
   ];
 }
