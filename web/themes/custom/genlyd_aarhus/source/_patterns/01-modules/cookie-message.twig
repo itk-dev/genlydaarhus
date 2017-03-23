@@ -1,0 +1,9 @@
+<div id="js-cookieterms" class="cookie-message">
+  <span>
+    {{ text }}.
+    {% if not (readMoreUrl is empty and readMoreText is empty) %}
+      <a href="{{ readMoreUrl }}">{{ readMoreText }}</a>.
+    {% endif %}
+  </span>
+  <span id="js-cookieterms--agree" class="cookieterms--button button is-small is-cta">{{ acceptButtonText }}</span>
+</div>

@@ -1,0 +1,14 @@
+{#
+/**
+ * @file
+ * Display of cookie message
+ *
+ * variables:
+ * - text
+ * - read_more_url
+ * - read_more_text
+ * - accept_button_text
+ */
+#}
+
+{% include "@modules/cookie-message.twig" with { text: variables.text, readMoreText: variables.read_more_text, readMoreLink: variables.read_more_link, acceptButtonText: variables.accept_button_text } %}

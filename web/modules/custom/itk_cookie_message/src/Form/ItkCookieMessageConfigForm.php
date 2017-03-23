@@ -14,6 +14,7 @@ use Drupal\Core\Language\LanguageInterface;
  * Configuration form for the Cookie message module.
  */
 class ItkCookieMessageConfigForm extends ConfigFormBase {
+
   /**
    * {@inheritdoc}
    */
@@ -32,7 +33,7 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
-    $settings = itk_cookie_message_get_settings();
+    $settings = _itk_cookie_message_get_settings();
 
     $form['tabs'] = array(
       '#type' => 'vertical_tabs',
@@ -68,7 +69,7 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
 
     foreach ($languages as $language) {
       $language_id = $language->getId();
-      $settings = itk_cookie_message_get_settings($language);
+      $settings = _itk_cookie_message_get_settings($language);
 
       $form[$language_id] = array(
         '#type' => 'details',
@@ -150,4 +151,5 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
   private function getKey($key, LanguageInterface $language = NULL) {
     return 'itk_cookie_message' . ($language ? '_' . $language->getId() : '') . '_' . $key;
   }
+
 }

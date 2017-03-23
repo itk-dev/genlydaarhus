@@ -1,7 +1,7 @@
 name: ITK cookie message
 description: Show a message about cookies being used on the site
 interface translation project: itk_cookie_message
-interface translation server pattern: profiles/itkore/modules/itk_cookie_message/translations/itk_cookie_message.%language.po
+interface translation server pattern: modules/custom/itk_cookie_message/translations/itk_cookie_message.%language.po
 package: ITK
 type: module
 version: 1.0
