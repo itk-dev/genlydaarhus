@@ -10,13 +10,18 @@
     attach: function (context, settings) {
       var cookieName = drupalSettings.itk_cookie_message.cookie_name;
 
-      // Inline function to get the current value of the cookie.
-      var cookieValue = function () {
+      /**
+       * Inline function to get the current value of the cookie.
+       *
+       * @return boolean
+       *   Is the cookie set, returns true, else false.
+       */
+      var cookieValue = function cookieValue() {
         var regex = new RegExp('(?:^|; )' + encodeURIComponent(cookieName) + '=([^;]*)');
         var result = regex.exec(document.cookie);
 
         // If cookie is set, return true.
-        return result ? true : null;
+        return result !== null;
       }();
 
       // Get the element.
