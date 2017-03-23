@@ -113,13 +113,6 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     ];
   }
 
-  // Get image url.
-  $imageUrl = '';
-  if (isset($node->field_image->entity)) {
-    $image = $node->field_image->entity->getFileUri();
-    $imageUrl = ImageStyle::load('activity')->buildUrl($image);
-  }
-
   // Attach facebook share button js and drupalSettings.
   $variables['#attached']['library'][] = 'itk_activity/fb_share';
   $variables['#attached']['drupalSettings']['itk_activity'] = [
@@ -152,7 +145,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   $variables['activity'] = [
     'activityHero' => [
       'title' => $node->title->value,
-      'image' => $imageUrl,
+      'image' => _genlyd_aarhus_get_image_url($node, 'activity'),
     ],
     'activityOverview' => [
       'headingWithIconDescription' => [
@@ -216,12 +209,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
   $node = $variables['node'];
 
-  // Get image url.
-  $imageUrl = '';
-  if (isset($node->field_image->entity)) {
-    $image = $node->field_image->entity->getFileUri();
-    $imageUrl = ImageStyle::load('activity_teaser')->buildUrl($image);
-  }
+  $imageUrl = _genlyd_aarhus_get_image_url($node, 'activity_teaser');
 
   $variables['cardActivity'] = [
     'link' => $node->toUrl()->toString(),
@@ -337,4 +325,46 @@ function _genlyd_aarhus_get_price_text($price) {
   else {
     return \Drupal::translation()->translate(':price kr.', [':price' => $price]);
   }
+}
+
+/**
+ * Get the image url for the activity.
+ *
+ * If activity does not have an image, try to get it from the selected
+ * categories and finally fallback to a theme provided default image.
+ *
+ * @param $node
+ *   The activity.
+ * @param $imageStyle
+ *   The image style to apply to the image.
+ * @return \Drupal\Core\GeneratedUrl|null|string
+ *   The url to the image.
+ */
+function _genlyd_aarhus_get_image_url($node, $imageStyle) {
+  // Get image url.
+  $imageUrl = NULL;
+  if (isset($node->field_image->entity)) {
+    $image = $node->field_image->entity->getFileUri();
+    $imageUrl = ImageStyle::load($imageStyle)->buildUrl($image);
+  }
+  else {
+    $referencedCategories = $node->field_categories->referencedEntities();
+
+    // Search for category with default image. Select the first available.
+    foreach ($referencedCategories as $category) {
+      if (isset($category->field_default_image->entity)) {
+        $image = $category->field_default_image->entity->getFileUri();
+        $imageUrl = ImageStyle::load($imageStyle)->buildUrl($image);
+        break;
+      }
+    }
+
+    // If no image has been set, select placeholder image.
+    if (!isset($imageUrl)) {
+      // Load category default image url.
+      $imageUrl = "/" . drupal_get_path('theme', 'genlyd_aarhus') . "/source/assets/images/activity/fallback.png";
+    }
+  }
+
+  return $imageUrl;
 }
