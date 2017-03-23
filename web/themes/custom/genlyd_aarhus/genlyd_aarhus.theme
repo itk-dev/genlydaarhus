@@ -63,9 +63,8 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   $node = $variables['node'];
 
   // Get categories.
-  $referencedCategories = $node->field_categories->referencedEntities();
   $categories = [];
-  foreach ($referencedCategories as $category) {
+  foreach ($node->field_categories->referencedEntities() as $category) {
     $categories[] = $category->name->value;
   }
 
@@ -331,6 +330,9 @@ function _genlyd_aarhus_get_price_text($price) {
 /**
  * Get the image url for the activity.
  *
+ * If activity does not have an image, try to get it from the selected
+ * categories and finally fallback to a theme provide default image.
+ *
  * @param $node
  *   The activity.
  * @param $imageStyle
@@ -359,8 +361,8 @@ function _genlyd_aarhus_get_image_url($node, $imageStyle) {
 
     // If no image has been set, select placeholder image.
     if (!isset($imageUrl)) {
-      // Load category default image.
-      $imageUrl = "/themes/custom/genlyd_aarhus/source/assets/images/styleguide/placeholder-hero.png";
+      // Load category default image url.
+      $imageUrl = "/" . drupal_get_path('theme', 'genlyd_aarhus') . "/source/assets/images/activity/fallback.png";
     }
   }
 
