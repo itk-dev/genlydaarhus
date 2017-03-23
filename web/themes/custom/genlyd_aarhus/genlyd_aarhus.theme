@@ -331,7 +331,7 @@ function _genlyd_aarhus_get_price_text($price) {
  * Get the image url for the activity.
  *
  * If activity does not have an image, try to get it from the selected
- * categories and finally fallback to a theme provide default image.
+ * categories and finally fallback to a theme provided default image.
  *
  * @param $node
  *   The activity.
