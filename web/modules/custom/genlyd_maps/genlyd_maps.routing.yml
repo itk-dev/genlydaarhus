@@ -1,3 +1,11 @@
+genlyd_maps.settings:
+  path: '/admin/config/system/genlyd_maps'
+  defaults:
+    _form: '\Drupal\genlyd_maps\Form\GenlydMapSettingsForm'
+    _title: 'Genlyd maps'
+  requirements:
+    _permission: 'administer site configuration'
+
 genlyd_maps.activities:
   path: '/api/maps/activities.json'
   defaults:

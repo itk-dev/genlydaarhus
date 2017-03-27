@@ -177,7 +177,6 @@ function addActivities(map) {
 
     // Find the marker to use or fallback to default.
     var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
-    console.log(markerUrl);
 
     var dataLayer = new ol.layer.Vector({
       source: dataSource,

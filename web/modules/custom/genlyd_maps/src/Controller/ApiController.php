@@ -26,6 +26,8 @@ class ApiController extends ControllerBase {
    *   The activities as GeoJSON encoded array.
    */
   public function activates() {
+    $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
+
     /**
      * @TODO: Filter based on date?
      */
@@ -40,10 +42,12 @@ class ApiController extends ControllerBase {
 
     // Load geo-coder service and set configuration.
     $geocoder = \Drupal::service('geocoder');
-    $plugins = ['geonames', 'googlemaps', 'bingmaps'];
+    $plugins = ['googlemaps', 'bingmaps'];
     $options = [
-      'geonames' => [],
-      'googlemaps' => [],
+      'googlemaps' => [
+        'useSsl' => TRUE,
+        'apiKey' => $config['genlyd_maps_google_api_key'],
+      ],
       'bingmaps' => [],
     ];
 

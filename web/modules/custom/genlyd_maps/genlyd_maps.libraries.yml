@@ -2,6 +2,7 @@ maps:
   js:
     js/libs/twig/twig.min.js: { minified: true }
     js/genlyd_maps.js: {}
+    js/genlyd_maps_tabs.js: {}
   dependencies:
     - genlyd_maps/openlayers
     - core/jquery

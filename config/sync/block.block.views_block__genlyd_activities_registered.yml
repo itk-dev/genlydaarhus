@@ -12,7 +12,7 @@ dependencies:
 id: views_block__genlyd_activities_registered
 theme: genlyd_aarhus
 region: content
-weight: 0
+weight: -4
 provider: null
 plugin: 'views_block:activity_user_registered-genlyd_activities_registered'
 settings:
