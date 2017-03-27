@@ -263,11 +263,11 @@ function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
     'cardActions' => [
       'firstButton' => [
         'title' => \Drupal::translation()->translate('Delete'),
-        'href' => "/node/" . $node->id() . "/delete"
+        'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
       ],
       'secondButton' => [
         'title' => \Drupal::translation()->translate('Edit'),
-        'href' => "/node/" . $node->id() . "/edit"
+        'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
       ],
     ],
     'cardInfo' => [
