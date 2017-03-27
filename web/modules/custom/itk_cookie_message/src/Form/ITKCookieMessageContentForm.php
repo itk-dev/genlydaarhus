@@ -30,7 +30,7 @@ class ITKCookieMessageContentForm extends FormBase {
    * @return object
    */
   private function getBaseConfig() {
-    return \Drupal::getContainer()->get('itk_cookie_message.config');
+    return \Drupal::getContainer()->get('itk_cookie_message.content');
   }
 
   /**

@@ -10,12 +10,12 @@ use Drupal\Core\KeyValueStore\DatabaseStorage;
 use Drupal\Component\Serialization\SerializationInterface;
 use Drupal\Core\Database\Connection;
 
-class ITKCookieMessageConfig extends DatabaseStorage {
+class ITKCookieMessageContent extends DatabaseStorage {
   /**
    * @param \Drupal\Component\Serialization\SerializationInterface $serializer
    * @param \Drupal\Core\Database\Connection $connection
    */
   public function __construct(SerializationInterface $serializer, Connection $connection) {
-    parent::__construct('itk_cookie_message.config', $serializer, $connection);
+    parent::__construct('itk_cookie_message.content', $serializer, $connection);
   }
 }

@@ -43,7 +43,7 @@ function _itk_cookie_message_get_settings(LanguageInterface $language = NULL) {
     'cookie_lifetime' => $settings->get('cookie_lifetime'),
   ];
 
-  $config = \Drupal::getContainer()->get('itk_cookie_message.config')->get($language->getId());
+  $content = \Drupal::getContainer()->get('itk_cookie_message.content')->get($language->getId());
 
-  return array_merge($settings, $config);
+  return array_merge($settings, $content);
 }
