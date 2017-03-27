@@ -246,50 +246,24 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
  * Implements hook_preprocess_HOOK().
  *
  * Node Activity Teaser Edit preprocess.
+ *
+ * Extends genlyd_aarhus_preprocess_node__activity__teaser() with
+ *   two action buttons.
  */
 function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
+  genlyd_aarhus_preprocess_node__activity__teaser($variables);
+
   $node = $variables['node'];
 
-  $imageUrl = _genlyd_aarhus_get_image_url($node, 'activity_teaser');
-
-  $variables['cardActivity'] = [
-    'link' => $node->toUrl()->toString(),
-    'cardHeader' => [
-      'title' => $node->title->value,
-      'image' => [
-        'src' => $imageUrl,
-      ],
+  $variables['cardActivity']['cardActions'] = [
+    'firstButton' => [
+      'title' => \Drupal::translation()->translate('Delete'),
+      'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
-    'cardActions' => [
-      'firstButton' => [
-        'title' => \Drupal::translation()->translate('Delete'),
-        'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
-      ],
-      'secondButton' => [
-        'title' => \Drupal::translation()->translate('Edit'),
-        'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
-      ],
+    'secondButton' => [
+      'title' => \Drupal::translation()->translate('Edit'),
+      'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
-    'cardInfo' => [
-      'activityMetas' => [
-        [
-          'label' => \Drupal::translation()->translate('Date'),
-          'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
-        ],
-        [
-          'label' => \Drupal::translation()->translate('Price'),
-          'text' => _genlyd_aarhus_get_price_text($node->field_price->value),
-        ],
-        [
-          'label' => \Drupal::translation()->translate('Area'),
-          'text' => $node->field_area->value,
-        ],
-        [
-          'label' => \Drupal::translation()->translate('Participants'),
-          'text' => $node->field_signed_up_users->count(),
-        ],
-      ]
-    ]
   ];
 }
 
