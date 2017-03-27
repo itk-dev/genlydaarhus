@@ -1,0 +1,4 @@
+/* Hide the cookie message, unless it is displayed by the javascript */
+.cookie-message {
+  display: none;
+}

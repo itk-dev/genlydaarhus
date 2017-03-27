@@ -2,6 +2,8 @@
 
 ## In develop
 
+* Added fallback image to activities.
+
 ## v1.0.0-alpha6
 
 * Added ellipsis for activity teaser heading text.

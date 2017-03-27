@@ -23,6 +23,7 @@ module:
   image: 0
   itk_activity: 0
   itk_admin_links: 0
+  itk_cookie_message: 0
   itk_floating_help: 0
   itk_footer: 0
   itk_hero: 0
