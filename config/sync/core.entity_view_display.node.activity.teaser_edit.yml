@@ -1,0 +1,60 @@
+uuid: 464c80fd-2958-4566-83e9-1f81385e17ea
+langcode: da
+status: true
+dependencies:
+  config:
+    - core.entity_view_mode.node.teaser_edit
+    - field.field.node.activity.body
+    - field.field.node.activity.field_address
+    - field.field.node.activity.field_area
+    - field.field.node.activity.field_categories
+    - field.field.node.activity.field_date
+    - field.field.node.activity.field_entry_requirements
+    - field.field.node.activity.field_external_signed_up_users
+    - field.field.node.activity.field_help_needed
+    - field.field.node.activity.field_image
+    - field.field.node.activity.field_maximum_participants
+    - field.field.node.activity.field_physical_requirements
+    - field.field.node.activity.field_price
+    - field.field.node.activity.field_signed_up_users
+    - field.field.node.activity.field_signup_required
+    - field.field.node.activity.field_time_end
+    - field.field.node.activity.field_time_start
+    - field.field.node.activity.field_zipcode
+    - node.type.activity
+  module:
+    - text
+    - user
+id: node.activity.teaser_edit
+targetEntityType: node
+bundle: activity
+mode: teaser_edit
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+  links:
+    weight: 0
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_address: true
+  field_area: true
+  field_categories: true
+  field_date: true
+  field_entry_requirements: true
+  field_external_signed_up_users: true
+  field_help_needed: true
+  field_image: true
+  field_maximum_participants: true
+  field_physical_requirements: true
+  field_price: true
+  field_signed_up_users: true
+  field_signup_required: true
+  field_time_end: true
+  field_time_start: true
+  field_zipcode: true
+  langcode: true

@@ -243,6 +243,32 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Node Activity Teaser Edit preprocess.
+ *
+ * Extends genlyd_aarhus_preprocess_node__activity__teaser() with
+ *   two action buttons.
+ */
+function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
+  // Extend teaser hook.
+  genlyd_aarhus_preprocess_node__activity__teaser($variables);
+
+  $node = $variables['node'];
+
+  $variables['cardActivity']['cardActions'] = [
+    'firstButton' => [
+      'title' => \Drupal::translation()->translate('Delete'),
+      'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+    ],
+    'secondButton' => [
+      'title' => \Drupal::translation()->translate('Edit'),
+      'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+    ],
+  ];
+}
+
+/**
  * Implements hook_views_pre_render().
  *
  * Sets the variable

@@ -1,0 +1,10 @@
+uuid: f6a34427-bda0-403d-96fe-cc22fe60362a
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.teaser_edit
+label: 'Teaser Edit'
+targetEntityType: node
+cache: true

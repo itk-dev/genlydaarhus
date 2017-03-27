@@ -1,18 +1,11 @@
-{% embed "card.twig"  %}
-  {% block overlay %}
-      {% include "modules-card-edit-overlay" %}
+{% embed "@modules/cards/card.twig" %}
+  {% block header %}
+    {% include "@modules/cards/card-header.twig" with { cardHeader: cardActivity.cardHeader } %}
   {% endblock %}
-
-  {% block content %}
-    <a href="{{ cardActivity.link }}" class="card-activity--link has-hover">
-
-      {% include "modules-card-header" with { cardHeader: cardActivity.cardHeader } %}
-
-      {% include "modules-card-info" with { class: "has-spacing", cardInfo: cardActivity.cardInfo } %}
-
-    </a>
+  {% block info %}
+    {% include "@modules/cards/card-info.twig" with { class: "has-spacing", cardInfo: cardActivity.cardInfo } %}
   {% endblock %}
   {% block footer %}
-    {% include "modules-card-actions" with { class: "has-padding" } %}
+    {% include "@modules/cards/card-actions.twig" with { class: "has-padding", cardActions: cardActivity.cardActions } %}
   {% endblock %}
 {% endembed %}
