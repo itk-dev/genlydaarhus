@@ -251,6 +251,7 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
  *   two action buttons.
  */
 function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
+  // Extend teaser hook.
   genlyd_aarhus_preprocess_node__activity__teaser($variables);
 
   $node = $variables['node'];
