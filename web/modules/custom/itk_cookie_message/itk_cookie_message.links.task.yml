@@ -1,0 +1,10 @@
+itk_cookie_message.admin:
+  title: 'Cookie message'
+  description: 'Control settings for cookies.'
+  route_name: itk_cookie_message.settings
+  parent:
+
+itk_cookie_message.admin_content:
+  title: 'Cookie message'
+  route_name: itk_cookie_message.content
+  base_route: system.admin_content

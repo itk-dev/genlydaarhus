@@ -1,0 +1,4 @@
+services:
+  itk_cookie_message.config:
+    class: Drupal\itk_cookie_message\State\ITKCookieMessageConfig
+    arguments: ['@serialization.json', '@database']
