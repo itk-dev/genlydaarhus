@@ -243,6 +243,57 @@ function genlyd_aarhus_preprocess_node__activity__teaser(&$variables) {
 }
 
 /**
+ * Implements hook_preprocess_HOOK().
+ *
+ * Node Activity Teaser Edit preprocess.
+ */
+function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
+  $node = $variables['node'];
+
+  $imageUrl = _genlyd_aarhus_get_image_url($node, 'activity_teaser');
+
+  $variables['cardActivity'] = [
+    'link' => $node->toUrl()->toString(),
+    'cardHeader' => [
+      'title' => $node->title->value,
+      'image' => [
+        'src' => $imageUrl,
+      ],
+    ],
+    'cardActions' => [
+      'firstButton' => [
+        'title' => \Drupal::translation()->translate('Delete'),
+        'href' => "/node/" . $node->id() . "/delete"
+      ],
+      'secondButton' => [
+        'title' => \Drupal::translation()->translate('Edit'),
+        'href' => "/node/" . $node->id() . "/edit"
+      ],
+    ],
+    'cardInfo' => [
+      'activityMetas' => [
+        [
+          'label' => \Drupal::translation()->translate('Date'),
+          'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
+        ],
+        [
+          'label' => \Drupal::translation()->translate('Price'),
+          'text' => _genlyd_aarhus_get_price_text($node->field_price->value),
+        ],
+        [
+          'label' => \Drupal::translation()->translate('Area'),
+          'text' => $node->field_area->value,
+        ],
+        [
+          'label' => \Drupal::translation()->translate('Participants'),
+          'text' => $node->field_signed_up_users->count(),
+        ],
+      ]
+    ]
+  ];
+}
+
+/**
  * Implements hook_views_pre_render().
  *
  * Sets the variable

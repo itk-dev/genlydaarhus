@@ -28,6 +28,7 @@ class GenlydThemeNegotiator implements ThemeNegotiatorInterface {
     switch ($route->getRouteName()) {
       case 'entity.user.edit_form':
         return true;
+      case 'entity.node.delete_form':
       case 'entity.node.edit_form':
         $node = $route->getParameter('node');
 
