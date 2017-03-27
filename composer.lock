@@ -6900,7 +6900,7 @@
     "stability-flags": {
         "drupal/views_block_filter_block": 20,
         "drupal/page_manager": 15,
-        "drupal/geocoder": 15
+        "drupal/geocoder": 15,
         "drupal/better_exposed_filters": 15
     },
     "prefer-stable": true,
