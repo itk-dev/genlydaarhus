@@ -14,6 +14,7 @@ use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormBase.
@@ -118,16 +119,68 @@ abstract class MultistepFormBase extends FormBase {
   }
 
   /**
+   * Get the progress bar array.
+   *
+   * @return array
+   */
+  protected function getProgressBar() {
+    return [
+      'items' => [
+        [
+          'title' => \Drupal::translation()->translate("About activity"),
+          'href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
+          'open' => TRUE,
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Information"),
+          'href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
+          'open' => $this->store->get('step1'),
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Categories"),
+          'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
+          'open' => $this->store->get('step2'),
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Image"),
+          'href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
+          'open' => $this->store->get('step3'),
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Details"),
+          'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
+          'open' => $this->store->get('step4'),
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Confirm"),
+          'href' => Url::fromRoute('itk_activity.multistep_confirm')->toString(),
+          'open' => $this->store->get('step5'),
+        ],
+      ],
+    ];
+  }
+
+  /**
+   * Accept a step in the form.
+   *
+   * @param $step
+   */
+  protected function acceptStep($step) {
+    $this->store->set('step' . $step, TRUE);
+  }
+
+  /**
    * Saves the data from the multistep form.
    */
   protected function saveData() {
     $data = $this->getData();
 
-    $activity =  Node::create($data);
-
+    // Create the activity.
+    $activity = Node::create($data);
     $activity->save();
 
     $this->deleteStore();
+
     drupal_set_message($this->t('The form has been saved.'));
 
     return $activity->id();

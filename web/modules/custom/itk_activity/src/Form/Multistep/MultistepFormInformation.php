@@ -8,6 +8,7 @@
 namespace Drupal\itk_activity\Form\Multistep;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormInformation.
@@ -28,6 +29,11 @@ class MultistepFormInformation extends MultistepFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
+
+    // Set progress bar data.
+    $progressBar = $this->getProgressBar();
+    $progressBar['items'][1]['active'] = TRUE;
+    $form['data']['progressBar'] = $progressBar;
 
     // Load entry_requirements.
     $entryRequirements = \Drupal::service('entity_type.manager')
@@ -94,6 +100,10 @@ class MultistepFormInformation extends MultistepFormBase {
     ];
     
     $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['back'] = [
+      'href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
+      'title' => \Drupal::translation()->translate('Back'),
+    ];
 
     return $form;
   }
@@ -114,6 +124,8 @@ class MultistepFormInformation extends MultistepFormBase {
     $this->store->set('field_physical_requirements', $form_state->getValue('field_physical_requirements'));
     $this->store->set('field_maximum_participants', $form_state->getValue('field_maximum_participants'));
     $this->store->set('field_help_needed', $form_state->getValue('field_help_needed'));
+
+    $this->acceptStep(2);
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_categories');

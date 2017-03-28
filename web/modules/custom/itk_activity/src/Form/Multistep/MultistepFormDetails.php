@@ -8,6 +8,7 @@
 namespace Drupal\itk_activity\Form\Multistep;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormDetails.
@@ -28,6 +29,11 @@ class MultistepFormDetails extends MultistepFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
+
+    // Set progress bar data.
+    $progressBar = $this->getProgressBar();
+    $progressBar['items'][4]['active'] = TRUE;
+    $form['data']['progressBar'] = $progressBar;
 
     $form['field_date'] = array(
       '#type' => 'date',
@@ -112,6 +118,10 @@ class MultistepFormDetails extends MultistepFormBase {
     );
 
     $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['back'] = [
+      'href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
+      'title' => \Drupal::translation()->translate('Back'),
+    ];
 
     return $form;
   }
@@ -134,6 +144,8 @@ class MultistepFormDetails extends MultistepFormBase {
     $this->store->set('field_zipcode', $form_state->getValue('field_zipcode'));
     $this->store->set('field_area', $form_state->getValue('field_area'));
     $this->store->set('field_address', $form_state->getValue('field_address'));
+
+    $this->acceptStep(5);
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_confirm');

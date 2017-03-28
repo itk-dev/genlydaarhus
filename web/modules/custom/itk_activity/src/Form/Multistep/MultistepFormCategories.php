@@ -8,6 +8,7 @@
 namespace Drupal\itk_activity\Form\Multistep;
 
 use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormCategories.
@@ -29,6 +30,11 @@ class MultistepFormCategories extends MultistepFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
+    // Set progress bar data.
+    $progressBar = $this->getProgressBar();
+    $progressBar['items'][2]['active'] = TRUE;
+    $form['data']['progressBar'] = $progressBar;
+
     // Load categories.
     $categories = \Drupal::service('entity_type.manager')
       ->getStorage("taxonomy_term")
@@ -48,6 +54,11 @@ class MultistepFormCategories extends MultistepFormBase {
     ];
 
     $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['back'] = [
+      'href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
+      'title' => \Drupal::translation()->translate('Back'),
+    ];
+
 
     return $form;
   }
@@ -65,6 +76,8 @@ class MultistepFormCategories extends MultistepFormBase {
   public function submitForm(array &$form, FormStateInterface $form_state) {
     // Set values in storage.
     $this->store->set('field_categories', $form_state->getValue('field_categories'));
+
+    $this->acceptStep(3);
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_image');
