@@ -36,3 +36,4 @@ permissions:
   - 'access itk_activity external user signup'
   - 'access itk_activity user signup'
   - 'access itk cookie message content'
+  - 'clone itk_activity own activity'
