@@ -1,37 +1,33 @@
 .activity-action {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
 
-    @include breakpoint($breakpoint-lap) {
-      flex-direction: row;
-      justify-content: flex-start;
-      text-align: left;
-    }
+  @include breakpoint($breakpoint-lap) {
+    flex-direction: row;
+    justify-content: flex-start;
+    text-align: left;
+  }
+
+  &--text {
+    color: $color-dark-alpha;
+    display: none;
+    margin-right: $spacing-pixel-small;
 
     @include breakpoint($breakpoint-desk) {
-      margin-left: $spacing-pixel-normal;
-    }
-
-    &--text {
-      color: $color-dark-alpha;
-      display: none;
-      margin-right: $spacing-pixel-small;
-
-      @include breakpoint($breakpoint-desk) {
-        display: block;
-      }
-    }
-
-    &--button {
-      display: flex;
-      justify-content: center;
-      margin-top: $spacing-pixel-xsmall;
-      width: 100%;
-
-      @include breakpoint($breakpoint-tablet) {
-        margin-top: 0;
-        width: auto;
-      }
+      display: block;
     }
   }
+
+  &--button {
+    display: flex;
+    justify-content: center;
+    margin-top: $spacing-pixel-xsmall;
+    width: 100%;
+
+    @include breakpoint($breakpoint-tablet) {
+      margin-top: 0;
+      width: auto;
+    }
+  }
+}

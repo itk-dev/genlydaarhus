@@ -1,6 +1,6 @@
 <div class="activity-action">
   <p class="activity-action--text">{{ activityAction.text }}</p>
   <div class="activity-action--button">
-    {% include "@elements/buttons/button-call-to-action-small.twig" with { button: activityAction.button, jsClass: "js-filters-toggle" } %}
+    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: activityAction.button }, jsClass: "js-filters-toggle" } %}
   </div>
 </div>

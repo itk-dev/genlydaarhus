@@ -1,0 +1,69 @@
+{% embed "@templates/page.twig" %}
+  {% block main %}
+
+    {% if headingWithIcon %}
+      {% embed "@modules/grid/grid-full.twig" %}
+        {% block items %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {% embed "@modules/grid/grid-item-header-section.twig" %}
+                {% block content %}
+                  {% include "@modules/heading-with-icon.twig" %}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+
+    {% embed "@modules/grid/grid-fourths.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" } } %}
+          {% endblock %}
+        {% endembed %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" }, jsClass: "js-maps-switch" } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% embed "@modules/grid/grid-fourths.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item-centered.twig" %}
+                  {% block content %}
+                    {{ form.actions }}
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+          {% endblock %}
+        {% endembed %}
+
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% if form %}
+              {# Drupal #}
+              <div class="filters js-filters">
+                {{ form.field_categories_target_id }}
+              </div>
+            {% else %}
+              {# Pattern Lab #}
+              {% include "@modules/filters.twig" %}
+            {% endif %}
+
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+  {% endblock %}
+{% endembed %}
