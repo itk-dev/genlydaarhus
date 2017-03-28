@@ -43,6 +43,17 @@
                 {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" | trans }, jsClass: "js-filters-toggle" } %}
               {% endblock %}
             {% endembed %}
+            {% embed "@modules/grid/grid-item-centered.twig" %}
+              {% block content %}
+                {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" | trans }, jsClass: "js-maps-switch" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item-centered.twig" %}
+              {% block content %}
+                {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "My location" | trans }, jsClass: "js-maps-my-location" } %}
+              {% endblock %}
+            {% endembed %}
+
           {% endblock %}
         {% endembed %}
       {% endblock %}

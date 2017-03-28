@@ -1,0 +1,4 @@
+services:
+  genlyd_maps.config:
+    class: Drupal\genlyd_maps\State\GenlydMapsConfig
+    arguments: ['@serialization.json', '@database']

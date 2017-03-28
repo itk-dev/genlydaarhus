@@ -1,0 +1,41 @@
+<?php
+/**
+ * @file
+ * Defines drupal hooks used by the module.
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function genlyd_maps_theme($existing, $type, $theme, $path) {
+  return [
+    'genlyd_maps_map_block' => [
+      'variables' => [],
+    ],
+  ];
+}
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Add local JS twig templates to translations.
+ */
+function genlyd_maps_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  $files = [];
+  $path = drupal_get_path('module', 'genlyd_maps');
+
+  // Files to scan for translations (js and templates).
+  $extensions = [ 'js', 'html', 'twig', 'html.twig' ];
+
+  // Find the files.
+  $it = new RecursiveDirectoryIterator($path);
+  foreach(new RecursiveIteratorIterator($it) as $file)  {
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    if (in_array($ext, $extensions)) {
+      $files[] = $file->getPathname();
+    }
+  }
+
+  // Scan the files to get translations into the database.
+  locale_js_translate($files);
+}

@@ -4,7 +4,7 @@
  * Defines new CSV response object.
  */
 
-namespace Drupal\genlyd_carto\Render;
+namespace Drupal\genlyd_maps\Render;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\ResponseHeaderBag;
  *
  * @see \Symfony\Component\HttpFoundation\Response
  */
-class CsvResponse extends Response {
+class GeoJsonResponse extends Response {
 
   /**
    * Constructor.
@@ -32,47 +32,44 @@ class CsvResponse extends Response {
     $this->headers = new ResponseHeaderBag($headers);
     $this->setStatusCode($status);
     $this->setProtocolVersion('1.0');
-    $this->headers->set('Content-Type', 'application/CSV');
+    $this->headers->set('Content-Type', 'application/json');
 
     if (!empty($content)) {
-      if (empty($content['header']) || empty($content['rows'])) {
-        throw new \UnexpectedValueException('The content do not have the right format (header and rows keys missing).');
+      if (empty($content['features']) || !isset($content['type']) || !isset($content['crs'])) {
+        throw new \UnexpectedValueException('The content do not have the right format.');
       }
 
       $this->content = $content;
     }
     else {
       $this->content = [
-        'header' => [],
-        'rows' => [],
+        'type' => 'FeatureCollection',
+        'features' => [],
       ];
     }
   }
 
   /**
-   * Add "description/header" row to the CSV output.
+   * Add GeoJson "Point" feature.
    *
-   * @param array $header
-   *   The headers as a string array.
-   *
-   * @return $this
-   */
-  public function setHeaderRow(array $header) {
-    $this->content['header'] = $header;
-
-    return $this;
-  }
-
-  /**
-   * Adds data row to the CSV output.
-   *
-   * @param array $row
-   *   String array with the values.
+   * @param float $lat
+   *   The latitude for the feature.
+   * @param float $lng
+   *   The longitude for the feature.
+   * @param array $metadata
+   *   Metadata to display in popups.
    *
    * @return $this
    */
-  public function addRow(array $row) {
-    array_push($this->content['rows'], $row);
+  public function addPoint(float $lat, float $lng, array $metadata) {
+    array_push($this->content['features'], [
+      'type' => 'Feature',
+      'geometry' => [
+        'type' => 'Point',
+        'coordinates' => [$lng, $lat],
+      ],
+      'properties' => $metadata,
+    ]);
 
     return $this;
   }
@@ -83,16 +80,7 @@ class CsvResponse extends Response {
    * @return $this
    */
   public function sendContent() {
-    if (empty($this->content['header']) || empty($this->content['rows'])) {
-      throw new \UnexpectedValueException('The CSV content is not filled in correctly');
-    }
-
-    $output = '"' . implode($this->content['header'], '","') . '"' . "\r\n";
-    foreach ($this->content['rows'] as $row) {
-      $output .= '"' . implode($row, '","') . '"' . "\r\n";
-    }
-
-    echo $output;
+    echo json_encode($this->content);
 
     return $this;
   }
