@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains key/value storage for itk_footer base config.
+ * Contains key/value storage for genlyd maps base config.
  */
 
 namespace Drupal\genlyd_maps\State;

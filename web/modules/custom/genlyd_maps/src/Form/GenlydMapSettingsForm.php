@@ -70,10 +70,9 @@ class GenlydMapSettingsForm extends FormBase {
     drupal_set_message('Settings saved');
 
     // Set the rest of the configuration values.
-    $this->getBaseConfig()->setMultiple(array(
-      'genlyd_maps_google_api_key' => $form_state->getValue('genlyd_maps_google_api_key'),
-    ));
+    $this->getBaseConfig()->set('genlyd_maps_google_api_key', $form_state->getValue('genlyd_maps_google_api_key'));
 
+    // Clear cache as this will trigger an re-encoding of addresses in the map.
     drupal_flush_all_caches();
   }
 }

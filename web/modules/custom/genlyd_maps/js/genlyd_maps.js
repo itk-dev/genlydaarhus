@@ -73,8 +73,7 @@ function addPopups(map) {
   var target =  document.getElementById(map.getTarget());
   map.on('pointermove', function(e) {
     var pixel = map.getEventPixel(e.originalEvent);
-    var hit = map.hasFeatureAtPixel(pixel);
-    if (hit) {
+    if (map.hasFeatureAtPixel(pixel)) {
       target.style.cursor = 'pointer';
     }
     else {
@@ -86,7 +85,6 @@ function addPopups(map) {
   map.on('click', function(evt) {
     // Loop over the features at the current event point.
     map.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
-
       // Move popup to the right position.
       var coordinates = evt.coordinate;
       popup.setPosition(coordinates);
@@ -107,7 +105,7 @@ function addPopups(map) {
       // current view area.
       var bs_element = document.getElementsByClassName('popup')[0];
       var clicked_pixel = evt.pixel;
-      var mapSize = map.getSize();
+      var map_size = map.getSize();
 
       var offset_height = 10;
       var offset_width = 10;
@@ -127,20 +125,20 @@ function addPopups(map) {
         ) + offset_width;
 
       // Calculate if the popup is outside the view area.
-      var height_left = mapSize[1] - clicked_pixel[1] - popup_height;
-      var width_left = mapSize[0] - clicked_pixel[0] - popup_width;
+      var remaining_height = map_size[1] - clicked_pixel[1] - popup_height;
+      var remaining_width = map_size[0] - clicked_pixel[0] - popup_width;
 
       // Get current view and map center.
       var view = map.getView();
       var center_px = map.getPixelFromCoordinate(view.getCenter());
 
       // Check if we are outside map view.
-      if (height_left < 0 || width_left < 0) {
-        if (height_left < 0) {
-          center_px[1] -= height_left;
+      if (remaining_height < 0 || remaining_width < 0) {
+        if (remaining_height < 0) {
+          center_px[1] -= remaining_height;
         }
-        if (width_left < 0) {
-          center_px[0] -= width_left;
+        if (remaining_width < 0) {
+          center_px[0] -= remaining_width;
         }
 
         view.animate({
@@ -148,8 +146,6 @@ function addPopups(map) {
           duration: 300
         });
       }
-
-
     });
   });
 }
@@ -211,7 +207,11 @@ function addOSMMap(map) {
 }
 
 var map = initOpenlayersMap();
+
+// Line below used to debug the map, when configured it.
 //mapDebugInfo(map);
+
+// Add behaviour and map layers.
 loadPopupTemplate();
 addOSMMap(map);
 addActivities(map);

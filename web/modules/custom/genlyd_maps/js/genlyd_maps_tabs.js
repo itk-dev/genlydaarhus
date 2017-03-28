@@ -19,7 +19,7 @@
         event.stopPropagation();
 
         if (!mapTab.is(':visible')) {
-          btn.text( Drupal.t('Show table'));
+          btn.text(Drupal.t('Show table'));
           viewTab.hide();
           mapTab.show();
           locationBtn.show();
