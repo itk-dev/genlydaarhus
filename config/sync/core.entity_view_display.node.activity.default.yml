@@ -160,5 +160,7 @@ content:
     type: number_integer
   links:
     weight: 100
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   langcode: true

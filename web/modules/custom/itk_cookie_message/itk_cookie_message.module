@@ -36,21 +36,14 @@ function _itk_cookie_message_get_settings(LanguageInterface $language = NULL) {
   }
 
   // Get config.
-  $config = \Drupal::config('itk_cookie_message.settings');
+  $settings = \Drupal::config('itk_cookie_message.settings');
 
-  // Values that apply to all languages.
   $settings = [
-    'cookie_name' => $config->get('cookie_name'),
-    'cookie_lifetime' => $config->get('cookie_lifetime'),
+    'cookie_name' => $settings->get('cookie_name'),
+    'cookie_lifetime' => $settings->get('cookie_lifetime'),
   ];
 
-  // Only configuration for given language.
-  $localizedSettings = $config->get($language->getId());
+  $content = \Drupal::getContainer()->get('itk_cookie_message.content')->get($language->getId());
 
-  // If not set, use english config which is installed with the module.
-  if (!isset($localizedSettings)) {
-    $localizedSettings = $config->get('en');
-  }
-
-  return array_merge($settings, $localizedSettings);
+  return array_merge($settings, $content);
 }

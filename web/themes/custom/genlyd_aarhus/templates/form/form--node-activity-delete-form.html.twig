@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set addActivity = {
+  headingWithIcon: {
+    title: "Delete activity" | trans,
+    subtitle: "Are you sure you want to delete this activity? It cannot be undone." | trans
+  }
+} %}
+
+{% include "@components/delete-activity.twig" with { form: element, addActivity: addActivity } %}

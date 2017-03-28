@@ -1,7 +1,7 @@
 # Sign up:
 
 itk_activity.action_signup:
-  path: '/activity/{nid}/signup/{uid}'
+  path: '/activity/{nid}/signup'
   defaults:
     _controller: '\Drupal\itk_activity\Controller\ActivityController::signup'
     _title: 'Sign up'
@@ -65,3 +65,13 @@ itk_activity.multistep_confirm:
     _title: 'Confirm'
   requirements:
     _permission: 'create itk_activity activity'
+
+# Clone activity
+
+itk_activity.action_clone:
+  path: '/activity/{nid}/clone'
+  defaults:
+    _controller: '\Drupal\itk_activity\Controller\ActivityController::cloneActivity'
+    _title: 'Clone'
+  requirements:
+    _permission: 'clone itk_activity own activity'

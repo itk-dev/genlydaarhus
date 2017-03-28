@@ -24,25 +24,25 @@
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Username' | trans, value: userProfile.username } } %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: userProfile.labels.username, value: userProfile.username } } %}
       {% endblock %}
     {% endembed %}
 
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Email' | trans, value: userProfile.email } } %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: userProfile.labels.email, value: userProfile.email } } %}
       {% endblock %}
     {% endembed %}
 
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'First name' | trans, value: userProfile.first_name } } %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: userProfile.labels.first_name, value: userProfile.first_name } } %}
       {% endblock %}
     {% endembed %}
 
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: 'Surname' | trans, value: userProfile.surname } } %}
+        {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: { label: userProfile.labels.surname, value: userProfile.surname } } %}
       {% endblock %}
     {% endembed %}
 

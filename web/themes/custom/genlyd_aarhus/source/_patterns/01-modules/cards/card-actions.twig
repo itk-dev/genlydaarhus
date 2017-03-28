@@ -1,8 +1,21 @@
 <div class="card-actions {{ class }}">
-    <div class="card-actions--button">
-      {% include "@elements/buttons/button-secondary-light-small.twig" with { button: cardActions.firstButton, jsClass: "js-card-activity-delete" } %}
-    </div>
-    <div class="card-actions--button">
-      {% include "@elements/buttons/button-call-to-action-small.twig" with { button: cardActions.secondButton } %}
-    </div>
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@elements/buttons/button-secondary-light-small.twig" with { button: cardActions.deleteButton, jsClass: "js-card-activity-delete" } %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@elements/buttons/button-secondary-light-small.twig" with { button: cardActions.cloneButton } %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@elements/buttons/button-call-to-action-small.twig" with { button: cardActions.editButton } %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
 </div>

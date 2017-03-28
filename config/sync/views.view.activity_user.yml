@@ -3,7 +3,7 @@ langcode: da
 status: true
 dependencies:
   config:
-    - core.entity_view_mode.node.teaser
+    - core.entity_view_mode.node.teaser_edit
     - field.storage.node.field_categories
     - node.type.activity
   module:
@@ -86,7 +86,7 @@ display:
         type: 'entity:node'
         options:
           relationship: none
-          view_mode: teaser
+          view_mode: teaser_edit
       fields:
         title:
           id: title
