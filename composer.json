@@ -38,6 +38,7 @@
     "drupal/views_block_filter_block": "1.x-dev",
     "drupal/page_manager": "^1.0@alpha",
     "drupal/simple_fb_connect": "^3.0",
+    "drupal/geocoder": "^2.0@alpha",
     "drupal/better_exposed_filters": "^3.0@alpha"
   },
   "require-dev": {
