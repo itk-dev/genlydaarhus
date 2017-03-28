@@ -3,6 +3,9 @@
 ## In develop
 
 * Added fallback image to activities.
+* Added buttons to edit, clone and delete own activities.
+* Added cookie message popup.
+* Added map for activities listing page.
 
 ## v1.0.0-alpha6
 
