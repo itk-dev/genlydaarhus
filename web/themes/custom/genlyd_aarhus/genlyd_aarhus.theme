@@ -89,17 +89,18 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
       }
     }
 
+    $signupButton = [
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_signup', [
+        'nid' => $node->id(),
+        'destination' => $currentPath,
+      ], ['absolute' => TRUE])->toString()
+    ];
+
     if ($alreadyAdded) {
-      $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup?destination=' . $currentPath,
-        'title' => \Drupal::translation()->translate('Unregister'),
-      ];
+      $signupButton['title'] = \Drupal::translation()->translate('Unregister');
     }
     else {
-      $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup?destination=' . $currentPath,
-        'title' => \Drupal::translation()->translate('Register'),
-      ];
+      $signupButton['title'] = \Drupal::translation()->translate('Register');
     }
 
     $externalSignupButton = [

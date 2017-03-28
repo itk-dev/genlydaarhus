@@ -81,7 +81,7 @@ class ActivityController extends ControllerBase {
 
     // Check the it is an activity that is attempted cloned.
     if (!isset($node) || $node->getType() != 'activity') {
-      drupal_set_message(t('Activity does not exist.'));
+      drupal_set_message(\Drupal::translation()->translate('Activity does not exist.'));
 
       // Redirect to user page.
       return new RedirectResponse(Url::fromRoute('user.page')->toString());
@@ -91,7 +91,7 @@ class ActivityController extends ControllerBase {
 
     // Check the owner is the current user.
     if ($node->uid->value != $currentUser->uid->value) {
-      drupal_set_message(t('Activity not owned by user.'));
+      drupal_set_message(\Drupal::translation()->translate('Activity not owned by user.'));
 
       // Redirect to user page.
       return new RedirectResponse(Url::fromRoute('user.page')->toString());
@@ -119,8 +119,8 @@ class ActivityController extends ControllerBase {
     ]);
     $newActivity->save();
 
-    drupal_set_message(t('Activity cloned.'));
+    drupal_set_message(\Drupal::translation()->translate('Activity cloned.'));
 
-    return new RedirectResponse(Url::fromRoute('entity.node.canonical', ['node' => $newActivity->id()])->toString());
+    return new RedirectResponse(Url::fromRoute('entity.node.edit_form', ['node' => $newActivity->id()])->toString());
   }
 }
