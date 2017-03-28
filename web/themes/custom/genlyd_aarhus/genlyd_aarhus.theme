@@ -91,13 +91,13 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
 
     if ($alreadyAdded) {
       $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $currentPath,
+        'href' => '/activity/' . $node->id() . '/signup?destination=' . $currentPath,
         'title' => \Drupal::translation()->translate('Unregister'),
       ];
     }
     else {
       $signupButton = [
-        'href' => '/activity/' . $node->id() . '/signup/' . $currentUser->id() . '?destination=' . $currentPath,
+        'href' => '/activity/' . $node->id() . '/signup?destination=' . $currentPath,
         'title' => \Drupal::translation()->translate('Register'),
       ];
     }
@@ -257,14 +257,18 @@ function genlyd_aarhus_preprocess_node__activity__teaser_edit(&$variables) {
   $node = $variables['node'];
 
   $variables['cardActivity']['cardActions'] = [
-    'firstButton' => [
+    'deleteButton' => [
       'title' => \Drupal::translation()->translate('Delete'),
       'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
-    'secondButton' => [
+    'editButton' => [
       'title' => \Drupal::translation()->translate('Edit'),
       'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
+    'cloneButton' => [
+      'title' => \Drupal::translation()->translate('Clone'),
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_clone', ['nid' => $node->id()], ['absolute' => TRUE])->toString(),
+    ]
   ];
 }
 
