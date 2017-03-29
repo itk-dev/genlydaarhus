@@ -1,3 +1,17 @@
+{#
+/**
+ * @file
+ * Progress bar
+ *
+ * Available variables:
+ * - progressBar: The progressBar data.
+ *   - items: Array of progress bar elements.
+ *     - active: Is the element active?
+ *     - title: Element title
+ *     - href: Link to the step.
+ *     - open: Is the link open for click?
+ */
+#}
 <div class="progress-bar">
   <ul class="progress-bar--list">
     {% for item in progressBar.items %}
