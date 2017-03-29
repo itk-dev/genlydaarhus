@@ -177,8 +177,24 @@
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
 
-          {{ form.actions.submit }}
-          {{ form.actions.publish }}
+          {% embed "@modules/grid/grid-halfs.twig" %}
+            {% block items %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {% include "@elements/buttons/button-secondary-dark.twig" with { button: form.actions.back } %}
+                {% endblock %}
+              {% endembed %}
+
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {{ form.actions.submit }}
+                  {{ form.actions.publish }}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
 
         {% endblock %}
       {% endembed %}
