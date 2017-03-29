@@ -188,8 +188,6 @@ abstract class MultistepFormBase extends FormBase {
 
     $this->deleteStore();
 
-    // @TODO: Validate data
-
     // Create the activity.
     $activity = Node::create($data);
     $activity->save();
