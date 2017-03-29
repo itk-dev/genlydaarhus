@@ -51,12 +51,25 @@
       {% endblock %}
     {% endembed %}
 
-    <div class="js-map-tab-view">
-      {% include "@components/activities.twig" %}
-    </div>
-    <div class="js-map-tab-map">
-      <image src="/assets/images/styleguide/map.jpg"></image>
-    </div>
+    {% embed "@modules/grid/grid-full.twig" with { class: 'js-map-tab-view' } %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@components/activities.twig" %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-full.twig" with { class: 'js-map-tab-map' } %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            <img src="/assets/images/styleguide/map.jpg">
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
 
   {% endblock %}
 {% endembed %}
