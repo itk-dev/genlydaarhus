@@ -8,7 +8,20 @@
             {% block content %}
               {% embed "@modules/grid/grid-item-header-section.twig" %}
                 {% block content %}
-                  {% include "@modules/heading-with-icon.twig" %}
+                  {% embed "@modules/grid/grid-halfs.twig" %}
+                    {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@modules/heading-with-icon.twig" %}
+                        {% endblock %}
+                      {% endembed %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" }, jsClass: "js-maps-switch" } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
                 {% endblock %}
               {% endembed %}
             {% endblock %}
@@ -21,12 +34,7 @@
       {% block items %}
         {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
-            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" } } %}
-          {% endblock %}
-        {% endembed %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" }, jsClass: "js-maps-switch" } %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" }, jsClass: "js-filters-toggle" } %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
@@ -36,34 +44,14 @@
       {% block items %}
         {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
-            {% embed "@modules/grid/grid-fourths.twig" %}
-              {% block items %}
-                {% embed "@modules/grid/grid-item-centered.twig" %}
-                  {% block content %}
-                    {{ form.actions }}
-                  {% endblock %}
-                {% endembed %}
-              {% endblock %}
-            {% endembed %}
-          {% endblock %}
-        {% endembed %}
-
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% if form %}
-              {# Drupal #}
-              <div class="filters js-filters">
-                {{ form.field_categories_target_id }}
-              </div>
-            {% else %}
-              {# Pattern Lab #}
-              {% include "@modules/filters.twig" %}
-            {% endif %}
-
+            {% include "@modules/filters.twig" %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
     {% endembed %}
+
+    <div class="js-map-tab-view">List</div>
+    <div class="js-map-tab-map">Map</div>
 
   {% endblock %}
 {% endembed %}
