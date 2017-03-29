@@ -30,10 +30,7 @@ class MultistepFormCategories extends MultistepFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    // Set progress bar data.
-    $progressBar = $this->getProgressBar();
-    $progressBar['items'][2]['active'] = TRUE;
-    $form['data']['progressBar'] = $progressBar;
+    $form['data']['progressBar'] = $this->getProgressBar('categories');
 
     // Load categories.
     $categories = \Drupal::service('entity_type.manager')
@@ -77,7 +74,7 @@ class MultistepFormCategories extends MultistepFormBase {
     // Set values in storage.
     $this->store->set('field_categories', $form_state->getValue('field_categories'));
 
-    $this->acceptStep(3);
+    $this->acceptStep('image');
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_image');

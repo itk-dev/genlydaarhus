@@ -112,10 +112,7 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
     ];
 
-    // Set progress bar data.
-    $progressBar = $this->getProgressBar();
-    $progressBar['items'][5]['active'] = TRUE;
-    $form['data']['progressBar'] = $progressBar;
+    $form['data']['progressBar'] = $this->getProgressBar('confirm');
 
     $form['actions']['submit']['#value'] = $this->t('Create activity');
     $form['actions']['back'] = [

@@ -31,10 +31,7 @@ class MultistepFormImage extends MultistepFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
-    // Set progress bar data.
-    $progressBar = $this->getProgressBar();
-    $progressBar['items'][3]['active'] = TRUE;
-    $form['data']['progressBar'] = $progressBar;
+    $form['data']['progressBar'] = $this->getProgressBar('image');
 
     $form['field_image'] = [
       '#title' => $this->t('Image'),
@@ -105,7 +102,7 @@ class MultistepFormImage extends MultistepFormBase {
     // Set values in storage.
     $this->store->set('field_image', $fileId);
 
-    $this->acceptStep(4);
+    $this->acceptStep('details');
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_details');
