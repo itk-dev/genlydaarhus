@@ -9,6 +9,7 @@ namespace Drupal\itk_activity\Form\Multistep;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormImage.
@@ -29,6 +30,8 @@ class MultistepFormImage extends MultistepFormBase {
    */
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
+
+    $form['data']['progressBar'] = $this->getProgressBar('image');
 
     $form['field_image'] = [
       '#title' => $this->t('Image'),
@@ -75,6 +78,10 @@ class MultistepFormImage extends MultistepFormBase {
     }
 
     $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['back'] = [
+      'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
+      'title' => \Drupal::translation()->translate('Back'),
+    ];
 
     return $form;
   }
@@ -94,6 +101,8 @@ class MultistepFormImage extends MultistepFormBase {
 
     // Set values in storage.
     $this->store->set('field_image', $fileId);
+
+    $this->acceptStep('details');
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_details');

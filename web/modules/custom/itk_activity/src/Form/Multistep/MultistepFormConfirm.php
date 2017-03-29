@@ -10,6 +10,7 @@ namespace Drupal\itk_activity\Form\Multistep;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\file\Entity\File;
 use Drupal\taxonomy\Entity\Term;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormConfirm.
@@ -111,7 +112,13 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
     ];
 
+    $form['data']['progressBar'] = $this->getProgressBar('confirm');
+
     $form['actions']['submit']['#value'] = $this->t('Create activity');
+    $form['actions']['back'] = [
+      'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
+      'title' => \Drupal::translation()->translate('Back'),
+    ];
 
     return $form;
   }

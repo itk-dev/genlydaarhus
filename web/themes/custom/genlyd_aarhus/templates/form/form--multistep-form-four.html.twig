@@ -26,28 +26,4 @@
   }
 } %}
 
-{% set progressBar = {
-  items: [
-    {
-      title: "About activity" | trans
-    },
-    {
-      "title": "Information" | trans
-    },
-    {
-      "title": "Categories" | trans
-    },
-    {
-      "title": "Image" | trans,
-      active: true
-    },
-    {
-      "title": "Details" | trans
-    },
-    {
-      "title": "Confirm" | trans
-    }
-  ]
-} %}
-
-{% include "@components/activity/create-step-four.twig" with { form: element, addActivity: addActivity } %}
+{% include "@components/activity/create-step-four.twig" with { form: element, addActivity: addActivity, progressBar: element.data.progressBar } %}

@@ -14,6 +14,7 @@ use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
 
 /**
  * Class MultistepFormBase.
@@ -118,16 +119,79 @@ abstract class MultistepFormBase extends FormBase {
   }
 
   /**
+   * Get the progress bar array.
+   *
+   * @param string active
+   *   The active step.
+   *
+   * @return array
+   */
+  protected function getProgressBar($active) {
+    return [
+      'items' => [
+        [
+          'title' => \Drupal::translation()->translate("About activity"),
+          'href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
+          'open' => TRUE,
+          'active' => $active == 'about',
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Information"),
+          'href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
+          'open' => $this->store->get('step_information'),
+          'active' => $active == 'information',
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Categories"),
+          'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
+          'open' => $this->store->get('step_categories'),
+          'active' => $active == 'categories',
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Image"),
+          'href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
+          'open' => $this->store->get('step_image'),
+          'active' => $active == 'image',
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Details"),
+          'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
+          'open' => $this->store->get('step_details'),
+          'active' => $active == 'details',
+        ],
+        [
+          'title' => \Drupal::translation()->translate("Confirm"),
+          'href' => Url::fromRoute('itk_activity.multistep_confirm')->toString(),
+          'open' => $this->store->get('step_confirm'),
+          'active' => $active == 'confirm',
+        ],
+      ],
+    ];
+  }
+
+  /**
+   * Accept a step in the form.
+   *
+   * Opens up the link to the step.
+   *
+   * @param $step
+   */
+  protected function acceptStep($step) {
+    $this->store->set('step_' . $step, TRUE);
+  }
+
+  /**
    * Saves the data from the multistep form.
    */
   protected function saveData() {
     $data = $this->getData();
 
-    $activity =  Node::create($data);
+    $this->deleteStore();
 
+    // Create the activity.
+    $activity = Node::create($data);
     $activity->save();
 
-    $this->deleteStore();
     drupal_set_message($this->t('The form has been saved.'));
 
     return $activity->id();
@@ -155,6 +219,11 @@ abstract class MultistepFormBase extends FormBase {
       'field_time_end',
       'field_time_start',
       'field_zipcode',
+      'step_information',
+      'step_categories',
+      'step_image',
+      'step_details',
+      'step_confirm',
     ];
     foreach ($keys as $key) {
       $this->store->delete($key);
