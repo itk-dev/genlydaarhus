@@ -53,8 +53,10 @@ class ApiController extends ControllerBase {
 
     foreach ($activities as $activity) {
       // Load image and use image style.
-      $file = File::load($activity->get('field_image')->entity->id());
-      $image_uri = ImageStyle::load('activity_teaser')->buildUrl($file->getFileUri());
+      if (isset($activity->get('field_image')->entity)) {
+        $file = File::load($activity->get('field_image')->entity->id());
+        $image_uri = ImageStyle::load('activity_teaser')->buildUrl($file->getFileUri());
+      }
 
       // Get the prices for this activity.
       $priceRaw = $activity->field_price->value;
@@ -81,12 +83,17 @@ class ApiController extends ControllerBase {
         $metadata['zipcode'],
         'Denmark',
       ], ',');
-      $addressCollection = $geocoder->geocode($address, $plugins, $options);
-      $latitude = $addressCollection->first()->getCoordinates()->getLatitude();
-      $longitude = $addressCollection->first()->getCoordinates()->getLongitude();
 
-      // Add the information to the output.
-      $response->addPoint($latitude, $longitude, $metadata);
+      // Returns false if address does not exist.
+      $addressCollection = $geocoder->geocode($address, $plugins, $options);
+
+      if ($addressCollection) {
+        $latitude = $addressCollection->first()->getCoordinates()->getLatitude();
+        $longitude = $addressCollection->first()->getCoordinates()->getLongitude();
+
+        // Add the information to the output.
+        $response->addPoint($latitude, $longitude, $metadata);
+      }
     }
 
     return $response;

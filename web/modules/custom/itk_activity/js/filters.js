@@ -11,7 +11,9 @@
       var filters = $('.js-filters');
 
       // If a category filter is active in the url, open the filters.
-      var showFilters = window.location.href.split('field_categories_target_id').length > 1;
+      var showFilters = window.location.href.split('field_categories_target_id').length > 1 ||
+        window.location.href.split('title').length > 1 ||
+        window.location.href.split('zippcode').length > 1;
 
       // Get button config.
       var buttonConfig;

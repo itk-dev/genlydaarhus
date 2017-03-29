@@ -1,75 +1,7 @@
 {% embed "@templates/page.twig" %}
   {% block main %}
-
-    {% if headingWithIcon %}
-      {% embed "@modules/grid/grid-full.twig" %}
-        {% block items %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {% embed "@modules/grid/grid-item-header-section.twig" %}
-                {% block content %}
-                  {% embed "@modules/grid/grid-halfs.twig" %}
-                    {% block items %}
-                      {% embed "@modules/grid/grid-item.twig" %}
-                        {% block content %}
-                          {% include "@modules/heading-with-icon.twig" %}
-                        {% endblock %}
-                      {% endembed %}
-                      {% embed "@modules/grid/grid-item.twig" %}
-                        {% block content %}
-                          {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" }, jsClass: "js-maps-switch" } %}
-                        {% endblock %}
-                      {% endembed %}
-                    {% endblock %}
-                  {% endembed %}
-                {% endblock %}
-              {% endembed %}
-            {% endblock %}
-          {% endembed %}
-        {% endblock %}
-      {% endembed %}
-    {% endif %}
-
-    {% embed "@modules/grid/grid-fourths.twig" %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" }, jsClass: "js-filters-toggle" } %}
-            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "My location" }, jsClass: "js-maps-my-location" } %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-
-    {% embed "@modules/grid/grid-full.twig" with { class: 'js-all-filters' } %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@modules/filters.twig" %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-
-    {% embed "@modules/grid/grid-full.twig" with { class: 'js-map-tab-view' } %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {% include "@components/activities.twig" %}
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-
-    {% embed "@modules/grid/grid-full.twig" with { class: 'js-map-tab-map' } %}
-      {% block items %}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            <img src="/assets/images/styleguide/map.jpg">
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-
+    {% include "@components/activities-top.twig" %}
+    {% include "@components/activities-list.twig" %}
+    {% include "@components/activities-map.twig" %}
   {% endblock %}
 {% endembed %}

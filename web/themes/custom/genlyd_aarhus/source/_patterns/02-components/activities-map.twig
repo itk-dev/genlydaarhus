@@ -1,0 +1,13 @@
+{% embed "@modules/grid/grid-full.twig" with { class: 'activities-map js-map-tab-map' } %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% if content %}
+          {{ content }}
+        {% else %}
+          <img src="/assets/images/styleguide/map.jpg">
+        {% endif %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

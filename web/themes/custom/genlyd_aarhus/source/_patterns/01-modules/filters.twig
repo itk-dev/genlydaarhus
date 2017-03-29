@@ -1,26 +1,33 @@
 <div class="filters js-filters">
-  {% embed "@modules/grid/grid-fourths.twig" %}
-  {% block items %}
-  {% endblock %}
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.title }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Title" } } %}
+            {% include "@elements/forms/text-field.twig" with { type: "text", "name": "title" } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.field_zipcode_value }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Zipcode" } } %}
+            {% include "@elements/forms/text-field.twig" with { type: "text", "name": "title" } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
   {% endembed %}
 
   {% if form %}
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-        {{ form.title }}
-      {% endblock %}
-    {% endembed %}
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-        {{ form.field_zipcode_value }}
-      {% endblock %}
-    {% endembed %}
-
-
     {{ form.field_categories_target_id }}
-
-    {{ form.actions }}
-
   {% else %}
     {% embed "@modules/grid/grid-fourths.twig" %}
       {% block items %}
@@ -34,4 +41,18 @@
       {% endblock %}
     {% endembed %}
   {% endif %}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.actions }}
+          {% else %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: 'Filter' } } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
 </div>
