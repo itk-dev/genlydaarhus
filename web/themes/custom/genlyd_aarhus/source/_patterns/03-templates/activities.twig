@@ -35,12 +35,13 @@
         {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
             {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" }, jsClass: "js-filters-toggle" } %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "My location" }, jsClass: "js-maps-my-location" } %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
     {% endembed %}
 
-    {% embed "@modules/grid/grid-full.twig" %}
+    {% embed "@modules/grid/grid-full.twig" with { class: 'js-all-filters' } %}
       {% block items %}
         {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
@@ -50,8 +51,12 @@
       {% endblock %}
     {% endembed %}
 
-    <div class="js-map-tab-view">List</div>
-    <div class="js-map-tab-map">Map</div>
+    <div class="js-map-tab-view">
+      {% include "@components/activities.twig" %}
+    </div>
+    <div class="js-map-tab-map">
+      <image src="/assets/images/styleguide/map.jpg"></image>
+    </div>
 
   {% endblock %}
 {% endembed %}

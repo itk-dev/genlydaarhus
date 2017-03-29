@@ -1,5 +1,22 @@
 <div class="filters js-filters">
+  {% embed "@modules/grid/grid-fourths.twig" %}
+  {% block items %}
+  {% endblock %}
+  {% endembed %}
+
   {% if form %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {{ form.title }}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {{ form.field_zipcode_value }}
+      {% endblock %}
+    {% endembed %}
+
+
     {{ form.field_categories_target_id }}
 
     {{ form.actions }}

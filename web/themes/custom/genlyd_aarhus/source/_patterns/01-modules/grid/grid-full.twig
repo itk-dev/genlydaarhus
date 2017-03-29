@@ -2,7 +2,7 @@
   {% block items %}{% endblock %}
 {% endset %}
 
-{% embed "@modules/grid/grid.twig" with { class: "is-full" } %}
+{% embed "@modules/grid/grid.twig" with { class: "is-full " ~ class } %}
   {% block content %}
     {% block items %}
       {{ items }}
