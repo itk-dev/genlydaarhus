@@ -104,7 +104,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     }
 
     $externalSignupButton = [
-      'href' => \Drupal\Core\Url::fromRoute('itk_activity.external_signup_form', ['node' => $node->id()])->toString(),
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.external_signup_form', ['nid' => $node->id()])->toString(),
       'title' => \Drupal::translation()->translate('Register other user'),
     ];
   } else {
