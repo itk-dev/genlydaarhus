@@ -1,7 +1,7 @@
 # Sign up:
 
 itk_activity.action_signup:
-  path: '/aktivitet/{nid}/signup'
+  path: '/aktivitet/{nid}/tilmeld'
   defaults:
     _controller: '\Drupal\itk_activity\Controller\ActivityController::signup'
     _title: 'Sign up'
@@ -9,7 +9,7 @@ itk_activity.action_signup:
     _permission: 'access itk_activity user signup'
 
 itk_activity.external_signup_form:
-  path: '/aktivitet/{nid}/external_signup'
+  path: '/aktivitet/{nid}/tilmeld_ekstern'
   defaults:
     _form: '\Drupal\itk_activity\Form\ActivityExternalSignupUserForm'
     _title: 'Sign up external user'
