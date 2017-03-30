@@ -1,39 +1,58 @@
 <div class="filters js-filters">
-  {% embed "@modules/grid/grid-fourths.twig" %}
+  {% embed "@modules/grid/grid-halfs.twig" %}
     {% block items %}
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Musik", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Mad og fællseskab", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Kurser og læring", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "IT", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Spil", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Natur", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Kunst og Kultur", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Litteratur", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Håndarbejde", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Motion", "class": "borderless" } } %}
-      </article>
-      <article class="grid--item">
-        {% include "elements-checkbox" with {'checkbox': { "label": "Sport", "class": "borderless" } } %}
-      </article>
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.title }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Title" } } %}
+            {% include "@elements/forms/text-field.twig" with { type: "text", "name": "title" } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.field_zipcode_value }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Zipcode" } } %}
+            {% include "@elements/forms/text-field.twig" with { type: "text", "name": "title" } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.field_categories_target_id }}
+  {% else %}
+    {% embed "@modules/grid/grid-fourths.twig" %}
+      {% block items %}
+        {% for item in filters %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {% include "@elements/forms/checkbox.twig" with {'checkbox': { "label": item.label } } %}
+            {% endblock %}
+          {% endembed %}
+        {% endfor %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {{ form.actions }}
+          {% else %}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: 'Filter' } } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
     {% endblock %}
   {% endembed %}
 </div>

@@ -69,6 +69,8 @@
 @import "_patterns/01-modules/footer-block";
 @import "_patterns/01-modules/status-messages.scss";
 @import "_patterns/01-modules/pagination.scss";
+@import "_patterns/01-modules/popup.scss";
+@import "_patterns/01-modules/cookie-message.scss";
 
 /* Components */
 @import "_patterns/02-components/01-global/01-header";
@@ -78,3 +80,4 @@
 @import "_patterns/02-components/card-activity";
 @import "_patterns/02-components/help-sidebar";
 @import "_patterns/02-components/floating-help";
+@import "_patterns/02-components/activities-map";

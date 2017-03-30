@@ -9,3 +9,7 @@
 'create itk_activity activity':
   title: 'Access the creation form'
   description: 'Allow users to access the creation form.'
+
+'clone itk_activity own activity':
+  title: 'Access to clone own activity'
+  description: 'Allow users to clone own activities.'

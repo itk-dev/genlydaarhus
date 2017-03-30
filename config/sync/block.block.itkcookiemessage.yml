@@ -1,0 +1,20 @@
+uuid: e174af91-0031-49b9-8cc6-22aae4bea84f
+langcode: da
+status: true
+dependencies:
+  module:
+    - itk_cookie_message
+  theme:
+    - genlyd_aarhus
+id: itkcookiemessage
+theme: genlyd_aarhus
+region: footer
+weight: 0
+provider: null
+plugin: itk_cookie_message
+settings:
+  id: itk_cookie_message
+  label: 'ITK cookie message'
+  provider: itk_cookie_message
+  label_display: visible
+visibility: {  }

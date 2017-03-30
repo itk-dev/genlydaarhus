@@ -1,0 +1,49 @@
+<?php
+/**
+ * @file
+ * This module shows a message on cookies being used in the site.
+ *
+ * The EU Directive on Privacy and Electronic Communications.
+ */
+
+use \Drupal\Core\Language\LanguageInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function itk_cookie_message_theme($existing, $type, $theme, $path) {
+  return [
+    'itk_cookie_message_block' => [
+      'template' => 'itk-cookie-message-block',
+      'variables' => [ 'variables' => NULL ],
+    ],
+  ];
+}
+
+/**
+ * Get settings for cookie messages.
+ *
+ * @param LanguageInterface $language
+ *   The language to use for translations. Defaults to current language.
+ *
+ * @return array
+ *   The (localized) settings.
+ */
+function _itk_cookie_message_get_settings(LanguageInterface $language = NULL) {
+  // Default language is current language.
+  if (!isset($language)) {
+    $language = \Drupal::languageManager()->getCurrentLanguage();
+  }
+
+  // Get config.
+  $settings = \Drupal::config('itk_cookie_message.settings');
+
+  $settings = [
+    'cookie_name' => $settings->get('cookie_name'),
+    'cookie_lifetime' => $settings->get('cookie_lifetime'),
+  ];
+
+  $content = \Drupal::getContainer()->get('itk_cookie_message.content')->get($language->getId());
+
+  return array_merge($settings, $content);
+}

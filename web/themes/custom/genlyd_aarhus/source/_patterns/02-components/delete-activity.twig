@@ -1,0 +1,75 @@
+{#
+/**
+ * Data
+ * - headingWithIcon
+ *   - title
+ *   - subtitle
+ */
+#}
+
+{# Form #}
+
+<form{{ attributes }}>
+
+  {# Header #}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-item-header-section.twig" %}
+            {% block content %}
+
+              {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.headingWithIcon } %}
+                {% block icon %}
+                  {% include "@elements/icons/icon-create.twig" %}
+                {% endblock %}
+              {% endembed %}
+
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {# Main #}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {{ form.actions.submit }}
+          {% else %}
+            {# Pattern lab #}
+            {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: 'Delete' } } %}
+          {% endif %}
+
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+
+          {% if form %}
+            {{ form.actions.cancel }}
+          {% else %}
+            {# Pattern lab #}
+            {% include "@elements/buttons/button.twig" with { button: { title: 'Cancel' } } %}
+          {% endif %}
+
+        {% endblock %}
+      {% endembed %}
+
+    {% endblock %}
+  {% endembed %}
+
+  {% if form %}
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% endif %}
+</form>

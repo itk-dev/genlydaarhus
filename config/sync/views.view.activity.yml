@@ -452,29 +452,7 @@ display:
             label: ''
           granularity: second
       title: Activity
-      header:
-        area_text_custom:
-          id: area_text_custom
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: Title
-          empty: false
-          tokenize: false
-          content: 'Search activities'
-          plugin_id: text_custom
-        area_text_custom_1:
-          id: area_text_custom_1
-          table: views
-          field: area_text_custom
-          relationship: none
-          group_type: group
-          admin_label: Subtitle
-          empty: false
-          tokenize: false
-          content: 'Here you can search available activities'
-          plugin_id: text_custom
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }

@@ -1,0 +1,29 @@
+<div class="popup">
+  <div class="popup--close-button-wrapper">
+    <span class="popup--close-button js-close-button">x</span>
+  </div>
+  <div class="popup--content-wrapper">
+    <h3 class="popup--title">{{ title.value }}</h3>
+    <div class="popup--metadata">
+      <p class="popup--key">{{ date.label }}</p>
+      <p class="popup--value">{{ date.value }}</p>
+    </div>
+    <div class="popup--metadata">
+      <p class="popup--key">{{ price.label }}</p>
+      <p class="popup--value">{{ price.value }}</p>
+    </div>
+    <div class="popup--metadata">
+      <p class="popup--key">{{ address.label }}</p>
+      <p class="popup--value">{{ address.value }}</p>
+    </div>
+    <div class="popup--metadata">
+      <p class="popup--key">{{ zipcode.label }}</p>
+      <p class="popup--value">{{ zipcode.value }}</p>
+    </div>
+    <div class="popup--link-wrapper">
+      <a href="{{ url.value }}" target="_blank" class="popup--link">
+        <div class="popup--link-text">{{ url.label }}</div>
+      </a>
+    </div>
+  </div>
+</div>

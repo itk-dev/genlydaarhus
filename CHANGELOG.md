@@ -2,6 +2,20 @@
 
 ## In develop
 
+
+
+## v1.0.0-beta1
+
+* Added fallback image to activities.
+* Added buttons to edit, clone and delete own activities.
+* Added cookie message popup.
+* Added map for activities listing page.
+* Fixed ellipsis text.
+* Fixed create activity flow.
+* Fixed activities page.
+* Fixed translation issues.
+* Cleaned up activity urls.
+
 ## v1.0.0-alpha6
 
 * Added ellipsis for activity teaser heading text.

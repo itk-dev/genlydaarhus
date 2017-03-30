@@ -28,6 +28,8 @@ class MultistepFormAbout extends MultistepFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildForm($form, $form_state);
 
+    $form['data']['progressBar'] = $this->getProgressBar('about');
+
     $form['title'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
@@ -73,6 +75,8 @@ class MultistepFormAbout extends MultistepFormBase {
     $this->store->set('title', $form_state->getValue('title'));
     $this->store->set('body', $form_state->getValue('body'));
     $this->store->set('field_signup_required', $form_state->getValue('field_signup_required'));
+
+    $this->acceptStep('information');
 
     // Redirect to next step.
     $form_state->setRedirect('itk_activity.multistep_information');

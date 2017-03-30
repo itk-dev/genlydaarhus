@@ -13,7 +13,7 @@
 
 {% set addActivity = {
   headingWithIcon: {
-    title: ("Hello " ~ user.account.name) | trans,
+    title: ("Hello" | trans) ~ " " ~ user.account.name,
     subtitle: "Let us create an activity" | trans
   },
   categories: {
@@ -21,28 +21,4 @@
   }
 } %}
 
-{% set progressBar = {
-  items: [
-    {
-      title: "About activity" | trans
-    },
-    {
-      "title": "Information" | trans
-    },
-    {
-      "title": "Categories" | trans,
-      active: true
-    },
-    {
-      "title": "Image" | trans
-    },
-    {
-      "title": "Details" | trans
-    },
-    {
-      "title": "Confirm" | trans
-    }
-  ]
-} %}
-
-{% include "@components/activity/create-step-three.twig" with { form: element, addActivity: addActivity } %}
+{% include "@components/activity/create-step-three.twig" with { form: element, addActivity: addActivity, progressBar: element.data.progressBar } %}

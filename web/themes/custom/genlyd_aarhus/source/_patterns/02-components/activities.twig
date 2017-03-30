@@ -11,12 +11,14 @@
 {% endif %}
 
 {% if view %}
+  {# Render Drupal #}
   {{ exposed }}
 
-  {# Render Drupal #}
-  {{ rows }}
+  <div class="js-map-tab-view">
+    {{ rows }}
 
-  {{ pager }}
+    {{ pager }}
+  </div>
 {% else %}
   {# Render Pattern Lab #}
   {% embed "@modules/grid/grid-fourths.twig" %}
@@ -43,3 +45,4 @@
     {% endblock %}
   {% endembed %}
 {% endif %}
+

@@ -1,9 +1,24 @@
+/**
+ *
+ * Filters
+ *
+ */
+
+/* Variables
+   ========================================================================== */
+
+$filters-spacing-pixel-xxxsmall:  $spacing-pixel-xxxsmall;
+$filters-spacing-pixel-small:     $spacing-pixel-small;
+
 .filters {
   background-color: $color-white;
   display: none;
-  padding-bottom: 1%;
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-top: 2%;
+  padding-left: $filters-spacing-pixel-xxxsmall;
+  padding-right: $filters-spacing-pixel-xxxsmall;
   width: 100%;
+
+  @include breakpoint($breakpoint-tablet) {
+    padding-left: $filters-spacing-pixel-small;
+    padding-right: $filters-spacing-pixel-small;
+  }
 }

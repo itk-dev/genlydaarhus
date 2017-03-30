@@ -28,8 +28,12 @@
     bottom: 0;
     overflow: hidden;
     position: absolute;
-    text-overflow: ellipsis;
-    white-space: nowrap;
     width: 100%;
+
+    & > h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
   }
 }

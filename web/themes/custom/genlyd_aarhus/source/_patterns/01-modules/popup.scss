@@ -1,0 +1,92 @@
+/**
+ *
+ * Twig-js for maps
+ *
+ */
+
+
+.popup {
+  background-color: $color-black-light;
+  border-radius: 0;
+  color: $color-white;
+  font-size: $font-size-normal;
+  position: absolute;
+  text-align: left;
+  width: 280px;
+
+  &--close-button-wrapper {
+    display: flex;
+    font-size: $font-size-large;
+    justify-content: flex-end;
+  }
+
+  &--close-button {
+    cursor: pointer;
+    padding-left: $spacing-pixel-xsmall;
+    padding-right: $spacing-pixel-xsmall;
+    padding-top: $spacing-pixel-xxxsmall;
+  }
+
+  &--content-wrapper {
+    padding-bottom: $spacing-pixel-xsmall;
+    padding-left: $spacing-pixel-xsmall;
+    padding-right: $spacing-pixel-xsmall;
+  }
+
+  &--title {
+    font-size: $font-size-medium;
+    font-weight: 600;
+    margin-bottom: $spacing-pixel-xxxsmall;
+  }
+
+  &--metadata {
+    border-bottom: 1px solid $color-black-lightest;
+    display: flex;
+    padding-bottom: $spacing-pixel-tiny;
+    padding-top: $spacing-pixel-tiny;
+
+    &:last-child {
+      border: 0;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    p {
+      margin-bottom: 0;
+      margin-top: 0;
+
+      &:not(:first-child) {
+        margin-left: auto;
+      }
+    }
+  }
+
+  &--key {
+    color: $color-light-alpha;
+  }
+
+  &--value {
+    font-weight: 600;
+  }
+
+  &--link-wrapper {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    margin-top: $spacing-pixel-xsmall;
+  }
+
+  &--link {
+    align-items: center;
+    display: flex;
+    font-weight: 600;
+    margin-right: $spacing-pixel-xsmall;
+    text-decoration: underline;
+  }
+
+  &--link-text {
+    color: $color-white;
+    margin-right: $spacing-pixel-xxxsmall;
+    text-decoration: underline;
+  }
+}

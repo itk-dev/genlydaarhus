@@ -2,6 +2,7 @@ zipcode:
   js:
     js/zipcode.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
 
 fb_share:
@@ -9,6 +10,7 @@ fb_share:
     js/fbShare.js: {}
   dependencies:
     - core/jquery
+    - core/drupal
     - core/drupalSettings
 
 timepickers:
@@ -20,4 +22,15 @@ timepickers:
     js/jquery.timepicker.min.js: {}
     js/timepickers.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
+
+filters:
+  version: 1.x
+  js:
+    js/filters.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupal
+    - core/drupalSettings
+    - core/jquery.cookie

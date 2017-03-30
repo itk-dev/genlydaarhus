@@ -36,21 +36,21 @@
 
 {% if view.data.header %}
   {% set headingWithIcon = {
-  "title": view.data.header.title,
-  "subtitle": view.data.header.subtitle
+    title: view.data.header.title,
+    subtitle: view.data.header.subtitle
   }
   %}
 {% endif %}
 
 {% if view.data.footer %}
   {% set callToAction = {
-      "text": view.data.footer.text,
-      "button": {
-        "href": view.data.footer.button_link,
-        "title": view.data.footer.button_text
+      text: view.data.footer.text,
+      button: {
+        href: view.data.footer.button_link,
+        title: view.data.footer.button_text
       }
     }
   %}
 {% endif %}
 
-{% include "@components/activities.twig" with { "callToAction": callToAction, "classes": classes } %}
+{% include "@components/activities.twig" with { callToAction: callToAction, classes: classes } %}

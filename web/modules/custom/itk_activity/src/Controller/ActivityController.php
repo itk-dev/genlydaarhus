@@ -10,6 +10,8 @@ use Drupal\Core\Controller\ControllerBase;
 use Symfony\Component\HttpFoundation\RedirectResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Drupal\node\Entity\Node;
+use Drupal\Core\Url;
 
 /**
  * ActivityController.
@@ -21,11 +23,13 @@ class ActivityController extends ControllerBase {
    *
    * @param \Symfony\Component\HttpFoundation\Request $request
    * @param $nid
-   * @param $uid
+   *   The activity node id.
    * @return \Symfony\Component\HttpFoundation\Response
    */
-  public function signup(Request $request, $nid, $uid) {
+  public function signup(Request $request, $nid) {
     $activity = $this->entityTypeManager()->getStorage('node')->load($nid);
+
+    $uid = \Drupal::currentUser()->id();
 
     // Get referenced users.
     $signedUpUsers = $activity->field_signed_up_users->referencedEntities();
@@ -65,4 +69,58 @@ class ActivityController extends ControllerBase {
     return new Response();
   }
 
+  /**
+   * Clone an activity.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   * @param $nid
+   * @return \Symfony\Component\HttpFoundation\RedirectResponse|\Symfony\Component\HttpFoundation\Response
+   */
+  public function cloneActivity(Request $request, $nid) {
+    $node = $this->entityTypeManager()->getStorage('node')->load($nid);
+
+    // Check the it is an activity that is attempted cloned.
+    if (!isset($node) || $node->getType() != 'activity') {
+      drupal_set_message(\Drupal::translation()->translate('Activity does not exist.'));
+
+      // Redirect to user page.
+      return new RedirectResponse(Url::fromRoute('user.page')->toString());
+    }
+
+    $currentUser = \Drupal::currentUser();
+
+    // Check the owner is the current user.
+    if ($node->uid->value != $currentUser->uid->value) {
+      drupal_set_message(\Drupal::translation()->translate('Activity not owned by user.'));
+
+      // Redirect to user page.
+      return new RedirectResponse(Url::fromRoute('user.page')->toString());
+    }
+
+    // Create the new activity.
+    $newActivity = Node::create([
+      'type' => 'activity',
+      'title' => $node->title->value . \Drupal::translation()->translate(' (Clone)'),
+      'body' => $node->body,
+      'field_address' => $node->field_address,
+      'field_area' => $node->field_area,
+      'field_categories' => $node->field_categories,
+      'field_date' => $node->field_date,
+      'field_entry_requirements' => $node->field_entry_requirements,
+      'field_help_needed' => $node->field_help_needed,
+      'field_image' => $node->field_image,
+      'field_maximum_participants' => $node->field_maximum_participants,
+      'field_physical_requirements' => $node->field_physical_requirements,
+      'field_price' => $node->field_price,
+      'field_signup_required' => $node->field_signup_required,
+      'field_time_end' => $node->field_time_end,
+      'field_time_start' => $node->field_time_start,
+      'field_zipcode' => $node->field_zipcode,
+    ]);
+    $newActivity->save();
+
+    drupal_set_message(\Drupal::translation()->translate('Activity cloned.'));
+
+    return new RedirectResponse(Url::fromRoute('entity.node.edit_form', ['node' => $newActivity->id()])->toString());
+  }
 }

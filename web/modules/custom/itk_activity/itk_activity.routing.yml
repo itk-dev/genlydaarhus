@@ -1,7 +1,7 @@
 # Sign up:
 
 itk_activity.action_signup:
-  path: '/activity/{nid}/signup/{uid}'
+  path: '/aktivitet/{nid}/tilmeld'
   defaults:
     _controller: '\Drupal\itk_activity\Controller\ActivityController::signup'
     _title: 'Sign up'
@@ -9,7 +9,7 @@ itk_activity.action_signup:
     _permission: 'access itk_activity user signup'
 
 itk_activity.external_signup_form:
-  path: '/activity/{nid}/external_signup'
+  path: '/aktivitet/{nid}/tilmeld-ekstern'
   defaults:
     _form: '\Drupal\itk_activity\Form\ActivityExternalSignupUserForm'
     _title: 'Sign up external user'
@@ -19,7 +19,7 @@ itk_activity.external_signup_form:
 # Multi-step create form:
 
 itk_activity.multistep_about:
-  path: '/activity/create/about'
+  path: '/aktivitet/opret/om'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormAbout'
     _title: 'About activity'
@@ -27,7 +27,7 @@ itk_activity.multistep_about:
     _permission: 'create itk_activity activity'
 
 itk_activity.multistep_information:
-  path: '/activity/create/information'
+  path: '/aktivitet/opret/information'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormInformation'
     _title: 'Information'
@@ -35,7 +35,7 @@ itk_activity.multistep_information:
     _permission: 'create itk_activity activity'
 
 itk_activity.multistep_categories:
-  path: '/activity/create/categories'
+  path: '/aktivitet/opret/kategorier'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormCategories'
     _title: 'Categories'
@@ -43,7 +43,7 @@ itk_activity.multistep_categories:
     _permission: 'create itk_activity activity'
 
 itk_activity.multistep_image:
-  path: '/activity/create/image'
+  path: '/aktivitet/opret/billede'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormImage'
     _title: 'Image'
@@ -51,7 +51,7 @@ itk_activity.multistep_image:
     _permission: 'create itk_activity activity'
 
 itk_activity.multistep_details:
-  path: '/activity/create/details'
+  path: '/aktivitet/opret/detaljer'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormDetails'
     _title: 'Image'
@@ -59,9 +59,19 @@ itk_activity.multistep_details:
     _permission: 'create itk_activity activity'
 
 itk_activity.multistep_confirm:
-  path: '/activity/create/confirm'
+  path: '/aktivitet/opret/bekraeft'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormConfirm'
     _title: 'Confirm'
   requirements:
     _permission: 'create itk_activity activity'
+
+# Clone activity
+
+itk_activity.action_clone:
+  path: '/aktivitet/{nid}/klon'
+  defaults:
+    _controller: '\Drupal\itk_activity\Controller\ActivityController::cloneActivity'
+    _title: 'Clone'
+  requirements:
+    _permission: 'clone itk_activity own activity'

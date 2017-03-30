@@ -1,7 +1,0 @@
-genlyd_cato.content:
-  path: '/api/carto/activities.csv'
-  defaults:
-    _controller: '\Drupal\genlyd_carto\Controller\ExportController::csv'
-    _title: 'Export activity as CSV'
-  requirements:
-    _permission: 'access content'
