@@ -7,30 +7,26 @@
 /* Variables
    ========================================================================== */
 
-$grid-spacing-pixel-small:   $spacing-pixel-small;
+$grid-spacing-pixel-xxxsmall: $spacing-pixel-xxxsmall;
+$grid-spacing-pixel-small:    $spacing-pixel-small;
 $grid-spacing-pixel-medium:   $spacing-pixel-medium;
-$grid-spacing-pixel-large:    $spacing-pixel-large;
 $grid-spacing-percent-medium: $spacing-percent-medium;
 $grid-spacing-percent-large:  $spacing-percent-large;
 
-$grid-spacing-pixel-tight-small:     $spacing-pixel-xxsmall;
-$grid-spacing-pixel-tight-medium:    $spacing-pixel-small;
-$grid-spacing-percent-tight-small:   $spacing-percent-small;
-$grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
 /* Mixins
    ========================================================================== */
 
-   @mixin reset-margins($number) {
-      /* Set margins for 2 columns. */
-      &:nth-of-type(#{$number}n) {
-        margin-right: 0;
-      }
+ @mixin reset-margins($number) {
+    /* Set margins for 2 columns. */
+    &:nth-of-type(#{$number}n) {
+      margin-right: 0;
+    }
 
-      &:nth-of-type(#{$number}n+1) {
-        margin-left: 0;
-      }
-   }
+    &:nth-of-type(#{$number}n+1) {
+      margin-left: 0;
+    }
+ }
 
 /* Grid
    ========================================================================== */
@@ -46,11 +42,13 @@ $grid-spacing-percent-tight-medium:  $spacing-percent-medium;
 
   &--item {
     align-items: stretch;
-    margin-top: $grid-spacing-pixel-small;
+    margin-bottom: $grid-spacing-pixel-xxxsmall;
+    margin-top: $grid-spacing-pixel-xxxsmall;
     width: 100%;
 
     @include breakpoint($breakpoint-tablet) {
-      margin-top: $grid-spacing-pixel-medium;
+      margin-bottom: $grid-spacing-pixel-small;
+      margin-top: $grid-spacing-pixel-small;
     }
 
     > .grid.is-full > .grid--inner > .grid--item:first-child {
