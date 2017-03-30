@@ -406,7 +406,7 @@ function _genlyd_aarhus_get_image_url($node, $imageStyle) {
 
 function genlyd_aarhus_preprocess_html(&$variables) {
   $pngfavicon = [
-    '#tag' => 'meta',
+    '#tag' => 'link',
     '#attributes' => [
       'rel' => 'icon',
       'href' => '/' . drupal_get_path('theme', 'genlyd_aarhus') . '/favicon.png',
