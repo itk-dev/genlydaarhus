@@ -21,7 +21,7 @@
         event.stopPropagation();
 
         if (!mapTab.is(':visible')) {
-          btn.text('Show table');
+          btn.text(Drupal.t('Show list'));
           filterBtn.hide();
           filters.hide();
           viewTab.hide();
@@ -29,7 +29,7 @@
           locationBtn.show();
         }
         else {
-          btn.text('Show map');
+          btn.text(Drupal.t('Show map'));
           filterBtn.show();
           filters.show();
           viewTab.show();
