@@ -13,16 +13,16 @@
 
 {% set addActivity = {
   headingWithIcon: {
-    title: ("Hello " ~ user.account.name) | trans,
+    title: ("Hello" | trans) ~ " " ~ user.account.name,
     subtitle: "Let us create an activity" | trans
   },
   image: {
     title: "Upload an image" | trans,
-    text: "Her kan du give din aktivitet et billede. Vælg upload billede og tilføj et billede fra din computer." | trans
+    text: "Here you can give your activity an image. Choose upload image and select an image from your computer. If you do not select an image, a default image will be used." | trans
   },
   helpBoxImage: {
-    title: "Hvad er et godt billede?" | trans,
-    description: "Et godt billede er lyst, og det er i en god opløsning (dvs. det er taget eller lavet i en ordentlig størrelse, så billedet er klart). Et godt billede fortæller andre, om der er aktivitet(fx. madlavning, brætspil, motion), eller hvilket emne det drejer sig om (fx. et historisk billede til et foredrag om 1864 eller hvem, der holder foredraget)." | trans
+    title: "What is a good image?" | trans,
+    description: "A good image is list and has a high resolution. It should represent the activity." | trans
   }
 } %}
 
