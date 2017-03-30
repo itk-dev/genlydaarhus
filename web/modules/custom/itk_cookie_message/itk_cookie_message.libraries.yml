@@ -6,5 +6,6 @@ itk-cookie-message:
   js:
     js/itk-cookie-message.js: {}
   dependencies:
+    - core/drupal
     - core/jquery
     - core/drupalSettings
