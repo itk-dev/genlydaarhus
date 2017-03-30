@@ -1,0 +1,37 @@
+{
+  "filters": [
+    {
+      "label": "Musik"
+    },
+    {
+      "label": "Mad og fællseskab"
+    },
+    {
+      "label": "Kurser og læring"
+    },
+    {
+      "label": "IT"
+    },
+    {
+      "label": "Spil"
+    },
+    {
+      "label": "Natur"
+    },
+    {
+      "label": "Kunst og Kultur"
+    },
+    {
+      "label": "Litteratur"
+    },
+    {
+      "label": "Håndarbejde"
+    },
+    {
+      "label": "Motion"
+    },
+    {
+      "label": "Sport"
+    }
+  ]
+}

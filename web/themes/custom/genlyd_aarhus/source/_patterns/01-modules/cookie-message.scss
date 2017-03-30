@@ -1,11 +1,11 @@
 .cookie-message {
-  position: fixed;
+  background-color: $color-gray-lightest;
   bottom: 0;
   left: 0;
-  min-width: 200px;
-  width: 100%;
-  padding: 10px;
   margin: 0;
+  min-width: 200px;
+  padding: 10px;
+  position: fixed;
+  width: 100%;
   z-index: 21;
-  background-color: $color-gray-lightest;
 }

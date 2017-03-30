@@ -1,0 +1,9 @@
+{% embed "@modules/grid/grid-full.twig" with { class: 'js-map-tab-view' } %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% include "@components/activities.twig" %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

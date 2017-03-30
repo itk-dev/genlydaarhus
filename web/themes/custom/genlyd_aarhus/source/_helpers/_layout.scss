@@ -5,7 +5,9 @@
   @include breakpoint($breakpoint) {
     margin-left: auto;
     margin-right: auto;
-    max-width: $breakpoint;
+    /* Make sure there is spacing when viewing the site at a sepcific breakpoint, e.g. a resolution of 2000px and
+       max-width 2000px won't leave any space. */
+    max-width: $breakpoint - ($breakpoint * .04);
     width: 100%;
   }
 }

@@ -39,8 +39,8 @@
     }
 
     &.progress-bar--with-link {
-      text-decoration: none;
       color: $color-black;
+      text-decoration: none;
 
       &:hover {
         background-color: $color-gray-light;
@@ -53,8 +53,8 @@
   &--with-link a:link,
   &--with-link a:visited,
   &--with-link a:active {
-    text-decoration: none;
     color: $color-black;
+    text-decoration: none;
   }
 
   &--number {

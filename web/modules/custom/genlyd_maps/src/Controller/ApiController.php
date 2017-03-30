@@ -53,8 +53,10 @@ class ApiController extends ControllerBase {
 
     foreach ($activities as $activity) {
       // Load image and use image style.
-      $file = File::load($activity->get('field_image')->entity->id());
-      $image_uri = ImageStyle::load('activity_teaser')->buildUrl($file->getFileUri());
+      if (isset($activity->get('field_image')->entity)) {
+        $file = File::load($activity->get('field_image')->entity->id());
+        $image_uri = ImageStyle::load('activity_teaser')->buildUrl($file->getFileUri());
+      }
 
       // Get the prices for this activity.
       $priceRaw = $activity->field_price->value;
@@ -63,30 +65,58 @@ class ApiController extends ControllerBase {
         $price = \Drupal::translation()->translate(':price kr.', [ ':price' => $priceRaw ]);
       }
 
+      $t = \Drupal::translation();
+
       // Create metadata, which can be used in the marker popup's.
       $metadata = [
-        'title' => $activity->getTitle(),
+        'title' => [
+          'label' => $t->translate('Title'),
+          'value' => $activity->getTitle(),
+        ],
         'image' => $image_uri,
-        'date' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
-        'price' => $price,
-        'address' => $activity->get('field_address')->value,
-        'zipcode' => $activity->get('field_zipcode')->value,
-        'area' => $activity->get('field_area')->value,
-        'url' => Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString(),
+        'date' => [
+          'label' => $t->translate('Date'),
+          'value' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+        ],
+        'price' => [
+          'label' =>  $t->translate('Price'),
+          'value' => $price,
+        ],
+        'address' => [
+          'label' => $t->translate('Address'),
+          'value' => $activity->get('field_address')->value,
+        ],
+        'zipcode' => [
+          'label' => $t->translate('Zipcode'),
+          'value' => $activity->get('field_zipcode')->value,
+        ],
+        'area' => [
+          'label' => $t->translate('Area'),
+          'value' => $activity->get('field_area')->value,
+        ],
+        'url' => [
+          'label' => $t->translate('More information'),
+          'value' => Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString(),
+        ],
       ];
 
       // Encode the address to get lat/lng.
       $address = implode([
-        $metadata['address'],
-        $metadata['zipcode'],
+        $metadata['address']['value'],
+        $metadata['zipcode']['value'],
         'Denmark',
       ], ',');
-      $addressCollection = $geocoder->geocode($address, $plugins, $options);
-      $latitude = $addressCollection->first()->getCoordinates()->getLatitude();
-      $longitude = $addressCollection->first()->getCoordinates()->getLongitude();
 
-      // Add the information to the output.
-      $response->addPoint($latitude, $longitude, $metadata);
+      // Returns false if address does not exist.
+      $addressCollection = $geocoder->geocode($address, $plugins, $options);
+
+      if ($addressCollection) {
+        $latitude = $addressCollection->first()->getCoordinates()->getLatitude();
+        $longitude = $addressCollection->first()->getCoordinates()->getLongitude();
+
+        // Add the information to the output.
+        $response->addPoint($latitude, $longitude, $metadata);
+      }
     }
 
     return $response;

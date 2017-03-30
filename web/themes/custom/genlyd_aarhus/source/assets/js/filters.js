@@ -12,16 +12,10 @@ jQuery(document).ready(function($) {
   var showFilters = window.location.href.split('field_categories_target_id').length > 1;
 
   // Get button config.
-  var buttonConfig;
-  if (drupalSettings) {
-    buttonConfig = drupalSettings.itk_activity.filterButton;
-  }
-  else {
-    buttonConfig = {
-      textShow: 'Show filters',
-      textHide: 'Hide filters'
-    };
-  }
+  var buttonConfig = {
+    textShow: 'Show filters',
+    textHide: 'Hide filters'
+  };
 
   /**
    * Show/hide filters and change text for show/hide filters button.

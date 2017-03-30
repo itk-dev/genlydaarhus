@@ -17,55 +17,11 @@
   {{ q }}
 {% endif %}
 
-{% embed "@modules/grid/grid-full.twig" %}
-  {% block items %}
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-        {% embed "@modules/grid/grid-fourths.twig" %}
-          {% block items %}
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-                {{ form.title }}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-                {{ form.field_zipcode_value }}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item-centered.twig" %}
-              {% block content %}
-                {{ form.actions }}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item-centered.twig" %}
-              {% block content %}
-                {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" | trans }, jsClass: "js-filters-toggle" } %}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item-centered.twig" %}
-              {% block content %}
-                {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" | trans }, jsClass: "js-maps-switch" } %}
-              {% endblock %}
-            {% endembed %}
-            {% embed "@modules/grid/grid-item-centered.twig" %}
-              {% block content %}
-                {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "My location" | trans }, jsClass: "js-maps-my-location" } %}
-              {% endblock %}
-            {% endembed %}
+{% set headingWithIcon = {
+  title: "Search activities" | trans,
+  subtitle: "Here you can search available activities" | trans
+} %}
 
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
+{% include "@components/activities-top.twig" %}
 
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-        <div class="filters js-filters">
-          {{ form.field_categories_target_id }}
-        </div>
-        {{ form|without('actions', 'title', 'field_categories_target_id', 'field_zipcode_value') }}
-      {% endblock %}
-    {% endembed %}
-  {% endblock %}
-{% endembed %}
+{{ form|without('actions', 'title', 'field_categories_target_id', 'field_zipcode_value') }}
