@@ -104,7 +104,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
     }
 
     $externalSignupButton = [
-      'href' => '/activity/' . $node->id() . '/external_signup',
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.external_signup_form', ['node' => $node->id()])->toString(),
       'title' => \Drupal::translation()->translate('Register other user'),
     ];
   } else {
@@ -303,10 +303,10 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
       $view->data->header = (object) [];
 
       if (isset($header['area_text_custom'])) {
-        $view->data->header->title = \Drupal::translation()->translate('' . $header['area_text_custom']->options['content']);
+        $view->data->header->title = $header['area_text_custom']->options['content'];
       }
       if (isset($header['area_text_custom_1'])) {
-        $view->data->header->subtitle = \Drupal::translation()->translate('' . $header['area_text_custom_1']->options['content']);
+        $view->data->header->subtitle = $header['area_text_custom_1']->options['content'];
       }
     }
 
@@ -316,13 +316,13 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
       $view->data->footer = (object) [];
 
       if (isset($footer['area_text_custom'])) {
-        $view->data->footer->text = \Drupal::translation()->translate('' . $footer['area_text_custom']->options['content']);
+        $view->data->footer->text = $footer['area_text_custom']->options['content'];
       }
       if (isset($footer['area_text_custom_1'])) {
-        $view->data->footer->button_text = \Drupal::translation()->translate('' . $footer['area_text_custom_1']->options['content']);
+        $view->data->footer->button_text = $footer['area_text_custom_1']->options['content'];
       }
       if (isset($footer['area_text_custom_2'])) {
-        $view->data->footer->button_link = \Drupal::translation()->translate('' . $footer['area_text_custom_2']->options['content']);
+        $view->data->footer->button_link = $footer['area_text_custom_2']->options['content'];
       }
     }
   }
