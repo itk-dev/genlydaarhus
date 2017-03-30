@@ -65,22 +65,45 @@ class ApiController extends ControllerBase {
         $price = \Drupal::translation()->translate(':price kr.', [ ':price' => $priceRaw ]);
       }
 
+      $t = \Drupal::translation();
+
       // Create metadata, which can be used in the marker popup's.
       $metadata = [
-        'title' => $activity->getTitle(),
+        'title' => [
+          'label' => $t->translate('Title'),
+          'value' => $activity->getTitle(),
+        ],
         'image' => $image_uri,
-        'date' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
-        'price' => $price,
-        'address' => $activity->get('field_address')->value,
-        'zipcode' => $activity->get('field_zipcode')->value,
-        'area' => $activity->get('field_area')->value,
-        'url' => Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString(),
+        'date' => [
+          'label' => $t->translate('Date'),
+          'value' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+        ],
+        'price' => [
+          'label' =>  $t->translate('Price'),
+          'value' => $price,
+        ],
+        'address' => [
+          'label' => $t->translate('Address'),
+          'value' => $activity->get('field_address')->value,
+        ],
+        'zipcode' => [
+          'label' => $t->translate('Zipcode'),
+          'value' => $activity->get('field_zipcode')->value,
+        ],
+        'area' => [
+          'label' => $t->translate('Area'),
+          'value' => $activity->get('field_area')->value,
+        ],
+        'url' => [
+          'label' => $t->translate('More information'),
+          'value' => Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString(),
+        ],
       ];
 
       // Encode the address to get lat/lng.
       $address = implode([
-        $metadata['address'],
-        $metadata['zipcode'],
+        $metadata['address']['value'],
+        $metadata['zipcode']['value'],
         'Denmark',
       ], ',');
 

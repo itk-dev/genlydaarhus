@@ -3,26 +3,26 @@
     <span class="popup--close-button js-close-button">x</span>
   </div>
   <div class="popup--content-wrapper">
-    <h3 class="popup--title">{{ title }}</h3>
+    <h3 class="popup--title">{{ title.value }}</h3>
     <div class="popup--metadata">
-      <p class="popup--key">{{ Drupal.t('Date') }}</p>
-      <p class="popup--value">{{ date }}</p>
+      <p class="popup--key">{{ date.label }}</p>
+      <p class="popup--value">{{ date.value }}</p>
     </div>
     <div class="popup--metadata">
-      <p class="popup--key">{{ Drupal.t('Price') }}</p>
-      <p class="popup--value">{{ price }}</p>
+      <p class="popup--key">{{ price.label }}</p>
+      <p class="popup--value">{{ price.value }}</p>
     </div>
     <div class="popup--metadata">
-      <p class="popup--key">{{ Drupal.t('Address') }}</p>
-      <p class="popup--value">{{ address }}</p>
+      <p class="popup--key">{{ address.label }}</p>
+      <p class="popup--value">{{ address.value }}</p>
     </div>
     <div class="popup--metadata">
-      <p class="popup--key">{{ Drupal.t('Zipcode') }}</p>
-      <p class="popup--value">{{ zipcode }}</p>
+      <p class="popup--key">{{ zipcode.label }}</p>
+      <p class="popup--value">{{ zipcode.value }}</p>
     </div>
     <div class="popup--link-wrapper">
-      <a href="{{ url }}" target="_blank" class="popup--link">
-        <div class="popup--link-text">{{ Drupal.t('Further information') }}</div>
+      <a href="{{ url.value }}" target="_blank" class="popup--link">
+        <div class="popup--link-text">{{ url.label }}</div>
       </a>
     </div>
   </div>
