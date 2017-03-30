@@ -13,7 +13,7 @@
 
 {% set addActivity = {
   headingWithIcon: {
-    title: ("Hello " ~ user.account.name) | trans,
+    title: ("Hello" | trans) ~ " " ~ user.account.name,
     subtitle: "Let us create an activity" | trans
   },
   participants: {
