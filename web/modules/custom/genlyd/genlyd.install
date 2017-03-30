@@ -107,3 +107,13 @@ function genlyd_update_8108() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Enable genlyd_maps.
+ */
+function genlyd_update_8109() {
+  $module_list = array(
+    'genlyd_maps',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
