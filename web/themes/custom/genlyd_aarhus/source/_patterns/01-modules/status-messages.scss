@@ -15,7 +15,7 @@ $message-large:                  $spacing-pixel-large;
    ========================================================================== */
 
 .status-messages {
-  @include layout-wrapper($breakpoint-mediumdesk, auto);
+  @include layout-wrapper($breakpoint-mediumdesk, 0);
 
   margin-top: $message-small;
 
