@@ -9,7 +9,7 @@ itk_activity.action_signup:
     _permission: 'access itk_activity user signup'
 
 itk_activity.external_signup_form:
-  path: '/aktivitet/{nid}/tilmeld_ekstern'
+  path: '/aktivitet/{nid}/tilmeld-ekstern'
   defaults:
     _form: '\Drupal\itk_activity\Form\ActivityExternalSignupUserForm'
     _title: 'Sign up external user'
