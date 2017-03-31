@@ -13,10 +13,8 @@
       /**
        * Gets the first query parameter with parameterName.
        *
-       * @param parameterName
-       *   The parameter to get.
-       * @return string|null
-       *   The parameter or null.
+       * @param {string} parameterName The parameter to get.
+       * @returns {string|null} The parameter or null.
        */
       var getQueryParameter = function getQueryParameter(parameterName) {
         var query = window.location.search.substring(1);
