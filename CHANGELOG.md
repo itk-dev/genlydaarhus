@@ -5,6 +5,7 @@
 * Fixed translation of labels in activity sidebar.
 * Fixed category filter to not show duplicates.
 * Ignores errors from geocoder calls.
+* Fixed conditions for when filters should be shown.
 
 ## v1.0.0-beta1
 
