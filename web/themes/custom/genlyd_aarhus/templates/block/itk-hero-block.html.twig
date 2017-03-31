@@ -9,18 +9,18 @@
 #}
 
 {% set hero = {
-    "lead": variables.itk_hero_lead,
-    "sub": variables.itk_hero_sub,
-    "image": variables.itk_hero_image_url,
-    "cta_button":  {
-      "title": variables.itk_hero_cta_button,
-      "href": variables.itk_hero_cta_link
-    },
-    "button":  {
-      "title": variables.itk_hero_button,
-      "href": variables.itk_hero_link
-    }
-  }
-%}
+  "lead": variables.itk_hero_lead,
+  "sub": variables.itk_hero_sub,
+  "image": variables.itk_hero_image_url,
+  "cta_button":  {
+    "title": variables.itk_hero_cta_button,
+    "href": variables.itk_hero_cta_link
+  },
+  "button":  {
+    "title": variables.itk_hero_button,
+    "href": variables.itk_hero_link
+  },
+  "logged_in": logged_in
+} %}
 
 {% include "@modules/hero.twig" with { "hero": hero } %}

@@ -6,6 +6,7 @@
 * Fixed category filter to not show duplicates.
 * Ignores errors from geocoder calls.
 * Fixed conditions for when filters should be shown.
+* Added that user should be logged in to see "create activity" button in hero.
 
 ## v1.0.0-beta1
 
