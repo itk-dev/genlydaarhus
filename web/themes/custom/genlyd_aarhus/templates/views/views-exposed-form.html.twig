@@ -22,6 +22,12 @@
   subtitle: "Here you can search available activities" | trans
 } %}
 
+{% set buttons = {
+  showMap: "Show map" | trans,
+  showFilters: "Show filters" | trans,
+  myLocation: "My location" | trans
+} %}
+
 {% include "@components/activities-top.twig" %}
 
 {{ form|without('actions', 'title', 'field_categories_target_id', 'field_zipcode_value') }}

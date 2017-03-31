@@ -415,7 +415,7 @@ display:
                 title: ''
                 operator: and
                 value: {  }
-          reduce_duplicates: true
+          reduce_duplicates: false
           type: select
           limit: true
           vid: categories
@@ -463,7 +463,7 @@ display:
         groups:
           1: AND
       use_ajax: true
-      group_by: false
+      group_by: true
     cache_metadata:
       max-age: -1
       contexts:

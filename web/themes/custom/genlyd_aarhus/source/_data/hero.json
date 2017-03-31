@@ -10,6 +10,7 @@
     "button":  {
       "title": "Opret aktivitet",
       "href": "#"
-    }
+    },
+    "logged_in": true
   }
 }
