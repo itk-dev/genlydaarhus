@@ -2,6 +2,10 @@
 
 ## In develop
 
+
+
+## v1.0.0-beta2
+
 * Fixed translation of labels in activity sidebar.
 * Fixed category filter to not show duplicates.
 * Ignores errors from geocoder calls.
