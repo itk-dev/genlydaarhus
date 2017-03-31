@@ -13,7 +13,7 @@
                 {% endembed %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show map" }, jsClass: "js-maps-switch" } %}
+                    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.showMap }, jsClass: "js-maps-switch" } %}
                   {% endblock %}
                 {% endembed %}
               {% endblock %}
@@ -29,8 +29,8 @@
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "Show filters" }, jsClass: "js-filters-toggle" } %}
-        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: "My location" }, jsClass: "js-maps-my-location" } %}
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.showFilters }, jsClass: "js-filters-toggle" } %}
+        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.myLocation }, jsClass: "activities-top--my-location js-maps-my-location" } %}
       {% endblock %}
     {% endembed %}
   {% endblock %}
