@@ -294,21 +294,8 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
   $id = $view->id();
 
   // Attach header and footer data to activity views.
-  if ($id == 'activity_popular' || $id == 'activity_recent' || $id == 'activity_user' || $id == 'activity_user_registered' || $id == 'activity') {
+  if ($id == 'activity_popular' || $id == 'activity_recent' || $id == 'activity_user' || $id == 'activity_user_registered') {
     $view->data = (object) [];
-
-    $header = $view->header;
-
-    if (isset($header) && count($header) > 0) {
-      $view->data->header = (object) [];
-
-      if (isset($header['area_text_custom'])) {
-        $view->data->header->title = $header['area_text_custom']->options['content'];
-      }
-      if (isset($header['area_text_custom_1'])) {
-        $view->data->header->subtitle = $header['area_text_custom_1']->options['content'];
-      }
-    }
 
     $footer = $view->footer;
 
@@ -316,13 +303,7 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
       $view->data->footer = (object) [];
 
       if (isset($footer['area_text_custom'])) {
-        $view->data->footer->text = $footer['area_text_custom']->options['content'];
-      }
-      if (isset($footer['area_text_custom_1'])) {
-        $view->data->footer->button_text = $footer['area_text_custom_1']->options['content'];
-      }
-      if (isset($footer['area_text_custom_2'])) {
-        $view->data->footer->button_link = $footer['area_text_custom_2']->options['content'];
+        $view->data->footer->button_link = $footer['area_text_custom']->options['content'];
       }
     }
   }
@@ -338,6 +319,22 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
       ],
     ];
   }
+}
+
+/**
+ * Implements hook_preprocess_html().
+ */
+function genlyd_aarhus_preprocess_html(&$variables) {
+  $pngfavicon = [
+    '#tag' => 'link',
+    '#attributes' => [
+      'rel' => 'icon',
+      'href' => '/' . drupal_get_path('theme', 'genlyd_aarhus') . '/favicon.png',
+    ],
+  ];
+
+  // Set favicon.
+  $variables['page']['#attached']['html_head'][] = [$pngfavicon, 'pngfavicon'];
 }
 
 /**
@@ -398,19 +395,4 @@ function _genlyd_aarhus_get_image_url($node, $imageStyle) {
   }
 
   return $imageUrl;
-}
-
-/**
- * Implements hook_preprocess_html()
- */
-function genlyd_aarhus_preprocess_html(&$variables) {
-  $pngfavicon = [
-    '#tag' => 'link',
-    '#attributes' => [
-      'rel' => 'icon',
-      'href' => '/' . drupal_get_path('theme', 'genlyd_aarhus') . '/favicon.png',
-    ],
-  ];
-  
-  $variables['page']['#attached']['html_head'][] = [$pngfavicon, 'pngfavicon'];
 }
