@@ -11,17 +11,19 @@
       var filters = $('.js-filters');
 
       /**
-       * Get query parameters.
+       * Gets the first query parameter with parameterName.
        *
-       * @param variable
-       * @return {*}
+       * @param parameterName
+       *   The parameter to get.
+       * @return string|null
+       *   The parameter or null.
        */
-      var getQueryVariable = function getQueryVariable(variable) {
+      var getQueryParameter = function getQueryParameter(parameterName) {
         var query = window.location.search.substring(1);
         var vars = query.split('&');
         for (var i = 0; i < vars.length; i++) {
           var pair = vars[i].split('=');
-          if (decodeURIComponent(pair[0]) === variable) {
+          if (decodeURIComponent(pair[0]) === parameterName) {
             return decodeURIComponent(pair[1]);
           }
         }
@@ -30,9 +32,9 @@
 
       // If a category filter is active in the url, open the filters.
       var showFilters =
-        getQueryVariable('title') ||
+        getQueryParameter('title') ||
         window.location.href.split(/field_categories_target_id.+=.+/ig).length > 1 ||
-        getQueryVariable('field_zipcode_value');
+        getQueryParameter('field_zipcode_value');
 
       // Get button config.
       var buttonConfig;
