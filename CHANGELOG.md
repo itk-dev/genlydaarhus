@@ -2,7 +2,7 @@
 
 ## In develop
 
-
+* Fixed translation of labels in activity sidebar.
 
 ## v1.0.0-beta1
 
