@@ -34,24 +34,18 @@
   set classes = [ dom_id ? 'js-view-dom-id-' ~ dom_id ]
 %}
 
-{% if view.data.header %}
-  {% set headingWithIcon = {
-  "title": view.data.header.title,
-  "subtitle": view.data.header.subtitle
-  }
-  %}
-{% endif %}
+{% set headingWithIcon = {
+  title: "Newest activities" | trans,
+  subtitle: "Here you can see the newest activities." | trans
+} %}
 
-{% if view.data.footer %}
-  {% set callToAction = {
-      "text": view.data.footer.text,
-      "button": {
-        "href": view.data.footer.button_link,
-        "title": view.data.footer.button_text
-      }
-    }
-  %}
-{% endif %}
+{% set callToAction = {
+  text: "Did not find an activity that fitted you?" | trans,
+  button: {
+    href: view.data.footer.button_link,
+    title: "All activities" | trans
+  }
+} %}
 
 <section class="container">
   <div class="container--inner">
