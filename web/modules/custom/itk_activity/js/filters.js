@@ -10,10 +10,29 @@
       var button = $('.js-filters-toggle');
       var filters = $('.js-filters');
 
+      /**
+       * Get query parameters.
+       *
+       * @param variable
+       * @return {*}
+       */
+      var getQueryVariable = function getQueryVariable(variable) {
+        var query = window.location.search.substring(1);
+        var vars = query.split('&');
+        for (var i = 0; i < vars.length; i++) {
+          var pair = vars[i].split('=');
+          if (decodeURIComponent(pair[0]) === variable) {
+            return decodeURIComponent(pair[1]);
+          }
+        }
+        return null;
+      };
+
       // If a category filter is active in the url, open the filters.
-      var showFilters = window.location.href.split('field_categories_target_id').length > 1 ||
-        window.location.href.split('title').length > 1 ||
-        window.location.href.split('zippcode').length > 1;
+      var showFilters =
+        getQueryVariable('title') ||
+        window.location.href.split(/field_categories_target_id.+=.+/ig).length > 1 ||
+        getQueryVariable('field_zipcode_value');
 
       // Get button config.
       var buttonConfig;
