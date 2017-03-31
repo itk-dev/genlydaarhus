@@ -11,6 +11,8 @@ use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\genlyd_maps\Render\GeoJsonResponse;
 use Drupal\image\Entity\ImageStyle;
+use Geocoder\Exception\InvalidCredentials;
+use Geocoder\Exception\NoResult;
 
 /**
  * Class ApiController.
@@ -108,7 +110,15 @@ class ApiController extends ControllerBase {
       ], ',');
 
       // Returns false if address does not exist.
-      $addressCollection = $geocoder->geocode($address, $plugins, $options);
+      try {
+        $addressCollection = $geocoder->geocode($address, $plugins, $options);
+      }
+      catch (InvalidCredentials $e) {
+        // Ignore error.
+      }
+      catch (NoResult $e) {
+        // Ignore error.
+      }
 
       if ($addressCollection) {
         $latitude = $addressCollection->first()->getCoordinates()->getLatitude();
