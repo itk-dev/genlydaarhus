@@ -55,3 +55,4 @@ permissions:
   - 'change own username'
   - 'select account cancellation method'
   - 'access user profiles'
+  - 'administer taxonomy'
