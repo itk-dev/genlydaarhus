@@ -1,0 +1,11 @@
+{
+  "cookieMessage": {
+    "text": "Vi bruger cookies for at forbedre brugeroplevelsen.",
+    "readMoreText": "Læs mere om brugen af cookies",
+    "readMoreLink": "#",
+    "button": {
+      "href": "#",
+      "title": "Accepter cookies"
+    }
+  }
+}

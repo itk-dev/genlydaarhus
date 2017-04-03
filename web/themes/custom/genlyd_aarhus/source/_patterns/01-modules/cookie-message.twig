@@ -1,7 +1,5 @@
-<div id="js-cookieterms" class="cookie-message">
-  <span>
-    {{ text }}.
-    <a href="{{ readMoreUrl }}">{{ readMoreText }}</a>.
-  </span>
-  <span id="js-cookieterms--agree" class="cookieterms--button button is-small is-cta">{{ acceptButtonText }}</span>
+<div class="cookie-message js-cookieterms">
+  <p>{{ cookieMessage.text }}</p>
+  <a href="{{ cookieMessage.readMoreLink }}" title="{{ cookieMessage.readMoreText }}" class="cookie-message--link">{{ cookieMessage.readMoreText }}</a>.
+  {% include "@elements/buttons/real-button-call-to-action-max-width.twig" with { button: cookieMessage.button, jsClass: "js-cookieterms-agree" } %}
 </div>

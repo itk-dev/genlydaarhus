@@ -43,6 +43,13 @@ $button-xxxsmall: $spacing-pixel-xxxsmall;
   transition: all .4s;
   width: 100%;
 
+  &.has-max-width {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+  }
+
   &.is-inactive {
     cursor: default;
     opacity: .5;
