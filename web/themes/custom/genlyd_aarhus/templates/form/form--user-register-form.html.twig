@@ -37,8 +37,12 @@
   },
   "noAccountButton": {
     "title": "I do not have an account" | trans
-    }
+  },
+  "texts": {
+    "passwordTitle": "What about the password?" | trans,
+    "passwordDescription": "You will create a password when you verify your email." | trans,
+    "iHaveAccount": "I have an account" | trans
   }
-%}
+} %}
 
 {% include "@components/register.twig" with { page: children, attributes: attributes, login: login } %}
