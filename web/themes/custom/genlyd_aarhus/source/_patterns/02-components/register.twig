@@ -99,7 +99,7 @@
               {% endblock %}
             {% endembed %}
 
-            {% include "@elements/forms/help-box.twig" with { helpBox: { title: "What about the password?", description: "You will create a password when you verify your email." } } %}
+            {% include "@elements/forms/help-box.twig" with { helpBox: { title: register.texts.passwordTitle, description: register.texts.passwordDescription } } %}
 
             {# @TODO: Husk at læse <a href="#">betingelserne</a>. #}
 
@@ -118,7 +118,7 @@
 
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: "I have an account", href: "/user/login" } } %}
+                    {% include "@elements/buttons/button-secondary-dark.twig" with { button: { title: register.texts.iHaveAccount, href: "/user/login" } } %}
                   {% endblock %}
                 {% endembed %}
               {% endblock %}
