@@ -3,7 +3,7 @@
 ## In develop
 
 * Fixed translation issues with register page, and activity view.
-* Fixed styling of cookie message and link
+* Fixed styling of cookie message and link.
 
 ## v1.0.0-beta2
 
