@@ -2,7 +2,7 @@
 
 ## In develop
 
-
+* Fixed translation issues with register page, and activity view.
 
 ## v1.0.0-beta2
 
