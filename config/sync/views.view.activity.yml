@@ -46,7 +46,7 @@ display:
       exposed_form:
         type: bef
         options:
-          submit_button: Search
+          submit_button: Søg
           reset_button: false
           reset_button_label: Reset
           exposed_sorts_label: 'Sort by'
@@ -60,6 +60,12 @@ display:
               autosubmit: false
               autosubmit_hide: false
             title:
+              bef_format: default
+              more_options:
+                is_secondary: false
+                rewrite:
+                  filter_rewrite_values: ''
+            field_zipcode_value:
               bef_format: default
               more_options:
                 is_secondary: false
@@ -297,7 +303,7 @@ display:
           exposed: true
           expose:
             operator_id: title_op
-            label: Title
+            label: Titel
             description: ''
             use_operator: false
             operator: title_op
@@ -340,7 +346,7 @@ display:
           exposed: true
           expose:
             operator_id: field_zipcode_value_op
-            label: Zipcode
+            label: Postnummer
             description: ''
             use_operator: false
             operator: field_zipcode_value_op
@@ -378,7 +384,7 @@ display:
           exposed: true
           expose:
             operator_id: field_categories_target_id_op
-            label: Categories
+            label: Kategorier
             description: ''
             use_operator: false
             operator: field_categories_target_id_op
@@ -451,7 +457,7 @@ display:
           expose:
             label: ''
           granularity: second
-      title: Activity
+      title: Aktiviteter
       header: {  }
       footer: {  }
       empty: {  }

@@ -10,7 +10,7 @@ id: user.user.field_surname
 field_name: field_surname
 entity_type: user
 bundle: user
-label: Surname
+label: Efternavn
 description: ''
 required: false
 translatable: false
