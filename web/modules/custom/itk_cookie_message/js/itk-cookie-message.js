@@ -25,7 +25,7 @@
       }();
 
       // Get the element.
-      var el = $('#js-cookieterms');
+      var el = $('.js-cookieterms');
 
       // If the cookie has not been set, display the dialog.
       if (!cookieValue) {
@@ -33,7 +33,7 @@
         el.show();
 
         // Handle "Acceptance" of cookie usage.
-        $('#js-cookieterms--agree').on('click', function () {
+        $('.js-cookieterms-agree').on('click', function () {
           var expiryDate = new Date(new Date().getTime() + drupalSettings.itk_cookie_message.cookie_lifetime * 1000);
           document.cookie = cookieName + '=true; path=/; expires=' + expiryDate.toGMTString();
 
