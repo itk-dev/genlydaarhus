@@ -3,6 +3,7 @@
 ## In develop
 
 * Fixed translation issues with register page, and activity view.
+* Added Webmaster role and changed Editor permissions
 
 ## v1.0.0-beta2
 
