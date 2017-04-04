@@ -68,12 +68,18 @@ var viewsActivityFirstLoad = true;
 
         // Execute filters.
         if (showFilters && viewsActivityFirstLoad) {
-          viewsActivityFirstLoad = false;
-
           // We don't known when drupal ajax is ready, so wait 200, throw a
           // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
         }
+
+        // Ensures that the maps has all activities loaded.
+        if (viewsActivityFirstLoad && !showFilters) {
+          updateMap();
+        }
+
+        // Set first load to false.
+        viewsActivityFirstLoad = false;
 
         // Negate show-filters as the filter function toggles it.
         showFilters = !showFilters;
@@ -196,11 +202,7 @@ var viewsActivityFirstLoad = true;
        */
       function switchView() {
         var currentView = readHashValue('viewmode');
-
-        console.log(currentView);
         currentView = currentView.length ? currentView[0] : 'list';
-        console.log(currentView);
-        console.log();
 
         switch (currentView) {
           case 'list':
@@ -234,6 +236,29 @@ var viewsActivityFirstLoad = true;
         switchView();
       });
 
+      /**
+       * Update map with filters.
+       *
+       * The functions are global available from genlyd_maps.js.
+       */
+      function updateMap() {
+        console.log('test');
+        var filters = {
+          'field_categories': readHashValue('field_categories_target_id'),
+          'title': readHashValue('title'),
+          'field_zipcode': readHashValue('field_zipcode_value')
+        };
+        genlydMapsAddActivities(genlydMapsObject, filters);
+      }
+
+      /**
+       * Update the map on search.
+       *
+       * The off here is needed as this gets attached more that once on views
+       * ajax updates.
+       */
+      searchBtn.off('click', updateMap);
+      searchBtn.on('click', updateMap);
     }
   }
 })(jQuery, Drupal);

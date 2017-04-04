@@ -3,13 +3,15 @@
  * Javascript to load OSM and plot activities.
  */
 
+var activityLayer = null;
+
 /**
  * Initialize the OpenLayers Map.
  *
  * @returns {ol.Map}
  *   The OpenLayers map object.
  */
-function initOpenlayersMap() {
+function genlydMapInitOpenlayersMap() {
   // Init the map.
   return new ol.Map({
     target: 'mapid',
@@ -29,8 +31,8 @@ function initOpenlayersMap() {
 /**
  * Load template used by popup's for markers.
  */
-function loadPopupTemplate() {
-  var template = Twig.twig({
+function genlydMapLoadPopupTemplate() {
+  Twig.twig({
     id: 'popup',
     href: drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.template,
     async: false
@@ -45,7 +47,7 @@ function loadPopupTemplate() {
  * @param {ol.Map} map
  *   The OpenLayers map object.
  */
-function mapDebugInfo(map) {
+function genlydMasDebugInfo(map) {
   map.on('moveend', function(evt) {
     var ext = map.getView().calculateExtent(map.getSize());
     console.log('Extent: ' + ext[0] + ',' + ext[1] + ',' + ext[2] + ',' + ext[3]);
@@ -60,7 +62,7 @@ function mapDebugInfo(map) {
  * @param {ol.Map} map
  *   The OpenLayers map object.
  */
-function addPopups(map) {
+function genlydMapsAddPopups(map) {
   // Get the popup element from the DOM and add it to the map as an overlay.
   var element = document.getElementById('popup');
   var popup = new ol.Overlay({
@@ -155,11 +157,23 @@ function addPopups(map) {
  *
  * @param {ol.Map} map
  *   The OpenLayers map object.
+ * @param {array} filters
+ *   Filters used to filter the actives to be displayed.
  */
-function addActivities(map) {
+function genlydMapsAddActivities(map, filters) {
   jQuery.ajax({
+    type: "POST",
+    headers: {
+      "Accept" : "application/json; charset=utf-8",
+      "Content-Type": "application/json; charset=utf-8"
+    },
+    data: JSON.stringify(filters),
     url: '/api/maps/activities.json'
   }).done(function(data) {
+    if (activityLayer) {
+      map.removeLayer(activityLayer);
+    }
+
     var format = new ol.format.GeoJSON({
       defaultDataProjection: 'EPSG:4326'
     });
@@ -174,7 +188,7 @@ function addActivities(map) {
     // Find the marker to use or fallback to default.
     var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
 
-    var dataLayer = new ol.layer.Vector({
+    activityLayer = new ol.layer.Vector({
       source: dataSource,
       visible: true,
       style: new ol.style.Style({
@@ -189,7 +203,7 @@ function addActivities(map) {
     });
 
     // Add the layer to the map.
-    map.addLayer(dataLayer);
+    map.addLayer(activityLayer);
     map.getView().fit(dataSource.getExtent(), map.getSize());
   });
 }
@@ -200,29 +214,28 @@ function addActivities(map) {
  * @param {ol.Map} map
  *   The OpenLayers map object.
  */
-function addOSMMap(map) {
+function genlydMapsAddOSMMap(map) {
   map.addLayer(new ol.layer.Tile({
     source: new ol.source.OSM()
   }));
 }
 
-var map = initOpenlayersMap();
+var genlydMapsObject = genlydMapInitOpenlayersMap();
 
 // Line below used to debug the map, when configured it.
-//mapDebugInfo(map);
+//genlydMasDebugInfo(genlydMapsObject);
 
 // Add behaviour and map layers.
-loadPopupTemplate();
-addOSMMap(map);
-addActivities(map);
-addPopups(map);
+genlydMapLoadPopupTemplate();
+genlydMapsAddOSMMap(genlydMapsObject);
+genlydMapsAddPopups(genlydMapsObject);
 
-/**
- * Attached click event listener to "My location" button.
- *
- * Used to change location (map center) based on users current location.
- */
 document.addEventListener('DOMContentLoaded', function () {
+  /**
+   * Attached click event listener to "My location" button.
+   *
+   * Used to change location (map center) based on users current location.
+   */
   var btn = document.querySelector('.js-maps-my-location');
   btn.addEventListener('click', function (event) {
     event.preventDefault();

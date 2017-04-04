@@ -13,6 +13,7 @@ use Drupal\genlyd_maps\Render\GeoJsonResponse;
 use Drupal\image\Entity\ImageStyle;
 use Geocoder\Exception\InvalidCredentials;
 use Geocoder\Exception\NoResult;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
  * Class ApiController.
@@ -24,10 +25,20 @@ class ApiController extends ControllerBase {
   /**
    * Load all activities.
    *
+   * @param Request $request
+   *   The HTTP request.
    * @return \Drupal\genlyd_maps\Render\GeoJsonResponse
    *   The activities as GeoJSON encoded array.
    */
-  public function activates() {
+  public function activates(Request $request) {
+    // This condition checks the `Content-type` and makes sure to
+    // decode JSON string from the request body into array.
+    $data = [];
+    if (0 === strpos($request->headers->get( 'Content-Type' ), 'application/json')) {
+      $data = json_decode($request->getContent(), TRUE);
+      $request->request->replace(is_array($data) ? $data : []);
+    }
+
     $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
 
     /**
