@@ -117,3 +117,13 @@ function genlyd_update_8109() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Enable metatag_open_graph.
+ */
+function genlyd_update_8110() {
+  $module_list = array(
+    'metatag_open_graph',
+  );
+  \Drupal::service('module_installer')->install($module_list);
+}
