@@ -183,6 +183,10 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
           ->translate('Signed up users'),
         'signupButton' => $signupButton,
         'signupExternalButton' => $externalSignupButton,
+        'contactLink' => [
+          'title' => \Drupal::translation()->translate('Contact owner'),
+          'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_contact', ['nid' => $node->id()])->toString(),
+        ],
         'socialShare' => [
           'buttons' => [
             [
