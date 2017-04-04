@@ -206,7 +206,14 @@ class ActivityContactForm extends FormBase {
       ];
 
       // Send the mail.
-      $result = $mailManager->mail('itk_activity', 'send_mail_to_owner', $node->uid->entity->email->value, \Drupal::currentUser()->getPreferredLangcode(), $params, NULL, TRUE);
+      $result = $mailManager->mail(
+          'itk_activity',
+          'send_mail_to_owner',
+          $node->uid->entity->mail->value,
+          \Drupal::currentUser()->getPreferredLangcode(),
+          $params,
+          NULL,
+          TRUE);
       if ($result['result'] !== TRUE) {
         drupal_set_message(t('Message not sent to owner.'), 'error');
       }
