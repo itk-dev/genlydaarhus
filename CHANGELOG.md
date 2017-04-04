@@ -5,6 +5,7 @@
 * Fixed translation issues with register page, and activity view.
 * Added Webmaster role and changed Editor permissions
 * Fixed styling of cookie message and link.
+* Fixed styling of page.
 
 ## v1.0.0-beta2
 
