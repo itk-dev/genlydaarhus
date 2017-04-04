@@ -1,13 +1,22 @@
-# The routes of the project.
-#
-# Each route describes how an incoming URL is going
-# to be processed by Platform.sh.
-
-"http://www.{default}/":
-    type: upstream
-    upstream: "drupal:http"
-
-"http://{default}/":
-    type: upstream
-    upstream: "drupal:http"
-
+http://{default}/:
+  redirects:
+    expires: -1s
+    paths: {}
+  to: https://{default}/
+  type: redirect
+https://{default}/:
+  cache:
+    cookies:
+    - '*'
+    default_ttl: 0
+    enabled: true
+    headers:
+    - Accept
+    - Accept-Language
+  redirects:
+    expires: -1s
+    paths: {}
+  ssi:
+    enabled: false
+  type: upstream
+  upstream: drupal:http
