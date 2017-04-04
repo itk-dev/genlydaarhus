@@ -11,4 +11,14 @@
  */
 #}
 
-{% include "@modules/cookie-message.twig" with { text: variables.text, readMoreText: variables.read_more_text, readMoreLink: variables.read_more_link, acceptButtonText: variables.accept_button_text } %}
+{% set cookieMessage = {
+    "text": variables.text,
+    "readMoreText": variables.read_more_text,
+    "readMoreLink": variables.read_more_url,
+    "button": {
+      "title": variables.accept_button_text
+    }
+  }
+%}
+
+{% include "@modules/cookie-message.twig" with { cookieMessage: cookieMessage } %}
