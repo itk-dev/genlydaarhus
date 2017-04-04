@@ -1,3 +1,9 @@
+http://{default}/:
+  redirects:
+    expires: -1s
+    paths: {}
+  to: https://{default}/
+  type: redirect
 https://www.{default}/:
   cache:
     cookies:
