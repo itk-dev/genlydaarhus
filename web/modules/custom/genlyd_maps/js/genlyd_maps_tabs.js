@@ -20,11 +20,15 @@ var viewsActivityFirstLoad = true;
         show: Drupal.t('Show filters'),
         hide: Drupal.t('Hide filters')
       };
-
       var switchBtnTexts = {
-        show: Drupal.t('Show map'),
-        hide: Drupal.t('Show list')
+        map: Drupal.t('Show map'),
+        list: Drupal.t('Show list')
       };
+
+      // Hide it.
+      viewTab.hide();
+      mapTab.hide();
+      locationBtn.hide();
 
       // Initialization of hide/show filters.
       var showFilters = false;
@@ -33,6 +37,15 @@ var viewsActivityFirstLoad = true;
         // Detected which view (map or list).
         var viewmode = readHashValue('viewmode');
         viewmode = viewmode.length ? viewmode[0] : 'list';
+        if (viewmode === 'list') {
+          switchBtn.text(switchBtnTexts.map);
+          viewTab.show();
+        }
+        else {
+          switchBtn.text(switchBtnTexts.list);
+          mapTab.show();
+          locationBtn.show();
+        }
 
         // Set filters.
         var categories = readHashValue('field_categories_target_id');
@@ -56,8 +69,11 @@ var viewsActivityFirstLoad = true;
         // Execute filters.
         if (showFilters && viewsActivityFirstLoad) {
           viewsActivityFirstLoad = false;
+
+          // We don't known when drupal ajax is ready, so wait 200, throw a
+          // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
-       }
+        }
 
         // Negate show-filters as the filter function toggles it.
         showFilters = !showFilters;
@@ -73,7 +89,27 @@ var viewsActivityFirstLoad = true;
        *   The value to add to the hash.
        */
       function addHashValue(key, value) {
-        window.location.hash += key + "=" + value + '&';
+        var hash = window.location.hash;
+        hash += '&' + key + "=" + value + '&';
+        window.location.hash = hash.replace(/&{2,}/gi, '&');
+      }
+
+      /**
+       * Replace value in the URL hash.
+       *
+       * @param {string} key
+       *   Key for the value to add.
+       * @param {string} value
+       *   The value to add to the hash.
+       */
+      function replaceHashValue(key, value) {
+        var hash = window.location.hash.substr(1);
+        var regex = new RegExp(key + '=\\w+', 'gi');
+        hash = hash.replace(regex, '');
+        hash = hash.replace(/&{2,}/, '&');
+        window.location.hash = hash;
+
+        addHashValue(key, value);
       }
 
       /**
@@ -154,6 +190,50 @@ var viewsActivityFirstLoad = true;
         event.stopPropagation();
         setFilters();
       });
+
+      /**
+       * Switch view mode.
+       */
+      function switchView() {
+        var currentView = readHashValue('viewmode');
+
+        console.log(currentView);
+        currentView = currentView.length ? currentView[0] : 'list';
+        console.log(currentView);
+        console.log();
+
+        switch (currentView) {
+          case 'list':
+            viewTab.hide();
+            mapTab.show();
+            locationBtn.show();
+            replaceHashValue('viewmode', 'map');
+            switchBtn.text(switchBtnTexts.list);
+            break;
+
+          case 'map':
+            viewTab.show();
+            mapTab.hide();
+            locationBtn.hide();
+            switchBtn.text(switchBtnTexts.map);
+            replaceHashValue('viewmode', 'list');
+            break;
+        }
+      }
+
+      /**
+       * Show/hide map/view.
+       *
+       * The off here is needed as this gets attached more that once on views
+       * ajax updates.
+       */
+      switchBtn.off();
+      switchBtn.click(function click(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        switchView();
+      });
+
     }
   }
 })(jQuery, Drupal);
