@@ -4,6 +4,7 @@
 
 * Fixed translation issues with register page, and activity view.
 * Fixed styling of cookie message and link.
+* Enabled Metatag: Open Graph module and added tags
 
 ## v1.0.0-beta2
 
