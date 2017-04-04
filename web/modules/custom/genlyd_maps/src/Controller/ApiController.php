@@ -7,6 +7,7 @@
 namespace Drupal\genlyd_maps\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
+use Drupal\Core\Datetime\DrupalDateTime;
 use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\genlyd_maps\Render\GeoJsonResponse;
@@ -33,25 +34,39 @@ class ApiController extends ControllerBase {
   public function activates(Request $request) {
     // This condition checks the `Content-type` and makes sure to
     // decode JSON string from the request body into array.
-    $data = [];
+    $filters = [];
     if (0 === strpos($request->headers->get( 'Content-Type' ), 'application/json')) {
-      $data = json_decode($request->getContent(), TRUE);
-      $request->request->replace(is_array($data) ? $data : []);
+      $filters = json_decode($request->getContent(), TRUE);
+      $request->request->replace(is_array($filters) ? $filters : []);
     }
 
-    $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
+    $date = new DrupalDateTime();
+    $date->setTimezone(new \DateTimezone(DATETIME_STORAGE_TIMEZONE));
+    $formatted = $date->format('Y-m-d');
 
-    /**
-     * @TODO: Filter based on date?
-     */
+    // Filter activities.
     $storage = \Drupal::entityTypeManager()->getStorage('node');
-    $ids = $storage->getQuery()
+    $query = $storage->getQuery()
       ->condition('type', 'activity')
-      ->condition('status', 1)
-      ->execute();
+      ->condition('status', 1);
+//      ->condition('field_data.value', $formatted, '<=');
+
+    if (!empty($filters['field_categories'])) {
+      $query->condition('field_categories', $filters['field_categories'], 'IN');
+    }
+
+    if (!empty($filters['title'])) {
+      $query->condition('title', current($filters['title']), 'CONTAINS');
+    }
+
+    if (!empty($filters['field_zipcode'])) {
+      $query->condition('field_zipcode', current($filters['field_zipcode']));
+    }
+
+    $ids = $query->execute();
     $activities = $storage->loadMultiple($ids);
 
-    $response = new GeoJsonResponse();
+    $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
 
     // Load geo-coder service and set configuration.
     $geocoder = \Drupal::service('geocoder');
@@ -64,6 +79,7 @@ class ApiController extends ControllerBase {
       'bingmaps' => [],
     ];
 
+    $response = new GeoJsonResponse();
     foreach ($activities as $activity) {
       // Load image and use image style.
       if (isset($activity->get('field_image')->entity)) {

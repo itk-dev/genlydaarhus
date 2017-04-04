@@ -180,11 +180,18 @@ var viewsActivityFirstLoad = true;
         var target = $(event.target);
         var regex = new RegExp('\\[\\d+\\]');
         var key = target.attr('name').replace(regex, '');
-        if (target.is(':checked') || (target.attr('type') === 'text' && target.val() !== '')) {
+
+        // Handle checkboxes.
+        if (target.is(':checked')) {
           addHashValue(key, target.val());
         }
         else {
           removeHashValue(key, target.val());
+        }
+
+        // Handle input fields.
+        if (target.attr('type') === 'text') {
+          replaceHashValue(key, target.val());
         }
       });
 
@@ -242,7 +249,6 @@ var viewsActivityFirstLoad = true;
        * The functions are global available from genlyd_maps.js.
        */
       function updateMap() {
-        console.log('test');
         var filters = {
           'field_categories': readHashValue('field_categories_target_id'),
           'title': readHashValue('title'),
