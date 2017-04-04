@@ -24,13 +24,3 @@ timepickers:
   dependencies:
     - core/drupal
     - core/jquery
-
-filters:
-  version: 1.x
-  js:
-    js/filters.js: {}
-  dependencies:
-    - core/jquery
-    - core/drupal
-    - core/drupalSettings
-    - core/jquery.cookie
