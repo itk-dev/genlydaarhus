@@ -1,0 +1,29 @@
+security_authn_requests_sign: 0
+security_messages_sign: 0
+strict: 0
+_core:
+  default_config_hash: xZrT8_AI7UriK8S3VCF6txGozXhDJ4aClCbEaA3-3KE
+langcode: da
+login_menu_item_title: ''
+logout_menu_item_title: ''
+drupal_saml_login: 0
+login_redirect_url: ''
+logout_redirect_url: ''
+sp_entity_id: 'https://www.genlydaarhus.dk/'
+sp_name_id_format: 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress'
+sp_x509_certificate: ''
+sp_private_key: ''
+sp_cert_folder: ''
+idp_entity_id: 'https://adfs.aarhuskommune.dk/adfs/ls/'
+idp_single_sign_on_service: 'https://adfs.aarhuskommune.dk/adfs/ls/'
+idp_single_log_out_service: 'https://adfs.aarhuskommune.dk/adfs/ls/'
+idp_change_password_service: 'https://adfs.aarhuskommune.dk/adfs/ls/'
+idp_x509_certificate: ''
+unique_id_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+map_users: 1
+create_users: 1
+sync_name: 0
+sync_mail: 0
+user_name_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+user_mail_attribute: 'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress'
+security_request_authn_context: 0
