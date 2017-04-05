@@ -12,12 +12,14 @@ module:
   dynamic_page_cache: 0
   editor: 0
   entity_reference: 0
+  externalauth: 0
   field: 0
   field_group: 0
   field_ui: 0
   file: 0
   filter: 0
   genlyd: 0
+  genlyd_adfs: 0
   genlyd_maps: 0
   geocoder: 0
   help: 0
@@ -41,6 +43,7 @@ module:
   page_manager_ui: 0
   path: 0
   redirect: 0
+  samlauth: 0
   simple_fb_connect: 0
   system: 0
   taxonomy: 0

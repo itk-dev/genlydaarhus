@@ -25,4 +25,3 @@ https://{default}/:
     enabled: false
   type: upstream
   upstream: drupal:http
-

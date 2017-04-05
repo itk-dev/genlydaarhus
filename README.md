@@ -103,3 +103,21 @@ platform drush-aliases
 ```sh
 drush pull-dev
 ```
+
+
+## SAML authentication (ADFS)
+
+```
+drush --yes pm-enable genlyd_adfs
+```
+
+Configure SAML Authentication on `/admin/config/people/saml`.
+
+
+Allow anonymous users to view service provider metadata (`/saml/metadata`):
+
+```
+drush role-add-perm anonymous 'view sp metadata'
+```
+
+Or do it manually on `/admin/people/permissions`.

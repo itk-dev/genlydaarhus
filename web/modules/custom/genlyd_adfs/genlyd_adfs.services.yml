@@ -1,0 +1,6 @@
+services:
+  genlyd_adfs.event_subscriber.user_sync:
+    class: Drupal\genlyd_adfs\EventSubscriber\UserSyncEventSubscriber
+    arguments: ['@logger.channel.samlauth']
+    tags:
+      - {name: event_subscriber}
