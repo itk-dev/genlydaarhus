@@ -11,3 +11,4 @@ is_admin: false
 permissions:
   - 'access content'
   - 'view the administration theme'
+  - 'view sp metadata'
