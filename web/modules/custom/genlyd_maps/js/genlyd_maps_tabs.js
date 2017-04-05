@@ -278,6 +278,61 @@ var viewsActivityFirstLoad = true;
        */
       searchBtn.off('click', updateMap);
       searchBtn.on('click', updateMap);
+
+      /**
+       * Used to change location (map center) based on users current location.
+       *
+       * @param event
+       *   Click event.
+       */
+      function myLocation(event) {
+        event.preventDefault();
+        event.stopPropagation();
+
+        /**
+         * Successful location acquired update map center.
+         *
+         * @param position
+         */
+        function success(position) {
+          var latitude  = position.coords.latitude;
+          var longitude = position.coords.longitude;
+
+          genlydMapsObject.getView().setCenter(ol.proj.transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857'));
+        }
+
+        /**
+         * Unsuccessful in acquiring user location.
+         *
+         * @param err
+         */
+        function error(err) {
+          /**
+           * @TODO: Find better design solution. There are 3 types of error codes.
+           */
+          alert('Unable to get position. Only works over https.');
+        }
+
+        if ("geolocation" in navigator) {
+          navigator.geolocation.getCurrentPosition(success, error, {
+            enableHighAccuracy: true,
+            timeout: 2000,
+            maximumAge: 600000
+          });
+        }
+        else {
+          /**
+           * @TODO: Find better design solution.
+           */
+          alert('Position not supported by browser');
+        }
+      }
+
+      /**
+       * Attached click event listener to "My location" button.
+       */
+      locationBtn.off('click', myLocation);
+      locationBtn.on('click', myLocation);
     }
   }
 })(jQuery, Drupal);
