@@ -307,10 +307,7 @@ var viewsActivityFirstLoad = true;
          * @param err
          */
         function error(err) {
-          /**
-           * @TODO: Find better design solution. There are 3 types of error codes.
-           */
-          alert('Unable to get position. Only works over https.');
+           alert('Unable to get position.');
         }
 
         if ("geolocation" in navigator) {
@@ -321,9 +318,6 @@ var viewsActivityFirstLoad = true;
           });
         }
         else {
-          /**
-           * @TODO: Find better design solution.
-           */
           alert('Position not supported by browser');
         }
       }
