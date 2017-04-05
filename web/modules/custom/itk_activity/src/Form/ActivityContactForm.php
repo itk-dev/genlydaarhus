@@ -192,27 +192,24 @@ class ActivityContactForm extends FormBase {
 
       $mailManager = \Drupal::service('plugin.manager.mail');
 
-      $message = \Drupal::translation()->translate(":firstName :surname (:email, :phone) has sent you a message.\n\n:message", [
-        ':firstName' => $firstName,
-        ':surname' => $surname,
-        ':email' => $email,
-        ':phone' => $phone,
-        ':message' => $message,
-      ]);
-
       $params = [
+        'subject' => 'A user has sent a message to you about your activity at Genlyd Aarhus.',
+        'first_name' => $firstName,
+        'surname' => $surname,
+        'email' => $email,
+        'phone' => $phone,
         'message' => $message,
-        'node_title' => \Drupal::translation()->translate('A user has sent a mail to you about your activity at Genlyd.'),
+        'nodeTitle' => $node->title->value,
       ];
 
       // Send the mail.
       $result = $mailManager->mail(
           'itk_activity',
-          'send_mail_to_owner',
+          'contact_owner',
           $node->uid->entity->mail->value,
           \Drupal::currentUser()->getPreferredLangcode(),
           $params,
-          NULL,
+          \Drupal::currentUser()->getEmail(),
           TRUE);
       if ($result['result'] !== TRUE) {
         drupal_set_message(t('Message not sent to owner.'), 'error');
