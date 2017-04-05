@@ -7,6 +7,7 @@
 * Fixed styling of cookie message and link.
 * Fixed styling of page.
 * Enabled Metatag: Open Graph module and added tags.
+* Added search to activity map.
 
 ## v1.0.0-beta2
 
