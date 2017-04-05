@@ -7,7 +7,8 @@
 * Fixed styling of cookie message and link.
 * Fixed styling of page.
 * Enabled Metatag: Open Graph module and added tags.
-* Added search to activity map.
+* Enabled search filters on activity map.
+* Added adfs login module for testing.
 
 ## v1.0.0-beta2
 
