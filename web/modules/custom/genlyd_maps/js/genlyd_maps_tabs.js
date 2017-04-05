@@ -258,6 +258,10 @@ var viewsActivityFirstLoad = true;
        * The functions are global available from genlyd_maps.js.
        */
       function updateMap() {
+        // Ensure map popups are closed.
+        var element = document.getElementById('popup');
+        element.innerHTML = '';
+
         var filters = {
           'field_categories': readHashValue('field_categories_target_id'),
           'title': readHashValue('title'),
