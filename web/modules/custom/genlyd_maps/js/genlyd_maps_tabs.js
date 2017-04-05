@@ -96,7 +96,12 @@ var viewsActivityFirstLoad = true;
        */
       function addHashValue(key, value) {
         var hash = window.location.hash;
+
+        // Ensures that the & is not missing in front of URL if users have
+        // removed it in links
         hash += '&' + key + "=" + value + '&';
+
+        // Remove extra & if they exists in the hash.
         window.location.hash = hash.replace(/&{2,}/gi, '&');
       }
 
@@ -112,6 +117,8 @@ var viewsActivityFirstLoad = true;
         var hash = window.location.hash.substr(1);
         var regex = new RegExp(key + '=\\w+', 'gi');
         hash = hash.replace(regex, '');
+
+        // Remove extra & if they exists in the hash.
         hash = hash.replace(/&{2,}/, '&');
         window.location.hash = hash;
 
@@ -130,6 +137,8 @@ var viewsActivityFirstLoad = true;
         var hash = window.location.hash.substr(1);
         var regex = new RegExp(key + '=' + value, 'gi');
         hash = hash.replace(regex, '');
+
+        // Remove extra & if they exists in the hash.
         hash = hash.replace(/&{2,}/, '&');
         window.location.hash = hash;
       }

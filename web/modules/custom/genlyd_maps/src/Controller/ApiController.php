@@ -40,6 +40,8 @@ class ApiController extends ControllerBase {
       $request->request->replace(is_array($filters) ? $filters : []);
     }
 
+    // Get the current date and format it correctly to use it in the entity
+    // query below.
     $date = new DrupalDateTime();
     $date->setTimezone(new \DateTimezone(DATETIME_STORAGE_TIMEZONE));
     $formatted = $date->format('Y-m-d');
@@ -48,8 +50,8 @@ class ApiController extends ControllerBase {
     $storage = \Drupal::entityTypeManager()->getStorage('node');
     $query = $storage->getQuery()
       ->condition('type', 'activity')
-      ->condition('status', 1);
-//      ->condition('field_data.value', $formatted, '<=');
+      ->condition('status', 1)
+      ->condition('field_date.value', $formatted, '>=');
 
     if (!empty($filters['field_categories'])) {
       $query->condition('field_categories', $filters['field_categories'], 'IN');
