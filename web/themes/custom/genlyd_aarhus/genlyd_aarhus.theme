@@ -311,18 +311,6 @@ function genlyd_aarhus_views_pre_render(ViewExecutable &$view) {
       }
     }
   }
-
-  // Attach filter js to activity view.
-  if ($id == 'activity') {
-    // Attach filters js.
-    $view->element['#attached']['library'][] = 'itk_activity/filters';
-    $view->element['#attached']['drupalSettings']['itk_activity'] = [
-      'filterButton' => [
-        'textShow' => \Drupal::translation()->translate('Show filters'),
-        'textHide' => \Drupal::translation()->translate('Hide filters'),
-      ],
-    ];
-  }
 }
 
 /**

@@ -11,5 +11,6 @@ genlyd_maps.activities:
   defaults:
     _controller: '\Drupal\genlyd_maps\Controller\ApiController::activates'
     _title: 'Encode activity as geo-json'
+    methods:  [POST]
   requirements:
     _permission: 'access content'

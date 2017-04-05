@@ -1,0 +1,13 @@
+{% set node %}
+  {% block node %}{% endblock %}
+{% endset %}
+
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {{ node }}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}

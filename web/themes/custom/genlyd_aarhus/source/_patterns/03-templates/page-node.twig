@@ -1,0 +1,18 @@
+{% set page_title %}
+  {% block page_title %}{% endblock %}
+{% endset %}
+
+{% set page_node %}
+  {% block page_node %}{% endblock %}
+{% endset %}
+
+{% embed "@templates/page.twig" %}
+  {% block main %}
+    {% embed "@components/node.twig" %}
+      {% block node %}
+        {{ page_title }}
+        {{ page_node }}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
