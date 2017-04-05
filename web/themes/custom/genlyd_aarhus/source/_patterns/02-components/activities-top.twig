@@ -30,6 +30,10 @@
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
         {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.showFilters }, jsClass: "js-filters-toggle" } %}
+      {% endblock %}
+    {% endembed %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
         {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.myLocation }, jsClass: "activities-top--my-location js-maps-my-location" } %}
       {% endblock %}
     {% endembed %}
