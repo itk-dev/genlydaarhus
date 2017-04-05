@@ -199,7 +199,7 @@ class ActivityContactForm extends FormBase {
         'email' => $email,
         'phone' => $phone,
         'message' => $message,
-        'nodeTitle' => $node->title->value,
+        'node_title' => $node->title->value,
       ];
 
       // Send the mail.
