@@ -136,9 +136,10 @@ class ActivityContactForm extends FormBase {
     $this->flood->register('itk_activity.mail_to_activity_owner');
 
     $limitAttempts = 3;
-    $limitTimeWindow = 900;
+    $limitTimeWindow = 3600;
 
     if (!$this->flood->isAllowed('itk_activity.mail_to_activity_owner', $limitAttempts, $limitTimeWindow)) {
+      drupal_set_message(\Drupal::translation()->translate('Too many attempts to write to user. Try again later.'));
       throw new AccessDeniedHttpException('Access is blocked because of IP based flood prevention.', NULL, Response::HTTP_TOO_MANY_REQUESTS);
     }
   }
