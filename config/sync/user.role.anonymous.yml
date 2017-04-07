@@ -12,3 +12,4 @@ permissions:
   - 'access content'
   - 'view the administration theme'
   - 'view sp metadata'
+  - 'contact itk_activity activity owner'
