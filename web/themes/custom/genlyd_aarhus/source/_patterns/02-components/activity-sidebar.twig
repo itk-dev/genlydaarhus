@@ -37,9 +37,11 @@
         {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupExternalButton } %}
       </div>
     {% endif %}
+    {% if meta.contactLink %}
     <div class="activity-sidebar--signup">
       {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.contactLink } %}
     </div>
+    {% endif %}
     <div class="activity-sidebar--social-share">
       <div class="social-share">
         {% for button in meta.socialShare.buttons %}
