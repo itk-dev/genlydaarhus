@@ -33,7 +33,7 @@ function itk_activity_mail($key, &$message, $params) {
     case 'contact_owner':
       $message['subject'] = $params['subject'];
       // Note that the message body is an array, not a string.
-      $message['body'][] = t('@first_name @surname (@email, @phone) sent you a message about @node_title.', [
+      $message['body'][] = t('@first_name @surname (@email, @phone) sent you a message about your activity: @node_title.', [
         '@first_name' => $params['first_name'],
         '@surname' => $params['surname'],
         '@email' => $params['email'],
