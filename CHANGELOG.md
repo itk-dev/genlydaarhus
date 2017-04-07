@@ -1,13 +1,14 @@
 # Changelog
 
-## In develop
+## v1.0.0-beta3
 
 * Fixed translation issues with register page, and activity view.
 * Added Webmaster role and changed Editor permissions.
 * Fixed styling of cookie message and link.
 * Fixed styling of page.
 * Enabled Metatag: Open Graph module and added tags.
-* Added search to activity map.
+* Enabled search filters on activity map.
+* Added adfs login module for testing.
 
 ## v1.0.0-beta2
 
