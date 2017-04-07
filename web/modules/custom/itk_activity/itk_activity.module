@@ -1,5 +1,7 @@
 <?php
 
+use Drupal\Component\Utility\Html;
+
 /**
  * Implement hook_mail().
  *
@@ -33,11 +35,11 @@ function itk_activity_mail($key, &$message, $params) {
     case 'contact_owner':
       $message['subject'] = $params['subject'];
       // Note that the message body is an array, not a string.
-      $message['body'][] = t('@first_name @surname (@email, @phone) sent you a message about your activity: @node_title.', [
-        '@first_name' => $params['first_name'],
-        '@surname' => $params['surname'],
-        '@email' => $params['email'],
-        '@phone' => $params['phone'],
+      $message['body'][] = \Drupal::translation()->translate('@first_name @surname (@email, @phone) sent you a message about your activity: @node_title.', [
+        '@first_name' => Html::escape($params['first_name']),
+        '@surname' => Html::escape($params['surname']),
+        '@email' => Html::escape($params['email']),
+        '@phone' => Html::escape($params['phone']),
         '@node_title' => $params['node_title'],
       ], $options);
       // Because this is just user-entered text, we do not need to translate it.
@@ -46,7 +48,7 @@ function itk_activity_mail($key, &$message, $params) {
       // '<' or '>', we need to make sure these entities are properly escaped,
       // as the body will later be transformed from HTML to text, meaning
       // that a normal use of '<' will result in truncation of the message.
-      $message['body'][] = $params['message'];
+      $message['body'][] = Html::escape($params['message']);
       break;
   }
 }
