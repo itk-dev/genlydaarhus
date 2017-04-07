@@ -28,6 +28,16 @@
                 {% endembed %}
               {% endif %}
 
+              <!--
+              {% if login.socialButtons.adfsButton %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include "@elements/buttons/button-google.twig" with { button: login.socialButtons.adfsButton } %}
+                  {% endblock %}
+                {% endembed %}
+              {% endif %}
+              -->
+
               {% if login.socialButtons.googleButton %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
