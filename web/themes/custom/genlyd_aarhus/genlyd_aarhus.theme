@@ -142,6 +142,14 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
   ];
   $mailto = implode("", $mailtoParts);
 
+  // Add contact link button if user has permission to contact owner.
+  if ($currentUser->hasPermission('contact itk_activity activity owner')) {
+    $contactLink = [
+      'title' => \Drupal::translation()->translate('Contact owner'),
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_contact', ['nid' => $node->id()])->toString(),
+    ];
+  }
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -183,10 +191,7 @@ function genlyd_aarhus_preprocess_node__activity(&$variables) {
           ->translate('Signed up users'),
         'signupButton' => $signupButton,
         'signupExternalButton' => $externalSignupButton,
-        'contactLink' => [
-          'title' => \Drupal::translation()->translate('Contact owner'),
-          'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_contact', ['nid' => $node->id()])->toString(),
-        ],
+        'contactLink' => $contactLink,
         'socialShare' => [
           'buttons' => [
             [
