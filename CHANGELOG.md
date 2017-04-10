@@ -1,5 +1,9 @@
 # Changelog
 
+## v1.0.1-beta3
+
+* Added adfs button
+
 ## v1.0.0-beta3
 
 * Fixed translation issues with register page, and activity view.
