@@ -1,12 +1,17 @@
 # Changelog
 
-## v1.0.1-beta5
+## In development
 
-* Activated adfs button
+* Removed empty radio button from activity edit page.
+* Fixed categories for activities, so that activities did not reference term with tid = 0.
+* Fixed confirm page in activity create so values are not keys to entities.
+* Removed error messages from activity map when geocoder could not handle address.
+* Added contact activity owner form.
+* Changed block header text in footer.
 
-## v1.0.1-beta4
+## v1.0.0-beta4
 
-* Added adfs button (deactivated)
+* Added adfs button.
 
 ## v1.0.0-beta3
 
