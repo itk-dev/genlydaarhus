@@ -17,12 +17,11 @@ class GenlydMapsServiceProvider extends ServiceProviderBase {
 
   /**
    * {@inheritdoc}
-   *
-   * @TODO: Remove this when the geocoding is handled in activity create.
    */
   public function alter(ContainerBuilder $container) {
     // Override geocoder service.
     $definition = $container->getDefinition('geocoder');
     $definition->setClass(Geocoder::class);
   }
+
 }
