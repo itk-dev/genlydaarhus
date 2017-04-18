@@ -71,8 +71,17 @@ class MultistepFormCategories extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $categories = $form_state->getValue('field_categories');
+
+    // Filter 0 set options away.
+    foreach ($categories as $key => $value) {
+      if ($value == 0) {
+        unset($categories[$key]);
+      }
+    }
+
     // Set values in storage.
-    $this->store->set('field_categories', $form_state->getValue('field_categories'));
+    $this->store->set('field_categories', $categories);
 
     $this->acceptStep('image');
 

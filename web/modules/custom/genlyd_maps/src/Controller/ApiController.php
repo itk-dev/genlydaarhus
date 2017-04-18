@@ -139,15 +139,7 @@ class ApiController extends ControllerBase {
       ], ',');
 
       // Returns false if address does not exist.
-      try {
-        $addressCollection = $geocoder->geocode($address, $plugins, $options);
-      }
-      catch (InvalidCredentials $e) {
-        // Ignore error.
-      }
-      catch (NoResult $e) {
-        // Ignore error.
-      }
+      $addressCollection = $geocoder->geocode($address, $plugins, $options);
 
       if ($addressCollection) {
         $latitude = $addressCollection->first()->getCoordinates()->getLatitude();

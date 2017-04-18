@@ -1,6 +1,19 @@
 # Changelog
 
-## In develop
+## In development
+
+* Removed empty radio button from activity edit page.
+* Fixed categories for activities, so that activities did not reference term with tid = 0.
+* Fixed confirm page in activity create so values are not keys to entities.
+* Removed error messages from activity map when geocoder could not handle address.
+* Added contact activity owner form.
+* Changed block header text in footer.
+
+## v1.0.0-beta4
+
+* Added adfs button.
+
+## v1.0.0-beta3
 
 * Fixed translation issues with register page, and activity view.
 * Added Webmaster role and changed Editor permissions.
@@ -8,7 +21,8 @@
 * Added contact form to activities.
 * Fixed styling of page.
 * Enabled Metatag: Open Graph module and added tags.
-* Added search to activity map.
+* Enabled search filters on activity map.
+* Added adfs login module for testing.
 
 ## v1.0.0-beta2
 

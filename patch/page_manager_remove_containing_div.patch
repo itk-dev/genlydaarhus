@@ -1,0 +1,15 @@
+diff --git a/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php b/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
+index 4b704d0..41b48e3 100644
+--- a/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
++++ b/src/Plugin/DisplayVariant/PageBlockDisplayVariant.php
+@@ -118,10 +118,6 @@ class PageBlockDisplayVariant extends BlockDisplayVariant implements PluginWizar
+         continue;
+       }
+ 
+-      $region_name = Html::getClass("block-region-$region");
+-      $build[$region]['#prefix'] = '<div class="' . $region_name . '">';
+-      $build[$region]['#suffix'] = '</div>';
+-
+       /** @var \Drupal\Core\Block\BlockPluginInterface[] $blocks */
+       $weight = 0;
+       foreach ($blocks as $block_id => $block) {
