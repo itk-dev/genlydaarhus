@@ -98,6 +98,9 @@
       ]
     },
     "patches": {
+      "drupal/page_manager": {
+        "Removed containing div": "patch/page_manager_remove_containing_div.patch"
+      }
     }
   }
 }
