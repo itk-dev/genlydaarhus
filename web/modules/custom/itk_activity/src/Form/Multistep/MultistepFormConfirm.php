@@ -45,6 +45,8 @@ class MultistepFormConfirm extends MultistepFormBase {
       }
     }
 
+    $signupRequired = $this->store->get('field_signup_required') ? $this->t('Sign up required') : $this->t('Sign up not required');
+
     // Get term values.
     $entryRequirements = Term::load($this->store->get('field_entry_requirements'))->name->value;
     $helpNeeded = Term::load($this->store->get('field_help_needed'))->name->value;
@@ -99,10 +101,9 @@ class MultistepFormConfirm extends MultistepFormBase {
         'value' => $this->store->get('field_price'),
       ],
       'signupRequired' => [
-        'label' => $this->t('Sign up required'),
-        'value' => $this->store->get('field_signup_required'),
+        'label' => $this->t('Is sign up required?'),
+        'value' => $signupRequired,
       ],
-
       'timeEnd' => [
         'label' => $this->t('End time'),
         'value' => $this->store->get('field_time_end'),
