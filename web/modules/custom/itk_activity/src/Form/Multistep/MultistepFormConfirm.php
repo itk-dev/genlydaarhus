@@ -34,7 +34,7 @@ class MultistepFormConfirm extends MultistepFormBase {
 
     $categorySelections = $this->store->get('field_categories');
 
-    // Setup help_needed options array.
+    // Get selected categories string.
     $categories = '';
     foreach ($categorySelections as $key => $value) {
       if ($value) {
@@ -44,6 +44,11 @@ class MultistepFormConfirm extends MultistepFormBase {
         $categories .= Term::load($key)->name->value;
       }
     }
+
+    // Get term values.
+    $entryRequirements = Term::load($this->store->get('field_entry_requirements'))->name->value;
+    $helpNeeded = Term::load($this->store->get('field_help_needed'))->name->value;
+    $physicalRequirements = Term::load($this->store->get('field_physical_requirements'))->name->value;
 
     $form['data'] = [
       'title' => [
@@ -72,11 +77,11 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
       'entryRequirements' => [
         'label' => $this->t('What level is required to participate?'),
-        'value' => $this->store->get('field_entry_requirements'),
+        'value' => $entryRequirements,
       ],
       'helpNeeded' => [
         'label' => $this->t('Do you need help?'),
-        'value' => $this->store->get('field_help_needed'),
+        'value' => $helpNeeded,
       ],
       'image' => [
         'src' => isset($this->store->get('field_image')[0]) ? File::load($this->store->get('field_image')[0])->url() : '',
@@ -87,7 +92,7 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
       'physicalRequirements' => [
         'label' => $this->t('What are the physical requirements?'),
-        'value' => $this->store->get('field_physical_requirements'),
+        'value' => $physicalRequirements,
       ],
       'price' => [
         'label' => $this->t('Price'),
