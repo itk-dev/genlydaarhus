@@ -1,8 +1,12 @@
 # Changelog
 
-## v1.0.1-beta3
+## v1.0.1-beta5
 
-* Added adfs button
+* Activated adfs button
+
+## v1.0.1-beta4
+
+* Added adfs button (deactivated)
 
 ## v1.0.0-beta3
 
