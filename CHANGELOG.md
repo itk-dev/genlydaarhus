@@ -18,6 +18,7 @@
 * Fixed translation issues with register page, and activity view.
 * Added Webmaster role and changed Editor permissions.
 * Fixed styling of cookie message and link.
+* Added contact form to activities.
 * Fixed styling of page.
 * Enabled Metatag: Open Graph module and added tags.
 * Enabled search filters on activity map.

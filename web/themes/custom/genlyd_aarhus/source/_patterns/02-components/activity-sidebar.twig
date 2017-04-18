@@ -32,8 +32,13 @@
       {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupButton } %}
     </div>
     {% if meta.signupExternalButton %}
+      <div class="activity-sidebar--signup">
+        {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupExternalButton } %}
+      </div>
+    {% endif %}
+    {% if meta.contactLink %}
     <div class="activity-sidebar--signup">
-      {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupExternalButton } %}
+      {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.contactLink } %}
     </div>
     {% endif %}
     <div class="activity-sidebar--social-share">

@@ -75,3 +75,13 @@ itk_activity.action_clone:
     _title: 'Clone'
   requirements:
     _permission: 'clone itk_activity own activity'
+
+# Contact activity owner
+
+itk_activity.action_contact:
+  path: '/aktivitet/{nid}/kontakt'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\ActivityContactForm'
+    _title: 'Contact'
+  requirements:
+    _permission: 'contact itk_activity activity owner'
