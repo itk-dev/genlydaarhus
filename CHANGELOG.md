@@ -6,7 +6,11 @@
 
 * Fixed that password could not be changed.
 
-## v1.0.0 (-beta5)
+## v1.0.0
+
+* First release!
+
+## v1.0.0-beta5
 
 * Removed empty radio button from activity edit page.
 * Fixed categories for activities, so that activities did not reference term with tid = 0.
