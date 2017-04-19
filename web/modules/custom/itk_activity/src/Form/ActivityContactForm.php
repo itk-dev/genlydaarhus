@@ -74,7 +74,7 @@ class ActivityContactForm extends FormBase {
 
     // If the node does not exist redirect to frontpage.
     if (!isset($node)) {
-      drupal_set_message(t('The activity does not exist.'));
+      drupal_set_message($this->t('The activity does not exist.'));
       return new RedirectResponse(Url::fromRoute('<front>')->toString());
     }
 
@@ -194,7 +194,7 @@ class ActivityContactForm extends FormBase {
       $mailManager = \Drupal::service('plugin.manager.mail');
 
       $params = [
-        'subject' => \Drupal::translation()->translate('A user has sent a message to you about your activity at Genlyd Aarhus.'),
+        'subject' => $this->t('A user has sent a message to you about your activity at Genlyd Aarhus.'),
         'first_name' => $firstName,
         'surname' => $surname,
         'email' => $email,
