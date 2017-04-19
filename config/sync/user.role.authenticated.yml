@@ -19,3 +19,4 @@ permissions:
   - 'access itk_activity user signup'
   - 'create itk_activity activity'
   - 'clone itk_activity own activity'
+  - 'contact itk_activity activity owner'

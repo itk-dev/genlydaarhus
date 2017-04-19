@@ -13,3 +13,7 @@
 'clone itk_activity own activity':
   title: 'Access to clone own activity'
   description: 'Allow users to clone own activities.'
+
+'contact itk_activity activity owner':
+  title: 'Access to contact activity owner'
+  description: 'Allow users to contact activity owner.'

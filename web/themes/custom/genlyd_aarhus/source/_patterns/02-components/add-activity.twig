@@ -125,9 +125,6 @@
 
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-
-          {% include "@elements/forms/radio.twig" with { data: form.field_signup_required} %}
-
           {% if form %}
             {# Drupal #}
             {{ form.field_signup_required }}
