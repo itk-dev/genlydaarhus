@@ -53,6 +53,18 @@
           {% endif %}
         {% endblock %}
       {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.current_pass }}
+          {% else %}
+            {# Pattern Lab #}
+            {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Nuværende kodeord" } } %}
+            {% include "@elements/forms/text-field.twig" with {'type': 'password', 'name': 'current_pass' } %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
     {% endblock %}
   {% endembed %}
 
