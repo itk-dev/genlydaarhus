@@ -15,7 +15,7 @@
       var zipcode = zipcodeField.val();
 
       if (zipcode.length === 4) {
-        $.getJSON("http://dawa.aws.dk/postnumre/" + zipcode,
+        $.getJSON("https://dawa.aws.dk/postnumre/" + zipcode,
           function (data) {
             areaField.val(data.navn);
           }

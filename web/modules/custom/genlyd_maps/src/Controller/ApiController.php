@@ -91,42 +91,40 @@ class ApiController extends ControllerBase {
 
       // Get the prices for this activity.
       $priceRaw = $activity->field_price->value;
-      $price = \Drupal::translation()->translate('Free');
+      $price = t('Free');
       if (isset($priceRaw) || $priceRaw > 0) {
-        $price = \Drupal::translation()->translate(':price kr.', [ ':price' => $priceRaw ]);
+        $price = t(':price kr.', [ ':price' => $priceRaw ]);
       }
-
-      $t = \Drupal::translation();
 
       // Create metadata, which can be used in the marker popup's.
       $metadata = [
         'title' => [
-          'label' => $t->translate('Title'),
+          'label' => t('Title'),
           'value' => $activity->getTitle(),
         ],
         'image' => $image_uri,
         'date' => [
-          'label' => $t->translate('Date'),
+          'label' => t('Date'),
           'value' => \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
         ],
         'price' => [
-          'label' =>  $t->translate('Price'),
+          'label' =>  t('Price'),
           'value' => $price,
         ],
         'address' => [
-          'label' => $t->translate('Address'),
+          'label' => t('Address'),
           'value' => $activity->get('field_address')->value,
         ],
         'zipcode' => [
-          'label' => $t->translate('Zipcode'),
+          'label' => t('Zipcode'),
           'value' => $activity->get('field_zipcode')->value,
         ],
         'area' => [
-          'label' => $t->translate('Area'),
+          'label' => t('Area'),
           'value' => $activity->get('field_area')->value,
         ],
         'url' => [
-          'label' => $t->translate('More information'),
+          'label' => t('More information'),
           'value' => Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString(),
         ],
       ];

@@ -42,23 +42,23 @@ class ItkCookieMessageConfigForm extends ConfigFormBase {
 
     $form['general'] = array(
       '#type' => 'details',
-      '#title' => $this->t('General settings'),
+      '#title' => t('General settings'),
       '#group' => 'tabs',
     );
 
     $form['general'][$this->getKey('cookie_name')] = array(
       '#type' => 'textfield',
-      '#title' => $this->t('Cookie name'),
+      '#title' => t('Cookie name'),
       '#required' => TRUE,
       '#default_value' => $settings->get('cookie_name'),
     );
 
     $form['general'][$this->getKey('cookie_lifetime')] = array(
       '#type' => 'select',
-      '#title' => $this->t('Cookie lifetime'),
+      '#title' => t('Cookie lifetime'),
       '#options' => array(
-        30 * 24 * 60 * 60 => $this->t('One month'),
-        365 * 24 * 60 * 60 => $this->t('One year'),
+        30 * 24 * 60 * 60 => t('One month'),
+        365 * 24 * 60 * 60 => t('One year'),
       ),
       '#default_value' => $settings->get('cookie_lifetime'),
     );
