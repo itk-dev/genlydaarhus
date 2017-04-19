@@ -2,6 +2,14 @@
 
 ## In development
 
+## v1.0.1
+
+* Fixed that password could not be changed.
+
+## v1.0.0
+
+* First release!
+
 ## v1.0.0-beta5
 
 * Removed empty radio button from activity edit page.
