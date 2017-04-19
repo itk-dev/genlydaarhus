@@ -194,7 +194,7 @@ class ActivityContactForm extends FormBase {
       $mailManager = \Drupal::service('plugin.manager.mail');
 
       $params = [
-        'subject' => t('A user has sent a message to you about your activity at Genlyd Aarhus.'),
+        'subject' => $this->t('A user has sent a message to you about your activity at Genlyd Aarhus.'),
         'first_name' => $firstName,
         'surname' => $surname,
         'email' => $email,
@@ -213,10 +213,10 @@ class ActivityContactForm extends FormBase {
           \Drupal::currentUser()->getEmail(),
           TRUE);
       if ($result['result'] !== TRUE) {
-        drupal_set_message(t('Message not sent to owner.'), 'error');
+        drupal_set_message($this->t('Message not sent to owner.'), 'error');
       }
       else {
-        drupal_set_message(t('Message sent to owner.'));
+        drupal_set_message($this->t('Message sent to owner.'));
       }
     }
 
