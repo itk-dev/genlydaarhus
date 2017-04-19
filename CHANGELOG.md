@@ -2,6 +2,13 @@
 
 ## In development
 
+## v1.0.1
+* Fixed non-translatable string in mail subject when contacting activity owner. 
+
+## v1.0.0
+* Release 1.0.0!
+* “If you can’t feed a team with two pizzas, it’s too large.” - Jeff Bezos
+
 ## v1.0.0-beta5
 
 * Removed empty radio button from activity edit page.
