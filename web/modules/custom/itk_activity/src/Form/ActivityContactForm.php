@@ -194,7 +194,7 @@ class ActivityContactForm extends FormBase {
       $mailManager = \Drupal::service('plugin.manager.mail');
 
       $params = [
-        'subject' => $this->t('A user has sent a message to you about your activity at Genlyd Aarhus.'),
+        'subject' => \Drupal::translation()->translate('A user has sent a message to you about your activity at Genlyd Aarhus.'),
         'first_name' => $firstName,
         'surname' => $surname,
         'email' => $email,
