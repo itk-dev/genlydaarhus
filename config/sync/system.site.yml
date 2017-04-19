@@ -3,7 +3,7 @@ name: 'Genlyd Aarhus'
 mail: admin@example.com
 slogan: ''
 page:
-  403: ''
+  403: /ingen-adgang
   404: /siden-blev-ikke-fundet
   front: /home
 admin_compact_mode: false
