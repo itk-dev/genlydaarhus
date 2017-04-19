@@ -45,7 +45,7 @@ class MultistepFormConfirm extends MultistepFormBase {
       }
     }
 
-    $signupRequired = $this->store->get('field_signup_required') ? $this->t('Sign up required') : $this->t('Sign up not required');
+    $signupRequired = $this->store->get('field_signup_required') ? t('Sign up required') : t('Sign up not required');
 
     // Get term values.
     $entryRequirements = Term::load($this->store->get('field_entry_requirements'))->name->value;
@@ -54,76 +54,76 @@ class MultistepFormConfirm extends MultistepFormBase {
 
     $form['data'] = [
       'title' => [
-        'label' => $this->t('Title'),
+        'label' => t('Title'),
         'value' => $this->store->get('title'),
       ],
       'body' => [
-        'label' => $this->t('Description'),
+        'label' => t('Description'),
         'value' => $this->store->get('body'),
       ],
       'address' => [
-        'label' => $this->t('Address'),
+        'label' => t('Address'),
         'value' => $this->store->get('field_address'),
       ],
       'area' => [
-        'label' => $this->t('Area'),
+        'label' => t('Area'),
         'value' => $this->store->get('field_area'),
       ],
       'categories' => [
-        'label' => $this->t('Categories'),
+        'label' => t('Categories'),
         'value' => $categories,
       ],
       'date' => [
-        'label' => $this->t('Date'),
+        'label' => t('Date'),
         'value' => $this->store->get('field_date'),
       ],
       'entryRequirements' => [
-        'label' => $this->t('What level is required to participate?'),
+        'label' => t('What level is required to participate?'),
         'value' => $entryRequirements,
       ],
       'helpNeeded' => [
-        'label' => $this->t('Do you need help?'),
+        'label' => t('Do you need help?'),
         'value' => $helpNeeded,
       ],
       'image' => [
         'src' => isset($this->store->get('field_image')[0]) ? File::load($this->store->get('field_image')[0])->url() : '',
       ],
       'maximumParticipants' => [
-        'label' => $this->t('How many can participate?'),
+        'label' => t('How many can participate?'),
         'value' => $this->store->get('field_maximum_participants'),
       ],
       'physicalRequirements' => [
-        'label' => $this->t('What are the physical requirements?'),
+        'label' => t('What are the physical requirements?'),
         'value' => $physicalRequirements,
       ],
       'price' => [
-        'label' => $this->t('Price'),
+        'label' => t('Price'),
         'value' => $this->store->get('field_price'),
       ],
       'signupRequired' => [
-        'label' => $this->t('Is sign up required?'),
+        'label' => t('Is sign up required?'),
         'value' => $signupRequired,
       ],
       'timeEnd' => [
-        'label' => $this->t('End time'),
+        'label' => t('End time'),
         'value' => $this->store->get('field_time_end'),
       ],
       'timeStart' => [
-        'label' => $this->t('Start time'),
+        'label' => t('Start time'),
         'value' => $this->store->get('field_time_start'),
       ],
       'zipcode' => [
-        'label' => $this->t('Zipcode'),
+        'label' => t('Zipcode'),
         'value' => $this->store->get('field_zipcode'),
       ],
     ];
 
     $form['data']['progressBar'] = $this->getProgressBar('confirm');
 
-    $form['actions']['submit']['#value'] = $this->t('Create activity');
+    $form['actions']['submit']['#value'] = t('Create activity');
     $form['actions']['back'] = [
       'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
-      'title' => \Drupal::translation()->translate('Back'),
+      'title' => t('Back'),
     ];
 
     return $form;

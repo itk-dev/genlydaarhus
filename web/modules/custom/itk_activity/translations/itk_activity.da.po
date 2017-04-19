@@ -1,8 +1,8 @@
-# Danish translation of ITK Floating Help (8.x-1.0)
+# Danish translation of ITK Activity (8.x-1.0)
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: ITK Floating Help\n"
+"Project-Id-Version: ITK Activity\n"
 "POT-Creation-Date: 2017-02-14 11:00+0000\n"
 "PO-Revision-Date: YYYY-mm-DD HH:MM+ZZZZ\n"
 "Language-Team: Danish\n"

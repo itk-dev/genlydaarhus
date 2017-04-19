@@ -39,14 +39,14 @@ class GenlydMapSettingsForm extends FormBase {
     $config = $this->getBaseConfig();
 
     $form['wrapper'] = array(
-      '#title' => $this->t('Maps API keys'),
+      '#title' => t('Maps API keys'),
       '#type' => 'details',
       '#weight' => '1',
       '#open' => TRUE,
     );
 
     $form['wrapper']['genlyd_maps_google_api_key'] = array(
-      '#title' => $this->t('Google API key'),
+      '#title' => t('Google API key'),
       '#type' => 'textfield',
       '#default_value' => $config->get('genlyd_maps_google_api_key'),
       '#weight' => '1',
