@@ -34,7 +34,7 @@ class MultistepFormImage extends MultistepFormBase {
     $form['data']['progressBar'] = $this->getProgressBar('image');
 
     $form['field_image'] = [
-      '#title' => $this->t('Image'),
+      '#title' => t('Image'),
       '#type' => 'managed_file',
       '#default_value' => $this->store->get('field_image'),
       '#upload_location' => 'public://',
@@ -77,10 +77,10 @@ class MultistepFormImage extends MultistepFormBase {
       }
     }
 
-    $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['submit']['#value'] = t('Next');
     $form['actions']['back'] = [
       'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
-      'title' => \Drupal::translation()->translate('Back'),
+      'title' => t('Back'),
     ];
 
     return $form;

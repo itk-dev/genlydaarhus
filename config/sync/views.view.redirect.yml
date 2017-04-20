@@ -42,13 +42,13 @@ display:
       exposed_form:
         type: basic
         options:
-          submit_button: Apply
+          submit_button: Udfør
           reset_button: false
-          reset_button_label: Reset
-          exposed_sorts_label: 'Sort by'
+          reset_button_label: Gendan
+          exposed_sorts_label: 'Sortér efter'
           expose_sort_order: true
-          sort_asc_label: Asc
-          sort_desc_label: Desc
+          sort_asc_label: Stigende
+          sort_desc_label: Faldende
       pager:
         type: full
         options:
@@ -63,12 +63,12 @@ display:
             last: 'last »'
           expose:
             items_per_page: false
-            items_per_page_label: 'Items per page'
+            items_per_page_label: 'Antal elementer'
             items_per_page_options: '5, 10, 25, 50'
             items_per_page_options_all: false
-            items_per_page_options_all_label: '- All -'
+            items_per_page_options_all_label: '- Alle -'
             offset: false
-            offset_label: Offset
+            offset_label: Forskydning
           quantity: 9
       style:
         type: table
@@ -196,7 +196,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: From
+          label: Fra
           exclude: false
           alter:
             alter_text: false
@@ -281,7 +281,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          label: Created
+          label: Oprettet
           exclude: false
           alter:
             alter_text: false
@@ -348,7 +348,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_source__path_op
-            label: From
+            label: Fra
             description: ''
             use_operator: false
             operator: redirect_source__path_op
@@ -388,7 +388,7 @@ display:
           exposed: true
           expose:
             operator_id: redirect_redirect__uri_op
-            label: To
+            label: Til
             description: ''
             use_operator: false
             operator: redirect_redirect__uri_op
@@ -456,49 +456,49 @@ display:
             default_group_multiple: {  }
             group_items:
               1:
-                title: '300 Multiple Choices'
+                title: '300 Flere valg'
                 operator: '='
                 value:
                   value: '300'
                   min: ''
                   max: ''
               2:
-                title: '301 Moved Permanently'
+                title: '301 Flyttet permanent'
                 operator: '='
                 value:
                   value: '301'
                   min: ''
                   max: ''
               3:
-                title: '302 Found'
+                title: '302 Fundet'
                 operator: '='
                 value:
                   value: '302'
                   min: ''
                   max: ''
               4:
-                title: '303 See Other'
+                title: '303 Se anden placering'
                 operator: '='
                 value:
                   value: '303'
                   min: ''
                   max: ''
               5:
-                title: '304 Not Modified'
+                title: '304 Ikke ændret'
                 operator: '='
                 value:
                   value: '304'
                   min: ''
                   max: ''
               6:
-                title: '305 Use Proxy'
+                title: '305 Brug proxy'
                 operator: '='
                 value:
                   value: '305'
                   min: ''
                   max: ''
               7:
-                title: '307 Temporary Redirect'
+                title: '307 Midlertidig omdirigering'
                 operator: '='
                 value:
                   value: '307'
@@ -520,7 +520,7 @@ display:
           exposed: true
           expose:
             operator_id: language_op
-            label: 'Original language'
+            label: 'Originalt sprog'
             description: ''
             use_operator: false
             operator: language_op
@@ -584,7 +584,7 @@ display:
   page_1:
     display_plugin: page
     id: page_1
-    display_title: Page
+    display_title: Side
     position: 1
     display_options:
       display_extenders: {  }

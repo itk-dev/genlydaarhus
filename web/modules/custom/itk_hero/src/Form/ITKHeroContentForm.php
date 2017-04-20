@@ -41,14 +41,14 @@ class ITKHeroContentForm extends FormBase {
 
     // Add front page wrapper.
     $form['wrapper'] = [
-      '#title' => $this->t('ITK Hero'),
+      '#title' => t('ITK Hero'),
       '#type' => 'details',
       '#weight' => '1',
       '#open' => TRUE,
     ];
 
     $form['wrapper']['itk_hero_lead'] = [
-      '#title' => $this->t('Lead text'),
+      '#title' => t('Lead text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_lead'),
       '#required' => true,
@@ -56,7 +56,7 @@ class ITKHeroContentForm extends FormBase {
     ];
 
     $form['wrapper']['itk_hero_sub'] = [
-      '#title' => $this->t('Sub text'),
+      '#title' => t('Sub text'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_sub'),
       '#required' => true,
@@ -64,7 +64,7 @@ class ITKHeroContentForm extends FormBase {
     ];
 
     $form['wrapper']['itk_hero_cta_button'] = [
-      '#title' => $this->t('Call to action button'),
+      '#title' => t('Call to action button'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_cta_button'),
       '#required' => true,
@@ -72,7 +72,7 @@ class ITKHeroContentForm extends FormBase {
     ];
 
     $form['wrapper']['itk_hero_cta_link'] = [
-      '#title' => $this->t('Call to action button link'),
+      '#title' => t('Call to action button link'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_cta_link'),
       '#required' => true,
@@ -80,7 +80,7 @@ class ITKHeroContentForm extends FormBase {
     ];
 
     $form['wrapper']['itk_hero_button'] = [
-      '#title' => $this->t('Button'),
+      '#title' => t('Button'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_button'),
       '#required' => true,
@@ -88,7 +88,7 @@ class ITKHeroContentForm extends FormBase {
     ];
 
     $form['wrapper']['itk_hero_link'] = [
-      '#title' => $this->t('Button link'),
+      '#title' => t('Button link'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_hero_link'),
       '#required' => true,
@@ -106,7 +106,7 @@ class ITKHeroContentForm extends FormBase {
     }
 
     $form['wrapper']['itk_hero_image'] = [
-      '#title' => $this->t('Image'),
+      '#title' => t('Image'),
       '#type' => 'managed_file',
       '#default_value' => ($fids[0]) ? $fids : '',
       '#upload_location' => 'public://',

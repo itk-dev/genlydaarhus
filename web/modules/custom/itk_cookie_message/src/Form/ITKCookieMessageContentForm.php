@@ -53,33 +53,33 @@ class ITKCookieMessageContentForm extends FormBase {
 
       $form[$language_id] = array(
         '#type' => 'details',
-        '#title' => $this->t($language->getName()),
+        '#title' => t($language->getName()),
         '#group' => 'tabs',
       );
 
       $form[$language_id][$this->getKey('text', $language)] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Message'),
-        '#description' => $this->t('Message to display in the dialog show to the users.'),
+        '#title' => t('Message'),
+        '#description' => t('Message to display in the dialog show to the users.'),
         '#required' => TRUE,
         '#default_value' => $languageSpecificSettings['text'],
       );
 
       $form[$language_id][$this->getKey('read_more_url', $language)] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Read more url'),
+        '#title' => t('Read more url'),
         '#default_value' => $languageSpecificSettings['read_more_url'],
       );
 
       $form[$language_id][$this->getKey('read_more_text', $language)] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Read more text'),
+        '#title' => t('Read more text'),
         '#default_value' => $languageSpecificSettings['read_more_text'],
       );
 
       $form[$language_id][$this->getKey('accept_button_text', $language)] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Accept button text'),
+        '#title' => t('Accept button text'),
         '#required' => TRUE,
         '#default_value' => $languageSpecificSettings['accept_button_text'],
       );
