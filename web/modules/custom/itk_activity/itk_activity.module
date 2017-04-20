@@ -136,7 +136,7 @@ function itk_activity_preprocess_node__activity(&$variables) {
   if ($currentUser->id() == $node->uid->entity->id()) {
     $numberOfParticipants = [
       'value' => $node->field_signed_up_users->count() + $node->field_external_signed_up_users->count(),
-      'label' => \Drupal::translation()->translate('Signed up users'),
+      'label' => t('Signed up users'),
     ];
   }
 
