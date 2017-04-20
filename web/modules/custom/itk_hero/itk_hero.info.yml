@@ -1,7 +1,7 @@
 name: ITK hero
 type: module
 interface translation project: itk_hero
-interface translation server pattern: modules/custom/%project%/translations/itk_hero.%language.po
+interface translation server pattern: modules/custom/itk_hero/translations/itk_hero.%language.po
 description: 'Provides custom administration content for the hero'
 package: ITK
 core: 8.x
