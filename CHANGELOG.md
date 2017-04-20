@@ -2,7 +2,10 @@
 
 ## In development
 
-* Changed site name
+* Changed site name.
+* Removed number of registered users when not owner of activity.
+* Removed title from "Sign up required", from activity create.
+* Fixed helpbox safari 9x.
 
 ## v1.0.1
 
