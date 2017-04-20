@@ -130,6 +130,16 @@ function itk_activity_preprocess_node__activity(&$variables) {
     ];
   }
 
+  $numberOfParticipants = NULL;
+
+  // Show extra data if user is activity owner.
+  if ($currentUser->id() == $node->uid->entity->id()) {
+    $numberOfParticipants = [
+      'value' => $node->field_signed_up_users->count() + $node->field_external_signed_up_users->count(),
+      'label' => \Drupal::translation()->translate('Signed up users'),
+    ];
+  }
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -166,9 +176,7 @@ function itk_activity_preprocess_node__activity(&$variables) {
         'address_label' => \Drupal::translation()->translate('Address'),
         'owner' =>  $node->uid->entity->name->value,
         'owner_label' => \Drupal::translation()->translate('Owner'),
-        'number_of_participants' => $node->field_signed_up_users->count() + $node->field_external_signed_up_users->count(),
-        'number_of_participants_label' => \Drupal::translation()
-          ->translate('Signed up users'),
+        'numberOfParticipants' => $numberOfParticipants,
         'signupButton' => $signupButton,
         'signupExternalButton' => $externalSignupButton,
         'contactLink' => $contactLink,
