@@ -2,9 +2,11 @@
 
 ## In development
 
+* Added link to email in Floating Help
+
 ## v1.0.1
 
-* Fixed that password could not be changed.
+* Fixed a bug where the password could not be changed.
 
 ## v1.0.0
 
