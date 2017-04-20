@@ -6,7 +6,6 @@
 
 use Drupal\Component\Utility\Html;
 use Drupal\image\Entity\ImageStyle;
-use Drupal\views\ViewExecutable;
 
 /**
  * Implement hook_mail().
@@ -260,33 +259,6 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
       'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_clone', ['nid' => $node->id()], ['absolute' => TRUE])->toString(),
     ]
   ];
-}
-
-/**
- * Implements hook_views_pre_render().
- *
- * Attach link.
- *
- * @param ViewExecutable $view
- *   The view to add data to.
- */
-function itk_activity_views_pre_render(ViewExecutable &$view) {
-  $id = $view->id();
-
-  // Attach header and footer data to activity views.
-  if ($id == 'activity_popular' || $id == 'activity_recent' || $id == 'activity_user' || $id == 'activity_user_registered') {
-    $view->data = (object) [];
-
-    $footer = $view->footer;
-
-    if (isset($footer) && count($footer) > 0) {
-      $view->data->footer = (object) [];
-
-      if (isset($footer['area_text_custom'])) {
-        $view->data->footer->button_link = $footer['area_text_custom']->options['content'];
-      }
-    }
-  }
 }
 
 /**
