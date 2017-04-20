@@ -2,6 +2,12 @@
 
 ## In development
 
+* Removed price and participants from activity teaser. 
+* Fixed zip code auto-fill area to work with https.
+* Fixed issue with missing link value in info sections content form.
+
+## v1.0.2
+
 * Changed site name.
 * Removed number of registered users when not owner of activity.
 * Removed title from "Sign up required", from activity create.

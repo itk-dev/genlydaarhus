@@ -109,7 +109,7 @@ class ITKInfoSectionContentForm extends FormBase {
     $form['block1']['block1_call_to_action_button_link'] = array(
       '#type' => 'textfield',
       '#title' => t('Call to action button link'),
-      '#default_value' => $config->get('block1_call_to_action_link'),
+      '#default_value' => $config->get('block1_call_to_action_button_link'),
     );
 
     // Block 2
@@ -183,7 +183,7 @@ class ITKInfoSectionContentForm extends FormBase {
     $form['block2']['block2_call_to_action_button_link'] = array(
       '#type' => 'textfield',
       '#title' => t('Call to action button link'),
-      '#default_value' => $config->get('block2_call_to_action_link'),
+      '#default_value' => $config->get('block2_call_to_action_button_link'),
     );
 
     $form['actions'] = ['#type' => 'actions'];
