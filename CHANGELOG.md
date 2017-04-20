@@ -12,10 +12,6 @@
 * Release 1.0.0!
 * “If you can’t feed a team with two pizzas, it’s too large.” - Jeff Bezos
 
-## v1.0.0
-
-* First release!
-
 ## v1.0.0-beta5
 
 * Removed empty radio button from activity edit page.
