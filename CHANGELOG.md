@@ -2,6 +2,8 @@
 
 ## In development
 
+* Fixed zip code auto-fill area to work with https.
+
 ## v1.0.2
 
 * Changed site name.
