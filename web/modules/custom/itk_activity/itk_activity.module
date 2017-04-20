@@ -130,6 +130,21 @@ function itk_activity_preprocess_node__activity(&$variables) {
     ];
   }
 
+  // Add list of signed up users, if current user is activity owner.
+  $signedUpUsers = NULL;
+  if ($currentUser->id() == $node->uid->entity->id()) {
+    $signedUpUsers = [];
+
+    foreach ($node->field_signed_up_users->referencedEntities() as $user) {
+      $signedUpUsers[] = (object) [
+        'username' => $user->name->value,
+        'first_name' => $user->field_first_name->value,
+        'surname' => $user->field_surname->value,
+        'email' => $user->mail->value,
+      ];
+    }
+  }
+
   // Set data for template.
   $variables['activity'] = [
     'activityHero' => [
@@ -153,6 +168,10 @@ function itk_activity_preprocess_node__activity(&$variables) {
         'help_needed' => $node->field_help_needed->entity->name->value,
       ],
       'body' => check_markup($node->body->value, 'filtered_html'),
+      'signedUpUsers' => [
+        'users' => $signedUpUsers,
+        'title' => t('Signed up users'),
+      ],
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
         'date_label' => \Drupal::translation()->translate('Date'),
