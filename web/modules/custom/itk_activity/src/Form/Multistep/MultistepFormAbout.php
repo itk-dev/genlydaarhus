@@ -47,7 +47,6 @@ class MultistepFormAbout extends MultistepFormBase {
     $form['field_signup_required'] = array(
       '#type' => 'radios',
       '#required' => TRUE,
-      '#title' => t('Sign up required'),
       '#default_value' => $this->store->get('field_signup_required'),
       '#options' => [
         1 => t('Sign up required'),
