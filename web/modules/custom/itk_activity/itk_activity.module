@@ -223,16 +223,8 @@ function itk_activity_preprocess_node__activity__teaser(&$variables) {
           'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
         ],
         [
-          'label' => \Drupal::translation()->translate('Price'),
-          'text' => _itk_activity_get_price_text($node->field_price->value),
-        ],
-        [
           'label' => \Drupal::translation()->translate('Area'),
           'text' => $node->field_area->value,
-        ],
-        [
-          'label' => \Drupal::translation()->translate('Participants'),
-          'text' => $node->field_signed_up_users->count(),
         ],
       ]
     ]
