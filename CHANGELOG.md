@@ -2,6 +2,8 @@
 
 ## In development
 
+* Fixed issue with missing link value in info sections content form.
+
 ## v1.0.2
 
 * Changed site name.
