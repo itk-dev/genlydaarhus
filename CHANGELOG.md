@@ -2,6 +2,8 @@
 
 ## In development
 
+## v1.0.2
+
 * Changed site name.
 * Removed number of registered users when not owner of activity.
 * Removed title from "Sign up required", from activity create.
