@@ -2,6 +2,8 @@
 
 ## In development
 
+* Removed price and participants from activity teaser. 
+
 ## v1.0.1
 
 * Fixed that password could not be changed.
