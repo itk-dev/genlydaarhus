@@ -24,9 +24,11 @@
       <div class="l-col half all activity-sidebar--col">
         {% include "@elements/activity-info.twig" with { activityInfo: { meta: meta.owner_label, data: meta.owner }} %}
       </div>
+      {% if meta.numberOfParticipants %}
       <div class="l-col half all activity-sidebar--col">
-        {% include "@elements/activity-info.twig" with { activityInfo: { meta: meta.number_of_participants_label, data: meta.number_of_participants }} %}
+        {% include "@elements/activity-info.twig" with { activityInfo: { meta: meta.numberOfParticipants.label, data: meta.numberOfParticipants.value }} %}
       </div>
+      {% endif %}
     </div>
     <div class="activity-sidebar--signup">
       {% include '@elements/buttons/button-call-to-action.twig' with { button: meta.signupButton } %}

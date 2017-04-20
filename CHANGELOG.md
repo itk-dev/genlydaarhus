@@ -4,6 +4,13 @@
 
 * Removed price and participants from activity teaser. 
 
+## v1.0.2
+
+* Changed site name.
+* Removed number of registered users when not owner of activity.
+* Removed title from "Sign up required", from activity create.
+* Fixed helpbox safari 9x.
+
 ## v1.0.1
 
 * Fixed that password could not be changed.
