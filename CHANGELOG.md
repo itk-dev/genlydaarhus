@@ -2,6 +2,8 @@
 
 ## In development
 
+* Changed site name
+
 ## v1.0.1
 
 * Fixed that password could not be changed.
