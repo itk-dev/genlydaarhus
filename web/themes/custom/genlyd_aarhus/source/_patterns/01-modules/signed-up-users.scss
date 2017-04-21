@@ -1,0 +1,17 @@
+.signed-up-users {
+  display: table;
+  width: 100%;
+
+  &--row {
+    display: table-row;
+  }
+
+  &--cell {
+    display: table-cell;
+    padding: 10px;
+  }
+
+  &--body {
+    display: table-row-group;
+  }
+}

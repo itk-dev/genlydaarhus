@@ -1,10 +1,12 @@
-<div class="">
-  {% for user in activity.activityOverview.signedUpUsers.users %}
-    <tr>
-      <td>{{ user.username }}</td>
-      <td>{{ user.first_name }}</td>
-      <td>{{ user.surname }}</td>
-      <td>{{ user.email }}</td>
-    </tr>
-  {% endfor %}
+<div class="signed-up-users">
+  <div class="signed-up-users--body">
+    {% for user in activity.activityOverview.signedUpUsers.users %}
+    <div class="signed-up-users--row">
+      <div class="signed-up-users--cell">{{ user.username }}</div>
+      <div class="signed-up-users--cell">{{ user.first_name }}</div>
+      <div class="signed-up-users--cell">{{ user.surname }}</div>
+      <div class="signed-up-users--cell">{{ user.email }}</div>
+    </div>
+    {% endfor %}
+  </div>
 </div>
