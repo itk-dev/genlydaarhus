@@ -1,23 +1,16 @@
 .signed-up-users {
-  display: table;
+  overflow: auto;
   width: 100%;
 
-  &--head {
-    display: table-header-group;
-  }
-
-  &--body {
-    display: table-row-group;
-  }
-
   &--row {
-    display:table-row;
-    width:auto;
-    clear:both;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
   }
 
   &--cell {
-    display: table-cell;
-    padding: 10px;
+    padding: $spacing-pixel-xxxsmall;
+    overflow-wrap: break-word;
+    width: 49%;
   }
 }
