@@ -1,0 +1,12 @@
+<div class="signed-up-users">
+  {% for user in activity.activityOverview.signedUpUsers.users %}
+    <div class="signed-up-users--row">
+      {% if user.first_name %}
+        <div class="signed-up-users--cell">{{ user.first_name }} {{ user.surname }}</div>
+      {% elseif user.username %}
+        <div class="signed-up-users--cell">{{ user.username }}</div>
+      {% endif %}
+      <div class="signed-up-users--cell">{{ user.email }}</div>
+    </div>
+  {% endfor %}
+</div>

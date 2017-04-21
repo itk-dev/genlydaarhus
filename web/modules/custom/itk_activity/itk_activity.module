@@ -130,13 +130,35 @@ function itk_activity_preprocess_node__activity(&$variables) {
   }
 
   $numberOfParticipants = NULL;
+  $signedUpUsers = NULL;
 
   // Show extra data if user is activity owner.
   if ($currentUser->id() == $node->uid->entity->id()) {
+    // Add count of registered users.
     $numberOfParticipants = [
       'value' => $node->field_signed_up_users->count() + $node->field_external_signed_up_users->count(),
       'label' => t('Signed up users'),
     ];
+
+    // Add list of signed up users.
+    $signedUpUsers = [];
+
+    foreach ($node->field_signed_up_users->referencedEntities() as $user) {
+      $signedUpUsers[] = (object) [
+        'username' => $user->name->value,
+        'first_name' => $user->field_first_name->value,
+        'surname' => $user->field_surname->value,
+        'email' => $user->mail->value,
+      ];
+    }
+
+    foreach ($node->field_external_signed_up_users->referencedEntities() as $user) {
+      $signedUpUsers[] = (object) [
+        'first_name' => $user->first_name->value,
+        'surname' => $user->surname->value,
+        'email' => $user->email->value,
+      ];
+    }
   }
 
   // Set data for template.
@@ -162,6 +184,16 @@ function itk_activity_preprocess_node__activity(&$variables) {
         'help_needed' => $node->field_help_needed->entity->name->value,
       ],
       'body' => check_markup($node->body->value, 'filtered_html'),
+      'signedUpUsers' => [
+        'users' => $signedUpUsers,
+        'title' => t('Signed up users'),
+        'labels' => [
+          'username' => t('Username'),
+          'first_name' => t('First name'),
+          'surname' => t('Surname'),
+          'mail' => t('Mail'),
+        ],
+      ],
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
         'date_label' => t('Date'),
