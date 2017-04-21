@@ -2,7 +2,7 @@
 
 ## In development
 
-* Removed price and participants from activity teaser. 
+* Removed price and participants from activity teaser.
 * Fixed zip code auto-fill area to work with https.
 * Fixed issue with missing link value in info sections content form.
 
