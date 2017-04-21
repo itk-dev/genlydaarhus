@@ -40,7 +40,7 @@ class ITKInfoSectionContentForm extends FormBase {
 
     // Block 1
     $form['block1'] = [
-      '#title' => $this->t('Block 1'),
+      '#title' => t('Block 1'),
       '#type' => 'details',
       '#weight' => '1',
       '#open' => TRUE,
@@ -114,7 +114,7 @@ class ITKInfoSectionContentForm extends FormBase {
 
     // Block 2
     $form['block2'] = [
-      '#title' => $this->t('Block 2'),
+      '#title' => t('Block 2'),
       '#type' => 'details',
       '#weight' => '2',
       '#open' => TRUE,

@@ -12,6 +12,7 @@
 * Removed number of registered users when not owner of activity.
 * Removed title from "Sign up required", from activity create.
 * Fixed helpbox safari 9x.
+* Fixed non-translatable string in mail subject when contacting activity owner.
 
 ## v1.0.1
 
@@ -19,7 +20,7 @@
 
 ## v1.0.0
 
-* First release!
+* Release 1.0.0.
 
 ## v1.0.0-beta5
 

@@ -19,7 +19,7 @@ function itk_activity_mail($key, &$message, $params) {
     // Send a simple message from the contact form.
     case 'contact_owner':
       $message['subject'] = $params['subject'];
-      $message['body'][] = \Drupal::translation()->translate('@first_name @surname (@email, @phone) sent you a message about your activity: @node_title.', [
+      $message['body'][] = t('@first_name @surname (@email, @phone) sent you a message about your activity: @node_title.', [
         '@first_name' => Html::escape($params['first_name']),
         '@surname' => Html::escape($params['surname']),
         '@email' => Html::escape($params['email']),
@@ -75,20 +75,20 @@ function itk_activity_preprocess_node__activity(&$variables) {
     ];
 
     if ($alreadyAdded) {
-      $signupButton['title'] = \Drupal::translation()->translate('Unregister');
+      $signupButton['title'] = t('Unregister');
     }
     else {
-      $signupButton['title'] = \Drupal::translation()->translate('Register');
+      $signupButton['title'] = t('Register');
     }
 
     $externalSignupButton = [
       'href' => \Drupal\Core\Url::fromRoute('itk_activity.external_signup_form', ['nid' => $node->id()])->toString(),
-      'title' => \Drupal::translation()->translate('Register other user'),
+      'title' => t('Register other user'),
     ];
   } else {
     $signupButton = [
       'href' => '/user',
-      'title' => \Drupal::translation()->translate('Login to register'),
+      'title' => t('Login to register'),
     ];
   }
 
@@ -108,13 +108,13 @@ function itk_activity_preprocess_node__activity(&$variables) {
   // Setup mailto link.
   $mailtoParts = [
     "mailto:?subject=",
-    rawurlencode(\Drupal::translation()->translate('Here is a suggestion for an activity in a community in Aarhus')),
+    rawurlencode(t('Here is a suggestion for an activity in a community in Aarhus')),
     "&body=",
-    rawurlencode(\Drupal::translation()->translate('Try to have a look at this activity in Aarhus.')),
+    rawurlencode(t('Try to have a look at this activity in Aarhus.')),
     $newlines,
     rawurlencode($node->title->value),
     $newlines,
-    rawurlencode(\Drupal::translation()->translate('Open this link to see the activity')),
+    rawurlencode(t('Open this link to see the activity')),
     ": ",
     \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
   ];
@@ -124,7 +124,7 @@ function itk_activity_preprocess_node__activity(&$variables) {
   $contactLink = NULL;
   if ($currentUser->hasPermission('contact itk_activity activity owner')) {
     $contactLink = [
-      'title' => \Drupal::translation()->translate('Contact owner'),
+      'title' => t('Contact owner'),
       'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_contact', ['nid' => $node->id()])->toString(),
     ];
   }
@@ -147,16 +147,16 @@ function itk_activity_preprocess_node__activity(&$variables) {
     ],
     'activityOverview' => [
       'headingWithIconDescription' => [
-        'title' => \Drupal::translation()->translate('Description'),
+        'title' => t('Description'),
       ],
       'headingWithIconDetails' => [
-        'title' => \Drupal::translation()->translate('Details')
+        'title' => t('Details')
       ],
       'categories' => $categories,
       'info' => [
-        'title' => \Drupal::translation()->translate('Important information:'),
+        'title' => t('Important information:'),
         'signup_required' => $node->field_signup_required->value ?
-          \Drupal::translation()->translate('Signup required') : NULL,
+          t('Signup required') : NULL,
         'entry_requirements' => $node->field_entry_requirements->entity->name->value,
         'physical_requirements' => $node->field_physical_requirements->entity->name->value,
         'help_needed' => $node->field_help_needed->entity->name->value,
@@ -164,17 +164,17 @@ function itk_activity_preprocess_node__activity(&$variables) {
       'body' => check_markup($node->body->value, 'filtered_html'),
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
-        'date_label' => \Drupal::translation()->translate('Date'),
+        'date_label' => t('Date'),
         'price' => _itk_activity_get_price_text($node->field_price->value),
-        'price_label' => \Drupal::translation()->translate('Price'),
+        'price_label' => t('Price'),
         'start_time' => $node->field_time_start->value,
-        'start_time_label' => \Drupal::translation()->translate('Start time'),
+        'start_time_label' => t('Start time'),
         'end_time' => $node->field_time_end->value,
-        'end_time_label' => \Drupal::translation()->translate('End time'),
+        'end_time_label' => t('End time'),
         'address' => $node->field_address->value,
-        'address_label' => \Drupal::translation()->translate('Address'),
+        'address_label' => t('Address'),
         'owner' =>  $node->uid->entity->name->value,
-        'owner_label' => \Drupal::translation()->translate('Owner'),
+        'owner_label' => t('Owner'),
         'numberOfParticipants' => $numberOfParticipants,
         'signupButton' => $signupButton,
         'signupExternalButton' => $externalSignupButton,
@@ -182,13 +182,13 @@ function itk_activity_preprocess_node__activity(&$variables) {
         'socialShare' => [
           'buttons' => [
             [
-              'title' => \Drupal::translation()->translate('Share on facebook'),
+              'title' => t('Share on facebook'),
               'jsClass' => 'js-facebook-share-button',
             ],
           ],
           'links' => [
             [
-              'title' => \Drupal::translation()->translate('Share by mail'),
+              'title' => t('Share by mail'),
               'href' => $mailto,
             ]
           ],
@@ -219,11 +219,11 @@ function itk_activity_preprocess_node__activity__teaser(&$variables) {
     'cardInfo' => [
       'activityMetas' => [
         [
-          'label' => \Drupal::translation()->translate('Date'),
+          'label' => t('Date'),
           'text' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
         ],
         [
-          'label' => \Drupal::translation()->translate('Area'),
+          'label' => t('Area'),
           'text' => $node->field_area->value,
         ],
       ]
@@ -247,15 +247,15 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
 
   $variables['cardActivity']['cardActions'] = [
     'deleteButton' => [
-      'title' => \Drupal::translation()->translate('Delete'),
+      'title' => t('Delete'),
       'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
     'editButton' => [
-      'title' => \Drupal::translation()->translate('Edit'),
+      'title' => t('Edit'),
       'href' => \Drupal\Core\Url::fromRoute('entity.node.edit_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
     ],
     'cloneButton' => [
-      'title' => \Drupal::translation()->translate('Clone'),
+      'title' => t('Clone'),
       'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_clone', ['nid' => $node->id()], ['absolute' => TRUE])->toString(),
     ]
   ];
@@ -272,10 +272,10 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
 function _itk_activity_get_price_text($price) {
   // Set price text.
   if (!isset($price) || $price <= 0) {
-    return \Drupal::translation()->translate('Free');
+    return t('Free');
   }
   else {
-    return \Drupal::translation()->translate(':price kr.', [':price' => $price]);
+    return t(':price kr.', [':price' => $price]);
   }
 }
 

@@ -43,30 +43,30 @@ class ActivityExternalSignupUserForm extends FormBase {
     $form['first_name'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('First name'),
+      '#title' => t('First name'),
     );
 
     $form['surname'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('Surname'),
+      '#title' => t('Surname'),
     );
 
     $form['email'] = array(
       '#type' => 'email',
       '#required' => TRUE,
-      '#title' => $this->t('Email'),
+      '#title' => t('Email'),
     );
 
     $form['phone'] = array(
       '#type' => 'tel',
       '#required' => TRUE,
-      '#title' => $this->t('Phone'),
+      '#title' => t('Phone'),
     );
 
     $form['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Sign up user'),
+      '#value' => t('Sign up user'),
     );
 
     return $form;

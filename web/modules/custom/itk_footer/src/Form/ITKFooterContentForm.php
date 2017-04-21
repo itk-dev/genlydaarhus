@@ -39,22 +39,22 @@ class ITKFooterContentForm extends FormBase {
     $config = $this->getBaseConfig();
 
     $form['wrapper'] = array(
-      '#title' => $this->t('ITK Footer'),
+      '#title' => t('ITK Footer'),
       '#type' => 'details',
-      '#description' => $this->t('Configure the content of the footer module.'),
+      '#description' => t('Configure the content of the footer module.'),
       '#weight' => '1',
       '#open' => TRUE,
     );
 
     $form['wrapper']['itk_footer_title'] = array(
-      '#title' => $this->t('Title'),
+      '#title' => t('Title'),
       '#type' => 'textfield',
       '#default_value' => $config->get('itk_footer_title'),
       '#weight' => '1',
     );
 
     $form['wrapper']['itk_footer_text'] = array(
-      '#title' => $this->t('Text'),
+      '#title' => t('Text'),
       '#type' => 'text_format',
       '#format' => 'filtered_html',
       '#default_value' => $config->get('itk_footer_text'),

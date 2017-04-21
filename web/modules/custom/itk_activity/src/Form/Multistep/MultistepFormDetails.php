@@ -35,7 +35,7 @@ class MultistepFormDetails extends MultistepFormBase {
     $form['field_date'] = array(
       '#type' => 'date',
       '#required' => TRUE,
-      '#title' => $this->t('Date'),
+      '#title' => t('Date'),
       '#default_value' => $this->store->get('field_date') ? $this->store->get('field_date') : '',
     );
 
@@ -43,14 +43,14 @@ class MultistepFormDetails extends MultistepFormBase {
       '#type' => 'textfield',
       '#max_length' => 5,
       '#attributes' => [
-        'title' => $this->t('Must have format HH:mm'),
-        'placeholder' => $this->t('Must have format: HH:mm, for example: 12:00'),
+        'title' => t('Must have format HH:mm'),
+        'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
         'pattern' => '[0-9]{2}:[0-9]{2}',
         'maxlength' => 5,
         'class' => [ 'js-field-time-start' ],
       ],
       '#required' => TRUE,
-      '#title' => $this->t('Time start'),
+      '#title' => t('Time start'),
       '#default_value' => $this->store->get('field_time_start') ? $this->store->get('field_time_start') : NULL,
     );
 
@@ -58,14 +58,14 @@ class MultistepFormDetails extends MultistepFormBase {
       '#type' => 'textfield',
       '#max_length' => 5,
       '#attributes' => [
-        'title' => $this->t('Must have format HH:mm'),
-        'placeholder' => $this->t('Must have format: HH:mm, for example: 12:00'),
+        'title' => t('Must have format HH:mm'),
+        'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
         'pattern' => '[0-9]{2}:[0-9]{2}',
         'maxlength' => 5,
         'class' => [ 'js-field-time-end' ],
       ],
       '#required' => TRUE,
-      '#title' => $this->t('Time end'),
+      '#title' => t('Time end'),
       '#default_value' => $this->store->get('field_time_end') ? $this->store->get('field_time_end') : NULL,
     );
 
@@ -78,7 +78,7 @@ class MultistepFormDetails extends MultistepFormBase {
       '#attributes' => [
         'min' => 0,
       ],
-      '#title' => $this->t('Price (if any)'),
+      '#title' => t('Price (if any)'),
       '#default_value' => $this->store->get('field_price') ? $this->store->get('field_price') : NULL,
     );
 
@@ -91,7 +91,7 @@ class MultistepFormDetails extends MultistepFormBase {
         'class' => [ 'js-field-zipcode', ],
       ],
       '#required' => TRUE,
-      '#title' => $this->t('Zipcode'),
+      '#title' => t('Zipcode'),
       '#default_value' => $this->store->get('field_zipcode') ? $this->store->get('field_zipcode') : NULL,
     );
 
@@ -103,21 +103,21 @@ class MultistepFormDetails extends MultistepFormBase {
       '#attributes' => [
         'class' => [ 'js-field-area', ],
       ],
-      '#title' => $this->t('Area'),
+      '#title' => t('Area'),
       '#default_value' => $this->store->get('field_area') ? $this->store->get('field_area') : NULL,
     );
 
     $form['field_address'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('Address'),
+      '#title' => t('Address'),
       '#default_value' => $this->store->get('field_address') ? $this->store->get('field_address') : NULL,
     );
 
-    $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['submit']['#value'] = t('Next');
     $form['actions']['back'] = [
       'href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
-      'title' => \Drupal::translation()->translate('Back'),
+      'title' => t('Back'),
     ];
 
     return $form;
