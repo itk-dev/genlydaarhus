@@ -1,12 +1,28 @@
 <div class="signed-up-users">
+  <div class="signed-up-users--head">
+    <div class="signed-up-users--row">
+      <div class="signed-up-users--cell">
+        <h4>{{ activity.activityOverview.signedUpUsers.labels.username }}</h4>
+      </div>
+      <div class="signed-up-users--cell">
+        <h4>{{ activity.activityOverview.signedUpUsers.labels.first_name }}</h4>
+      </div>
+      <div class="signed-up-users--cell">
+        <h4>{{ activity.activityOverview.signedUpUsers.labels.surname }}</h4>
+      </div>
+      <div class="signed-up-users--cell">
+        <h4>{{ activity.activityOverview.signedUpUsers.labels.mail }}</h4>
+      </div>
+    </div>
+  </div>
   <div class="signed-up-users--body">
     {% for user in activity.activityOverview.signedUpUsers.users %}
-    <div class="signed-up-users--row">
-      <div class="signed-up-users--cell">{{ user.username }}</div>
-      <div class="signed-up-users--cell">{{ user.first_name }}</div>
-      <div class="signed-up-users--cell">{{ user.surname }}</div>
-      <div class="signed-up-users--cell">{{ user.email }}</div>
-    </div>
+      <div class="signed-up-users--row">
+        <div class="signed-up-users--cell">{{ user.username }}</div>
+        <div class="signed-up-users--cell">{{ user.first_name }}</div>
+        <div class="signed-up-users--cell">{{ user.surname }}</div>
+        <div class="signed-up-users--cell">{{ user.email }}</div>
+      </div>
     {% endfor %}
   </div>
 </div>

@@ -2,16 +2,22 @@
   display: table;
   width: 100%;
 
+  &--head {
+    display: table-header-group;
+  }
+
+  &--body {
+    display: table-row-group;
+  }
+
   &--row {
-    display: table-row;
+    display:table-row;
+    width:auto;
+    clear:both;
   }
 
   &--cell {
     display: table-cell;
     padding: 10px;
-  }
-
-  &--body {
-    display: table-row-group;
   }
 }

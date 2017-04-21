@@ -143,6 +143,14 @@ function itk_activity_preprocess_node__activity(&$variables) {
         'email' => $user->mail->value,
       ];
     }
+
+    foreach ($node->field_external_signed_up_users->referencedEntities() as $user) {
+      $signedUpUsers[] = (object) [
+        'first_name' => $user->first_name->value,
+        'surname' => $user->surname->value,
+        'email' => $user->email->value,
+      ];
+    }
   }
 
   // Set data for template.
@@ -171,6 +179,12 @@ function itk_activity_preprocess_node__activity(&$variables) {
       'signedUpUsers' => [
         'users' => $signedUpUsers,
         'title' => t('Signed up users'),
+        'labels' => [
+          'username' => t('Username'),
+          'first_name' => t('First name'),
+          'surname' => t('Surname'),
+          'mail' => t('Mail'),
+        ],
       ],
       'meta' => [
         'date' => \Drupal::service('date.formatter')->format((new DateTime($node->field_date->value))->getTimestamp(), 'date_long'),
