@@ -2,6 +2,10 @@
 
 ## In development
 
+* Added link to email in Floating Help
+
+## v1.0.3
+
 * Added list to activity with signed up users.
 * Removed price and participants from activity teaser. 
 * Fixed zip code auto-fill area to work with https.
@@ -17,7 +21,7 @@
 
 ## v1.0.1
 
-* Fixed that password could not be changed.
+* Fixed a bug where the password could not be changed.
 
 ## v1.0.0
 

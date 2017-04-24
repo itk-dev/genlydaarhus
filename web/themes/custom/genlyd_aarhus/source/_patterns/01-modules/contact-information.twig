@@ -17,7 +17,7 @@
     {% include "@elements/icons/icon.twig" with { icon: { type: "chevron-small", class: "is-xtiny is-green-dark has-small-margin", color: "light" } } %}
     <div class="contact-information--text">
       <p class="contact-information--meta">{{ contactInformation.emailLabel }}</p>
-      <p class="contact-information--info">{{ contactInformation.email }}</p>
+      <p class="contact-information--info"><a href="mailto:{{ contactInformation.email }}" title="{{ contactInformation.emailTitle }}">{{ contactInformation.email }}</a></p>
     </div>
   </div>
 </div>
