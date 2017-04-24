@@ -43,6 +43,7 @@ class ITKFloatingHelp extends BlockBase {
       '#floating_help_contact' => $floating_help_contact,
       '#floating_help_phone' => $floating_help_phone,
       '#floating_help_email' => $floating_help_email,
+      '#floating_help_email_title' => t('Send email to @title', [ '@title' => $floating_help_email ]),
     ];
   }
 

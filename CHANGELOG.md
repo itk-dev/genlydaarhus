@@ -2,7 +2,8 @@
 
 ## In development
 
-* Changed activities on frontpage to show upcoming insteasd of recent activities.
+* Changed activities on frontpage to show upcoming instead of recent activities.
+* Added link to email in Floating Help
 
 ## v1.0.3
 
@@ -21,7 +22,7 @@
 
 ## v1.0.1
 
-* Fixed that password could not be changed.
+* Fixed a bug where the password could not be changed.
 
 ## v1.0.0
 
