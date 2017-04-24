@@ -2,6 +2,10 @@
 
 ## In development
 
+* Changed activities on frontpage to show upcoming insteasd of recent activities.
+
+## v1.0.3
+
 * Added list to activity with signed up users.
 * Removed price and participants from activity teaser. 
 * Fixed zip code auto-fill area to work with https.
