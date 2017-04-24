@@ -20,7 +20,9 @@ function itk_floating_help_theme($existing, $type, $theme, $path) {
         'floating_help_text' => NULL,
         'floating_help_contact' => NULL,
         'floating_help_phone' => NULL,
-        'floating_help_email' => NULL],
+        'floating_help_email' => NULL,
+        'floating_help_email_title' => NULL,
+      ],
     ],
   ];
 }
