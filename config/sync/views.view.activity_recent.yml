@@ -11,7 +11,7 @@ dependencies:
     - node
     - user
 id: activity_recent
-label: 'Activity Recent'
+label: 'Activity Upcoming'
 module: views
 description: ''
 tag: ''
