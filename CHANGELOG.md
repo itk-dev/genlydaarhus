@@ -2,6 +2,7 @@
 
 ## In development
 
+* Changed activities on frontpage to show upcoming instead of recent activities.
 * Added link to email in Floating Help
 
 ## v1.0.3
