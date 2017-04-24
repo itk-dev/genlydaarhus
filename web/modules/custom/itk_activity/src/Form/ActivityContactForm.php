@@ -84,36 +84,36 @@ class ActivityContactForm extends FormBase {
     $form['first_name'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('First name'),
+      '#title' => t('First name'),
     );
 
     $form['surname'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('Surname'),
+      '#title' => t('Surname'),
     );
 
     $form['email'] = array(
       '#type' => 'email',
       '#required' => TRUE,
-      '#title' => $this->t('Email'),
+      '#title' => t('Email'),
     );
 
     $form['phone'] = array(
       '#type' => 'tel',
       '#required' => TRUE,
-      '#title' => $this->t('Phone'),
+      '#title' => t('Phone'),
     );
 
     $form['message'] = array(
       '#type' => 'textarea',
       '#required' => TRUE,
-      '#title' => $this->t('Message'),
+      '#title' => t('Message'),
     );
 
     $form['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Write to owner'),
+      '#value' => t('Write to owner'),
     );
 
     return $form;
@@ -139,7 +139,7 @@ class ActivityContactForm extends FormBase {
     $limitTimeWindow = 3600;
 
     if (!$this->flood->isAllowed('itk_activity.mail_to_activity_owner', $limitAttempts, $limitTimeWindow)) {
-      drupal_set_message(\Drupal::translation()->translate('Too many attempts to write to user. Try again later.'));
+      drupal_set_message(t('Too many attempts to write to user. Try again later.'));
       throw new AccessDeniedHttpException('Access is blocked because of IP based flood prevention.', NULL, Response::HTTP_TOO_MANY_REQUESTS);
     }
   }
@@ -194,7 +194,7 @@ class ActivityContactForm extends FormBase {
       $mailManager = \Drupal::service('plugin.manager.mail');
 
       $params = [
-        'subject' => 'A user has sent a message to you about your activity at Genlyd Aarhus.',
+        'subject' => t('A user has sent a message to you about your activity at Genlyd Aarhus.'),
         'first_name' => $firstName,
         'surname' => $surname,
         'email' => $email,

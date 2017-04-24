@@ -46,7 +46,7 @@ class MultistepFormInformation extends MultistepFormBase {
     $form['field_entry_requirements'] = [
       '#type' => 'radios',
       '#required' => TRUE,
-      '#title' => $this->t('Entry requirements'),
+      '#title' => t('Entry requirements'),
       '#default_value' => $this->store->get('field_entry_requirements') ? $this->store->get('field_entry_requirements') : NULL,
       '#options' => $entryRequirementOptions,
     ];
@@ -65,7 +65,7 @@ class MultistepFormInformation extends MultistepFormBase {
     $form['field_physical_requirements'] = [
       '#type' => 'radios',
       '#required' => TRUE,
-      '#title' => $this->t('Physical requirements'),
+      '#title' => t('Physical requirements'),
       '#default_value' => $this->store->get('field_physical_requirements') ? $this->store->get('field_physical_requirements') : NULL,
       '#options' => $physicalRequirementOptions,
     ];
@@ -73,7 +73,7 @@ class MultistepFormInformation extends MultistepFormBase {
 
     $form['field_maximum_participants'] = [
       '#type' => 'number',
-      '#title' => $this->t('Maximum participants'),
+      '#title' => t('Maximum participants'),
       '#default_value' => $this->store->get('field_maximum_participants') ? $this->store->get('field_maximum_participants') : NULL,
     ];
 
@@ -91,15 +91,15 @@ class MultistepFormInformation extends MultistepFormBase {
     $form['field_help_needed'] = [
       '#type' => 'radios',
       '#required' => TRUE,
-      '#title' => $this->t('Help needed'),
+      '#title' => t('Help needed'),
       '#default_value' => $this->store->get('field_help_needed') ? $this->store->get('field_help_needed') : NULL,
       '#options' => $helpNeededOptions,
     ];
     
-    $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['submit']['#value'] = t('Next');
     $form['actions']['back'] = [
       'href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
-      'title' => \Drupal::translation()->translate('Back'),
+      'title' => t('Back'),
     ];
 
     return $form;
