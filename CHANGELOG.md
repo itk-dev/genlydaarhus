@@ -8,6 +8,7 @@
 * Removed price and participants from activity teaser. 
 * Fixed zip code auto-fill area to work with https.
 * Fixed issue with missing link value in info sections content form.
+* Added danish language and translations
 
 ## v1.0.2
 
