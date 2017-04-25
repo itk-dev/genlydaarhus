@@ -4,6 +4,7 @@
 
 * Changed activities on frontpage to show upcoming instead of recent activities.
 * Added link to email in Floating Help
+* Fixed Javascript error in Safari (ecmascript 5 - const keyword in twig library)
 
 ## v1.0.3
 
