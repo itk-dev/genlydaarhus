@@ -75,7 +75,7 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
       'date' => [
         'label' => t('Date'),
-        'value' => $this->store->get('field_date'),
+        'value' => \Drupal::service('date.formatter')->format((new \DateTime($this->store->get('field_date')))->getTimestamp(), 'date_long'),
       ],
       'entryRequirements' => [
         'label' => t('What level is required to participate?'),
