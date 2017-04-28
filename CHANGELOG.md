@@ -2,18 +2,32 @@
 
 ## In development
 
+* Changed activities on frontpage to show upcoming instead of recent activities.
+* Added link to email in Floating Help
+* Fixed Javascript error in Safari (ecmascript 5 - const keyword in twig library)
+
+## v1.0.3
+
+* Added list to activity with signed up users.
+* Removed price and participants from activity teaser. 
+* Fixed zip code auto-fill area to work with https.
+* Fixed issue with missing link value in info sections content form.
+
+## v1.0.2
+
 * Changed site name.
 * Removed number of registered users when not owner of activity.
 * Removed title from "Sign up required", from activity create.
 * Fixed helpbox safari 9x.
+* Fixed non-translatable string in mail subject when contacting activity owner.
 
 ## v1.0.1
 
-* Fixed that password could not be changed.
+* Fixed a bug where the password could not be changed.
 
 ## v1.0.0
 
-* First release!
+* Release 1.0.0.
 
 ## v1.0.0-beta5
 

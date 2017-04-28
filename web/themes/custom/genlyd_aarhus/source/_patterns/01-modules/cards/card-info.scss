@@ -16,9 +16,5 @@
 
   &--meta {
     width: 50%;
-
-    &:nth-child(-n+2) {
-      margin-bottom: $spacing-pixel-xxsmall;
-    }
   }
 }

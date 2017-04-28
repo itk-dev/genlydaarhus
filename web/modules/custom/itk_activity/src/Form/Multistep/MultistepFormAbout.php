@@ -33,14 +33,14 @@ class MultistepFormAbout extends MultistepFormBase {
     $form['title'] = array(
       '#type' => 'textfield',
       '#required' => TRUE,
-      '#title' => $this->t('Title'),
+      '#title' => t('Title'),
       '#default_value' => $this->store->get('title') ? $this->store->get('title') : '',
     );
 
     $form['body'] = array(
       '#type' => 'textarea',
       '#required' => TRUE,
-      '#title' => $this->t('Description'),
+      '#title' => t('Description'),
       '#default_value' => $this->store->get('body') ? $this->store->get('body') : '',
     );
 
@@ -49,12 +49,12 @@ class MultistepFormAbout extends MultistepFormBase {
       '#required' => TRUE,
       '#default_value' => $this->store->get('field_signup_required'),
       '#options' => [
-        1 => $this->t('Sign up required'),
-        0 => $this->t('Sign up not required'),
+        1 => t('Sign up required'),
+        0 => t('Sign up not required'),
       ],
     );
 
-    $form['actions']['submit']['#value'] = $this->t('Next');
+    $form['actions']['submit']['#value'] = t('Next');
 
     return $form;
   }

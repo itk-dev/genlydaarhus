@@ -89,6 +89,23 @@ platform project:set-remote [Project ID]
 
 #### Push to platform.sh
 
+Read more about environments here: https://docs.platform.sh/administration/web/environments.html
+
+When building a new branch, the parent branch (default master) will be used as reference, this might cause a unresponsive environment. Therefore it is important to make sure to set parent branch before pushing.
+
+##### Environment scructure
+* Master
+  * Release
+    * release/name_of_release
+  * develop
+    * feature/JIRA_ISSUE_ID_name_of_branch
+
+Setting a branch to use develop as parent (using the branch you have checked out)
+```sh
+platform environment:info parent develop
+```
+
+Pushing develop
 ```sh
 git push platform develop       # or master
 ```

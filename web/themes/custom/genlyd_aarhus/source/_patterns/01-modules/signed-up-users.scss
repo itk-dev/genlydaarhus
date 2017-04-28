@@ -1,0 +1,16 @@
+.signed-up-users {
+  overflow: auto;
+  width: 100%;
+
+  &--row {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  &--cell {
+    padding: $spacing-pixel-xxxsmall;
+    overflow-wrap: break-word;
+    width: 49%;
+  }
+}

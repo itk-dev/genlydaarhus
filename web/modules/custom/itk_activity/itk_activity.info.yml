@@ -1,5 +1,7 @@
 name: ITK Activity
 type: module
+interface translation project: itk_activity
+interface translation server pattern: modules/custom/itk_activity/translations/itk_activity.%language.po
 description: 'Supplies activity.'
 version: 1.0.0-alpha1
 core: 8.x

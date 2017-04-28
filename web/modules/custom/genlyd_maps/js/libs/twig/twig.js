@@ -7450,7 +7450,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    };
 
 	    Twig.Promise.all = function(promises) {
-	        const results = [];
+	        var results = [];
 
 	        return Twig.async.forEach(promises, function(p, index) {
 	            if (!Twig.isPromise(p)) {
@@ -7574,7 +7574,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                throw new Twig.Error("Both ref and id cannot be set on a twig.js template.");
 	            }
 	            return Twig.Templates.load(params.ref);
-	        
+
 	        } else if (params.method !== undefined) {
 	            if (!Twig.Templates.isRegisteredLoader(params.method)) {
 	                throw new Twig.Error('Loader for "' + params.method + '" is not defined.');
@@ -7678,7 +7678,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	     * @param {string} path The location of the template file on disk.
 	     * @param {Object|Function} The options or callback.
 	     * @param {Function} fn callback.
-	     * 
+	     *
 	     * @throws Twig.Error
 	     */
 	    Twig.exports.renderFile = function(path, options, fn) {

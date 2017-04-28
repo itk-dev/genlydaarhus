@@ -313,7 +313,7 @@ var viewsActivityFirstLoad = true;
         if ("geolocation" in navigator) {
           navigator.geolocation.getCurrentPosition(success, error, {
             enableHighAccuracy: true,
-            timeout: 2000,
+            timeout: 10000,
             maximumAge: 600000
           });
         }

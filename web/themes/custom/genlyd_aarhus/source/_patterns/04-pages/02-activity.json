@@ -60,6 +60,35 @@
         "owner_label": "Arrangør",
         "number_of_participants": "14 deltagere",
         "number_of_participants_label": "Antal deltagere"
+      },
+      "signedUpUsers": {
+        "users": [
+          {
+            "username": "admin",
+            "first_name": null,
+            "surname": null,
+            "email": "admin@example.com"
+          },
+          {
+            "username": "user1",
+            "first_name": "User1",
+            "surname": "User1lastname",
+            "email": "user1@example.com"
+          },
+          {
+            "username": "user2",
+            "first_name": "User2",
+            "surname": "User2lastname",
+            "email": "user2@example.com"
+          }
+        ],
+        "title": "Tilmeldte brugere",
+        "labels": {
+          "username": "Username",
+          "first_name": "Fornavn",
+          "surname": "Efternavn",
+          "mail": "E-mail"
+        }
       }
     },
     "headingWithIconSimilar": {

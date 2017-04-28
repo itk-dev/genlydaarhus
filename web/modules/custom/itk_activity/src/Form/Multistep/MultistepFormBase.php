@@ -85,7 +85,7 @@ abstract class MultistepFormBase extends FormBase {
     $form['actions']['#type'] = 'actions';
     $form['actions']['submit'] = array(
       '#type' => 'submit',
-      '#value' => $this->t('Submit'),
+      '#value' => t('Submit'),
       '#button_type' => 'primary',
       '#weight' => 10,
     );
@@ -130,37 +130,37 @@ abstract class MultistepFormBase extends FormBase {
     return [
       'items' => [
         [
-          'title' => \Drupal::translation()->translate("About activity"),
+          'title' => t("About activity"),
           'href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
           'open' => TRUE,
           'active' => $active == 'about',
         ],
         [
-          'title' => \Drupal::translation()->translate("Information"),
+          'title' => t("Information"),
           'href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
           'open' => $this->store->get('step_information'),
           'active' => $active == 'information',
         ],
         [
-          'title' => \Drupal::translation()->translate("Categories"),
+          'title' => t("Categories"),
           'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
           'open' => $this->store->get('step_categories'),
           'active' => $active == 'categories',
         ],
         [
-          'title' => \Drupal::translation()->translate("Image"),
+          'title' => t("Image"),
           'href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
           'open' => $this->store->get('step_image'),
           'active' => $active == 'image',
         ],
         [
-          'title' => \Drupal::translation()->translate("Details"),
+          'title' => t("Details"),
           'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
           'open' => $this->store->get('step_details'),
           'active' => $active == 'details',
         ],
         [
-          'title' => \Drupal::translation()->translate("Confirm"),
+          'title' => t("Confirm"),
           'href' => Url::fromRoute('itk_activity.multistep_confirm')->toString(),
           'open' => $this->store->get('step_confirm'),
           'active' => $active == 'confirm',
@@ -192,7 +192,7 @@ abstract class MultistepFormBase extends FormBase {
     $activity = Node::create($data);
     $activity->save();
 
-    drupal_set_message($this->t('The form has been saved.'));
+    drupal_set_message(t('The form has been saved.'));
 
     return $activity->id();
   }
