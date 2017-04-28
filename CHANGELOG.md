@@ -1,17 +1,15 @@
 # Changelog
 
-## In development
+## v1.0.3
 
 * Changed activities on frontpage to show upcoming instead of recent activities.
 * Added link to email in Floating Help
 * Fixed Javascript error in Safari (ecmascript 5 - const keyword in twig library)
-
-## v1.0.3
-
 * Added list to activity with signed up users.
-* Removed price and participants from activity teaser. 
+* Removed price and participants from activity teaser.
 * Fixed zip code auto-fill area to work with https.
 * Fixed issue with missing link value in info sections content form.
+* Added danish language and translations
 
 ## v1.0.2
 
