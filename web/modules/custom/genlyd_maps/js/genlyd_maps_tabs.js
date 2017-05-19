@@ -47,42 +47,41 @@ var viewsActivityFirstLoad = true;
           locationBtn.show();
         }
 
+        var executeFilters = false;
+
         // Set filters.
         var categories = readHashValue('field_categories_target_id');
         for (var i in categories) {
           $('[id^=edit-field-categories-target-id-' + categories[i] + ']')[0].checked = true;
-          showFilters = true;
+          executeFilters = true;
         }
 
         var title = readHashValue('title');
         if (title.length) {
           $('[id^=edit-title]').val(title[0]);
-          showFilters = true;
+          executeFilters = true;
         }
 
         var zipcode = readHashValue('field_zipcode_value');
         if (zipcode.length) {
           $('[id^=edit-field-zipcode-value]').val(zipcode[0]);
-          showFilters = true;
+          executeFilters = true;
         }
 
         // Execute filters.
-        if (showFilters && viewsActivityFirstLoad) {
+        if (executeFilters && viewsActivityFirstLoad) {
           // We don't known when drupal ajax is ready, so wait 200, throw a
           // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
         }
 
         // Ensures that the maps has all activities loaded.
-        if (viewsActivityFirstLoad && !showFilters) {
+        if (viewsActivityFirstLoad && !executeFilters) {
           updateMap();
         }
 
         // Set first load to false.
         viewsActivityFirstLoad = false;
-
-        // Negate show-filters as the filter function toggles it.
-        showFilters = !showFilters;
       }
       initialization();
 
@@ -180,7 +179,6 @@ var viewsActivityFirstLoad = true;
           filters.hide();
         }
       }
-      setFilters();
 
       /**
        * Handle changes to filters and update hash based on this.
@@ -192,6 +190,7 @@ var viewsActivityFirstLoad = true;
 
         // Handle checkboxes.
         if (target.is(':checked')) {
+          removeHashValue(key, target.val());
           addHashValue(key, target.val());
         }
         else {
@@ -257,7 +256,12 @@ var viewsActivityFirstLoad = true;
        *
        * The functions are global available from genlyd_maps.js.
        */
-      function updateMap() {
+      function updateMap(event) {
+        if (event) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+
         // Ensure map popups are closed.
         var element = document.getElementById('popup');
         element.innerHTML = '';

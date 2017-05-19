@@ -98,6 +98,9 @@
       ]
     },
     "patches": {
+      "drupal/core": {
+        "https://www.drupal.org/node/2798947": "https://www.drupal.org/files/issues/views_pagers_include-2798947-7.patch"
+      },
       "drupal/page_manager": {
         "Removed containing div": "patch/page_manager_remove_containing_div.patch"
       }
