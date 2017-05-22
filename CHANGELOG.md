@@ -2,6 +2,7 @@
 
 ## In development
 
+* Removed hover on upload image so the upload button is visible.
 
 ## v1.0.3
 
