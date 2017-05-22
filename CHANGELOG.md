@@ -3,6 +3,7 @@
 ## In development
 
 * Fix location button in IE 11
+* Fixed question mark icon
 
 ## v1.0.3
 
