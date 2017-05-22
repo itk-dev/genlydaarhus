@@ -44,6 +44,7 @@ var viewsActivityFirstLoad = true;
         else {
           switchBtn.text(switchBtnTexts.list);
           mapTab.show();
+          // Setting display property to block, because IE 11 sets it to display inline.
           locationBtn.css('display', 'block');
         }
 
