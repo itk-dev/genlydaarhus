@@ -44,7 +44,7 @@ var viewsActivityFirstLoad = true;
         else {
           switchBtn.text(switchBtnTexts.list);
           mapTab.show();
-          locationBtn.show();
+          locationBtn.css('display', 'block');
         }
 
         // Set filters.
@@ -224,7 +224,7 @@ var viewsActivityFirstLoad = true;
           case 'list':
             viewTab.hide();
             mapTab.show();
-            locationBtn.show();
+            locationBtn.css('display', 'block');
             replaceHashValue('viewmode', 'map');
             switchBtn.text(switchBtnTexts.list);
             break;

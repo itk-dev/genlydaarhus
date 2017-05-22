@@ -2,6 +2,7 @@
 
 ## In development
 
+* Fix location button in IE 11
 
 ## v1.0.3
 
