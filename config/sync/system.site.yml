@@ -3,8 +3,8 @@ name: GENLYD
 mail: admin@example.com
 slogan: ''
 page:
-  403: /ingen-adgang
-  404: /siden-blev-ikke-fundet
+  403: /user/login
+  404: /node/51
   front: /home
 admin_compact_mode: false
 weight_select_max: 100
