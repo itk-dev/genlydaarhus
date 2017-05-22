@@ -1,14 +1,15 @@
 .heading-with-icon {
   display: flex;
 
+  &--titles {
+    display: flex;
+    flex-direction: column;
+  }
+
   &--title {
     font-size: $font-size-large;
-    margin-bottom: $spacing-pixel-xxsmall;
-    margin-top: 0;
-
-    @include breakpoint($breakpoint-tablet) {
-      margin-bottom: $spacing-pixel-xtiny;
-    }
+    margin-bottom: auto;
+    margin-top: auto;
   }
 
   &--subtitle {

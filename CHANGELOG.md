@@ -2,6 +2,7 @@
 
 ## In development
 
+* Added icon checkmark to info sections and fixed styling if there is no sub text.
 
 ## v1.0.3
 
