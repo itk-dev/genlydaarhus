@@ -1,26 +1,38 @@
-{% if headingWithIcon %}
-  {% embed "@modules/grid/grid-full.twig" %}
-    {% block items %}
-      {% embed "@modules/grid/grid-item.twig" %}
-        {% block content %}
-          {% include "@modules/heading-with-icon.twig" %}
-        {% endblock %}
-      {% endembed %}
-    {% endblock %}
-  {% endembed %}
-{% endif %}
-
 {% if view %}
   {# Render Drupal #}
   {{ exposed }}
 
-  <div class="js-map-tab-view">
-    {{ rows }}
+  {% if rows %}
+    {% if headingWithIcon %}
+      {% embed "@modules/grid/grid-full.twig" %}
+        {% block items %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {% include "@modules/heading-with-icon.twig" %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endif %}
+    <div class="js-map-tab-view">
+      {{ rows }}
 
-    {{ pager }}
-  </div>
+      {{ pager }}
+    </div>
+  {% endif %}
 {% else %}
   {# Render Pattern Lab #}
+  {% if headingWithIcon %}
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endif %}
   {% embed "@modules/grid/grid-fourths.twig" %}
     {% block items %}
       {% for cardActivity in activities %}

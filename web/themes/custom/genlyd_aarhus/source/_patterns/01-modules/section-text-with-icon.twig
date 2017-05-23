@@ -2,7 +2,7 @@
   {% block content %}
     {% embed "@modules/text-with-icon.twig" with { textWithIcon: textWithIcon } %}
       {% block icon %}
-        {% include iconName ? "@elements/icons/icon-" ~ iconName ~ ".twig" : "@elements/icons/icon-arrow-dark-green-small.twig" %}
+        {% include iconName ? "@elements/icons/icon-" ~ iconName ~ ".twig" : "@elements/icons/icon-bulletin.twig" %}
       {% endblock %}
     {% endembed %}
   {% endblock %}

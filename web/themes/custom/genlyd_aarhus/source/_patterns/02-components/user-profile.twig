@@ -4,7 +4,11 @@
       {% block content %}
         {% embed "@modules/grid/grid-item-header-section.twig" %}
           {% block content %}
-            {% include '@modules/heading-with-icon.twig' with { headingWithIcon: { title: userProfile.headingWithIcon.title, subtitle: userProfile.headingWithIcon.subtitle, icon: { type: "create", color: 'light' } } } %}
+            {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: { title: userProfile.headingWithIcon.title, subtitle: userProfile.headingWithIcon.subtitle } } %}
+              {% block icon %}
+                {% include "@elements/icons/icon-user.twig" %}
+              {% endblock %}
+            {% endembed %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
@@ -12,9 +16,7 @@
 
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-
         {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: userProfile.personalDetails } } %}
-
       {% endblock %}
     {% endembed %}
   {% endblock %}
@@ -52,15 +54,5 @@
       {% endblock %}
     {% endembed %}
 
-  {% endblock %}
-{% endembed %}
-
-{% embed "@modules/grid/grid-full.twig" %}
-  {% block items %}
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-
-      {% endblock %}
-    {% endembed %}
   {% endblock %}
 {% endembed %}

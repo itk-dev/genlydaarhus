@@ -3,6 +3,9 @@
 ## In development
 
 * Added icon checkmark to info sections and fixed styling if there is no sub text.
+* Changed icon on user profile.
+* Changed icon in attendees section on activity.
+* Hide headers if there are no results on user and activity pages. 
 
 ## v1.0.3
 
