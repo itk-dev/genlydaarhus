@@ -2,9 +2,11 @@
 
 ## In development
 
+* Removed hover on upload image so the upload button is visible.
 * Fix location button in IE 11.
 * Fixed question mark icon.
 * Added text to last step of create activity if no image is selected. 
+
 
 ## v1.0.3
 
