@@ -6,12 +6,16 @@
 * Changed icon on user profile.
 * Changed icon in attendees section on activity.
 * Hide headers if there are no results on user and activity pages. 
+* Removed hover on upload image so the upload button is visible.
+* Fix location button in IE 11.
+* Fixed question mark icon.
+* Added text to last step of create activity if no image is selected. 
 
 ## v1.0.3
 
 * Changed activities on frontpage to show upcoming instead of recent activities.
-* Added link to email in Floating Help
-* Fixed Javascript error in Safari (ecmascript 5 - const keyword in twig library)
+* Added link to email in Floating Help.
+* Fixed Javascript error in Safari (ecmascript 5 - const keyword in twig library).
 * Added list to activity with signed up users.
 * Removed price and participants from activity teaser.
 * Fixed zip code auto-fill area to work with https.
