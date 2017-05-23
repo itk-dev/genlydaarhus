@@ -7,11 +7,9 @@
         <div class="hero--button">
           {% include "@elements/buttons/button-call-to-action.twig" with { button: hero.cta_button } %}
         </div>
-        {% if hero.logged_in %}
         <div class="hero--button">
           {% include "@elements/buttons/button-secondary-light.twig"  with { button: hero.button } %}
         </div>
-        {% endif %}
       </div>
     </div>
   </div>
