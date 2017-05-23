@@ -6,6 +6,8 @@
   </div>
   <div class="heading-with-icon--titles">
     <h1 class="heading-with-icon--title">{{ headingWithIcon.title }}</h1>
-    <p class="heading-with-icon--subtitle">{{ headingWithIcon.subtitle }}</p>
+    {% if headingWithIcon.subtitle %}
+      <p class="heading-with-icon--subtitle">{{ headingWithIcon.subtitle }}</p>
+    {% endif %}
   </div>
 </div>
