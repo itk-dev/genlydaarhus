@@ -2,11 +2,14 @@
 
 ## In development
 
+* Added icon checkmark to info sections and fixed styling if there is no sub text.
+* Changed icon on user profile.
+* Changed icon in attendees section on activity.
+* Hide headers if there are no results on user and activity pages. 
 * Removed hover on upload image so the upload button is visible.
 * Fix location button in IE 11.
 * Fixed question mark icon.
 * Added text to last step of create activity if no image is selected. 
-
 
 ## v1.0.3
 
