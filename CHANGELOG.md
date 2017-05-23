@@ -9,7 +9,10 @@
 * Removed hover on upload image so the upload button is visible.
 * Fix location button in IE 11.
 * Fixed question mark icon.
-* Added text to last step of create activity if no image is selected. 
+* Added text to last step of create activity if no image is selected.
+* Added drush translation commands to platform build
+* Added button to create activity for anonymous users
+* Added redirect for anonymous users for access denied page
 
 ## v1.0.3
 
