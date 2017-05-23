@@ -166,11 +166,15 @@
                           {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[3].title } } %}
                         {% endblock %}
                       {% endembed %}
-                      {% embed "@modules/grid/grid-item.twig" %}
-                        {% block content %}
-                          {% include "@elements/images/image.twig" with { image: addActivity.data.image } %}
-                        {% endblock %}
-                      {% endembed %}
+                      {% if addActivity.data.image.src %}
+                        {% embed "@modules/grid/grid-item.twig" %}
+                          {% block content %}
+                            {% include "@elements/images/image.twig" with { image: addActivity.data.image } %}
+                          {% endblock %}
+                        {% endembed %}
+                      {% else %}
+                        {{ "(no image selected)" | trans }}
+                      {% endif %}
                     {% endblock %}
                   {% endembed %}
                 {% endblock %}
