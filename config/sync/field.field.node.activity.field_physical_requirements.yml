@@ -10,7 +10,7 @@ id: node.activity.field_physical_requirements
 field_name: field_physical_requirements
 entity_type: node
 bundle: activity
-label: 'Physical Requirements'
+label: 'Kræver det et særligt fysisk niveau?'
 description: ''
 required: true
 translatable: false
