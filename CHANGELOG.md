@@ -2,6 +2,8 @@
 
 ## In development
 
+## v1.0.4
+
 * Added icon checkmark to info sections and fixed styling if there is no sub text.
 * Changed icon on user profile.
 * Changed icon in attendees section on activity.
@@ -13,6 +15,7 @@
 * Added drush translation commands to platform build.
 * Added button to create activity for anonymous users.
 * Added redirect for anonymous users for access denied page.
+* Removed help text for text area fields
 
 ## v1.0.3
 
