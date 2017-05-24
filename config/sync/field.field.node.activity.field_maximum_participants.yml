@@ -9,7 +9,7 @@ id: node.activity.field_maximum_participants
 field_name: field_maximum_participants
 entity_type: node
 bundle: activity
-label: 'Maximum Participants'
+label: 'Hvor mange kan deltage?'
 description: ''
 required: false
 translatable: false

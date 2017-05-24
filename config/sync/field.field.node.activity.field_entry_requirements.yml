@@ -10,7 +10,7 @@ id: node.activity.field_entry_requirements
 field_name: field_entry_requirements
 entity_type: node
 bundle: activity
-label: 'Entry Requirements'
+label: 'Hvilket niveau kræver det at deltage?'
 description: ''
 required: true
 translatable: false

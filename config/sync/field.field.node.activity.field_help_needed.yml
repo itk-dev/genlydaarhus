@@ -10,7 +10,7 @@ id: node.activity.field_help_needed
 field_name: field_help_needed
 entity_type: node
 bundle: activity
-label: 'Help Needed'
+label: 'Har du brug for en hjælpende hånd?'
 description: ''
 required: true
 translatable: false
