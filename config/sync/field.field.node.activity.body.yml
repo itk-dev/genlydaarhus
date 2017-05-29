@@ -11,7 +11,7 @@ id: node.activity.body
 field_name: body
 entity_type: node
 bundle: activity
-label: Body
+label: Beskrivelse
 description: ''
 required: false
 translatable: true

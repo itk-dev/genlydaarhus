@@ -9,7 +9,7 @@ id: node.activity.field_time_start
 field_name: field_time_start
 entity_type: node
 bundle: activity
-label: 'Time Start'
+label: Starttidspunkt
 description: ''
 required: false
 translatable: false

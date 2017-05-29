@@ -38,11 +38,13 @@
           {% endblock %}
         {% endembed %}
 
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            {{ data.remove_button }}
-          {% endblock %}
-        {% endembed %}
+        {% if data.remove_button|render %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {{ data.remove_button }}
+            {% endblock %}
+          {% endembed %}
+        {% endif %}
       {% endblock %}
     {% endembed %}
 
