@@ -9,7 +9,7 @@ id: node.activity.field_price
 field_name: field_price
 entity_type: node
 bundle: activity
-label: Price
+label: 'Eventuel pris'
 description: ''
 required: false
 translatable: false
