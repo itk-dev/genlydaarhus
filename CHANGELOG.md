@@ -2,6 +2,9 @@
 
 ## In development
 
+## v1.0.5
+* Removed module missing errors
+
 ## v1.0.4
 
 * Added icon checkmark to info sections and fixed styling if there is no sub text.
