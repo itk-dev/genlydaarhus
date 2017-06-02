@@ -127,3 +127,18 @@ function genlyd_update_8110() {
   );
   \Drupal::service('module_installer')->install($module_list);
 }
+
+/**
+ * Fix db missing modules error.
+ */
+function genlyd_update_8111() {
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'genlyd_carto')
+    ->execute();
+
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'prlp')
+    ->execute();
+}
