@@ -180,6 +180,7 @@ var viewsActivityFirstLoad = true;
       /**
        * Handle changes to filters and update hash based on this.
        */
+      filters.off();
       filters.change(function (event) {
         var target = $(event.target);
         var regex = new RegExp('\\[\\d+\\]');
