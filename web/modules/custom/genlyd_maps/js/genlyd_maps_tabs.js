@@ -52,38 +52,32 @@ var viewsActivityFirstLoad = true;
         var categories = readHashValue('field_categories_target_id');
         for (var i in categories) {
           $('[id^=edit-field-categories-target-id-' + categories[i] + ']')[0].checked = true;
-          showFilters = true;
         }
 
         var title = readHashValue('title');
         if (title.length) {
           $('[id^=edit-title]').val(title[0]);
-          showFilters = true;
         }
 
         var zipcode = readHashValue('field_zipcode_value');
         if (zipcode.length) {
           $('[id^=edit-field-zipcode-value]').val(zipcode[0]);
-          showFilters = true;
         }
 
         // Execute filters.
-        if (showFilters && viewsActivityFirstLoad) {
+        if (viewsActivityFirstLoad) {
           // We don't known when drupal ajax is ready, so wait 200, throw a
           // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
         }
 
         // Ensures that the maps has all activities loaded.
-        if (viewsActivityFirstLoad && !showFilters) {
+        if (viewsActivityFirstLoad) {
           updateMap();
         }
 
         // Set first load to false.
         viewsActivityFirstLoad = false;
-
-        // Negate show-filters as the filter function toggles it.
-        showFilters = !showFilters;
       }
       initialization();
 
@@ -171,7 +165,6 @@ var viewsActivityFirstLoad = true;
        * Show/hide filters and change text for show/hide filters button.
        */
       function setFilters() {
-        showFilters = !showFilters;
         if (showFilters) {
           filterBtn.text(filterBtnTexts.hide);
           filters.show();
@@ -180,6 +173,7 @@ var viewsActivityFirstLoad = true;
           filterBtn.text(filterBtnTexts.show);
           filters.hide();
         }
+        showFilters = !showFilters;
       }
       setFilters();
 
