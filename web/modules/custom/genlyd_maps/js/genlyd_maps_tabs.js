@@ -48,8 +48,6 @@ var viewsActivityFirstLoad = true;
           locationBtn.css('display', 'block');
         }
 
-        var executeFilters = false;
-
         // Set filters.
         var categories = readHashValue('field_categories_target_id');
         for (var i in categories) {
