@@ -47,9 +47,10 @@
 
               {% embed "@modules/grid/grid-item.twig" %}
                 {% block content %}
-                  {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.signedUpUsers.title }, iconName: 'bulletin' } %}
-
-                  {% include "@modules/signed-up-users.twig" with { users: activity.activityOverview.signedUpUsers.users } %}
+                  {% if activity.activityOverview.signedUpUsers.users %}
+                    {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.signedUpUsers.title }, iconName: 'user' } %}
+                    {% include "@modules/signed-up-users.twig" with { users: activity.activityOverview.signedUpUsers.users } %}
+                  {% endif %}
                 {% endblock %}
               {% endembed %}
 

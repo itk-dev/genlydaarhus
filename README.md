@@ -100,6 +100,16 @@ When building a new branch, the parent branch (default master) will be used as r
   * develop
     * feature/JIRA_ISSUE_ID_name_of_branch
 
+Make sure you have checked out the branch you want to push:
+```sh
+git checkout branch_name
+```
+
+Push the branch to platform so we can set the parent. Note: this will not trigger a build.
+```sh
+git push platform branch_name
+```
+
 Setting a branch to use develop as parent (using the branch you have checked out)
 ```sh
 platform environment:info parent develop
@@ -108,6 +118,11 @@ platform environment:info parent develop
 Pushing develop
 ```sh
 git push platform develop       # or master
+```
+
+Activate environment
+```sh
+platform environment:activate environment_name
 ```
 
 #### Setup drush aliases
@@ -120,7 +135,6 @@ platform drush-aliases
 ```sh
 drush pull-dev
 ```
-
 
 ## SAML authentication (ADFS)
 

@@ -9,7 +9,7 @@ id: node.activity.field_address
 field_name: field_address
 entity_type: node
 bundle: activity
-label: Address
+label: 'Adresse'
 description: ''
 required: true
 translatable: false

@@ -108,6 +108,8 @@ hooks:
       drush -y updatedb
       drush -y config-import
       drush -y entup
+      drush locale-check
+      drush locale-update
 
 # The configuration of scheduled execution.
 crons:

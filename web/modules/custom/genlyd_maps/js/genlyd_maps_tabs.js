@@ -44,7 +44,8 @@ var viewsActivityFirstLoad = true;
         else {
           switchBtn.text(switchBtnTexts.list);
           mapTab.show();
-          locationBtn.show();
+          // Setting display property to block, because IE 11 sets it to display inline.
+          locationBtn.css('display', 'block');
         }
 
         var executeFilters = false;
@@ -53,30 +54,27 @@ var viewsActivityFirstLoad = true;
         var categories = readHashValue('field_categories_target_id');
         for (var i in categories) {
           $('[id^=edit-field-categories-target-id-' + categories[i] + ']')[0].checked = true;
-          executeFilters = true;
         }
 
         var title = readHashValue('title');
         if (title.length) {
           $('[id^=edit-title]').val(title[0]);
-          executeFilters = true;
         }
 
         var zipcode = readHashValue('field_zipcode_value');
         if (zipcode.length) {
           $('[id^=edit-field-zipcode-value]').val(zipcode[0]);
-          executeFilters = true;
         }
 
         // Execute filters.
-        if (executeFilters && viewsActivityFirstLoad) {
+        if (viewsActivityFirstLoad) {
           // We don't known when drupal ajax is ready, so wait 200, throw a
           // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
         }
 
         // Ensures that the maps has all activities loaded.
-        if (viewsActivityFirstLoad && !executeFilters) {
+        if (viewsActivityFirstLoad) {
           updateMap();
         }
 
@@ -169,7 +167,6 @@ var viewsActivityFirstLoad = true;
        * Show/hide filters and change text for show/hide filters button.
        */
       function setFilters() {
-        showFilters = !showFilters;
         if (showFilters) {
           filterBtn.text(filterBtnTexts.hide);
           filters.show();
@@ -178,11 +175,13 @@ var viewsActivityFirstLoad = true;
           filterBtn.text(filterBtnTexts.show);
           filters.hide();
         }
+        showFilters = !showFilters;
       }
 
       /**
        * Handle changes to filters and update hash based on this.
        */
+      filters.off();
       filters.change(function (event) {
         var target = $(event.target);
         var regex = new RegExp('\\[\\d+\\]');
@@ -223,7 +222,7 @@ var viewsActivityFirstLoad = true;
           case 'list':
             viewTab.hide();
             mapTab.show();
-            locationBtn.show();
+            locationBtn.css('display', 'block');
             replaceHashValue('viewmode', 'map');
             switchBtn.text(switchBtnTexts.list);
             break;

@@ -9,13 +9,13 @@ id: node.activity.field_signup_required
 field_name: field_signup_required
 entity_type: node
 bundle: activity
-label: 'Signup Required'
+label: 'Tilmelding'
 description: ''
 required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  on_label: 'Signup is required'
-  off_label: 'Signup is not required'
+  on_label: 'Der er tilmeldingspligt'
+  off_label: 'Der er ikke tilmeldingspligt'
 field_type: boolean

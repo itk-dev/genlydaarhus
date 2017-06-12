@@ -9,9 +9,11 @@
             {% embed "@modules/grid/grid-item-header-section-centered.twig" %}
               {% block items %}
 
-                {# @TODO include specific icon directly #}
-                {% set headingWithIcon = { title: sectionInfo.title, subtitle: sectionInfo.subtitle, icon: { type: "bulletin", color: 'light' } } %}
-                {% include "@modules/heading-with-icon.twig" %}
+                {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: { title: sectionInfo.title, subtitle: sectionInfo.subtitle } } %}
+                  {% block icon %}
+                    {% include "@elements/icons/icon-checkmark.twig" %}
+                  {% endblock %}
+                {% endembed %}
 
               {% endblock %}
             {% endembed %}
