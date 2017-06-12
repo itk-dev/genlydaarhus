@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "dc20bf0460471f7b2d9fdef4cf312b12",
+    "content-hash": "298ef1d09cfa36ad3be84e036664ffef",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1117,6 +1117,49 @@
             }
         },
         {
+            "name": "drupal/allowed_formats",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/allowed_formats",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/allowed_formats-8.x-1.1.zip",
+                "reference": null,
+                "shasum": "b7bfc78d7e64f1df37ca6cad118a1ff8f7228b64"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1492709942"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "floretan",
+                    "homepage": "https://www.drupal.org/user/66163"
+                }
+            ],
+            "description": "Limit which text formats are available for each field instance.",
+            "homepage": "https://www.drupal.org/project/allowed_formats",
+            "support": {
+                "source": "http://cgit.drupalcode.org/allowed_formats"
+            }
+        },
+        {
             "name": "drupal/better_exposed_filters",
             "version": "3.0.0-alpha2",
             "source": {
@@ -1461,13 +1504,13 @@
             "version": "8.2.7",
             "source": {
                 "type": "git",
-                "url": "https://github.com/drupal-composer/drupal-core.git",
-                "reference": "5d3fb8a93514f23198ac6848b2679ef1026d2326"
+                "url": "https://github.com/drupal/core.git",
+                "reference": "7e3e9eb8ceb1428d36f8281fccede3c7f6469216"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/drupal-composer/drupal-core/zipball/5d3fb8a93514f23198ac6848b2679ef1026d2326",
-                "reference": "5d3fb8a93514f23198ac6848b2679ef1026d2326",
+                "url": "https://api.github.com/repos/drupal/core/zipball/7e3e9eb8ceb1428d36f8281fccede3c7f6469216",
+                "reference": "7e3e9eb8ceb1428d36f8281fccede3c7f6469216",
                 "shasum": ""
             },
             "require": {
@@ -1610,11 +1653,6 @@
                 "symfony/css-selector": "~2.8"
             },
             "type": "drupal-core",
-            "extra": {
-                "patches_applied": {
-                    "Fix ajax error": "https://www.drupal.org/files/issues/2771361-7-do-not-attach-ajax-to-non-present-views.patch"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Drupal\\Core\\": "lib/Drupal/Core",
@@ -1995,6 +2033,9 @@
                 "drupal": {
                     "version": "8.x-1.0-alpha24",
                     "datestamp": "1471723439"
+                },
+                "patches_applied": {
+                    "Removed containing div": "patch/page_manager_remove_containing_div.patch"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",

@@ -6,7 +6,13 @@ dependencies:
     - field.storage.node.body
     - node.type.page
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    editor_html: editor_html
+    filtered_html: '0'
+    plain_text: '0'
 _core:
   default_config_hash: 0Yqjh2h3x7LWJzohFD0bkVfN3W90AajT1JoBpMk4sic
 id: node.page.body
