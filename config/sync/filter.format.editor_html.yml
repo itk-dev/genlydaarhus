@@ -1,12 +1,10 @@
-uuid: 2facab1f-63d6-4708-bf61-da9d1c7840c0
+uuid: 30956852-1553-425a-a825-29d81a7b393e
 langcode: da
 status: true
 dependencies: {  }
-_core:
-  default_config_hash: be0uffNhXGTHMgr-QirqdhvdH-Efh1Q1niv7aWWkuG4
-name: 'Filtered HTML'
-format: filtered_html
-weight: -10
+name: 'Editor HTML'
+format: editor_html
+weight: -9
 filters:
   filter_autop:
     id: filter_autop
@@ -20,7 +18,7 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<em> <strong> <code> <ul> <ol> <li> <h2> <h3> <h4> <p> <br> <a href>'
+      allowed_html: '<a href hreflang> <em> <strong> <cite> <blockquote cite> <code> <ul type> <ol start type=''1 A I''> <li> <h2 id=''jump-*''> <h3 id> <h4 id> <h5 id> <h6 id>'
       filter_html_help: true
       filter_html_nofollow: false
   filter_url:

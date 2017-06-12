@@ -48,3 +48,4 @@ permissions:
   38: 'edit own page content'
   39: 'revert page revisions'
   40: 'view page revisions'
+  41: 'use text format editor_html'

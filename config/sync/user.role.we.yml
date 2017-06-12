@@ -56,3 +56,4 @@ permissions:
   - 'select account cancellation method'
   - 'access user profiles'
   - 'administer taxonomy'
+  - 'use text format editor_html'
