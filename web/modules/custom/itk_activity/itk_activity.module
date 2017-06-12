@@ -298,7 +298,7 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
  * Implements hook_field_widget_form_alter().
  */
 function itk_activity_form_node_form_alter(&$form, &$form_state, &$form_id) {
-  $form['body']['widget']['#after_build'][] = '_allowed_formats_remove_textarea_help';
+  $form['body']['widget']['#after_build'][] = '_itk_activity_allowed_formats_remove_textarea_help';
 }
 
 /**
@@ -368,8 +368,7 @@ function _itk_activity_get_image_url($node, $imageStyle) {
  * @param \FormStateInterface $form_state
  * @return mixed
  */
-function _allowed_formats_remove_textarea_help($form_element, FormStateInterface $form_state) {
-
+function _itk_activity_allowed_formats_remove_textarea_help($form_element, FormStateInterface $form_state) {
   if (isset($form_element[0]['format'])) {
     // All this stuff is needed to hide the help text.
     unset($form_element[0]['format']['guidelines']);
