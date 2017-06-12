@@ -14,6 +14,7 @@ var viewsActivityFirstLoad = true;
       var locationBtn = $('.js-maps-my-location');
       var switchBtn = $('.js-maps-switch');
       var filterBtn = $('.js-filters-toggle');
+
       var filters = $('.js-filters');
       var searchBtn = $('.button', filters);
       var filterBtnTexts = {
@@ -31,7 +32,7 @@ var viewsActivityFirstLoad = true;
       locationBtn.hide();
 
       // Initialization of hide/show filters.
-      var showFilters = false;
+      var filterDisplayState = true;
 
       function initialization() {
         // Detected which view (map or list).
@@ -164,8 +165,8 @@ var viewsActivityFirstLoad = true;
       /**
        * Show/hide filters and change text for show/hide filters button.
        */
-      function setFilters() {
-        if (showFilters) {
+      function toggleFilters() {
+        if (filterDisplayState) {
           filterBtn.text(filterBtnTexts.hide);
           filters.show();
         }
@@ -173,7 +174,7 @@ var viewsActivityFirstLoad = true;
           filterBtn.text(filterBtnTexts.show);
           filters.hide();
         }
-        showFilters = !showFilters;
+        filterDisplayState = !filterDisplayState;
       }
 
       /**
@@ -187,7 +188,6 @@ var viewsActivityFirstLoad = true;
 
         // Handle checkboxes.
         if (target.is(':checked')) {
-          removeHashValue(key, target.val());
           addHashValue(key, target.val());
         }
         else {
@@ -203,10 +203,11 @@ var viewsActivityFirstLoad = true;
       /**
        * Show/hide the filters.
        */
+      filterBtn.off();
       filterBtn.click(function click(event) {
         event.preventDefault();
         event.stopPropagation();
-        setFilters();
+        toggleFilters();
       });
 
       /**
@@ -253,12 +254,7 @@ var viewsActivityFirstLoad = true;
        *
        * The functions are global available from genlyd_maps.js.
        */
-      function updateMap(event) {
-        if (event) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-
+      function updateMap() {
         // Ensure map popups are closed.
         var element = document.getElementById('popup');
         element.innerHTML = '';
