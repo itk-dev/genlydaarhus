@@ -9,7 +9,7 @@ id: node.activity.field_zipcode
 field_name: field_zipcode
 entity_type: node
 bundle: activity
-label: 'Postnummer'
+label: Postnummer
 description: ''
 required: true
 translatable: false

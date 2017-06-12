@@ -10,7 +10,7 @@ id: node.activity.field_categories
 field_name: field_categories
 entity_type: node
 bundle: activity
-label: 'Kategorier'
+label: Kategorier
 description: ''
 required: false
 translatable: false

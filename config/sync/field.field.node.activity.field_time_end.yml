@@ -9,7 +9,7 @@ id: node.activity.field_time_end
 field_name: field_time_end
 entity_type: node
 bundle: activity
-label: 'Sluttidspunkt'
+label: Sluttidspunkt
 description: ''
 required: false
 translatable: false

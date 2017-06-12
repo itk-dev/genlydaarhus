@@ -1,38 +1,41 @@
-uuid: d1871afe-8577-4e2e-a3e9-56b97a3ea620
+uuid: c4be8210-c4b9-4bbd-91d3-ac549cfaac2f
 langcode: da
 status: true
 dependencies:
   config:
-    - filter.format.filtered_html
+    - filter.format.editor_html
   module:
     - ckeditor
-_core:
-  default_config_hash: AtQXO3L7xW-K3VEKWDhHiC_HmY8HKOlMUxhvjKwYftA
-format: filtered_html
+format: editor_html
 editor: ckeditor
 settings:
   toolbar:
     rows:
       -
         -
-          name: Formatting
+          name: Formatering
           items:
             - Bold
             - Italic
+            - Format
         -
           name: Links
           items:
             - DrupalLink
             - DrupalUnlink
         -
-          name: Lists
+          name: Lister
           items:
             - BulletedList
             - NumberedList
         -
-          name: Headers
+          name: Media
           items:
-            - Format
+            - Blockquote
+        -
+          name: Værktøjer
+          items:
+            - Source
   plugins:
     language:
       language_list: un

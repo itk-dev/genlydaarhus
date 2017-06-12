@@ -9,7 +9,7 @@ id: node.activity.field_area
 field_name: field_area
 entity_type: node
 bundle: activity
-label: 'By'
+label: By
 description: ''
 required: false
 translatable: false
