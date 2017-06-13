@@ -20,3 +20,4 @@ permissions:
   - 'create itk_activity activity'
   - 'clone itk_activity own activity'
   - 'contact itk_activity activity owner'
+  - 'use text format filtered_html'
