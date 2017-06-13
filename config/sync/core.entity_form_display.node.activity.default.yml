@@ -23,6 +23,7 @@ dependencies:
     - image.style.thumbnail
     - node.type.activity
   module:
+    - allowed_formats
     - datetime
     - image
     - text
@@ -36,9 +37,12 @@ content:
     weight: 2
     settings:
       rows: 9
-      summary_rows: 3
       placeholder: ''
-    third_party_settings: {  }
+      summary_rows: 3
+    third_party_settings:
+      allowed_formats:
+        hide_help: '1'
+        hide_guidelines: '1'
   field_address:
     weight: 29
     settings:

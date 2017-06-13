@@ -362,7 +362,7 @@ function _itk_activity_get_image_url($node, $imageStyle) {
 }
 
 /**
- * Hide all textarea help from a form element.
+ * Hide all textarea help from a form element on activities.
  *
  * @param $form_element
  * @param \FormStateInterface $form_state
