@@ -1,5 +1,4 @@
 {% set form = element %}
-
 <form{{ attributes }}>
   {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}
@@ -130,6 +129,46 @@
           {% endif %}
         {% endblock %}
       {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.roles }}
+          {% else %}
+            {# Pattern Lab @TODO #}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.status }}
+          {% else %}
+            {# Pattern Lab @TODO #}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.account.notify }}
+          {% else %}
+            {# Pattern Lab @TODO #}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {% if form %}
