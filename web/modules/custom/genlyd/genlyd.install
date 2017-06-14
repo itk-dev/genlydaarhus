@@ -142,3 +142,34 @@ function genlyd_update_8111() {
     ->condition('name', 'prlp')
     ->execute();
 }
+
+
+/**
+ * Fix format type for body field.
+ */
+function genlyd_update_8112() {
+  $query = \Drupal::database()->update('node__body')
+    ->fields(array(
+      'body_format' => 'editor_html',
+    ))
+    ->condition('bundle', 'page')
+    ->execute();
+  $query = \Drupal::database()->update('node_revision__body')
+    ->fields(array(
+      'body_format' => 'editor_html',
+    ))
+    ->condition('bundle', 'page')
+    ->execute();
+  $query = \Drupal::database()->update('node__body')
+    ->fields(array(
+      'body_format' => 'filtered_html',
+    ))
+    ->condition('bundle', 'activity')
+    ->execute();
+  $query = \Drupal::database()->update('node_revision__body')
+    ->fields(array(
+      'body_format' => 'filtered_html',
+    ))
+    ->condition('bundle', 'activity')
+    ->execute();
+}
