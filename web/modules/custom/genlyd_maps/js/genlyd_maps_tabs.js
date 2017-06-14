@@ -14,6 +14,7 @@ var viewsActivityFirstLoad = true;
       var locationBtn = $('.js-maps-my-location');
       var switchBtn = $('.js-maps-switch');
       var filterBtn = $('.js-filters-toggle');
+
       var filters = $('.js-filters');
       var searchBtn = $('.button', filters);
       var filterBtnTexts = {
@@ -31,7 +32,7 @@ var viewsActivityFirstLoad = true;
       locationBtn.hide();
 
       // Initialization of hide/show filters.
-      var showFilters = false;
+      var filterDisplayState = true;
 
       function initialization() {
         // Detected which view (map or list).
@@ -52,38 +53,32 @@ var viewsActivityFirstLoad = true;
         var categories = readHashValue('field_categories_target_id');
         for (var i in categories) {
           $('[id^=edit-field-categories-target-id-' + categories[i] + ']')[0].checked = true;
-          showFilters = true;
         }
 
         var title = readHashValue('title');
         if (title.length) {
           $('[id^=edit-title]').val(title[0]);
-          showFilters = true;
         }
 
         var zipcode = readHashValue('field_zipcode_value');
         if (zipcode.length) {
           $('[id^=edit-field-zipcode-value]').val(zipcode[0]);
-          showFilters = true;
         }
 
         // Execute filters.
-        if (showFilters && viewsActivityFirstLoad) {
+        if (viewsActivityFirstLoad) {
           // We don't known when drupal ajax is ready, so wait 200, throw a
           // "Hail Mary" and click.
           setTimeout(function(){ searchBtn.click(); }, 200);
         }
 
         // Ensures that the maps has all activities loaded.
-        if (viewsActivityFirstLoad && !showFilters) {
+        if (viewsActivityFirstLoad) {
           updateMap();
         }
 
         // Set first load to false.
         viewsActivityFirstLoad = false;
-
-        // Negate show-filters as the filter function toggles it.
-        showFilters = !showFilters;
       }
       initialization();
 
@@ -170,9 +165,8 @@ var viewsActivityFirstLoad = true;
       /**
        * Show/hide filters and change text for show/hide filters button.
        */
-      function setFilters() {
-        showFilters = !showFilters;
-        if (showFilters) {
+      function toggleFilters() {
+        if (filterDisplayState) {
           filterBtn.text(filterBtnTexts.hide);
           filters.show();
         }
@@ -180,12 +174,13 @@ var viewsActivityFirstLoad = true;
           filterBtn.text(filterBtnTexts.show);
           filters.hide();
         }
+        filterDisplayState = !filterDisplayState;
       }
-      setFilters();
 
       /**
        * Handle changes to filters and update hash based on this.
        */
+      filters.off();
       filters.change(function (event) {
         var target = $(event.target);
         var regex = new RegExp('\\[\\d+\\]');
@@ -208,10 +203,11 @@ var viewsActivityFirstLoad = true;
       /**
        * Show/hide the filters.
        */
+      filterBtn.off();
       filterBtn.click(function click(event) {
         event.preventDefault();
         event.stopPropagation();
-        setFilters();
+        toggleFilters();
       });
 
       /**

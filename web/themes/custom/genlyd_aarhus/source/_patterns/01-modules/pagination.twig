@@ -5,29 +5,29 @@
         {% block content %}
           <div class="pagination">
             {% if items.first %}
-              <a href="{{ items.first.href }}">«</a>
+              <a href="{{ items.first.href }}" title="«"{{ items.first.attributes|without('href', 'title') }}>«</a>
             {% else %}
               <a class="is-disabled">«</a>
             {% endif %}
 
             {% if items.previous %}
-              <a href="{{ items.previous.href }}">‹</a>
+              <a href="{{ items.previous.href }}" title="‹" rel="prev"{{ items.previous.attributes|without('href', 'title', 'rel') }}>‹</a>
             {% else %}
               <a class="is-disabled">‹</a>
             {% endif %}
 
             {% for key, item in items.pages %}
-              <a href="{{ item.href }}" class="{{ current == key ? 'is-active' : '' }}">{{ key }}</a>
+              <a href="{{ item.href }}" class="{{ current == key ? 'is-active' : '' }}"{{ item.attributes|without('href', 'title') }}>{{ key }}</a>
             {% endfor %}
 
             {% if items.next %}
-              <a href="{{ items.next.href }}">›</a>
+              <a href="{{ items.next.href }}" title="›" rel="next"{{ items.next.attributes|without('href', 'title', 'rel') }}>›</a>
             {% else %}
               <a class="is-disabled">›</a>
             {% endif %}
 
             {% if items.last %}
-              <a href="{{ items.last.href }}">»</a>
+              <a href="{{ items.last.href }}" title="»"{{ items.last.attributes|without('href', 'title') }}>»</a>
             {% else %}
               <a class="is-disabled">»</a>
             {% endif %}

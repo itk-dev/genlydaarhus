@@ -2,6 +2,8 @@
 
 ## In development
 
+* Fixed pager for activity search page
+
 ## v1.0.5
 * Removed module missing errors
 * Updated drupal core
