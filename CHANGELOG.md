@@ -10,6 +10,7 @@
 * Updated contrib modules
 * Removed missing modules error
 * Added specific textfilter for page
+* Fixed pagination issue
 
 ## v1.0.4
 
