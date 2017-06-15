@@ -13,7 +13,7 @@
                 {% endembed %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.showMap }, jsClass: "js-maps-switch" } %}
+                    {% include "@elements/buttons/real-button.twig" with { button: { title: buttons.showMap }, jsClass: "js-maps-switch", buttonClass: 'is-cta' } %}
                   {% endblock %}
                 {% endembed %}
               {% endblock %}
@@ -29,12 +29,12 @@
   {% block items %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.showFilters }, jsClass: "js-filters-toggle" } %}
+        {% include "@elements/buttons/real-button.twig" with { button: { title: buttons.showFilters }, jsClass: "js-filters-toggle", buttonClass: 'is-cta' } %}
       {% endblock %}
     {% endembed %}
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-        {% include "@elements/buttons/button-call-to-action.twig" with { button: { title: buttons.myLocation }, jsClass: "activities-top--my-location js-maps-my-location" } %}
+        {% include "@elements/buttons/real-button.twig" with { button: { title: buttons.myLocation }, jsClass: "activities-top--my-location js-maps-my-location", buttonClass: 'is-cta' } %}
       {% endblock %}
     {% endembed %}
   {% endblock %}

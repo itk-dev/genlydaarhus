@@ -120,6 +120,11 @@ Pushing develop
 git push platform develop       # or master
 ```
 
+Activate environment
+```sh
+platform environment:activate environment_name
+```
+
 #### Setup drush aliases
 
 ```sh
@@ -130,7 +135,6 @@ platform drush-aliases
 ```sh
 drush pull-dev
 ```
-
 
 ## SAML authentication (ADFS)
 
