@@ -2,7 +2,9 @@
 
 ## In development
 
-* Fixed pager for activity search page
+## v1.0.6
+
+* Changed views caching to time based.
 
 ## v1.0.5
 * Removed module missing errors
