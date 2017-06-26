@@ -36,10 +36,12 @@ content:
     weight: 1
     settings: {  }
     third_party_settings: {  }
+    region: content
   links:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   field_address: true
   field_area: true
