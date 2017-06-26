@@ -21,6 +21,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_surname:
     weight: 3
     label: above
@@ -28,10 +29,12 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   member_for:
     weight: 0
     settings: {  }
     third_party_settings: {  }
+    region: content
   user_picture:
     type: image
     weight: 1
@@ -40,5 +43,6 @@ content:
       image_style: ''
       image_link: ''
     third_party_settings: {  }
+    region: content
 hidden:
   langcode: true
