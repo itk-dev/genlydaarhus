@@ -100,7 +100,7 @@ class ActivityController extends ControllerBase {
     // Create the new activity.
     $newActivity = Node::create([
       'type' => 'activity',
-      'title' => $node->title->value . t(' (Clone)'),
+      'title' => $node->title->value,
       'body' => $node->body,
       'field_address' => $node->field_address,
       'field_area' => $node->field_area,
