@@ -8,7 +8,7 @@ var activityLayer = null;
 /**
  * Initialize the OpenLayers Map.
  *
- * @returns {ol.Map}
+ * @return {ol.Map}
  *   The OpenLayers map object.
  */
 function genlydMapInitOpenlayersMap() {

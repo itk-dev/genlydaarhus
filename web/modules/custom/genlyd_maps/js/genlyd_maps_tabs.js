@@ -203,7 +203,7 @@ var viewsActivityFirstLoad = true;
       /**
        * Show/hide the filters.
        */
-      filterBtn.off();
+      // filterBtn.off();
       filterBtn.click(function click(event) {
         event.preventDefault();
         event.stopPropagation();
@@ -279,7 +279,7 @@ var viewsActivityFirstLoad = true;
       /**
        * Used to change location (map center) based on users current location.
        *
-       * @param event
+       * @param {event} event
        *   Click event.
        */
       function myLocation(event) {
@@ -289,7 +289,8 @@ var viewsActivityFirstLoad = true;
         /**
          * Successful location acquired update map center.
          *
-         * @param position
+         * @param {position} position
+         *   The current position.
          */
         function success(position) {
           var latitude  = position.coords.latitude;
@@ -301,7 +302,8 @@ var viewsActivityFirstLoad = true;
         /**
          * Unsuccessful in acquiring user location.
          *
-         * @param err
+         * @param {error} err
+         *   Error object.
          */
         function error(err) {
            alert('Unable to get position.');
@@ -325,5 +327,5 @@ var viewsActivityFirstLoad = true;
       locationBtn.off('click', myLocation);
       locationBtn.on('click', myLocation);
     }
-  }
+  };
 })(jQuery, Drupal);
