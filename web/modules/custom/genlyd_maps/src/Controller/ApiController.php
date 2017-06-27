@@ -12,9 +12,11 @@ use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 use Drupal\genlyd_maps\Render\GeoJsonResponse;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\search_api\Entity\Index;
 use Geocoder\Exception\InvalidCredentials;
 use Geocoder\Exception\NoResult;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 /**
  * Class ApiController.
@@ -150,4 +152,100 @@ class ApiController extends ControllerBase {
 
     return $response;
   }
+
+  public function search(Request $request, $keys = '') {
+    $limit = 5;
+
+    $perform_search = TRUE;
+    if ($perform_search) {
+
+      /* @var $search_api_index \Drupal\search_api\IndexInterface */
+      $search_api_index = Index::load('activities');
+
+      // Create the query.
+      $query = $search_api_index->query([
+        'limit' => $limit,
+        'offset' => !is_null($request->get('page')) ? $request->get('page') * $limit : 0,
+        'search id' => 'search_genlyd_maps',
+      ]);
+
+      $parse_mode = \Drupal::getContainer()
+        ->get('plugin.manager.search_api.parse_mode')
+        ->createInstance('direct');
+      $query->setParseMode($parse_mode);
+
+      // Search for keys.
+      if (!empty($keys)) {
+        $query->keys($keys);
+      }
+
+      // Index fields.
+      $query->setFulltextFields(['title']);
+
+      $result = $query->execute();
+      $items = $result->getResultItems();
+
+      /* @var $item \Drupal\search_api\Item\ItemInterface*/
+      $results = array();
+      foreach ($items as $item) {
+
+        /** @var \Drupal\Core\Entity\EntityInterface $entity */
+        $entity = $item->getOriginalObject()->getValue();
+        if (!$entity) {
+          continue;
+        }
+
+        // Render as view modes.
+        if (TRUE) {
+          $view_mode = 'teaser';
+          $results[] = $this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode);
+        }
+
+        // Render as snippets.
+        if (FALSE) {
+          $results[] = array(
+            '#theme' => 'search_api_page_result',
+            '#item' => $item,
+            '#entity' => $entity,
+          );
+        }
+      }
+
+      if (!empty($results)) {
+
+        $build['#search_title'] = array(
+          '#markup' => $this->t('Search results'),
+        );
+
+        $build['#no_of_results'] = array(
+          '#markup' => $this->formatPlural($result->getResultCount(), '1 result found', '@count results found'),
+        );
+
+        $build['#results'] = $results;
+
+        // Build pager.
+        pager_default_initialize($result->getResultCount(), $limit);
+        $build['#pager'] = array(
+          '#type' => 'pager',
+        );
+      }
+      elseif ($perform_search) {
+        $build['#no_results_found'] = array(
+          '#markup' => $this->t('Your search yielded no results.'),
+        );
+
+        $build['#search_help'] = array(
+          '#markup' => $this->t('<ul>
+<li>Check if your spelling is correct.</li>
+<li>Remove quotes around phrases to search for each word individually. <em>bike shed</em> will often show more results than <em>&quot;bike shed&quot;</em>.</li>
+<li>Consider loosening your query with <em>OR</em>. <em>bike OR shed</em> will often show more results than <em>bike shed</em>.</li>
+</ul>'),
+        );
+      }
+    }
+
+    $build['#theme'] = 'search_api_page';
+    return $build;
+  }
+
 }
