@@ -223,7 +223,7 @@ class ApiController extends ControllerBase {
       }
 
       // Render as view modes.
-      $view_mode = 'teaser';
+      $view_mode = isset($config['view_mode']) ? $config['view_mode'] : 'search_results';
       $results[] = [
         "id" => $entity->id(),
         "location" => $entity_location,

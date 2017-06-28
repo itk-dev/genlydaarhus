@@ -6,8 +6,10 @@ dependencies:
     - field.storage.node.field_address
     - field.storage.node.field_area
     - field.storage.node.field_zipcode
+    - field.storage.node.field_categories
     - search_api.server.database_search
   module:
+    - taxonomy
     - search_api
     - genlyd_maps
     - node
@@ -25,7 +27,7 @@ field_settings:
         - 'entity:node/field_address'
         - 'entity:node/field_area'
         - 'entity:node/field_zipcode'
-  field_address:
+  address:
     label: Adresse
     datasource_id: 'entity:node'
     property_path: field_address
@@ -33,7 +35,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_address
-  field_area:
+  city:
     label: By
     datasource_id: 'entity:node'
     property_path: field_area
@@ -41,7 +43,7 @@ field_settings:
     dependencies:
       config:
         - field.storage.node.field_area
-  field_zipcode:
+  zipcode:
     label: Postnummer
     datasource_id: 'entity:node'
     property_path: field_zipcode
@@ -54,6 +56,16 @@ field_settings:
     datasource_id: 'entity:node'
     property_path: title
     type: text
+  categories:
+    label: 'Kategorier » Ord i ordforråd » Navn'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
 datasource_settings:
   'entity:node':
     bundles:
@@ -67,7 +79,6 @@ processor_settings:
   geo_coder_field: {  }
   add_url: {  }
   aggregated_field: {  }
-  rendered_item: {  }
   entity_status: {  }
   ignorecase:
     all_fields: false
@@ -76,6 +87,7 @@ processor_settings:
     weights:
       preprocess_index: -20
       preprocess_query: -20
+  rendered_item: {  }
   transliteration:
     all_fields: false
     fields:

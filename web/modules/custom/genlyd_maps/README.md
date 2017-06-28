@@ -8,6 +8,10 @@ POST to /api/maps/search
   "fields": ["title"], 
   "limit": 5, 
   "page": 0, 
-  "index": "activities"
+  "index": "activities",
+  "facets": {
+    "zipcode": "",
+    "categories": [ "IT", "Mad" ]
+  }
 }
 ```
