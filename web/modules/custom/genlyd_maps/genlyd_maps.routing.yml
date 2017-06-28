@@ -16,9 +16,10 @@ genlyd_maps.activities:
     _permission: 'access content'
 
 genlyd_maps.search:
-  path: '/api/maps/search/{keys}'
+  path: '/api/maps/search'
   defaults:
     _controller: '\Drupal\genlyd_maps\Controller\ApiController::search'
     _title: 'Search activities'
+    methods:  [POST]
   requirements:
     _permission: 'access content'

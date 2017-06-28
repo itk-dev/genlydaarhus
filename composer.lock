@@ -2379,7 +2379,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/search_api_page-8.x-1.0-alpha11.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha11",
                 "shasum": "021baad1b03d2b3dc4be659043d6471569dfffb7"
             },
             "require": {

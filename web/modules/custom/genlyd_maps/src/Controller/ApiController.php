@@ -15,6 +15,7 @@ use Drupal\image\Entity\ImageStyle;
 use Drupal\search_api\Entity\Index;
 use Geocoder\Exception\InvalidCredentials;
 use Geocoder\Exception\NoResult;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -153,99 +154,97 @@ class ApiController extends ControllerBase {
     return $response;
   }
 
-  public function search(Request $request, $keys = '') {
-    $limit = 5;
+  /**
+   * Search callback.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *
+   * @return mixed
+   */
+  public function search(Request $request) {
+    // This condition checks the `Content-type` and makes sure to
+    // decode JSON string from the request body into array.
+    $config = [
+      "limit" => 10,
+      "page" => 2,
+    ];
+    if (0 === strpos($request->headers->get( 'Content-Type' ), 'application/json')) {
+      $config = json_decode($request->getContent(), TRUE);
+    }
 
-    $perform_search = TRUE;
-    if ($perform_search) {
+    /* @var $search_api_index \Drupal\search_api\IndexInterface */
+    $search_api_index = Index::load($config['index']);
 
-      /* @var $search_api_index \Drupal\search_api\IndexInterface */
-      $search_api_index = Index::load('activities');
+    // Create the query.
+    $query = $search_api_index->query([
+      'limit' => $config['limit'],
+      'offset' => !is_null($config['page']) ? $config['page'] * $config['limit'] : 0,
+      'search id' => 'search_genlyd_maps',
+    ]);
 
-      // Create the query.
-      $query = $search_api_index->query([
-        'limit' => $limit,
-        'offset' => !is_null($request->get('page')) ? $request->get('page') * $limit : 0,
-        'search id' => 'search_genlyd_maps',
-      ]);
+    $parse_mode = \Drupal::getContainer()
+      ->get('plugin.manager.search_api.parse_mode')
+      ->createInstance('direct');
+    $query->setParseMode($parse_mode);
 
-      $parse_mode = \Drupal::getContainer()
-        ->get('plugin.manager.search_api.parse_mode')
-        ->createInstance('direct');
-      $query->setParseMode($parse_mode);
+    // Search for keys.
+    if (!empty($config['keys'])) {
+      $query->keys($config['keys']);
+    }
 
-      // Search for keys.
-      if (!empty($keys)) {
-        $query->keys($keys);
-      }
+    // Index fields.
+    $query->setFulltextFields($config['fields']);
 
-      // Index fields.
-      $query->setFulltextFields(['title']);
-
-      $result = $query->execute();
-      $items = $result->getResultItems();
-
-      /* @var $item \Drupal\search_api\Item\ItemInterface*/
-      $results = array();
-      foreach ($items as $item) {
-
-        /** @var \Drupal\Core\Entity\EntityInterface $entity */
-        $entity = $item->getOriginalObject()->getValue();
-        if (!$entity) {
-          continue;
+    // Filter on facets.
+    if (isset($config['facets'])) {
+      foreach ($config['facets'] as $facet => $value) {
+        if (!empty($value)) {
+          $query->addCondition($facet, $value, (is_array($value) ? 'IN' : '='));
         }
-
-        // Render as view modes.
-        if (TRUE) {
-          $view_mode = 'teaser';
-          $results[] = $this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode);
-        }
-
-        // Render as snippets.
-        if (FALSE) {
-          $results[] = array(
-            '#theme' => 'search_api_page_result',
-            '#item' => $item,
-            '#entity' => $entity,
-          );
-        }
-      }
-
-      if (!empty($results)) {
-
-        $build['#search_title'] = array(
-          '#markup' => $this->t('Search results'),
-        );
-
-        $build['#no_of_results'] = array(
-          '#markup' => $this->formatPlural($result->getResultCount(), '1 result found', '@count results found'),
-        );
-
-        $build['#results'] = $results;
-
-        // Build pager.
-        pager_default_initialize($result->getResultCount(), $limit);
-        $build['#pager'] = array(
-          '#type' => 'pager',
-        );
-      }
-      elseif ($perform_search) {
-        $build['#no_results_found'] = array(
-          '#markup' => $this->t('Your search yielded no results.'),
-        );
-
-        $build['#search_help'] = array(
-          '#markup' => $this->t('<ul>
-<li>Check if your spelling is correct.</li>
-<li>Remove quotes around phrases to search for each word individually. <em>bike shed</em> will often show more results than <em>&quot;bike shed&quot;</em>.</li>
-<li>Consider loosening your query with <em>OR</em>. <em>bike OR shed</em> will often show more results than <em>bike shed</em>.</li>
-</ul>'),
-        );
       }
     }
 
-    $build['#theme'] = 'search_api_page';
-    return $build;
-  }
+    $result = $query->execute();
+    $items = $result->getResultItems();
 
+    /* @var $item \Drupal\search_api\Item\ItemInterface*/
+    $results = array();
+    foreach ($items as $item) {
+
+      $entity_locations = $item->getField('geo_coder_field')->getValues();
+      $entity_location = reset($entity_locations);
+
+      $categroies = $item->getField('categories')->getValues();
+
+      /** @var \Drupal\Core\Entity\EntityInterface $entity */
+      $entity = $item->getOriginalObject()->getValue();
+      if (!$entity) {
+        continue;
+      }
+
+      // Render as view modes.
+      $view_mode = 'teaser';
+      $results[] = [
+        "id" => $entity->id(),
+        "location" => $entity_location,
+        "categroies" => $categroies,
+        "snippet" => render($this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode))
+      ];
+    }
+
+    $json = [
+      'title' => $this->t('Search results'),
+      'offset' => !is_null($config['page']) ? $config['page'] * $config['limit'] : 0,
+      'no_of_results' => 0,
+    ];
+
+    if (!empty($results)) {
+      $json['no_of_results'] = $result->getResultCount();
+      $json['results'] = $results;
+    }
+
+
+    $response =  new JsonResponse($json);
+    return $response;
+  }
 }
