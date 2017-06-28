@@ -1,3 +1,13 @@
+# Clone:
+
+itk_activity.clone:
+  path: '/aktivitet/{nid}/form_klon'
+  defaults:
+    _form: '\Drupal\itk_activity\Form\ActivityCloneForm'
+    _title: 'Clone activity'
+  requirements:
+    _permission: 'create itk_activity activity'
+
 # Sign up:
 
 itk_activity.action_signup:
