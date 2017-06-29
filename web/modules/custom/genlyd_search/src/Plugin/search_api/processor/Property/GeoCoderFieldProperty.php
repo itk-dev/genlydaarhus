@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\genlyd_maps\Plugin\search_api\processor\Property;
+namespace Drupal\genlyd_search\Plugin\search_api\processor\Property;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\StringTranslation\StringTranslationTrait;

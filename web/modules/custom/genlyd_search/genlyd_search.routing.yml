@@ -1,19 +1,10 @@
 genlyd_search.settings:
-  path: '/admin/config/system/genlyd_search'
+  path: '/admin/config/search/genlyd'
   defaults:
-    _form: '\Drupal\genlyd_search\Form\GenlydsearchettingsForm'
+    _form: '\Drupal\genlyd_search\Form\GenlydSearchSettingsForm'
     _title: 'Genlyd search'
   requirements:
     _permission: 'administer site configuration'
-
-genlyd_search.activities:
-  path: '/api/search/activities.json'
-  defaults:
-    _controller: '\Drupal\genlyd_search\Controller\ApiController::activates'
-    _title: 'Encode activity as geo-json'
-    methods:  [POST]
-  requirements:
-    _permission: 'access content'
 
 genlyd_search.search:
   path: '/api/search'

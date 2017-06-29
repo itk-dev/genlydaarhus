@@ -4,16 +4,16 @@
  * Contains service overrides.
  */
 
-namespace Drupal\genlyd_maps;
+namespace Drupal\genlyd_search;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\DependencyInjection\ServiceProviderBase;
-use Drupal\genlyd_maps\Service\Geocoder;
+use Drupal\genlyd_search\Service\Geocoder;
 
 /**
  * Modifies the language manager service.
  */
-class GenlydMapsServiceProvider extends ServiceProviderBase {
+class GenlydSearchServiceProvider extends ServiceProviderBase {
 
   /**
    * {@inheritdoc}

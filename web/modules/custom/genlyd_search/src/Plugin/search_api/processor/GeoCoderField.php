@@ -1,12 +1,12 @@
 <?php
 
-namespace Drupal\genlyd_maps\Plugin\search_api\processor;
+namespace Drupal\genlyd_search\Plugin\search_api\processor;
 
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
 use Drupal\search_api\Utility\Utility;
-use Drupal\genlyd_maps\Plugin\search_api\processor\Property\GeoCoderFieldProperty;
+use Drupal\genlyd_search\Plugin\search_api\processor\Property\GeoCoderFieldProperty;
 
 /**
  * Adds customized aggregations of existing fields to the index.

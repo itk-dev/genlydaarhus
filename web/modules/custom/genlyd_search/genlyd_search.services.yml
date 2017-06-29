@@ -1,4 +1,4 @@
 services:
-  genlyd_maps.config:
-    class: Drupal\genlyd_maps\State\GenlydSearchConfig
+  genlyd_search.config:
+    class: Drupal\genlyd_search\State\GenlydSearchConfig
     arguments: ['@serialization.json', '@database']
