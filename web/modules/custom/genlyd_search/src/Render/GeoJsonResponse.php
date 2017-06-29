@@ -4,7 +4,7 @@
  * Defines new CSV response object.
  */
 
-namespace Drupal\genlyd_maps\Render;
+namespace Drupal\genlyd_search\Render;
 
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;

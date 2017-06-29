@@ -4,7 +4,7 @@
  * Contains Drupal\itk_footer\Form\ITKFooterContentForm.
  */
 
-namespace Drupal\genlyd_maps\Form;
+namespace Drupal\genlyd_search\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
@@ -14,13 +14,13 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @package Drupal\itk_footer\Form
  */
-class GenlydMapSettingsForm extends FormBase {
+class GenlydSearchSettingsForm extends FormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'genlyd_maps_settings';
+    return 'genlyd_search_settings';
   }
 
   /**
@@ -29,7 +29,7 @@ class GenlydMapSettingsForm extends FormBase {
    * @return object
    */
   private function getBaseConfig() {
-    return \Drupal::getContainer()->get('genlyd_maps.config');
+    return \Drupal::getContainer()->get('genlyd_search.config');
   }
 
   /**
@@ -45,10 +45,10 @@ class GenlydMapSettingsForm extends FormBase {
       '#open' => TRUE,
     );
 
-    $form['wrapper']['genlyd_maps_google_api_key'] = array(
+    $form['wrapper']['genlyd_search_google_api_key'] = array(
       '#title' => t('Google API key'),
       '#type' => 'textfield',
-      '#default_value' => $config->get('genlyd_maps_google_api_key'),
+      '#default_value' => $config->get('genlyd_search_google_api_key'),
       '#weight' => '1',
     );
 
@@ -70,7 +70,7 @@ class GenlydMapSettingsForm extends FormBase {
     drupal_set_message('Settings saved');
 
     // Set the rest of the configuration values.
-    $this->getBaseConfig()->set('genlyd_maps_google_api_key', $form_state->getValue('genlyd_maps_google_api_key'));
+    $this->getBaseConfig()->set('genlyd_search_google_api_key', $form_state->getValue('genlyd_search_google_api_key'));
 
     // Clear cache as this will trigger an re-encoding of addresses in the map.
     drupal_flush_all_caches();

@@ -23,15 +23,15 @@ class GenlydMaps extends BlockBase {
    */
   public function build() {
     return [
-      '#theme' => 'genlyd_maps_map_block',
+      '#theme' => 'genlyd_search_map_block',
       '#attached' => [
         'library' => [
-          'genlyd_maps/openlayers',
-          'genlyd_maps/maps',
+          'genlyd_search/openlayers',
+          'genlyd_search/maps',
         ],
         'drupalSettings' => [
-          'genlyd_maps' => [
-            'path' => '/' . drupal_get_path('module', 'genlyd_maps'),
+          'genlyd_search' => [
+            'path' => '/' . drupal_get_path('module', 'genlyd_search'),
             'marker' => '/images/marker.png',
             'template' => '/js/templates/popup.html.twig',
           ],

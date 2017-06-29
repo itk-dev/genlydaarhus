@@ -4,7 +4,7 @@
  * Contains \Drupal\genlyd_maps\Controller\ApiController.
  */
 
-namespace Drupal\genlyd_maps\Controller;
+namespace Drupal\genlyd_search\Controller;
 
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Datetime\DrupalDateTime;
@@ -22,7 +22,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class ApiController.
  *
- * @package Drupal\grundsalg_maps\Controller
+ * @package Drupal\genlyd_search\Controller
  */
 class ApiController extends ControllerBase {
 
@@ -31,7 +31,8 @@ class ApiController extends ControllerBase {
    *
    * @param Request $request
    *   The HTTP request.
-   * @return \Drupal\genlyd_maps\Render\GeoJsonResponse
+   *
+   * @return \Drupal\genlyd_search\Render\GeoJsonResponse
    *   The activities as GeoJSON encoded array.
    */
   public function activates(Request $request) {
@@ -71,7 +72,7 @@ class ApiController extends ControllerBase {
     $ids = $query->execute();
     $activities = $storage->loadMultiple($ids);
 
-    $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
+    $config = \Drupal::getContainer()->get('genlyd_search.config')->getAll();
 
     // Load geo-coder service and set configuration.
     $geocoder = \Drupal::service('geocoder');
@@ -79,7 +80,7 @@ class ApiController extends ControllerBase {
     $options = [
       'googlemaps' => [
         'useSsl' => TRUE,
-        'apiKey' => $config['genlyd_maps_google_api_key'],
+        'apiKey' => $config['genlyd_search_google_api_key'],
       ],
       'bingmaps' => [],
     ];
@@ -179,7 +180,7 @@ class ApiController extends ControllerBase {
     $query = $search_api_index->query([
       'limit' => $config['limit'],
       'offset' => !is_null($config['page']) ? $config['page'] * $config['limit'] : 0,
-      'search id' => 'search_genlyd_maps',
+      'search id' => 'search_genlyd_search',
     ]);
 
     $parse_mode = \Drupal::getContainer()

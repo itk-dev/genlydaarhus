@@ -4,7 +4,7 @@
  * Contains override of geocoder service.
  */
 
-namespace Drupal\genlyd_maps\Service;
+namespace Drupal\genlyd_search\Service;
 
 class Geocoder extends \Drupal\geocoder\Geocoder {
 
@@ -21,5 +21,4 @@ class Geocoder extends \Drupal\geocoder\Geocoder {
   public static function log($message, $type) {
     \Drupal::logger('geocoder')->log($type, $message);
   }
-
 }

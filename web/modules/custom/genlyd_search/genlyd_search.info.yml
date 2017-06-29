@@ -1,6 +1,6 @@
-name: Genlyd maps
+name: Genlyd search
 type: module
-description: 'Genlyd maps'
+description: 'Search in activities'
 package: Genlyd
 core: '8.x'
 dependencies:

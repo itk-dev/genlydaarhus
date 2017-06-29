@@ -83,7 +83,7 @@ class GeoCoderField extends ProcessorPluginBase {
       $value = '';
 
       // Geo-encode fields.
-      $config = \Drupal::getContainer()->get('genlyd_maps.config')->getAll();
+      $config = \Drupal::getContainer()->get('genlyd_search.config')->getAll();
 
       // Load geo-coder service and set configuration.
       $geocoder = \Drupal::service('geocoder');
@@ -91,9 +91,9 @@ class GeoCoderField extends ProcessorPluginBase {
       $options = [
         'googlemaps' => [
           'useSsl' => TRUE,
-          'apiKey' => $config['genlyd_maps_google_api_key'],
+          'apiKey' => $config['genlyd_search_google_api_key'],
         ],
-        'bingmaps' => [],
+        'bingsearch' => [],
       ];
       $addressCollection = $geocoder->geocode(implode($values, ','), $plugins, $options);
       if ($addressCollection) {

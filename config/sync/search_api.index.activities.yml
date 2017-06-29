@@ -11,22 +11,12 @@ dependencies:
   module:
     - taxonomy
     - search_api
-    - genlyd_maps
     - node
 id: activities
 name: Activities
 description: ''
 read_only: false
 field_settings:
-  geo_coder_field:
-    label: 'GeoCoder field'
-    property_path: geo_coder_field
-    type: string
-    configuration:
-      fields:
-        - 'entity:node/field_address'
-        - 'entity:node/field_area'
-        - 'entity:node/field_zipcode'
   address:
     label: Adresse
     datasource_id: 'entity:node'
@@ -76,7 +66,6 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  geo_coder_field: {  }
   add_url: {  }
   aggregated_field: {  }
   entity_status: {  }
