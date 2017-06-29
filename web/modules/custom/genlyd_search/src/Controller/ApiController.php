@@ -77,7 +77,7 @@ class ApiController extends ControllerBase {
       $entity_locations = $item->getField('geo_coder_field')->getValues();
       $entity_location = reset($entity_locations);
 
-      $categroies = $item->getField('categories')->getValues();
+      $categories = $item->getField('categories')->getValues();
 
       /** @var \Drupal\Core\Entity\EntityInterface $entity */
       $entity = $item->getOriginalObject()->getValue();
@@ -90,7 +90,7 @@ class ApiController extends ControllerBase {
       $results[] = [
         "id" => $entity->id(),
         "location" => $entity_location,
-        "categroies" => $categroies,
+        "categroies" => $categories,
         "snippet" => render($this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode))
       ];
     }

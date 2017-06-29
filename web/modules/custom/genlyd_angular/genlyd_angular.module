@@ -12,9 +12,6 @@ function genlyd_angular_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     // Load the AngularJS.
     $variables['#attached']['library'][] = 'genlyd_angular/angular';
-
-    // Defines the application tag that Angular will bootstrap.
-    $variables['attributes']['data-ng-app'] = 'genlyd';
   }
 }
 

@@ -91,7 +91,7 @@ class GeoCoderField extends ProcessorPluginBase {
       $options = [
         'googlemaps' => [
           'useSsl' => TRUE,
-          'apiKey' => $config['genlyd_search_google_api_key'],
+          'apiKey' => $config['google_api_key'],
         ],
         'bingsearch' => [],
       ];
@@ -107,9 +107,7 @@ class GeoCoderField extends ProcessorPluginBase {
         $value = $longitude . ',' . $latitude;
       }
 
-
       $geo_coder_field->addValue($value);
-
     }
   }
 

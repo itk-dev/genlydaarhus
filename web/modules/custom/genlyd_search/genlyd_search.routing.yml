@@ -6,6 +6,14 @@ genlyd_search.settings:
   requirements:
     _permission: 'administer site configuration'
 
+genlyd_search.search_page:
+  path: '/search'
+  defaults:
+    _controller: '\Drupal\genlyd_search\Controller\PageController::search'
+    _title: 'Search activities'
+  requirements:
+    _permission: 'access content'
+
 genlyd_search.search:
   path: '/api/search'
   defaults:

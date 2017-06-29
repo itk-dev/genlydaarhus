@@ -1,0 +1,174 @@
+<div data-ng-app="genlyd" data-ng-controller="SearchController">
+  <div class="grid is-full ">
+    <div class="grid--inner">
+      <article class="grid--item">
+        <div class="grid--item-header-section ">
+          <div class="grid is-halfs">
+            <div class="grid--inner">
+              <article class="grid--item">
+                <div class="heading-with-icon">
+                  <div class="heading-with-icon--icon ">
+                    <div class="icon  ">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+                        <path fill="#fff" d="M22 13h2c1.4 0 2.5 1.1 2.5 2.5v10c0 1.4-1.1 2.5-2.5 2.5h-8c-1.4 0-2.5-1.1-2.5-2.5v-10c0-1.4 1.1-2.5 2.5-2.5h2v1h-2c-.8 0-1.5.7-1.5 1.5v10c0 .8.7 1.5 1.5 1.5h8c.8 0 1.5-.7 1.5-1.5v-10c0-.8-.7-1.5-1.5-1.5h-2v-1z"></path>
+                        <path fill="#fff" d="M21.3 16h-2.7c-.6 0-1.2-.5-1.2-1.2v-1.7c0-.6.5-1.2 1.2-1.2h2.7c.6 0 1.2.5 1.2 1.2v1.7c0 .7-.5 1.2-1.2 1.2zm-2.6-3c-.1 0-.2.1-.2.2v1.7c0 .1.1.2.2.2h2.7c.1 0 .2-.1.2-.2v-1.7c0-.1-.1-.2-.2-.2h-2.7zM23 25h-6c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h6c.3 0 .5.2.5.5s-.2.5-.5.5zM23 22h-6c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h6c.3 0 .5.2.5.5s-.2.5-.5.5zM23 19h-6c-.3 0-.5-.2-.5-.5s.2-.5.5-.5h6c.3 0 .5.2.5.5s-.2.5-.5.5z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="heading-with-icon--titles">
+                    <h1 class="heading-with-icon--title">Søg aktiviteter</h1>
+                    <p class="heading-with-icon--subtitle">Søg efter interesse eller aktiviteter nær dig</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="grid--item">
+                <button class="button is-cta js-maps-switch">Vis kort</button>
+              </article>
+
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+  <div class="grid is-fourths ">
+    <div class="grid--inner">
+      <article class="grid--item">
+        <button class="button is-cta" data-ng-click="toggleFilters()">  {{ '{{ filterLabel }}' }}
+        </button>
+      </article>
+
+      <article class="grid--item">
+        <button class="button is-cta activities-top--my-location" style="display: block;">Min lokation</button>
+      </article>
+    </div>
+  </div>
+
+  <div class="grid is-full">
+    <div class="grid--inner">
+      <article class="grid--item">
+        <!-- Display block is needed here as the css force display none, which
+             don't work with angular -->
+        <div class="filters" data-ng-show="showFilters" style="display: block">
+          <div class="grid is-halfs">
+            <div class="grid--inner">
+              <!-- Fulltext search field -->
+              <article class="grid--item">
+                <article class="grid--item">
+                  <div class="grid--item-section ">
+                    <label class="form-label" for="title">Titel</label>
+                    <div class="text-field">
+                      <input data-ng-model="searchText" id="title" name="title" size="30" maxlength="128" class="text-field--input" type="text">
+                    </div>
+                  </div>
+                </article>
+
+              <!-- Zipcode filter -->
+              </article>
+              <article class="grid--item">
+                <article class="grid--item">
+                  <div class="grid--item-section ">
+                    <label class="form-label" for="zipcode">Postnummer</label>
+                    <div class="text-field">
+                      <input data-ng-model="searchZipcode" id="zipcode" name="zipcode" size="30" maxlength="128" class="text-field--input" type="text">
+                    </div>
+                  </div>
+                </article>
+              </article>
+            </div>
+          </div>
+
+          <!-- Facets - vocabulary -->
+          <fieldset data-drupal-selector="edit-field-categories-target-id" id="edit-field-categories-target-id--a3lppe5bYBM--wrapper" class="fieldgroup form-composite fieldset">
+            <legend>Kategorier</legend>
+
+            <div class="grid is-fourths ">
+              <div class="grid--inner">
+
+                <!-- Build search facets -->
+                {% for id, name in facets %}
+                  <article class="grid--item">
+                    <div class="grid--item-section ">
+                      <label class="checkbox ">
+                        <div class="checkbox--label">{{ name }}</div>
+                          <input data-ng-change="search()" data-ng-model="searchFacets['{{ id }}']" id="facet-{{ id }}" name="facet-{{ id }}" value="{{ id }}" class="form-checkbox checkbox--input" type="checkbox">
+                        <div class="checkbox--indicator"></div>
+                      </label>
+                    </div>
+                  </article>
+                {% endfor %}
+
+              </div>
+            </div>
+          </fieldset>
+
+          <div class="grid is-halfs">
+            <div class="grid--inner">
+              <article class="grid--item">
+                <div class="grid--item-section ">
+                  <input name="" value="Søg" class="button is-cta " type="submit">
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+
+
+  <!-- Search results - table view -->
+  <!-- Should be render in the "search_result" view-mode" as the snippet -->
+  <div style="display: block;">
+    <div class="grid is-fourths ">
+      <div class="grid--inner">
+        <article class="grid--item">
+          <div class="card">
+            <a href="/aktivitet/ipad-kursus-0" class="card-activity--link has-hover">
+              <div class="card-header">
+                <div class="card-header--image-container">
+                  <div class="card-header--image">
+                    <img class="image " src="https://www.genlydaarhus.dk/sites/default/files/styles/activity_teaser/public/2017-05/IT%201280x720.jpg?itok=OCjCVqeW">
+
+                  </div>
+                </div>
+                <div class="card-header--content">
+                  <h3 class="is-light has-background-dark-alpha has-no-margin has-padding">iPad-kursus</h3>
+                </div>
+              </div>
+
+              <div class="card-info has-spacing">
+                <div class="card-info--metas">
+                  <div class="card-info--meta">
+                    <div class="activity-meta">
+                      <p class="activity-meta--label">Dato</p>
+                      <p class="activity-meta--text">29. jun 2017</p>
+                    </div>    </div>
+                  <div class="card-info--meta">
+                    <div class="activity-meta">
+                      <p class="activity-meta--label">By</p>
+                      <p class="activity-meta--text">Viby J</p>
+                    </div>    </div>
+                </div>
+              </div>    </a>
+
+          </div>
+        </article>
+      </div>
+    </div>
+
+
+    <!-- Pager -->
+    <div class="grid is-full ">
+      <div class="grid--inner">
+        <article class="grid--item">
+          <div class="pagination">
+
+        </article>
+      </div>
+    </div>
+
+  </div>
+</div>

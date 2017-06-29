@@ -15,3 +15,10 @@ openlayers:
   css:
     base:
       js/libs/openlayers/ol.css: {}
+
+search:
+  js:
+    js/SearchController.js: {}
+    js/services/SearchService.js: {}
+  dependencies:
+    - genlyd_angular/angular
