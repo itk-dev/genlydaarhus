@@ -1,0 +1,27 @@
+uuid: a681665c-f2fb-4c91-bb7f-43aff289aaf2
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_parent_activity
+    - node.type.activity
+id: node.activity.field_parent_activity
+field_name: field_parent_activity
+entity_type: node
+bundle: activity
+label: 'Parent activity'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:node'
+  handler_settings:
+    target_bundles:
+      activity: activity
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

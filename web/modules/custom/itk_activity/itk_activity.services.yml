@@ -1,0 +1,3 @@
+services:
+  itk_activity.activity_manager:
+    class: Drupal\itk_activity\Service\ActivityManager

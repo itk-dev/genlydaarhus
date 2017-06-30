@@ -1,7 +1,7 @@
-# Clone:
+# Clone activity:
 
 itk_activity.clone:
-  path: '/aktivitet/{nid}/form_klon'
+  path: '/aktivitet/{nid}/klon'
   defaults:
     _form: '\Drupal\itk_activity\Form\ActivityCloneForm'
     _title: 'Clone activity'
@@ -75,16 +75,6 @@ itk_activity.multistep_confirm:
     _title: 'Confirm'
   requirements:
     _permission: 'create itk_activity activity'
-
-# Clone activity
-
-itk_activity.action_clone:
-  path: '/aktivitet/{nid}/klon'
-  defaults:
-    _controller: '\Drupal\itk_activity\Controller\ActivityController::cloneActivity'
-    _title: 'Clone'
-  requirements:
-    _permission: 'clone itk_activity own activity'
 
 # Contact activity owner
 

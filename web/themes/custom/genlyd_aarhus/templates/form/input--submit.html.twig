@@ -18,10 +18,17 @@
   }
 %}
 
+
 {% embed "@modules/grid/grid-item-section.twig" %}
   {% block content %}
 
-    {% include "@elements/buttons/button-input-call-to-action.twig" with { button: loginButton } %}
+    {% if 'button-secondary-dark' in attributes.class %}
+      {% include "@elements/buttons/button-input-secondary-dark.twig" with { button: loginButton } %}
+    {% elseif 'button-delete' in attributes.class %}
+      {% include "@elements/buttons/button-input-delete.twig" with { button: loginButton } %}
+    {% else %}
+      {% include "@elements/buttons/button-input-call-to-action.twig" with { button: loginButton } %}
+    {% endif %}
 
   {% endblock %}
 {% endembed %}

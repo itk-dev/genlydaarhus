@@ -13,6 +13,7 @@ dependencies:
     - field.field.node.activity.field_help_needed
     - field.field.node.activity.field_image
     - field.field.node.activity.field_maximum_participants
+    - field.field.node.activity.field_parent_activity
     - field.field.node.activity.field_physical_requirements
     - field.field.node.activity.field_price
     - field.field.node.activity.field_signed_up_users
@@ -107,6 +108,15 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: number
+    region: content
+  field_parent_activity:
+    weight: 32
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
     region: content
   field_physical_requirements:
     weight: 10

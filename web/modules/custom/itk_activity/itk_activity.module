@@ -289,7 +289,7 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
     ],
     'cloneButton' => [
       'title' => t('Clone'),
-      'href' => \Drupal\Core\Url::fromRoute('itk_activity.action_clone', ['nid' => $node->id()], ['absolute' => TRUE])->toString(),
+      'href' => \Drupal\Core\Url::fromRoute('itk_activity.clone', ['nid' => $node->id()], ['absolute' => TRUE])->toString(),
     ]
   ];
 }

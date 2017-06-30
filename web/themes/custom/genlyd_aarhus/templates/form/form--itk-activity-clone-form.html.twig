@@ -1,0 +1,25 @@
+{#
+/**
+ * @file
+ * Theme override for a 'form' element.
+ *
+ * Available variables
+ * - attributes: A list of HTML attributes for the wrapper element.
+ * - children: The child elements of the form.
+ *
+ * @see template_preprocess_form()
+ */
+#}
+
+{% set activityClone = {
+headingWithIcon: {
+  title: "Extra occurrences" | trans,
+  subtitle: "Create extra occurrences of your activity" | trans
+},
+helpBoxTitle: {
+  title: "Notice about repeating activities" | trans,
+  description: "Repeating activities are created as separate activities. Changes made to one are not applied to all." | trans
+}
+} %}
+
+{% include "@components/activity-clone.twig" with { form: element } %}

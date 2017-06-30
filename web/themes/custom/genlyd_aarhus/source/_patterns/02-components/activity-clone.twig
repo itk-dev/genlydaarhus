@@ -1,0 +1,83 @@
+{% embed "@modules/grid/grid-full.twig" %}
+  {% block items %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {% embed "@modules/grid/grid-item-header-section.twig" %}
+          {% block content %}
+            {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activityClone.headingWithIcon, icon: activityClone.headingWithIcon.icon } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  {% endblock %}
+{% endembed %}
+
+<form{{ attributes }}>
+  {% if children %}
+    {# Render Drupal form #}
+    {% set form = element %}
+
+    {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
+      {% embed "@modules/grid/grid-fourths.twig" %}
+        {% block items %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {{ occur.field_date }}
+            {% endblock %}
+          {% endembed %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {{ occur.field_time_start }}
+            {% endblock %}
+          {% endembed %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {{ occur.field_time_end }}
+            {% endblock %}
+          {% endembed %}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              {{ occur.actions.remove_occurrence }}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endfor %}
+
+    {% embed "@modules/grid/grid-halfs.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.occurrences_actions.actions.add_occurrence }}
+          {% endblock %}
+        {% endembed %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.occurrences_actions.actions.remove_occurrence }}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {{ form.submit }}
+          {% endblock %}
+        {% endembed %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            {% include "@elements/forms/help-box.twig" with { helpBox: activityClone.helpBoxTitle } %}
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+
+    {{ form.form_build_id }}
+    {{ form.form_token }}
+    {{ form.form_id }}
+  {% else %}
+    {# Render Pattern Lab #}
+  {% endif %}
+</form>

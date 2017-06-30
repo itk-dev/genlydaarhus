@@ -1,0 +1,19 @@
+uuid: 4ce21f3a-25e7-4f05-a7a5-01329af9931a
+langcode: da
+status: true
+dependencies:
+  module:
+    - node
+id: node.field_parent_activity
+field_name: field_parent_activity
+entity_type: node
+type: entity_reference
+settings:
+  target_type: node
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

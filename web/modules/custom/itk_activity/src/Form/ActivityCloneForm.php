@@ -1,73 +1,136 @@
 <?php
+/**
+ * Clone node form.
+ */
 
 namespace Drupal\itk_activity\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
+use Symfony\Component\HttpFoundation\RedirectResponse;
+use Drupal\Core\Url;
 
+/**
+ * Class ActivityCloneForm
+ * @package Drupal\itk_activity\Form
+ */
 class ActivityCloneForm extends FormBase {
-
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'activity_clone_form';
+    return 'itk_activity_clone_form';
   }
 
   /**
    * {@inheritdoc}
    */
-  public function buildForm(array $form, FormStateInterface $form_state) {
+  public function buildForm(array $form, FormStateInterface $form_state, $nid = NULL) {
+    $node = \Drupal::entityTypeManager()->getStorage('node')->load($nid);
+
+    // Check the it is an activity that is attempted cloned.
+    if (!isset($node) || $node->getType() != 'activity') {
+      drupal_set_message(t('Activity does not exist.'));
+
+      // Redirect to user page.
+      return new RedirectResponse(Url::fromRoute('user.page')->toString());
+    }
+
+    // Check the owner is the current user.
+    if ($node->getOwner()->id() != \Drupal::currentUser()->id()) {
+      drupal_set_message(t('Activity not owned by user.'));
+
+      // Redirect to user page.
+      return new RedirectResponse(Url::fromRoute('user.page')->toString());
+    }
+
+    // Set node for later processing.
+    $form_state->set('node', $node);
+
+    // Default to start and end time from original activity.
+    $timeStartDefault = $node->get('field_time_start')->value;
+    $timeEndDefault = $node->get('field_time_end')->value;
+
     $form['#tree'] = TRUE;
-    $form['names_fieldset'] = [
+    $form['occurrences'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Occurrences'),
     ];
 
-    for ($i = 0; $i < $form_state->get('num_names'); $i++) {
-      $form['names_fieldset'][$i]['date'] = [
+    for ($i = 0; $i < $form_state->get('num_occurrences'); $i++) {
+      $form['occurrences'][$i] = [
+        '#prefix' => $this->t('Occurrence @nr', ['@nr' => $i])
+      ];
+
+      $form['occurrences'][$i]['field_date'] = array(
         '#type' => 'date',
-        '#title' => $this->t('Date'),
-        '#maxlength' => 64,
-        '#size' => 64,
-        '#prefix' => $this->t('Occurrence @nr', ['@nr' => $i]),
-      ];
-      $form['names_fieldset'][$i]['time_start'] = [
+        '#title' => t('Date'),
+      );
+
+      $form['occurrences'][$i]['field_time_start'] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Time start'),
-        '#maxlength' => 64,
-        '#size' => 64,
-      ];
-      $form['names_fieldset'][$i]['time_end'] = [
+        '#max_length' => 5,
+        '#attributes' => [
+          'title' => t('Must have format HH:mm'),
+          'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
+          'pattern' => '[0-9]{2}:[0-9]{2}',
+          'maxlength' => 5,
+          'class' => [ 'js-timepicker-field' ],
+        ],
+        '#title' => t('Time start'),
+        '#default_value' => $timeStartDefault,
+      );
+
+      $form['occurrences'][$i]['field_time_end'] = array(
         '#type' => 'textfield',
-        '#title' => $this->t('Time end'),
-        '#maxlength' => 64,
-        '#size' => 64,
-      ];
+        '#max_length' => 5,
+        '#attributes' => [
+          'title' => t('Must have format HH:mm'),
+          'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
+          'pattern' => '[0-9]{2}:[0-9]{2}',
+          'maxlength' => 5,
+          'class' => [ 'js-timepicker-field' ],
+        ],
+        '#title' => t('Time end'),
+        '#default_value' => $timeEndDefault,
+      );
     }
-    $form['names_fieldset']['actions'] = [
+
+    $form['occurrences_actions'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Occurrence actions'),
+    ];
+
+    $form['occurrences_actions']['actions'] = [
       '#type' => 'actions',
     ];
-    $form['names_fieldset']['actions']['add_name'] = [
+
+    $form['occurrences_actions']['actions']['add_occurrence'] = [
       '#type' => 'submit',
-      '#value' => t('Add one more'),
-      '#submit' => array('::addOne'),
+      '#attributes' => [
+        'class' => ['button-secondary-dark'],
+      ],
+      '#value' => t('Add date and time'),
+      '#submit' => ['::addOne'],
       '#ajax' => [
         'callback' => '::addmoreCallback',
-        'wrapper' => "names-fieldset-wrapper",
+        'wrapper' => "occurrence-fieldset-wrapper",
       ],
     ];
-    if ($form_state->get('num_names') > 1) {
-      $form['names_fieldset']['actions']['remove_name'] = [
-        '#type' => 'submit',
-        '#value' => t('Remove one'),
-        '#submit' => array('::removeCallback'),
-        '#ajax' => [
-          'callback' => '::addmoreCallback',
-          'wrapper' => "names-fieldset-wrapper",
-        ],
-      ];
-    }
+
+    $form['occurrences_actions']['actions']['remove_occurrence'] = [
+      '#type' => 'submit',
+      '#attributes' => [
+        'class' => ['button-delete'],
+      ],
+      '#value' => t('Remove last'),
+      '#submit' => ['::removeCallback'],
+      '#ajax' => [
+        'callback' => '::addmoreCallback',
+        'wrapper' => "occurrence-fieldset-wrapper",
+      ],
+    ];
+
     $form_state->setCached(FALSE);
 
     $form['submit'] = [
@@ -75,16 +138,19 @@ class ActivityCloneForm extends FormBase {
       '#value' => t('Submit'),
     ];
 
+    // Attach timepickers js.
+    $form['#attached']['library'][] = 'itk_activity/timepickers';
+
     return $form;
   }
 
   /**
    * Callback for both ajax-enabled buttons.
    *
-   * Selects and returns the fieldset with the names in it.
+   * Selects and returns the fieldset with the occurrences in it.
    */
   public function addmoreCallback(array &$form, FormStateInterface $form_state) {
-    return $form['names_fieldset'];
+    return $form['occurrences'];
   }
 
   /**
@@ -93,10 +159,10 @@ class ActivityCloneForm extends FormBase {
    * Increments the max counter and causes a rebuild.
    */
   public function addOne(array &$form, FormStateInterface $form_state) {
-    $name_field = $form_state->get('num_names');
-    $add_button = $name_field + 1;
-    $form_state->set('num_names', $add_button);
-    $form_state->setRebuild();
+    $occurrence_field = $form_state->get('num_occurrences');
+    $add_button = $occurrence_field + 1;
+    $form_state->set('num_occurrences', $add_button);
+    $form_state->setRebuild(TRUE);
   }
 
   /**
@@ -105,12 +171,12 @@ class ActivityCloneForm extends FormBase {
    * Decrements the max counter and causes a form rebuild.
    */
   public function removeCallback(array &$form, FormStateInterface $form_state) {
-    $name_field = $form_state->get('num_names');
-    if ($name_field > 1) {
-      $remove_button = $name_field - 1;
-      $form_state->set('num_names', $remove_button);
+    $occurrence_field = $form_state->get('num_occurrences');
+    if ($occurrence_field > 0) {
+      $remove_button = $occurrence_field - 1;
+      $form_state->set('num_occurrences', $remove_button);
     }
-    $form_state->setRebuild();
+    $form_state->setRebuild(TRUE);
   }
 
   /**
@@ -124,9 +190,21 @@ class ActivityCloneForm extends FormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    // @TODO
+    $values = $form_state->getValues();
+    $occurrences = (isset($values['occurrences']) && is_array($values['occurrences'])) ? $values['occurrences'] : [];
 
-    $p = 1;
+    if (empty($occurrences)) {
+      drupal_set_message(t('No new occurrences set.'));
+
+      return;
+    }
+
+    $clones = \Drupal::service('itk_activity.activity_manager')->cloneActivity($form_state->get('node'), $occurrences);
+
+    drupal_set_message(t('Activity cloned to @nr new activities', ['@nr' => count($clones)]));
+
+    // Redirect to user page.
+    $form_state->setRedirect('user.page');
   }
 
 }

@@ -128,7 +128,6 @@ class ActivityContactForm extends FormBase {
     $this->floodControl();
   }
 
-
   /**
    * Enforces flood control for the form submit.
    */
