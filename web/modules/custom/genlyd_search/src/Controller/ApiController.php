@@ -77,6 +77,7 @@ class ApiController extends ControllerBase {
       $entity_locations = $item->getField('geo_coder_field')->getValues();
       $entity_location = reset($entity_locations);
 
+      // Hardcoded categories is not optimal for facets.
       $categories = $item->getField('categories')->getValues();
 
       /** @var \Drupal\Core\Entity\EntityInterface $entity */
@@ -91,7 +92,7 @@ class ApiController extends ControllerBase {
       $hits[] = [
         "id" => $entity->id(),
         "location" => $entity_location,
-        "categroies" => $categories,
+        "categories" => $categories,
         "snippet" => render($snippet),
       ];
     }
@@ -106,7 +107,6 @@ class ApiController extends ControllerBase {
       $json['no_of_results'] = $result->getResultCount();
       $json['hits'] = $hits;
     }
-
 
     $response =  new JsonResponse($json);
     return $response;

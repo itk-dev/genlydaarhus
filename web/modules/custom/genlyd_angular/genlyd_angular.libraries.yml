@@ -1,9 +1,8 @@
 angular:
   js:
     js/libs/angular.min.js: { minified: true }
-    js/libs/angular-animate.min.js: { minified: true }
-    js/libs/angular-route.min.js: { minified: true }
     js/libs/angular-cache.js: { minified: true }
+    js/libs/paging.min.js: { minified: true }
     js/app.js: {}
 
   header: TRUE

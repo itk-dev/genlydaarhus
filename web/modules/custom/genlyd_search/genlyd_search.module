@@ -12,7 +12,8 @@ function genlyd_search_theme($existing, $type, $theme, $path) {
     'genlyd_search_page' => [
       'template' => 'genlyd-search-page',
       'variables' => [
-        'facets' => []
+        'facets' => [],
+        'loader' => drupal_get_path('module', 'genlyd_search') . '/images/ajax-loader.gif',
       ],
     ]
   ];

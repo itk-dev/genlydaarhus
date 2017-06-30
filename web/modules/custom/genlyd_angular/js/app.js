@@ -6,7 +6,7 @@
 /**
  * Setup the app.
  */
-angular.module('genlyd', ['ngRoute', 'ngAnimate', 'angular-cache']).config(
+angular.module('genlyd', ['angular-cache', 'bw.paging']).config(
   function sceProvider($sceProvider) {
     'use strict';
 

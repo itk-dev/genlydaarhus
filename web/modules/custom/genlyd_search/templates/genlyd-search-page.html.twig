@@ -121,24 +121,45 @@
   <!-- Search results - table view -->
   <!-- Should be render in the "search_result" view-mode" as the snippet -->
   <div style="display: block;">
-    <div class="grid is-fourths ">
+
+    <div class="grid is-fourths search-spinner" data-ng-show="searching">
       <div class="grid--inner">
-        <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet">
-          {{ '{{ hit.snippet }}' }}
-        </article>
+        <div style="width: 100%;text-align: center;">
+          <img style="width: 55px;" src="/{{ loader }}" />
+        </div>
       </div>
     </div>
 
-
-    <!-- Pager -->
-    <div class="grid is-full ">
-      <div class="grid--inner">
-        <article class="grid--item">
-          <div class="pagination">
-
-        </article>
+    <span data-ng-show="!searching">
+      <div class="grid is-fourths" >
+        <div class="grid--inner">
+              <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet">
+            {{ '{{ hit.snippet }}' }}
+          </article>
+        </div>
       </div>
-    </div>
+
+      <!-- Pager -->
+      <div class="grid is-full ">
+        <div class="grid--inner">
+          <article class="grid--item">
+            <div class="pagination">
+              <div paging
+                   page="pager.page"
+                   page-size="pager.size"
+                   total="pager.no_of_results"
+                   paging-action="changePage('SearchPager', page)"
+                   show-prev-next="true"
+                   show-first-last="true"
+                   active-class="is-active"
+                   disabled-class="is-disabled">
+              >
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </span>
 
   </div>
 </div>
