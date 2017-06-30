@@ -71,7 +71,7 @@ class ApiController extends ControllerBase {
     $items = $result->getResultItems();
 
     /* @var $item \Drupal\search_api\Item\ItemInterface*/
-    $results = array();
+    $hits = array();
     foreach ($items as $item) {
 
       $entity_locations = $item->getField('geo_coder_field')->getValues();
@@ -87,11 +87,12 @@ class ApiController extends ControllerBase {
 
       // Render as view modes.
       $view_mode = isset($config['view_mode']) ? $config['view_mode'] : 'search_results';
-      $results[] = [
+      $snippet = $this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode);
+      $hits[] = [
         "id" => $entity->id(),
         "location" => $entity_location,
         "categroies" => $categories,
-        "snippet" => render($this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode))
+        "snippet" => render($snippet),
       ];
     }
 
@@ -101,9 +102,9 @@ class ApiController extends ControllerBase {
       'no_of_results' => 0,
     ];
 
-    if (!empty($results)) {
+    if (!empty($hits)) {
       $json['no_of_results'] = $result->getResultCount();
-      $json['results'] = $results;
+      $json['hits'] = $hits;
     }
 
 

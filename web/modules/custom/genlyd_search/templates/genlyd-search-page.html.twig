@@ -16,14 +16,14 @@
                     </div>
                   </div>
                   <div class="heading-with-icon--titles">
-                    <h1 class="heading-with-icon--title">Søg aktiviteter</h1>
-                    <p class="heading-with-icon--subtitle">Søg efter interesse eller aktiviteter nær dig</p>
+                    <h1 class="heading-with-icon--title">{{ 'Search activities' | trans }}</h1>
+                    <p class="heading-with-icon--subtitle">{{ 'Here you can search available activities' | trans }}</p>
                   </div>
                 </div>
               </article>
 
               <article class="grid--item">
-                <button class="button is-cta js-maps-switch">Vis kort</button>
+                <button class="button is-cta js-maps-switch">{{ 'Show map' | trans }}</button>
               </article>
 
             </div>
@@ -36,12 +36,11 @@
   <div class="grid is-fourths ">
     <div class="grid--inner">
       <article class="grid--item">
-        <button class="button is-cta" data-ng-click="toggleFilters()">  {{ '{{ filterLabel }}' }}
-        </button>
+        <button class="button is-cta" data-ng-click="toggleFilters()">  {{ 'Show filter' | trans }}</button>
       </article>
 
       <article class="grid--item">
-        <button class="button is-cta activities-top--my-location" style="display: block;">Min lokation</button>
+        <button class="button is-cta activities-top--my-location" style="display: block;">{{ 'My location' | trans }}</button>
       </article>
     </div>
   </div>
@@ -93,7 +92,7 @@
                     <div class="grid--item-section ">
                       <label class="checkbox ">
                         <div class="checkbox--label">{{ name }}</div>
-                          <input data-ng-change="search()" data-ng-model="searchFacets['{{ id }}']" id="facet-{{ id }}" name="facet-{{ id }}" value="{{ id }}" class="form-checkbox checkbox--input" type="checkbox">
+                          <input  data-ng-model="searchFacets['{{ id }}']" id="facet-{{ id }}" name="facet-{{ id }}" value="{{ id }}" class="form-checkbox checkbox--input" type="checkbox">
                         <div class="checkbox--indicator"></div>
                       </label>
                     </div>
@@ -108,7 +107,7 @@
             <div class="grid--inner">
               <article class="grid--item">
                 <div class="grid--item-section ">
-                  <input name="" value="Søg" class="button is-cta " type="submit">
+                  <input data-ng-click="search()" name="" value="{{ 'Search' | trans }}" class="button is-cta " type="submit">
                 </div>
               </article>
             </div>
@@ -124,37 +123,8 @@
   <div style="display: block;">
     <div class="grid is-fourths ">
       <div class="grid--inner">
-        <article class="grid--item">
-          <div class="card">
-            <a href="/aktivitet/ipad-kursus-0" class="card-activity--link has-hover">
-              <div class="card-header">
-                <div class="card-header--image-container">
-                  <div class="card-header--image">
-                    <img class="image " src="https://www.genlydaarhus.dk/sites/default/files/styles/activity_teaser/public/2017-05/IT%201280x720.jpg?itok=OCjCVqeW">
-
-                  </div>
-                </div>
-                <div class="card-header--content">
-                  <h3 class="is-light has-background-dark-alpha has-no-margin has-padding">iPad-kursus</h3>
-                </div>
-              </div>
-
-              <div class="card-info has-spacing">
-                <div class="card-info--metas">
-                  <div class="card-info--meta">
-                    <div class="activity-meta">
-                      <p class="activity-meta--label">Dato</p>
-                      <p class="activity-meta--text">29. jun 2017</p>
-                    </div>    </div>
-                  <div class="card-info--meta">
-                    <div class="activity-meta">
-                      <p class="activity-meta--label">By</p>
-                      <p class="activity-meta--text">Viby J</p>
-                    </div>    </div>
-                </div>
-              </div>    </a>
-
-          </div>
+        <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet">
+          {{ '{{ hit.snippet }}' }}
         </article>
       </div>
     </div>

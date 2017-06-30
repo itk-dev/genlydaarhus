@@ -7,24 +7,46 @@ angular.module('genlyd').controller('SearchController', ['$scope', 'SearchServic
   function ($scope, SearchService) {
     'use strict';
 
+    var config = drupalSettings.genlyd_search;
 
-    $scope.filterLabel = 'Show filters';
+    $scope.searchZipcode = '';
+    $scope.searchText = '';
+    $scope.searchFacets = {};
+    $scope.results = {};
+
+
+    $scope.filterLabel = 'Skjule filter';
     $scope.showFilters = false;
     $scope.toggleFilters = function toggleFilters() {
       $scope.showFilters = !$scope.showFilters;
 
       if ($scope.showFilters) {
-        $scope.filterLabel = 'Hide filters';
+        $scope.filterLabel = 'Skjule filter';
       }
       else {
-        $scope.filterLabel = 'Show filters';
+        $scope.filterLabel = 'Vis filter';
       }
     };
 
     $scope.search = function search() {
-      console.log($scope.searchText);
-      console.log($scope.searchZipcode);
-      console.log($scope.searchFacets);
+      var facets = {};
+      if ($scope.searchZipcode !== '') {
+        facets.zipcode = $scope.searchZipcode;
+      }
+
+      facets[config.search_facet_index] = [];
+      for (var i in $scope.searchFacets) {
+        if ($scope.searchFacets[i]) {
+          facets[config.search_facet_index].push(i);
+        }
+      }
+
+      SearchService.search($scope.searchText, facets, 0).then(function (results) {
+        $scope.results = results;
+        console.log(results);
+      });
     };
+
+    $scope.search();
   }
 ]);

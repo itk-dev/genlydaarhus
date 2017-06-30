@@ -46,6 +46,7 @@ class PageController extends ControllerBase {
         ],
         'drupalSettings' => [
           'genlyd_search' => [
+            'endpoint' => '/api/search',
             'index' => $config['search_index'],
             'search_facet_index' => $config['search_facets'],
             'search_limit' => $config['search_limit'],
