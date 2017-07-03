@@ -18,28 +18,12 @@
     {% set form = element %}
 
     {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
-      {% embed "@modules/grid/grid-fourths.twig" %}
+      {% embed "@modules/grid/grid-thirds.twig" %}
         {% block items %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {{ occur.field_date }}
-            {% endblock %}
-          {% endembed %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {{ occur.field_time_start }}
-            {% endblock %}
-          {% endembed %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {{ occur.field_time_end }}
-            {% endblock %}
-          {% endembed %}
-          {% embed "@modules/grid/grid-item.twig" %}
-            {% block content %}
-              {{ occur.actions.remove_occurrence }}
-            {% endblock %}
-          {% endembed %}
+          {{ occur.field_date }}
+          {{ occur.field_time_start }}
+          {{ occur.field_time_end }}
+          {{ occur.actions.remove_occurrence }}
         {% endblock %}
       {% endembed %}
     {% endfor %}
@@ -78,6 +62,6 @@
     {{ form.form_token }}
     {{ form.form_id }}
   {% else %}
-    {# Render Pattern Lab #}
+    {# @TODO: Render Pattern Lab #}
   {% endif %}
 </form>
