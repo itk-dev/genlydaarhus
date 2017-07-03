@@ -1,4 +1,4 @@
-uuid: 563a7e7a-06ab-4e95-8ed3-930dca6813c1
+uuid: 02a513d6-17cb-4f1b-a4de-2c9be2a1b8b3
 langcode: da
 status: true
 dependencies:
@@ -10,8 +10,8 @@ dependencies:
     - datetime
     - node
     - user
-id: activity_user
-label: 'Activity User'
+id: activity_user_expired
+label: 'Activity User Expired'
 module: views
 description: ''
 tag: ''
@@ -55,7 +55,7 @@ display:
         options:
           items_per_page: 4
           offset: 0
-          id: 1
+          id: 3
           total_pages: null
           tags:
             previous: ‹‹
@@ -228,7 +228,7 @@ display:
           relationship: none
           group_type: group
           admin_label: ''
-          operator: '>='
+          operator: '<'
           value:
             min: ''
             max: ''
@@ -379,7 +379,7 @@ display:
   genlyd_activity_user:
     display_plugin: block
     id: genlyd_activity_user
-    display_title: 'Activity User'
+    display_title: 'Activity User Expired'
     position: 1
     display_options:
       display_extenders: {  }

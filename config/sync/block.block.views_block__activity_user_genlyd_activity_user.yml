@@ -12,7 +12,7 @@ dependencies:
 id: views_block__activity_user_genlyd_activity_user
 theme: genlyd_aarhus
 region: content
-weight: -3
+weight: -4
 provider: null
 plugin: 'views_block:activity_user-genlyd_activity_user'
 settings:

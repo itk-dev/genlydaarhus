@@ -1,27 +1,28 @@
-uuid: 169a127d-4f77-4679-b14a-d2234b734b66
+uuid: 11b3a6aa-4ebb-4665-b0ac-640ea3f2f8db
 langcode: da
 status: true
 dependencies:
   config:
-    - views.view.activity_user_registered
+    - views.view.activity_user_expired
   module:
     - system
     - views
   theme:
     - genlyd_aarhus
-id: views_block__genlyd_activities_registered
+id: views_block__activity_user_expired_genlyd_activity_user
 theme: genlyd_aarhus
 region: content
-weight: -2
+weight: -3
 provider: null
-plugin: 'views_block:activity_user_registered-genlyd_activities_registered'
+plugin: 'views_block:activity_user_expired-genlyd_activity_user'
 settings:
-  id: 'views_block:activity_user_registered-genlyd_activities_registered'
+  id: 'views_block:activity_user_expired-genlyd_activity_user'
   label: ''
   provider: views
   label_display: '0'
   views_label: ''
   items_per_page: none
+  context_mapping: {  }
 visibility:
   request_path:
     id: request_path
