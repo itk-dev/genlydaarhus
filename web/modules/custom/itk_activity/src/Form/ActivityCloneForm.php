@@ -54,7 +54,7 @@ class ActivityCloneForm extends FormBase {
     $form['#tree'] = TRUE;
     $form['occurrences'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('Occurrences'),
+      '#title' => $this->t('You are creating new occurrences of the activity "@title"', ['@title' => $node->title->value]),
       'actions' => [
         '#type' => 'actions',
       ],

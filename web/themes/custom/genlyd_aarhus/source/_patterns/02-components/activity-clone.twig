@@ -9,6 +9,11 @@
         {% endembed %}
       {% endblock %}
     {% endembed %}
+    {% embed "@modules/grid/grid-item.twig" %}
+      {% block content %}
+        {{ element.occurrences['#title'] }}
+      {% endblock %}
+    {% endembed %}
   {% endblock %}
 {% endembed %}
 
