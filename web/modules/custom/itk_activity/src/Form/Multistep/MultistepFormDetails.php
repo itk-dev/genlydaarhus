@@ -32,42 +32,114 @@ class MultistepFormDetails extends MultistepFormBase {
 
     $form['data']['progressBar'] = $this->getProgressBar('details');
 
-    $form['field_date'] = array(
-      '#type' => 'date',
-      '#required' => TRUE,
-      '#title' => t('Date'),
-      '#default_value' => $this->store->get('field_date') ? $this->store->get('field_date') : '',
-    );
+    $showMultipleOccurrences = $form_state->get('show_multiple_occurrences');
+    $form['data']['show_multiple_occurrences'] = $showMultipleOccurrences;
 
-    $form['field_time_start'] = array(
-      '#type' => 'textfield',
-      '#max_length' => 5,
-      '#attributes' => [
-        'title' => t('Must have format HH:mm'),
-        'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
-        'pattern' => '[0-9]{2}:[0-9]{2}',
-        'maxlength' => 5,
-        'class' => [ 'js-timepicker-field' ],
+    $form['#tree'] = TRUE;
+    $form['occurrences'] = [
+      '#type' => 'fieldset',
+      'actions' => [
+        '#type' => 'actions',
       ],
-      '#required' => TRUE,
-      '#title' => t('Time start'),
-      '#default_value' => $this->store->get('field_time_start') ? $this->store->get('field_time_start') : NULL,
-    );
+    ];
 
-    $form['field_time_end'] = array(
-      '#type' => 'textfield',
-      '#max_length' => 5,
+    // Get previous occurrences.
+    $occurrences = $this->store->get('occurrences') ? $this->store->get('occurrences') : [];
+
+    // If not occurrences set, add one.
+    if (empty($occurrences)) {
+      $occurrences[] = [];
+      $this->store->set('occurrences', $occurrences);
+    }
+
+    foreach ($occurrences as $i => $occurrence) {
+      $form['occurrences'][$i] = [
+        '#prefix' => $this->t('Occurrence @nr', ['@nr' => $i])
+      ];
+
+      $form['occurrences'][$i]['field_date'] = array(
+        '#type' => 'date',
+        '#title' => t('Date'),
+        '#default_value' => $occurrence['field_date'],
+      );
+
+      $form['occurrences'][$i]['field_time_start'] = array(
+        '#type' => 'textfield',
+        '#max_length' => 5,
+        '#attributes' => [
+          'title' => t('Must have format HH:mm'),
+          'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
+          'pattern' => '[0-9]{2}:[0-9]{2}',
+          'maxlength' => 5,
+          'class' => [ 'js-timepicker-field' ],
+        ],
+        '#title' => t('Time start'),
+        '#default_value' => $occurrence['field_time_start'],
+      );
+
+      $form['occurrences'][$i]['field_time_end'] = array(
+        '#type' => 'textfield',
+        '#max_length' => 5,
+        '#attributes' => [
+          'title' => t('Must have format HH:mm'),
+          'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
+          'pattern' => '[0-9]{2}:[0-9]{2}',
+          'maxlength' => 5,
+          'class' => [ 'js-timepicker-field' ],
+        ],
+        '#title' => t('Time end'),
+        '#default_value' => $occurrence['field_time_end'],
+      );
+
+      $form['occurrences'][$i]['actions']['remove_occurrence'] = [
+        '#type' => 'submit',
+        '#attributes' => [
+          'class' => ['button-delete'],
+        ],
+        'element_index' => $i,
+        '#value' => t('Remove occurrence: @nr', ['@nr' => $i]),
+        '#submit' => ['::removeCallback'],
+        '#ajax' => [
+          'callback' => '::addmoreCallback',
+          'wrapper' => "occurrence-fieldset-wrapper",
+        ],
+      ];
+    }
+
+    $form['occurrences_actions'] = [
+      '#type' => 'fieldset',
+      '#title' => $this->t('Occurrence actions'),
+    ];
+
+    $form['occurrences_actions']['actions'] = [
+      '#type' => 'actions',
+    ];
+
+    $form['occurrences_actions']['actions']['add_occurrence'] = [
+      '#type' => 'submit',
       '#attributes' => [
-        'title' => t('Must have format HH:mm'),
-        'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
-        'pattern' => '[0-9]{2}:[0-9]{2}',
-        'maxlength' => 5,
-        'class' => [ 'js-timepicker-field' ],
+        'class' => ['button-secondary-dark'],
       ],
-      '#required' => TRUE,
-      '#title' => t('Time end'),
-      '#default_value' => $this->store->get('field_time_end') ? $this->store->get('field_time_end') : NULL,
-    );
+      '#value' => t('Add date and time'),
+      '#submit' => ['::addOne'],
+      '#ajax' => [
+        'callback' => '::addmoreCallback',
+        'wrapper' => "occurrence-fieldset-wrapper",
+      ],
+    ];
+
+    $form['occurrences_actions']['actions']['toggle_multi_occurrences'] = [
+      '#type' => 'submit',
+      '#attributes' => [
+        'class' => ['button-secondary-dark'],
+      ],
+      '#value' => !$showMultipleOccurrences ? t('Choose more than one date') : t('Choose only one date'),
+      '#submit' => ['::toggleMultipleOccurrences'],
+      '#ajax' => [
+        'callback' => '::addmoreCallback',
+        'wrapper' => "occurrence-fieldset-wrapper",
+      ],
+    ];
 
     // Attach timepickers js.
     $form['#attached']['library'][] = 'itk_activity/timepickers';
@@ -128,15 +200,74 @@ class MultistepFormDetails extends MultistepFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
+
+    // @TODO: Validate that at least one date has been selected.
+  }
+
+  /**
+   * Callback for both ajax-enabled buttons.
+   *
+   * Selects and returns the fieldset with the occurrences in it.
+   */
+  public function addmoreCallback(array &$form, FormStateInterface $form_state) {
+    return $form['occurrences'];
+  }
+
+  /**
+   * Submit handler for the "toggleMultipleOccurrences" button.
+   */
+  public function toggleMultipleOccurrences(array &$form, FormStateInterface $form_state) {
+    $showMultipleOccurrences = !$form_state->get('show_multiple_occurrences');
+    $form_state->set('show_multiple_occurrences', $showMultipleOccurrences);
+
+    // We are exiting multiple occurrences mode. Remove all but first occurrence.
+    if (!$showMultipleOccurrences) {
+      $occurrences = $this->store->get('occurrences');
+      $newOccurrences = count($occurrences) > 0 ? [ reset($occurrences) ] : [];
+      $this->store->set('occurrences', $newOccurrences);
+    }
+
+    $form_state->setRebuild(TRUE);
+  }
+
+  /**
+   * Submit handler for the "add-one-more" button.
+   */
+  public function addOne(array &$form, FormStateInterface $form_state) {
+    $occurrences = $this->store->get('occurrences');
+    $occurrences[] = [
+      'field_date' => '',
+      'field_time_start' => '',
+      'field_time_end' => '',
+    ];
+    $this->store->set('occurrences', $occurrences);
+
+    $form_state->setRebuild(TRUE);
+  }
+
+  /**
+   * Submit handler for the "remove one" button.
+   */
+  public function removeCallback(array &$form, FormStateInterface $form_state) {
+    $element = $form_state->getTriggeringElement();
+    $index = $element['element_index'];
+
+    $occurrences = $this->store->get('occurrences');
+
+    if (array_key_exists($index, $occurrences)) {
+      unset($occurrences[$index]);
+    }
+
+    $this->store->set('occurrences', $occurrences);
+
+    $form_state->setRebuild(TRUE);
   }
 
   /**
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $this->store->set('field_date', $form_state->getValue('field_date'));
-    $this->store->set('field_time_start', $form_state->getValue('field_time_start'));
-    $this->store->set('field_time_end', $form_state->getValue('field_time_end'));
+    $this->store->set('occurrences', $form_state->getValue('occurrences'));
     $this->store->set('field_price', $form_state->getValue('field_price'));
     $this->store->set('field_zipcode', $form_state->getValue('field_zipcode'));
     $this->store->set('field_area', $form_state->getValue('field_area'));

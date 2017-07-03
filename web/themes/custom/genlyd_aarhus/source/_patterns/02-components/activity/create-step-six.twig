@@ -219,27 +219,31 @@
 
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% embed "@modules/grid/grid-thirds.twig" %}
-            {% block items %}
 
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.date } %}
-                {% endblock %}
-              {% endembed %}
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.timeStart } %}
-                {% endblock %}
-              {% endembed %}
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: addActivity.data.timeEnd } %}
-                {% endblock %}
-              {% endembed %}
+          {% for key, occur in addActivity.data.occurrences if key matches '/^\\d+$/' %}
 
-            {% endblock %}
-          {% endembed %}
+            {% embed "@modules/grid/grid-thirds.twig" %}
+              {% block items %}
+
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: occur.field_date } %}
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: occur.field_time_start } %}
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% include '@modules/activity-confirm-info.twig' with { activityConfirmInfo: occur.field_time_end } %}
+                  {% endblock %}
+                {% endembed %}
+
+              {% endblock %}
+            {% endembed %}
+          {% endfor %}
         {% endblock %}
       {% endembed %}
 
