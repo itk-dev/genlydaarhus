@@ -64,7 +64,7 @@ itk_activity.multistep_details:
   path: '/aktivitet/opret/detaljer'
   defaults:
     _form: '\Drupal\itk_activity\Form\Multistep\MultistepFormDetails'
-    _title: 'Image'
+    _title: 'Details'
   requirements:
     _permission: 'create itk_activity activity'
 
