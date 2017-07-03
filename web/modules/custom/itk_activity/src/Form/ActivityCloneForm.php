@@ -55,9 +55,21 @@ class ActivityCloneForm extends FormBase {
     $form['occurrences'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Occurrences'),
+      'actions' => [
+        '#type' => 'actions',
+      ],
     ];
 
-    for ($i = 0; $i < $form_state->get('num_occurrences'); $i++) {
+    // Get previous occurrences.
+    $occurrences = $form_state->get('occurrences') ? $form_state->get('occurrences') : [];
+
+    // If not occurrences set, add one.
+    if (empty($occurrences)) {
+      $occurrences[] = [];
+      $form_state->set('occurrences', $occurrences);
+    }
+
+    foreach ($occurrences as $i => $occurrence) {
       $form['occurrences'][$i] = [
         '#prefix' => $this->t('Occurrence @nr', ['@nr' => $i])
       ];
@@ -94,6 +106,20 @@ class ActivityCloneForm extends FormBase {
         '#title' => t('Time end'),
         '#default_value' => $timeEndDefault,
       );
+
+      $form['occurrences'][$i]['actions']['remove_occurrence'] = [
+        '#type' => 'submit',
+        '#attributes' => [
+          'class' => ['button-delete'],
+        ],
+        'element_index' => $i,
+        '#value' => t('Remove occurrence: @nr', ['@nr' => $i]),
+        '#submit' => ['::removeCallback'],
+        '#ajax' => [
+          'callback' => '::addmoreCallback',
+          'wrapper' => "occurrence-fieldset-wrapper",
+        ],
+      ];
     }
 
     $form['occurrences_actions'] = [
@@ -112,19 +138,6 @@ class ActivityCloneForm extends FormBase {
       ],
       '#value' => t('Add date and time'),
       '#submit' => ['::addOne'],
-      '#ajax' => [
-        'callback' => '::addmoreCallback',
-        'wrapper' => "occurrence-fieldset-wrapper",
-      ],
-    ];
-
-    $form['occurrences_actions']['actions']['remove_occurrence'] = [
-      '#type' => 'submit',
-      '#attributes' => [
-        'class' => ['button-delete'],
-      ],
-      '#value' => t('Remove last'),
-      '#submit' => ['::removeCallback'],
       '#ajax' => [
         'callback' => '::addmoreCallback',
         'wrapper' => "occurrence-fieldset-wrapper",
@@ -159,9 +172,14 @@ class ActivityCloneForm extends FormBase {
    * Increments the max counter and causes a rebuild.
    */
   public function addOne(array &$form, FormStateInterface $form_state) {
-    $occurrence_field = $form_state->get('num_occurrences');
-    $add_button = $occurrence_field + 1;
-    $form_state->set('num_occurrences', $add_button);
+    $occurrences = $form_state->get('occurrences');
+    $occurrences[] = [
+      'field_date' => '',
+      'field_time_start' => '',
+      'field_time_end' => '',
+    ];
+    $form_state->set('occurrences', $occurrences);
+
     $form_state->setRebuild(TRUE);
   }
 
@@ -171,11 +189,17 @@ class ActivityCloneForm extends FormBase {
    * Decrements the max counter and causes a form rebuild.
    */
   public function removeCallback(array &$form, FormStateInterface $form_state) {
-    $occurrence_field = $form_state->get('num_occurrences');
-    if ($occurrence_field > 0) {
-      $remove_button = $occurrence_field - 1;
-      $form_state->set('num_occurrences', $remove_button);
+    $element = $form_state->getTriggeringElement();
+    $index = $element['element_index'];
+
+    $occurrences = $form_state->get('occurrences');
+
+    if (array_key_exists($index, $occurrences)) {
+      unset($occurrences[$index]);
     }
+
+    $form_state->set('occurrences', $occurrences);
+
     $form_state->setRebuild(TRUE);
   }
 

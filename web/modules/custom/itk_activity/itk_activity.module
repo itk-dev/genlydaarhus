@@ -278,10 +278,16 @@ function itk_activity_preprocess_node__activity__teaser_edit(&$variables) {
 
   $node = $variables['node'];
 
+  $currentPath = \Drupal::service('path.alias_manager')->getAliasByPath(\Drupal::service('path.current')->getPath());
+
   $variables['cardActivity']['cardActions'] = [
     'deleteButton' => [
       'title' => t('Delete'),
-      'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', ['node' => $node->id()], ['absolute' => TRUE])->toString(),
+      'href' => \Drupal\Core\Url::fromRoute('entity.node.delete_form', [
+          'node' => $node->id(),
+          'destination' => $currentPath,
+        ], ['absolute' => TRUE]
+      )->toString(),
     ],
     'editButton' => [
       'title' => t('Edit'),
