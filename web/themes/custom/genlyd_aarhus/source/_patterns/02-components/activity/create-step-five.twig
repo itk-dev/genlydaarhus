@@ -62,6 +62,44 @@
         {% endblock %}
       {% endembed %}
 
+      {% embed "@modules/grid/grid-halfs.twig" %}
+        {% block items %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_zipcode }}
+            {{ form.field_area }}
+            {{ form.field_address }}
+            {{ form.field_price }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Postnummer" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_zipcode" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "By" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_area" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adresse" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_address" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Pris" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_price" } %}
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {% embed "@modules/grid/grid-thirds.twig" %}
@@ -148,43 +186,7 @@
               {% endif %}
             {% endblock %}
           {% endembed %}
-          {% embed "@modules/grid/grid-halfs.twig" %}
-            {% block items %}
-              {% if form %}
-                {# Drupal #}
-                {{ form.field_zipcode }}
-                {{ form.field_area }}
-                {{ form.field_address }}
-                {{ form.field_price }}
-              {% else %}
-                {# Pattern Lab #}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Postnummer" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_zipcode" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "By" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_area" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adresse" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_address" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Pris" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_price" } %}
-                  {% endblock %}
-                {% endembed %}
-              {% endif %}
-            {% endblock %}
-          {% endembed %}
+
         {% endblock %}
       {% endembed %}
 

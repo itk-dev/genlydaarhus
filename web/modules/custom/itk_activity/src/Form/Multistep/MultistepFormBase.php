@@ -213,7 +213,7 @@ abstract class MultistepFormBase extends FormBase {
       }
     }
 
-    $message = \Drupal::translation()->formatPlural($numberOfActivitiesCreated, '1 activity has been created.', '@count activities have been created.');
+    $message = \Drupal::translation()->formatPlural($numberOfActivitiesCreated, 'The activity has been created.', '@count activities have been created.');
     drupal_set_message($message);
 
     return $firstActivity ? $firstActivity->id() : NULL;

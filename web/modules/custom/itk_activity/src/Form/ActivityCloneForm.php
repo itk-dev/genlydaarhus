@@ -113,7 +113,8 @@ class ActivityCloneForm extends FormBase {
           'class' => ['button-delete'],
         ],
         'element_index' => $i,
-        '#value' => t('Remove occurrence: @nr', ['@nr' => $i]),
+        '#name' => 'remove-occurrences-' . $i,
+        '#value' => t('Remove'),
         '#submit' => ['::removeCallback'],
         '#ajax' => [
           'callback' => '::addmoreCallback',

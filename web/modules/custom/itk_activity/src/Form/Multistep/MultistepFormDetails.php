@@ -32,9 +32,6 @@ class MultistepFormDetails extends MultistepFormBase {
 
     $form['data']['progressBar'] = $this->getProgressBar('details');
 
-    $showMultipleOccurrences = $form_state->get('show_multiple_occurrences');
-    $form['data']['show_multiple_occurrences'] = $showMultipleOccurrences;
-
     $form['#tree'] = TRUE;
     $form['occurrences'] = [
       '#type' => 'fieldset',
@@ -45,6 +42,9 @@ class MultistepFormDetails extends MultistepFormBase {
 
     // Get previous occurrences.
     $occurrences = $this->store->get('occurrences') ? $this->store->get('occurrences') : [];
+
+    $showMultipleOccurrences = $form_state->get('show_multiple_occurrences') ? TRUE : (count($occurrences) > 1 ? TRUE : FALSE);
+    $form['data']['show_multiple_occurrences'] = $showMultipleOccurrences;
 
     // If not occurrences set, add one.
     if (empty($occurrences)) {
@@ -60,12 +60,14 @@ class MultistepFormDetails extends MultistepFormBase {
       $form['occurrences'][$i]['field_date'] = array(
         '#type' => 'date',
         '#title' => t('Date'),
+        '#required' => TRUE,
         '#default_value' => $occurrence['field_date'],
       );
 
       $form['occurrences'][$i]['field_time_start'] = array(
         '#type' => 'textfield',
         '#max_length' => 5,
+        '#required' => TRUE,
         '#attributes' => [
           'title' => t('Must have format HH:mm'),
           'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
@@ -80,6 +82,7 @@ class MultistepFormDetails extends MultistepFormBase {
       $form['occurrences'][$i]['field_time_end'] = array(
         '#type' => 'textfield',
         '#max_length' => 5,
+        '#required' => TRUE,
         '#attributes' => [
           'title' => t('Must have format HH:mm'),
           'placeholder' => t('Must have format: HH:mm, for example: 12:00'),
@@ -95,13 +98,15 @@ class MultistepFormDetails extends MultistepFormBase {
         '#type' => 'submit',
         '#attributes' => [
           'class' => ['button-delete'],
+          'id' => 'button-delete-' . $i,
         ],
         'element_index' => $i,
-        '#value' => t('Remove occurrence: @nr', ['@nr' => $i]),
+        '#name' => 'button-delete-' . $i,
+        '#value' => t('Remove'),
         '#submit' => ['::removeCallback'],
         '#ajax' => [
           'callback' => '::addmoreCallback',
-          'wrapper' => "occurrence-fieldset-wrapper",
+          'wrapper' => "occurrence-remove-" . $i . "-fieldset-wrapper",
         ],
       ];
     }
@@ -119,12 +124,13 @@ class MultistepFormDetails extends MultistepFormBase {
       '#type' => 'submit',
       '#attributes' => [
         'class' => ['button-secondary-dark'],
+        'id' => 'button-add-occurrence',
       ],
       '#value' => t('Add date and time'),
       '#submit' => ['::addOne'],
       '#ajax' => [
         'callback' => '::addmoreCallback',
-        'wrapper' => "occurrence-fieldset-wrapper",
+        'wrapper' => "occurrence-add-fieldset-wrapper",
       ],
     ];
 
@@ -132,6 +138,7 @@ class MultistepFormDetails extends MultistepFormBase {
       '#type' => 'submit',
       '#attributes' => [
         'class' => ['button-secondary-dark'],
+        'id' => 'button-toggle-occurrence',
       ],
       '#value' => !$showMultipleOccurrences ? t('Choose more than one date') : t('Choose only one date'),
       '#submit' => ['::toggleMultipleOccurrences'],
@@ -200,8 +207,6 @@ class MultistepFormDetails extends MultistepFormBase {
    */
   public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
-
-    // @TODO: Validate that at least one date has been selected.
   }
 
   /**
