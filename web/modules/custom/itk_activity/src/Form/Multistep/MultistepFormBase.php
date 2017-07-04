@@ -104,7 +104,6 @@ abstract class MultistepFormBase extends FormBase {
       'field_address' => $this->store->get('field_address'),
       'field_area' => $this->store->get('field_area'),
       'field_categories' => $this->store->get('field_categories'),
-      'field_date' => $this->store->get('field_date'),
       'field_entry_requirements' => $this->store->get('field_entry_requirements'),
       'field_help_needed' => $this->store->get('field_help_needed'),
       'field_image' => $this->store->get('field_image'),
@@ -112,9 +111,8 @@ abstract class MultistepFormBase extends FormBase {
       'field_physical_requirements' => $this->store->get('field_physical_requirements'),
       'field_price' => $this->store->get('field_price'),
       'field_signup_required' => $this->store->get('field_signup_required'),
-      'field_time_end' => $this->store->get('field_time_end'),
-      'field_time_start' => $this->store->get('field_time_start'),
       'field_zipcode' => $this->store->get('field_zipcode'),
+      'occurrences' => $this->store->get('occurrences'),
     ];
   }
 
@@ -188,13 +186,37 @@ abstract class MultistepFormBase extends FormBase {
 
     $this->deleteStore();
 
-    // Create the activity.
-    $activity = Node::create($data);
-    $activity->save();
+    $occurrences = $data['occurrences'];
+    unset($data['occurrences']);
 
-    drupal_set_message(t('The form has been saved.'));
+    $numberOfActivitiesCreated = 0;
+    $firstActivity = NULL;
 
-    return $activity->id();
+    foreach ($occurrences as $occurrence) {
+      if (isset($occurrence['field_date']) &&
+          isset($occurrence['field_time_start']) &&
+          isset($occurrence['field_time_end'])) {
+
+        $data['field_date'] = $occurrence['field_data'];
+        $data['field_time_start'] = $occurrence['field_time_start'];
+        $data['field_time_end'] = $occurrence['field_time_end'];
+
+        // Create the activity.
+        $activity = Node::create($data);
+        $activity->save();
+
+        $numberOfActivitiesCreated++;
+
+        if (!isset($firstActivity)) {
+          $firstActivity = $activity;
+        }
+      }
+    }
+
+    $message = \Drupal::translation()->formatPlural($numberOfActivitiesCreated, 'The activity has been created.', '@count activities have been created.');
+    drupal_set_message($message);
+
+    return $firstActivity ? $firstActivity->id() : NULL;
   }
 
   /**
@@ -208,7 +230,6 @@ abstract class MultistepFormBase extends FormBase {
       'field_address',
       'field_area',
       'field_categories',
-      'field_date',
       'field_entry_requirements',
       'field_help_needed',
       'field_image',
@@ -216,9 +237,8 @@ abstract class MultistepFormBase extends FormBase {
       'field_physical_requirements',
       'field_price',
       'field_signup_required',
-      'field_time_end',
-      'field_time_start',
       'field_zipcode',
+      'occurrences',
       'step_information',
       'step_categories',
       'step_image',

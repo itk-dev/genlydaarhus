@@ -62,15 +62,107 @@
         {% endblock %}
       {% endembed %}
 
+      {% embed "@modules/grid/grid-halfs.twig" %}
+        {% block items %}
+          {% if form %}
+            {# Drupal #}
+            {{ form.field_zipcode }}
+            {{ form.field_area }}
+            {{ form.field_address }}
+            {{ form.field_price }}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Postnummer" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_zipcode" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "By" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_area" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adresse" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_address" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Pris" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_price" } %}
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
+        {% endblock %}
+      {% endembed %}
+
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% embed "@modules/grid/grid-thirds.twig" %}
+            {% block items %}
+              {% embed "@modules/grid/grid-item.twig" %}
+                {% block content %}
+                  {{ form.occurrences_actions.actions.toggle_multi_occurrences }}
+                {% endblock %}
+              {% endembed %}
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {% embed "@modules/grid/grid-thirds.twig" %}
             {% block items %}
               {% if form %}
                 {# Drupal #}
-                {{ form.field_date }}
-                {{ form.field_time_start }}
-                {{ form.field_time_end }}
+                {% if form.data.show_multiple_occurrences %}
+                  {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
+                    {% embed "@modules/grid/grid-fourths.twig" %}
+                      {% block items %}
+                        {{ occur.field_date }}
+                        {{ occur.field_time_start }}
+                        {{ occur.field_time_end }}
+                        {% embed "@modules/grid/grid-item.twig" %}
+                          {% block content %}
+                            <div style="margin-top: 44px">
+                              {{ occur.actions.remove_occurrence }}
+                            </div>
+                          {% endblock %}
+                        {% endembed %}
+                      {% endblock %}
+                    {% endembed %}
+                  {% endfor %}
+
+                  {% embed "@modules/grid/grid-full.twig" %}
+                    {% block items %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {{ form.occurrences_actions.actions.add_occurrence }}
+                        {% endblock %}
+                      {% endembed %}
+                      {% embed "@modules/grid/grid-item.twig" %}
+                        {% block content %}
+                          {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxTitle } %}
+                        {% endblock %}
+                      {% endembed %}
+                    {% endblock %}
+                  {% endembed %}
+                {% else %}
+                  {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
+                    {% embed "@modules/grid/grid-thirds.twig" %}
+                      {% block items %}
+                        {{ occur.field_date }}
+                        {{ occur.field_time_start }}
+                        {{ occur.field_time_end }}
+                      {% endblock %}
+                    {% endembed %}
+                  {% endfor %}
+                {% endif %}
               {% else %}
                 {# Pattern Lab #}
                 {% embed "@modules/grid/grid-item.twig" %}
@@ -94,43 +186,7 @@
               {% endif %}
             {% endblock %}
           {% endembed %}
-          {% embed "@modules/grid/grid-halfs.twig" %}
-            {% block items %}
-              {% if form %}
-                {# Drupal #}
-                {{ form.field_zipcode }}
-                {{ form.field_area }}
-                {{ form.field_address }}
-                {{ form.field_price }}
-              {% else %}
-                {# Pattern Lab #}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Postnummer" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_zipcode" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "By" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_area" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Adresse" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_address" } %}
-                  {% endblock %}
-                {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Pris" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_price" } %}
-                  {% endblock %}
-                {% endembed %}
-              {% endif %}
-            {% endblock %}
-          {% endembed %}
+
         {% endblock %}
       {% endembed %}
 

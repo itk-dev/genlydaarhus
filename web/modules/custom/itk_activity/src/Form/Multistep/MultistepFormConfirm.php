@@ -52,6 +52,34 @@ class MultistepFormConfirm extends MultistepFormBase {
     $helpNeeded = Term::load($this->store->get('field_help_needed'))->name->value;
     $physicalRequirements = Term::load($this->store->get('field_physical_requirements'))->name->value;
 
+    $occurrences = [];
+
+    foreach ($this->store->get('occurrences') as $occurrence) {
+      $occurrences[] = [
+        'field_time_end' => [
+          'label' => t('End time'),
+          'value' => $occurrence['field_time_end'],
+        ],
+        'field_time_start' => [
+          'label' => t('Start time'),
+          'value' => $occurrence['field_time_start'],
+        ],
+        'field_date' => [
+          'label' => t('Date'),
+          'value' => \Drupal::service('date.formatter')->format((new \DateTime($occurrence['field_date']))->getTimestamp(), 'date_long'),
+        ],
+      ];
+    }
+
+    $imageUrl = '';
+    if (isset($this->store->get('field_image')[0])) {
+      $file = File::load($this->store->get('field_image')[0]);
+
+      if (isset($file)) {
+        $imageUrl = $file->url();
+      }
+    }
+
     $form['data'] = [
       'title' => [
         'label' => t('Title'),
@@ -73,10 +101,6 @@ class MultistepFormConfirm extends MultistepFormBase {
         'label' => t('Categories'),
         'value' => $categories,
       ],
-      'date' => [
-        'label' => t('Date'),
-        'value' => \Drupal::service('date.formatter')->format((new \DateTime($this->store->get('field_date')))->getTimestamp(), 'date_long'),
-      ],
       'entryRequirements' => [
         'label' => t('What level is required to participate?'),
         'value' => $entryRequirements,
@@ -86,7 +110,7 @@ class MultistepFormConfirm extends MultistepFormBase {
         'value' => $helpNeeded,
       ],
       'image' => [
-        'src' => isset($this->store->get('field_image')[0]) ? File::load($this->store->get('field_image')[0])->url() : '',
+        'src' => $imageUrl,
       ],
       'maximumParticipants' => [
         'label' => t('How many can participate?'),
@@ -104,18 +128,11 @@ class MultistepFormConfirm extends MultistepFormBase {
         'label' => t('Is sign up required?'),
         'value' => $signupRequired,
       ],
-      'timeEnd' => [
-        'label' => t('End time'),
-        'value' => $this->store->get('field_time_end'),
-      ],
-      'timeStart' => [
-        'label' => t('Start time'),
-        'value' => $this->store->get('field_time_start'),
-      ],
       'zipcode' => [
         'label' => t('Zipcode'),
         'value' => $this->store->get('field_zipcode'),
       ],
+      'occurrences' => $occurrences,
     ];
 
     $form['data']['progressBar'] = $this->getProgressBar('confirm');
