@@ -51,6 +51,10 @@ class PageController extends ControllerBase {
             'search_facet_index' => $config['search_facets'],
             'search_limit' => $config['search_limit'],
             'search_fields' => array_values($config['search_fields']),
+            'search_sort' => $config['search_sort'],
+            'map' => [
+              'template' => drupal_get_path('module', 'genlyd_search') . '/js/templates/popup.html.twig',
+            ]
           ]
         ]
       ],

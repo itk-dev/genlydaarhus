@@ -10,7 +10,7 @@ genlyd_search.search_page:
   path: '/search'
   defaults:
     _controller: '\Drupal\genlyd_search\Controller\PageController::search'
-    _title: 'Search activities'
+    _title: 'Activities'
   requirements:
     _permission: 'access content'
 
@@ -18,6 +18,15 @@ genlyd_search.search:
   path: '/api/search'
   defaults:
     _controller: '\Drupal\genlyd_search\Controller\ApiController::search'
+    _title: 'Search activities'
+    methods:  [POST]
+  requirements:
+    _permission: 'access content'
+
+genlyd_search.map_search:
+  path: '/api/search/map'
+  defaults:
+    _controller: '\Drupal\genlyd_search\Controller\ApiController::searchGeoJSON'
     _title: 'Search activities'
     methods:  [POST]
   requirements:

@@ -12,6 +12,8 @@ var activityLayer = null;
  *   The OpenLayers map object.
  */
 function genlydMapInitOpenlayersMap() {
+  'use strict';
+
   // Init the map.
   return new ol.Map({
     target: 'mapid',
@@ -32,9 +34,11 @@ function genlydMapInitOpenlayersMap() {
  * Load template used by popup's for markers.
  */
 function genlydMapLoadPopupTemplate() {
+  'use strict';
+
   Twig.twig({
     id: 'popup',
-    href: drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.template,
+    href: drupalSettings.genlyd_search.map.template,
     async: false
   });
 }
@@ -42,12 +46,14 @@ function genlydMapLoadPopupTemplate() {
 /**
  * Display information about the map.
  *
- * Used when debuging and changes in configuration.
+ * Used when debugging and changes in configuration.
  *
  * @param {ol.Map} map
  *   The OpenLayers map object.
  */
 function genlydMasDebugInfo(map) {
+  'use strict';
+
   map.on('moveend', function(evt) {
     var ext = map.getView().calculateExtent(map.getSize());
     console.log('Extent: ' + ext[0] + ',' + ext[1] + ',' + ext[2] + ',' + ext[3]);
@@ -63,6 +69,8 @@ function genlydMasDebugInfo(map) {
  *   The OpenLayers map object.
  */
 function genlydMapsAddPopups(map) {
+  'use strict';
+
   // Get the popup element from the DOM and add it to the map as an overlay.
   var element = document.getElementById('popup');
   var popup = new ol.Overlay({
@@ -157,55 +165,47 @@ function genlydMapsAddPopups(map) {
  *
  * @param {ol.Map} map
  *   The OpenLayers map object.
- * @param {array} filters
- *   Filters used to filter the actives to be displayed.
+ * @param {array} points
+ *   The points to plot.
  */
-function genlydMapsAddActivities(map, filters) {
-  jQuery.ajax({
-    type: "POST",
-    headers: {
-      "Accept" : "application/json; charset=utf-8",
-      "Content-Type": "application/json; charset=utf-8"
-    },
-    data: JSON.stringify(filters),
-    url: '/api/maps/activities.json'
-  }).done(function(data) {
-    if (activityLayer) {
-      map.removeLayer(activityLayer);
-    }
+function genlydMapsAddActivities(map, points) {
+  'use strict';
 
-    var format = new ol.format.GeoJSON({
-      defaultDataProjection: 'EPSG:4326'
-    });
+  if (activityLayer) {
+    map.removeLayer(activityLayer);
+  }
 
-    var dataSource = new ol.source.Vector({
-      features: format.readFeatures(data, {
-        dataProjection: 'EPSG:4326',
-        featureProjection: 'EPSG:3857'
-      })
-    });
-
-    // Find the marker to use or fallback to default.
-    var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
-
-    activityLayer = new ol.layer.Vector({
-      source: dataSource,
-      visible: true,
-      style: new ol.style.Style({
-        image: new ol.style.Icon({
-          anchor: [0.5, 40],
-          anchorXUnits: 'fraction',
-          anchorYUnits: 'pixels',
-          src: markerUrl,
-          scale: 1.0
-        })
-      })
-    });
-
-    // Add the layer to the map.
-    map.addLayer(activityLayer);
-    map.getView().fit(dataSource.getExtent(), map.getSize());
+  var format = new ol.format.GeoJSON({
+    defaultDataProjection: 'EPSG:4326'
   });
+
+  var dataSource = new ol.source.Vector({
+    features: format.readFeatures(points, {
+      dataProjection: 'EPSG:4326',
+      featureProjection: 'EPSG:3857'
+    })
+  });
+
+  // Find the marker to use or fallback to default.
+  var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
+
+  activityLayer = new ol.layer.Vector({
+    source: dataSource,
+    visible: true,
+    style: new ol.style.Style({
+      image: new ol.style.Icon({
+        anchor: [0.5, 40],
+        anchorXUnits: 'fraction',
+        anchorYUnits: 'pixels',
+        src: markerUrl,
+        scale: 1.0
+      })
+    })
+  });
+
+  // Add the layer to the map.
+  map.addLayer(activityLayer);
+  map.getView().fit(dataSource.getExtent(), map.getSize());
 }
 
 /**
@@ -215,6 +215,8 @@ function genlydMapsAddActivities(map, filters) {
  *   The OpenLayers map object.
  */
 function genlydMapsAddOSMMap(map) {
+  'use strict';
+
   map.addLayer(new ol.layer.Tile({
     source: new ol.source.OSM()
   }));
@@ -228,4 +230,4 @@ var genlydMapsObject = genlydMapInitOpenlayersMap();
 // Add behaviour and map layers.
 genlydMapLoadPopupTemplate();
 genlydMapsAddOSMMap(genlydMapsObject);
-genlydMapsAddPopups(genlydMapsObject);
+

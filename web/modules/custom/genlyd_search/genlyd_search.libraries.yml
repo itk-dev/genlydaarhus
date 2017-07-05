@@ -1,8 +1,7 @@
 maps:
   js:
     js/libs/twig/twig.min.js: { minified: true }
-    js/genlyd_search.js: {}
-    js/genlyd_search_tabs.js: {}
+    js/genlyd_map.js: {}
   dependencies:
     - genlyd_search/openlayers
     - core/jquery
@@ -22,3 +21,4 @@ search:
     js/services/SearchService.js: {}
   dependencies:
     - genlyd_angular/angular
+    - genlyd_search/maps

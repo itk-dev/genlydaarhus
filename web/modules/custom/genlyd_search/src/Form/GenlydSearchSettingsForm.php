@@ -109,6 +109,20 @@ class GenlydSearchSettingsForm extends FormBase {
       '#default_value' => $config->get('search_fields'),
     );
 
+    $fields_info = $index->getFields();
+    $sort_fields = [];
+    foreach ($fields_info as $field) {
+      $sort_fields[$field->getFieldIdentifier()] = $field->getPrefixedLabel();
+    }
+
+    $form['wrapper_search']['sort'] = array(
+      '#type' => 'select',
+      '#options' => $sort_fields,
+      '#title' => $this->t('Sort field'),
+      '#description' => $this->t('Select the field that will be sorted on.'),
+      '#default_value' => $config->get('search_sort'),
+    );
+
     $vocabulary_options = [];
     $vocabularies = Vocabulary::loadMultiple();
     foreach ($vocabularies as $vocabulary) {
@@ -145,5 +159,6 @@ class GenlydSearchSettingsForm extends FormBase {
     $this->getBaseConfig()->set('search_limit', $form_state->getValue('search_limit'));
     $this->getBaseConfig()->set('search_fields', $form_state->getValue('search_fields'));
     $this->getBaseConfig()->set('search_facets', $form_state->getValue('search_facets'));
+    $this->getBaseConfig()->set('search_sort', $form_state->getValue('sort'));
   }
 }

@@ -27,6 +27,7 @@ angular.module('genlyd').service('SearchService', ['$http', '$q',
         fields: config.search_fields,
         limit: config.search_limit,
         page: page,
+        sort: config.search_sort,
         index: config.index,
         facets: facets
       }).then(function success(response) {
