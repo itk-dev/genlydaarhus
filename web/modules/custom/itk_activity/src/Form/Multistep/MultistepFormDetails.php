@@ -43,9 +43,6 @@ class MultistepFormDetails extends MultistepFormBase {
     // Get previous occurrences.
     $occurrences = $this->store->get('occurrences') ? $this->store->get('occurrences') : [];
 
-    $showMultipleOccurrences = $form_state->get('show_multiple_occurrences') ? TRUE : (count($occurrences) > 1 ? TRUE : FALSE);
-    $form['data']['show_multiple_occurrences'] = $showMultipleOccurrences;
-
     // If not occurrences set, add one.
     if (empty($occurrences)) {
       $occurrences[] = [];
@@ -94,21 +91,24 @@ class MultistepFormDetails extends MultistepFormBase {
         '#default_value' => $occurrence['field_time_end'],
       );
 
-      $form['occurrences'][$i]['actions']['remove_occurrence'] = [
-        '#type' => 'submit',
-        '#attributes' => [
-          'class' => ['button-delete'],
-          'id' => 'button-delete-' . $i,
-        ],
-        'element_index' => $i,
-        '#name' => 'button-delete-' . $i,
-        '#value' => t('Remove'),
-        '#submit' => ['::removeCallback'],
-        '#ajax' => [
-          'callback' => '::addmoreCallback',
-          'wrapper' => "occurrence-remove-" . $i . "-fieldset-wrapper",
-        ],
-      ];
+      // Do not include remove button for only one date.
+      if ($i > 0) {
+        $form['occurrences'][$i]['actions']['remove_occurrence'] = [
+          '#type' => 'submit',
+          '#attributes' => [
+            'class' => ['button-delete'],
+            'id' => 'button-delete-' . $i,
+          ],
+          'element_index' => $i,
+          '#name' => 'button-delete-' . $i,
+          '#value' => t('Remove'),
+          '#submit' => ['::removeCallback'],
+          '#ajax' => [
+            'callback' => '::addmoreCallback',
+            'wrapper' => "occurrence-remove-" . $i . "-fieldset-wrapper",
+          ],
+        ];
+      }
     }
 
     $form['occurrences_actions'] = [
@@ -131,20 +131,6 @@ class MultistepFormDetails extends MultistepFormBase {
       '#ajax' => [
         'callback' => '::addmoreCallback',
         'wrapper' => "occurrence-add-fieldset-wrapper",
-      ],
-    ];
-
-    $form['occurrences_actions']['actions']['toggle_multi_occurrences'] = [
-      '#type' => 'submit',
-      '#attributes' => [
-        'class' => ['button-secondary-dark'],
-        'id' => 'button-toggle-occurrence',
-      ],
-      '#value' => !$showMultipleOccurrences ? t('Choose more than one date') : t('Choose only one date'),
-      '#submit' => ['::toggleMultipleOccurrences'],
-      '#ajax' => [
-        'callback' => '::addmoreCallback',
-        'wrapper' => "occurrence-fieldset-wrapper",
       ],
     ];
 
@@ -216,23 +202,6 @@ class MultistepFormDetails extends MultistepFormBase {
    */
   public function addmoreCallback(array &$form, FormStateInterface $form_state) {
     return $form['occurrences'];
-  }
-
-  /**
-   * Submit handler for the "toggleMultipleOccurrences" button.
-   */
-  public function toggleMultipleOccurrences(array &$form, FormStateInterface $form_state) {
-    $showMultipleOccurrences = !$form_state->get('show_multiple_occurrences');
-    $form_state->set('show_multiple_occurrences', $showMultipleOccurrences);
-
-    // We are exiting multiple occurrences mode. Remove all but first occurrence.
-    if (!$showMultipleOccurrences) {
-      $occurrences = $this->store->get('occurrences');
-      $newOccurrences = count($occurrences) > 0 ? [ reset($occurrences) ] : [];
-      $this->store->set('occurrences', $newOccurrences);
-    }
-
-    $form_state->setRebuild(TRUE);
   }
 
   /**

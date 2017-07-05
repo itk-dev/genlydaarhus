@@ -226,7 +226,38 @@ class ActivityCloneForm extends FormBase {
 
     $clones = \Drupal::service('itk_activity.activity_manager')->cloneActivity($form_state->get('node'), $occurrences);
 
-    drupal_set_message(t('Activity cloned to @nr new activities', ['@nr' => count($clones)]));
+    // Create link messages.
+    $activityLinksMessage = "<ul>";
+    foreach ($clones as $activity) {
+      $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString();
+
+      $activityLinksMessage .=
+        implode('', [
+          '<li>',
+          \Drupal::service('date.formatter')->format((new DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+          ' - ',
+          '<a href="',
+          $url,
+          '">',
+          $url,
+          '</a>',
+          "</li>"
+        ]);
+    }
+    $activityLinksMessage .= "</ul>";
+
+    if (!empty($createdActivities)) {
+      $message = \Drupal::translation()->formatPlural(
+        count($createdActivities),
+        '<p>The activity with title "' . $createdActivities[0]->title->value . '" has been created.</p>' . $activityLinksMessage,
+        '<p>The @count activities with title "' . $createdActivities[0]->title->value . '" have been created.</p>' . $activityLinksMessage
+      );
+    }
+    else {
+      $message = 'No activity was created.';
+    }
+
+    drupal_set_message($message);
 
     // Redirect to user page.
     $form_state->setRedirect('user.page');

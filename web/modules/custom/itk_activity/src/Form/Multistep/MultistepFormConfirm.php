@@ -157,10 +157,9 @@ class MultistepFormConfirm extends MultistepFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
-    $activityId = $this->saveData();
+    $this->saveData();
 
-    // Redirect to the created activity.
-    $form_state->setRedirect('entity.node.canonical', ['node' => $activityId]);
+    $form_state->setRedirect('user.page');
   }
 
 }

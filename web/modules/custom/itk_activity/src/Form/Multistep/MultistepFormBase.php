@@ -15,6 +15,7 @@ use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Url;
+use DateTime;
 
 /**
  * Class MultistepFormBase.
@@ -184,13 +185,10 @@ abstract class MultistepFormBase extends FormBase {
   protected function saveData() {
     $data = $this->getData();
 
-    $this->deleteStore();
-
     $occurrences = $data['occurrences'];
     unset($data['occurrences']);
 
-    $numberOfActivitiesCreated = 0;
-    $firstActivity = NULL;
+    $createdActivities = [];
 
     foreach ($occurrences as $occurrence) {
       if (isset($occurrence['field_date']) &&
@@ -205,18 +203,45 @@ abstract class MultistepFormBase extends FormBase {
         $activity = Node::create($data);
         $activity->save();
 
-        $numberOfActivitiesCreated++;
-
-        if (!isset($firstActivity)) {
-          $firstActivity = $activity;
-        }
+        $createdActivities[] = $activity;
       }
     }
 
-    $message = \Drupal::translation()->formatPlural($numberOfActivitiesCreated, 'The activity has been created.', '@count activities have been created.');
+    // Create link messages.
+    $activityLinksMessage = "<ul>";
+    foreach ($createdActivities as $activity) {
+      $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString();
+
+      $activityLinksMessage .=
+        implode('', [
+          '<li>',
+          \Drupal::service('date.formatter')->format((new DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+          ' - ',
+          '<a href="',
+          $url,
+          '">',
+          $url,
+          '</a>',
+          "</li>"
+        ]);
+    }
+    $activityLinksMessage .= "</ul>";
+
+    if (!empty($createdActivities)) {
+      $message = \Drupal::translation()->formatPlural(
+        count($createdActivities),
+        '<p>The activity with title "' . $createdActivities[0]->title->value . '" has been created.</p>' . $activityLinksMessage,
+        '<p>The @count activities with title "' . $createdActivities[0]->title->value . '" have been created.</p>' . $activityLinksMessage
+      );
+    }
+    else {
+      $message = 'No activity was created.';
+    }
+
     drupal_set_message($message);
 
-    return $firstActivity ? $firstActivity->id() : NULL;
+    // Clear stored data.
+    $this->deleteStore();
   }
 
   /**
