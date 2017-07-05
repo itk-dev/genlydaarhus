@@ -54,10 +54,18 @@ class ActivityCloneForm extends FormBase {
     $form['#tree'] = TRUE;
     $form['occurrences'] = [
       '#type' => 'fieldset',
-      '#title' => $this->t('You are creating new occurrences of the activity "@title"', ['@title' => $node->title->value]),
       'actions' => [
         '#type' => 'actions',
       ],
+    ];
+
+    $form['data']['clone'] = [
+      'title' => $this->t('You are creating new occurrences of the activity "@title" set to occur on @date at @timeStart to @timeEnd.', [
+        '@title' => $node->title->value,
+        '@date' => \Drupal::service('date.formatter')->format((new \DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
+        '@timeStart' => $node->field_time_start->value,
+        '@timeEnd' => $node->field_time_end->value,
+      ]),
     ];
 
     // Get previous occurrences.
@@ -224,17 +232,17 @@ class ActivityCloneForm extends FormBase {
       return;
     }
 
-    $clones = \Drupal::service('itk_activity.activity_manager')->cloneActivity($form_state->get('node'), $occurrences);
+    $createdActivities = \Drupal::service('itk_activity.activity_manager')->cloneActivity($form_state->get('node'), $occurrences);
 
     // Create link messages.
     $activityLinksMessage = "<ul>";
-    foreach ($clones as $activity) {
+    foreach ($createdActivities as $activity) {
       $url = \Drupal\Core\Url::fromRoute('entity.node.canonical', ['node' => $activity->id()], ['absolute' => TRUE])->toString();
 
       $activityLinksMessage .=
         implode('', [
           '<li>',
-          \Drupal::service('date.formatter')->format((new DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
+          \Drupal::service('date.formatter')->format((new \DateTime($activity->field_date->value))->getTimestamp(), 'date_medium'),
           ' - ',
           '<a href="',
           $url,
