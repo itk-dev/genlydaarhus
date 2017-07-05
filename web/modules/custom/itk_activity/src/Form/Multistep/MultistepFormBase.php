@@ -197,7 +197,7 @@ abstract class MultistepFormBase extends FormBase {
           isset($occurrence['field_time_start']) &&
           isset($occurrence['field_time_end'])) {
 
-        $data['field_date'] = $occurrence['field_data'];
+        $data['field_date'] = $occurrence['field_date'];
         $data['field_time_start'] = $occurrence['field_time_start'];
         $data['field_time_end'] = $occurrence['field_time_end'];
 
