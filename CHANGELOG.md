@@ -2,6 +2,11 @@
 
 ## In development
 
+## v1.0.7
+
+* Disabled "Internal Page Cache" module (it always caches pages for anonymous users)
+* Disabled views caching.
+
 ## v1.0.6
 
 * Changed views caching to time based.
