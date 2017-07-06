@@ -41,16 +41,16 @@ angular.module('genlyd').controller('SearchController', ['$scope', '$timeout', '
     /**
      * Toggle search filter button and text.
      */
-    $scope.filterLabel = Drupal.t('Show filter');
+    $scope.filterLabel = Drupal.t('Show filters');
     $scope.showFilters = false;
     $scope.toggleFilters = function toggleFilters() {
       $scope.showFilters = !$scope.showFilters;
 
       if ($scope.showFilters) {
-        $scope.filterLabel = Drupal.t('Hide filter');
+        $scope.filterLabel = Drupal.t('Hide filters');
       }
       else {
-        $scope.filterLabel = Drupal.t('Show filter');
+        $scope.filterLabel = Drupal.t('Show filters');
       }
     };
 
