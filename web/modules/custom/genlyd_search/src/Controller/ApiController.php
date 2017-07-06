@@ -81,13 +81,6 @@ class ApiController extends ControllerBase {
     /* @var $item \Drupal\search_api\Item\ItemInterface*/
     $hits = array();
     foreach ($items as $item) {
-
-      $entity_locations = $item->getField('geo_coder_field')->getValues();
-      $entity_location = reset($entity_locations);
-
-      // Hardcoded categories is not optimal for facets.
-      $categories = $item->getField('categories')->getValues();
-
       /** @var \Drupal\Core\Entity\EntityInterface $entity */
       $entity = $item->getOriginalObject()->getValue();
       if (!$entity) {
@@ -99,8 +92,6 @@ class ApiController extends ControllerBase {
       $snippet = $this->entityTypeManager()->getViewBuilder($entity->getEntityTypeId())->view($entity, $view_mode);
       $hits[] = [
         "id" => $entity->id(),
-        "location" => $entity_location,
-        "categories" => $categories,
         "snippet" => render($snippet),
       ];
     }
@@ -228,7 +219,6 @@ class ApiController extends ControllerBase {
           'value' => Url::fromRoute('entity.node.canonical', ['node' => $entity->id()], ['absolute' => TRUE])->toString(),
         ],
       ];
-
 
       list($longitude, $latitude) = explode(',', $entity_location);
       $response->addPoint($latitude, $longitude, $metadata);

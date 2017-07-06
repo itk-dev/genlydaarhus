@@ -6,6 +6,7 @@
 
 namespace Drupal\genlyd_search\Form;
 
+use Drupal\Core\Cache\Cache;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
@@ -160,5 +161,7 @@ class GenlydSearchSettingsForm extends FormBase {
     $this->getBaseConfig()->set('search_fields', $form_state->getValue('search_fields'));
     $this->getBaseConfig()->set('search_facets', $form_state->getValue('search_facets'));
     $this->getBaseConfig()->set('search_sort', $form_state->getValue('sort'));
+
+    Cache::invalidateTags(array('search_api', 'geocoder'));
   }
 }

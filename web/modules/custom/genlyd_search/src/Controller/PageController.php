@@ -37,6 +37,8 @@ class PageController extends ControllerBase {
       $facets[$term->name] = $term->name;
     }
 
+    $path = '/' . drupal_get_path('module', 'genlyd_search');
+
     return [
       '#theme' => 'genlyd_search_page',
       '#facets' => $facets,
@@ -53,7 +55,9 @@ class PageController extends ControllerBase {
             'search_fields' => array_values($config['search_fields']),
             'search_sort' => $config['search_sort'],
             'map' => [
-              'template' => drupal_get_path('module', 'genlyd_search') . '/js/templates/popup.html.twig',
+              'marker' => $path . '/images/marker.png',
+              'template' => $path . '/js/templates/popup.html.twig',
+              'endpoint' => '/api/search/map',
             ]
           ]
         ]

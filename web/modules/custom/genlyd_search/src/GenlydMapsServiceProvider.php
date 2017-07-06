@@ -23,5 +23,4 @@ class GenlydSearchServiceProvider extends ServiceProviderBase {
     $definition = $container->getDefinition('geocoder');
     $definition->setClass(Geocoder::class);
   }
-
 }

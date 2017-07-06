@@ -80,7 +80,7 @@ function genlydMapsAddPopups(map) {
   map.addOverlay(popup);
 
   // Change mouse cursor when over a marker.
-  var target =  document.getElementById(map.getTarget());
+  var target = document.getElementById(map.getTarget());
   map.on('pointermove', function(e) {
     var pixel = map.getEventPixel(e.originalEvent);
     if (map.hasFeatureAtPixel(pixel)) {
@@ -163,13 +163,15 @@ function genlydMapsAddPopups(map) {
 /**
  * Add activities.
  *
- * @param {ol.Map} map
- *   The OpenLayers map object.
  * @param {array} points
  *   The points to plot.
  */
-function genlydMapsAddActivities(map, points) {
+function genlydMapsAddActivities(points) {
   'use strict';
+
+  console.log(points);
+
+  var map = genlydMapsObject;
 
   if (activityLayer) {
     map.removeLayer(activityLayer);
@@ -187,7 +189,8 @@ function genlydMapsAddActivities(map, points) {
   });
 
   // Find the marker to use or fallback to default.
-  var markerUrl = drupalSettings.genlyd_maps.path + drupalSettings.genlyd_maps.marker;
+  var markerUrl = drupalSettings.genlyd_search.map.marker;
+  console.log(drupalSettings.genlyd_search.map);
 
   activityLayer = new ol.layer.Vector({
     source: dataSource,
@@ -230,4 +233,4 @@ var genlydMapsObject = genlydMapInitOpenlayersMap();
 // Add behaviour and map layers.
 genlydMapLoadPopupTemplate();
 genlydMapsAddOSMMap(genlydMapsObject);
-
+genlydMapsAddPopups(genlydMapsObject);

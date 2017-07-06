@@ -60,6 +60,10 @@ angular.module('genlyd').controller('SearchController', ['$scope', 'SearchServic
         $scope.results = results;
         $scope.searching = false;
       });
+
+      SearchService.searchMap($scope.searchText, facets).then(function (results) {
+        genlydMapsAddActivities(results);
+      });
     };
 
     /**

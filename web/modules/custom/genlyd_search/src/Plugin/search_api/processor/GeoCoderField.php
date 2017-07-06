@@ -2,6 +2,7 @@
 
 namespace Drupal\genlyd_search\Plugin\search_api\processor;
 
+use Drupal\Core\Cache\CacheBackendInterface;
 use Drupal\search_api\Datasource\DatasourceInterface;
 use Drupal\search_api\Item\ItemInterface;
 use Drupal\search_api\Processor\ProcessorPluginBase;
@@ -82,29 +83,40 @@ class GeoCoderField extends ProcessorPluginBase {
       // Default value.
       $value = '';
 
-      // Geo-encode fields.
-      $config = \Drupal::getContainer()->get('genlyd_search.config')->getAll();
+      // Use cache as this is a processed field that will be called both on
+      // indexing and searching.
+      $cid = md5(implode('', $values));
+      $cache = \Drupal::cache()->get($cid);
+      if ($cache) {
+        $value = $cache->data;
+      }
+      else {
+        // Geo-encode fields.
+        $config = \Drupal::getContainer()->get('genlyd_search.config')->getAll();
 
-      // Load geo-coder service and set configuration.
-      $geocoder = \Drupal::service('geocoder');
-      $plugins = ['googlemaps', 'bingmaps'];
-      $options = [
-        'googlemaps' => [
-          'useSsl' => TRUE,
-          'apiKey' => $config['google_api_key'],
-        ],
-        'bingsearch' => [],
-      ];
-      $addressCollection = $geocoder->geocode(implode($values, ','), $plugins, $options);
-      if ($addressCollection) {
-        $latitude = $addressCollection->first()
-          ->getCoordinates()
-          ->getLatitude();
-        $longitude = $addressCollection->first()
-          ->getCoordinates()
-          ->getLongitude();
+        // Load geo-coder service and set configuration.
+        $geocoder = \Drupal::service('geocoder');
+        $plugins = ['googlemaps', 'bingmaps'];
+        $options = [
+          'googlemaps' => [
+            'useSsl' => TRUE,
+            'apiKey' => $config['google_api_key'],
+          ],
+          'bingsearch' => [],
+        ];
+        $addressCollection = $geocoder->geocode(implode($values, ','), $plugins, $options);
+        if ($addressCollection) {
+          $latitude = $addressCollection->first()
+            ->getCoordinates()
+            ->getLatitude();
+          $longitude = $addressCollection->first()
+            ->getCoordinates()
+            ->getLongitude();
 
-        $value = $longitude . ',' . $latitude;
+          $value = $longitude . ',' . $latitude;
+        }
+
+        \Drupal::cache()->set($cid, $value, CacheBackendInterface::CACHE_PERMANENT, array('search_api', 'geocoder'));
       }
 
       $geo_coder_field->addValue($value);
