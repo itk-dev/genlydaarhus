@@ -25,22 +25,14 @@ dependencies:
   module:
     - datetime
     - image
-    - text
     - user
 id: node.activity.search_results
 targetEntityType: node
 bundle: activity
 mode: search_results
 content:
-  body:
-    label: hidden
-    type: text_default
-    weight: 1
-    settings: {  }
-    third_party_settings: {  }
-    region: content
   field_address:
-    weight: 9
+    weight: 7
     label: above
     settings:
       link_to_entity: false
@@ -48,7 +40,7 @@ content:
     type: string
     region: content
   field_area:
-    weight: 10
+    weight: 8
     label: above
     settings:
       link_to_entity: false
@@ -56,7 +48,7 @@ content:
     type: string
     region: content
   field_categories:
-    weight: 5
+    weight: 3
     label: above
     settings:
       link: true
@@ -64,7 +56,7 @@ content:
     type: entity_reference_label
     region: content
   field_date:
-    weight: 3
+    weight: 1
     label: above
     settings:
       format_type: medium
@@ -73,7 +65,7 @@ content:
     type: datetime_default
     region: content
   field_image:
-    weight: 2
+    weight: 0
     label: hidden
     settings:
       image_style: ''
@@ -82,7 +74,7 @@ content:
     type: image
     region: content
   field_price:
-    weight: 4
+    weight: 2
     label: above
     settings:
       thousand_separator: ''
@@ -93,7 +85,7 @@ content:
     type: number_decimal
     region: content
   field_time_end:
-    weight: 7
+    weight: 5
     label: above
     settings:
       link_to_entity: false
@@ -101,7 +93,7 @@ content:
     type: string
     region: content
   field_time_start:
-    weight: 6
+    weight: 4
     label: above
     settings:
       link_to_entity: false
@@ -109,7 +101,7 @@ content:
     type: string
     region: content
   field_zipcode:
-    weight: 8
+    weight: 6
     label: above
     settings:
       thousand_separator: ''
@@ -117,12 +109,8 @@ content:
     third_party_settings: {  }
     type: number_integer
     region: content
-  links:
-    weight: 0
-    region: content
-    settings: {  }
-    third_party_settings: {  }
 hidden:
+  body: true
   field_entry_requirements: true
   field_external_signed_up_users: true
   field_help_needed: true
@@ -131,3 +119,4 @@ hidden:
   field_signed_up_users: true
   field_signup_required: true
   langcode: true
+  links: true

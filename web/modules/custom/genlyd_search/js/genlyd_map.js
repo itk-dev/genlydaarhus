@@ -3,7 +3,8 @@
  * Javascript to load OSM and plot activities.
  */
 
-var activityLayer = null;
+// Global variables need to get it to work.
+var genlydMapsActivityLayer = null;
 
 /**
  * Initialize the OpenLayers Map.
@@ -169,12 +170,10 @@ function genlydMapsAddPopups(map) {
 function genlydMapsAddActivities(points) {
   'use strict';
 
-  console.log(points);
-
   var map = genlydMapsObject;
 
-  if (activityLayer) {
-    map.removeLayer(activityLayer);
+  if (genlydMapsActivityLayer) {
+    map.removeLayer(genlydMapsActivityLayer);
   }
 
   var format = new ol.format.GeoJSON({
@@ -190,9 +189,8 @@ function genlydMapsAddActivities(points) {
 
   // Find the marker to use or fallback to default.
   var markerUrl = drupalSettings.genlyd_search.map.marker;
-  console.log(drupalSettings.genlyd_search.map);
 
-  activityLayer = new ol.layer.Vector({
+  genlydMapsActivityLayer = new ol.layer.Vector({
     source: dataSource,
     visible: true,
     style: new ol.style.Style({
@@ -207,7 +205,7 @@ function genlydMapsAddActivities(points) {
   });
 
   // Add the layer to the map.
-  map.addLayer(activityLayer);
+  map.addLayer(genlydMapsActivityLayer);
   map.getView().fit(dataSource.getExtent(), map.getSize());
 }
 
@@ -223,6 +221,54 @@ function genlydMapsAddOSMMap(map) {
   map.addLayer(new ol.layer.Tile({
     source: new ol.source.OSM()
   }));
+}
+
+/**
+ * Used to change location (map center) based on users current location.
+ */
+function genlydMapsMyLocation() {
+  /**
+   * Successful location acquired update map center.
+   *
+   * @param {object} position
+   *   The position browser object.
+   */
+  function success(position) {
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    genlydMapsObject.getView().setCenter(ol.proj.transform([longitude, latitude], 'EPSG:4326', 'EPSG:3857'));
+  }
+
+  /**
+   * Unsuccessful in acquiring user location.
+   *
+   * @param {error} err
+   *   Error object.
+   */
+  function error(err) {
+    alert('Unable to get position.');
+  }
+
+  if ('geolocation' in navigator) {
+    navigator.geolocation.getCurrentPosition(success, error, {
+      enableHighAccuracy: true,
+      timeout: 10000,
+      maximumAge: 600000
+    });
+  }
+  else {
+    alert('Position not supported by browser');
+  }
+}
+
+/**
+ * Update the map to fit the viewed items.
+ */
+function updateMapDisplay() {
+  if (genlydMapsActivityLayer) {
+    genlydMapsObject.getView().fit(genlydMapsActivityLayer.getSource().getExtent(), genlydMapsObject.getSize());
+  }
 }
 
 var genlydMapsObject = genlydMapInitOpenlayersMap();

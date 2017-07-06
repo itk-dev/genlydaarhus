@@ -18,3 +18,28 @@ function genlyd_search_theme($existing, $type, $theme, $path) {
     ]
   ];
 }
+
+/**
+ * Implements hook_js_alter().
+ *
+ * Search angular applications for drupal translations.
+ */
+function genlyd_search_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
+  $files = array();
+  $path = drupal_get_path('module', 'genlyd_search');
+
+  // Files to scan for translations (js and templates).
+  $extensions = Array( 'js', 'html' );
+
+  // Find the files.
+  $it = new RecursiveDirectoryIterator($path);
+  foreach(new RecursiveIteratorIterator($it) as $file)  {
+    $ext = pathinfo($file, PATHINFO_EXTENSION);
+    if (in_array($ext, $extensions)) {
+      $files[] = $file->getPathname();
+    }
+  }
+
+  // Scan the files to get translations into the database.
+  locale_js_translate($files);
+}

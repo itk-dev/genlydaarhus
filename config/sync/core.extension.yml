@@ -21,6 +21,8 @@ module:
   filter: 0
   genlyd: 0
   genlyd_adfs: 0
+  genlyd_angular: 0
+  genlyd_search: 0
   geocoder: 0
   help: 0
   image: 0

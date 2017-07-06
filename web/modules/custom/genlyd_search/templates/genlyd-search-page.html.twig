@@ -23,7 +23,7 @@
               </article>
 
               <article class="grid--item">
-                <button class="button is-cta js-maps-switch">{{ 'Show map' | trans }}</button>
+                <button class="button is-cta js-maps-switch" data-ng-click="toggleMap()">{{ '{{ showMapLabel }}' }}</button>
               </article>
 
             </div>
@@ -36,11 +36,11 @@
   <div class="grid is-fourths ">
     <div class="grid--inner">
       <article class="grid--item">
-        <button class="button is-cta" data-ng-click="toggleFilters()">  {{ 'Show filter' | trans }}</button>
+        <button class="button is-cta" data-ng-click="toggleFilters()">{{ '{{ filterLabel }}' }}</button>
       </article>
 
       <article class="grid--item">
-        <button class="button is-cta activities-top--my-location" style="display: block;">{{ 'My location' | trans }}</button>
+        <button class="button is-cta activities-top--my-location" style="display: block;" data-ng-click="gotoMyLocation()" data-ng-show="showMap">{{ 'My location' | trans }}</button>
       </article>
     </div>
   </div>
@@ -130,7 +130,7 @@
       </div>
     </div>
 
-    <span data-ng-show="!searching">
+    <span data-ng-show="!searching && !showMap">
       <div class="grid is-fourths" >
         <div class="grid--inner">
               <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet">
@@ -161,7 +161,7 @@
       </div>
     </span>
 
-    <div class="activities-map">
+    <div class="activities-map" data-ng-show="showMap">
       <div id="mapid" class="activities-map--view">
         <div id="popup"></div>
       </div>

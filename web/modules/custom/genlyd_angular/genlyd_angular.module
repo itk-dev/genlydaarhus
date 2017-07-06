@@ -14,28 +14,3 @@ function genlyd_angular_preprocess_page(&$variables) {
     $variables['#attached']['library'][] = 'genlyd_angular/angular';
   }
 }
-
-/**
- * Implements hook_js_alter().
- *
- * Search angular applications for drupal translations.
- */
-function genlyd_angular_js_alter(&$javascript, \Drupal\Core\Asset\AttachedAssetsInterface $assets) {
-  $files = array();
-  $path = 'modules/custom';
-
-  // Files to scan for translations (js and templates).
-  $extensions = Array( 'js', 'html' );
-
-  // Find the files.
-  $it = new RecursiveDirectoryIterator($path);
-  foreach(new RecursiveIteratorIterator($it) as $file)  {
-    $ext = pathinfo($file, PATHINFO_EXTENSION);
-    if (in_array($ext, $extensions)) {
-      $files[] = $file->getPathname();
-    }
-  }
-
-  // Scan the files to get translations into the database.
-  locale_js_translate($files);
-}

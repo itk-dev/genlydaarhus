@@ -7,7 +7,7 @@ genlyd_search.settings:
     _permission: 'administer site configuration'
 
 genlyd_search.search_page:
-  path: '/search'
+  path: '/aktiviteter'
   defaults:
     _controller: '\Drupal\genlyd_search\Controller\PageController::search'
     _title: 'Activities'
