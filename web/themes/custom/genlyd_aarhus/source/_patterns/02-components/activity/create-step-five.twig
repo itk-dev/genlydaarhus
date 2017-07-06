@@ -103,9 +103,6 @@
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
           {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: addActivity.dateHeading } %}
-            {% block icon %}
-              {% include "@elements/icons/icon-user.twig" %}
-            {% endblock %}
           {% endembed %}
         {% endblock %}
       {% endembed %}

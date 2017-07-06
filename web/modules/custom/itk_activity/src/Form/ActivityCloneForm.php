@@ -60,7 +60,7 @@ class ActivityCloneForm extends FormBase {
     ];
 
     $form['data']['clone'] = [
-      'title' => $this->t('You are creating new occurrences of the activity "@title" set to occur on @date at @timeStart to @timeEnd.', [
+      'title' => $this->t('You are creating new occurrences of the activity "@title" set to occur on @date, @timeStart - @timeEnd.', [
         '@title' => $node->title->value,
         '@date' => \Drupal::service('date.formatter')->format((new \DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
         '@timeStart' => $node->field_time_start->value,

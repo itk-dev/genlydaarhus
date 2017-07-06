@@ -11,18 +11,18 @@
  */
 #}
 
+{% set form = element %}
+
 {% set activityClone = {
 headingWithIcon: {
   title: "Extra occurrences" | trans,
-  subtitle: "Create extra occurrences of your activity" | trans
+  subtitle: form.data.clone.title
 },
 helpBoxTitle: {
   title: "Notice about repeating activities" | trans,
   description: "Repeating activities are created as separate activities. Changes made to one are not applied to all." | trans
 }
 } %}
-
-{% set form = element %}
 
 {% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
@@ -33,11 +33,6 @@ helpBoxTitle: {
             {% include "@modules/heading-with-icon.twig" with { headingWithIcon: activityClone.headingWithIcon, icon: activityClone.headingWithIcon.icon } %}
           {% endblock %}
         {% endembed %}
-      {% endblock %}
-    {% endembed %}
-    {% embed "@modules/grid/grid-item.twig" %}
-      {% block content %}
-        {{ form.data.clone.title }}
       {% endblock %}
     {% endembed %}
   {% endblock %}
