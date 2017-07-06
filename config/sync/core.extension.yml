@@ -38,7 +38,6 @@ module:
   metatag: 0
   metatag_open_graph: 0
   node: 0
-  page_cache: 0
   page_manager: 0
   page_manager_ui: 0
   path: 0
