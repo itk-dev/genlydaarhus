@@ -14,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ApiController.
+ * Class PageController.
  *
  * @package Drupal\genlyd_search\Controller
  */

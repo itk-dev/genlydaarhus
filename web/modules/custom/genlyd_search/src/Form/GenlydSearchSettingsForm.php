@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * Contains Drupal\itk_footer\Form\ITKFooterContentForm.
+ * Contains Drupal\itk_search\Form\GenlydSearchSettingsForm.
  */
 
 namespace Drupal\genlyd_search\Form;
@@ -12,7 +12,7 @@ use Drupal\Core\Form\FormStateInterface;
 use Drupal\taxonomy\Entity\Vocabulary;
 
 /**
- * Class ITKFooterContentForm
+ * Class GenlydSearchSettingsForm
  *
  * @package Drupal\genlyd_search\Form
  */

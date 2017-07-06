@@ -111,6 +111,18 @@ class ApiController extends ControllerBase {
     return $response;
   }
 
+  /**
+   * Search callback.
+   *
+   * It generates an GEO-JSON output that can be used directly in OpenLayers
+   * maps.
+   *
+   * @param \Symfony\Component\HttpFoundation\Request $request
+   *   The HTTP request.
+   *
+   * @return \Drupal\genlyd_search\Render\GeoJsonResponse
+   *   GEO-JSON generated output.
+   */
   public function searchGeoJSON(Request $request) {
     // This condition checks the `Content-type` and makes sure to
     // decode JSON string from the request body into array.

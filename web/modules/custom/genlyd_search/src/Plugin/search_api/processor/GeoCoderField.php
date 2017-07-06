@@ -1,4 +1,8 @@
 <?php
+/**
+ * @file
+ * New search API processer for geo-coding content.
+ */
 
 namespace Drupal\genlyd_search\Plugin\search_api\processor;
 
@@ -10,7 +14,7 @@ use Drupal\search_api\Utility\Utility;
 use Drupal\genlyd_search\Plugin\search_api\processor\Property\GeoCoderFieldProperty;
 
 /**
- * Adds customized aggregations of existing fields to the index.
+ * Adds geo-encoding to the search index.
  *
  * @SearchApiProcessor(
  *   id = "geo_coder_field",
