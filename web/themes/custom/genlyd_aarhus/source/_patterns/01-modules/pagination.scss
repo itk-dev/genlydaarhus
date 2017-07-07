@@ -10,18 +10,27 @@
   text-decoration: none;
 }
 
-.pagination a.is-active {
+.pagination a.is-active,
+.pagination li.is-active {
   background-color: $color-yellow;
 }
 
-.pagination a.is-disabled {
+.pagination a.is-disabled,
+.pagination li.is-disabled a {
   color: $color-gray-light;
 }
 
-.pagination a:hover {
+.pagination a:hover,
+.pagination li:hover a {
   background-color: $color-green-light;
 }
 
-.pagination a:hover.is-disabled {
+.pagination a:hover.is-disabled,
+.pagination li.is-disabled a:hover {
   background-color: transparent;
+}
+
+.pagination li {
+  display: flex;
+  list-style-type: none;
 }
