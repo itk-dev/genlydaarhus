@@ -1,5 +1,0 @@
-genlyd_maps.admin:
-  title: 'Genlyd Maps'
-  description: 'Configure genlyd maps'
-  route_name: genlyd_maps.settings
-  parent: system.admin_config_system

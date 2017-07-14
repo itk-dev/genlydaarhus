@@ -1,0 +1,112 @@
+uuid: fee0514d-6cd2-43d7-a603-1a8a26f163f8
+langcode: da
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_address
+    - field.storage.node.field_area
+    - field.storage.node.field_zipcode
+    - field.storage.node.field_categories
+    - field.storage.node.field_date
+    - search_api.server.database_search
+  module:
+    - taxonomy
+    - search_api
+    - genlyd_search
+    - node
+id: activities
+name: Activities
+description: ''
+read_only: false
+field_settings:
+  geo_coder_field:
+    label: 'GeoCoder field'
+    property_path: geo_coder_field
+    type: string
+    configuration:
+      fields:
+        - 'entity:node/field_address'
+        - 'entity:node/field_area'
+        - 'entity:node/field_zipcode'
+  address:
+    label: Adresse
+    datasource_id: 'entity:node'
+    property_path: field_address
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_address
+  city:
+    label: By
+    datasource_id: 'entity:node'
+    property_path: field_area
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_area
+  zipcode:
+    label: Postnummer
+    datasource_id: 'entity:node'
+    property_path: field_zipcode
+    type: integer
+    dependencies:
+      config:
+        - field.storage.node.field_zipcode
+  title:
+    label: Overskrift
+    datasource_id: 'entity:node'
+    property_path: title
+    type: text
+  categories:
+    label: 'Kategorier » Ord i ordforråd » Navn'
+    datasource_id: 'entity:node'
+    property_path: 'field_categories:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.node.field_categories
+      module:
+        - taxonomy
+  date:
+    label: Date
+    datasource_id: 'entity:node'
+    property_path: field_date
+    type: date
+    dependencies:
+      config:
+        - field.storage.node.field_date
+datasource_settings:
+  'entity:node':
+    bundles:
+      default: false
+      selected:
+        - activity
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  geo_coder_field: {  }
+  add_url: {  }
+  aggregated_field: {  }
+  entity_status: {  }
+  ignorecase:
+    all_fields: false
+    fields:
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+  rendered_item: {  }
+  transliteration:
+    all_fields: false
+    fields:
+      - title
+    weights:
+      preprocess_index: -20
+      preprocess_query: -20
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: database_search

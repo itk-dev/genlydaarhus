@@ -278,8 +278,8 @@ display:
           type: boolean
           settings:
             format: custom
-            format_custom_true: Published
-            format_custom_false: Unpublished
+            format_custom_true: Udgivet
+            format_custom_false: 'Ikke udgivet'
           plugin_id: field
           entity_type: node
           entity_field: status

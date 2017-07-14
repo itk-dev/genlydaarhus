@@ -1,0 +1,4 @@
+services:
+  genlyd_search.config:
+    class: Drupal\genlyd_search\State\GenlydSearchConfig
+    arguments: ['@serialization.json', '@database']

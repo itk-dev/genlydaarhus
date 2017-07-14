@@ -267,6 +267,16 @@ function itk_activity_preprocess_node__activity__teaser(&$variables) {
 /**
  * Implements hook_preprocess_HOOK().
  *
+ * Node Activity Search Results preprocess.
+ */
+function itk_activity_preprocess_node__activity__search_results(&$variables) {
+  // Extend teaser hook.
+  itk_activity_preprocess_node__activity__teaser($variables);
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ *
  * Node Activity Teaser Edit preprocess.
  *
  * Extends itk_activity_preprocess_node__activity__teaser() with
