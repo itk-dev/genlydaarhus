@@ -21,7 +21,8 @@ module:
   filter: 0
   genlyd: 0
   genlyd_adfs: 0
-  genlyd_maps: 0
+  genlyd_angular: 0
+  genlyd_search: 0
   geocoder: 0
   help: 0
   image: 0
@@ -44,6 +45,8 @@ module:
   path: 0
   redirect: 0
   samlauth: 0
+  search_api: 0
+  search_api_db: 0
   simple_fb_connect: 0
   system: 0
   taxonomy: 0

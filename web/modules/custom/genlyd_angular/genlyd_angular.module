@@ -1,0 +1,16 @@
+<?php
+/**
+ * @file
+ * Adds Angular to the site.
+ */
+
+/**
+ * Implements hook_proprocess_page().
+ *
+ */
+function genlyd_angular_preprocess_page(&$variables) {
+  if (isset($variables['node'])) {
+    // Load the AngularJS.
+    $variables['#attached']['library'][] = 'genlyd_angular/angular';
+  }
+}

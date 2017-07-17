@@ -1,0 +1,24 @@
+maps:
+  js:
+    js/libs/twig/twig.min.js: { minified: true }
+    js/genlyd_map.js: {}
+  dependencies:
+    - genlyd_search/openlayers
+    - core/jquery
+    - core/drupal
+
+openlayers:
+  js:
+    js/libs/proj4/proj4-compressed.js: { minified: true }
+    js/libs/openlayers/ol.js: { minified: true }
+  css:
+    base:
+      js/libs/openlayers/ol.css: {}
+
+search:
+  js:
+    js/SearchController.js: {}
+    js/services/SearchService.js: {}
+  dependencies:
+    - genlyd_angular/angular
+    - genlyd_search/maps
