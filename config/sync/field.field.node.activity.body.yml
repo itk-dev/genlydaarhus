@@ -6,7 +6,13 @@ dependencies:
     - field.storage.node.body
     - node.type.activity
   module:
+    - allowed_formats
     - text
+third_party_settings:
+  allowed_formats:
+    filtered_html: filtered_html
+    editor_html: '0'
+    plain_text: '0'
 id: node.activity.body
 field_name: body
 entity_type: node

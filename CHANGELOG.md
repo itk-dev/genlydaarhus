@@ -2,8 +2,22 @@
 
 ## In development
 
+## v1.0.7
+
+* Disabled "Internal Page Cache" module (it always caches pages for anonymous users)
+* Disabled views caching.
+
+## v1.0.6
+
+* Changed views caching to time based.
+
 ## v1.0.5
 * Removed module missing errors
+* Updated drupal core
+* Updated contrib modules
+* Removed missing modules error
+* Added specific textfilter for page
+* Fixed pagination issue
 
 ## v1.0.4
 

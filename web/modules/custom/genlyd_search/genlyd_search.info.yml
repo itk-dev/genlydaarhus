@@ -1,0 +1,8 @@
+name: Genlyd search
+type: module
+description: 'Search in activities'
+package: Genlyd
+core: '8.x'
+dependencies:
+  - geocoder
+  - genlyd_angular

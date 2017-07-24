@@ -21,7 +21,8 @@ module:
   filter: 0
   genlyd: 0
   genlyd_adfs: 0
-  genlyd_maps: 0
+  genlyd_angular: 0
+  genlyd_search: 0
   geocoder: 0
   help: 0
   image: 0
@@ -39,12 +40,13 @@ module:
   metatag: 0
   metatag_open_graph: 0
   node: 0
-  page_cache: 0
   page_manager: 0
   page_manager_ui: 0
   path: 0
   redirect: 0
   samlauth: 0
+  search_api: 0
+  search_api_db: 0
   simple_fb_connect: 0
   system: 0
   taxonomy: 0
@@ -70,3 +72,4 @@ theme:
 _core:
   default_config_hash: m2GVq11UAOVuNgj8x0t5fMOPujpvQQ_zxLoaly1BMEU
 langcode: da
+profile: minimal

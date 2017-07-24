@@ -1,0 +1,158 @@
+<div data-ng-app="genlyd" data-ng-controller="SearchController">
+  {% embed "@modules/grid/grid-halfs.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          {% include "@modules/heading-with-icon.twig" with { headingWithIcon: { title: 'Search activities' | trans, subtitle: 'Here you can search available activities' | trans } } %}
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <button class="button is-cta js-maps-switch" data-ng-click="toggleMap()" ng-bind="showMapLabel">&nbsp;</button>
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-fourths.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <button class="button is-cta" data-ng-click="toggleFilters()" ng-bind="filterLabel">&nbsp;</button>
+        {% endblock %}
+      {% endembed %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <button class="button is-cta activities-top--my-location" data-ng-click="gotoMyLocation()" data-ng-show="showMap">{{ 'My location' | trans }}</button>
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  {% embed "@modules/grid/grid-full.twig" %}
+    {% block items %}
+      {% embed "@modules/grid/grid-item.twig" %}
+        {% block content %}
+          <!-- Display block is needed here as the css force display none, which
+               don't work with angular -->
+          <div class="filters" data-ng-if="showFilters" data-ng-cloak>
+            {% embed "@modules/grid/grid-halfs.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% embed "@modules/grid/grid-item-section.twig" %}
+                      {% block content %}
+                        <label class="form-label" for="title">{{ 'Title' | trans }}</label>
+                        <div class="text-field">
+                          <input data-ng-model="searchText" id="title" name="title" size="30" maxlength="128"
+                                 class="text-field--input" type="text">
+                        </div>
+                      {% endblock %}
+                    {% endembed %}
+                  {% endblock %}
+                {% endembed %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    {% embed "@modules/grid/grid-item-section.twig" %}
+                      {% block content %}
+                        <label class="form-label" for="zipcode">{{ 'Zipcode' | trans }}</label>
+                        <div class="text-field">
+                          <input data-ng-model="searchZipcode" id="zipcode" name="zipcode" size="30" maxlength="128"
+                                 class="text-field--input" type="text">
+                        </div>
+                      {% endblock %}
+                    {% endembed %}
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+
+            <!-- Facets - vocabulary -->
+            <fieldset data-drupal-selector="edit-field-categories-target-id"
+                      id="edit-field-categories-target-id--a3lppe5bYBM--wrapper"
+                      class="fieldgroup form-composite fieldset">
+              <legend>{{ 'Categories' | trans }}</legend>
+
+              {% embed "@modules/grid/grid-fourths.twig" %}
+                {% block items %}
+                  {% for id, name in facets %}
+                    {% embed "@modules/grid/grid-item.twig" %}
+                      {% block content %}
+                        <div class="grid--item-section ">
+                          <label class="checkbox ">
+                            <div class="checkbox--label">{{ name }}</div>
+                            <input data-ng-model="searchFacets['{{ id }}']" id="facet-{{ id }}" name="facet-{{ id }}"
+                                   value="{{ id }}" class="form-checkbox checkbox--input" type="checkbox">
+                            <div class="checkbox--indicator"></div>
+                          </label>
+                        </div>
+                      {% endblock %}
+                    {% endembed %}
+                  {% endfor %}
+                {% endblock %}
+              {% endembed %}
+            </fieldset>
+
+            {% embed "@modules/grid/grid-halfs.twig" %}
+              {% block items %}
+                {% embed "@modules/grid/grid-item.twig" %}
+                  {% block content %}
+                    <div class="grid--item-section ">
+                      <input data-ng-click="search()" name="" value="{{ 'Search' | trans }}" class="button is-cta "
+                             type="submit">
+                    </div>
+                  {% endblock %}
+                {% endembed %}
+              {% endblock %}
+            {% endembed %}
+          </div>
+        {% endblock %}
+      {% endembed %}
+    {% endblock %}
+  {% endembed %}
+
+  <!-- Search results - table view -->
+  <!-- Should be render in the "search_result" view-mode" as the snippet -->
+  <div class="grid is-fourths search-spinner" data-ng-show="searching">
+    <div class="grid--inner">
+      <div style="width: 100%;text-align: center;">
+        <img style="width: 55px;" src="/{{ loader }}"/>
+      </div>
+    </div>
+  </div>
+
+  <div data-ng-show="!searching && !showMap">
+    {% embed "@modules/grid/grid-fourths.twig" %}
+      {% block items %}
+        <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet"></article>
+      {% endblock %}
+    {% endembed %}
+
+    <!-- Pager -->
+    {% embed "@modules/grid/grid-full.twig" %}
+      {% block items %}
+        {% embed "@modules/grid/grid-item.twig" %}
+          {% block content %}
+            <div class="pagination">
+              <div paging
+                   page="pager.page"
+                   page-size="pager.size"
+                   total="pager.no_of_results"
+                   paging-action="changePage('SearchPager', page)"
+                   show-prev-next="true"
+                   show-first-last="true"
+                   active-class="is-active"
+                   disabled-class="is-disabled"></div>
+            </div>
+          {% endblock %}
+        {% endembed %}
+      {% endblock %}
+    {% endembed %}
+  </div>
+
+  <div class="activities-map" data-ng-show="showMap">
+    <div id="mapid" class="activities-map--view">
+      <div id="popup"></div>
+    </div>
+  </div>
+</div>

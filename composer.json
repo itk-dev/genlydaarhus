@@ -41,7 +41,10 @@
     "drupal/geocoder": "^2.0@alpha",
     "drupal/better_exposed_filters": "^3.0@alpha",
     "drupal/samlauth": "2.x-dev",
-    "drupal/allowed_formats": "^1.1"
+    "drupal/allowed_formats": "^1.1",
+    "drupal/search_api": "^1.2",
+    "drupal/facets": "^1.0@alpha",
+    "drupal/search_api_page": "^1.0@alpha"
   },
   "require-dev": {
     "behat/mink": "~1.7",
@@ -99,6 +102,9 @@
       ]
     },
     "patches": {
+      "drupal/core": {
+        "https://www.drupal.org/node/2798947": "https://www.drupal.org/files/issues/views_pagers_include-2798947-7.patch"
+      },
       "drupal/page_manager": {
         "Removed containing div": "patch/page_manager_remove_containing_div.patch"
       }
