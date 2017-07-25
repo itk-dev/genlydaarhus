@@ -79,8 +79,8 @@ class MultistepFormImage extends MultistepFormBase {
 
     $form['actions']['submit']['#value'] = t('Next');
     $form['actions']['back'] = [
-      'href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
-      'title' => t('Back'),
+      '#href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
+      '#title' => t('Back'),
     ];
 
     return $form;
