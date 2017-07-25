@@ -2,6 +2,13 @@
 
 ## In development
 
+## v1.1.1
+* SUPPORT-1145: Fixed render errors on create activity forms
+* Updated core to 8.3.5
+
+## 1.1.0
+@Todo @Jesper K.
+
 ## v1.0.7
 
 * Disabled "Internal Page Cache" module (it always caches pages for anonymous users)
