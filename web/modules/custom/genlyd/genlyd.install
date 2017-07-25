@@ -173,3 +173,13 @@ function genlyd_update_8112() {
     ->condition('bundle', 'activity')
     ->execute();
 }
+
+/**
+ * Fix db missing modules error.
+ */
+function genlyd_update_8113() {
+  $query = \Drupal::database()->delete('key_value')
+    ->condition('collection', 'system.schema')
+    ->condition('name', 'genlyd_maps')
+    ->execute();
+}
