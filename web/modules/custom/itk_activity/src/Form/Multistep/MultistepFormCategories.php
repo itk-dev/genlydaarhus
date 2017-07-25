@@ -46,7 +46,7 @@ class MultistepFormCategories extends MultistepFormBase {
     $form['field_categories'] = [
       '#type' => 'checkboxes',
       '#title' => t('Categories'),
-      '#default_value' => $this->store->get('field_categories') ? $this->store->get('field_categories') : NULL,
+      '#default_value' => $this->store->get('field_categories') ? $this->store->get('field_categories') : array(),
       '#options' => $categoriesOptions,
     ];
 
