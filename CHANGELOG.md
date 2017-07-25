@@ -5,6 +5,7 @@
 ## v1.1.1
 * SUPPORT-1145: Fixed render errors on create activity forms
 * Updated core to 8.3.5
+* Updated contrib modules
 
 ## 1.1.0
 @Todo @Jesper K.
