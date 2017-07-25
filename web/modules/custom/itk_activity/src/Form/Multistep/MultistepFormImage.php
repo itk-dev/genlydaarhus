@@ -47,9 +47,10 @@ class MultistepFormImage extends MultistepFormBase {
     ];
 
     // Load image preview, if image is already set.
-    $fileId = $this->store->get('field_image')[0];
-    if (isset($fileId)) {
+    $file = $this->store->get('field_image');
+    if (!empty($file)) {
       // Get the file.
+      $fileId = $file[0];
       $file = File::load($fileId);
 
       if ($file) {
