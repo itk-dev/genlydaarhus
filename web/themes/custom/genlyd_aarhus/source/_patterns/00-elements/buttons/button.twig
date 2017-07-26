@@ -1,1 +1,5 @@
-<a class="button {{ buttonClass }} {{ jsClass }}" href="{{ button.href }}">{{ button.title }}</a>
+{% if button['#title'] %}
+  <a class="button {{ buttonClass }} {{ jsClass }}" href="{{ button['#href'] }}">{{ button['#title']  }}</a>
+{% else %}
+  <a class="button {{ buttonClass }} {{ jsClass }}" href="{{ button.href }}">{{ button.title }}</a>
+{% endif %}
