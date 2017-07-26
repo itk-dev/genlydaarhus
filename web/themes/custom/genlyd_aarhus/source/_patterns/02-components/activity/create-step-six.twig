@@ -64,7 +64,7 @@
 
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[0].title } } %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[0]['#title'] } } %}
         {% endblock %}
       {% endembed %}
 
@@ -110,7 +110,7 @@
 
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[1].title } } %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[1]['#title'] } } %}
         {% endblock %}
       {% endembed %}
 
@@ -163,10 +163,10 @@
                     {% block items %}
                       {% embed "@modules/grid/grid-item.twig" %}
                         {% block content %}
-                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[3].title } } %}
+                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[3]['#title'] } } %}
                         {% endblock %}
                       {% endembed %}
-                      {% if addActivity.data.image.src %}
+                      {% if addActivity.data.image['#src'] %}
                         {% embed "@modules/grid/grid-item.twig" %}
                           {% block content %}
                             {% include "@elements/images/image.twig" with { image: addActivity.data.image } %}
@@ -186,7 +186,7 @@
                     {% block items %}
                       {% embed "@modules/grid/grid-item.twig" %}
                         {% block content %}
-                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[2].title } } %}
+                          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[2]['#title'] } } %}
                         {% endblock %}
                       {% endembed %}
                     {% endblock %}
@@ -213,7 +213,7 @@
 
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[4].title } } %}
+          {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: progressBar.items[4]['#title'] } } %}
         {% endblock %}
       {% endembed %}
 

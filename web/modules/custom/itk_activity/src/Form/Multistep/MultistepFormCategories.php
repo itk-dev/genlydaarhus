@@ -46,14 +46,14 @@ class MultistepFormCategories extends MultistepFormBase {
     $form['field_categories'] = [
       '#type' => 'checkboxes',
       '#title' => t('Categories'),
-      '#default_value' => $this->store->get('field_categories') ? $this->store->get('field_categories') : NULL,
+      '#default_value' => $this->store->get('field_categories') ? $this->store->get('field_categories') : array(),
       '#options' => $categoriesOptions,
     ];
 
     $form['actions']['submit']['#value'] = t('Next');
     $form['actions']['back'] = [
-      'href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
-      'title' => t('Back'),
+      '#href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
+      '#title' => t('Back'),
     ];
 
 
