@@ -15,6 +15,7 @@ use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
 use Drupal\Core\Url;
+use Drupal\file\Entity\File;
 
 /**
  * Class MultistepFormBase.
@@ -186,11 +187,17 @@ abstract class MultistepFormBase extends FormBase {
   protected function saveData() {
     $data = $this->getData();
 
-    $this->deleteStore();
+    // Check that image has not been removed after being added.
+    $image = array_key_exists(0, $data['field_image']) ? File::load($data['field_image'][0]) : NULL;
+    if (is_null($image)) {
+      $data['field_image'] = [];
+    }
 
     // Create the activity.
     $activity = Node::create($data);
     $activity->save();
+
+    $this->deleteStore();
 
     drupal_set_message(t('The form has been saved.'));
 
