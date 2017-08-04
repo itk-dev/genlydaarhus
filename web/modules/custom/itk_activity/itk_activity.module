@@ -79,7 +79,9 @@ function itk_activity_preprocess_node__activity(&$variables) {
       $signupButton['title'] = t('Unregister');
     }
     else {
-      $signupButton['title'] = t('Register');
+      $signupButton['title'] = t('Register', [], [
+        'context' => 'itk_activity'
+      ]);
     }
 
     $externalSignupButton = [
