@@ -2,6 +2,8 @@
 
 ## In development
 
+## v1.1.3
+
 * Fixed translation of "Register" under "node/{nid}".
 
 ## v1.1.2
