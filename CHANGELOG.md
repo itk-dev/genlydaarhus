@@ -2,6 +2,8 @@
 
 ## In development
 
+* Fixed translation of "Register" under "node/{nid}".
+
 ## v1.1.2
 
 * Fixed issue with owner check on clone activity.
