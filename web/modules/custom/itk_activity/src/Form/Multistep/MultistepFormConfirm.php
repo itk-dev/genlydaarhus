@@ -52,7 +52,8 @@ class MultistepFormConfirm extends MultistepFormBase {
     $helpNeeded = Term::load($this->store->get('field_help_needed'))->name->value;
     $physicalRequirements = Term::load($this->store->get('field_physical_requirements'))->name->value;
 
-    $image = array_key_exists(0, $this->store->get('field_image')) ? File::load($this->store->get('field_image')[0]) : NULL;
+    $fieldImage = $this->store->get('field_image');
+    $image = is_array($fieldImage) && array_key_exists(0, $fieldImage) ? File::load($this->store->get('field_image')[0]) : NULL;
 
     $form['data'] = [
       'title' => [

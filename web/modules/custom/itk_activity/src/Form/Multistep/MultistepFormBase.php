@@ -14,7 +14,6 @@ use Drupal\Core\Session\SessionManagerInterface;
 use Drupal\user\PrivateTempStoreFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\node\Entity\Node;
-use Drupal\Core\Url;
 use Drupal\file\Entity\File;
 
 /**
@@ -84,6 +83,69 @@ abstract class MultistepFormBase extends FormBase {
 
     $form = array();
     $form['actions']['#type'] = 'actions';
+    $form['actions']['submitStep'] = [
+      [
+        '#type' => 'submit',
+        '#value' => '1. ' . t('About activity'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'about',
+        '#name' => 'submit-step-0',
+        '#submit' => ['::submitStep'],
+      ],
+      [
+        '#type' => 'submit',
+        '#value' => '2. ' . t('Information'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'information',
+        '#name' => 'submit-step-1',
+        '#submit' => ['::submitStep'],
+      ],
+      [
+        '#type' => 'submit',
+        '#value' => '3. ' . t('Categories'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'categories',
+        '#name' => 'submit-step-2',
+        '#submit' => ['::submitStep'],
+      ],
+      [
+        '#type' => 'submit',
+        '#value' => '4. ' . t('Image'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'image',
+        '#name' => 'submit-step-3',
+        '#submit' => ['::submitStep'],
+      ],
+      [
+        '#type' => 'submit',
+        '#value' => '5. ' . t('Details'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'details',
+        '#name' => 'submit-step-4',
+        '#submit' => ['::submitStep'],
+      ],
+      [
+        '#type' => 'submit',
+        '#value' => '6. ' . t('Confirm'),
+        '#attributes' => [
+          'class' => ['progress-bar--submit'],
+        ],
+        '#step' => 'confirm',
+        '#name' => 'submit-step-5',
+        '#submit' => ['::submitStep'],
+      ],
+
+    ];
     $form['actions']['submit'] = array(
       '#type' => 'submit',
       '#value' => t('Submit'),
@@ -92,6 +154,28 @@ abstract class MultistepFormBase extends FormBase {
     );
 
     return $form;
+  }
+
+  /**
+   * Commit the current step to the store.
+   *
+   * To be overridden in inheritance.
+   *
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  protected function commitStep(FormStateInterface $form_state) {}
+
+  /**
+   * @param array $form
+   * @param \Drupal\Core\Form\FormStateInterface $form_state
+   */
+  public function submitStep(array &$form, FormStateInterface $form_state) {
+    $this->commitStep($form_state);
+
+    $element = $form_state->getTriggeringElement();
+    $step = $element['#step'];
+
+    $form_state->setRedirect('itk_activity.multistep_' . $step);
   }
 
   /**
@@ -131,38 +215,32 @@ abstract class MultistepFormBase extends FormBase {
     return [
       'items' => [
         [
-          '#title' => t("About activity"),
-          '#href' => Url::fromRoute('itk_activity.multistep_about')->toString(),
+          '#title' => t('About activity'),
           '#open' => TRUE,
           '#active' => $active == 'about',
         ],
         [
-          '#title' => t("Information"),
-          '#href' => Url::fromRoute('itk_activity.multistep_information')->toString(),
+          '#title' => t('Information'),
           '#open' => $this->store->get('step_information'),
           '#active' => $active == 'information',
         ],
         [
-          '#title' => t("Categories"),
-          '#href' => Url::fromRoute('itk_activity.multistep_categories')->toString(),
+          '#title' => t('Categories'),
           '#open' => $this->store->get('step_categories'),
           '#active' => $active == 'categories',
         ],
         [
-          '#title' => t("Image"),
-          '#href' => Url::fromRoute('itk_activity.multistep_image')->toString(),
+          '#title' => t('Image'),
           '#open' => $this->store->get('step_image'),
           '#active' => $active == 'image',
         ],
         [
-          '#title' => t("Details"),
-          '#href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
+          '#title' => t('Details'),
           '#open' => $this->store->get('step_details'),
           '#active' => $active == 'details',
         ],
         [
-          '#title' => t("Confirm"),
-          '#href' => Url::fromRoute('itk_activity.multistep_confirm')->toString(),
+          '#title' => t('Confirm'),
           '#open' => $this->store->get('step_confirm'),
           '#active' => $active == 'confirm',
         ],

@@ -133,7 +133,7 @@ class MultistepFormDetails extends MultistepFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  protected function commitStep(FormStateInterface $form_state) {
     $this->store->set('field_date', $form_state->getValue('field_date'));
     $this->store->set('field_time_start', $form_state->getValue('field_time_start'));
     $this->store->set('field_time_end', $form_state->getValue('field_time_end'));
@@ -141,7 +141,13 @@ class MultistepFormDetails extends MultistepFormBase {
     $this->store->set('field_zipcode', $form_state->getValue('field_zipcode'));
     $this->store->set('field_area', $form_state->getValue('field_area'));
     $this->store->set('field_address', $form_state->getValue('field_address'));
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $this->commitStep($form_state);
     $this->acceptStep('confirm');
 
     // Redirect to next step.

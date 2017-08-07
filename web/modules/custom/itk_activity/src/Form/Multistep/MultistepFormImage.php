@@ -97,12 +97,18 @@ class MultistepFormImage extends MultistepFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  protected function commitStep(FormStateInterface $form_state) {
     $fileId = $form_state->getValue('field_image');
 
     // Set values in storage.
     $this->store->set('field_image', $fileId);
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $this->commitStep($form_state);
     $this->acceptStep('details');
 
     // Redirect to next step.
