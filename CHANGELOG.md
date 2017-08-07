@@ -2,6 +2,14 @@
 
 ## In development
 
+## v1.1.3
+
+* Fixed translation of "Register" under "node/{nid}".
+
+## v1.1.2
+
+* Fixed issue with owner check on clone activity.
+
 ## v1.1.1
 * SUPPORT-1145: Fixed render errors on create activity forms
 * Updated core to 8.3.5
