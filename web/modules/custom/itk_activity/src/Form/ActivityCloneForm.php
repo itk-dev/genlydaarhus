@@ -60,7 +60,7 @@ class ActivityCloneForm extends FormBase {
     ];
 
     $form['data']['clone'] = [
-      'title' => $this->t('You are creating new occurrences of the activity "@title" set to occur on @date, @timeStart - @timeEnd.', [
+      '#title' => $this->t('You are creating new occurrences of the activity "@title" set to occur on @date, @timeStart - @timeEnd.', [
         '@title' => $node->title->value,
         '@date' => \Drupal::service('date.formatter')->format((new \DateTime($node->field_date->value))->getTimestamp(), 'date_medium'),
         '@timeStart' => $node->field_time_start->value,
@@ -120,7 +120,7 @@ class ActivityCloneForm extends FormBase {
         '#attributes' => [
           'class' => ['button-delete'],
         ],
-        'element_index' => $i,
+        '#element_index' => $i,
         '#name' => 'remove-occurrences-' . $i,
         '#value' => t('Remove'),
         '#submit' => ['::removeCallback'],
@@ -199,7 +199,7 @@ class ActivityCloneForm extends FormBase {
    */
   public function removeCallback(array &$form, FormStateInterface $form_state) {
     $element = $form_state->getTriggeringElement();
-    $index = $element['element_index'];
+    $index = $element['#element_index'];
 
     $occurrences = $form_state->get('occurrences');
 
