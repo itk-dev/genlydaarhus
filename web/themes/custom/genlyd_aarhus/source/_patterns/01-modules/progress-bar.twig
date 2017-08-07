@@ -6,28 +6,30 @@
  * Available variables:
  * - progressBar: The progressBar data.
  *   - items: Array of progress bar elements.
- *     - active: Is the element active?
- *     - title: Element title
- *     - href: Link to the step.
- *     - open: Is the link open for click?
+ *     - #active: Is the element active?
+ *     - #title: Element title
+ *     - #href: Link to the step.
+ *     - #open: Is the link open for click?
  */
 #}
+
 <div class="progress-bar">
   <ul class="progress-bar--list">
     {% for item in progressBar.items %}
-      {% if item.title %}
-        {% if not item.active and item.open %}
-          <li class="progress-bar--list-item progress-bar--with-link {{ item.active ? 'is-active' }}">
-            <a class="progress-bar--link" href="{{ item.href }}">
+
+      {% if item['#title'] %}
+        {% if not item['#active'] and item['#open'] %}
+          <li class="progress-bar--list-item progress-bar--with-link {{ item['#active'] ? 'is-active' }}">
+            <a class="progress-bar--link" href="{{ item['#href'] }}">
               <p class="progress-bar--text">
-                {{ loop.index }}. {{ item.title }}
+                {{ loop.index }}. {{ item['#title'] }}
               </p>
             </a>
           </li>
         {% else %}
-          <li class="progress-bar--list-item {{ item.active ? 'is-active' }} {{ item.open != true ? 'is-not-open' }}">
+          <li class="progress-bar--list-item {{ item['#active'] ? 'is-active' }} {{ item['#open'] != true ? 'is-not-open' }}">
             <p class="progress-bar--text">
-              {{ loop.index }}. {{ item.title }}
+              {{ loop.index }}. {{ item['#title'] }}
             </p>
           </li>
         {% endif %}

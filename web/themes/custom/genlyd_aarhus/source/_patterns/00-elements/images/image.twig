@@ -1,2 +1,5 @@
-<img class="image {{ image.class }}" src="{{ image.src }}">
-
+{% if image['#src']%}
+  <img class="image {{ image.class }}" src="{{ image['#src'] }}">
+{% else %}
+  <img class="image {{ image.class }}" src="{{ image.src }}">
+{% endif %}

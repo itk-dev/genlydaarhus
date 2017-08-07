@@ -89,8 +89,11 @@ class ActivityController extends ControllerBase {
 
     $currentUser = \Drupal::currentUser();
 
+    $nodeUserid = $node->getOwner()->id();
+    $userid = $currentUser->getAccount()->id();
+
     // Check the owner is the current user.
-    if ($node->uid->value != $currentUser->uid->value) {
+    if ($nodeUserid != $userid) {
       drupal_set_message(t('Activity not owned by user.'));
 
       // Redirect to user page.

@@ -57,8 +57,8 @@ display:
           id: 0
           total_pages: null
           tags:
-            previous: '‹ previous'
-            next: 'next ›'
+            previous: '‹ forrige'
+            next: 'næste ›'
             first: '« first'
             last: 'last »'
           expose:

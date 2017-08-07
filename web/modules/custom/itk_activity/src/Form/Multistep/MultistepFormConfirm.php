@@ -82,55 +82,67 @@ class MultistepFormConfirm extends MultistepFormBase {
 
     $form['data'] = [
       'title' => [
-        'label' => t('Title'),
-        'value' => $this->store->get('title'),
+        '#label' => t('Title'),
+        '#value' => $this->store->get('title'),
       ],
       'body' => [
-        'label' => t('Description'),
-        'value' => $this->store->get('body'),
+        '#label' => t('Description'),
+        '#value' => $this->store->get('body'),
       ],
       'address' => [
-        'label' => t('Address'),
-        'value' => $this->store->get('field_address'),
+        '#label' => t('Address'),
+        '#value' => $this->store->get('field_address'),
       ],
       'area' => [
-        'label' => t('Area'),
-        'value' => $this->store->get('field_area'),
+        '#label' => t('Area'),
+        '#value' => $this->store->get('field_area'),
       ],
       'categories' => [
-        'label' => t('Categories'),
-        'value' => $categories,
+        '#label' => t('Categories'),
+        '#value' => $categories,
+      ],
+      'date' => [
+        '#label' => t('Date'),
+        '#value' => \Drupal::service('date.formatter')->format((new \DateTime($this->store->get('field_date')))->getTimestamp(), 'date_long'),
       ],
       'entryRequirements' => [
-        'label' => t('What level is required to participate?'),
-        'value' => $entryRequirements,
+        '#label' => t('What level is required to participate?'),
+        '#value' => $entryRequirements,
       ],
       'helpNeeded' => [
-        'label' => t('Do you need help?'),
-        'value' => $helpNeeded,
+        '#label' => t('Do you need help?'),
+        '#value' => $helpNeeded,
       ],
       'image' => [
         'src' => $imageUrl,
       ],
       'maximumParticipants' => [
-        'label' => t('How many can participate?'),
-        'value' => $this->store->get('field_maximum_participants'),
+        '#label' => t('How many can participate?'),
+        '#value' => $this->store->get('field_maximum_participants'),
       ],
       'physicalRequirements' => [
-        'label' => t('What are the physical requirements?'),
-        'value' => $physicalRequirements,
+        '#label' => t('What are the physical requirements?'),
+        '#value' => $physicalRequirements,
       ],
       'price' => [
-        'label' => t('Price'),
-        'value' => $this->store->get('field_price'),
+        '#label' => t('Price'),
+        '#value' => $this->store->get('field_price'),
       ],
       'signupRequired' => [
-        'label' => t('Is sign up required?'),
-        'value' => $signupRequired,
+        '#label' => t('Is sign up required?'),
+        '#value' => $signupRequired,
+      ],
+      'timeEnd' => [
+        '#label' => t('End time'),
+        '#value' => $this->store->get('field_time_end'),
+      ],
+      'timeStart' => [
+        '#label' => t('Start time'),
+        '#value' => $this->store->get('field_time_start'),
       ],
       'zipcode' => [
-        'label' => t('Zipcode'),
-        'value' => $this->store->get('field_zipcode'),
+        '#label' => t('Zipcode'),
+        '#value' => $this->store->get('field_zipcode'),
       ],
       'occurrences' => $occurrences,
     ];
@@ -139,8 +151,8 @@ class MultistepFormConfirm extends MultistepFormBase {
 
     $form['actions']['submit']['#value'] = t('Create activity');
     $form['actions']['back'] = [
-      'href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
-      'title' => t('Back'),
+      '#href' => Url::fromRoute('itk_activity.multistep_details')->toString(),
+      '#title' => t('Back'),
     ];
 
     return $form;

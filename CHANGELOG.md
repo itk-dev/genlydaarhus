@@ -2,6 +2,27 @@
 
 ## In development
 
+## v1.1.3
+
+* Fixed translation of "Register" under "node/{nid}".
+
+## v1.1.2
+
+* Fixed issue with owner check on clone activity.
+
+## v1.1.1
+* SUPPORT-1145: Fixed render errors on create activity forms
+* Updated core to 8.3.5
+* Updated contrib modules
+
+## 1.1.0
+@Todo @Jesper K.
+
+## v1.0.7
+
+* Disabled "Internal Page Cache" module (it always caches pages for anonymous users)
+* Disabled views caching.
+
 ## v1.0.6
 
 * Changed views caching to time based.
