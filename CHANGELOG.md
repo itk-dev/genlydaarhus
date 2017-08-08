@@ -2,12 +2,13 @@
 
 ## In development
 
-## v1.1.3
+## v1.1.4
+* SUPPORT-1159: Fixed bug on user display page
 
+## v1.1.3
 * Fixed translation of "Register" under "node/{nid}".
 
 ## v1.1.2
-
 * Fixed issue with owner check on clone activity.
 
 ## v1.1.1
