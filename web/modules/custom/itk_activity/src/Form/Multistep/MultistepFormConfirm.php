@@ -57,16 +57,19 @@ class MultistepFormConfirm extends MultistepFormBase {
     foreach ($this->store->get('occurrences') as $occurrence) {
       $occurrences[] = [
         'field_time_end' => [
-          'label' => t('End time'),
-          'value' => $occurrence['field_time_end'],
+          '#label' => t('End time'),
+          '#value' => isset($occurrence['field_time_end']) ? $occurrence['field_time_end'] : '',
         ],
         'field_time_start' => [
-          'label' => t('Start time'),
-          'value' => $occurrence['field_time_start'],
+          '#label' => t('Start time'),
+          '#value' => isset($occurrence['field_time_start']) ? $occurrence['field_time_start'] : '',
         ],
         'field_date' => [
-          'label' => t('Date'),
-          'value' => \Drupal::service('date.formatter')->format((new \DateTime($occurrence['field_date']))->getTimestamp(), 'date_long'),
+          '#label' => t('Date'),
+          '#value' => \Drupal::service('date.formatter')->format(
+            (new \DateTime(
+              isset($occurrence['field_date']) ? $occurrence['field_date'] : ''
+            ))->getTimestamp(), 'date_long'),
         ],
       ];
     }
@@ -114,7 +117,7 @@ class MultistepFormConfirm extends MultistepFormBase {
         '#value' => $helpNeeded,
       ],
       'image' => [
-        'src' => $imageUrl,
+        '#src' => $imageUrl,
       ],
       'maximumParticipants' => [
         '#label' => t('How many can participate?'),
