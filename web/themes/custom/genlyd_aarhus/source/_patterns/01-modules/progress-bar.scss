@@ -82,8 +82,8 @@ input[type=submit].progress-bar--submit {
   @include breakpoint($breakpoint-desk) {
     color: inherit;
     height: auto;
-    margin-bottom: $spacing-pixel-small;
-    margin-top: $spacing-pixel-small;
+    margin-bottom: $spacing-pixel-xxsmall;
+    margin-top: $spacing-pixel-xxsmall;
     text-indent: 0;
     width: 100%;
   }
