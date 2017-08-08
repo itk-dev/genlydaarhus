@@ -58,7 +58,7 @@ class MultistepFormDetails extends MultistepFormBase {
         '#type' => 'date',
         '#title' => t('Date'),
         '#required' => TRUE,
-        '#default_value' => $occurrence['field_date'],
+        '#default_value' => isset($occurrence['field_date']) ? $occurrence['field_date'] : '',
       );
 
       $form['occurrences'][$i]['field_time_start'] = array(
@@ -73,7 +73,7 @@ class MultistepFormDetails extends MultistepFormBase {
           'class' => [ 'js-timepicker-field' ],
         ],
         '#title' => t('Time start'),
-        '#default_value' => $occurrence['field_time_start'],
+        '#default_value' => isset($occurrence['field_time_start']) ? $occurrence['field_time_start'] : '',
       );
 
       $form['occurrences'][$i]['field_time_end'] = array(
@@ -88,7 +88,7 @@ class MultistepFormDetails extends MultistepFormBase {
           'class' => [ 'js-timepicker-field' ],
         ],
         '#title' => t('Time end'),
-        '#default_value' => $occurrence['field_time_end'],
+        '#default_value' => isset($occurrence['field_time_end']) ? $occurrence['field_time_end'] : '',
       );
 
       // Do not include remove button for only one date.
@@ -99,7 +99,7 @@ class MultistepFormDetails extends MultistepFormBase {
             'class' => ['button-delete'],
             'id' => 'button-delete-' . $i,
           ],
-          'element_index' => $i,
+          '#element_index' => $i,
           '#name' => 'button-delete-' . $i,
           '#value' => t('Remove'),
           '#submit' => ['::removeCallback'],
@@ -224,7 +224,7 @@ class MultistepFormDetails extends MultistepFormBase {
    */
   public function removeCallback(array &$form, FormStateInterface $form_state) {
     $element = $form_state->getTriggeringElement();
-    $index = $element['element_index'];
+    $index = $element['#element_index'];
 
     $occurrences = $this->store->get('occurrences');
 
