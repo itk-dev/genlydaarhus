@@ -39,22 +39,24 @@ helpBoxTitle: {
 {% endembed %}
 
 <form{{ attributes }}>
-  {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
-    {% embed "@modules/grid/grid-fourths.twig" %}
-      {% block items %}
-        {{ occur.field_date }}
-        {{ occur.field_time_start }}
-        {{ occur.field_time_end }}
-        {% embed "@modules/grid/grid-item.twig" %}
-          {% block content %}
-            <div style="margin-top: 44px">
-              {{ occur.actions.remove_occurrence }}
-            </div>
-          {% endblock %}
-        {% endembed %}
-      {% endblock %}
-    {% endembed %}
-  {% endfor %}
+  <div id="occurrence-fieldset-wrapper">
+    {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
+      {% embed "@modules/grid/grid-fourths.twig" %}
+        {% block items %}
+          {{ occur.field_date }}
+          {{ occur.field_time_start }}
+          {{ occur.field_time_end }}
+          {% embed "@modules/grid/grid-item.twig" %}
+            {% block content %}
+              <div style="margin-top: 44px">
+                {{ occur.actions.remove_occurrence }}
+              </div>
+            {% endblock %}
+          {% endembed %}
+        {% endblock %}
+      {% endembed %}
+    {% endfor %}
+  </div>
 
   {% embed "@modules/grid/grid-full.twig" %}
     {% block items %}

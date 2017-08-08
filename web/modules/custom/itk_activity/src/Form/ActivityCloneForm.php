@@ -125,7 +125,7 @@ class ActivityCloneForm extends FormBase {
         '#value' => t('Remove'),
         '#submit' => ['::removeCallback'],
         '#ajax' => [
-          'callback' => '::addmoreCallback',
+          'callback' => '::ajaxCallback',
           'wrapper' => "occurrence-fieldset-wrapper",
         ],
       ];
@@ -146,9 +146,9 @@ class ActivityCloneForm extends FormBase {
         'class' => ['button-secondary-dark'],
       ],
       '#value' => t('Add date and time'),
-      '#submit' => ['::addOne'],
+      '#submit' => ['::addOneCallback'],
       '#ajax' => [
-        'callback' => '::addmoreCallback',
+        'callback' => '::ajaxCallback',
         'wrapper' => "occurrence-fieldset-wrapper",
       ],
     ];
@@ -171,7 +171,7 @@ class ActivityCloneForm extends FormBase {
    *
    * Selects and returns the fieldset with the occurrences in it.
    */
-  public function addmoreCallback(array &$form, FormStateInterface $form_state) {
+  public function ajaxCallback(array &$form, FormStateInterface $form_state) {
     return $form['occurrences'];
   }
 
@@ -180,7 +180,7 @@ class ActivityCloneForm extends FormBase {
    *
    * Increments the max counter and causes a rebuild.
    */
-  public function addOne(array &$form, FormStateInterface $form_state) {
+  public function addOneCallback(array &$form, FormStateInterface $form_state) {
     $occurrences = $form_state->get('occurrences');
     $occurrences[] = [
       'field_date' => '',

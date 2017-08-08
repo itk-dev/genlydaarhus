@@ -24,10 +24,3 @@ timepickers:
   dependencies:
     - core/drupal
     - core/jquery
-
-ajax_no_scroll_top:
-  js:
-    js/ajaxNoScrollTop.js: {}
-  dependencies:
-    - core/drupal
-    - core/jquery
