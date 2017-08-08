@@ -1,6 +1,15 @@
-<div class="activity-confirm-info">
-  <div class="activity-confirm-info--label">
-    {% include "@elements/forms/form-label.twig" with { formLabel: { label: activityConfirmInfo['#label'] } } %}
+{% if button['#value'] %}
+  <div class="activity-confirm-info">
+    <div class="activity-confirm-info--label">
+      {% include "@elements/forms/form-label.twig" with { formLabel: { label: activityConfirmInfo['#label'] } } %}
+    </div>
+    <p class="activity-confirm-info--value">{{ activityConfirmInfo['#value'] }}</p>
   </div>
-  <p class="activity-confirm-info--value">{{ activityConfirmInfo['#value'] }}</p>
-</div>
+{% else %}
+  <div class="activity-confirm-info">
+    <div class="activity-confirm-info--label">
+      {% include "@elements/forms/form-label.twig" with { formLabel: { label: activityConfirmInfo['label'] } } %}
+    </div>
+    <p class="activity-confirm-info--value">{{ activityConfirmInfo['value'] }}</p>
+  </div>
+{% endif %}
