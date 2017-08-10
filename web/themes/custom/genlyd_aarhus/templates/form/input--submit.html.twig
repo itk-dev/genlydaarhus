@@ -14,20 +14,28 @@
 {% set loginButton = {
     "type": attributes.type,
     "name": attributes.name,
-    "title": attributes.value
+    "title": attributes.value,
+    "id": attributes.id,
+    "style": attributes.style
   }
 %}
 
-{% embed "@modules/grid/grid-item-section.twig" %}
-  {% block content %}
-
-    {% if 'button-secondary-dark' in attributes.class %}
-      {% include "@elements/buttons/button-input-secondary-dark.twig" with { button: loginButton } %}
-    {% elseif 'button-delete' in attributes.class %}
-      {% include "@elements/buttons/button-input-delete.twig" with { button: loginButton } %}
-    {% else %}
-      {% include "@elements/buttons/button-input-call-to-action.twig" with { button: loginButton } %}
-    {% endif %}
-
-  {% endblock %}
-{% endembed %}
+{% if attributes['data-grid-type']['0'] == 'grid-inner' %}
+  {% embed "@modules/grid/grid-item.twig" %}
+    {% block content %}
+      {% include "@elements/buttons/button-input.twig" with { button: loginButton } %}
+    {% endblock %}
+  {% endembed %}
+{% else %}
+  {% embed "@modules/grid/grid-item-section.twig" %}
+    {% block content %}
+      {% if 'button-secondary-dark' in attributes.class %}
+        {% include "@elements/buttons/button-input-secondary-dark.twig" with { button: loginButton } %}
+      {% elseif 'button-delete' in attributes.class %}
+        {% include "@elements/buttons/button-input-delete.twig" with { button: loginButton } %}
+      {% else %}
+        {% include "@elements/buttons/button-input-call-to-action.twig" with { button: loginButton } %}
+      {% endif %}
+    {% endblock %}
+  {% endembed %}
+{% endif %}

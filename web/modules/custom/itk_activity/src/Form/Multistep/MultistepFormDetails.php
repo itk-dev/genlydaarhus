@@ -34,7 +34,9 @@ class MultistepFormDetails extends MultistepFormBase {
 
     $form['#tree'] = TRUE;
     $form['occurrences'] = [
-      '#type' => 'fieldset',
+      '#prefix' => '<div id="occurences-placeholder">', // Id to be replaced by submit output.
+      '#suffix' => '</div>',
+      '#title' => $this->t('Occurences'),
       'actions' => [
         '#type' => 'actions',
       ],
@@ -49,9 +51,14 @@ class MultistepFormDetails extends MultistepFormBase {
       $this->store->set('occurrences', $occurrences);
     }
 
+    // Each row of occurences
     foreach ($occurrences as $i => $occurrence) {
       $form['occurrences'][$i] = [
-        '#prefix' => $this->t('Occurrence @nr', ['@nr' => $i])
+        '#prefix' => '<div class="grid is-fourths"><div class="grid--inner">',
+        '#suffix' => '</div></div>',
+        '#title' => $this->t('Occurrence @nr', ['@nr' => $i]),
+        '#type' => 'html_tag',
+        '#tag' => 'div',
       ];
 
       $form['occurrences'][$i]['field_date'] = array(
@@ -91,30 +98,30 @@ class MultistepFormDetails extends MultistepFormBase {
         '#default_value' => isset($occurrence['field_time_end']) ? $occurrence['field_time_end'] : '',
       );
 
-      // Do not include remove button for only one date.
       if ($i > 0) {
         $form['occurrences'][$i]['actions']['remove_occurrence'] = [
           '#type' => 'submit',
           '#attributes' => [
             'class' => ['button-delete'],
-            'id' => 'button-delete-' . $i,
+            'data-grid-type' => ['grid-inner'],
+            'style' => ['margin-top: 44px']
           ],
           '#element_index' => $i,
-          '#name' => 'button-delete-' . $i,
+          '#name' => 'button-delete-' . $i,   // Name used to identify which button is clicked
           '#value' => t('Remove'),
-          '#submit' => ['::removeCallback'],
+          '#submit' => ['::removeLine'],
+          '#limit_validation_errors' => array(),  // Ignore all validation errors for submit to run
           '#ajax' => [
-            'callback' => '::addmoreCallback',
-            'wrapper' => "occurrence-remove-" . $i . "-fieldset-wrapper",
+            'callback' => '::removeCallback',
+            'wrapper' => "occurences-placeholder", // The HTML id to replace with ajax
           ],
         ];
       }
     }
-
     $form['occurrences_actions'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('Occurrence actions'),
-    ];
+     ];
 
     $form['occurrences_actions']['actions'] = [
       '#type' => 'actions',
@@ -122,15 +129,16 @@ class MultistepFormDetails extends MultistepFormBase {
 
     $form['occurrences_actions']['actions']['add_occurrence'] = [
       '#type' => 'submit',
+      '#name' => 'button-add',
       '#attributes' => [
-        'class' => ['button-secondary-dark'],
-        'id' => 'button-add-occurrence',
+        'class' => ['button-secondary-dark']
       ],
       '#value' => t('Add date and time'),
-      '#submit' => ['::addOne'],
+      '#submit' => array('::addOne'),
+      '#limit_validation_errors' => array(),  // Ignore all validation errors for submit to run
       '#ajax' => [
         'callback' => '::addmoreCallback',
-        'wrapper' => "occurrence-add-fieldset-wrapper",
+        'wrapper' => "occurences-placeholder", // The HTML id to replace with ajax
       ],
     ];
 
@@ -153,7 +161,7 @@ class MultistepFormDetails extends MultistepFormBase {
       '#attributes' => [
         'min' => 0,
         'max' => 9999,
-        'class' => [ 'js-field-zipcode', ],
+        'class' => [ 'js-field-zipcode' ],
       ],
       '#required' => TRUE,
       '#title' => t('Zipcode'),
@@ -166,7 +174,7 @@ class MultistepFormDetails extends MultistepFormBase {
     $form['field_area'] = array(
       '#type' => 'textfield',
       '#attributes' => [
-        'class' => [ 'js-field-area', ],
+        'class' => [ 'js-field-area' ],
       ],
       '#title' => t('Area'),
       '#default_value' => $this->store->get('field_area') ? $this->store->get('field_area') : NULL,
@@ -196,16 +204,11 @@ class MultistepFormDetails extends MultistepFormBase {
   }
 
   /**
-   * Callback for both ajax-enabled buttons.
+   * Submit function for add new occurence.
    *
-   * Selects and returns the fieldset with the occurrences in it.
-   */
-  public function addmoreCallback(array &$form, FormStateInterface $form_state) {
-    return $form['occurrences'];
-  }
-
-  /**
-   * Submit handler for the "add-one-more" button.
+   * All data modification should be part of a submit function.
+   * Submit function is executed before each ajax callback.
+   *
    */
   public function addOne(array &$form, FormStateInterface $form_state) {
     $occurrences = $this->store->get('occurrences');
@@ -215,26 +218,50 @@ class MultistepFormDetails extends MultistepFormBase {
       'field_time_end' => '',
     ];
     $this->store->set('occurrences', $occurrences);
-
     $form_state->setRebuild(TRUE);
+
+    return $form['occurrences'];
   }
 
   /**
-   * Submit handler for the "remove one" button.
+   * Submit function for remove occurence.
+   *
+   * All data modification should be part of a submit function.
+   * Submit function is executed before each ajax callback.
    */
-  public function removeCallback(array &$form, FormStateInterface $form_state) {
+  public function removeLine(array &$form, FormStateInterface $form_state) {
     $element = $form_state->getTriggeringElement();
     $index = $element['#element_index'];
 
     $occurrences = $this->store->get('occurrences');
 
-    if (array_key_exists($index, $occurrences)) {
+    if(array_key_exists($index, $occurrences)) {
       unset($occurrences[$index]);
     }
 
     $this->store->set('occurrences', $occurrences);
 
     $form_state->setRebuild(TRUE);
+
+    return $form['occurrences'];
+  }
+
+  /**
+   * Callback for addMore button.
+   *
+   * The occurences have changed during submit so we can just return the altered form.
+   */
+  public function addmoreCallback(array &$form, FormStateInterface $form_state) {
+    return $form['occurrences'];
+  }
+
+  /**
+   * Submit handler for the "remove occurence" button.
+   *
+   * The occurences have changed during submit so we can just return the altered form.
+   */
+  public function removeCallback(array &$form, FormStateInterface $form_state) {
+    return $form['occurrences'];
   }
 
   /**

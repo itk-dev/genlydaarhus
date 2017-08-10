@@ -16,7 +16,6 @@
 {# Form #}
 
 <form{{ attributes }}>
-
   {# Header #}
 
   {% embed "@modules/grid/grid-full.twig" %}
@@ -106,69 +105,62 @@
           {% endembed %}
         {% endblock %}
       {% endembed %}
-
       {% embed "@modules/grid/grid-item.twig" %}
+
         {% block content %}
-          {% embed "@modules/grid/grid-thirds.twig" %}
-            {% block items %}
-              {% if form %}
-                {# Drupal #}
+          {% if form %}
+            {# Drupal #}
+            <div id="occurences">
+              <div id="occurences-placeholder">
                 {% for key, occur in form.occurrences if key matches '/^\\d+$/' %}
                   {% embed "@modules/grid/grid-fourths.twig" %}
                     {% block items %}
                       {{ occur.field_date }}
                       {{ occur.field_time_start }}
                       {{ occur.field_time_end }}
-                      {% embed "@modules/grid/grid-item.twig" %}
-                        {% block content %}
-                          <div style="margin-top: 44px">
-                            {{ occur.actions.remove_occurrence }}
-                          </div>
-                        {% endblock %}
-                      {% endembed %}
+                      {{ occur.actions.remove_occurrence }}
                     {% endblock %}
                   {% endembed %}
                 {% endfor %}
-
-                {% embed "@modules/grid/grid-full.twig" %}
-                  {% block items %}
-                    {% embed "@modules/grid/grid-item.twig" %}
-                      {% block content %}
-                        {{ form.occurrences_actions.actions.add_occurrence }}
-                      {% endblock %}
-                    {% endembed %}
-                    {% embed "@modules/grid/grid-item.twig" %}
-                      {% block content %}
-                        {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxTitle } %}
-                      {% endblock %}
-                    {% endembed %}
-                  {% endblock %}
-                {% endembed %}
-              {% else %}
-                {# Pattern Lab #}
+              </div>
+            </div>
+            {% embed "@modules/grid/grid-full.twig" %}
+              {% block items %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Dato" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_date" } %}
+                    {{ form.occurrences_actions.actions.add_occurrence }}
                   {% endblock %}
                 {% endembed %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Sluttidspunkt" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_end" } %}
+                    {% include "@elements/forms/help-box.twig" with { helpBox: addActivity.helpBoxTitle } %}
                   {% endblock %}
                 {% endembed %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-                    {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Starttidspunkt" } } %}
-                    {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_start" } %}
-                  {% endblock %}
-                {% endembed %}
-              {% endif %}
-            {% endblock %}
-          {% endembed %}
-
+              {% endblock %}
+            {% endembed %}
+          {% else %}
+            {# Pattern Lab #}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Dato" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_date" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Sluttidspunkt" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_end" } %}
+              {% endblock %}
+            {% endembed %}
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% include "@elements/forms/form-label.twig" with { formLabel: { label: "Starttidspunkt" } } %}
+                {% include "@elements/forms/text-field.twig" with { type: "text", "name": "field_time_start" } %}
+              {% endblock %}
+            {% endembed %}
+          {% endif %}
         {% endblock %}
+
       {% endembed %}
 
       {# Action buttons #}
@@ -206,4 +198,5 @@
     {{ form.form_token }}
     {{ form.form_id }}
   {% endif %}
+
 </form>
