@@ -70,7 +70,7 @@ class MultistepFormCategories extends MultistepFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  protected function commitStep(FormStateInterface $form_state) {
     $categories = $form_state->getValue('field_categories');
 
     // Filter 0 set options away.
@@ -82,7 +82,13 @@ class MultistepFormCategories extends MultistepFormBase {
 
     // Set values in storage.
     $this->store->set('field_categories', $categories);
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $this->commitStep($form_state);
     $this->acceptStep('image');
 
     // Redirect to next step.
