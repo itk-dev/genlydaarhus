@@ -115,13 +115,19 @@ class MultistepFormInformation extends MultistepFormBase {
   /**
    * {@inheritdoc}
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) {
+  protected function commitStep(FormStateInterface $form_state) {
     // Set values in storage.
     $this->store->set('field_entry_requirements', $form_state->getValue('field_entry_requirements'));
     $this->store->set('field_physical_requirements', $form_state->getValue('field_physical_requirements'));
     $this->store->set('field_maximum_participants', $form_state->getValue('field_maximum_participants'));
     $this->store->set('field_help_needed', $form_state->getValue('field_help_needed'));
+  }
 
+  /**
+   * {@inheritdoc}
+   */
+  public function submitForm(array &$form, FormStateInterface $form_state) {
+    $this->commitStep($form_state);
     $this->acceptStep('categories');
 
     // Redirect to next step.

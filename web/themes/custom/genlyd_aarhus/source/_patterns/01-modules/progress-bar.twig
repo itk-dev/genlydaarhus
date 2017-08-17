@@ -20,17 +20,11 @@
       {% if item['#title'] %}
         {% if not item['#active'] and item['#open'] %}
           <li class="progress-bar--list-item progress-bar--with-link {{ item['#active'] ? 'is-active' }}">
-            <a class="progress-bar--link" href="{{ item['#href'] }}">
-              <p class="progress-bar--text">
-                {{ loop.index }}. {{ item['#title'] }}
-              </p>
-            </a>
+            {{ form.actions.submitStep[loop.index - 1] }}
           </li>
         {% else %}
           <li class="progress-bar--list-item {{ item['#active'] ? 'is-active' }} {{ item['#open'] != true ? 'is-not-open' }}">
-            <p class="progress-bar--text">
-              {{ loop.index }}. {{ item['#title'] }}
-            </p>
+            <input type="submit" disabled="disabled" class="progress-bar--submit" value="{{ loop.index ~ '. ' ~ item['#title'] }}">
           </li>
         {% endif %}
       {% endif %}

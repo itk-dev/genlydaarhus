@@ -19,10 +19,6 @@
     display: flex;
     font-size: $font-size-normal;
     justify-content: center;
-    padding-bottom: $spacing-pixel-tiny;
-    padding-left: $spacing-pixel-tiny;
-    padding-right: $spacing-pixel-tiny;
-    padding-top: $spacing-pixel-tiny;
     width: 100%;
 
     &:last-child {
@@ -72,4 +68,28 @@
       display: block;
     }
   } 
+}
+
+input[type=submit].progress-bar--submit {
+  background-color: transparent;
+  border: 0;
+  outline: none;
+  padding: 0;
+  text-indent: -9999px;
+  text-transform: none;
+  width: 100%;
+
+  @include breakpoint($breakpoint-desk) {
+    color: inherit;
+    height: auto;
+    margin-bottom: $spacing-pixel-xxsmall;
+    margin-top: $spacing-pixel-xxsmall;
+    text-indent: 0;
+    width: 100%;
+  }
+}
+
+input[type=submit].progress-bar--submit:hover {
+  background-color: transparent;
+  text-transform: none;
 }
