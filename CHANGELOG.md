@@ -2,6 +2,10 @@
 
 ## In development
 
+## v1.1.5
+
+* Fixed issues with activity create flows, where state was not submitted.
+
 ## v1.1.4
 * SUPPORT-1159: Fixed bug on user display page
 
