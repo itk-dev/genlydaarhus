@@ -101,7 +101,7 @@ class MultistepFormConfirm extends MultistepFormBase {
       ],
       'price' => [
         '#label' => t('Price'),
-        '#value' => $this->store->get('field_price'),
+        '#value' => $this->store->get('field_price') ? $this->store->get('field_price') : 'Gratis',
       ],
       'signupRequired' => [
         '#label' => t('Is sign up required?'),
