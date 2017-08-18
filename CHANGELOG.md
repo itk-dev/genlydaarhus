@@ -2,26 +2,36 @@
 
 ## In development
 
+## v1.1.6
+
+* Security update to drupal/core 8.3.7.
+* Fixed empty price field in confirm step of create activity when no price was set.
+
 ## v1.1.5
 
 * Fixed issues with activity create flows, where state was not submitted.
 
 ## v1.1.4
+
 * SUPPORT-1159: Fixed bug on user display page
 
 ## v1.1.3
+
 * Fixed translation of "Register" under "node/{nid}".
 
 ## v1.1.2
+
 * Fixed issue with owner check on clone activity.
 
 ## v1.1.1
+
 * SUPPORT-1145: Fixed render errors on create activity forms
 * Updated core to 8.3.5
 * Updated contrib modules
 
 ## 1.1.0
-@Todo @Jesper K.
+
+@TODO
 
 ## v1.0.7
 
