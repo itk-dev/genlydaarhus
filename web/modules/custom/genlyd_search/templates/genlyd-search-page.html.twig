@@ -35,7 +35,7 @@
         {% block content %}
           <!-- Display block is needed here as the css force display none, which
                don't work with angular -->
-          <div class="filters" data-ng-if="showFilters" data-ng-cloak>
+          <div class="filters" data-ng-show="showFilters" data-ng-cloak>
             {% embed "@modules/grid/grid-halfs.twig" %}
               {% block items %}
                 {% embed "@modules/grid/grid-item.twig" %}
