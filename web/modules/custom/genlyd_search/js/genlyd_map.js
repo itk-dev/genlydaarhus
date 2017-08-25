@@ -25,7 +25,7 @@ function genlydMapInitOpenlayersMap() {
       center: [1136822.2651791184, 7589103.079019488],
       zoom: 12,
       minZoom: 4,
-      maxZoom: 14,
+      maxZoom: 17,
       projection: 'EPSG:3857'
     })
   });
@@ -107,7 +107,7 @@ function genlydMapsAddPopups(map) {
       // Get hold of the close button and when clicked hide it.
       var close = document.getElementsByClassName('js-close-button');
       if (close.length) {
-        close[0].addEventListener('click', function() {
+        close[0].addEventListener('click', function () {
           element.innerHTML = '';
         });
       }
