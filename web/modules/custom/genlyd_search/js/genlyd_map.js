@@ -107,7 +107,7 @@ function genlydMapsAddPopups(map) {
       // Get hold of the close button and when clicked hide it.
       var close = document.getElementsByClassName('js-close-button');
       if (close.length) {
-        close[0].addEventListener('click', function() {
+        close[0].addEventListener('click', function () {
           element.innerHTML = '';
         });
       }
