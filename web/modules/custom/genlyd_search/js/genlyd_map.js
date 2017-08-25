@@ -25,7 +25,7 @@ function genlydMapInitOpenlayersMap() {
       center: [1136822.2651791184, 7589103.079019488],
       zoom: 12,
       minZoom: 4,
-      maxZoom: 14,
+      maxZoom: 17,
       projection: 'EPSG:3857'
     })
   });
