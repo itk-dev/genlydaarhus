@@ -2,6 +2,10 @@
 
 ## In development
 
+* Fixed search input fields (now they work).
+* Change max zoom-level on map search.
+* Show "my-location" button.
+
 ## v1.1.6
 
 * Security update to drupal/core 8.3.7.
