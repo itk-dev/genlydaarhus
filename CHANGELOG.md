@@ -5,6 +5,7 @@
 * Fixed search input fields (now they work).
 * Change max zoom-level on map search.
 * Show "my-location" button.
+* Added "Forgot your password" link to login page.
 
 ## v1.1.6
 
