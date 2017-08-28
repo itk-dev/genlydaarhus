@@ -9,6 +9,7 @@
 * Removed headings from `/aktivitet/[activity_link_name]`.
 * Changed the presentation of the upload image button to be more intuitive.
 * Removed "(Clone)" text from title of cloned activities.
+* Changed number of elements in each list on frontpage to 12.
 
 ## v1.1.6
 
