@@ -6,6 +6,7 @@
 * Change max zoom-level on map search.
 * Show "my-location" button.
 * Added "Forgot your password" link to login page.
+* Removed headings from `/aktivitet/[activity_link_name]`.
 
 ## v1.1.6
 
