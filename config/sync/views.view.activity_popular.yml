@@ -246,18 +246,32 @@ display:
             group_items: {  }
           plugin_id: datetime
       sorts:
-        delta:
-          id: delta
-          table: node__field_signed_up_users
-          field: delta
+        promote:
+          id: promote
+          table: node_field_data
+          field: promote
           relationship: none
-          group_type: count_distinct
+          group_type: group
           admin_label: ''
           order: DESC
           exposed: false
           expose:
             label: ''
+          entity_type: node
+          entity_field: promote
           plugin_id: standard
+        random:
+          id: random
+          table: views
+          field: random
+          relationship: none
+          group_type: group
+          admin_label: ''
+          order: ASC
+          exposed: false
+          expose:
+            label: ''
+          plugin_id: random
         title:
           id: title
           table: node_field_data
@@ -296,7 +310,7 @@ display:
           1: AND
       group_by: true
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
@@ -313,7 +327,7 @@ display:
       display_extenders: {  }
       exposed_block: true
     cache_metadata:
-      max-age: -1
+      max-age: 0
       contexts:
         - 'languages:language_content'
         - 'languages:language_interface'
