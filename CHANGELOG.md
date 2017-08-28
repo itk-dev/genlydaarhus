@@ -7,6 +7,7 @@
 * Show "my-location" button.
 * Added "Forgot your password" link to login page.
 * Removed headings from `/aktivitet/[activity_link_name]`.
+* Changed the presentation of the upload image button to be more intuitive.
 
 ## v1.1.6
 
