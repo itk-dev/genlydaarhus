@@ -11,6 +11,7 @@
 * Removed "(Clone)" text from title of cloned activities.
 * Changed number of elements in each list on frontpage to 12.
 * Changed icon for ´/aktivitet´ to search.
+* Added "Register with ADFS" button to register page.
 
 ## v1.1.6
 
