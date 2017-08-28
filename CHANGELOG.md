@@ -10,6 +10,7 @@
 * Changed the presentation of the upload image button to be more intuitive.
 * Removed "(Clone)" text from title of cloned activities.
 * Changed number of elements in each list on frontpage to 12.
+* Changed icon for ´/aktivitet´ to search.
 
 ## v1.1.6
 
