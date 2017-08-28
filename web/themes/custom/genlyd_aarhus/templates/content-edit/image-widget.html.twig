@@ -34,6 +34,7 @@
       {% block items %}
         {% embed "@modules/grid/grid-item.twig" %}
           {% block content %}
+            <div class="image-upload--info-text" id="js-upload-info">&nbsp;</div>
             {{ data.upload }}
           {% endblock %}
         {% endembed %}
