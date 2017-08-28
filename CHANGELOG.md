@@ -8,6 +8,7 @@
 * Added "Forgot your password" link to login page.
 * Removed headings from `/aktivitet/[activity_link_name]`.
 * Changed the presentation of the upload image button to be more intuitive.
+* Removed "(Clone)" text from title of cloned activities.
 
 ## v1.1.6
 
