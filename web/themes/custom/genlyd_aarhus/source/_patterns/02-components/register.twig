@@ -28,12 +28,10 @@
                 {% endembed %}
               {% endif %}
 
-              {% if register.socialButtons.googleButton %}
+              {% if register.socialButtons.adfsButton %}
                 {% embed "@modules/grid/grid-item.twig" %}
                   {% block content %}
-
-                    {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.googleButton } %}
-
+                    {% include "@elements/buttons/button-google.twig" with { button: register.socialButtons.adfsButton } %}
                   {% endblock %}
                 {% endembed %}
               {% endif %}
