@@ -16,7 +16,7 @@ jQuery(document).ready(function ($) {
       infoText = $('#js-upload-info'),
       labelVal = $label.html(),
       fileChosenText = Drupal.t('You have chosen the file:'),
-      chooseAnotherText = Drupal.t('Choose another');
+      chooseAnotherText = Drupal.t('Choose another file');
 
     $input.on('change', function (e) {
       var fileName = '';
