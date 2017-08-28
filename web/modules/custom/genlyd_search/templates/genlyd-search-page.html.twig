@@ -3,7 +3,11 @@
     {% block items %}
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% include "@modules/heading-with-icon.twig" with { headingWithIcon: { title: 'Search activities' | trans, subtitle: 'Here you can search available activities' | trans } } %}
+          {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: { title: 'Search activities' | trans, subtitle: 'Here you can search available activities' | trans } } %}
+            {% block icon %}
+              {% include "@elements/icons/icon-search.twig" %}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
       {% embed "@modules/grid/grid-item.twig" %}
