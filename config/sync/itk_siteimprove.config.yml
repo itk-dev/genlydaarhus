@@ -1,5 +1,4 @@
 exclude_admin: 1
-excludes: '/^\/user(.)*/'
+excludes: ''
 exclude_patterns:
-  - '/^\/user(.)*/'
   - '/^\/admin(.)*/'
