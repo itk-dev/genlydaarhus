@@ -74,7 +74,7 @@ class ITKSiteimproveConfigForm extends ConfigFormBase {
       '#title' => t('Path excludes'),
       '#description' => t(
         'Regular expressions of paths to exclude. One per line. ' .
-        'For example (to exlude admin pages): /^\/admin(.)*/'),
+        'For example (to exclude admin pages): /^\/admin(.)*/'),
       '#required' => FALSE,
       '#default_value' => $config->get('excludes'),
     ];
@@ -90,6 +90,19 @@ class ITKSiteimproveConfigForm extends ConfigFormBase {
     $config = $this->config('itk_siteimprove.config');
     $config->set('exclude_admin', $form_state->getValue('exclude_admin'));
     $config->set('excludes', $form_state->getValue('excludes'));
+
+    $formStateExcludes = $form_state->getValue('excludes');
+
+    $excludePatterns = $formStateExcludes ? explode("\r\n",
+      $formStateExcludes) : [];
+
+    if ($form_state->getValue('exclude_admin') &&
+      !in_array('/^\/admin(.)*/', $excludePatterns)
+    ) {
+      $excludePatterns[] = '/^\/admin(.)*/';
+    }
+
+    $config->set('exclude_patterns', $excludePatterns);
     $config->save();
 
     // Save key to database.

@@ -9,10 +9,6 @@
  */
 function itk_siteimprove_preprocess_page(&$variables) {
   $settings = \Drupal::getContainer()->get('itk_siteimprove.settings');
-  $config = \Drupal::config('itk_siteimprove.config');
-  $excludeAdmin = $config->get('exclude_admin');
-  $excludes = explode("\r\n", $config->get('excludes'));
-
   $key = $settings->get('key');
 
   // Ignore if key is not set.
@@ -20,16 +16,14 @@ function itk_siteimprove_preprocess_page(&$variables) {
     return;
   }
 
+  $config = \Drupal::config('itk_siteimprove.config');
+  $excludePatterns = $config->get('exclude_patterns') ? $config->get('exclude_patterns') : [];
+
   $trackPath = TRUE;
   $currentPath = \Drupal::service('path.current')->getPath();
 
-  // Add admin pattern if selected.
-  if ($excludeAdmin) {
-    $excludes[] = '/^\/admin(.)*/';
-  }
-
   // Check each exclude pattern.
-  foreach ($excludes as $pattern) {
+  foreach ($excludePatterns as $pattern) {
     if (preg_match($pattern, $currentPath)) {
       $trackPath = FALSE;
       break;
