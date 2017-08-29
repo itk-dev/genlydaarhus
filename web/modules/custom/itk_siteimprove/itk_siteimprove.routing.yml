@@ -1,0 +1,7 @@
+itk_siteimprove.settings:
+  path: '/admin/config/siteimprove'
+  defaults:
+    _form: '\Drupal\itk_siteimprove\Form\ITKSiteimproveConfigForm'
+    _title: 'Siteimprove'
+  requirements:
+    _permission: 'access itk siteimprove settings'

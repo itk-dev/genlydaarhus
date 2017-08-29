@@ -15,6 +15,7 @@
 * Changed frontpage activities view to show only "promoted to frontpage" activities.
 * Changed popular activities to show sticky activities first.
 * Added Activity date column to Content view.
+* Added itk_siteimprove module to inject siteimprove script.
 
 ## v1.1.6
 
