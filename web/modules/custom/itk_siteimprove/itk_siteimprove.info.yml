@@ -1,0 +1,6 @@
+name: ITK siteimprove
+type: module
+description: 'Adds siteimprove script to pages'
+package: ITK
+core: 8.x
+dependencies:
