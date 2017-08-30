@@ -2,6 +2,8 @@
 
 ## In development
 
+## release/v1.2.0
+
 * Fixed search input fields (now they work).
 * Change max zoom-level on map search.
 * Show "my-location" button.
