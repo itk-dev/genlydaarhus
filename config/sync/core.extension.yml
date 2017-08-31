@@ -24,7 +24,6 @@ module:
   genlyd_angular: 0
   genlyd_search: 0
   geocoder: 0
-  help: 0
   image: 0
   itk_activity: 0
   itk_admin_links: 0
