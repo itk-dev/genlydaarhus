@@ -18,6 +18,7 @@
 * Changed popular activities to show sticky activities first.
 * Added Activity date column to Content view.
 * Added itk_siteimprove module to inject siteimprove script.
+* Changed user permissions.
 
 ## v1.1.6
 
