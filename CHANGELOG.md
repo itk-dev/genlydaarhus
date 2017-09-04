@@ -19,6 +19,7 @@
 * Added Activity date column to Content view.
 * Added itk_siteimprove module to inject siteimprove script.
 * Changed user permissions.
+* Increased text size in file uploader.
 
 ## v1.1.6
 
