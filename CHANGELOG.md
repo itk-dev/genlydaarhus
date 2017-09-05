@@ -2,6 +2,8 @@
 
 ## In development
 
+## release/v1.2.0
+
 * Fixed search input fields (now they work).
 * Change max zoom-level on map search.
 * Show "my-location" button.
@@ -16,6 +18,8 @@
 * Changed popular activities to show sticky activities first.
 * Added Activity date column to Content view.
 * Added itk_siteimprove module to inject siteimprove script.
+* Changed user permissions.
+* Increased text size in file uploader.
 
 ## v1.1.6
 
