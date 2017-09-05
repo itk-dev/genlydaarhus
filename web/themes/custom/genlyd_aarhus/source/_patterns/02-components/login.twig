@@ -36,16 +36,6 @@
                 {% endembed %}
               {% endif %}
 
-              {% if login.socialButtons.googleButton %}
-                {% embed "@modules/grid/grid-item.twig" %}
-                  {% block content %}
-
-                    {% include "@elements/buttons/button-google.twig" with { button: login.socialButtons.googleButton } %}
-
-                  {% endblock %}
-                {% endembed %}
-              {% endif %}
-
             {% endblock %}
           {% endembed %}
         {% endblock %}
@@ -85,6 +75,8 @@
               {% block content %}
 
                 {{ form.pass }}
+
+                <a href="/user/password">{{ 'Forgot your password?' | trans }}</a>
 
               {% endblock %}
             {% endembed %}

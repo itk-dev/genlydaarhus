@@ -1,0 +1,40 @@
+<?php
+/**
+ * @file
+ * Contains hooks for itk_siteimprove.
+ */
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function itk_siteimprove_preprocess_page(&$variables) {
+  $settings = \Drupal::getContainer()->get('itk_siteimprove.settings');
+  $key = $settings->get('key');
+
+  // Ignore if key is not set.
+  if (!$key) {
+    return;
+  }
+
+  $config = \Drupal::config('itk_siteimprove.config');
+  $excludePatterns = $config->get('exclude_patterns') ? $config->get('exclude_patterns') : [];
+
+  $trackPath = TRUE;
+  $currentPath = \Drupal::service('path.current')->getPath();
+
+  // Check each exclude pattern.
+  foreach ($excludePatterns as $pattern) {
+    if (preg_match($pattern, $currentPath)) {
+      $trackPath = FALSE;
+      break;
+    }
+  }
+
+  // Inject script if allowed path.
+  if ($trackPath) {
+    $variables['#attached']['library'][] = 'itk_siteimprove/itk-siteimprove';
+    $variables['#attached']['drupalSettings']['itk_siteimprove'] = [
+      'key' => $key,
+    ];
+  }
+}

@@ -2,6 +2,25 @@
 
 ## In development
 
+## release/v1.2.0
+
+* Fixed search input fields (now they work).
+* Change max zoom-level on map search.
+* Show "my-location" button.
+* Added "Forgot your password" link to login page.
+* Removed headings from `/aktivitet/[activity_link_name]`.
+* Changed the presentation of the upload image button to be more intuitive.
+* Removed "(Clone)" text from title of cloned activities.
+* Changed number of elements in each list on frontpage to 12.
+* Changed icon for ´/aktivitet´ to search.
+* Added "Register with ADFS" button to register page.
+* Changed frontpage activities view to show only "promoted to frontpage" activities.
+* Changed popular activities to show sticky activities first.
+* Added Activity date column to Content view.
+* Added itk_siteimprove module to inject siteimprove script.
+* Changed user permissions.
+* Increased text size in file uploader.
+
 ## v1.1.6
 
 * Security update to drupal/core 8.3.7.

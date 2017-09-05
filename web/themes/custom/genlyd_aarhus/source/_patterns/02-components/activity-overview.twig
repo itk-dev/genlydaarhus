@@ -1,34 +1,19 @@
 {% embed "@modules/grid/grid-full.twig" %}
   {% block items %}
-
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-
         {% include "@modules/activity-hero.twig" with { activityHero: activity.activityHero } %}
-
       {% endblock %}
     {% endembed %}
-
   {% endblock %}
 {% endembed %}
 
 {% embed "@modules/grid/grid-two-thirds.twig" %}
   {% block items %}
-
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
-
         {% embed "@modules/grid/grid-full.twig" %}
           {% block items %}
-
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-
-                {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDescription.title }, iconName: 'bulletin' } %}
-
-              {% endblock %}
-            {% endembed %}
-
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
                 {% for category in activity.activityOverview.categories %}
@@ -36,54 +21,36 @@
                 {% endfor %}
               {% endblock %}
             {% endembed %}
-
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
                 {{ activity.activityOverview.body }}
-
                 {% include "@components/important-info.twig" with { info: activity.activityOverview.info } %}
               {% endblock %}
             {% endembed %}
-
-              {% embed "@modules/grid/grid-item.twig" %}
-                {% block content %}
-                  {% if activity.activityOverview.signedUpUsers.users %}
-                    {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.signedUpUsers.title }, iconName: 'user' } %}
-                    {% include "@modules/signed-up-users.twig" with { users: activity.activityOverview.signedUpUsers.users } %}
-                  {% endif %}
-                {% endblock %}
-              {% endembed %}
-
+            {% embed "@modules/grid/grid-item.twig" %}
+              {% block content %}
+                {% if activity.activityOverview.signedUpUsers.users %}
+                  {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.signedUpUsers.title }, iconName: 'user' } %}
+                  {% include "@modules/signed-up-users.twig" with { users: activity.activityOverview.signedUpUsers.users } %}
+                {% endif %}
+              {% endblock %}
+            {% endembed %}
           {% endblock %}
         {% endembed %}
-
       {% endblock %}
     {% endembed %}
-
     {% embed "@modules/grid/grid-item.twig" %}
       {% block content %}
         {% embed "@modules/grid/grid-full.twig" %}
           {% block items %}
-
             {% embed "@modules/grid/grid-item.twig" %}
               {% block content %}
-
-                {% include "@modules/section-text-with-icon.twig" with { textWithIcon: { title: activity.activityOverview.headingWithIconDetails.title }, iconName: 'bulletin' } %}
-
-              {% endblock %}
-            {% endembed %}
-
-            {% embed "@modules/grid/grid-item.twig" %}
-              {% block content %}
-
-                {% include "@components/activity-sidebar.twig" with { meta : activity.activityOverview.meta }  %}
-
+                {% include "@components/activity-sidebar.twig" with { meta : activity.activityOverview.meta } %}
               {% endblock %}
             {% endembed %}
           {% endblock %}
         {% endembed %}
       {% endblock %}
     {% endembed %}
-
   {% endblock %}
 {% endembed %}

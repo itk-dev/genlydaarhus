@@ -1,0 +1,5 @@
+itk_siteimprove.admin:
+  title: 'Siteimprove'
+  description: 'Control settings for siteimprove.'
+  route_name: itk_siteimprove.settings
+  parent: user.admin_index

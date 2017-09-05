@@ -3,7 +3,11 @@
     {% block items %}
       {% embed "@modules/grid/grid-item.twig" %}
         {% block content %}
-          {% include "@modules/heading-with-icon.twig" with { headingWithIcon: { title: 'Search activities' | trans, subtitle: 'Here you can search available activities' | trans } } %}
+          {% embed "@modules/heading-with-icon.twig" with { headingWithIcon: { title: 'Search activities' | trans, subtitle: 'Here you can search available activities' | trans } } %}
+            {% block icon %}
+              {% include "@elements/icons/icon-search.twig" %}
+            {% endblock %}
+          {% endembed %}
         {% endblock %}
       {% endembed %}
       {% embed "@modules/grid/grid-item.twig" %}
@@ -35,7 +39,7 @@
         {% block content %}
           <!-- Display block is needed here as the css force display none, which
                don't work with angular -->
-          <div class="filters" data-ng-if="showFilters" data-ng-cloak>
+          <div class="filters" data-ng-show="showFilters" data-ng-cloak>
             {% embed "@modules/grid/grid-halfs.twig" %}
               {% block items %}
                 {% embed "@modules/grid/grid-item.twig" %}
@@ -124,6 +128,9 @@
   <div data-ng-show="!searching && !showMap">
     {% embed "@modules/grid/grid-fourths.twig" %}
       {% block items %}
+        <div data-ng-if="results.no_of_results === 0">
+          {{ 'No search results' | trans }}
+        </div>
         <article data-ng-repeat="hit in results.hits" class="grid--item" ng-bind-html="hit.snippet"></article>
       {% endblock %}
     {% endembed %}

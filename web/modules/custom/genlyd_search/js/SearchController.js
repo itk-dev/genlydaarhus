@@ -87,6 +87,9 @@ angular.module('genlyd').controller('SearchController', ['$scope', '$timeout', '
         /** @see genlyd_maps.js for map information. */
         genlydMapsAddActivities(results);
       });
+
+      // Scroll to top.
+      window.scrollTo(0, 0);
     };
 
     /**

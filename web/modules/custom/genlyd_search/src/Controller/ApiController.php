@@ -173,6 +173,12 @@ class ApiController extends ControllerBase {
       }
     }
 
+    /**
+     * HACK: Limit to only show future events. Should be removed when
+     *       un-scheduling have been implemented.
+     */
+    $query->addCondition('date', REQUEST_TIME, '>=');
+
     $result = $query->execute();
     $items = $result->getResultItems();
 
