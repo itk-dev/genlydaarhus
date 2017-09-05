@@ -14,6 +14,7 @@ jQuery(document).ready(function ($) {
     var $input = $(this),
       $label = $input.next('label'),
       infoText = $('#js-upload-info'),
+      filenameDiv = $('#js-upload-filename'),
       labelVal = $label.html(),
       fileChosenText = Drupal.t('You have chosen the file:'),
       chooseAnotherText = Drupal.t('Choose another file');
@@ -26,7 +27,8 @@ jQuery(document).ready(function ($) {
       }
 
       if (fileName) {
-        infoText.html(fileChosenText + ' ' + fileName);
+        infoText.html(fileChosenText);
+        filenameDiv.html(fileName);
         $label.find('span').html(chooseAnotherText);
         $label.removeClass("is-cta");
         $label.addClass('is-secondary-light');
